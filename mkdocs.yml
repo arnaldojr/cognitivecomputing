@@ -94,6 +94,7 @@ nav:
   - Instalação: instalacao/index.md
   - CheckPoint:
     - Orientações gerais: aulas/checkpoint/index.md
+  - Introdução: aulas/intro/index.md
   - Laboratórios: 
     - Lab01 - Intro PID: aulas/lab01/IntroPID.ipynb
     - Lab02 - Seguimentação por pixel: aulas/lab02/atividade2.ipynb
