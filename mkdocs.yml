@@ -1,0 +1,117 @@
+site_name: cognitivecomputing
+site_author: Arnaldo Viana 
+
+
+extra:
+    materia: cognitivecomputing
+    professor: Arnaldo Viana
+    ano: 2022
+
+theme:
+  feature:
+    tabs: true
+  name: active-handout
+  #custom_dir: overrides
+
+docs_dir: material
+site_dir: docs
+
+
+repo_url: https://github.com/arnaldojr/cognitivecomputing/
+repo_name: "cognitivecomputing"
+site_url: https://arnaldojr.github.io/cognitivecomputing/
+
+# Extensions / plugins
+
+
+extra_javascript:
+  - https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.0.0/js-yaml.min.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - https://cdn.jsdelivr.net/gh/insper-education/active-handout-plugins-js@main/package/plugin-bundle.js
+
+extra:
+  ihandout_config:
+#    counter:
+#      - question
+#      - tip
+#      - exercise
+#      - example
+    report:
+      api-base: https://devlife.insper-comp.com.br/api/offerings/1/
+      url: https://devlife.insper-comp.com.br/api/offerings/1/exercises/
+
+
+# Extensions / plugins
+plugins:
+  - git-revision-date-localized
+  - search
+  - mkdocs-jupyter:
+      execute: False
+
+extra_css:
+#  - css/termynal.css
+  - https://cdn.jsdelivr.net/gh/insper-education/active-handout-css@main/devlife.css
+
+
+markdown_extensions:
+  - markdown.extensions.tables
+  - tables
+  - markdown.extensions.admonition
+  - markdown.extensions.codehilite:
+      guess_lang: false
+  - markdown.extensions.def_list
+  - markdown.extensions.footnotes
+  - markdown.extensions.meta
+  - markdown.extensions.toc:
+      permalink: true
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      user: squidfunk
+      repo: mkdocs-material
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+  - pymdownx.snippets:
+      base_path: code
+      check_paths: true
+
+nav:
+  - Home: index.md
+  - Instalação: instalacao/index.md
+  - CheckPoint:
+    - Orientações gerais: aulas/checkpoint/index.md
+  - Laboratórios: 
+    - Lab01 - Intro PID: aulas/lab01/IntroPID.ipynb
+    - Lab02 - Seguimentação por pixel: aulas/lab02/atividade2.ipynb
+    - Lab03 - Histograma e equalização: aulas/lab03/atividade3.ipynb
+    - Lab04 - Filtros de Convolução: aulas/lab04/Filtros_de_Convolução.ipynb
+    - Lab05 - Espaço de cor e contorno: aulas/lab05/Espaço-cor-contorno.ipynb    
+    - Lab06 - Transformada de Hough e morfologia: aulas/lab06/Transformada-Hough-morfologia.ipynb
+    - Lab07 - Traking de objetos e movimento: aulas/lab07/Aula09/motion.ipynb
+    - Lab08 - Relacionamento e operações entre imagens: aulas/lab08/Aula4.ipynb
+    - Lab09 - FFT: aulas/lab09/aula.ipynb
+    - Lab10 - Medidas aproximadas: aulas/lab10/medidas.ipynb
+    - Lab11 - Transformada de watershed: aulas/lab11/watershed.ipynb
+    - Lab12 - Template matching: aulas/lab12/Template_matching.ipynb
+    - Lab13 - Features: aulas/lab13/Features.ipynb
+    - Lab14 - Detector haar Cascade: aulas/lab14/haarCascade.ipynb
+    - Lab15 - Event Mouse: aulas/lab15/EventMouse.ipynb
+    - Lab16 - Detector dlib: aulas/lab16/dlib2.ipynb
+
+
+
+    
