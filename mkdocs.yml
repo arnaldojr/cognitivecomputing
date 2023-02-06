@@ -92,6 +92,7 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Instalação: instalacao/index.md
+  - Agenda: agenda/agenda.md
   - CheckPoint:
     - Orientações gerais: aulas/checkpoint/index.md
   - Introdução: aulas/intro/index.md
