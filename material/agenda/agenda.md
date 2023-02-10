@@ -1,4 +1,4 @@
-| 4SIA<br>(4Aulas) | 4SIS<br>(4Aulas) | CONTEÚDO                                                                                                                                            | LABORATÓRIO  |
+| 4SIA<br>(4Aulas) | 4SIR<br>(4Aulas) | CONTEÚDO                                                                                                                                            | LABORATÓRIO  |
 | ---------------- | ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ |
 | 06/02            | 09/02            | Aula Magna<br>Apresentação do curso, dinâmica das aulas, datas importantes (CP), lançamento CP1                                                     | lab1         |
 | 13/02            | 16/02            | Processamento de imagem digital. Segmentação por pixel, histograma e equalização de histograma                                                      | lab02, lab03 |
