@@ -8,7 +8,7 @@
 | 13/03            | 16/03            | AVALIAÇÃO EM AULA CP1<br>CP1 - Sistema de segmentação de objetos                                                                                    |              |
 | 20/03            | 23/03            | medidas aproximadas, transformada de watershed                                                                                                      | lab10, lab11 |
 | 27/03            | 30/03            | template matching, features ORB, SIFT                                                                                                               | lab12, lab13 |
-| 03/04            | 06/04            | Haar Cascade, Event Mouse                                                                                                                           | lab14, lab15 |
+| 03/04            | <s>06/04</s>            | Haar Cascade, Event Mouse                                                                                                                           | lab14, lab15 |
 | 10/04            | 13/04            | Detector dlib                                                                                                                                       | lab16        |
 | 17/04            | 20/04            | aplicações media pipe                                                                                                                               | lab17        |
 | 24/04            | 27/04            | AVALIAÇÃO EM AULA CP2<br>CP2 - Sistema para detectar padrão                                                                                         |              |
