@@ -94,27 +94,40 @@ nav:
   - Instalação: instalacao/index.md
   - Agenda: agenda/agenda.md
   - CheckPoint:
-    - Orientações gerais: aulas/checkpoint/index.md
-    - CheckPoint 2 - Liberado: aulas/checkpoint/cp1.md
-  - Introdução: aulas/intro/index.md
-  - Laboratórios: 
-    - Lab01 - Intro PID: aulas/lab01/IntroPID.ipynb
-    - Lab02 - Seguimentação por pixel: aulas/lab02/atividade2.ipynb
-    - Lab03 - Histograma e equalização: aulas/lab03/atividade3.ipynb
-    - Lab04 - Filtros de Convolução: aulas/lab04/Filtros_de_Convolução.ipynb
-    - Lab05 - Espaço de cor e contorno: aulas/lab05/Espaço-cor-contorno.ipynb    
-    - Lab06 - Transformada de Hough e morfologia: aulas/lab06/Transformada-Hough-morfologia.ipynb
-    - Lab07 - Traking de objetos e movimento: aulas/lab07/Aula09/motion.ipynb
-    - Lab08 - Relacionamento e operações entre imagens: aulas/lab08/Aula4.ipynb
-    - Lab09 - FFT: aulas/lab09/aula.ipynb
-    - Lab10 - Medidas aproximadas: aulas/lab10/medidas.ipynb
-    - Lab11 - Transformada de watershed: aulas/lab11/watershed.ipynb
-    - Lab12 - Template matching: aulas/lab12/Template_matching.ipynb
-    - Lab13 - Features: aulas/lab13/Features.ipynb
-    - Lab14 - Detector haar Cascade: aulas/lab14/haarCascade.ipynb
-    - Lab15 - Event Mouse: aulas/lab15/EventMouse.ipynb
-    - Lab16 - Detector dlib: aulas/lab16/dlib2.ipynb
-    - Lab17 - Mediapipe: aulas/lab17/mediapipe.ipynb
+    - Orientações gerais: checkpoint/index.md
+    - CheckPoint 2 - Liberado: checkpoint/cp1.md
+
+  - Introdução:
+    - Processamento Digital de Imagens: intro/PDI/index.md 
+    - IoT e Sistemas Embarcados:
+      - Introdução: aulas/intro/iot/index.md
+      - Dicas rápidas: aulas/intro/iot/dicas.md 
+  - Laboratórios:
+    - Processamento Digital de Imagens:  
+      - Lab01 - Intro PID: aulas/PDI/lab01/IntroPID.ipynb
+      - Lab02 - Seguimentação por pixel: aulas/PDI/lab02/atividade2.ipynb
+      - Lab03 - Histograma e equalização: aulas/PDI/lab03/atividade3.ipynb
+      - Lab04 - Filtros de Convolução: aulas/PDI/lab04/Filtros_de_Convolução.ipynb
+      - Lab05 - Espaço de cor e contorno: aulas/PDI/lab05/Espaço-cor-contorno.ipynb    
+      - Lab06 - Transformada de Hough e morfologia: aulas/PDI/lab06/Transformada-Hough-morfologia.ipynb
+      - Lab07 - Traking de objetos e movimento: aulas/PDI/lab07/Aula09/motion.ipynb
+      - Lab08 - Relacionamento e operações entre imagens: aulas/PDI/lab08/Aula4.ipynb
+      - Lab09 - FFT: aulas/PDI/lab09/aula.ipynb
+      - Lab10 - Medidas aproximadas: aulas/PDI/lab10/medidas.ipynb
+      - Lab11 - Transformada de watershed: aulas/PDI/lab11/watershed.ipynb
+      - Lab12 - Template matching: aulas/PDI/lab12/Template_matching.ipynb
+      - Lab13 - Features: aulas/PDI/lab13/Features.ipynb
+      - Lab14 - Detector haar Cascade: aulas/PDI/lab14/haarCascade.ipynb
+      - Lab15 - Event Mouse: aulas/PDI/lab15/EventMouse.ipynb
+      - Lab16 - Detector dlib: aulas/PDI/lab16/dlib2.ipynb
+      - Lab17 - Mediapipe: aulas/PDI/lab17/mediapipe.ipynb
+    - IoT e Sistemas Embarcados:
+      - From 0 to Hero!: aulas/iot/ex0/index.md 
+      - Blink led: aulas/iot/ex1/index.md
+      - Led botão: aulas/iot/ex2/index.md
+      - Botão pot led: aulas/iot/ex3/index.md
+      - Função millis: aulas/iot/ex4/index.md
+      - Interrupção de pino: aulas/iot/ex5/index.md
 
 
     

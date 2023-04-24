@@ -1,5 +1,20 @@
 # Instruções para a instalação da infraestrutura
 
+## Arduino
+
+* Fazer o download e instalar a ide do arduino pelo site oficial:
+
+* [https://www.arduino.cc](https://www.arduino.cc)
+
+
+## Simulador Arduino
+
+* Faça o seu cadastro no Tinkercad:
+
+* [https://www.tinkercad.com/](https://www.tinkercad.com/)
+
+
+
 ## Instalação no SO nativo.
 
 * Windows:
