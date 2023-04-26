@@ -101,6 +101,7 @@ nav:
     - Processamento Digital de Imagens: intro/PDI/index.md 
     - IoT e Sistemas Embarcados:
       - Introdução: aulas/intro/iot/index.md
+      - Comece por aqui: aulas/intro/iot/introarduino.md
       - Dicas rápidas: aulas/intro/iot/dicas.md 
   - Laboratórios:
     - Processamento Digital de Imagens:  
