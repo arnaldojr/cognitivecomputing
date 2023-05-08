@@ -129,6 +129,7 @@ nav:
       - Botão pot led: aulas/iot/ex3/index.md
       - Função millis: aulas/iot/ex4/index.md
       - Interrupção de pino: aulas/iot/ex5/index.md
+      - Comunicação Serial: aulas/iot/ex6/index.md      
 
 
     
