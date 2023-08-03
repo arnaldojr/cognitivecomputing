@@ -95,14 +95,23 @@ nav:
   - Agenda: agenda/agenda.md
   - CheckPoint:
     - Orientações gerais: checkpoint/index.md
-    - CheckPoint 3 - Liberado: checkpoint/cp3.md
+    - CheckPoint 4 - Liberado: checkpoint/cp4.md
 
   - Introdução:
-    - Processamento Digital de Imagens: intro/PDI/index.md 
+    - Processamento Digital de Imagens: PDI/intro/index.md 
     - IoT e Sistemas Embarcados:
-      - Introdução: aulas/intro/iot/index.md
-      - Comece por aqui: aulas/intro/iot/introarduino.md
-      - Dicas rápidas: aulas/intro/iot/dicas.md 
+      - Introdução: aulas/iot/intro/index.md
+      - Comece por aqui: aulas/iot/intro/introarduino.md
+      - Dicas rápidas: aulas/iot/intro/dicas.md 
+      - Exemplos:
+        - From 0 to Hero!: aulas/iot/ex0/index.md 
+        - Blink led: aulas/iot/ex1/index.md
+        - Led botão: aulas/iot/ex2/index.md
+        - Botão pot led: aulas/iot/ex3/index.md
+        - PWM: aulas/iot/ex7/index.md
+        - Função millis: aulas/iot/ex4/index.md
+        - Interrupção de pino: aulas/iot/ex5/index.md
+        - Comunicação Serial: aulas/iot/ex6/index.md  
   - Laboratórios:
     - Processamento Digital de Imagens:  
       - Lab01 - Intro PID: aulas/PDI/lab01/IntroPID.ipynb
@@ -122,15 +131,11 @@ nav:
       - Lab15 - Event Mouse: aulas/PDI/lab15/EventMouse.ipynb
       - Lab16 - Detector dlib: aulas/PDI/lab16/dlib2.ipynb
       - Lab17 - Mediapipe: aulas/PDI/lab17/mediapipe.ipynb
-    - IoT e Sistemas Embarcados:
-      - From 0 to Hero!: aulas/iot/ex0/index.md 
-      - Blink led: aulas/iot/ex1/index.md
-      - Led botão: aulas/iot/ex2/index.md
-      - Botão pot led: aulas/iot/ex3/index.md
-      - PWM: aulas/iot/ex7/index.md
-      - Função millis: aulas/iot/ex4/index.md
-      - Interrupção de pino: aulas/iot/ex5/index.md
-      - Comunicação Serial: aulas/iot/ex6/index.md      
+    - IoT:
+      - Lab01 - Lab02: aulas/iot/lab5/index.md
+      - Lab03: aulas/iot/lab5/index.md
+      - Lab04 - Lab05: aulas/iot/lab7/index.md
+      - Lab06: aulas/iot/lab8/index.md
 
 
     

@@ -1,3 +1,29 @@
+## Cronograma 2 semestre
+
+| 4SIA<br>(4Aulas) | 4SIS<br>(4Aulas) | CONTEÚDO | LABORATÓRIO | OBSERVAÇÃO | Feriados |
+|:---:|:---:|:---:|:---:|:---:|:---:|
+| <s>31/07</s> | 03/08 | Estamos de volta com IoT: Conhecendo o com Node-red e o protocolo MQTT | lab1, lab2 | 02/08 - Retorno das aulas |  |
+| 07/08 | 10/08 | Comunicação serial entre Arduino e o Node-RED | lab3 |  |  |
+| 14/08 | 17/08 | Raspberry Pi - o que é, boot e configs iniciais; Programando os GPIO e usando outras libs  | lab4 e lab5 |  |  |
+| 21/08 | 24/08 | Raspberry Pi: Montando um Webserver em Flask | lab6 |  |  |
+| 28/08 | 31/08 | AVALIAÇÃO EM AULA CP4 (grupo)<br>CP4 - Sistemas Embarcados e IoT | --- | AVALIAÇÃO EM AULA CP4 - 4SIR | Entrega - CP4 |
+| 04/09 | <s>07/09</s> | avaliação cp4 turma 4SIA | --- | AVALIAÇÃO EM AULA CP4 - 4SIA | 07/09 (quinta-feira) - Independência do Brasil |
+| 11/09 | 14/09 | Intro IA: Dados - Processamento e Visualização  | lab7, lab8 |  |  |
+| 18/09 | 21/09 | ML: Aprendizado supervisionado - Classificação e Regressão | lab9, lab10 |  |  |
+| 25/09 | 28/09 | DL: redes neurais e Perceptron e MLP | lab 11 |  |  |
+| 02/10 | 05/10 | DL: CNNs e transfer learning | lab12 |  |  |
+| 09/10 | <s>12/10</s> | Aula estudio para desenvolvimento do projeto |  |  | 12/10 (quinta-feira) - N. Sr.a Aparecida |
+| 16/10 | 19/10 | AVALIAÇÃO EM AULA CP5 (grupo)<br>CP5 - Machine learning e Deep Learning |  | AVALIAÇÃO EM AULA CP5 | Entrega - CP5 |
+| 23/10 | 26/10 | Semana NEXT |  | Semana NEXT | 28/10 (sabado) - NEXT |
+| 30/10 | <s>02/11</s> | Aula estudio para desenvolvimento de atividades "Desafios" atrasadas. |  |  | 02/11 (quinta-feira) - Finados |
+| 06/11 | 09/11 | Data final para entrega das atividades "Desafios" de AVALIAÇÃO CP6 (individual)<br>CP6 - É a méia ponderada das atividades "Desafios" lançadas ao longo do semestre. |  | NOTA CP6 |  |
+| <s>13/11</s> | <s>16/11</s> | Período de aplicações das Provas Semestrais |  | Provas |  |
+
+
+
+
+## Cronograma 1 semestre
+
 | 4SIA<br>(4Aulas) | 4SIR<br>(4Aulas) | CONTEÚDO                                                                                                                                            | LABORATÓRIO  |
 | ---------------- | ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ |
 | 06/02            | 09/02            | Aula Magna<br>Apresentação do curso, dinâmica das aulas, datas importantes (CP), lançamento CP1                                                     | lab1         |
