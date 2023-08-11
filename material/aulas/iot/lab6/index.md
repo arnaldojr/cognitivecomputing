@@ -265,7 +265,7 @@ Para o desenvolvimento do sistema de supervisório ficar completo basta adaptar 
 Chegou a hora de fazer o caminho de volta, ja mandamos dados para o node-RED, agora é vez de receber dados do node-RED. 
 
 !!! exercise
-    Adicione um ``switch`` no dashboard e configure para enviar a string “liga” e “desliga” pela serial, para controlar um LED do arduino.
+    Adicione um ``dashboard switch`` e configure para enviar a string “liga” e “desliga” pela serial, para controlar um LED do arduino.
     DICA: Veja o exemplo abaixo como referência.
 
     ```c
