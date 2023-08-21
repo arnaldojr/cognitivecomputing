@@ -4,8 +4,8 @@
 |:---:|:---:|:---:|:---:|:---:|:---:|
 | <s>31/07</s> | 03/08 | Estamos de volta com IoT: Conhecendo o com Node-red e o protocolo MQTT | lab1, lab2 | 02/08 - Retorno das aulas |  |
 | 07/08 | 10/08 | Comunicação serial entre Arduino e o Node-RED | lab3 |  |  |
-| 14/08 | 17/08 | Raspberry Pi - o que é, boot e configs iniciais; Programando os GPIO e usando outras libs  | lab4 e lab5 |  |  |
-| 21/08 | 24/08 | Raspberry Pi: Montando um Webserver em Flask | lab6 |  |  |
+| 14/08 | 17/08 | Raspberry Pi - o que é, boot e configs iniciais; Programando os GPIO e usando outras libs  | lab4 |  |  |
+| 21/08 | 24/08 | Raspberry Pi: Montando um Webserver em Flask | lab 5 e lab6 |  |  |
 | 28/08 | 31/08 | AVALIAÇÃO EM AULA CP4 (grupo)<br>CP4 - Sistemas Embarcados e IoT | --- | AVALIAÇÃO EM AULA CP4 - 4SIR | Entrega - CP4 |
 | 04/09 | <s>07/09</s> | avaliação cp4 turma 4SIA | --- | AVALIAÇÃO EM AULA CP4 - 4SIA | 07/09 (quinta-feira) - Independência do Brasil |
 | 11/09 | 14/09 | Intro IA: Dados - Processamento e Visualização  | lab7, lab8 |  |  |

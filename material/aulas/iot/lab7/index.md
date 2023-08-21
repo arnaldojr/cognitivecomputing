@@ -254,7 +254,7 @@ echo "17" > /sys/class/gpio/unexport
 Se tudo funcionou corretamente, você deve ter visto o LED acender e apagar.
 
 
-## Desafio 3
+## Desafio 3 (opcional)
 
 Agora é sua vez! A Raspberry PI permite controlar seus pinos GPIO usando várias linguagens de programação. Escolha sua linguagem preferida e escreva um código para fazer o LED piscar a cada segundo. Aqui está um exemplo para ajudá-lo. [Acesse Aqui](https://medium.com/geekculture/how-to-blink-led-using-raspberry-pi-8351b06348d7) 
 

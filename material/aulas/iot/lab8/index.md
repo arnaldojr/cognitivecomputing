@@ -6,8 +6,6 @@
 - Raspberry Pi: 
     - Conhecendo os pinos
     - Usando a biblioteca RPI.GPIO 
-    - Montando um Webserver em Flask 
-
 
 
 !!! progress
@@ -44,7 +42,6 @@ Vamos conhecer o que é cada pino:
 
 !!! exercise
     Quantos pinos GPIO estão disponiveis?
-
 
 
 !!! progress
@@ -185,9 +182,10 @@ Se ainda não estiver instalado, será instalado. Se já estiver instalado, ser�
     GPIO.cleanup()  # Limpa configuração finaliza o programa
     
     ```
-    
-Agora que já entendemos a estrutura básica do script python, faça os exercicios abaixo para praticar
 
+## Desafios
+    
+Agora que já entendemos a estrutura básica do script python, faça os `Desafios` abaixo.
 
 
 !!! exercise
@@ -221,223 +219,10 @@ Agora que já entendemos a estrutura básica do script python, faça os exercici
 !!! exercise
     Sensor de temperatura: Para quem tiver curiosidade pode dar uma olhada como utilizar o sensor de temperatura DTH11 [neste link](https://www.filipeflop.com/blog/raspberry-pi-umidade-e-a-temperatura-com-o-sensor-dht11/).
 
-!!! progress
-    Continuar...
-
-
-## Montando um Webserver em Flask
-
-Vamos montar um webserver na raspberry pi com flask. A ideia deste exemplo é controlar por um navegador web o status de um led entre ligado e desligado:
-
-![flask](flask.png)
-
-
-### Instalando o Flask e configurando o ambiente
-
-
-No terminal da raspberry pi, atualize os repositórios:
-
-```bash
-
-sudo apt update
-
-```   
-
-Instale os pacotes do flask
-
-```bash
-
-sudo apt-get install python3-flask
-
-```   
-
-Agora vamos criar nossa arvore de projeto:
-
-``` shell
-- webserver
-    - static
-        - index.css
-    - templates
-        - index.html
-    - app.py
-```
-
-No terminal da raspberry pi, digite:
-
-```bash
-cd ~
-mkdir webserver
-cd webserver
-mkdir static templates
-ls
-
-``` 
- 
-Vamos criar o ``app.py``. No terminal da raspberry pi, digite:
-
-```bash
-
-nano app.py
-
-```  
-
-
-Com o editor nano aberto digite:
-
-```python
-'''
-	Arnaldo Viana
-'''
-import RPi.GPIO as GPIO
-from flask import Flask, render_template, request
-
-app = Flask(__name__)
-
-GPIO.setmode(GPIO.BCM)
-GPIO.setwarnings(False)
-
-#define actuators GPIOs
-ledRed = 2
-
-#initialize GPIO status variables
-ledRedSts = 0
-
-# Define led pins as output
-GPIO.setup(ledRed, GPIO.OUT)   
-
-# turn leds OFF 
-GPIO.output(ledRed, GPIO.LOW)
-	
-@app.route("/")
-def index():
-	# Read GPIO Status
-	ledRedSts = GPIO.input(ledRed)
-
-	templateData = {
-      		'ledRed'  : ledRedSts,
-      	}
-	return render_template('index.html', **templateData)
-	
-@app.route("/<deviceName>/<action>")
-def action(deviceName, action):
-	if deviceName == 'ledRed':
-		actuator = ledRed
-   
-	if action == "on":
-		GPIO.output(actuator, GPIO.HIGH)
-	if action == "off":
-		GPIO.output(actuator, GPIO.LOW)
-		     
-	ledRedSts = GPIO.input(ledRed)
-   
-	templateData = {
-      		'ledRed'  : ledRedSts,
-	}
-	return render_template('index.html', **templateData)
-
-if __name__ == "__main__":
-   app.run(host='0.0.0.0', port=80, debug=True)
-
-```  
-
-
-show! Salve e feche o editor nano. Ctrl+X >> Y
-
-
-Vamos criar a pagina html ``index.html``. No terminal da raspberry pi, digite:
-
-```bash
-cd templates
-nano index.html
-
-```  
-
-Com o editor nano aberto digite:
-
-```html
-<!DOCTYPE html>
-   <head>
-      <title>Webserver</title>
-      <link rel="stylesheet" href='../static/index.css'/>
-   </head>
-
-   <body>
-
-		<h2> Controle LED </h2>
-		
-		<h3> RED LED ==>  {{ ledRed  }}  ==>  
-			{% if  ledRed   == 1 %}
-				<a href="/ledRed/off"class="button">TURN OFF</a>
-			{% else %}
-				<a href="/ledRed/on" class="button">TURN ON</a> 
-			{% endif %}	
-		</h3>
-		
-   </body>
-</html>
-
-```
-
-show! Salve e feche o editor nano. Ctrl+X >> Y
-
-Vamos criar o arquivo de estilo css ``index.css``. No terminal da raspberry pi, digite:
-
-```bash
-cd ..
-cd static
-nano index.html
-
-```  
-> Com o editor nano aberto digite:
-
-```css
-
-body {
-   background: blue;
-   color: yellow;
-}
-
-.button {
-  font: bold 15px Arial;
-  text-decoration: none;
-  background-color: #EEEEEE;
-  color: #333333;
-  padding: 2px 6px 2px 6px;
-  border-collapse: separete;
-  border-spacing: 0;
-  border-top: 1px solid #CCCCCC;
-  border-right: 1px solid #333333;
-  border-bottom: 1px solid #333333;
-  border-left: 1px solid #CCCCCC;
-}
-
-```
-
-> show! Salve e feche o editor nano. Ctrl+X >> Y
-
-### Hora de testar
-
-Vamos testar nosso webserver simples.
-
-No terminal da raspberry pi, digite:
-
-```bash
-cd ..
-sudo python app.py
-
-```  
-
-
-> Deixe o flask rodando na raspberry e no computador ou no smartphone (Deve estar na mesma rede da raspberry), abra o navegador web e digite o ip da raspberry pi. O resultado esperado é abrir uma pagina web e controlar o led. 
-
-!!! exercise
-    Compreenda o código app.py e monte o circuito adequado para conseguir visualizar o led acender e apagar.
-
- 
-!!! exercise
-    Altere o código app.py e adicione mais 2 led e 2 botões (totalizando 3 leds, 2 botões), lembre-se de adaptar os arquivos HTML para exibir no frontend os status. 
 
 
 !!! exercise
-    Aproveite os seus conhecimentos web e proponha melhorias de UI/UX para o exercicio anterior.
 
+    ![estacionamento](estacionamento.gif)
+    
+    Desenvolva um Sensor de estacionamento veicular. A idéia é simples. Vamos utilizar 1 sensor de distância ultrassônico e 3 leds de cores difenciadas. Parte do problema já está resolvido você pode acessar o [tutorial](https://labprototipando.com.br/2020/06/22/como-configurar-o-sensor-de-distancia-hc-sr04-no-raspberry-pi/) adaptar o código do Sensor HC-SR04 e implementar a logica dos led.
