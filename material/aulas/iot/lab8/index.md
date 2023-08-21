@@ -1,15 +1,9 @@
-
-![logo](logo.png)
-
 ## O que vamos ver neste lab?
 
 - Raspberry Pi: 
     - Conhecendo os pinos
     - Usando a biblioteca RPI.GPIO 
 
-
-!!! progress
-    Continuar...
 
 
 
