@@ -3,7 +3,7 @@
 | 4SIA<br>(4Aulas) | 4SIS<br>(4Aulas) | CONTEÚDO | LABORATÓRIO | OBSERVAÇÃO | FERIADOS |
 |:---:|:---:|:---:|:---:|:---:|:---:|
 | 11/09 | 14/09 | Intro IA: Dados - Processamento e Visualização  | [lab1](aulas/IA/lab01/dataframe.ipynb) |  |  |
-| 18/09 | 21/09 | ML: Aprendizado supervisionado - Classificação e Regressão | lab2, lab3, lab4, lab5 |  |  |
+| 18/09 | 21/09 | ML: Aprendizado supervisionado - Classificação e Regressão | [lab2](aulas/IA/lab02/classificador-knn.ipynb), [lab3](aulas/IA/lab03/regressao.ipynb), [lab4](aulas/IA/lab04/dicasDePreprocessamento.ipynb), [lab5](aulas/IA/lab05/validacaocruzada.ipynb) |  |  |
 | 25/09 | 28/09 | DL: redes neurais e Perceptron e MLP | lab 6, lab7, batalha das redes |  |  |
 | 02/10 | 05/10 | DL: CNNs e transfer learning | lab8, lab9 |  |  |
 | 09/10 | <s>12/10</s> | Aula estudio para desenvolvimento do projeto |  |  | 12/10 (quinta-feira) - N. Sr.a Aparecida |
