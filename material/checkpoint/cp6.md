@@ -10,7 +10,7 @@ Desafios lançados até agora:
 | ``IoT - Lab1 e Lab 2`` | Estamos de volta com IoT: Conhecendo o com Node-red e o protocolo MQTT | ``desafios 1, 2, 3, 4 e 5`` |
 | ``IoT - Lab3`` | Comunicação serial entre Arduino e o Node-RED | ``desafios 1, 2 e 3`` |
 | ``IA - Lab1`` | Intro IA: Dados - Processamento e Visualização | ``desafios 1, 2, 3 e 4`` |
-| ``IA - Lab2 e lab3 `` | ML: Aprendizado supervisionado - Classificação e Regressão | ``lab2 - Desafio 5`` <br> ``lab3 - Desafio 5``<br> ``lab4 - Desafio 2`` <br> ``lab5 - kfold regressão`` |
+| ``IA - Lab2 até lab5 `` | ML: Aprendizado supervisionado - Classificação e Regressão | ``lab2 - Desafio 5`` <br> ``lab3 - Desafio 5``<br> ``lab4 - Desafio 2`` <br> ``lab5 - kfold regressão`` |
 | ``IA - Lab6 e Lab7 ``| DL: redes neurais e Perceptron e MLP | ... |
 | ``IA - lab8, lab9``| DL: CNNs e transfer learning | ... |
 | ...| ... | ... |
