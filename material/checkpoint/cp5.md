@@ -1,3 +1,3 @@
 # CHECKPOINT 5
 
-Em construção....
+4SIR - Avaliação presencial individual dia 5/10
