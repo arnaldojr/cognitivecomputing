@@ -2,7 +2,7 @@
 
 | 4SIA<br>(4Aulas) | 4SIS<br>(4Aulas) | CONTEÚDO | LABORATÓRIO | OBSERVAÇÃO | FERIADOS |
 |:---:|:---:|:---:|:---:|:---:|:---:|
-| 16/10 | 19/10 |  |  | |  |
+| 16/10 | 19/10 | DL: CNNs e transfer learning | lab8, lab9 |  |  |
 | 23/10 | 26/10 | Semana NEXT | lab10  | Semana NEXT | 28/10 (sabado) - NEXT |
 | 30/10 | <s>02/11</s> | AVALIAÇÃO EM AULA CP5 (grupo)<br>CP5 - Machine learning e Deep Learning. | AVALIAÇÃO EM AULA CP5  | Entrega - CP5 | 02/11 (quinta-feira) - Finados |
 | 06/11 | 09/11 | Data final para entrega das atividades "Desafios" de AVALIAÇÃO CP6 (individual)<br>CP6 - É a méia ponderada das atividades "Desafios" lançadas ao longo do semestre. |  | NOTA CP6 |  |
