@@ -95,12 +95,13 @@ nav:
   - Agenda: agenda/agenda.md
   - CheckPoint:
     - Orientações gerais: checkpoint/index.md
-    - CheckPoint 5 - Em construção: checkpoint/cp5.md
-    - CheckPoint 6 - DESAFIOS: checkpoint/cp6.md    
+    - CheckPoint 1: checkpoint/cp1.md
+    # - CheckPoint 5 - Em construção: checkpoint/cp5.md
+    # - CheckPoint 6 - DESAFIOS: checkpoint/cp6.md    
 
   - Introdução:
+    - Processamento Digital de Imagens: aulas/PDI/intro/index.md 
     - IA: aulas/IA/intro/index.md
-    - Processamento Digital de Imagens: PDI/intro/index.md 
     - IoT e Sistemas Embarcados:
       - Introdução: aulas/iot/intro/index.md
       - Comece por aqui: aulas/iot/intro/introarduino.md
@@ -115,18 +116,6 @@ nav:
         - Interrupção de pino: aulas/iot/ex5/index.md
         - Comunicação Serial: aulas/iot/ex6/index.md  
   - Laboratórios:
-    - IA:
-      - Lab01 - Dataframe: aulas/IA/lab01/dataframe.ipynb 
-      - Lab02 - Aprendizado Supervisionado - Classificação: aulas/IA/lab02/classificador-knn.ipynb
-      - Lab03 - Aprendizado Supervisionado - Regressão: aulas/IA/lab03/regressao.ipynb
-      - Lab04 - Dicas de pre processamento: aulas/IA/lab04/dicasDePreprocessamento.ipynb    
-      - Lab05 - Validação cruzada: aulas/IA/lab05/validacaocruzada.ipynb
-      - Lab06 - Redes Neurais - Percepton : aulas/IA/lab06/rna.ipynb
-      - Lab07 - Redes Neurais - MLP: aulas/IA/lab07/mlp.ipynb
-      - BATALHA DAS REDES: aulas/IA/batalharedes/batalha_das_redes.ipynb
-      - Lab08 - Redes Neurais - CNN: aulas/IA/lab08/cnn.ipynb
-      - Lab9 - Redes Neurais - Transfer learning: aulas/IA/lab09/transferlearning.ipynb
-      - Lab10 - Algumas dicas: aulas/IA/lab10/dicas.ipynb
     - Processamento Digital de Imagens:  
       - Lab01 - Intro PID: aulas/PDI/lab01/IntroPID.ipynb
       - Lab02 - Seguimentação por pixel: aulas/PDI/lab02/atividade2.ipynb
@@ -145,6 +134,18 @@ nav:
       - Lab15 - Event Mouse: aulas/PDI/lab15/EventMouse.ipynb
       - Lab16 - Detector dlib: aulas/PDI/lab16/dlib2.ipynb
       - Lab17 - Mediapipe: aulas/PDI/lab17/mediapipe.ipynb
+    - IA:
+      - Lab01 - Dataframe: aulas/IA/lab01/dataframe.ipynb 
+      - Lab02 - Aprendizado Supervisionado - Classificação: aulas/IA/lab02/classificador-knn.ipynb
+      - Lab03 - Aprendizado Supervisionado - Regressão: aulas/IA/lab03/regressao.ipynb
+      - Lab04 - Dicas de pre processamento: aulas/IA/lab04/dicasDePreprocessamento.ipynb    
+      - Lab05 - Validação cruzada: aulas/IA/lab05/validacaocruzada.ipynb
+      - Lab06 - Redes Neurais - Percepton : aulas/IA/lab06/rna.ipynb
+      - Lab07 - Redes Neurais - MLP: aulas/IA/lab07/mlp.ipynb
+      - BATALHA DAS REDES: aulas/IA/batalharedes/batalha_das_redes.ipynb
+      - Lab08 - Redes Neurais - CNN: aulas/IA/lab08/cnn.ipynb
+      - Lab9 - Redes Neurais - Transfer learning: aulas/IA/lab09/transferlearning.ipynb
+      - Lab10 - Algumas dicas: aulas/IA/lab10/dicas.ipynb
     - IoT:
       - Lab01 - Lab02: aulas/iot/lab5/index.md
       - Lab03: aulas/iot/lab6/index.md
