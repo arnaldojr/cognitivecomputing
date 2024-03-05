@@ -2,25 +2,25 @@
 
 ### 1º Semestre - 2024
 
-| 4SIA<br>(4Aulas) | 4SIR<br>(4Aulas) | CONTEÚDO                                                                                                                                            | LABORATÓRIO  |
-| ---------------- | ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ |
-| 06/02            | 09/02            | Aula Magna<br>Apresentação do curso, dinâmica das aulas, datas importantes (CP), lançamento CP1                                                     | lab1         |
-| 13/02            | 16/02            | Processamento de imagem digital. Segmentação por pixel, histograma e equalização de histograma                                                      | lab02, lab03 |
-| <s>20/02</s>            | 23/02            | filtos de convolução, espaço de cores e contorno                                                                                                    | lab04, lab05 |
-| 27/02            | 02/03            | transformada de hough, traking de objetos                                                                                                           | lab06, la07  |
-| 06/03            | 09/03            | Relacionamento e operações entre imagens, FFT                                                                                                       | lab08, lab09 |
-| 13/03            | 16/03            | AVALIAÇÃO EM AULA CP1<br>CP1 - Sistema de segmentação de objetos                                                                                    |              |
-| 20/03            | 23/03            | medidas aproximadas, transformada de watershed                                                                                                      | lab10, lab11 |
-| 27/03            | 30/03            | template matching, features ORB, SIFT                                                                                                               | lab12, lab13 |
-| 03/04            | <s>06/04</s>            | Haar Cascade, Event Mouse                                                                                                                           | lab14, lab15 |
-| 10/04            | 13/04            | Detector dlib                                                                                                                                       | lab16        |
-| 17/04            | 20/04            | aplicações media pipe                                                                                                                               | lab17        |
-| 24/04            | 27/04            | AVALIAÇÃO EM AULA CP2<br>CP2 - Sistema para detectar padrão                                                                                         |              |
-| <s>01/05</s>            | 04/05            | Introdução a o Arduino: como programar, IDE, protoboard, LED<br>Sensores com o Arduino: simulador, sensores digitais, bibliotecas, sensor analógico |              |
-| 08/05            | 11/05            | Comunicação do Arduino via porta serial, json                                                                                                       |              |
-| 15/05            | 18/05            | AVALIAÇÃO EM AULA CP3<br>CP3 - Controle remoto via comunicação serial (Arduino + Python)                                                            |              |
-| 22/05            | <s>25/05</s>           | 24/05 - Inicio Global Solutions                                                                                                                     |
-
+| 4SIA<br>(Segunta / Quarta-feira ) |       | 4SIR<br>(Quinta-feira) | LABORATÓRIO  | CONTEÚDO                                                                                                                                            |
+|-----------------------------------|-------|------------------------|--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
+| 05/02                             | 07/02 | 08/02                  | lab1         | Aula Magna<br>Apresentação do curso, dinâmica das aulas, datas importantes (CP), lançamento CP1                                                     |
+| 12/02                             | 14/02 | 09/02                  | lab02, lab03 | Processamento de imagem digital. Segmentação por pixel, histograma e equalização de histograma                                                      |
+| 19/02                             | 21/02 | 10/02                  | lab04, lab05 | filtos de convolução, espaço de cores e contorno                                                                                                    |
+| 26/02                             | 28/02 | 11/02                  | lab06, la07  | transformada de hough, traking de objetos                                                                                                           |
+| 04/03                             | 06/03 | 12/02                  | lab08, lab09 | Relacionamento e operações entre imagens, FFT                                                                                                       |
+| 11/03                             | 13/03 | 13/02                  |              | AVALIAÇÃO EM AULA CP1<br>CP1 - Sistema de segmentação de objetos                                                                                    |
+| 18/03                             | 20/03 | 14/02                  | lab10, lab11 | medidas aproximadas, transformada de watershed                                                                                                      |
+| 25/03                             | 27/03 | 15/02                  | lab12, lab13 | template matching, features ORB, SIFT                                                                                                               |
+| 01/04                             | 03/04 | 16/02                  | lab14, lab15 | Haar Cascade, Event Mouse                                                                                                                           |
+| 08/04                             | 10/04 | 17/02                  | lab16        | Detector dlib                                                                                                                                       |
+| 15/04                             | 17/04 | 18/02                  | lab17        | aplicações media pipe                                                                                                                               |
+| 22/04                             | 24/04 | 19/02                  |              | AVALIAÇÃO EM AULA CP2<br>CP2 - Sistema para detectar padrão                                                                                         |
+| 29/04                             | 01/05 | 20/02                  |              | Introdução a o Arduino: como programar, IDE, protoboard, LED<br>Sensores com o Arduino: simulador, sensores digitais, bibliotecas, sensor analógico |
+| 06/05                             | 08/05 | 21/02                  |              | Comunicação do Arduino via porta serial, json                                                                                                       |
+| 13/05                             | 15/05 | 22/02                  |              | AVALIAÇÃO EM AULA CP3<br>CP3 - Controle remoto via comunicação serial (Arduino + Python)                                                            |
+| 20/05                             | 22/05 | 23/02                  |              | 20/05 - Inicio Global Solutions                                                                                                                     |
+<!---
 ### 2 Semestre
 
 | 4SIA<br>(4Aulas) | 4SIS<br>(4Aulas) | CONTEÚDO | LABORATÓRIO | OBSERVAÇÃO | Feriados |
@@ -41,3 +41,7 @@
 | 30/10 | <s>02/11</s> | AVALIAÇÃO EM AULA CP5 (grupo)<br>CP5 - Machine learning e Deep Learning. | AVALIAÇÃO EM AULA CP5  | Entrega - CP5 | 02/11 (quinta-feira) - Finados |
 | 06/11 | 09/11 | Data final para entrega das atividades "Desafios" de AVALIAÇÃO CP6 (individual)<br>CP6 - É a méia ponderada das atividades "Desafios" lançadas ao longo do semestre. |  | NOTA CP6 |  |
 | <s>13/11</s> | <s>16/11</s> | Período de aplicações das Provas Semestrais |  | Provas |  |
+
+
+
+--->
