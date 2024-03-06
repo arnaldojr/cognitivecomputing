@@ -1,4 +1,4 @@
-# CHECKPOINT 2
+# CHECKPOINT 1
 
 - Leia com atenção as instruções gerais sobre checkpoint;
 - clique [aqui no link](https://classroom.github.com/a/4x4sqhyD) para criar uma cópia do repo. do CP em seu github;
