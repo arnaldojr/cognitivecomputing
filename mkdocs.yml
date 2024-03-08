@@ -5,7 +5,7 @@ site_author: Arnaldo Viana
 extra:
     materia: cognitivecomputing
     professor: Arnaldo Viana
-    ano: 2022
+    ano: 2024
 
 theme:
   feature:
@@ -116,6 +116,7 @@ nav:
         - Interrupção de pino: aulas/iot/ex5/index.md
         - Comunicação Serial: aulas/iot/ex6/index.md  
   - Laboratórios:
+    - Soluções PDI: aulas/PDI/solucoes/index.md
     - Processamento Digital de Imagens:  
       - Lab01 - Intro PID: aulas/PDI/lab01/IntroPID.ipynb
       - Lab02 - Seguimentação por pixel: aulas/PDI/lab02/atividade2.ipynb
