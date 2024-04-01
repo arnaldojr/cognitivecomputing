@@ -16,6 +16,7 @@ Um guia para vocês consultarem as soluções possíveis dos desafios propostos 
 - [Lab09 - FFT](../lab09/aula.ipynb)
 - [Lab10 - Medidas aproximadas](../lab10/sol_medidas.ipynb)
 - [Lab11 - Transformada de watershed](../lab11/watershed.ipynb)
+
 - [Lab12 - Template matching](../lab12/Template_matching.ipynb)
 - [Lab13 - Features](../lab13/Features.ipynb)
 - [Lab14 - Detector haar Cascade](../lab14/haarCascade.ipynb)
