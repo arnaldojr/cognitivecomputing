@@ -20,8 +20,8 @@ refImg=cv2.imread("admiravelmundonovo.jpg",0)
 refKP,refDesc = sift.detectAndCompute(refImg,None)
 
 # configura a captura de imagem da webcam
-# vc=cv2.VideoCapture('admiravelmundonovo.mp4')
-vc=cv2.VideoCapture(0)
+vc=cv2.VideoCapture('admiravelmundonovo.mp4')
+# vc=cv2.VideoCapture(0)
 
 # Cria um objeto BFMatcher
 bf = cv2.BFMatcher()
