@@ -23,3 +23,4 @@ Um guia para vocês consultarem as soluções possíveis dos desafios propostos 
 - [Lab15 - Event Mouse](../lab15/EventMouse.ipynb)
 - [Lab16 - Detector dlib](../lab16/dlib2.ipynb)
 - [Lab17 - Mediapipe](../lab17/mediapipe.ipynb)
+- [Lab18 - Yolo](../lab18/index.md)
