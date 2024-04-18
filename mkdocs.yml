@@ -143,7 +143,8 @@ nav:
       - Lab04 - Dicas de pre processamento: aulas/IA/lab04/dicasDePreprocessamento.ipynb    
       - Lab05 - Validação cruzada: aulas/IA/lab05/validacaocruzada.ipynb
       - Lab06 - Redes Neurais - Percepton : aulas/IA/lab06/rna.ipynb
-      - Lab07 - Redes Neurais - MLP: aulas/IA/lab07/mlp.ipynb
+      - Lab07 - Redes Neurais - TensorFlow: aulas/IA/lab07/index.md
+      - Lab07b - Redes Neurais - MLP: aulas/IA/lab07/mlp.ipynb
       - BATALHA DAS REDES: aulas/IA/batalharedes/batalha_das_redes.ipynb
       - Lab08 - Redes Neurais - CNN: aulas/IA/lab08/cnn.ipynb
       - Lab9 - Redes Neurais - Transfer learning: aulas/IA/lab09/transferlearning.ipynb
