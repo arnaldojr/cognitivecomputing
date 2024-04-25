@@ -161,13 +161,13 @@ x_train, x_test = x_train / 255.0, x_test / 255.0
 Para construir nossa rede neural, utilizaremos a classe Sequential do TensorFlow, que permite compor modelos camada por camada de maneira simples e direta. Aqui está o detalhamento de cada componente utilizado:
 
 !!! warning
-  Substitua os campos `<QUANTIDADE_NEURONIOS> `e `<FUNCAO_ATIVACAO>` nos lugares indicados para configurar o número de neurônios e as funções de ativação.
+    Substitua os campos `<QUANTIDADE_NEURONIOS> `e `<FUNCAO_ATIVACAO>` nos lugares indicados para configurar o número de neurônios e as funções de ativação.
 
 !!! tip
-  A quantidade de neurônios na `camada de saída` deve ser igual à quantidade de classes a serem preditas no MNIST, que são 10 (dígitos de 0 a 9).
+    A quantidade de neurônios na `camada de saída` deve ser igual à quantidade de classes a serem preditas no MNIST, que são 10 (dígitos de 0 a 9).
 
 !!! tip
-  Utilize a função de ativação `relu` para as camadas intermediárias, pois ajuda a resolver o problema do desaparecimento do gradiente em redes profundas. Para a camada de saída, use `softmax` para converter as saídas em probabilidades de pertencimento às classes.
+    Utilize a função de ativação `relu` para as camadas intermediárias, pois ajuda a resolver o problema do desaparecimento do gradiente em redes profundas. Para a camada de saída, use `softmax` para converter as saídas em probabilidades de pertencimento às classes.
 
 
 #### Componentes do Modelo
@@ -181,7 +181,6 @@ Para construir nossa rede neural, utilizaremos a classe Sequential do TensorFlow
 
 
 ```python
-
 # Criando o modelo MLP
 model = tf.keras.models.Sequential([
   tf.keras.layers.Flatten(input_shape=(28, 28)),
@@ -196,7 +195,7 @@ Agora, vamos compilar o modelo utilizando o `otimizador Adam` e a função de pe
 
 
 !!! warning
-  Substitua os campos `<KEY>` por valores convenientes. Para `<METRICA>` utilize `accuracy`.
+    Substitua os campos `<KEY>` por valores convenientes. Para `<METRICA>` utilize `accuracy`.
 
 
 ```python
@@ -210,7 +209,7 @@ model.compile(optimizer=<OTIMIZADOR>,
 Agora, vamos compilar o modelo passando os conjuntos de dados `x_train` e `y_train`, definindo a quantidade épocas de treinamento e ajustando um subset de 20% para validação. 
 
 !!! warning
-  Substitua os campos `<KEY>` por valores convenientes. Defina 30 épocas e 0.2 de valiçao.
+    Substitua os campos `<KEY>` por valores convenientes. Defina 30 épocas e 0.2 de valiçao.
 
 ```python
 # Treinando o modelo
@@ -237,7 +236,8 @@ df_historico[['accuracy','val_accuracy']].plot(); plt.show();
 Após o treinamento, avaliamos o modelo no conjunto de teste para verificar sua acurácia e a perda:
 
 !!! warning
-  Substitua os campos `<KEY>` por valores convenientes. 
+    Substitua os campos `<KEY>` por valores convenientes. 
+
 
 
 ```python
