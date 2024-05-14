@@ -1,6 +1,16 @@
-## Dicas na construção de redes neurais
+## Resumo sobre redes neurais
 
 A criação de redes neurais envolve muitas etapas onde devem ser consideradow diversos pontos e aspectos de complexidade do problema envolvido, tratando-se de modelos para visão computacional tivemos contato com alguns tipos de arquitetura, otimização, dados, e implementação.
+
+
+## Notebook completo 
+
+No link a seguir tem um notebook completo com sugestões de implemetação
+
+- [LINK o notebook completo](cnn_completo.ipynb)
+
+
+## Etapas de construção de redes neurais
 
 - **Arquitetura de Rede**: Escolha arquiteturas como VGG, ResNet, ou Mobilenet para aproveitar modelos pré-treinados através de fine-tuning.
 - **Ajuste Fino (Fine-Tuning)**: Utilize transferência de aprendizado para acelerar o treinamento.
@@ -8,7 +18,7 @@ A criação de redes neurais envolve muitas etapas onde devem ser consideradow d
 - **Otimização**: Otimizadores como Adam ou SGD (com momento), taxas de aprendizado ajustáveis e schedules são importantes.
 - **Regularização**: Utilize técnicas como early stopping e L2 regularization para promover a generalização.
 
-## Pipeline de Treinamento
+### Pipeline de Treinamento
 
 A criação de uma rede neural envolve um pipeline de treinamento bem definido para garantir um modelo eficaz e robusto. A seguir estão as `etapas típicas que podem ou não fazer parte` de um pipeline de treinamento:
 
