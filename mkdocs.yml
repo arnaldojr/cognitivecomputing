@@ -146,8 +146,10 @@ nav:
       - Lab07 - Redes Neurais - TensorFlow: aulas/IA/lab07/index.md
       - Lab07b - Redes Neurais - MLP: aulas/IA/lab07/mlp.ipynb
       - BATALHA DAS REDES: aulas/IA/batalharedes/batalha_das_redes.ipynb
-      - Lab08 - Redes Neurais - CNN: aulas/IA/lab08/cnn.ipynb
-      - Lab9 - Redes Neurais - Transfer learning: aulas/IA/lab09/transferlearning.ipynb
+      - Lab08 - Redes Neurais - CNN parte1: aulas/IA/lab08/cnn.ipynb
+      - Lab08 - Redes Neurais - CNN parte2: aulas/IA/lab08/cnn_drive.ipynb
+      - Lab9 - Redes Neurais - Pré-treinadas: aulas/IA/lab09/transferlearning_1.ipynb
+      - Lab9 - Redes Neurais - Transfer learning: aulas/IA/lab09/transferlearning_2.ipynb
       - Lab10 - Algumas dicas: aulas/IA/lab10/dicas.ipynb
     - IoT:
       - Lab01 - Lab02: aulas/iot/lab5/index.md
