@@ -150,7 +150,8 @@ nav:
       - Lab08 - Redes Neurais - CNN parte2: aulas/IA/lab08/cnn_drive.ipynb
       - Lab9 - Redes Neurais - Pré-treinadas: aulas/IA/lab09/transferlearning_1.ipynb
       - Lab9 - Redes Neurais - Transfer learning: aulas/IA/lab09/transferlearning_2.ipynb
-      - Lab10 - Algumas dicas: aulas/IA/lab10/dicas.ipynb
+      - Lab10 - Redes Neurais - Data Augmentation: aulas/IA/lab10/data-augmentation.ipynb
+      - Lab11 - Redes Neurais - resumo: aulas/IA/lab11/index.md
     - IoT:
       - Lab01 - Lab02: aulas/iot/lab5/index.md
       - Lab03: aulas/iot/lab6/index.md

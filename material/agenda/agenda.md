@@ -18,8 +18,8 @@
 | 22/04             | 24/04            | 25/04            | Deep Learing, lab7-IA     | Introdução ao deep learning - MLP                                                               |
 | 29/04             | 01/05            | 02/05            | lab8-IA                   | Treinamento de CNN, Aplicações em Redes Neurais pré-treinadas                                   |
 | 06/05             | 08/05            | 09/05            | lab9-IA, lab10-IA         | Aplicação de Transfer Learning                                                                  |
-| 13/05             | 15/05            | 16/05            | apresnta mini projeto CP2 | AVALIAÇÃO EM AULA CP2<br>CP2 - Apresentação Mini-projeto de Visão Computacional                 |
-| 20/05             | 22/05            | 23/05            | avaliação CP3             | AVALIAÇÃO EM AULA CP3<br>CP3 - Avaliação presencial, individual.                                |
+| 13/05             | 15/05            | 16/05            | lab9-IA p.2, lab10-IA Simulado GS |  Aplicação de redes neurais com transfer learning e libera o simulado da GS |
+| 20/05             | 22/05            | 23/05            | apresnta mini projeto CP2            | AAVALIAÇÃO EM AULA CP2<br>CP2 - Apresentação Mini-projeto de Visão Computacional     |
 | 27/05             | 29/05            | 30/05            | avaliação GS1             | 27/05 - Inicio Global Solutions                                                                 |
 
 

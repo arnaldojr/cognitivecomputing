@@ -2,6 +2,11 @@
 
 Mini Projeto de Visão Computacional aplicado.
  
+
+# ATUALIZAÇÃO DA DATA DE APRESENTAÇÃO
+
+# **CONSIDERAR A DATA DE APRESENTAÇÃO DO PROJETO DIA `23/05`.**
+
 ### Objetivo do Projeto: 
 
 Desenvolver uma aplicação prática e inovadora de visão computacional que possa ser aplicada em vídeos em tempo real. 
