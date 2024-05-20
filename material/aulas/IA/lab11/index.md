@@ -253,4 +253,66 @@ history = model.fit(train_generator,
 # Resumo do modelo
 model.summary()
 
+
 ```
+
+#### Carregando imagens de um diretório
+
+Podemos utilizar o TensorFlow para carregar e pré-processar os dados com o `image_dataset_from_directory`. 
+
+Para funcionar corretamente as imagens devem estar dispostas da seguinte forma:
+
+```sh
+ dataset_dir/
+    ├── class_1/
+    │   ├── image1.jpg
+    │   ├── image2.jpg
+    │   └── ...
+    ├── class_2/
+    │   ├── image1.jpg
+    │   ├── image2.jpg
+    │   └── ...
+    └── class_n/
+        ├── image1.jpg
+        ├── image2.jpg
+        └── ...
+
+```
+
+Aqui está um exemplo de como fazer isso:
+
+```python
+import tensorflow as tf
+from tensorflow.keras.preprocessing import image_dataset_from_directory
+
+# Define o caminho para o diretório onde as imagens estão organizadas em subpastas
+dataset_dir = "caminho/para/seu/dataset"
+
+# Carrega o dataset e divide em treino e validação
+train_dataset = image_dataset_from_directory(
+    dataset_dir,
+    validation_split=0.2,
+    subset="training",
+    seed=123,
+    image_size=(224, 224),  # Redimensiona as imagens para 224x224
+    batch_size=32
+)
+
+validation_dataset = image_dataset_from_directory(
+    dataset_dir,
+    validation_split=0.2,
+    subset="validation",
+    seed=123,
+    image_size=(224, 224),
+    batch_size=32
+)
+
+# Normaliza os valores dos pixels para o intervalo [0, 1]
+normalization_layer = tf.keras.layers.Rescaling(1./255)
+
+normalized_train_dataset = train_dataset.map(lambda x, y: (normalization_layer(x), y))
+normalized_validation_dataset = validation_dataset.map(lambda x, y: (normalization_layer(x), y))
+
+```
+
+
