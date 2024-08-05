@@ -1,6 +1,6 @@
 ## Cronograma
 
-### 1º Semestre - 2024
+<!-- ### 1º Semestre - 2024
 
 | 4SIA<br>(Segunda) | 4SIA<br>(Quarta) | 4SIR<br>(Quinta) | LABORATÓRIO               | CONTEÚDO                                                                                        |
 | ----------------- | ---------------- | ---------------- | ------------------------- | ----------------------------------------------------------------------------------------------- |
@@ -21,31 +21,26 @@
 | 13/05             | 15/05            | 16/05            | lab9-IA p.2, lab10-IA Simulado GS |  Aplicação de redes neurais com transfer learning e libera o simulado da GS |
 | 20/05             | 22/05            | 23/05            | apresnta mini projeto CP2            | AAVALIAÇÃO EM AULA CP2<br>CP2 - Apresentação Mini-projeto de Visão Computacional     |
 | 27/05             | 29/05            | 30/05            | avaliação GS1             | 27/05 - Inicio Global Solutions                                                                 |
+ -->
 
 
+### 2 Semestre - 2024
 
-<!---
-### 2 Semestre
+| Data      | 4SIA<br>(Segunta-feira ) | 4SIA<br>(Quarta-feira ) | 4SIR<br>(Quinta-feira) | LABORATÓRIO                   | CONTEÚDO                                                                              |
+|-----------|--------------------------|-------------------------|------------------------|-------------------------------|---------------------------------------------------------------------------------------|
+| semana 1  | 05/08                    | 07/08                   | 08/08                  | intro e lab1                  | Introdução à Data Science e CRISP-DM ; Visualização de Dados e Estatística Descritiva |
+| semana 2  | 12/08                    | 14/08                   | 15/08                  | Preparação e limpeza de dados | Preparação e Engenharia de Dados                                                      |
+| semana 3  | 19/08                    | 21/08                   | 22/08                  | lab 2                         | Machine Learning Supervisionado - Classificação                                       |
+| semana 4  | 26/08                    | 28/08                   | 29/08                  | lab 3                         | Machine Learning Supervisionado - Regressão                                           |
+| semana 5  | 02/09                    | 04/09                   | 05/09                  | lab 6 (novo)                  | Machine Learning Não Supervisionado                                                   |
+| semana 6  | 09/09                    | 11/09                   | 12/09                  | lab 4 e lab 5                 | Dicas e truques                                                                       |
+| semana 7  | 16/09                    | 18/09                   | 19/09                  | CP                            | Projeto Final e Apresentação                                                          |
+| semana 8  | 23/09                    | 25/09                   | 26/09                  |                               | Arduino                                                                               |
+| semana 9  | 30/09                    | 02/10                   | 03/10                  |                               | arduino                                                                               |
+| semana 10 | 07/10                    | 09/10                   | 10/10                  | CP                            | CP programaçao arduino                                                                |
+| semana 11 | 14/10                    | 16/10                   | 17/10                  |                               | IoT                                                                                   |
+| semana 12 | 21/10                    | 23/10                   | 24/10                  |                               | 26/10 - NEXT                                                                          |
+| semana 13 | 28/10                    | 30/10                   | 31/10                  |                               | IoT                                                                                   |
+| semana 14 | 04/11                    | 06/11                   | 07/11                  | CP                            | CP - Sistema IoT                                                                      |
+| semana 15 | 11/11                    | 13/11                   | 14/11                  |                               | 11 - GS                                                                               |
 
-| 4SIA<br>(4Aulas) | 4SIS<br>(4Aulas) | CONTEÚDO | LABORATÓRIO | OBSERVAÇÃO | Feriados |
-|:---:|:---:|:---:|:---:|:---:|:---:|
-| <s>31/07</s> | 03/08 | Estamos de volta com IoT: Conhecendo o com Node-red e o protocolo MQTT | lab1, lab2 | 02/08 - Retorno das aulas |  |
-| 07/08 | 10/08 | Comunicação serial entre Arduino e o Node-RED | lab3 |  |  |
-| 14/08 | 17/08 | Raspberry Pi - o que é, boot e configs iniciais; Programando os GPIO e usando outras libs  | lab4 |  |  |
-| 21/08 | 24/08 | Raspberry Pi: Montando um Webserver em Flask | lab 5 e lab6 |  |  |
-| 28/08 | 31/08 | AVALIAÇÃO EM AULA CP4 (grupo)<br>CP4 - Sistemas Embarcados e IoT | --- | AVALIAÇÃO EM AULA CP4 - 4SIR | Entrega - CP4 |
-| 04/09 | <s>07/09</s> | avaliação cp4 turma 4SIA | --- | AVALIAÇÃO EM AULA CP4 - 4SIA | 07/09 (quinta-feira) - Independência do Brasil |
-| 11/09 | 14/09 | Intro IA: Dados - Processamento e Visualização  | [lab1](aulas/IA/lab01/dataframe.ipynb) |  |  |
-| 18/09 | 21/09 | ML: Aprendizado supervisionado - Classificação e Regressão | [lab2](aulas/IA/lab02/classificador-knn.ipynb), [lab3](aulas/IA/lab03/regressao.ipynb), [lab4](aulas/IA/lab04/dicasDePreprocessamento.ipynb), [lab5](aulas/IA/lab05/validacaocruzada.ipynb) |  |  |
-| 25/09 | 28/09 | DL: redes neurais e Perceptron e MLP | lab 6, lab7, batalha das redes |  |  |
-| 02/10 | 05/10 | DL: CNNs e transfer learning | lab8, lab9 |  |  |
-| 09/10 | <s>12/10</s> | Aula estudio para desenvolvimento do projeto |  |  | 12/10 (quinta-feira) - N. Sr.a Aparecida |
-| 16/10 | 19/10 | DL: CNNs e transfer learning | lab8, lab9 |  |  |
-| 23/10 | 26/10 | Semana NEXT | lab10  | Semana NEXT | 28/10 (sabado) - NEXT |
-| 30/10 | <s>02/11</s> | AVALIAÇÃO EM AULA CP5 (grupo)<br>CP5 - Machine learning e Deep Learning. | AVALIAÇÃO EM AULA CP5  | Entrega - CP5 | 02/11 (quinta-feira) - Finados |
-| 06/11 | 09/11 | Data final para entrega das atividades "Desafios" de AVALIAÇÃO CP6 (individual)<br>CP6 - É a méia ponderada das atividades "Desafios" lançadas ao longo do semestre. |  | NOTA CP6 |  |
-| <s>13/11</s> | <s>16/11</s> | Período de aplicações das Provas Semestrais |  | Provas |  |
-
-
-
---->
