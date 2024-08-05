@@ -95,7 +95,7 @@ nav:
   - Agenda: agenda/agenda.md
   - CheckPoint:
     - Orientações gerais: checkpoint/index.md
-    - CheckPoint 2: checkpoint/cp2.md
+   # - CheckPoint 2: checkpoint/cp2.md
     # - CheckPoint 5 - Em construção: checkpoint/cp5.md
     # - CheckPoint 6 - DESAFIOS: checkpoint/cp6.md    
 
