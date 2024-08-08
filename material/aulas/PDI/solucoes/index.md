@@ -24,3 +24,7 @@ Um guia para vocês consultarem as soluções possíveis dos desafios propostos 
 - [Lab16 - Detector dlib](../lab16/dlib2.ipynb)
 - [Lab17 - Mediapipe](../lab17/mediapipe.ipynb)
 - [Lab18 - Yolo](../lab18/index.md)
+
+### GS-24
+
+- [Solução GS-24](https://colab.research.google.com/drive/1qGsO9e5hxevTHi5tJsXfBBB-pOK5Stwi?usp=sharing)
