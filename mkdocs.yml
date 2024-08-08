@@ -99,8 +99,7 @@ nav:
     # - CheckPoint 5 - Em construção: checkpoint/cp5.md
     # - CheckPoint 6 - DESAFIOS: checkpoint/cp6.md    
 
-  - Introdução:
-    - Processamento Digital de Imagens: aulas/PDI/intro/index.md 
+  - Introdução: 
     - IA: aulas/IA/intro/index.md
     - IoT e Sistemas Embarcados:
       - Introdução: aulas/iot/intro/index.md
@@ -115,9 +114,22 @@ nav:
         - Função millis: aulas/iot/ex4/index.md
         - Interrupção de pino: aulas/iot/ex5/index.md
         - Comunicação Serial: aulas/iot/ex6/index.md  
+    - Processamento Digital de Imagens: aulas/PDI/intro/index.md
   - Laboratórios:
-    - Soluções PDI: aulas/PDI/solucoes/index.md
+    - Machine Learning:
+      - Lab01 - Dataframe: aulas/IA/lab01/dataframe.ipynb 
+      - Lab02 - Aprendizado Supervisionado - Classificação: aulas/IA/lab02/classificador-knn.ipynb
+      - Lab03 - Aprendizado Supervisionado - Regressão: aulas/IA/lab03/regressao.ipynb
+      - Lab04 - Dicas de pre processamento: aulas/IA/lab04/dicasDePreprocessamento.ipynb    
+      - Lab05 - Validação cruzada: aulas/IA/lab05/validacaocruzada.ipynb
+    - IoT:
+      - Lab01 - Lab02: aulas/iot/lab5/index.md
+      - Lab03: aulas/iot/lab6/index.md
+      - Lab04: aulas/iot/lab7/index.md
+      - Lab05: aulas/iot/lab8/index.md
+      - Lab06: aulas/iot/lab9/index.md
     - Processamento Digital de Imagens:  
+      - Soluções PDI: aulas/PDI/solucoes/index.md
       - Lab01 - Intro PID: aulas/PDI/lab01/IntroPID.ipynb
       - Lab02 - Seguimentação por pixel: aulas/PDI/lab02/atividade2.ipynb
       - Lab03 - Histograma e equalização: aulas/PDI/lab03/atividade3.ipynb
@@ -136,12 +148,7 @@ nav:
       - Lab16 - Detector dlib: aulas/PDI/lab16/dlib2.ipynb
       - Lab17 - Mediapipe: aulas/PDI/lab17/mediapipe.ipynb
       - Lab18 - Yolo: aulas/PDI/lab18/index.md
-    - IA:
-      - Lab01 - Dataframe: aulas/IA/lab01/dataframe.ipynb 
-      - Lab02 - Aprendizado Supervisionado - Classificação: aulas/IA/lab02/classificador-knn.ipynb
-      - Lab03 - Aprendizado Supervisionado - Regressão: aulas/IA/lab03/regressao.ipynb
-      - Lab04 - Dicas de pre processamento: aulas/IA/lab04/dicasDePreprocessamento.ipynb    
-      - Lab05 - Validação cruzada: aulas/IA/lab05/validacaocruzada.ipynb
+    - Deep Learning:
       - Lab06 - Redes Neurais - Percepton : aulas/IA/lab06/rna.ipynb
       - Lab07 - Redes Neurais - TensorFlow: aulas/IA/lab07/index.md
       - Lab07b - Redes Neurais - MLP: aulas/IA/lab07/mlp.ipynb
@@ -152,11 +159,4 @@ nav:
       - Lab9 - Redes Neurais - Transfer learning: aulas/IA/lab09/transferlearning_2.ipynb
       - Lab10 - Redes Neurais - Data Augmentation: aulas/IA/lab10/data-augmentation.ipynb
       - Lab11 - Redes Neurais - resumo: aulas/IA/lab11/index.md
-    - IoT:
-      - Lab01 - Lab02: aulas/iot/lab5/index.md
-      - Lab03: aulas/iot/lab6/index.md
-      - Lab04: aulas/iot/lab7/index.md
-      - Lab05: aulas/iot/lab8/index.md
-      - Lab06: aulas/iot/lab9/index.md
-
     
