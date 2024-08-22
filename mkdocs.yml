@@ -119,7 +119,7 @@ nav:
     - Machine Learning:
       - Lab01 - Dataframe: aulas/IA/lab01/dataframe.ipynb 
       - Lab02 - Aprendizado Supervisionado - Classificação:
-        - lab1: aulas/IA/lab02/classificador-knn.ipynb
+        - lab1: aulas/IA/lab02/classificador_knn.ipynb
         # - lab2: aulas/IA/lab-04/aula8.ipynb
       - Lab03 - Aprendizado Supervisionado - Regressão:
         - lab1: aulas/IA/lab03/regressao.ipynb
