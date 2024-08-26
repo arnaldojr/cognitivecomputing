@@ -117,19 +117,21 @@ nav:
     - Processamento Digital de Imagens: aulas/PDI/intro/index.md
   - Laboratórios:
     - Machine Learning:
-      - Lab01 - Dataframe: aulas/IA/lab01/dataframe.ipynb 
-      - Lab02 - Aprendizado Supervisionado - Classificação:
+      - Manipulação de Dados:
+        - Dataframe: aulas/IA/lab01/dataframe.ipynb 
+        - Pré-processamento: aulas/IA/lab04/dicasDePreprocessamento.ipynb  
+      - Aprendizado Supervisionado - Classificação:
         - lab1: aulas/IA/lab02/classificador_knn.ipynb
         # - lab2: aulas/IA/lab-04/aula8.ipynb
-      - Lab03 - Aprendizado Supervisionado - Regressão:
+      - Aprendizado Supervisionado - Regressão:
         - lab1: aulas/IA/lab03/regressao.ipynb
-        - lab2: aulas/IA/lab03/preco-notebook.ipynb     
-      - Lab04 - Dicas de pre processamento: aulas/IA/lab04/dicasDePreprocessamento.ipynb    
-      - Lab05 - Validação cruzada: aulas/IA/lab05/validacaocruzada.ipynb
-      - Lab06 - Aprendizado Não Supervisionado: 
+        - lab2: aulas/IA/lab03/preco-notebook.ipynb      
+      - Validação de Modelos: aulas/IA/lab05/validacaocruzada.ipynb
+      - Aprendizado Não Supervisionado: 
         - lab1: aulas/IA/lab-01/aula5.ipynb
         - lab2: aulas/IA/lab-02/aula6.ipynb
         - lab3: aulas/IA/lab-03/aula6.ipynb
+        - PCA: aulas/IA/lab04/reducao_dimensionalidade_pca.ipynb 
         
       
     - IoT:
@@ -170,3 +172,5 @@ nav:
       - Lab10 - Redes Neurais - Data Augmentation: aulas/IA/lab10/data-augmentation.ipynb
       - Lab11 - Redes Neurais - resumo: aulas/IA/lab11/index.md
     
+
+
