@@ -129,8 +129,9 @@ nav:
       - Validação de Modelos: aulas/IA/lab05/validacaocruzada.ipynb
       - Aprendizado Não Supervisionado: 
         - lab1: aulas/IA/lab-01/aula5.ipynb
+        - lab2: aulas/IA/lab-01/aula5-parte2.ipynb
         - lab2: aulas/IA/lab-02/aula6.ipynb
-        - lab3: aulas/IA/lab-03/aula6.ipynb
+        - lab3: aulas/IA/lab-03/aula7.ipynb
         - PCA: aulas/IA/lab04/reducao_dimensionalidade_pca.ipynb 
         
       
