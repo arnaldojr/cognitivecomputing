@@ -117,7 +117,7 @@ Os **LEDs (Light Emitting Diodes)** são dispositivos semicondutores que emitem 
 ### Características e Utilização
 
 - **Polaridade**: LEDs possuem anodo (+) e catodo (-). A corrente deve fluir do anodo para o catodo; a inversão de polaridade impede a condução e pode danificar o componente.
-- **Tensão e Corrente**: Cada LED possui uma tensão direta (\( V_{LED} \)) específica, geralmente entre 1,8V e 3,3V, e uma corrente nominal (\( I_{LED} \)), tipicamente 10mA a 20mA.
+- **Tensão e Corrente**: Cada LED possui uma tensão direta ($ V_{\text{LED}} $) específica, geralmente entre 1,8V e 3,3V, e uma corrente nominal ($ I_{\text{LED}} $), tipicamente 10mA a 20mA.
 
 ### Cálculo do Resistor Limitador
 
