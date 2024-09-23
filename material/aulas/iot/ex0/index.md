@@ -1,13 +1,15 @@
 ## From Zero to Hero!! 
 
-Espero que estejam animados para mergulhar no mundo dos Sistemas Embarcados e IoT com programação em C/C++ usando o Arduino IDE. Para começar do jeito certo e com o pé direito! Pratique com essa lista de exercícios que vai ajudá-lo a dominar os conceitos básicos de C/C++, focando apenas na programação e utilizando o Monitor Serial para entrada e saída de dados, sem envolver por enquanto o hardware específico do Arduino.
+Espero que estejam animados para mergulhar no mundo dos Sistemas Embarcados e IoT com programação em C/C++ usando o Arduino. 
 
-São 10 exercícios abrangendo temas como variáveis, operações matemáticas, estruturas de controle, estruturas de repetição, funções, vetores, manipulação de strings, ponteiros, structs e alocação dinâmica de memória. 
+**Para começar do jeito certo e com o pé direito!**
 
-Esses exercícios ``VALEM NOTA!!`` e são ideais para praticar e aprimorar suas habilidades de programação, independentemente do nível de experiência.
+Pratique com essa lista de exercícios que vai ajudá-lo a dominar os conceitos básicos de C/C++, focando apenas na programação e utilizando o Monitor Serial para entrada e saída de dados, sem se preocupar com hardware Arduino, por enquanto.
+
+São exercícios abrangendo temas para praticar e aprimorar suas habilidades de programação, independentemente do nível de experiência.
 
 
-## Exercicios
+## Exercicios: Conceitos Fundamentais sem Hardware
 
 !!! exercise
     "Hello, World!" no Monitor Serial
@@ -61,8 +63,3 @@ Esses exercícios ``VALEM NOTA!!`` e são ideais para praticar e aprimorar suas 
     Crie um programa que gerencia informações de alunos, como nome, idade e notas. Utilize structs para armazenar as informações e funções para realizar operações, como adicionar um aluno, remover um aluno, calcular a média das notas e exibir as informações dos alunos no Monitor Serial.
 
 
-!!! exercise
-    Alocação dinâmica de memória
-    Desenvolva um programa que solicita ao usuário o tamanho de um vetor de números inteiros e aloca dinamicamente a memória necessária. Em seguida, receba os elementos do vetor através do Monitor Serial, calcule a soma e a média dos valores e imprima os resultados no Monitor Serial. Não esqueça de liberar a memória alocada.
-
-Agora compile tudo e mostre o funcionando para seu professor.

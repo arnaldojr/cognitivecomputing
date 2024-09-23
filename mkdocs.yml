@@ -100,11 +100,10 @@ nav:
     # - CheckPoint 6 - DESAFIOS: checkpoint/cp6.md    
 
   - Introdução: 
-    - IA: aulas/IA/intro/index.md
     - IoT e Sistemas Embarcados:
       - Introdução: aulas/iot/intro/index.md
       - Comece por aqui: aulas/iot/intro/introarduino.md
-      - Dicas rápidas: aulas/iot/intro/dicas.md 
+      - Eletronica básica: aulas/iot/intro/dicas.md 
       - Exemplos:
         - From 0 to Hero!: aulas/iot/ex0/index.md 
         - Blink led: aulas/iot/ex1/index.md
@@ -115,26 +114,8 @@ nav:
         - Interrupção de pino: aulas/iot/ex5/index.md
         - Comunicação Serial: aulas/iot/ex6/index.md  
     - Processamento Digital de Imagens: aulas/PDI/intro/index.md
-  - Laboratórios:
-    - Machine Learning:
-      - Manipulação de Dados:
-        - Dataframe: aulas/IA/lab01/dataframe.ipynb 
-        - Pré-processamento: aulas/IA/lab04/dicasDePreprocessamento.ipynb  
-      - Aprendizado Supervisionado - Classificação:
-        - lab1: aulas/IA/lab02/classificador_knn.ipynb
-        # - lab2: aulas/IA/lab-04/aula8.ipynb
-      - Aprendizado Supervisionado - Regressão:
-        - lab1: aulas/IA/lab03/regressao.ipynb
-        - lab2: aulas/IA/lab03/preco-notebook.ipynb      
-      - Validação de Modelos: aulas/IA/lab05/validacaocruzada.ipynb
-      - Aprendizado Não Supervisionado: 
-        - lab1: aulas/IA/lab-01/aula5.ipynb
-        - lab2: aulas/IA/lab-01/aula5-parte2.ipynb
-        - lab2: aulas/IA/lab-02/aula6.ipynb
-        - lab3: aulas/IA/lab-03/aula7.ipynb
-        - PCA: aulas/IA/lab04/reducao_dimensionalidade_pca.ipynb 
-        
-      
+    - IA: aulas/IA/intro/index.md
+  - Laboratórios: 
     - IoT:
       - Lab01 - Lab02: aulas/iot/lab5/index.md
       - Lab03: aulas/iot/lab6/index.md
@@ -161,6 +142,23 @@ nav:
       - Lab16 - Detector dlib: aulas/PDI/lab16/dlib2.ipynb
       - Lab17 - Mediapipe: aulas/PDI/lab17/mediapipe.ipynb
       - Lab18 - Yolo: aulas/PDI/lab18/index.md
+    - Machine Learning:
+      - Manipulação de Dados:
+        - Dataframe: aulas/IA/lab01/dataframe.ipynb 
+        - Pré-processamento: aulas/IA/lab04/dicasDePreprocessamento.ipynb  
+      - Aprendizado Supervisionado - Classificação:
+        - lab1: aulas/IA/lab02/classificador_knn.ipynb
+        # - lab2: aulas/IA/lab-04/aula8.ipynb
+      - Aprendizado Supervisionado - Regressão:
+        - lab1: aulas/IA/lab03/regressao.ipynb
+        - lab2: aulas/IA/lab03/preco-notebook.ipynb      
+      - Validação de Modelos: aulas/IA/lab05/validacaocruzada.ipynb
+      - Aprendizado Não Supervisionado: 
+        - lab1: aulas/IA/lab-01/aula5.ipynb
+        - lab2: aulas/IA/lab-01/aula5-parte2.ipynb
+        - lab2: aulas/IA/lab-02/aula6.ipynb
+        - lab3: aulas/IA/lab-03/aula7.ipynb
+        - PCA: aulas/IA/lab04/reducao_dimensionalidade_pca.ipynb 
     - Deep Learning:
       - Lab06 - Redes Neurais - Percepton : aulas/IA/lab06/rna.ipynb
       - Lab07 - Redes Neurais - TensorFlow: aulas/IA/lab07/index.md
