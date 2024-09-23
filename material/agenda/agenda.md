@@ -28,13 +28,6 @@
 
 | Data      | 4SIA<br>(Segunta-feira ) | 4SIA<br>(Quarta-feira ) | 4SIR<br>(Quinta-feira) | LABORATÓRIO                   | CONTEÚDO                                                                              |
 |-----------|--------------------------|-------------------------|------------------------|-------------------------------|---------------------------------------------------------------------------------------|
-| semana 1  | 05/08                    | 07/08                   | 08/08                  | intro e lab1                  | Introdução à Data Science e CRISP-DM ; Visualização de Dados e Estatística Descritiva |
-| semana 2  | 12/08                    | 14/08                   | 15/08                  | Preparação e limpeza de dados | Preparação e Engenharia de Dados                                                      |
-| semana 3  | 19/08                    | 21/08                   | 22/08                  | lab 2                         | Machine Learning Supervisionado - Classificação                                       |
-| semana 4  | 26/08                    | 28/08                   | 29/08                  | lab 3                         | Machine Learning Supervisionado - Regressão                                           |
-| semana 5  | 02/09                    | 04/09                   | 05/09                  | lab 6 (novo)                  | Machine Learning Não Supervisionado                                                   |
-| semana 6  | 09/09                    | 11/09                   | 12/09                  | lab 4 e lab 5                 | Dicas e truques                                                                       |
-| semana 7  | 16/09                    | 18/09                   | 19/09                  | CP                            | Projeto Final e Apresentação                                                          |
 | semana 8  | 23/09                    | 25/09                   | 26/09                  |                               | Arduino                                                                               |
 | semana 9  | 30/09                    | 02/10                   | 03/10                  |                               | arduino                                                                               |
 | semana 10 | 07/10                    | 09/10                   | 10/10                  | CP                            | CP programaçao arduino                                                                |
@@ -44,3 +37,16 @@
 | semana 14 | 04/11                    | 06/11                   | 07/11                  | CP                            | CP - Sistema IoT                                                                      |
 | semana 15 | 11/11                    | 13/11                   | 14/11                  |                               | 11 - GS                                                                               |
 
+
+
+### Já passaram...
+
+| Data      | 4SIA<br>(Segunta-feira ) | 4SIA<br>(Quarta-feira ) | 4SIR<br>(Quinta-feira) | LABORATÓRIO                   | CONTEÚDO                                                                              |
+|-----------|--------------------------|-------------------------|------------------------|-------------------------------|---------------------------------------------------------------------------------------|
+| semana 1  | 05/08                    | 07/08                   | 08/08                  | intro e lab1                  | Introdução à Data Science e CRISP-DM ; Visualização de Dados e Estatística Descritiva |
+| semana 2  | 12/08                    | 14/08                   | 15/08                  | Preparação e limpeza de dados | Preparação e Engenharia de Dados                                                      |
+| semana 3  | 19/08                    | 21/08                   | 22/08                  | lab 2                         | Machine Learning Supervisionado - Classificação                                       |
+| semana 4  | 26/08                    | 28/08                   | 29/08                  | lab 3                         | Machine Learning Supervisionado - Regressão                                           |
+| semana 5  | 02/09                    | 04/09                   | 05/09                  | lab 6 (novo)                  | Machine Learning Não Supervisionado                                                   |
+| semana 6  | 09/09                    | 11/09                   | 12/09                  | lab 4 e lab 5                 | Dicas e truques                                                                       |
+| semana 7  | 16/09                    | 18/09                   | 19/09                  | CP                            | Projeto Final e Apresentação                                                          |

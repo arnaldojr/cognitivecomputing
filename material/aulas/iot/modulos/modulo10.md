@@ -43,7 +43,7 @@ Anteriormente, aprendemos a utilizar o Monitor Serial para enviar e receber dado
 
 **Exemplo de Configuração UART:**
 
-˜˜˜cpp
+```cpp
 void setup() {
     Serial.begin(9600); // Inicializa a comunicação serial a 9600 baud
 }
@@ -55,7 +55,7 @@ void loop() {
         Serial.println(recebido);
     }
 }
-˜˜˜
+```
 
 ### 2.2 I2C (Inter-Integrated Circuit)
 
@@ -69,7 +69,7 @@ void loop() {
 
 **Exemplo de Comunicação I2C:**
 
-˜˜˜cpp
+```cpp
 #include <Wire.h>
 
 void setup() {
@@ -83,7 +83,7 @@ void loop() {
     Wire.endTransmission();
     delay(1000);
 }
-˜˜˜
+```
 
 ### 2.3 SPI (Serial Peripheral Interface)
 
@@ -97,7 +97,7 @@ void loop() {
 
 **Exemplo de Comunicação SPI:**
 
-˜˜˜cpp
+```cpp
 #include <SPI.h>
 
 void setup() {
@@ -113,7 +113,7 @@ void loop() {
     digitalWrite(10, HIGH);
     delay(1000);
 }
-˜˜˜
+```
 
 ---
 
@@ -129,7 +129,7 @@ void loop() {
 
 **Exemplo de Código para o Arduino A (Transmissor):**
 
-˜˜˜cpp
+```cpp
 void setup() {
     Serial.begin(9600);
 }
@@ -138,11 +138,11 @@ void loop() {
     Serial.println("Olá Arduino B!");
     delay(1000);
 }
-˜˜˜
+```
 
 **Exemplo de Código para o Arduino B (Receptor):**
 
-˜˜˜cpp
+```cpp
 void setup() {
     Serial.begin(9600);
 }
@@ -154,7 +154,7 @@ void loop() {
         Serial.println(mensagem);
     }
 }
-˜˜˜
+```
 
 ### 3.2 Comunicação I2C Entre Múltiplos Dispositivos Arduino
 
@@ -165,7 +165,7 @@ void loop() {
 
 **Exemplo de Código para o Arduino Mestre:**
 
-˜˜˜cpp
+```cpp
 #include <Wire.h>
 
 void setup() {
@@ -179,11 +179,11 @@ void loop() {
     Wire.endTransmission();
     delay(1000);
 }
-˜˜˜
+```
 
 **Exemplo de Código para o Arduino Escravo:**
 
-˜˜˜cpp
+```cpp
 #include <Wire.h>
 
 void setup() {
@@ -203,7 +203,7 @@ void receiveEvent(int bytes) {
     }
     Serial.println();
 }
-˜˜˜
+```
 
 ---
 
@@ -215,7 +215,7 @@ A biblioteca `SoftwareSerial` permite criar portas seriais adicionais em pinos d
 
 **Exemplo de Uso:**
 
-˜˜˜cpp
+```cpp
 #include <SoftwareSerial.h>
 
 // Define os pinos RX e TX para a SoftwareSerial
@@ -239,7 +239,7 @@ void loop() {
         meuSerial.print(c);
     }
 }
-˜˜˜
+```
 
 **Explicação:**
 
@@ -257,10 +257,10 @@ Para uma comunicação eficiente, é importante definir um protocolo de formata�
 
 **Exemplo de Dados Delimitados por Vírgulas:**
 
-˜˜˜cpp
+```cpp
 String dados = "23.5,47.8,15.2"; // Temperatura, Umidade, Pressão
 Serial.println(dados);
-˜˜˜
+```
 
 ### 5.2 Parsing de Dados Recebidos
 
@@ -268,7 +268,7 @@ No lado receptor, os dados podem ser divididos e convertidos para os tipos aprop
 
 **Exemplo de Parsing:**
 
-˜˜˜cpp
+```cpp
 void setup() {
     Serial.begin(9600);
 }
@@ -291,7 +291,7 @@ void loop() {
         Serial.println(pressao);
     }
 }
-˜˜˜
+```
 
 **Explicação:**
 
@@ -308,7 +308,7 @@ O Arduino pode se comunicar com o computador através da porta USB utilizando a 
 
 **Exemplo de Envio de Dados para o Computador:**
 
-˜˜˜cpp
+```cpp
 void setup() {
     Serial.begin(9600);
 }
@@ -317,7 +317,7 @@ void loop() {
     Serial.println("Dados do Arduino");
     delay(1000);
 }
-˜˜˜
+```
 
 ### 6.2 Comunicação entre Arduino e Módulos Bluetooth
 
@@ -325,7 +325,7 @@ Utilizando módulos como o HC-05, o Arduino pode se comunicar sem fio com dispos
 
 **Exemplo de Configuração com `SoftwareSerial`:**
 
-˜˜˜cpp
+```cpp
 #include <SoftwareSerial.h>
 
 SoftwareSerial bluetooth(10, 11); // RX, TX
@@ -348,7 +348,7 @@ void loop() {
         bluetooth.print(c);
     }
 }
-˜˜˜
+```
 
 **Explicação:**
 
@@ -361,7 +361,7 @@ void loop() {
 
 ### 7.1 Comunicação Serial Entre Dois Arduinos Usando I2C
 
-˜˜˜cpp
+```cpp
 // Código para o Arduino Mestre
 #include <Wire.h>
 
@@ -376,9 +376,9 @@ void loop() {
     Wire.endTransmission();
     delay(1000);
 }
-˜˜˜
+```
 
-˜˜˜cpp
+```cpp
 // Código para o Arduino Escravo
 #include <Wire.h>
 
@@ -399,7 +399,7 @@ void receiveEvent(int bytes) {
     }
     Serial.println();
 }
-˜˜˜
+```
 
 **Explicação:**
 
@@ -408,7 +408,7 @@ void receiveEvent(int bytes) {
 
 ### 7.2 Utilizando `SoftwareSerial` para Comunicação com um Módulo Bluetooth
 
-˜˜˜cpp
+```cpp
 #include <SoftwareSerial.h>
 
 SoftwareSerial bluetooth(10, 11); // RX, TX
@@ -431,7 +431,7 @@ void loop() {
         bluetooth.print(c);
     }
 }
-˜˜˜
+```
 
 **Explicação:**
 
@@ -439,7 +439,7 @@ void loop() {
 
 ### 7.3 Comunicação Serial com Parsing de Dados Delimitados
 
-˜˜˜cpp
+```cpp
 void setup() {
     Serial.begin(9600);
     Serial.println("Envie dados no formato: temperatura,umidade,pressao");
@@ -467,7 +467,7 @@ void loop() {
         }
     }
 }
-˜˜˜
+```
 
 **Explicação:**
 
@@ -489,7 +489,7 @@ void loop() {
 
 - **Exemplo de Código:**
 
-˜˜˜cpp
+```cpp
 const int ledPin = 13;
 
 void setup() {
@@ -514,7 +514,7 @@ void loop() {
         }
     }
 }
-˜˜˜
+```
 
 ### Exercício 2: Comunicação Serial com Arduino e Módulo Bluetooth para Controle de Servo
 
@@ -526,7 +526,7 @@ void loop() {
 
 - **Exemplo de Código:**
 
-˜˜˜cpp
+```cpp
 #include <SoftwareSerial.h>
 #include <Servo.h>
 
@@ -565,7 +565,7 @@ void loop() {
         }
     }
 }
-˜˜˜
+```
 
 ### Exercício 3: Comunicação Serial com Parsing de Dados para Monitoramento de Sensores
 
@@ -577,7 +577,7 @@ void loop() {
 
 - **Exemplo de Código:**
 
-˜˜˜cpp
+```cpp
 #include <ArduinoJson.h>
 
 void setup() {
@@ -604,7 +604,7 @@ void loop() {
     
     delay(1000);
 }
-˜˜˜
+```
 
 **Explicação:**
 

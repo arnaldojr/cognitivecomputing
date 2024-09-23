@@ -38,19 +38,19 @@ Para definir uma função em Arduino, você especifica o tipo de retorno, o nome
 
 **Sintaxe:**
 
-~~~
+```
 tipo_retorno nome_funcao(tipo_parametro1 param1, tipo_parametro2 param2, ...) {
     // Corpo da função
 }
-~~~
+```
 
 **Exemplo:**
 
-~~~cpp
+```cpp
 void saudacao() {
     Serial.println("Bem-vindo ao curso de Arduino!");
 }
-~~~
+```
 
 ### 2.2 Chamando Funções
 
@@ -58,7 +58,7 @@ Após definir uma função, você pode chamá-la em qualquer parte do seu códig
 
 **Exemplo de Chamada:**
 
-~~~cpp
+```cpp
 void setup() {
     Serial.begin(9600);
     saudacao(); // Chamada da função saudacao
@@ -67,7 +67,7 @@ void setup() {
 void loop() {
     // Código do loop
 }
-~~~
+```
 
 **Explicação:**
 
@@ -84,15 +84,15 @@ Parâmetros permitem que você passe informações para as funções, tornando-a
 
 **Sintaxe:**
 
-~~~
+```
 void nome_funcao(tipo_parametro1 param1, tipo_parametro2 param2) {
     // Corpo da função
 }
-~~~
+```
 
 **Exemplo:**
 
-~~~cpp
+```cpp
 void imprimirMensagem(String mensagem) {
     Serial.println(mensagem);
 }
@@ -105,7 +105,7 @@ void setup() {
 void loop() {
     // Código do loop
 }
-~~~
+```
 
 **Explicação:**
 
@@ -118,16 +118,16 @@ Funções podem retornar valores que podem ser utilizados em outras partes do pr
 
 **Sintaxe:**
 
-~~~
+```
 tipo_retorno nome_funcao(tipo_parametro1 param1, tipo_parametro2 param2) {
     // Corpo da função
     return valor;
 }
-~~~
+```
 
 **Exemplo:**
 
-~~~cpp
+```cpp
 int soma(int a, int b) {
     return a + b;
 }
@@ -142,7 +142,7 @@ void setup() {
 void loop() {
     // Código do loop
 }
-~~~
+```
 
 **Explicação:**
 
@@ -159,7 +159,7 @@ Variáveis declaradas dentro de uma função são chamadas de variáveis locais 
 
 **Exemplo:**
 
-~~~cpp
+```cpp
 void setup() {
     Serial.begin(9600);
     int numero = 10; // Variável local
@@ -169,7 +169,7 @@ void setup() {
 void loop() {
     // Não há código no loop
 }
-~~~
+```
 
 **Explicação:**
 
@@ -182,7 +182,7 @@ Variáveis declaradas fora de todas as funções são chamadas de variáveis glo
 
 **Exemplo:**
 
-~~~cpp
+```cpp
 int contador = 0; // Variável global
 
 void setup() {
@@ -195,7 +195,7 @@ void loop() {
     Serial.println(contador);
     delay(1000);
 }
-~~~
+```
 
 **Explicação:**
 
@@ -214,7 +214,7 @@ Modularizar significa dividir o código em módulos ou funções menores que rea
 
 **Exemplo 1: Separar Cálculo da Impressão**
 
-~~~cpp
+```cpp
 int calcularSoma(int a, int b) {
     return a + b;
 }
@@ -237,7 +237,7 @@ void setup() {
 void loop() {
     // Não há código no loop
 }
-~~~
+```
 
 **Explicação:**
 
@@ -247,7 +247,7 @@ void loop() {
 
 **Exemplo 2: Controle de LEDs com Funções**
 
-~~~cpp
+```cpp
 const int ledVerde = 9;
 const int ledVermelho = 10;
 
@@ -280,7 +280,7 @@ void loop() {
     delay(1000);
     desligarLedVermelho();
 }
-~~~
+```
 
 **Explicação:**
 
@@ -293,7 +293,7 @@ void loop() {
 
 ### 6.1 Função para Calcular Fatorial
 
-~~~cpp
+```cpp
 long calcularFatorial(int numero) {
     if (numero < 0) return -1; // Retorna -1 para números negativos
     long fatorial = 1;
@@ -320,7 +320,7 @@ void setup() {
 void loop() {
     // Não há código no loop
 }
-~~~
+```
 
 **Explicação:**
 
@@ -330,7 +330,7 @@ void loop() {
 
 ### 6.2 Função para Verificar Palíndromo
 
-~~~cpp
+```cpp
 bool ehPalindromo(String palavra) {
     int inicio = 0;
     int fim = palavra.length() - 1;
@@ -357,7 +357,7 @@ void setup() {
 void loop() {
     // Não há código no loop
 }
-~~~
+```
 
 **Explicação:**
 
@@ -367,7 +367,7 @@ void loop() {
 
 ### 6.3 Função para Converter Celsius em Fahrenheit
 
-~~~cpp
+```cpp
 float celsiusParaFahrenheit(float celsius) {
     return (celsius * 9.0 / 5.0) + 32.0;
 }
@@ -385,7 +385,7 @@ void setup() {
 void loop() {
     // Não há código no loop
 }
-~~~
+```
 
 **Explicação:**
 
@@ -404,7 +404,7 @@ void loop() {
   
   - Utilize uma função que recebe três parâmetros e retorna a média.
   
-  ~~~cpp
+  ```cpp
   float calcularMedia(float a, float b, float c) {
       return (a + b + c) / 3.0;
   }
@@ -422,7 +422,7 @@ void loop() {
   void loop() {
       // Não há código no loop
   }
-  ~~~
+  ```
 
 ### Exercício 2: Função para Determinar o Maior Número
 
@@ -430,7 +430,7 @@ void loop() {
 
 - **Exemplo de Código:**
   
-  ~~~cpp
+  ```cpp
   int encontrarMaior(int a, int b) {
       if (a > b) {
           return a;
@@ -451,7 +451,7 @@ void loop() {
   void loop() {
       // Não há código no loop
   }
-  ~~~
+  ```
 
 ### Exercício 3: Função para Verificar Número Par ou Ímpar
 
@@ -459,7 +459,7 @@ void loop() {
 
 - **Exemplo de Código:**
   
-  ~~~cpp
+  ```cpp
   bool ehPar(int numero) {
       return (numero % 2 == 0);
   }
@@ -477,7 +477,7 @@ void loop() {
   void loop() {
       // Não há código no loop
   }
-  ~~~
+  ```
 
 ---
 
@@ -489,7 +489,7 @@ A recursão ocorre quando uma função chama a si mesma para resolver um problem
 
 **Exemplo de Função Recursiva para Calcular Fatorial:**
 
-~~~cpp
+```cpp
 long fatorialRecursivo(int numero) {
     if (numero <= 1) {
         return 1;
@@ -511,7 +511,7 @@ void setup() {
 void loop() {
     // Não há código no loop
 }
-~~~
+```
 
 **Explicação:**
 
@@ -524,7 +524,7 @@ Funções inline são sugestões ao compilador para inserir o corpo da função 
 
 **Exemplo:**
 
-~~~cpp
+```cpp
 inline int quadrado(int x) {
     return x * x;
 }
@@ -542,7 +542,7 @@ void setup() {
 void loop() {
     // Não há código no loop
 }
-~~~
+```
 
 **Explicação:**
 
@@ -554,7 +554,7 @@ Sobrecarga permite definir múltiplas funções com o mesmo nome, mas com difere
 
 **Exemplo:**
 
-~~~cpp
+```cpp
 int soma(int a, int b) {
     return a + b;
 }
@@ -574,56 +574,10 @@ void setup() {
 void loop() {
     // Não há código no loop
 }
-~~~
+```
 
 **Explicação:**
 
 - Duas funções `soma` são definidas, uma para inteiros e outra para floats.
 - O compilador decide qual função chamar com base nos argumentos fornecidos.
 
----
-
-## 9. Recursos Adicionais
-
-- **Documentação Oficial do Arduino:**
-  
-  - [Funções em C/C++](https://www.cplusplus.com/doc/tutorial/functions/)
-  - [Referência de Funções](https://www.arduino.cc/reference/en/)
-
-- **Tutoriais e Guias:**
-  
-  - [Introdução às Funções em C++](https://www.tutorialspoint.com/cplusplus/cpp_functions.htm)
-  - [Modularização de Código em Arduino](https://www.geeksforgeeks.org/modular-programming-in-c/)
-
-- **Vídeos Educacionais:**
-  
-  - [Funções em C++ para Arduino](https://www.youtube.com/watch?v=HcLqeGE8-gA)
-  - [Entendendo Modularização de Código](https://www.youtube.com/watch?v=2Lz0VOltlhU)
-
----
-
-## 10. Conclusão do Módulo
-
-Neste módulo, você aprendeu:
-
-- Como definir e chamar funções em Arduino.
-- A importância de parâmetros e valores de retorno para criar funções flexíveis.
-- Diferença entre variáveis locais e globais e o impacto no escopo.
-- Como modularizar o código para melhorar a organização e reutilização.
-- Praticou com exemplos e exercícios que reforçam o entendimento das funções e modularização.
-
-Você está agora preparado para avançar para o próximo módulo, onde exploraremos arrays e manipulação de dados para lidar com coleções de informações de maneira eficiente.
-
----
-
-## 11. Próximos Passos
-
-- **Revisar o conteúdo deste módulo e certificar-se de que compreendeu os conceitos apresentados.**
-- **Completar os exercícios propostos para consolidar o aprendizado.**
-- **Preparar-se para o Módulo 5: Arrays e Manipulação de Dados.**
-
-Se tiver dúvidas ou precisar de assistência, não hesite em procurar recursos adicionais ou participar de comunidades de aprendizagem para obter suporte.
-
----
-
-**Bom trabalho e continue assim!**

@@ -102,8 +102,9 @@ nav:
   - Introdução: 
     - IoT e Sistemas Embarcados:
       - Introdução: aulas/iot/intro/index.md
-      - Comece por aqui: aulas/iot/intro/introarduino.md
       - Eletronica básica: aulas/iot/intro/dicas.md 
+      - Programação Arduino: aulas/iot/modulos/modulos.md 
+      - Sistemas Embarcados: aulas/iot/intro/introarduino.md
       - Exemplos:
         - From 0 to Hero!: aulas/iot/ex0/index.md 
         - Blink led: aulas/iot/ex1/index.md
