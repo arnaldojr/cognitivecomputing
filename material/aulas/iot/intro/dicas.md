@@ -18,9 +18,9 @@ A eletrônica é o ramo da física que estuda o fluxo de elétrons em materiais 
 
 A relação entre tensão, corrente e resistência é dada pela Lei de Ohm:
 
-$$
-V = R \times I
-$$
+  $$
+  V = R \times I
+  $$
 
 Onde:
 
@@ -123,23 +123,25 @@ Os **LEDs (Light Emitting Diodes)** são dispositivos semicondutores que emitem 
 
 Para limitar a corrente e proteger o LED, calcula-se o resistor em série:
 
-$$
-R = \frac{V_{fonte} - V_{LED}}{I_{LED}}
-$$
+  $$
+  R = \frac{V_{fonte} - V_{LED}}{I_{LED}}
+  $$
 
 Onde:
 
-- $V_{\text{fonte}}$: Tensão da fonte de alimentação.
-- $V_{\text{LED}}$: Queda de tensão no LED.
-- $I_{\text{LED}}$: Corrente desejada através do LED.
+- $ V_{\text{fonte}} $: Tensão da fonte de alimentação.
+- $ V_{\text{LED}} $: Queda de tensão no LED.
+- $ I_{\text{LED}} $: Corrente desejada através do LED.
 
-**Exemplo**: Para um LED com $V_{\text{LED}} = 2V$ alimentado por uma fonte de 5V e corrente de 15mA:
+**Exemplo**: Para um LED com $ V_{\text{LED}} = 2V $ alimentado por uma fonte de 5V e corrente de 15mA:
 
-$$
-R = \frac{5V - 2V}{15mA} = 200\ \Omega
-$$
+  $$
+  R = \frac{5V - 2V}{15mA} = 200\ \Omega
+  $$
 
-Nesse caso o valor comercial é $R = 220\ \Omega$.
+
+
+Nesse caso o valor comercial é $R = 220\ \Omega $.
 
 ### Aplicações Avançadas
 
