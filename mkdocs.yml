@@ -95,8 +95,8 @@ nav:
   - Agenda: agenda/agenda.md
   - CheckPoint:
     - Orientações gerais: checkpoint/index.md
-    - CheckPoint 4: checkpoint/cp-ml.md
-    # - CheckPoint 5 - Em construção: checkpoint/cp5.md
+    # - CheckPoint 4: checkpoint/cp-ml.md
+    - CheckPoint 5: checkpoint/cp.md
     # - CheckPoint 6 - DESAFIOS: checkpoint/cp6.md    
 
   - Introdução: 
@@ -118,11 +118,16 @@ nav:
     - IA: aulas/IA/intro/index.md
   - Laboratórios: 
     - IoT:
-      - Lab01 - Lab02: aulas/iot/lab5/index.md
-      - Lab03: aulas/iot/lab6/index.md
-      - Lab04: aulas/iot/lab7/index.md
-      - Lab05: aulas/iot/lab8/index.md
-      - Lab06: aulas/iot/lab9/index.md
+      - Lab00 : aulas/iot/ex0/solucao.md 
+      - Lab01 : aulas/iot/lab1/index.md
+      - Lab02 : aulas/iot/lab2/index.md
+      - Lab03 : aulas/iot/lab3/index.md
+      - Lab04 : aulas/iot/lab4/index.md
+      - Lab05 : aulas/iot/lab5/index.md
+      - Lab06 : aulas/iot/lab6/index.md
+      - Lab07 : aulas/iot/lab7/index.md
+      - Lab08 : aulas/iot/lab8/index.md
+      - Lab09 : aulas/iot/lab9/index.md
     - Processamento Digital de Imagens:  
       - Soluções PDI: aulas/PDI/solucoes/index.md
       - Lab01 - Intro PID: aulas/PDI/lab01/IntroPID.ipynb
