@@ -8,7 +8,7 @@ extra:
     ano: 2024
 
 theme:
-  name: material #active-handout
+  name: active-handout
   feature:
     - content.code.copy
     - content.code.annotate 
