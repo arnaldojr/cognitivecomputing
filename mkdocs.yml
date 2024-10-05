@@ -8,10 +8,18 @@ extra:
     ano: 2024
 
 theme:
+  name: material #active-handout
   feature:
-    tabs: true
-  name: active-handout
-  #custom_dir: overrides
+    - content.code.copy
+    - content.code.annotate 
+    - content.tabs.link
+    - header.autohide
+    - navigation.sections
+    - navigation.tabs
+    - navigation.top
+    - search.highlight
+    - search.suggest
+    - toc.integrate
 
 docs_dir: material
 site_dir: docs
@@ -30,16 +38,16 @@ extra_javascript:
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
   - https://cdn.jsdelivr.net/gh/insper-education/active-handout-plugins-js@main/package/plugin-bundle.js
 
-extra:
-  ihandout_config:
+# extra:
+#   ihandout_config:
 #    counter:
 #      - question
 #      - tip
 #      - exercise
 #      - example
-    report:
-      api-base: https://devlife.insper-comp.com.br/api/offerings/1/
-      url: https://devlife.insper-comp.com.br/api/offerings/1/exercises/
+    # report:
+    #   api-base: https://devlife.insper-comp.com.br/api/offerings/1/
+    #   url: https://devlife.insper-comp.com.br/api/offerings/1/exercises/
 
 
 # Extensions / plugins
@@ -55,6 +63,13 @@ extra_css:
 
 
 markdown_extensions:
+  - attr_list
+  - md_in_html
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.snippets:
+      base_path: [!relative $config_dir]
+      check_paths: true
   - markdown.extensions.tables
   - tables
   - markdown.extensions.admonition
@@ -85,9 +100,7 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
-  - pymdownx.snippets:
-      base_path: code
-      check_paths: true
+
 
 nav:
   - Home: index.md
