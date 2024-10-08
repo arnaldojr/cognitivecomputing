@@ -9,14 +9,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v2
         with:
           python-version: 3.x
-      # pip install mkdocs-material #
+          
+      - name: Set environment variable
+        run: |
+          echo "JUPYTER_PLATFORM_DIRS=1" >> $GITHUB_ENV
+
+      # Instalar dependências
       - run: | 
           pip install -r requirements.txt
           pip install mkdocs-minify-plugin>=0.2
-       # deploy
+
+      # Deploy
       - run: |
           mkdocs gh-deploy --force
           mkdocs --version

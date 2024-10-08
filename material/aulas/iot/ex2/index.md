@@ -37,4 +37,4 @@ void loop(){
 
 * [Thinkercad online](https://www.tinkercad.com/things/7Kj0XM4gX3q-spectacular-gadzery-saddai/editel?sharecode=OQaQZ0VdZj8Wn1A6vE5bQYnCYxzP5o5q3L7rAaiYlIs)
 
-* [SimulIDE](botao_led.simu)
+<!-- * [SimulIDE](botao_led.simu) -->

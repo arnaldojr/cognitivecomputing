@@ -50,4 +50,4 @@ void interrupcaoPino2() // Função de interrupção do pino2, é executado quan
 
 * [Thinkercad online](https://www.tinkercad.com/things/9a0lWXyFgK8-marvelous-robo-woomy/editel?sharecode=5f9Jm3Bc3gKQ2YG0KrrRNRH50wzv5X8RGpDd6bq3YXM)
 
-* [SimulIDE](botao_pot_interrupt.simu)
+<!-- * [SimulIDE](botao_pot_interrupt.simu) -->

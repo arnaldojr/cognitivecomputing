@@ -51,5 +51,5 @@ void loop(){
 * [Código arduino](botao_pot_led.ino)
 
 * [Thinkercad online](https://www.tinkercad.com/things/5b1JG4Y3q3t-super-invention/editel?sharecode=dS7V_4pLzX7VRYxT_0nhTAVBccXTDZoePQuIbPnwtiQ)
-
-* [SimulIDE](botao_pot_led.simu)
+<!--  -->
+<!-- * [SimulIDE](botao_pot_led.simu) -->

@@ -52,4 +52,4 @@ void loop() {
 
 * [Thinkercad online](https://www.tinkercad.com/things/1S2zV5j5P5o-captivating-mox-duino/editel?sharecode=4vGvV8WZFFHk9q3zqYJbc_-C8oGJRKoRn7zfk1dfQdk)
 
-* [SimulIDE](botao_pot_millis.simu)
+<!-- * [SimulIDE](botao_pot_millis.simu) -->

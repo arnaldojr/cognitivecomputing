@@ -2,7 +2,7 @@
 
 Este curso básico de **Programação em Arduino** focado nos conceitos da programação C/C++.
 
-Não é necessário placa Arduino, utilize o simulador [Wokwi](www.wokwi.com) para realizar exercicios dos módulos.
+Não é necessário placa Arduino, utilize o simulador [www.wokwi.com](www.wokwi.com) para realizar exercicios dos módulos.
 
 O curso está dividido em módulos que apresentam conceitos da linguagem C/C++ e sua aplicação na programação Arduino.
 
