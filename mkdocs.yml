@@ -20,6 +20,25 @@ theme:
     - search.highlight
     - search.suggest
     - toc.integrate
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
 
 docs_dir: material
 site_dir: docs
@@ -59,8 +78,8 @@ plugins:
       execute: False
 
 extra_css:
-#  - css/termynal.css
-  - https://cdn.jsdelivr.net/gh/insper-education/active-handout-css@main/devlife.css
+  - css/termynal.css
+# - https://cdn.jsdelivr.net/gh/insper-education/active-handout-css@main/devlife.css
 
 
 markdown_extensions:
@@ -97,11 +116,11 @@ markdown_extensions:
       repo: mkdocs-material
   - pymdownx.mark
   - pymdownx.smartsymbols
+  - pymdownx.highlight
   - pymdownx.superfences
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
-
 
 nav:
   - Home: index.md
