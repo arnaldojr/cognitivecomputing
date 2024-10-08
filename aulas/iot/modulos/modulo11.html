@@ -1,0 +1,3417 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Arnaldo Viana">
+      
+      
+        <link rel="canonical" href="https://arnaldojr.github.io/cognitivecomputing/aulas/iot/modulos/modulo11.html">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.39">
+    
+    
+      
+        <title>Módulo 11: Controle de Motores e Atuadores - cognitivecomputing</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8c3ca2c6.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/insper-education/active-handout-css@main/devlife.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans+Extra+Condensed:700|Oxygen+Mono|Source+Sans+Pro:700|Source+Serif+Pro&amp;display=swap">
+<link rel="stylesheet" href="../../../assets/css/devlife.css">
+
+
+
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#modulo-11-controle-de-motores-e-atuadores" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../index.html" title="cognitivecomputing" class="md-header__button md-logo" aria-label="cognitivecomputing" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            cognitivecomputing
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Módulo 11: Controle de Motores e Atuadores
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/arnaldojr/cognitivecomputing/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    cognitivecomputing
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../index.html" title="cognitivecomputing" class="md-nav__button md-logo" aria-label="cognitivecomputing" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    cognitivecomputing
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/arnaldojr/cognitivecomputing/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    cognitivecomputing
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../instalacao/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Instalação
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../agenda/agenda.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Agenda
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    CheckPoint
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            CheckPoint
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../checkpoint/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Orientações gerais
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../checkpoint/cp.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CheckPoint 5
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Introdução
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Introdução
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    IoT e Sistemas Embarcados
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            IoT e Sistemas Embarcados
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intro/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introdução
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intro/dicas.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Eletronica básica
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="modulos.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Programação Arduino
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intro/introarduino.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sistemas Embarcados
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1_5" id="__nav_5_1_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Exemplos
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_1_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1_5">
+            <span class="md-nav__icon md-icon"></span>
+            Exemplos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ex0/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    From 0 to Hero!
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ex1/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Blink led
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ex2/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Led botão
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ex3/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Botão pot led
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ex7/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PWM
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ex4/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Função millis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ex5/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Interrupção de pino
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ex6/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Comunicação Serial
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/intro/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Processamento Digital de Imagens
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IA/intro/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Laboratórios
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Laboratórios
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    IoT
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            IoT
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ex0/solucao.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab00
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab1/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab01
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab2/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab02
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab3/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab03
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab4/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab04
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab5/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab05
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab6/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab06
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab7/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab07
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab8/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab08
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab9/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab09
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Processamento Digital de Imagens
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            Processamento Digital de Imagens
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/solucoes/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Soluções PDI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/lab01/IntroPID.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab01 - Intro PID
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/lab02/atividade2.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab02 - Seguimentação por pixel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/lab03/atividade3.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab03 - Histograma e equalização
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/lab04/Filtros_de_Convolu%C3%A7%C3%A3o.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab04 - Filtros de Convolução
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/lab05/Espa%C3%A7o-cor-contorno.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab05 - Espaço de cor e contorno
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/lab06/Transformada-Hough-morfologia.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab06 - Transformada de Hough e morfologia
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/lab07/Aula09/motion.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab07 - Traking de objetos e movimento
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/lab08/Aula4.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab08 - Relacionamento e operações entre imagens
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/lab09/aula.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab09 - FFT
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/lab10/medidas.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab10 - Medidas aproximadas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/lab11/watershed.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab11 - Transformada de watershed
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/lab12/Template_matching.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab12 - Template matching
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/lab13/Features.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab13 - Features
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/lab14/haarCascade.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab14 - Detector haar Cascade
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/lab15/EventMouse.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab15 - Event Mouse
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/lab16/dlib2.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab16 - Detector dlib
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/lab17/mediapipe.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab17 - Mediapipe
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/lab18/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab18 - Yolo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Machine Learning
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            Machine Learning
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3_1" id="__nav_6_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Manipulação de Dados
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Manipulação de Dados
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IA/lab01/dataframe.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dataframe
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IA/lab04/dicasDePreprocessamento.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pré-processamento
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3_2" id="__nav_6_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Aprendizado Supervisionado - Classificação
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Aprendizado Supervisionado - Classificação
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IA/lab02/classificador_knn.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lab1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3_3" id="__nav_6_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Aprendizado Supervisionado - Regressão
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Aprendizado Supervisionado - Regressão
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IA/lab03/regressao.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lab1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IA/lab03/preco-notebook.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lab2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IA/lab05/validacaocruzada.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Validação de Modelos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3_5" id="__nav_6_3_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Aprendizado Não Supervisionado
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            Aprendizado Não Supervisionado
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IA/lab-01/aula5.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lab1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IA/lab-01/aula5-parte2.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lab2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IA/lab-02/aula6.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lab2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IA/lab-03/aula7.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lab3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IA/lab04/reducao_dimensionalidade_pca.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PCA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Deep Learning
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_4">
+            <span class="md-nav__icon md-icon"></span>
+            Deep Learning
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IA/lab06/rna.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab06 - Redes Neurais - Percepton
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IA/lab07/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab07 - Redes Neurais - TensorFlow
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IA/lab07/mlp.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab07b - Redes Neurais - MLP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IA/batalharedes/batalha_das_redes.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BATALHA DAS REDES
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IA/lab08/cnn.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab08 - Redes Neurais - CNN parte1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IA/lab08/cnn_drive.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab08 - Redes Neurais - CNN parte2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IA/lab09/transferlearning_1.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab9 - Redes Neurais - Pré-treinadas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IA/lab09/transferlearning_2.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab9 - Redes Neurais - Transfer learning
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IA/lab10/data-augmentation.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab10 - Redes Neurais - Data Augmentation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IA/lab11/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab11 - Redes Neurais - resumo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objetivos-do-modulo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objetivos do Módulo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-introducao-a-motores-e-atuadores" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Introdução a Motores e Atuadores
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Introdução a Motores e Atuadores">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-o-que-sao-motores-e-atuadores" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 O que são Motores e Atuadores?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-tipos-comuns-de-motores-e-atuadores" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 Tipos Comuns de Motores e Atuadores
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-controle-de-motores-dc" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Controle de Motores DC
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Controle de Motores DC">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-componentes-necessarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Componentes Necessários
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-conectando-o-motor-dc-ao-arduino" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Conectando o Motor DC ao Arduino
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-exemplo-de-codigo-para-controle-de-motor-dc" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 Exemplo de Código para Controle de Motor DC
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-controle-de-servo-motors" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Controle de Servo Motors
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Controle de Servo Motors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-o-que-e-um-servo-motor" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 O que é um Servo Motor?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-conectando-um-servo-motor-ao-arduino" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Conectando um Servo Motor ao Arduino
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-exemplo-de-codigo-para-controle-de-servo-motor" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 Exemplo de Código para Controle de Servo Motor
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-controle-de-motores-de-passo" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Controle de Motores de Passo
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Controle de Motores de Passo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-o-que-e-um-motor-de-passo" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 O que é um Motor de Passo?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-conectando-um-motor-de-passo-ao-arduino" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 Conectando um Motor de Passo ao Arduino
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-exemplo-de-codigo-para-controle-de-motor-de-passo-com-uln2003" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3 Exemplo de Código para Controle de Motor de Passo com ULN2003
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-utilizando-drivers-de-motor-avancados" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Utilizando Drivers de Motor Avançados
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Utilizando Drivers de Motor Avançados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-driver-l298n" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1 Driver L298N
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-conectando-o-l298n-ao-arduino" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2 Conectando o L298N ao Arduino
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-exemplo-de-codigo-para-controle-de-dois-motores-dc-com-l298n" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3 Exemplo de Código para Controle de Dois Motores DC com L298N
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-bibliotecas-para-controle-de-motores" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Bibliotecas para Controle de Motores
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Bibliotecas para Controle de Motores">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-biblioteca-servo" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.1 Biblioteca Servo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-biblioteca-stepper" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.2 Biblioteca Stepper
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-biblioteca-adafruit-motor-shield" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.3 Biblioteca Adafruit Motor Shield
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-exemplos-praticos" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Exemplos Práticos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Exemplos Práticos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-controlando-um-servo-motor-com-inputs-do-usuario" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.1 Controlando um Servo Motor com Inputs do Usuário
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-controlando-a-velocidade-de-um-motor-dc-com-potenciometro" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.2 Controlando a Velocidade de um Motor DC com Potenciômetro
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-implementando-movimento-preciso-com-motor-de-passo" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.3 Implementando Movimento Preciso com Motor de Passo
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-exercicios-praticos" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Exercícios Práticos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Exercícios Práticos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-1-controlar-dois-motores-dc-independentes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercício 1: Controlar Dois Motores DC Independentes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-2-controlar-a-posicao-de-um-servo-com-botoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercício 2: Controlar a Posição de um Servo com Botões
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-3-controlar-um-motor-de-passo-com-potenciometro" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercício 3: Controlar um Motor de Passo com Potenciômetro
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-conceitos-importantes" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Conceitos Importantes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Conceitos Importantes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-drivers-de-motor" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.1 Drivers de Motor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-pwm-pulse-width-modulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.2 PWM (Pulse Width Modulation)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#93-controlando-direcao-e-velocidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.3 Controlando Direção e Velocidade
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#94-bibliotecas-para-facilitar-o-controle" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.4 Bibliotecas para Facilitar o Controle
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#95-boas-praticas-no-controle-de-motores" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.5 Boas Práticas no Controle de Motores
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-recursos-adicionais" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Recursos Adicionais
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-conclusao-do-modulo" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Conclusão do Módulo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-proximos-passos" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. Próximos Passos
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="modulo-11-controle-de-motores-e-atuadores">Módulo 11: Controle de Motores e Atuadores<a class="headerlink" href="#modulo-11-controle-de-motores-e-atuadores" title="Permanent link">&para;</a></h1>
+<p>Bem-vindo ao <strong>Módulo 11</strong> do curso <strong>"Programação em Arduino: Conceitos Fundamentais sem Hardware"</strong>. Neste módulo, você irá aprender a controlar diferentes tipos de motores e atuadores utilizando o Arduino. O controle eficiente de motores é essencial para uma ampla gama de aplicações, desde robótica até automação residencial.</p>
+<hr />
+<h2 id="objetivos-do-modulo">Objetivos do Módulo<a class="headerlink" href="#objetivos-do-modulo" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Compreender os diferentes tipos de motores e atuadores disponíveis para Arduino.</li>
+<li>Aprender a controlar motores DC, servos e motores de passo.</li>
+<li>Entender como utilizar drivers de motor para controlar a direção e velocidade dos motores.</li>
+<li>Implementar controle de motores utilizando sinais digitais e PWM.</li>
+<li>Utilizar bibliotecas específicas para facilitar o controle de motores e atuadores.</li>
+<li>Resolver exercícios práticos para consolidar o conhecimento sobre controle de motores e atuadores.</li>
+</ul>
+<hr />
+<h2 id="1-introducao-a-motores-e-atuadores">1. Introdução a Motores e Atuadores<a class="headerlink" href="#1-introducao-a-motores-e-atuadores" title="Permanent link">&para;</a></h2>
+<h3 id="11-o-que-sao-motores-e-atuadores">1.1 O que são Motores e Atuadores?<a class="headerlink" href="#11-o-que-sao-motores-e-atuadores" title="Permanent link">&para;</a></h3>
+<p><strong>Motores</strong> são dispositivos que convertem energia elétrica em movimento mecânico. <strong>Atuadores</strong> são dispositivos que recebem comandos elétricos para realizar uma ação física, como mover uma parte de um robô ou abrir uma válvula.</p>
+<h3 id="12-tipos-comuns-de-motores-e-atuadores">1.2 Tipos Comuns de Motores e Atuadores<a class="headerlink" href="#12-tipos-comuns-de-motores-e-atuadores" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Motor DC (Corrente Contínua):</strong> Simples de controlar, ideal para aplicações que requerem movimento contínuo.</li>
+<li><strong>Servo Motor:</strong> Permite controle preciso de posição angular, amplamente utilizado em robótica e sistemas de controle.</li>
+<li><strong>Motor de Passo:</strong> Move-se em passos discretos, permitindo controle preciso de posição e velocidade.</li>
+<li><strong>Relés:</strong> Atuadores eletromecânicos usados para controlar circuitos de alta potência com sinais de baixa potência.</li>
+<li><strong>Solenoides:</strong> Atuadores lineares que convertem energia elétrica em movimento linear.</li>
+</ul>
+<hr />
+<h2 id="2-controle-de-motores-dc">2. Controle de Motores DC<a class="headerlink" href="#2-controle-de-motores-dc" title="Permanent link">&para;</a></h2>
+<h3 id="21-componentes-necessarios">2.1 Componentes Necessários<a class="headerlink" href="#21-componentes-necessarios" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Motor DC</strong></li>
+<li><strong>Driver de Motor (por exemplo, L298N, L293D)</strong></li>
+<li><strong>Fonte de Alimentação Adequada</strong></li>
+<li><strong>Cabos de Conexão</strong></li>
+<li><strong>Arduino</strong></li>
+</ul>
+<h3 id="22-conectando-o-motor-dc-ao-arduino">2.2 Conectando o Motor DC ao Arduino<a class="headerlink" href="#22-conectando-o-motor-dc-ao-arduino" title="Permanent link">&para;</a></h3>
+<p>Os motores DC requerem um driver de motor para controlar a direção e velocidade. O driver atua como um interruptor que permite ao Arduino controlar o motor de forma segura.</p>
+<p><strong>Exemplo de Conexão com L298N:</strong></p>
+<ul>
+<li><strong>Motor DC:</strong></li>
+<li>Conecte os terminais do motor às saídas do driver (OUT1 e OUT2).</li>
+<li><strong>Driver L298N:</strong></li>
+<li><strong>IN1 e IN2:</strong> Conectados a pinos digitais do Arduino para controle de direção.</li>
+<li><strong>ENA:</strong> Conectado a um pino PWM do Arduino para controle de velocidade.</li>
+<li><strong>VCC e GND:</strong> Conectados à fonte de alimentação adequada.</li>
+<li><strong>Arduino:</strong></li>
+<li>Conecte os pinos de controle (IN1, IN2, ENA) aos pinos digitais e PWM.</li>
+</ul>
+<h3 id="23-exemplo-de-codigo-para-controle-de-motor-dc">2.3 Exemplo de Código para Controle de Motor DC<a class="headerlink" href="#23-exemplo-de-codigo-para-controle-de-motor-dc" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">// Definição dos pinos</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">IN1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">9</span><span class="p">;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">IN2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="p">;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ENA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="c1">// Configura os pinos como saída</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="n">IN1</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="n">IN2</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="n">ENA</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="p">}</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">    </span><span class="c1">// Motor girando para frente</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">IN1</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">IN2</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">    </span><span class="n">analogWrite</span><span class="p">(</span><span class="n">ENA</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">);</span><span class="w"> </span><span class="c1">// Controle de velocidade (0-255)</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">    </span><span class="c1">// Motor girando para trás</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">IN1</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">IN2</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">    </span><span class="n">analogWrite</span><span class="p">(</span><span class="n">ENA</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">);</span><span class="w"> </span><span class="c1">// Controle de velocidade (0-255)</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">    </span><span class="c1">// Motor desligado</span>
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">IN1</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">IN2</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span>
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="w">    </span><span class="n">analogWrite</span><span class="p">(</span><span class="n">ENA</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"> </span><span class="c1">// Velocidade zero</span>
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span>
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="p">}</span>
+</code></pre></div>
+<p><strong>Explicação:</strong></p>
+<ul>
+<li><strong>Direção do Motor:</strong> Controlada pelos pinos IN1 e IN2. Configurar IN1 alto e IN2 baixo faz o motor girar para frente, e vice-versa para girar para trás.</li>
+<li><strong>Velocidade do Motor:</strong> Controlada pelo pino ENA usando PWM (<code>analogWrite</code>). O valor varia de 0 (parado) a 255 (velocidade máxima).</li>
+</ul>
+<hr />
+<h2 id="3-controle-de-servo-motors">3. Controle de Servo Motors<a class="headerlink" href="#3-controle-de-servo-motors" title="Permanent link">&para;</a></h2>
+<h3 id="31-o-que-e-um-servo-motor">3.1 O que é um Servo Motor?<a class="headerlink" href="#31-o-que-e-um-servo-motor" title="Permanent link">&para;</a></h3>
+<p>Um <strong>servo motor</strong> é um motor que permite controle preciso de posição angular. É composto por um motor DC, um conjunto de engrenagens, um potenciômetro e um circuito de controle.</p>
+<h3 id="32-conectando-um-servo-motor-ao-arduino">3.2 Conectando um Servo Motor ao Arduino<a class="headerlink" href="#32-conectando-um-servo-motor-ao-arduino" title="Permanent link">&para;</a></h3>
+<p><strong>Componentes Necessários:</strong></p>
+<ul>
+<li><strong>Servo Motor</strong></li>
+<li><strong>Cabos de Conexão</strong></li>
+<li><strong>Fonte de Alimentação Adequada (se necessário)</strong></li>
+<li><strong>Arduino</strong></li>
+</ul>
+<p><strong>Conexão:</strong></p>
+<ul>
+<li><strong>VCC (Vermelho):</strong> Conectado a 5V ou a uma fonte de alimentação externa.</li>
+<li><strong>GND (Preto ou Marrom):</strong> Conectado ao GND do Arduino.</li>
+<li><strong>Sinal (Amarelo ou Branco):</strong> Conectado a um pino digital do Arduino (por exemplo, pino 9).</li>
+</ul>
+<h3 id="33-exemplo-de-codigo-para-controle-de-servo-motor">3.3 Exemplo de Código para Controle de Servo Motor<a class="headerlink" href="#33-exemplo-de-codigo-para-controle-de-servo-motor" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;Servo.h&gt;</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">Servo</span><span class="w"> </span><span class="n">meuServo</span><span class="p">;</span><span class="w"> </span><span class="c1">// Cria um objeto Servo</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">pinoServo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">9</span><span class="p">;</span><span class="w"> </span><span class="c1">// Pino conectado ao servo</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="n">meuServo</span><span class="p">.</span><span class="n">attach</span><span class="p">(</span><span class="n">pinoServo</span><span class="p">);</span><span class="w"> </span><span class="c1">// Anexa o servo ao pino especificado</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="p">}</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="c1">// Move o servo para 0 graus</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="n">meuServo</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">    </span><span class="c1">// Move o servo para 90 graus</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">    </span><span class="n">meuServo</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="mi">90</span><span class="p">);</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">    </span><span class="c1">// Move o servo para 180 graus</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="w">    </span><span class="n">meuServo</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="mi">180</span><span class="p">);</span>
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="p">}</span>
+</code></pre></div>
+<p><strong>Explicação:</strong></p>
+<ul>
+<li><strong>Biblioteca Servo:</strong> Facilita o controle de servo motors.</li>
+<li><strong>Método <code>write()</code>:</strong> Define a posição do servo em graus (0 a 180).</li>
+</ul>
+<hr />
+<h2 id="4-controle-de-motores-de-passo">4. Controle de Motores de Passo<a class="headerlink" href="#4-controle-de-motores-de-passo" title="Permanent link">&para;</a></h2>
+<h3 id="41-o-que-e-um-motor-de-passo">4.1 O que é um Motor de Passo?<a class="headerlink" href="#41-o-que-e-um-motor-de-passo" title="Permanent link">&para;</a></h3>
+<p>Um <strong>motor de passo</strong> é um motor que divide uma rotação completa em um número de passos iguais. Permite controle preciso de posição e velocidade sem a necessidade de sensores de feedback.</p>
+<h3 id="42-conectando-um-motor-de-passo-ao-arduino">4.2 Conectando um Motor de Passo ao Arduino<a class="headerlink" href="#42-conectando-um-motor-de-passo-ao-arduino" title="Permanent link">&para;</a></h3>
+<p><strong>Componentes Necessários:</strong></p>
+<ul>
+<li><strong>Motor de Passo (Bipolar ou Unipolar)</strong></li>
+<li><strong>Driver de Motor de Passo (por exemplo, A4988, ULN2003)</strong></li>
+<li><strong>Fonte de Alimentação Adequada</strong></li>
+<li><strong>Cabos de Conexão</strong></li>
+<li><strong>Arduino</strong></li>
+</ul>
+<p><strong>Conexão com ULN2003 (para motores unipolares):</strong></p>
+<ul>
+<li><strong>Motor de Passo:</strong></li>
+<li>Conecte as bobinas do motor aos terminais do driver ULN2003.</li>
+<li><strong>Driver ULN2003:</strong></li>
+<li><strong>IN1, IN2, IN3, IN4:</strong> Conectados a pinos digitais do Arduino para controle.</li>
+<li><strong>VCC e GND:</strong> Conectados à fonte de alimentação e ao GND do Arduino.</li>
+<li><strong>Arduino:</strong></li>
+<li>Conecte os pinos de controle (IN1-IN4) aos pinos digitais.</li>
+</ul>
+<h3 id="43-exemplo-de-codigo-para-controle-de-motor-de-passo-com-uln2003">4.3 Exemplo de Código para Controle de Motor de Passo com ULN2003<a class="headerlink" href="#43-exemplo-de-codigo-para-controle-de-motor-de-passo-com-uln2003" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">// Definição dos pinos</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">IN1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="p">;</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">IN2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">9</span><span class="p">;</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">IN3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">IN4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">11</span><span class="p">;</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="c1">// Sequência de passos para motor de passo</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="kt">int</span><span class="w"> </span><span class="n">passos</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="mi">4</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">    </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">},</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">    </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">},</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">    </span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">},</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">    </span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">}</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="p">};</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">    </span><span class="c1">// Configura os pinos como saída</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="n">IN1</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="n">IN2</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="n">IN3</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="n">IN4</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span>
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="p">}</span>
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="w">    </span><span class="c1">// Gira o motor para frente</span>
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="w">        </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">IN1</span><span class="p">,</span><span class="w"> </span><span class="n">passos</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]);</span>
+<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a><span class="w">        </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">IN2</span><span class="p">,</span><span class="w"> </span><span class="n">passos</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]);</span>
+<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a><span class="w">        </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">IN3</span><span class="p">,</span><span class="w"> </span><span class="n">passos</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">2</span><span class="p">]);</span>
+<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a><span class="w">        </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">IN4</span><span class="p">,</span><span class="w"> </span><span class="n">passos</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">3</span><span class="p">]);</span>
+<a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a><span class="w">        </span><span class="n">delay</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+<a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a>
+<a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a><span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+<a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a>
+<a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a><span class="w">    </span><span class="c1">// Gira o motor para trás</span>
+<a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">--</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a><span class="w">        </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">IN1</span><span class="p">,</span><span class="w"> </span><span class="n">passos</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]);</span>
+<a id="__codelineno-2-38" name="__codelineno-2-38" href="#__codelineno-2-38"></a><span class="w">        </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">IN2</span><span class="p">,</span><span class="w"> </span><span class="n">passos</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]);</span>
+<a id="__codelineno-2-39" name="__codelineno-2-39" href="#__codelineno-2-39"></a><span class="w">        </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">IN3</span><span class="p">,</span><span class="w"> </span><span class="n">passos</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">2</span><span class="p">]);</span>
+<a id="__codelineno-2-40" name="__codelineno-2-40" href="#__codelineno-2-40"></a><span class="w">        </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">IN4</span><span class="p">,</span><span class="w"> </span><span class="n">passos</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">3</span><span class="p">]);</span>
+<a id="__codelineno-2-41" name="__codelineno-2-41" href="#__codelineno-2-41"></a><span class="w">        </span><span class="n">delay</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+<a id="__codelineno-2-42" name="__codelineno-2-42" href="#__codelineno-2-42"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-2-43" name="__codelineno-2-43" href="#__codelineno-2-43"></a>
+<a id="__codelineno-2-44" name="__codelineno-2-44" href="#__codelineno-2-44"></a><span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+<a id="__codelineno-2-45" name="__codelineno-2-45" href="#__codelineno-2-45"></a><span class="p">}</span>
+</code></pre></div>
+<p><strong>Explicação:</strong></p>
+<ul>
+<li><strong>Sequência de Passos:</strong> Define a sequência de ativação dos pinos para girar o motor.</li>
+<li><strong>Controle Direcional:</strong> Alterando a ordem da sequência, o motor gira para frente ou para trás.</li>
+<li><strong>Delay:</strong> Controla a velocidade de rotação do motor.</li>
+</ul>
+<hr />
+<h2 id="5-utilizando-drivers-de-motor-avancados">5. Utilizando Drivers de Motor Avançados<a class="headerlink" href="#5-utilizando-drivers-de-motor-avancados" title="Permanent link">&para;</a></h2>
+<h3 id="51-driver-l298n">5.1 Driver L298N<a class="headerlink" href="#51-driver-l298n" title="Permanent link">&para;</a></h3>
+<p>O <strong>L298N</strong> é um driver de motor dual que permite controlar dois motores DC ou um motor de passo com facilidade.</p>
+<p><strong>Características:</strong></p>
+<ul>
+<li>Suporta motores de até 46V e 2A por canal.</li>
+<li>Permite controle de direção e velocidade.</li>
+<li>Inclui terminação de proteção e dissipação de calor.</li>
+</ul>
+<h3 id="52-conectando-o-l298n-ao-arduino">5.2 Conectando o L298N ao Arduino<a class="headerlink" href="#52-conectando-o-l298n-ao-arduino" title="Permanent link">&para;</a></h3>
+<p><strong>Componentes Necessários:</strong></p>
+<ul>
+<li><strong>Driver L298N</strong></li>
+<li><strong>Motores DC ou de Passo</strong></li>
+<li><strong>Fonte de Alimentação Adequada</strong></li>
+<li><strong>Cabos de Conexão</strong></li>
+<li><strong>Arduino</strong></li>
+</ul>
+<p><strong>Conexão:</strong></p>
+<ul>
+<li><strong>Motor 1 e Motor 2:</strong> Conectados às saídas do driver.</li>
+<li><strong>IN1, IN2, IN3, IN4:</strong> Conectados a pinos digitais do Arduino para controle de direção.</li>
+<li><strong>ENA e ENB:</strong> Conectados a pinos PWM do Arduino para controle de velocidade.</li>
+<li><strong>VCC e GND:</strong> Conectados à fonte de alimentação e ao GND do Arduino.</li>
+<li><strong>12V:</strong> Alimentação dos motores (se aplicável).</li>
+</ul>
+<h3 id="53-exemplo-de-codigo-para-controle-de-dois-motores-dc-com-l298n">5.3 Exemplo de Código para Controle de Dois Motores DC com L298N<a class="headerlink" href="#53-exemplo-de-codigo-para-controle-de-dois-motores-dc-com-l298n" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1">// Definição dos pinos para Motor 1</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">IN1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="p">;</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">IN2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">9</span><span class="p">;</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ENA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="c1">// Definição dos pinos para Motor 2</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">IN3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">11</span><span class="p">;</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">IN4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">12</span><span class="p">;</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ENB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">13</span><span class="p">;</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">    </span><span class="c1">// Configura os pinos como saída</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="n">IN1</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="n">IN2</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="n">IN3</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="n">IN4</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="n">ENA</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="n">ENB</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span>
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="p">}</span>
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="w">    </span><span class="c1">// Motor 1 para frente</span>
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">IN1</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span>
+<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">IN2</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span>
+<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a><span class="w">    </span><span class="n">analogWrite</span><span class="p">(</span><span class="n">ENA</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">);</span>
+<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>
+<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a><span class="w">    </span><span class="c1">// Motor 2 para trás</span>
+<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a><span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">IN3</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span>
+<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a><span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">IN4</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span>
+<a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a><span class="w">    </span><span class="n">analogWrite</span><span class="p">(</span><span class="n">ENB</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">);</span>
+<a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a>
+<a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a><span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span>
+<a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a>
+<a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a><span class="w">    </span><span class="c1">// Motor 1 para trás</span>
+<a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a><span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">IN1</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span>
+<a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a><span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">IN2</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span>
+<a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a><span class="w">    </span><span class="n">analogWrite</span><span class="p">(</span><span class="n">ENA</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">);</span>
+<a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a>
+<a id="__codelineno-3-39" name="__codelineno-3-39" href="#__codelineno-3-39"></a><span class="w">    </span><span class="c1">// Motor 2 para frente</span>
+<a id="__codelineno-3-40" name="__codelineno-3-40" href="#__codelineno-3-40"></a><span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">IN3</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span>
+<a id="__codelineno-3-41" name="__codelineno-3-41" href="#__codelineno-3-41"></a><span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">IN4</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span>
+<a id="__codelineno-3-42" name="__codelineno-3-42" href="#__codelineno-3-42"></a><span class="w">    </span><span class="n">analogWrite</span><span class="p">(</span><span class="n">ENB</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">);</span>
+<a id="__codelineno-3-43" name="__codelineno-3-43" href="#__codelineno-3-43"></a>
+<a id="__codelineno-3-44" name="__codelineno-3-44" href="#__codelineno-3-44"></a><span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span>
+<a id="__codelineno-3-45" name="__codelineno-3-45" href="#__codelineno-3-45"></a><span class="p">}</span>
+</code></pre></div>
+<p><strong>Explicação:</strong></p>
+<ul>
+<li><strong>Controle Dual:</strong> Permite controlar dois motores independentes, facilitando aplicações como robôs com rodas duplas.</li>
+<li><strong>Velocidade e Direção:</strong> Utiliza sinais digitais para direção e PWM para velocidade.</li>
+</ul>
+<hr />
+<h2 id="6-bibliotecas-para-controle-de-motores">6. Bibliotecas para Controle de Motores<a class="headerlink" href="#6-bibliotecas-para-controle-de-motores" title="Permanent link">&para;</a></h2>
+<h3 id="61-biblioteca-servo">6.1 Biblioteca Servo<a class="headerlink" href="#61-biblioteca-servo" title="Permanent link">&para;</a></h3>
+<p>A biblioteca <code>Servo</code> facilita o controle de servo motors, permitindo mover o servo para posições específicas com facilidade.</p>
+<p><strong>Instalação:</strong></p>
+<p>A biblioteca <code>Servo</code> geralmente vem pré-instalada no IDE do Arduino. Caso não esteja, pode ser instalada através do gerenciador de bibliotecas.</p>
+<h3 id="62-biblioteca-stepper">6.2 Biblioteca Stepper<a class="headerlink" href="#62-biblioteca-stepper" title="Permanent link">&para;</a></h3>
+<p>A biblioteca <code>Stepper</code> simplifica o controle de motores de passo, gerenciando a sequência de passos automaticamente.</p>
+<p><strong>Instalação:</strong></p>
+<p>A biblioteca <code>Stepper</code> também está incluída na IDE do Arduino. Para motores de passo mais avançados, bibliotecas como <code>AccelStepper</code> podem ser utilizadas.</p>
+<h3 id="63-biblioteca-adafruit-motor-shield">6.3 Biblioteca Adafruit Motor Shield<a class="headerlink" href="#63-biblioteca-adafruit-motor-shield" title="Permanent link">&para;</a></h3>
+<p>O <strong>Adafruit Motor Shield</strong> oferece uma interface fácil para controlar motores DC, motores de passo e servos, utilizando menos pinos do Arduino.</p>
+<p><strong>Instalação:</strong></p>
+<p>Pode ser instalada através do gerenciador de bibliotecas do Arduino:</p>
+<ol>
+<li>Abra o IDE do Arduino.</li>
+<li>Vá para <strong>Sketch</strong> &gt; <strong>Include Library</strong> &gt; <strong>Manage Libraries...</strong></li>
+<li>Procure por "Adafruit Motor Shield" e instale a biblioteca.</li>
+</ol>
+<p><strong>Exemplo de Uso com Adafruit Motor Shield:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;Wire.h&gt;</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;Adafruit_MotorShield.h&gt;</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1">// Cria o objeto do Motor Shield</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="n">Adafruit_MotorShield</span><span class="w"> </span><span class="n">AFMS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Adafruit_MotorShield</span><span class="p">();</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="c1">// Seleciona o motor DC no slot M1</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="n">Adafruit_DCMotor</span><span class="w"> </span><span class="o">*</span><span class="n">motor1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AFMS</span><span class="p">.</span><span class="n">getMotor</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">AFMS</span><span class="p">.</span><span class="n">begin</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// Inicializa o Motor Shield</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">        </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Motor Shield não encontrado.&quot;</span><span class="p">);</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="w">    </span><span class="n">motor1</span><span class="o">-&gt;</span><span class="n">setSpeed</span><span class="p">(</span><span class="mi">150</span><span class="p">);</span><span class="w"> </span><span class="c1">// Define a velocidade (0-255)</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="w">    </span><span class="n">motor1</span><span class="o">-&gt;</span><span class="n">run</span><span class="p">(</span><span class="n">FORWARD</span><span class="p">);</span><span class="w">  </span><span class="c1">// Motor gira para frente</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="p">}</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="w">    </span><span class="n">motor1</span><span class="o">-&gt;</span><span class="n">run</span><span class="p">(</span><span class="n">FORWARD</span><span class="p">);</span>
+<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span>
+<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>
+<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a><span class="w">    </span><span class="n">motor1</span><span class="o">-&gt;</span><span class="n">run</span><span class="p">(</span><span class="n">BACKWARD</span><span class="p">);</span>
+<a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a><span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span>
+<a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a>
+<a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a><span class="w">    </span><span class="n">motor1</span><span class="o">-&gt;</span><span class="n">run</span><span class="p">(</span><span class="n">RELEASE</span><span class="p">);</span>
+<a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a><span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+<a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a><span class="p">}</span>
+</code></pre></div>
+<p><strong>Explicação:</strong></p>
+<ul>
+<li><strong>Inicialização:</strong> Verifica se o Motor Shield está conectado corretamente.</li>
+<li><strong>Controle:</strong> Utiliza métodos da biblioteca para definir a velocidade e direção do motor.</li>
+</ul>
+<hr />
+<h2 id="7-exemplos-praticos">7. Exemplos Práticos<a class="headerlink" href="#7-exemplos-praticos" title="Permanent link">&para;</a></h2>
+<h3 id="71-controlando-um-servo-motor-com-inputs-do-usuario">7.1 Controlando um Servo Motor com Inputs do Usuário<a class="headerlink" href="#71-controlando-um-servo-motor-com-inputs-do-usuario" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;Servo.h&gt;</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="n">Servo</span><span class="w"> </span><span class="n">meuServo</span><span class="p">;</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">pinoServo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">9</span><span class="p">;</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">    </span><span class="n">meuServo</span><span class="p">.</span><span class="n">attach</span><span class="p">(</span><span class="n">pinoServo</span><span class="p">);</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Digite um ângulo entre 0 e 180:&quot;</span><span class="p">);</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="p">}</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Serial</span><span class="p">.</span><span class="n">available</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">angulo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Serial</span><span class="p">.</span><span class="n">parseInt</span><span class="p">();</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">angulo</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">angulo</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">180</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="w">            </span><span class="n">meuServo</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="n">angulo</span><span class="p">);</span>
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="w">            </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Servo movido para: &quot;</span><span class="p">);</span>
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="w">            </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">angulo</span><span class="p">);</span>
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="w">            </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Ângulo inválido. Tente novamente.&quot;</span><span class="p">);</span>
+<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a><span class="p">}</span>
+</code></pre></div>
+<p><strong>Explicação:</strong></p>
+<ul>
+<li><strong>Input do Usuário:</strong> Recebe um valor de ângulo via Monitor Serial e move o servo para a posição correspondente.</li>
+<li><strong>Validação:</strong> Garante que o ângulo esteja dentro do intervalo válido (0 a 180 graus).</li>
+</ul>
+<h3 id="72-controlando-a-velocidade-de-um-motor-dc-com-potenciometro">7.2 Controlando a Velocidade de um Motor DC com Potenciômetro<a class="headerlink" href="#72-controlando-a-velocidade-de-um-motor-dc-com-potenciometro" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ENA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">IN1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">9</span><span class="p">;</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">IN2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="p">;</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">pinoPot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A0</span><span class="p">;</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="n">IN1</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="n">IN2</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="n">ENA</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="p">}</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">valorPot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">analogRead</span><span class="p">(</span><span class="n">pinoPot</span><span class="p">);</span>
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">velocidade</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">map</span><span class="p">(</span><span class="n">valorPot</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1023</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="p">);</span>
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="w">    </span><span class="n">analogWrite</span><span class="p">(</span><span class="n">ENA</span><span class="p">,</span><span class="w"> </span><span class="n">velocidade</span><span class="p">);</span>
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Velocidade: &quot;</span><span class="p">);</span>
+<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">velocidade</span><span class="p">);</span>
+<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a><span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a><span class="p">}</span>
+</code></pre></div>
+<p><strong>Explicação:</strong></p>
+<ul>
+<li><strong>Controle Analógico:</strong> Utiliza um potenciômetro para ajustar a velocidade do motor DC em tempo real.</li>
+<li><strong>Mapeamento:</strong> Converte o valor analógico (0-1023) para um valor PWM (0-255).</li>
+</ul>
+<h3 id="73-implementando-movimento-preciso-com-motor-de-passo">7.3 Implementando Movimento Preciso com Motor de Passo<a class="headerlink" href="#73-implementando-movimento-preciso-com-motor-de-passo" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;Stepper.h&gt;</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="c1">// Define o número de passos por revolução do motor</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">passosPorRevolucao</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">200</span><span class="p">;</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="c1">// Inicializa a biblioteca Stepper</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="n">Stepper</span><span class="w"> </span><span class="nf">meuStepper</span><span class="p">(</span><span class="n">passosPorRevolucao</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">11</span><span class="p">);</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="w">    </span><span class="n">meuStepper</span><span class="p">.</span><span class="n">setSpeed</span><span class="p">(</span><span class="mi">60</span><span class="p">);</span><span class="w"> </span><span class="c1">// Define a velocidade (RPM)</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="p">}</span>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Giro para frente&quot;</span><span class="p">);</span>
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="w">    </span><span class="n">meuStepper</span><span class="p">.</span><span class="n">step</span><span class="p">(</span><span class="n">passosPorRevolucao</span><span class="p">);</span><span class="w"> </span><span class="c1">// Gira uma revolução</span>
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Giro para trás&quot;</span><span class="p">);</span>
+<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a><span class="w">    </span><span class="n">meuStepper</span><span class="p">.</span><span class="n">step</span><span class="p">(</span><span class="o">-</span><span class="n">passosPorRevolucao</span><span class="p">);</span><span class="w"> </span><span class="c1">// Gira uma revolução na direção oposta</span>
+<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a><span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+<a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a><span class="p">}</span>
+</code></pre></div>
+<p><strong>Explicação:</strong></p>
+<ul>
+<li><strong>Biblioteca Stepper:</strong> Facilita o controle de motores de passo, gerenciando a sequência de passos.</li>
+<li><strong>Controle Direcional:</strong> Passos positivos giram o motor para frente e passos negativos para trás.</li>
+</ul>
+<hr />
+<h2 id="8-exercicios-praticos">8. Exercícios Práticos<a class="headerlink" href="#8-exercicios-praticos" title="Permanent link">&para;</a></h2>
+<h3 id="exercicio-1-controlar-dois-motores-dc-independentes">Exercício 1: Controlar Dois Motores DC Independentes<a class="headerlink" href="#exercicio-1-controlar-dois-motores-dc-independentes" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>Tarefa:</strong> Crie um projeto que controla dois motores DC independentemente, permitindo que cada motor gire para frente ou para trás com diferentes velocidades.</p>
+</li>
+<li>
+<p><strong>Dicas:</strong></p>
+</li>
+<li>Utilize um driver de motor dual como o L298N.</li>
+<li>
+<p>Controle a direção e velocidade de cada motor separadamente.</p>
+</li>
+<li>
+<p><strong>Exemplo de Código:</strong></p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1">// Definição dos pinos para Motor 1</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">IN1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="p">;</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">IN2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">9</span><span class="p">;</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ENA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="c1">// Definição dos pinos para Motor 2</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">IN3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">11</span><span class="p">;</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">IN4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">12</span><span class="p">;</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ENB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">13</span><span class="p">;</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="w">    </span><span class="c1">// Configura os pinos como saída</span>
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="n">IN1</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span>
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="n">IN2</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span>
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="n">IN3</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span>
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="n">IN4</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span>
+<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="n">ENA</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span>
+<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a><span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="n">ENB</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span>
+<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a><span class="p">}</span>
+<a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a>
+<a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a><span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a><span class="w">    </span><span class="c1">// Motor 1 para frente com velocidade 200</span>
+<a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a><span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">IN1</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span>
+<a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a><span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">IN2</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span>
+<a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a><span class="w">    </span><span class="n">analogWrite</span><span class="p">(</span><span class="n">ENA</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">);</span>
+<a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a>
+<a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a><span class="w">    </span><span class="c1">// Motor 2 para trás com velocidade 150</span>
+<a id="__codelineno-8-28" name="__codelineno-8-28" href="#__codelineno-8-28"></a><span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">IN3</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span>
+<a id="__codelineno-8-29" name="__codelineno-8-29" href="#__codelineno-8-29"></a><span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">IN4</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span>
+<a id="__codelineno-8-30" name="__codelineno-8-30" href="#__codelineno-8-30"></a><span class="w">    </span><span class="n">analogWrite</span><span class="p">(</span><span class="n">ENB</span><span class="p">,</span><span class="w"> </span><span class="mi">150</span><span class="p">);</span>
+<a id="__codelineno-8-31" name="__codelineno-8-31" href="#__codelineno-8-31"></a>
+<a id="__codelineno-8-32" name="__codelineno-8-32" href="#__codelineno-8-32"></a><span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">3000</span><span class="p">);</span>
+<a id="__codelineno-8-33" name="__codelineno-8-33" href="#__codelineno-8-33"></a>
+<a id="__codelineno-8-34" name="__codelineno-8-34" href="#__codelineno-8-34"></a><span class="w">    </span><span class="c1">// Motor 1 para trás com velocidade 200</span>
+<a id="__codelineno-8-35" name="__codelineno-8-35" href="#__codelineno-8-35"></a><span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">IN1</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span>
+<a id="__codelineno-8-36" name="__codelineno-8-36" href="#__codelineno-8-36"></a><span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">IN2</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span>
+<a id="__codelineno-8-37" name="__codelineno-8-37" href="#__codelineno-8-37"></a><span class="w">    </span><span class="n">analogWrite</span><span class="p">(</span><span class="n">ENA</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">);</span>
+<a id="__codelineno-8-38" name="__codelineno-8-38" href="#__codelineno-8-38"></a>
+<a id="__codelineno-8-39" name="__codelineno-8-39" href="#__codelineno-8-39"></a><span class="w">    </span><span class="c1">// Motor 2 para frente com velocidade 150</span>
+<a id="__codelineno-8-40" name="__codelineno-8-40" href="#__codelineno-8-40"></a><span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">IN3</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span>
+<a id="__codelineno-8-41" name="__codelineno-8-41" href="#__codelineno-8-41"></a><span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">IN4</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span>
+<a id="__codelineno-8-42" name="__codelineno-8-42" href="#__codelineno-8-42"></a><span class="w">    </span><span class="n">analogWrite</span><span class="p">(</span><span class="n">ENB</span><span class="p">,</span><span class="w"> </span><span class="mi">150</span><span class="p">);</span>
+<a id="__codelineno-8-43" name="__codelineno-8-43" href="#__codelineno-8-43"></a>
+<a id="__codelineno-8-44" name="__codelineno-8-44" href="#__codelineno-8-44"></a><span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">3000</span><span class="p">);</span>
+<a id="__codelineno-8-45" name="__codelineno-8-45" href="#__codelineno-8-45"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="exercicio-2-controlar-a-posicao-de-um-servo-com-botoes">Exercício 2: Controlar a Posição de um Servo com Botões<a class="headerlink" href="#exercicio-2-controlar-a-posicao-de-um-servo-com-botoes" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>Tarefa:</strong> Desenvolva um sistema onde dois botões controlam a posição de um servo motor, movendo-o para a esquerda ou para a direita.</p>
+</li>
+<li>
+<p><strong>Dicas:</strong></p>
+</li>
+<li>Utilize resistores de pull-down para os botões.</li>
+<li>
+<p>Controle a posição do servo incrementando ou decrementando o ângulo.</p>
+</li>
+<li>
+<p><strong>Exemplo de Código:</strong></p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;Servo.h&gt;</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="n">Servo</span><span class="w"> </span><span class="n">meuServo</span><span class="p">;</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">pinoServo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">9</span><span class="p">;</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">botaoEsquerda</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">botaoDireita</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="kt">int</span><span class="w"> </span><span class="n">posicao</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">90</span><span class="p">;</span><span class="w"> </span><span class="c1">// Posição inicial</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="w">    </span><span class="n">meuServo</span><span class="p">.</span><span class="n">attach</span><span class="p">(</span><span class="n">pinoServo</span><span class="p">);</span>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="n">botaoEsquerda</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT_PULLUP</span><span class="p">);</span>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="n">botaoDireita</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT_PULLUP</span><span class="p">);</span>
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="w">    </span><span class="n">meuServo</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="n">posicao</span><span class="p">);</span>
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="p">}</span>
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>
+<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a><span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">digitalRead</span><span class="p">(</span><span class="n">botaoEsquerda</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">LOW</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a><span class="w">        </span><span class="n">posicao</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">posicao</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="n">posicao</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a><span class="w">        </span><span class="n">meuServo</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="n">posicao</span><span class="p">);</span>
+<a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a><span class="w">        </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Posição: &quot;</span><span class="p">);</span>
+<a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a><span class="w">        </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">posicao</span><span class="p">);</span>
+<a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a><span class="w">        </span><span class="n">delay</span><span class="p">(</span><span class="mi">200</span><span class="p">);</span><span class="w"> </span><span class="c1">// Debounce</span>
+<a id="__codelineno-9-26" name="__codelineno-9-26" href="#__codelineno-9-26"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-9-27" name="__codelineno-9-27" href="#__codelineno-9-27"></a>
+<a id="__codelineno-9-28" name="__codelineno-9-28" href="#__codelineno-9-28"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">digitalRead</span><span class="p">(</span><span class="n">botaoDireita</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">LOW</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-9-29" name="__codelineno-9-29" href="#__codelineno-9-29"></a><span class="w">        </span><span class="n">posicao</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+<a id="__codelineno-9-30" name="__codelineno-9-30" href="#__codelineno-9-30"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">posicao</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">180</span><span class="p">)</span><span class="w"> </span><span class="n">posicao</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">180</span><span class="p">;</span>
+<a id="__codelineno-9-31" name="__codelineno-9-31" href="#__codelineno-9-31"></a><span class="w">        </span><span class="n">meuServo</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="n">posicao</span><span class="p">);</span>
+<a id="__codelineno-9-32" name="__codelineno-9-32" href="#__codelineno-9-32"></a><span class="w">        </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Posição: &quot;</span><span class="p">);</span>
+<a id="__codelineno-9-33" name="__codelineno-9-33" href="#__codelineno-9-33"></a><span class="w">        </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">posicao</span><span class="p">);</span>
+<a id="__codelineno-9-34" name="__codelineno-9-34" href="#__codelineno-9-34"></a><span class="w">        </span><span class="n">delay</span><span class="p">(</span><span class="mi">200</span><span class="p">);</span><span class="w"> </span><span class="c1">// Debounce</span>
+<a id="__codelineno-9-35" name="__codelineno-9-35" href="#__codelineno-9-35"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-9-36" name="__codelineno-9-36" href="#__codelineno-9-36"></a><span class="p">}</span>
+</code></pre></div>
+<p><strong>Explicação:</strong></p>
+<ul>
+<li><strong>Botões:</strong> Dois botões conectados aos pinos 2 e 3 controlam a direção do movimento do servo.</li>
+<li><strong>Controle de Posição:</strong> Incrementa ou decrementa o ângulo do servo em 5 graus a cada pressionamento.</li>
+</ul>
+<h3 id="exercicio-3-controlar-um-motor-de-passo-com-potenciometro">Exercício 3: Controlar um Motor de Passo com Potenciômetro<a class="headerlink" href="#exercicio-3-controlar-um-motor-de-passo-com-potenciometro" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>Tarefa:</strong> Implemente um sistema onde a velocidade de um motor de passo é controlada por um potenciômetro.</p>
+</li>
+<li>
+<p><strong>Dicas:</strong></p>
+</li>
+<li>Utilize a biblioteca <code>Stepper</code> para facilitar o controle.</li>
+<li>
+<p>Mapeie a leitura do potenciômetro para a velocidade do motor.</p>
+</li>
+<li>
+<p><strong>Exemplo de Código:</strong></p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;Stepper.h&gt;</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">passosPorRevolucao</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">200</span><span class="p">;</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="n">Stepper</span><span class="w"> </span><span class="nf">meuStepper</span><span class="p">(</span><span class="n">passosPorRevolucao</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">11</span><span class="p">);</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">pinoPot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A0</span><span class="p">;</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="p">}</span>
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">valorPot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">analogRead</span><span class="p">(</span><span class="n">pinoPot</span><span class="p">);</span>
+<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">velocidade</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">map</span><span class="p">(</span><span class="n">valorPot</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1023</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">60</span><span class="p">);</span><span class="w"> </span><span class="c1">// Mapeia para 0-60 RPM</span>
+<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a><span class="w">    </span><span class="n">meuStepper</span><span class="p">.</span><span class="n">setSpeed</span><span class="p">(</span><span class="n">velocidade</span><span class="p">);</span>
+<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a><span class="w">    </span><span class="n">meuStepper</span><span class="p">.</span><span class="n">step</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span><span class="w"> </span><span class="c1">// Move 100 passos</span>
+<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a><span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Velocidade: &quot;</span><span class="p">);</span>
+<a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a><span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">velocidade</span><span class="p">);</span>
+<a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a><span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
+<a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a><span class="p">}</span>
+</code></pre></div>
+<p><strong>Explicação:</strong></p>
+<ul>
+<li><strong>Controle de Velocidade:</strong> Utiliza um potenciômetro para ajustar a velocidade do motor de passo em tempo real.</li>
+<li><strong>Mapeamento:</strong> Converte a leitura analógica (0-1023) para uma velocidade em RPM (0-60).</li>
+</ul>
+<hr />
+<h2 id="9-conceitos-importantes">9. Conceitos Importantes<a class="headerlink" href="#9-conceitos-importantes" title="Permanent link">&para;</a></h2>
+<h3 id="91-drivers-de-motor">9.1 Drivers de Motor<a class="headerlink" href="#91-drivers-de-motor" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Definição:</strong> Circuitos que permitem ao Arduino controlar motores de alta potência de forma segura.</li>
+<li><strong>Tipos Comuns:</strong> L298N, L293D, A4988, ULN2003.</li>
+<li><strong>Considerações:</strong> Escolha o driver adequado com base na corrente e tensão do motor.</li>
+</ul>
+<h3 id="92-pwm-pulse-width-modulation">9.2 PWM (Pulse Width Modulation)<a class="headerlink" href="#92-pwm-pulse-width-modulation" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Definição:</strong> Técnica de controle de velocidade de motores ajustando a largura dos pulsos de tensão.</li>
+<li><strong>Aplicação:</strong> Utilizada para controlar a velocidade de motores DC e a intensidade de LEDs.</li>
+<li><strong>Frequência:</strong> Importante para evitar ruídos e vibrações indesejadas.</li>
+</ul>
+<h3 id="93-controlando-direcao-e-velocidade">9.3 Controlando Direção e Velocidade<a class="headerlink" href="#93-controlando-direcao-e-velocidade" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Direção:</strong> Controlada através da inversão dos sinais de controle nos pinos de direção.</li>
+<li><strong>Velocidade:</strong> Controlada ajustando o valor de PWM aplicado ao driver do motor.</li>
+</ul>
+<h3 id="94-bibliotecas-para-facilitar-o-controle">9.4 Bibliotecas para Facilitar o Controle<a class="headerlink" href="#94-bibliotecas-para-facilitar-o-controle" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Servo:</strong> Simplifica o controle de servo motors.</li>
+<li><strong>Stepper:</strong> Facilita o controle de motores de passo.</li>
+<li><strong>Adafruit Motor Shield:</strong> Oferece uma interface simplificada para controlar múltiplos motores e atuadores.</li>
+</ul>
+<h3 id="95-boas-praticas-no-controle-de-motores">9.5 Boas Práticas no Controle de Motores<a class="headerlink" href="#95-boas-praticas-no-controle-de-motores" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Proteção contra Sobrecorrente:</strong> Utilize fusíveis ou circuitos de proteção para evitar danos aos componentes.</li>
+<li><strong>Alimentação Adequada:</strong> Certifique-se de que a fonte de alimentação atende às necessidades dos motores.</li>
+<li><strong>Gerenciamento de Calor:</strong> Drivers de motor podem aquecer; utilize dissipadores de calor se necessário.</li>
+<li><strong>Isolamento de Sinais:</strong> Utilize optoacopladores para isolar o Arduino dos circuitos de alta potência, se aplicável.</li>
+</ul>
+<hr />
+<h2 id="10-recursos-adicionais">10. Recursos Adicionais<a class="headerlink" href="#10-recursos-adicionais" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><strong>Documentação Oficial do Arduino:</strong></p>
+</li>
+<li>
+<p><a href="https://www.arduino.cc/en/Reference/Servo">Servo Library</a></p>
+</li>
+<li><a href="https://www.arduino.cc/en/Reference/Stepper">Stepper Library</a></li>
+<li>
+<p><a href="https://learn.adafruit.com/adafruit-motor-shield/library">Motor Shield Library</a></p>
+</li>
+<li>
+<p><strong>Tutoriais e Guias:</strong></p>
+</li>
+<li>
+<p><a href="https://www.tutorialspoint.com/arduino/arduino_dc_motor.htm">Controle de Motores DC com Arduino</a></p>
+</li>
+<li><a href="https://www.arduino.cc/en/Tutorial/Knob">Controlando Servo Motors</a></li>
+<li>
+<p><a href="https://www.arduino.cc/en/Tutorial/Stepper">Controlando Motores de Passo</a></p>
+</li>
+<li>
+<p><strong>Vídeos Educacionais:</strong></p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=V7aH7Zeo79Q">Controlando Motores DC com Arduino</a></p>
+</li>
+<li><a href="https://www.youtube.com/watch?v=3dWk6mP2f8g">Controle de Servo Motor com Arduino</a></li>
+<li><a href="https://www.youtube.com/watch?v=GjxIYy5gvYk">Motor de Passo com Arduino</a></li>
+</ul>
+<hr />
+<h2 id="11-conclusao-do-modulo">11. Conclusão do Módulo<a class="headerlink" href="#11-conclusao-do-modulo" title="Permanent link">&para;</a></h2>
+<p>Neste módulo, você aprendeu:</p>
+<ul>
+<li>Os diferentes tipos de motores e atuadores e suas aplicações.</li>
+<li>Como controlar motores DC utilizando drivers de motor e sinais PWM.</li>
+<li>Como utilizar a biblioteca <code>Servo</code> para controlar servo motors com precisão.</li>
+<li>O funcionamento e controle de motores de passo utilizando a biblioteca <code>Stepper</code>.</li>
+<li>Como utilizar drivers de motor avançados como o L298N e Adafruit Motor Shield.</li>
+<li>Conceitos fundamentais como PWM, controle direcional e velocidade.</li>
+<li>Praticou com exemplos e exercícios que reforçam o entendimento do controle de motores e atuadores.</li>
+</ul>
+<p>Você está agora preparado para avançar para o próximo módulo, onde exploraremos <strong>Sensores e Aquisição de Dados</strong>, aprofundando seu conhecimento em leitura e interpretação de dados de sensores com Arduino.</p>
+<hr />
+<h2 id="12-proximos-passos">12. Próximos Passos<a class="headerlink" href="#12-proximos-passos" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Revisar o conteúdo deste módulo e certificar-se de que compreendeu os conceitos apresentados.</strong></li>
+<li><strong>Completar os exercícios propostos para consolidar o aprendizado.</strong></li>
+<li><strong>Preparar-se para o Módulo 12: Sensores e Aquisição de Dados.</strong></li>
+</ul>
+<p>Se tiver dúvidas ou precisar de assistência, não hesite em procurar recursos adicionais ou participar de comunidades de aprendizagem para obter suporte.</p>
+<hr />
+<p><strong>Bom trabalho e continue assim!</strong></p>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 23, 2024</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.525ec568.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.0.0/js-yaml.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/gh/insper-education/active-handout-plugins-js@main/package/plugin-bundle.js"></script>
+      
+        <script src="../../../search/main.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,3229 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Arnaldo Viana">
+      
+      
+        <link rel="canonical" href="https://arnaldojr.github.io/cognitivecomputing/aulas/iot/modulos/modulo17.html">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.39">
+    
+    
+      
+        <title>Módulo 17: Gestão de Energia e Eficiência em Projetos Arduino - cognitivecomputing</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8c3ca2c6.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/insper-education/active-handout-css@main/devlife.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans+Extra+Condensed:700|Oxygen+Mono|Source+Sans+Pro:700|Source+Serif+Pro&amp;display=swap">
+<link rel="stylesheet" href="../../../assets/css/devlife.css">
+
+
+
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#modulo-17-gestao-de-energia-e-eficiencia-em-projetos-arduino" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../index.html" title="cognitivecomputing" class="md-header__button md-logo" aria-label="cognitivecomputing" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            cognitivecomputing
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Módulo 17: Gestão de Energia e Eficiência em Projetos Arduino
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/arnaldojr/cognitivecomputing/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    cognitivecomputing
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../index.html" title="cognitivecomputing" class="md-nav__button md-logo" aria-label="cognitivecomputing" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    cognitivecomputing
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/arnaldojr/cognitivecomputing/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    cognitivecomputing
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../instalacao/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Instalação
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../agenda/agenda.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Agenda
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    CheckPoint
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            CheckPoint
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../checkpoint/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Orientações gerais
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../checkpoint/cp.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CheckPoint 5
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Introdução
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Introdução
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    IoT e Sistemas Embarcados
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            IoT e Sistemas Embarcados
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intro/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introdução
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intro/dicas.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Eletronica básica
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="modulos.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Programação Arduino
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intro/introarduino.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sistemas Embarcados
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1_5" id="__nav_5_1_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Exemplos
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_1_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1_5">
+            <span class="md-nav__icon md-icon"></span>
+            Exemplos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ex0/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    From 0 to Hero!
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ex1/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Blink led
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ex2/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Led botão
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ex3/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Botão pot led
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ex7/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PWM
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ex4/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Função millis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ex5/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Interrupção de pino
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ex6/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Comunicação Serial
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/intro/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Processamento Digital de Imagens
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IA/intro/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Laboratórios
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Laboratórios
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    IoT
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            IoT
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ex0/solucao.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab00
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab1/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab01
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab2/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab02
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab3/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab03
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab4/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab04
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab5/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab05
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab6/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab06
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab7/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab07
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab8/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab08
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab9/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab09
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Processamento Digital de Imagens
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            Processamento Digital de Imagens
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/solucoes/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Soluções PDI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/lab01/IntroPID.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab01 - Intro PID
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/lab02/atividade2.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab02 - Seguimentação por pixel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/lab03/atividade3.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab03 - Histograma e equalização
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/lab04/Filtros_de_Convolu%C3%A7%C3%A3o.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab04 - Filtros de Convolução
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/lab05/Espa%C3%A7o-cor-contorno.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab05 - Espaço de cor e contorno
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/lab06/Transformada-Hough-morfologia.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab06 - Transformada de Hough e morfologia
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/lab07/Aula09/motion.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab07 - Traking de objetos e movimento
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/lab08/Aula4.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab08 - Relacionamento e operações entre imagens
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/lab09/aula.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab09 - FFT
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/lab10/medidas.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab10 - Medidas aproximadas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/lab11/watershed.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab11 - Transformada de watershed
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/lab12/Template_matching.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab12 - Template matching
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/lab13/Features.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab13 - Features
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/lab14/haarCascade.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab14 - Detector haar Cascade
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/lab15/EventMouse.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab15 - Event Mouse
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/lab16/dlib2.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab16 - Detector dlib
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/lab17/mediapipe.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab17 - Mediapipe
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/lab18/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab18 - Yolo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Machine Learning
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            Machine Learning
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3_1" id="__nav_6_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Manipulação de Dados
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Manipulação de Dados
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IA/lab01/dataframe.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dataframe
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IA/lab04/dicasDePreprocessamento.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pré-processamento
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3_2" id="__nav_6_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Aprendizado Supervisionado - Classificação
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Aprendizado Supervisionado - Classificação
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IA/lab02/classificador_knn.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lab1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3_3" id="__nav_6_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Aprendizado Supervisionado - Regressão
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Aprendizado Supervisionado - Regressão
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IA/lab03/regressao.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lab1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IA/lab03/preco-notebook.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lab2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IA/lab05/validacaocruzada.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Validação de Modelos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3_5" id="__nav_6_3_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Aprendizado Não Supervisionado
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            Aprendizado Não Supervisionado
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IA/lab-01/aula5.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lab1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IA/lab-01/aula5-parte2.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lab2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IA/lab-02/aula6.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lab2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IA/lab-03/aula7.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lab3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IA/lab04/reducao_dimensionalidade_pca.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PCA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Deep Learning
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_4">
+            <span class="md-nav__icon md-icon"></span>
+            Deep Learning
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IA/lab06/rna.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab06 - Redes Neurais - Percepton
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IA/lab07/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab07 - Redes Neurais - TensorFlow
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IA/lab07/mlp.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab07b - Redes Neurais - MLP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IA/batalharedes/batalha_das_redes.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BATALHA DAS REDES
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IA/lab08/cnn.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab08 - Redes Neurais - CNN parte1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IA/lab08/cnn_drive.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab08 - Redes Neurais - CNN parte2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IA/lab09/transferlearning_1.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab9 - Redes Neurais - Pré-treinadas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IA/lab09/transferlearning_2.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab9 - Redes Neurais - Transfer learning
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IA/lab10/data-augmentation.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab10 - Redes Neurais - Data Augmentation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IA/lab11/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab11 - Redes Neurais - resumo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objetivos-do-modulo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objetivos do Módulo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-introducao-a-gestao-de-energia" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Introdução à Gestão de Energia
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Introdução à Gestão de Energia">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-importancia-da-gestao-de-energia" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 Importância da Gestão de Energia
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-fontes-de-energia-para-arduino" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 Fontes de Energia para Arduino
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-medicao-e-analise-do-consumo-de-energia" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Medição e Análise do Consumo de Energia
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Medição e Análise do Consumo de Energia">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-ferramentas-para-medir-consumo-de-energia" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Ferramentas para Medir Consumo de Energia
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-exemplo-de-codigo-para-medicao-de-corrente-com-acs712" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Exemplo de Código para Medição de Corrente com ACS712
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-modos-de-economia-de-energia-no-arduino" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Modos de Economia de Energia no Arduino
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Modos de Economia de Energia no Arduino">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-sleep-modes-do-arduino" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Sleep Modes do Arduino
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-implementacao-do-sleep-mode-no-arduino" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Implementação do Sleep Mode no Arduino
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-exemplo-de-codigo-para-sleep-mode-com-lowpower" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 Exemplo de Código para Sleep Mode com LowPower
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-selecao-de-componentes-de-baixo-consumo" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Seleção de Componentes de Baixo Consumo
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Seleção de Componentes de Baixo Consumo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-sensores-e-atuadores-eficientes" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 Sensores e Atuadores Eficientes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-reguladores-de-tensao-e-conversores-dc-dc" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 Reguladores de Tensão e Conversores DC-DC
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-exemplos-de-componentes-de-baixo-consumo" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3 Exemplos de Componentes de Baixo Consumo
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-gerenciamento-de-energia-em-projetos-iot" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Gerenciamento de Energia em Projetos IoT
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Gerenciamento de Energia em Projetos IoT">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-estrategias-para-dispositivos-alimentados-por-bateria" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1 Estratégias para Dispositivos Alimentados por Bateria
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-otimizacao-de-comunicacao-sem-fio" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2 Otimização de Comunicação Sem Fio
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-exemplo-de-projeto-iot-com-gestao-de-energia" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3 Exemplo de Projeto IoT com Gestão de Energia
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-conceitos-importantes" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Conceitos Importantes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Conceitos Importantes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-eficiencia-energetica" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.1 Eficiência Energética
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-modos-de-economia-de-energia" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.2 Modos de Economia de Energia
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-selecao-de-componentes" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.3 Seleção de Componentes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-gerenciamento-de-energia-em-projetos-iot" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.4 Gerenciamento de Energia em Projetos IoT
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#65-boas-praticas-na-gestao-de-energia" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.5 Boas Práticas na Gestão de Energia
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-recursos-adicionais" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Recursos Adicionais
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-exemplos-praticos" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Exemplos Práticos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Exemplos Práticos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-implementacao-de-sleep-mode-com-despertar-por-interrupcao" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.1 Implementação de Sleep Mode com Despertar por Interrupção
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-projeto-de-monitoramento-de-bateria-com-alerta-de-baixo-nivel" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.2 Projeto de Monitoramento de Bateria com Alerta de Baixo Nível
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83-otimizacao-de-codigo-para-reduzir-o-consumo-de-energia" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.3 Otimização de Código para Reduzir o Consumo de Energia
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-conceitos-importantes" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Conceitos Importantes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Conceitos Importantes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-eficiencia-energetica" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.1 Eficiência Energética
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-modos-de-economia-de-energia" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.2 Modos de Economia de Energia
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#93-selecao-de-componentes" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.3 Seleção de Componentes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#94-gerenciamento-de-energia-em-projetos-iot" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.4 Gerenciamento de Energia em Projetos IoT
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#95-boas-praticas-na-gestao-de-energia" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.5 Boas Práticas na Gestão de Energia
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-recursos-adicionais" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Recursos Adicionais
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-conclusao-do-modulo" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Conclusão do Módulo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-proximos-passos" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. Próximos Passos
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="modulo-17-gestao-de-energia-e-eficiencia-em-projetos-arduino">Módulo 17: Gestão de Energia e Eficiência em Projetos Arduino<a class="headerlink" href="#modulo-17-gestao-de-energia-e-eficiencia-em-projetos-arduino" title="Permanent link">&para;</a></h1>
+<p>Bem-vindo ao <strong>Módulo 17</strong> do curso <strong>"Programação em Arduino: Conceitos Fundamentais sem Hardware"</strong>. Neste módulo, você irá aprender sobre <strong>gestão de energia</strong> e <strong>eficiência energética</strong> em projetos Arduino. Com o crescimento dos dispositivos IoT e a necessidade de soluções sustentáveis, entender como otimizar o consumo de energia dos seus projetos é essencial. Este módulo aborda técnicas e práticas para reduzir o consumo de energia, prolongar a vida útil das baterias e garantir que seus projetos sejam mais sustentáveis e eficientes.</p>
+<hr />
+<h2 id="objetivos-do-modulo">Objetivos do Módulo<a class="headerlink" href="#objetivos-do-modulo" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Compreender os fundamentos do consumo de energia em projetos Arduino.</li>
+<li>Aprender a medir e analisar o consumo de energia de um circuito.</li>
+<li>Implementar modos de economia de energia no Arduino para prolongar a vida útil das baterias.</li>
+<li>Selecionar componentes de baixo consumo e otimizar o uso de energia em projetos.</li>
+<li>Aplicar técnicas de gerenciamento de energia em projetos IoT.</li>
+<li>Resolver exercícios práticos para consolidar o conhecimento sobre gestão de energia e eficiência.</li>
+</ul>
+<hr />
+<h2 id="1-introducao-a-gestao-de-energia">1. Introdução à Gestão de Energia<a class="headerlink" href="#1-introducao-a-gestao-de-energia" title="Permanent link">&para;</a></h2>
+<h3 id="11-importancia-da-gestao-de-energia">1.1 Importância da Gestão de Energia<a class="headerlink" href="#11-importancia-da-gestao-de-energia" title="Permanent link">&para;</a></h3>
+<p>A <strong>gestão de energia</strong> em projetos Arduino é crucial para:</p>
+<ul>
+<li><strong>Prolongar a Vida Útil:</strong> Reduzir o consumo de energia permite que dispositivos alimentados por bateria funcionem por mais tempo.</li>
+<li><strong>Sustentabilidade:</strong> Projetos eficientes energeticamente contribuem para a sustentabilidade ambiental.</li>
+<li><strong>Desempenho e Estabilidade:</strong> Sistemas com gerenciamento de energia adequado evitam sobrecargas e falhas devido à falta de energia.</li>
+</ul>
+<h3 id="12-fontes-de-energia-para-arduino">1.2 Fontes de Energia para Arduino<a class="headerlink" href="#12-fontes-de-energia-para-arduino" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Baterias Recarregáveis:</strong> Li-Ion, Li-Po, NiMH, alcalinas.</li>
+<li><strong>Adaptadores de Energia:</strong> Conectados à rede elétrica.</li>
+<li><strong>Energia Solar:</strong> Utilização de painéis solares para projetos sustentáveis.</li>
+<li><strong>Supercapacitores:</strong> Para armazenamento de energia de alta potência em curto prazo.</li>
+</ul>
+<hr />
+<h2 id="2-medicao-e-analise-do-consumo-de-energia">2. Medição e Análise do Consumo de Energia<a class="headerlink" href="#2-medicao-e-analise-do-consumo-de-energia" title="Permanent link">&para;</a></h2>
+<h3 id="21-ferramentas-para-medir-consumo-de-energia">2.1 Ferramentas para Medir Consumo de Energia<a class="headerlink" href="#21-ferramentas-para-medir-consumo-de-energia" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Multímetros:</strong> Medem corrente, tensão e resistência.</li>
+<li><strong>Shunts de Corrente:</strong> Resistores de baixa resistência usados para medir correntes elevadas.</li>
+<li><strong>Sensores de Corrente:</strong> Como o ACS712, que fornece uma saída analógica proporcional à corrente.</li>
+<li><strong>Analisadores de Energia:</strong> Ferramentas avançadas para análise detalhada do consumo energético.</li>
+</ul>
+<h3 id="22-exemplo-de-codigo-para-medicao-de-corrente-com-acs712">2.2 Exemplo de Código para Medição de Corrente com ACS712<a class="headerlink" href="#22-exemplo-de-codigo-para-medicao-de-corrente-com-acs712" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">pinoSensorCorrente</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A0</span><span class="p">;</span><span class="w"> </span><span class="c1">// Pino analógico conectado ao ACS712</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">const</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">fatorConversao</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5.0</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">1023.0</span><span class="p">;</span><span class="w"> </span><span class="c1">// Tensão de referência / resolução ADC</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="n">pinoSensorCorrente</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT</span><span class="p">);</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="p">}</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">leitura</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">analogRead</span><span class="p">(</span><span class="n">pinoSensorCorrente</span><span class="p">);</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">tensao</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">leitura</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">fatorConversao</span><span class="p">;</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">corrente</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">tensao</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">2.5</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">0.185</span><span class="p">;</span><span class="w"> </span><span class="c1">// 2.5V é o ponto de referência, 0.185 V/A para ACS712 5A</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Corrente: &quot;</span><span class="p">);</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">corrente</span><span class="p">);</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot; A&quot;</span><span class="p">);</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="p">}</span>
+</code></pre></div>
+<p><strong>Explicação:</strong></p>
+<ul>
+<li><strong>Leitura do Sensor:</strong> O sensor ACS712 fornece uma tensão que varia com a corrente. O ponto de referência é 2.5V no meio da faixa.</li>
+<li><strong>Cálculo da Corrente:</strong> Subtrai-se 2.5V da leitura e divide-se pelo fator de conversão específico do sensor (0.185 V/A para o modelo 5A).</li>
+<li><strong>Monitoramento:</strong> Exibe a corrente medida no Monitor Serial para análise.</li>
+</ul>
+<hr />
+<h2 id="3-modos-de-economia-de-energia-no-arduino">3. Modos de Economia de Energia no Arduino<a class="headerlink" href="#3-modos-de-economia-de-energia-no-arduino" title="Permanent link">&para;</a></h2>
+<h3 id="31-sleep-modes-do-arduino">3.1 Sleep Modes do Arduino<a class="headerlink" href="#31-sleep-modes-do-arduino" title="Permanent link">&para;</a></h3>
+<p>O Arduino possui diferentes modos de operação para reduzir o consumo de energia quando não está ativo:</p>
+<ul>
+<li><strong>Idle Mode:</strong> Reduz algumas funções sem interromper completamente o funcionamento.</li>
+<li><strong>ADC Noise Reduction Mode:</strong> Minimiza o ruído durante leituras analógicas.</li>
+<li><strong>Power-save Mode:</strong> Desativa timers e mantém apenas as interrupções essenciais.</li>
+<li><strong>Standby e Power-down Modes:</strong> Minimiza o consumo ao máximo, desativando quase todos os componentes internos.</li>
+</ul>
+<h3 id="32-implementacao-do-sleep-mode-no-arduino">3.2 Implementação do Sleep Mode no Arduino<a class="headerlink" href="#32-implementacao-do-sleep-mode-no-arduino" title="Permanent link">&para;</a></h3>
+<p>Para implementar o modo de sleep no Arduino, utilizaremos a biblioteca <a href="https://github.com/rocketscream/Low-Power">LowPower</a>.</p>
+<h3 id="33-exemplo-de-codigo-para-sleep-mode-com-lowpower">3.3 Exemplo de Código para Sleep Mode com LowPower<a class="headerlink" href="#33-exemplo-de-codigo-para-sleep-mode-com-lowpower" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;LowPower.h&gt;</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">pinoBotao</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="c1">// Pino conectado a um botão</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="n">pinoBotao</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT_PULLUP</span><span class="p">);</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Sistema Inativo. Pressione o botão para acordar.&quot;</span><span class="p">);</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="p">}</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="c1">// Entra em modo de sleep por 8 segundos</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="n">LowPower</span><span class="p">.</span><span class="n">powerDown</span><span class="p">(</span><span class="n">SLEEP_8S</span><span class="p">,</span><span class="w"> </span><span class="n">ADC_OFF</span><span class="p">,</span><span class="w"> </span><span class="n">BOD_OFF</span><span class="p">);</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">    </span><span class="c1">// Verifica se o botão foi pressionado</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">digitalRead</span><span class="p">(</span><span class="n">pinoBotao</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">LOW</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">        </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Botão Pressionado! Sistema Ativo.&quot;</span><span class="p">);</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">        </span><span class="c1">// Código para executar quando acordar</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">        </span><span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span><span class="w"> </span><span class="c1">// Tempo para estabilizar</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="p">}</span>
+</code></pre></div>
+<p><strong>Explicação:</strong></p>
+<ul>
+<li><strong>Biblioteca LowPower:</strong> Facilita a implementação dos modos de sleep no Arduino.</li>
+<li><strong>Modo powerDown:</strong> Reduz o consumo ao mínimo, mantendo apenas as interrupções essenciais.</li>
+<li><strong>Despertar com Interrupção:</strong> No exemplo, o botão pressiona para acordar o sistema.</li>
+</ul>
+<hr />
+<h2 id="4-selecao-de-componentes-de-baixo-consumo">4. Seleção de Componentes de Baixo Consumo<a class="headerlink" href="#4-selecao-de-componentes-de-baixo-consumo" title="Permanent link">&para;</a></h2>
+<h3 id="41-sensores-e-atuadores-eficientes">4.1 Sensores e Atuadores Eficientes<a class="headerlink" href="#41-sensores-e-atuadores-eficientes" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Sensores de Baixo Consumo:</strong> Optar por sensores que possuem modos de baixa potência ou que consomem menos energia.</li>
+<li><strong>Motores e Servos Eficientes:</strong> Selecionar motores com baixo consumo e que podem ser controlados eficientemente com PWM.</li>
+</ul>
+<h3 id="42-reguladores-de-tensao-e-conversores-dc-dc">4.2 Reguladores de Tensão e Conversores DC-DC<a class="headerlink" href="#42-reguladores-de-tensao-e-conversores-dc-dc" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Reguladores de Baixa Queda (LDO):</strong> Minimiza a dissipação de energia ao converter tensões.</li>
+<li><strong>Conversores Buck e Boost:</strong> Mais eficientes que os LDOs para conversões de tensão maiores.</li>
+</ul>
+<h3 id="43-exemplos-de-componentes-de-baixo-consumo">4.3 Exemplos de Componentes de Baixo Consumo<a class="headerlink" href="#43-exemplos-de-componentes-de-baixo-consumo" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>OLED Displays:</strong> Menor consumo comparado a displays LCD tradicionais.</li>
+<li><strong>Módulos de Comunicação de Baixo Consumo:</strong> Como o ESP32 em modos de sleep ou LoRa para comunicação eficiente.</li>
+</ul>
+<hr />
+<h2 id="5-gerenciamento-de-energia-em-projetos-iot">5. Gerenciamento de Energia em Projetos IoT<a class="headerlink" href="#5-gerenciamento-de-energia-em-projetos-iot" title="Permanent link">&para;</a></h2>
+<h3 id="51-estrategias-para-dispositivos-alimentados-por-bateria">5.1 Estratégias para Dispositivos Alimentados por Bateria<a class="headerlink" href="#51-estrategias-para-dispositivos-alimentados-por-bateria" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Uso de Sleep Modes:</strong> Minimizar o tempo ativo do microcontrolador.</li>
+<li><strong>Transmissões Eficientes:</strong> Reduzir a frequência de comunicação sem fio.</li>
+<li><strong>Componentes de Baixo Consumo:</strong> Selecionar sensores e atuadores que consomem menos energia.</li>
+</ul>
+<h3 id="52-otimizacao-de-comunicacao-sem-fio">5.2 Otimização de Comunicação Sem Fio<a class="headerlink" href="#52-otimizacao-de-comunicacao-sem-fio" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Protocolos de Baixo Consumo:</strong> Utilizar protocolos como MQTT com QoS apropriado ou LoRa para comunicações de longo alcance com baixo consumo.</li>
+<li><strong>Duty Cycling:</strong> Alternar entre estados ativos e inativos de forma eficiente para reduzir o consumo geral.</li>
+</ul>
+<h3 id="53-exemplo-de-projeto-iot-com-gestao-de-energia">5.3 Exemplo de Projeto IoT com Gestão de Energia<a class="headerlink" href="#53-exemplo-de-projeto-iot-com-gestao-de-energia" title="Permanent link">&para;</a></h3>
+<p>Desenvolva um sistema de monitoramento ambiental que coleta dados de sensores, envia informações para a nuvem e entra em modo de sleep entre as transmissões para economizar energia.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;Wire.h&gt;</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;SPI.h&gt;</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;LowPower.h&gt;</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;WiFiNINA.h&gt;</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;MQTT.h&gt;</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="c1">// Definições de rede</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">ssid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Seu_SSID&quot;</span><span class="p">;</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">password</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Sua_Senha&quot;</span><span class="p">;</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="c1">// Definições do MQTT</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">broker</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;broker.hivemq.com&quot;</span><span class="p">;</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1883</span><span class="p">;</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">topic</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;arduino/monitoramento&quot;</span><span class="p">;</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="c1">// Pinos dos sensores</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">pinoSensorTemp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A0</span><span class="p">;</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">pinoSensorUmid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A1</span><span class="p">;</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="c1">// Instância do cliente MQTT</span>
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="n">WiFiClient</span><span class="w"> </span><span class="n">net</span><span class="p">;</span>
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="n">MQTTClient</span><span class="w"> </span><span class="n">client</span><span class="p">;</span>
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="kt">void</span><span class="w"> </span><span class="nf">messageReceived</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="o">&amp;</span><span class="n">topic</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="o">&amp;</span><span class="n">payload</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="w">    </span><span class="c1">// Não utilizado neste exemplo</span>
+<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="p">}</span>
+<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>
+<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a><span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+<a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a><span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="n">pinoSensorTemp</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT</span><span class="p">);</span>
+<a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a><span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="n">pinoSensorUmid</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT</span><span class="p">);</span>
+<a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a>
+<a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a><span class="w">    </span><span class="c1">// Conecta ao Wi-Fi</span>
+<a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a><span class="w">    </span><span class="n">WiFi</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="n">ssid</span><span class="p">,</span><span class="w"> </span><span class="n">password</span><span class="p">);</span>
+<a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">WiFi</span><span class="p">.</span><span class="n">status</span><span class="p">()</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">WL_CONNECTED</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a><span class="w">        </span><span class="n">delay</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
+<a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a><span class="w">        </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;.&quot;</span><span class="p">);</span>
+<a id="__codelineno-2-38" name="__codelineno-2-38" href="#__codelineno-2-38"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-2-39" name="__codelineno-2-39" href="#__codelineno-2-39"></a><span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Conectado ao Wi-Fi&quot;</span><span class="p">);</span>
+<a id="__codelineno-2-40" name="__codelineno-2-40" href="#__codelineno-2-40"></a>
+<a id="__codelineno-2-41" name="__codelineno-2-41" href="#__codelineno-2-41"></a><span class="w">    </span><span class="c1">// Conecta ao broker MQTT</span>
+<a id="__codelineno-2-42" name="__codelineno-2-42" href="#__codelineno-2-42"></a><span class="w">    </span><span class="n">client</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="n">broker</span><span class="p">,</span><span class="w"> </span><span class="n">port</span><span class="p">,</span><span class="w"> </span><span class="n">net</span><span class="p">);</span>
+<a id="__codelineno-2-43" name="__codelineno-2-43" href="#__codelineno-2-43"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">client</span><span class="p">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&quot;ArduinoClient&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-44" name="__codelineno-2-44" href="#__codelineno-2-44"></a><span class="w">        </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;.&quot;</span><span class="p">);</span>
+<a id="__codelineno-2-45" name="__codelineno-2-45" href="#__codelineno-2-45"></a><span class="w">        </span><span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+<a id="__codelineno-2-46" name="__codelineno-2-46" href="#__codelineno-2-46"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-2-47" name="__codelineno-2-47" href="#__codelineno-2-47"></a><span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Conectado ao MQTT broker&quot;</span><span class="p">);</span>
+<a id="__codelineno-2-48" name="__codelineno-2-48" href="#__codelineno-2-48"></a><span class="w">    </span><span class="n">client</span><span class="p">.</span><span class="n">onMessage</span><span class="p">(</span><span class="n">messageReceived</span><span class="p">);</span>
+<a id="__codelineno-2-49" name="__codelineno-2-49" href="#__codelineno-2-49"></a><span class="p">}</span>
+<a id="__codelineno-2-50" name="__codelineno-2-50" href="#__codelineno-2-50"></a>
+<a id="__codelineno-2-51" name="__codelineno-2-51" href="#__codelineno-2-51"></a><span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-52" name="__codelineno-2-52" href="#__codelineno-2-52"></a><span class="w">    </span><span class="c1">// Leitura dos sensores</span>
+<a id="__codelineno-2-53" name="__codelineno-2-53" href="#__codelineno-2-53"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">leituraTemp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">analogRead</span><span class="p">(</span><span class="n">pinoSensorTemp</span><span class="p">);</span>
+<a id="__codelineno-2-54" name="__codelineno-2-54" href="#__codelineno-2-54"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">leituraUmid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">analogRead</span><span class="p">(</span><span class="n">pinoSensorUmid</span><span class="p">);</span>
+<a id="__codelineno-2-55" name="__codelineno-2-55" href="#__codelineno-2-55"></a>
+<a id="__codelineno-2-56" name="__codelineno-2-56" href="#__codelineno-2-56"></a><span class="w">    </span><span class="c1">// Conversão das leituras</span>
+<a id="__codelineno-2-57" name="__codelineno-2-57" href="#__codelineno-2-57"></a><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">temperatura</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">leituraTemp</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="mf">5.0</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">1023.0</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span><span class="w"> </span><span class="c1">// Exemplo</span>
+<a id="__codelineno-2-58" name="__codelineno-2-58" href="#__codelineno-2-58"></a><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">umidade</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">leituraUmid</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="mf">5.0</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">1023.0</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span><span class="w"> </span><span class="c1">// Exemplo</span>
+<a id="__codelineno-2-59" name="__codelineno-2-59" href="#__codelineno-2-59"></a>
+<a id="__codelineno-2-60" name="__codelineno-2-60" href="#__codelineno-2-60"></a><span class="w">    </span><span class="c1">// Publica os dados no MQTT</span>
+<a id="__codelineno-2-61" name="__codelineno-2-61" href="#__codelineno-2-61"></a><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">mensagem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Temperatura: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">String</span><span class="p">(</span><span class="n">temperatura</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;C, Umidade: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">String</span><span class="p">(</span><span class="n">umidade</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;%&quot;</span><span class="p">;</span>
+<a id="__codelineno-2-62" name="__codelineno-2-62" href="#__codelineno-2-62"></a><span class="w">    </span><span class="n">client</span><span class="p">.</span><span class="n">publish</span><span class="p">(</span><span class="n">topic</span><span class="p">,</span><span class="w"> </span><span class="n">mensagem</span><span class="p">);</span>
+<a id="__codelineno-2-63" name="__codelineno-2-63" href="#__codelineno-2-63"></a><span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Dados enviados: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">mensagem</span><span class="p">);</span>
+<a id="__codelineno-2-64" name="__codelineno-2-64" href="#__codelineno-2-64"></a>
+<a id="__codelineno-2-65" name="__codelineno-2-65" href="#__codelineno-2-65"></a><span class="w">    </span><span class="c1">// Desconecta do MQTT</span>
+<a id="__codelineno-2-66" name="__codelineno-2-66" href="#__codelineno-2-66"></a><span class="w">    </span><span class="n">client</span><span class="p">.</span><span class="n">disconnect</span><span class="p">();</span>
+<a id="__codelineno-2-67" name="__codelineno-2-67" href="#__codelineno-2-67"></a>
+<a id="__codelineno-2-68" name="__codelineno-2-68" href="#__codelineno-2-68"></a><span class="w">    </span><span class="c1">// Entra em modo de sleep por 8 segundos</span>
+<a id="__codelineno-2-69" name="__codelineno-2-69" href="#__codelineno-2-69"></a><span class="w">    </span><span class="n">LowPower</span><span class="p">.</span><span class="n">powerDown</span><span class="p">(</span><span class="n">SLEEP_8S</span><span class="p">,</span><span class="w"> </span><span class="n">ADC_OFF</span><span class="p">,</span><span class="w"> </span><span class="n">BOD_OFF</span><span class="p">);</span>
+<a id="__codelineno-2-70" name="__codelineno-2-70" href="#__codelineno-2-70"></a><span class="p">}</span>
+</code></pre></div>
+<p><strong>Explicação:</strong></p>
+<ul>
+<li><strong>Conexão ao Wi-Fi e MQTT:</strong> Estabelece conexão com a rede Wi-Fi e o broker MQTT para envio de dados.</li>
+<li><strong>Leitura e Conversão de Sensores:</strong> Lê os valores analógicos dos sensores e converte para unidades compreensíveis.</li>
+<li><strong>Publicação MQTT:</strong> Envia os dados para o tópico especificado no broker MQTT.</li>
+<li><strong>Modo de Sleep:</strong> Após enviar os dados, o Arduino entra em modo de sleep por 8 segundos para economizar energia antes de repetir o processo.</li>
+</ul>
+<hr />
+<h2 id="6-conceitos-importantes">6. Conceitos Importantes<a class="headerlink" href="#6-conceitos-importantes" title="Permanent link">&para;</a></h2>
+<h3 id="61-eficiencia-energetica">6.1 Eficiência Energética<a class="headerlink" href="#61-eficiencia-energetica" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Definição:</strong> Maximizar o desempenho do sistema enquanto minimiza o consumo de energia.</li>
+<li><strong>Técnicas:</strong> Uso de componentes de baixo consumo, otimização do código para reduzir ciclos de processamento, e gerenciamento eficaz dos modos de operação.</li>
+</ul>
+<h3 id="62-modos-de-economia-de-energia">6.2 Modos de Economia de Energia<a class="headerlink" href="#62-modos-de-economia-de-energia" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Sleep Modes:</strong> Reduzem o consumo desligando partes do sistema que não estão em uso.</li>
+<li><strong>Wake-up Sources:</strong> Fontes que podem despertar o microcontrolador do modo de sleep, como interrupções de botões ou sensores.</li>
+<li><strong>Duty Cycling:</strong> Alternar entre estados ativos e inativos para minimizar o consumo total.</li>
+</ul>
+<h3 id="63-selecao-de-componentes">6.3 Seleção de Componentes<a class="headerlink" href="#63-selecao-de-componentes" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Sensores e Atuadores:</strong> Escolher dispositivos que oferecem baixo consumo de energia sem comprometer o desempenho necessário.</li>
+<li><strong>Reguladores de Tensão:</strong> Utilizar reguladores eficientes para reduzir a dissipação de energia.</li>
+<li><strong>Displays e Interfaces:</strong> Optar por displays OLED ou LCD de baixo consumo e minimizar o uso de interfaces que demandam energia constante.</li>
+</ul>
+<h3 id="64-gerenciamento-de-energia-em-projetos-iot">6.4 Gerenciamento de Energia em Projetos IoT<a class="headerlink" href="#64-gerenciamento-de-energia-em-projetos-iot" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Otimizando Transmissões:</strong> Reduzir a frequência de envio de dados e utilizar protocolos eficientes para comunicação.</li>
+<li><strong>Armazenamento de Energia:</strong> Utilizar baterias de alta capacidade e considerar fontes de energia alternativas como painéis solares.</li>
+<li><strong>Monitoramento do Consumo:</strong> Implementar sistemas que monitoram o consumo de energia em tempo real para identificar e eliminar desperdícios.</li>
+</ul>
+<h3 id="65-boas-praticas-na-gestao-de-energia">6.5 Boas Práticas na Gestão de Energia<a class="headerlink" href="#65-boas-praticas-na-gestao-de-energia" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Teste e Medição:</strong> Sempre medir o consumo de energia antes e depois de implementar técnicas de economia.</li>
+<li><strong>Documentação:</strong> Manter registros detalhados das técnicas e componentes utilizados para facilitar futuras otimizações.</li>
+<li><strong>Otimização Contínua:</strong> Revisar e melhorar continuamente o gerenciamento de energia conforme o projeto evolui.</li>
+</ul>
+<hr />
+<h2 id="7-recursos-adicionais">7. Recursos Adicionais<a class="headerlink" href="#7-recursos-adicionais" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><strong>Documentação Oficial do Arduino:</strong></p>
+</li>
+<li>
+<p><a href="https://github.com/rocketscream/Low-Power">LowPower Library</a></p>
+</li>
+<li><a href="https://www.arduino.cc/en/Guide/LowPower">Energy Consumption Basics</a></li>
+<li>
+<p><a href="https://www.arduino.cc/en/Tutorial/AnalogToDigitalConverter">ADC Precision</a></p>
+</li>
+<li>
+<p><strong>Tutoriais e Guias:</strong></p>
+</li>
+<li>
+<p><a href="https://create.arduino.cc/projecthub/projects/tags/energy-management">Gerenciamento de Energia com Arduino</a></p>
+</li>
+<li><a href="https://www.tutorialspoint.com/arduino/arduino_sleep_mode.htm">Implementando Sleep Modes no Arduino</a></li>
+<li>
+<p><a href="https://www.hackster.io/news/how-to-measure-the-current-consumption-of-your-arduino-projects-123456">Medição de Consumo de Energia com Arduino</a></p>
+</li>
+<li>
+<p><strong>Vídeos Educacionais:</strong></p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=example16">Economizando Energia no Arduino</a></p>
+</li>
+<li><a href="https://www.youtube.com/watch?v=example17">Sleep Modes e Gestão de Energia</a></li>
+<li><a href="https://www.youtube.com/watch?v=example18">Otimizando Projetos Arduino para IoT</a></li>
+</ul>
+<hr />
+<h2 id="8-exemplos-praticos">8. Exemplos Práticos<a class="headerlink" href="#8-exemplos-praticos" title="Permanent link">&para;</a></h2>
+<h3 id="81-implementacao-de-sleep-mode-com-despertar-por-interrupcao">8.1 Implementação de Sleep Mode com Despertar por Interrupção<a class="headerlink" href="#81-implementacao-de-sleep-mode-com-despertar-por-interrupcao" title="Permanent link">&para;</a></h3>
+<p>Este exemplo demonstra como colocar o Arduino em modo de sleep e acordá-lo usando uma interrupção externa, como um botão.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;LowPower.h&gt;</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">pinoBotao</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="c1">// Pino conectado a um botão</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="kt">void</span><span class="w"> </span><span class="nf">despertar</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="c1">// Função vazia para a interrupção</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="p">}</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="n">pinoBotao</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT_PULLUP</span><span class="p">);</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Sistema em Sleep. Pressione o botão para acordar.&quot;</span><span class="p">);</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="p">}</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">    </span><span class="c1">// Configura a interrupção na borda de descida do botão</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">    </span><span class="n">attachInterrupt</span><span class="p">(</span><span class="n">digitalPinToInterrupt</span><span class="p">(</span><span class="n">pinoBotao</span><span class="p">),</span><span class="w"> </span><span class="n">despertar</span><span class="p">,</span><span class="w"> </span><span class="n">FALLING</span><span class="p">);</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="w">    </span><span class="c1">// Entra em modo de sleep por 8 segundos ou até interrupção</span>
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="w">    </span><span class="n">LowPower</span><span class="p">.</span><span class="n">powerDown</span><span class="p">(</span><span class="n">SLEEP_FOREVER</span><span class="p">,</span><span class="w"> </span><span class="n">ADC_OFF</span><span class="p">,</span><span class="w"> </span><span class="n">BOD_OFF</span><span class="p">);</span>
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="w">    </span><span class="c1">// Desconecta a interrupção após acordar</span>
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="w">    </span><span class="n">detachInterrupt</span><span class="p">(</span><span class="n">digitalPinToInterrupt</span><span class="p">(</span><span class="n">pinoBotao</span><span class="p">));</span>
+<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>
+<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a><span class="w">    </span><span class="c1">// Executa ações após acordar</span>
+<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a><span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Sistema Acordado!&quot;</span><span class="p">);</span>
+<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a><span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span><span class="w"> </span><span class="c1">// Tempo para estabilizar</span>
+<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a><span class="p">}</span>
+</code></pre></div>
+<p><strong>Explicação:</strong></p>
+<ul>
+<li><strong>Interrupção Externa:</strong> O botão pressiona para gerar uma interrupção que acorda o Arduino do modo de sleep.</li>
+<li><strong>Função de Despertar:</strong> Uma função vazia que serve apenas para despertar o sistema.</li>
+<li><strong>Modo SLEEP_FOREVER:</strong> Mantém o Arduino em modo de sleep até que uma interrupção ocorra.</li>
+<li><strong>Desconexão da Interrupção:</strong> Após acordar, a interrupção é removida para evitar múltiplos acordes indesejados.</li>
+</ul>
+<h3 id="82-projeto-de-monitoramento-de-bateria-com-alerta-de-baixo-nivel">8.2 Projeto de Monitoramento de Bateria com Alerta de Baixo Nível<a class="headerlink" href="#82-projeto-de-monitoramento-de-bateria-com-alerta-de-baixo-nivel" title="Permanent link">&para;</a></h3>
+<p>Este exemplo implementa um sistema que monitora o nível de bateria e envia um alerta quando o nível está baixo.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;LowPower.h&gt;</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;WiFiNINA.h&gt;</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;MQTT.h&gt;</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="c1">// Definições de rede</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">ssid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Seu_SSID&quot;</span><span class="p">;</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">password</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Sua_Senha&quot;</span><span class="p">;</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="c1">// Definições do MQTT</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">broker</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;broker.hivemq.com&quot;</span><span class="p">;</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1883</span><span class="p">;</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">topicAlerta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;arduino/alertas&quot;</span><span class="p">;</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="c1">// Pinos</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">pinoSensorBateria</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A0</span><span class="p">;</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">pinoLEDAlerta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">13</span><span class="p">;</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="c1">// Limiar de bateria</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="k">const</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">limiarBateria</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.3</span><span class="p">;</span><span class="w"> </span><span class="c1">// Exemplo para uma bateria de 3.3V</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="c1">// Instância do cliente MQTT</span>
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="n">WiFiClient</span><span class="w"> </span><span class="n">net</span><span class="p">;</span>
+<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="n">MQTTClient</span><span class="w"> </span><span class="n">client</span><span class="p">;</span>
+<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>
+<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a><span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="n">pinoLEDAlerta</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span>
+<a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a><span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">pinoLEDAlerta</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span>
+<a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a>
+<a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a><span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+<a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a>
+<a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a><span class="w">    </span><span class="c1">// Conecta ao Wi-Fi</span>
+<a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a><span class="w">    </span><span class="n">WiFi</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="n">ssid</span><span class="p">,</span><span class="w"> </span><span class="n">password</span><span class="p">);</span>
+<a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">WiFi</span><span class="p">.</span><span class="n">status</span><span class="p">()</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">WL_CONNECTED</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-34" name="__codelineno-4-34" href="#__codelineno-4-34"></a><span class="w">        </span><span class="n">delay</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
+<a id="__codelineno-4-35" name="__codelineno-4-35" href="#__codelineno-4-35"></a><span class="w">        </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;.&quot;</span><span class="p">);</span>
+<a id="__codelineno-4-36" name="__codelineno-4-36" href="#__codelineno-4-36"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-4-37" name="__codelineno-4-37" href="#__codelineno-4-37"></a><span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">Conectado ao Wi-Fi&quot;</span><span class="p">);</span>
+<a id="__codelineno-4-38" name="__codelineno-4-38" href="#__codelineno-4-38"></a>
+<a id="__codelineno-4-39" name="__codelineno-4-39" href="#__codelineno-4-39"></a><span class="w">    </span><span class="c1">// Conecta ao broker MQTT</span>
+<a id="__codelineno-4-40" name="__codelineno-4-40" href="#__codelineno-4-40"></a><span class="w">    </span><span class="n">client</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="n">broker</span><span class="p">,</span><span class="w"> </span><span class="n">port</span><span class="p">,</span><span class="w"> </span><span class="n">net</span><span class="p">);</span>
+<a id="__codelineno-4-41" name="__codelineno-4-41" href="#__codelineno-4-41"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">client</span><span class="p">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&quot;ArduinoClient&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-42" name="__codelineno-4-42" href="#__codelineno-4-42"></a><span class="w">        </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;.&quot;</span><span class="p">);</span>
+<a id="__codelineno-4-43" name="__codelineno-4-43" href="#__codelineno-4-43"></a><span class="w">        </span><span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+<a id="__codelineno-4-44" name="__codelineno-4-44" href="#__codelineno-4-44"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-4-45" name="__codelineno-4-45" href="#__codelineno-4-45"></a><span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">Conectado ao MQTT broker&quot;</span><span class="p">);</span>
+<a id="__codelineno-4-46" name="__codelineno-4-46" href="#__codelineno-4-46"></a><span class="p">}</span>
+<a id="__codelineno-4-47" name="__codelineno-4-47" href="#__codelineno-4-47"></a>
+<a id="__codelineno-4-48" name="__codelineno-4-48" href="#__codelineno-4-48"></a><span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-49" name="__codelineno-4-49" href="#__codelineno-4-49"></a><span class="w">    </span><span class="c1">// Leitura do sensor de bateria</span>
+<a id="__codelineno-4-50" name="__codelineno-4-50" href="#__codelineno-4-50"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">leitura</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">analogRead</span><span class="p">(</span><span class="n">pinoSensorBateria</span><span class="p">);</span>
+<a id="__codelineno-4-51" name="__codelineno-4-51" href="#__codelineno-4-51"></a><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">tensao</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">leitura</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="mf">5.0</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">1023.0</span><span class="p">);</span><span class="w"> </span><span class="c1">// Conversão exemplo</span>
+<a id="__codelineno-4-52" name="__codelineno-4-52" href="#__codelineno-4-52"></a>
+<a id="__codelineno-4-53" name="__codelineno-4-53" href="#__codelineno-4-53"></a><span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Tensão da Bateria: &quot;</span><span class="p">);</span>
+<a id="__codelineno-4-54" name="__codelineno-4-54" href="#__codelineno-4-54"></a><span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">tensao</span><span class="p">);</span>
+<a id="__codelineno-4-55" name="__codelineno-4-55" href="#__codelineno-4-55"></a><span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot; V&quot;</span><span class="p">);</span>
+<a id="__codelineno-4-56" name="__codelineno-4-56" href="#__codelineno-4-56"></a>
+<a id="__codelineno-4-57" name="__codelineno-4-57" href="#__codelineno-4-57"></a><span class="w">    </span><span class="c1">// Verifica se a tensão está abaixo do limiar</span>
+<a id="__codelineno-4-58" name="__codelineno-4-58" href="#__codelineno-4-58"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">tensao</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">limiarBateria</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-59" name="__codelineno-4-59" href="#__codelineno-4-59"></a><span class="w">        </span><span class="c1">// Aciona o LED de alerta</span>
+<a id="__codelineno-4-60" name="__codelineno-4-60" href="#__codelineno-4-60"></a><span class="w">        </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">pinoLEDAlerta</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span>
+<a id="__codelineno-4-61" name="__codelineno-4-61" href="#__codelineno-4-61"></a>
+<a id="__codelineno-4-62" name="__codelineno-4-62" href="#__codelineno-4-62"></a><span class="w">        </span><span class="c1">// Envia alerta via MQTT</span>
+<a id="__codelineno-4-63" name="__codelineno-4-63" href="#__codelineno-4-63"></a><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">mensagem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Alerta: Nível de bateria baixo!&quot;</span><span class="p">;</span>
+<a id="__codelineno-4-64" name="__codelineno-4-64" href="#__codelineno-4-64"></a><span class="w">        </span><span class="n">client</span><span class="p">.</span><span class="n">publish</span><span class="p">(</span><span class="n">topicAlerta</span><span class="p">,</span><span class="w"> </span><span class="n">mensagem</span><span class="p">);</span>
+<a id="__codelineno-4-65" name="__codelineno-4-65" href="#__codelineno-4-65"></a><span class="w">        </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Alerta enviado: Nível de bateria baixo!&quot;</span><span class="p">);</span>
+<a id="__codelineno-4-66" name="__codelineno-4-66" href="#__codelineno-4-66"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-67" name="__codelineno-4-67" href="#__codelineno-4-67"></a><span class="w">        </span><span class="c1">// Desativa o LED de alerta</span>
+<a id="__codelineno-4-68" name="__codelineno-4-68" href="#__codelineno-4-68"></a><span class="w">        </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">pinoLEDAlerta</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span>
+<a id="__codelineno-4-69" name="__codelineno-4-69" href="#__codelineno-4-69"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-4-70" name="__codelineno-4-70" href="#__codelineno-4-70"></a>
+<a id="__codelineno-4-71" name="__codelineno-4-71" href="#__codelineno-4-71"></a><span class="w">    </span><span class="c1">// Desconecta do MQTT</span>
+<a id="__codelineno-4-72" name="__codelineno-4-72" href="#__codelineno-4-72"></a><span class="w">    </span><span class="n">client</span><span class="p">.</span><span class="n">disconnect</span><span class="p">();</span>
+<a id="__codelineno-4-73" name="__codelineno-4-73" href="#__codelineno-4-73"></a>
+<a id="__codelineno-4-74" name="__codelineno-4-74" href="#__codelineno-4-74"></a><span class="w">    </span><span class="c1">// Entra em modo de sleep por 8 segundos para economizar energia</span>
+<a id="__codelineno-4-75" name="__codelineno-4-75" href="#__codelineno-4-75"></a><span class="w">    </span><span class="n">LowPower</span><span class="p">.</span><span class="n">powerDown</span><span class="p">(</span><span class="n">SLEEP_8S</span><span class="p">,</span><span class="w"> </span><span class="n">ADC_OFF</span><span class="p">,</span><span class="w"> </span><span class="n">BOD_OFF</span><span class="p">);</span>
+<a id="__codelineno-4-76" name="__codelineno-4-76" href="#__codelineno-4-76"></a><span class="p">}</span>
+</code></pre></div>
+<p><strong>Explicação:</strong></p>
+<ul>
+<li><strong>Monitoramento de Tensão:</strong> Lê a tensão da bateria através de um sensor analógico.</li>
+<li><strong>Alerta de Baixo Nível:</strong> Aciona um LED e envia uma mensagem MQTT quando a tensão está abaixo do limiar definido.</li>
+<li><strong>Economia de Energia:</strong> O Arduino entra em modo de sleep por 8 segundos entre as leituras para reduzir o consumo energético.</li>
+</ul>
+<h3 id="83-otimizacao-de-codigo-para-reduzir-o-consumo-de-energia">8.3 Otimização de Código para Reduzir o Consumo de Energia<a class="headerlink" href="#83-otimizacao-de-codigo-para-reduzir-o-consumo-de-energia" title="Permanent link">&para;</a></h3>
+<p>Este exemplo mostra como otimizar o código do Arduino para reduzir o consumo de energia, minimizando o uso de loops intensivos e desligando periféricos desnecessários.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;LowPower.h&gt;</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">pinoLED</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">13</span><span class="p">;</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="n">pinoLED</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">pinoLED</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="p">}</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">    </span><span class="c1">// Liga o LED por 1 segundo</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">pinoLED</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">    </span><span class="c1">// Desliga o LED</span>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">pinoLED</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span>
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="w">    </span><span class="c1">// Entra em modo de sleep por 8 segundos</span>
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="w">    </span><span class="n">LowPower</span><span class="p">.</span><span class="n">powerDown</span><span class="p">(</span><span class="n">SLEEP_8S</span><span class="p">,</span><span class="w"> </span><span class="n">ADC_OFF</span><span class="p">,</span><span class="w"> </span><span class="n">BOD_OFF</span><span class="p">);</span>
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="p">}</span>
+</code></pre></div>
+<p><strong>Explicação:</strong></p>
+<ul>
+<li><strong>Minimização de Processamento Ativo:</strong> Evita loops intensivos que mantêm o microcontrolador ativo continuamente.</li>
+<li><strong>Desligamento de Periféricos:</strong> Desliga componentes que não estão em uso para reduzir o consumo de energia.</li>
+<li><strong>Uso de Delays com Sleep:</strong> Utiliza delays acompanhados de modos de sleep para manter o Arduino inativo durante períodos de espera.</li>
+</ul>
+<hr />
+<h2 id="9-conceitos-importantes">9. Conceitos Importantes<a class="headerlink" href="#9-conceitos-importantes" title="Permanent link">&para;</a></h2>
+<h3 id="91-eficiencia-energetica">9.1 Eficiência Energética<a class="headerlink" href="#91-eficiencia-energetica" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Definição:</strong> Maximizar o desempenho do sistema enquanto minimiza o consumo de energia.</li>
+<li><strong>Técnicas:</strong> Uso de componentes de baixo consumo, otimização do código para reduzir ciclos de processamento, e gerenciamento eficaz dos modos de operação.</li>
+</ul>
+<h3 id="92-modos-de-economia-de-energia">9.2 Modos de Economia de Energia<a class="headerlink" href="#92-modos-de-economia-de-energia" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Sleep Modes:</strong> Reduzem o consumo desligando partes do sistema que não estão em uso.</li>
+<li><strong>Wake-up Sources:</strong> Fontes que podem despertar o microcontrolador do modo de sleep, como interrupções de botões ou sensores.</li>
+<li><strong>Duty Cycling:</strong> Alternar entre estados ativos e inativos para minimizar o consumo total.</li>
+</ul>
+<h3 id="93-selecao-de-componentes">9.3 Seleção de Componentes<a class="headerlink" href="#93-selecao-de-componentes" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Sensores e Atuadores:</strong> Escolher dispositivos que oferecem baixo consumo de energia sem comprometer o desempenho necessário.</li>
+<li><strong>Reguladores de Tensão:</strong> Utilizar reguladores eficientes para reduzir a dissipação de energia.</li>
+<li><strong>Displays e Interfaces:</strong> Optar por displays OLED ou LCD de baixo consumo e minimizar o uso de interfaces que demandam energia constante.</li>
+</ul>
+<h3 id="94-gerenciamento-de-energia-em-projetos-iot">9.4 Gerenciamento de Energia em Projetos IoT<a class="headerlink" href="#94-gerenciamento-de-energia-em-projetos-iot" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Otimizando Transmissões:</strong> Reduzir a frequência de envio de dados e utilizar protocolos eficientes para comunicação.</li>
+<li><strong>Armazenamento de Energia:</strong> Utilizar baterias de alta capacidade e considerar fontes de energia alternativas como painéis solares.</li>
+<li><strong>Monitoramento do Consumo:</strong> Implementar sistemas que monitoram o consumo de energia em tempo real para identificar e eliminar desperdícios.</li>
+</ul>
+<h3 id="95-boas-praticas-na-gestao-de-energia">9.5 Boas Práticas na Gestão de Energia<a class="headerlink" href="#95-boas-praticas-na-gestao-de-energia" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Teste e Medição:</strong> Sempre medir o consumo de energia antes e depois de implementar técnicas de economia.</li>
+<li><strong>Documentação:</strong> Manter registros detalhados das técnicas e componentes utilizados para facilitar futuras otimizações.</li>
+<li><strong>Otimização Contínua:</strong> Revisar e melhorar continuamente o gerenciamento de energia conforme o projeto evolui.</li>
+</ul>
+<hr />
+<h2 id="10-recursos-adicionais">10. Recursos Adicionais<a class="headerlink" href="#10-recursos-adicionais" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><strong>Documentação Oficial do Arduino:</strong></p>
+</li>
+<li>
+<p><a href="https://github.com/rocketscream/Low-Power">LowPower Library</a></p>
+</li>
+<li><a href="https://www.arduino.cc/en/Guide/LowPower">Energy Consumption Basics</a></li>
+<li>
+<p><a href="https://www.arduino.cc/en/Tutorial/AnalogToDigitalConverter">ADC Precision</a></p>
+</li>
+<li>
+<p><strong>Tutoriais e Guias:</strong></p>
+</li>
+<li>
+<p><a href="https://create.arduino.cc/projecthub/projects/tags/energy-management">Gerenciamento de Energia com Arduino</a></p>
+</li>
+<li><a href="https://www.tutorialspoint.com/arduino/arduino_sleep_mode.htm">Implementando Sleep Modes no Arduino</a></li>
+<li>
+<p><a href="https://www.hackster.io/news/how-to-measure-the-current-consumption-of-your-arduino-projects-123456">Medição de Consumo de Energia com Arduino</a></p>
+</li>
+<li>
+<p><strong>Vídeos Educacionais:</strong></p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=example16">Economizando Energia no Arduino</a></p>
+</li>
+<li><a href="https://www.youtube.com/watch?v=example17">Sleep Modes e Gestão de Energia</a></li>
+<li><a href="https://www.youtube.com/watch?v=example18">Otimizando Projetos Arduino para IoT</a></li>
+</ul>
+<hr />
+<h2 id="11-conclusao-do-modulo">11. Conclusão do Módulo<a class="headerlink" href="#11-conclusao-do-modulo" title="Permanent link">&para;</a></h2>
+<p>Neste módulo, você aprendeu:</p>
+<ul>
+<li><strong>Fundamentos da Gestão de Energia:</strong> Compreendeu a importância de gerenciar o consumo energético em projetos Arduino.</li>
+<li><strong>Medição de Consumo:</strong> Aprendeu a medir e analisar o consumo de energia utilizando ferramentas e sensores.</li>
+<li><strong>Implementação de Sleep Modes:</strong> Aplicou modos de sleep para reduzir o consumo de energia quando o Arduino não está ativo.</li>
+<li><strong>Seleção de Componentes Eficientes:</strong> Selecionou componentes de baixo consumo para otimizar seus projetos.</li>
+<li><strong>Gerenciamento de Energia em IoT:</strong> Desenvolveu estratégias para projetos IoT eficientes energeticamente.</li>
+<li><strong>Boas Práticas:</strong> Entendeu a importância de testar, documentar e otimizar continuamente o consumo de energia.</li>
+</ul>
+<p>Com este conhecimento, você está preparado para desenvolver projetos mais sustentáveis, eficientes e com maior autonomia, utilizando as melhores práticas de gestão de energia.</p>
+<hr />
+<h2 id="12-proximos-passos">12. Próximos Passos<a class="headerlink" href="#12-proximos-passos" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Revisar todo o conteúdo do módulo para consolidar o aprendizado.</strong></li>
+<li><strong>Explorar projetos avançados que combinam gestão de energia com outros conceitos aprendidos, como IoT e robótica.</strong></li>
+<li><strong>Participar de comunidades e fóruns de Arduino para trocar experiências e obter suporte contínuo.</strong></li>
+<li><strong>Considerar cursos avançados ou especializações em áreas específicas de interesse, como design de sistemas de energia ou otimização de desempenho.</strong></li>
+<li><strong>Desenvolver seu próprio portfólio de projetos Arduino, aplicando técnicas de gestão de energia para resolver problemas reais.</strong></li>
+</ul>
+<p>Se tiver dúvidas ou precisar de assistência, continue participando de comunidades de aprendizagem ou consulte os recursos adicionais fornecidos ao longo dos módulos.</p>
+<hr />
+<p>**Parabéns por concluir o Módulo 17! Continue explorando e criando projetos incríveis com Arduino!</p>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 23, 2024</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.525ec568.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.0.0/js-yaml.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/gh/insper-education/active-handout-plugins-js@main/package/plugin-bundle.js"></script>
+      
+        <script src="../../../search/main.js"></script>
+      
+    
+  </body>
+</html>

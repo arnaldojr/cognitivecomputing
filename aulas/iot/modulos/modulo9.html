@@ -1,0 +1,3343 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Arnaldo Viana">
+      
+      
+        <link rel="canonical" href="https://arnaldojr.github.io/cognitivecomputing/aulas/iot/modulos/modulo9.html">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.39">
+    
+    
+      
+        <title>Módulo 9: Interrupções e Timers - cognitivecomputing</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8c3ca2c6.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/insper-education/active-handout-css@main/devlife.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans+Extra+Condensed:700|Oxygen+Mono|Source+Sans+Pro:700|Source+Serif+Pro&amp;display=swap">
+<link rel="stylesheet" href="../../../assets/css/devlife.css">
+
+
+
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#modulo-9-interrupcoes-e-timers" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../index.html" title="cognitivecomputing" class="md-header__button md-logo" aria-label="cognitivecomputing" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            cognitivecomputing
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Módulo 9: Interrupções e Timers
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/arnaldojr/cognitivecomputing/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    cognitivecomputing
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../index.html" title="cognitivecomputing" class="md-nav__button md-logo" aria-label="cognitivecomputing" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    cognitivecomputing
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/arnaldojr/cognitivecomputing/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    cognitivecomputing
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../instalacao/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Instalação
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../agenda/agenda.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Agenda
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    CheckPoint
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            CheckPoint
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../checkpoint/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Orientações gerais
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../checkpoint/cp.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CheckPoint 5
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Introdução
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Introdução
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    IoT e Sistemas Embarcados
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            IoT e Sistemas Embarcados
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intro/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introdução
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intro/dicas.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Eletronica básica
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="modulos.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Programação Arduino
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intro/introarduino.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sistemas Embarcados
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1_5" id="__nav_5_1_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Exemplos
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_1_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1_5">
+            <span class="md-nav__icon md-icon"></span>
+            Exemplos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ex0/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    From 0 to Hero!
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ex1/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Blink led
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ex2/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Led botão
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ex3/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Botão pot led
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ex7/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PWM
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ex4/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Função millis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ex5/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Interrupção de pino
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ex6/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Comunicação Serial
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/intro/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Processamento Digital de Imagens
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IA/intro/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Laboratórios
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Laboratórios
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    IoT
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            IoT
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ex0/solucao.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab00
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab1/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab01
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab2/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab02
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab3/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab03
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab4/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab04
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab5/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab05
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab6/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab06
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab7/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab07
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab8/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab08
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab9/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab09
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Processamento Digital de Imagens
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            Processamento Digital de Imagens
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/solucoes/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Soluções PDI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/lab01/IntroPID.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab01 - Intro PID
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/lab02/atividade2.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab02 - Seguimentação por pixel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/lab03/atividade3.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab03 - Histograma e equalização
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/lab04/Filtros_de_Convolu%C3%A7%C3%A3o.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab04 - Filtros de Convolução
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/lab05/Espa%C3%A7o-cor-contorno.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab05 - Espaço de cor e contorno
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/lab06/Transformada-Hough-morfologia.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab06 - Transformada de Hough e morfologia
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/lab07/Aula09/motion.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab07 - Traking de objetos e movimento
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/lab08/Aula4.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab08 - Relacionamento e operações entre imagens
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/lab09/aula.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab09 - FFT
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/lab10/medidas.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab10 - Medidas aproximadas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/lab11/watershed.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab11 - Transformada de watershed
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/lab12/Template_matching.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab12 - Template matching
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/lab13/Features.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab13 - Features
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/lab14/haarCascade.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab14 - Detector haar Cascade
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/lab15/EventMouse.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab15 - Event Mouse
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/lab16/dlib2.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab16 - Detector dlib
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/lab17/mediapipe.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab17 - Mediapipe
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/lab18/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab18 - Yolo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Machine Learning
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            Machine Learning
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3_1" id="__nav_6_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Manipulação de Dados
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Manipulação de Dados
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IA/lab01/dataframe.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dataframe
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IA/lab04/dicasDePreprocessamento.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pré-processamento
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3_2" id="__nav_6_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Aprendizado Supervisionado - Classificação
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Aprendizado Supervisionado - Classificação
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IA/lab02/classificador_knn.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lab1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3_3" id="__nav_6_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Aprendizado Supervisionado - Regressão
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Aprendizado Supervisionado - Regressão
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IA/lab03/regressao.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lab1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IA/lab03/preco-notebook.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lab2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IA/lab05/validacaocruzada.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Validação de Modelos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3_5" id="__nav_6_3_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Aprendizado Não Supervisionado
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            Aprendizado Não Supervisionado
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IA/lab-01/aula5.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lab1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IA/lab-01/aula5-parte2.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lab2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IA/lab-02/aula6.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lab2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IA/lab-03/aula7.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lab3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IA/lab04/reducao_dimensionalidade_pca.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PCA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Deep Learning
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_4">
+            <span class="md-nav__icon md-icon"></span>
+            Deep Learning
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IA/lab06/rna.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab06 - Redes Neurais - Percepton
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IA/lab07/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab07 - Redes Neurais - TensorFlow
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IA/lab07/mlp.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab07b - Redes Neurais - MLP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IA/batalharedes/batalha_das_redes.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BATALHA DAS REDES
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IA/lab08/cnn.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab08 - Redes Neurais - CNN parte1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IA/lab08/cnn_drive.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab08 - Redes Neurais - CNN parte2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IA/lab09/transferlearning_1.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab9 - Redes Neurais - Pré-treinadas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IA/lab09/transferlearning_2.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab9 - Redes Neurais - Transfer learning
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IA/lab10/data-augmentation.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab10 - Redes Neurais - Data Augmentation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IA/lab11/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab11 - Redes Neurais - resumo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objetivos-do-modulo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objetivos do Módulo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-introducao-a-interrupcoes-e-timers" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Introdução a Interrupções e Timers
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Introdução a Interrupções e Timers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-o-que-sao-interrupcoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 O que são Interrupções?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-por-que-usar-interrupcoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 Por que Usar Interrupções?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-o-que-sao-timers" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 O que são Timers?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-trabalhando-com-interrupcoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Trabalhando com Interrupções
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Trabalhando com Interrupções">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-tipos-de-interrupcoes-no-arduino" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Tipos de Interrupções no Arduino
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-configuracao-de-interrupcoes-externas" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Configuração de Interrupções Externas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-boas-praticas-com-isrs" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 Boas Práticas com ISRs
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-trabalhando-com-timers" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Trabalhando com Timers
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Trabalhando com Timers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-tipos-de-timers-no-arduino" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Tipos de Timers no Arduino
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-configuracao-de-timer1-para-gerar-uma-interrupcao" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Configuração de Timer1 para Gerar uma Interrupção
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-gerando-pwm-com-timers" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 Gerando PWM com Timers
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-exemplos-praticos" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Exemplos Práticos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Exemplos Práticos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-monitorando-um-sensor-com-interrupcao" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 Monitorando um Sensor com Interrupção
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-blink-com-timer1" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 Blink com Timer1
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-exercicios-praticos" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Exercícios Práticos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Exercícios Práticos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-1-contador-de-pulsos-com-interrupcao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercício 1: Contador de Pulsos com Interrupção
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-2-pwm-controlado-por-timer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercício 2: PWM Controlado por Timer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-3-debounce-de-botao-com-interrupcao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercício 3: Debounce de Botão com Interrupção
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-conceitos-importantes" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Conceitos Importantes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Conceitos Importantes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-isr-interrupt-service-routine" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.1 ISR (Interrupt Service Routine)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-aritmetica-de-ponteiros-e-timers" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.2 Aritmética de Ponteiros e Timers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-gerenciamento-de-tempo" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.3 Gerenciamento de Tempo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-boas-praticas-com-interrupcoes-e-timers" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.4 Boas Práticas com Interrupções e Timers
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-recursos-adicionais" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Recursos Adicionais
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-exercicios-praticos" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Exercícios Práticos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Exercícios Práticos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-1-led-pisca-com-timer-e-interrupcao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercício 1: LED Pisca com Timer e Interrupção
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-2-leitura-de-sensor-com-interrupcao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercício 2: Leitura de Sensor com Interrupção
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-3-controlar-servo-com-timer-e-interrupcao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercício 3: Controlar Servo com Timer e Interrupção
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-conceitos-importantes" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Conceitos Importantes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Conceitos Importantes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-variaveis-volateis" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.1 Variáveis Voláteis
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-prioridade-de-interrupcoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.2 Prioridade de Interrupções
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#93-uso-de-funcoes-nas-isrs" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.3 Uso de Funções nas ISRs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#94-configuracao-correta-dos-timers" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.4 Configuração Correta dos Timers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#95-boas-praticas-com-interrupcoes-e-timers" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.5 Boas Práticas com Interrupções e Timers
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-recursos-adicionais" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Recursos Adicionais
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-conclusao-do-modulo" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Conclusão do Módulo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-proximos-passos" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. Próximos Passos
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="modulo-9-interrupcoes-e-timers">Módulo 9: Interrupções e Timers<a class="headerlink" href="#modulo-9-interrupcoes-e-timers" title="Permanent link">&para;</a></h1>
+<p>Bem-vindo ao <strong>Módulo 9</strong> do curso <strong>"Programação em Arduino: Conceitos Fundamentais sem Hardware"</strong>. Neste módulo, você irá explorar as <strong>interrupções</strong> e <strong>timers</strong> na linguagem de programação Arduino (C/C++). Esses conceitos são essenciais para criar programas responsivos e eficientes, capazes de lidar com eventos assíncronos e temporizações precisas.</p>
+<hr />
+<h2 id="objetivos-do-modulo">Objetivos do Módulo<a class="headerlink" href="#objetivos-do-modulo" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Compreender o conceito de interrupções e sua importância na programação Arduino.</li>
+<li>Aprender a configurar e utilizar interrupções externas e internas.</li>
+<li>Entender o funcionamento dos timers e como utilizá-los para gerar eventos temporizados.</li>
+<li>Implementar aplicações que utilizam interrupções e timers para melhorar a eficiência e a responsividade do programa.</li>
+<li>Resolver exercícios práticos para consolidar o conhecimento sobre interrupções e timers.</li>
+</ul>
+<hr />
+<h2 id="1-introducao-a-interrupcoes-e-timers">1. Introdução a Interrupções e Timers<a class="headerlink" href="#1-introducao-a-interrupcoes-e-timers" title="Permanent link">&para;</a></h2>
+<h3 id="11-o-que-sao-interrupcoes">1.1 O que são Interrupções?<a class="headerlink" href="#11-o-que-sao-interrupcoes" title="Permanent link">&para;</a></h3>
+<p><strong>Interrupções</strong> são sinais que indicam a ocorrência de um evento que requer atenção imediata do processador. Quando uma interrupção ocorre, o fluxo normal do programa é temporariamente interrompido para executar uma rotina de tratamento específica, conhecida como <strong>ISR (Interrupt Service Routine)</strong>. Após a execução da ISR, o programa retorna ao ponto onde foi interrompido.</p>
+<h3 id="12-por-que-usar-interrupcoes">1.2 Por que Usar Interrupções?<a class="headerlink" href="#12-por-que-usar-interrupcoes" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Responsividade:</strong> Permite que o microcontrolador reaja rapidamente a eventos externos sem a necessidade de verificar constantemente o estado de entradas.</li>
+<li><strong>Eficiência:</strong> Reduz o consumo de CPU, já que o processador pode executar outras tarefas enquanto espera por eventos.</li>
+<li><strong>Precisão:</strong> Garante que eventos críticos sejam tratados imediatamente, aumentando a precisão das operações temporizadas.</li>
+</ul>
+<h3 id="13-o-que-sao-timers">1.3 O que são Timers?<a class="headerlink" href="#13-o-que-sao-timers" title="Permanent link">&para;</a></h3>
+<p><strong>Timers</strong> são módulos internos que contam ciclos de clock e geram eventos após um determinado período. Eles são usados para criar temporizações precisas, gerar sinais PWM, ou criar delays sem bloquear a execução do programa principal.</p>
+<hr />
+<h2 id="2-trabalhando-com-interrupcoes">2. Trabalhando com Interrupções<a class="headerlink" href="#2-trabalhando-com-interrupcoes" title="Permanent link">&para;</a></h2>
+<h3 id="21-tipos-de-interrupcoes-no-arduino">2.1 Tipos de Interrupções no Arduino<a class="headerlink" href="#21-tipos-de-interrupcoes-no-arduino" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Interrupções Externas:</strong> Disparadas por sinais em pinos específicos (por exemplo, botões ou sensores).</li>
+<li><strong>Interrupções Internas:</strong> Disparadas por eventos internos, como overflow de timers ou comunicação serial.</li>
+</ul>
+<h3 id="22-configuracao-de-interrupcoes-externas">2.2 Configuração de Interrupções Externas<a class="headerlink" href="#22-configuracao-de-interrupcoes-externas" title="Permanent link">&para;</a></h3>
+<p>Os Arduinos possuem pinos específicos que suportam interrupções externas. Por exemplo, no Arduino Uno, os pinos 2 e 3 são comumente usados para esse propósito.</p>
+<p><strong>Sintaxe:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">attachInterrupt</span><span class="p">(</span><span class="n">digitalPinToInterrupt</span><span class="p">(</span><span class="n">pino</span><span class="p">),</span><span class="w"> </span><span class="n">nomeISR</span><span class="p">,</span><span class="w"> </span><span class="n">modo</span><span class="p">);</span>
+</code></pre></div>
+<ul>
+<li><strong>pino:</strong> Número do pino que receberá a interrupção.</li>
+<li><strong>nomeISR:</strong> Nome da função que será chamada quando a interrupção ocorrer.</li>
+<li><strong>modo:</strong> Condição que dispara a interrupção (<code>LOW</code>, <code>CHANGE</code>, <code>RISING</code>, <code>FALLING</code>).</li>
+</ul>
+<p><strong>Exemplo Prático:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">volatile</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">botaoPressionado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">botaoISR</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="n">botaoPressionado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="p">}</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT_PULLUP</span><span class="p">);</span><span class="w"> </span><span class="c1">// Botão conectado ao pino 2</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="n">attachInterrupt</span><span class="p">(</span><span class="n">digitalPinToInterrupt</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="n">botaoISR</span><span class="p">,</span><span class="w"> </span><span class="n">FALLING</span><span class="p">);</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="p">}</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">botaoPressionado</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">        </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Botão pressionado!&quot;</span><span class="p">);</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">        </span><span class="n">botaoPressionado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="p">}</span>
+</code></pre></div>
+<p><strong>Explicação:</strong></p>
+<ul>
+<li><strong><code>volatile</code>:</strong> Indica que a variável pode ser alterada por uma ISR, evitando otimizações que poderiam ignorar mudanças.</li>
+<li><strong><code>botaoISR</code>:</strong> ISR que altera o estado da variável <code>botaoPressionado</code> quando o botão é pressionado.</li>
+<li><strong><code>attachInterrupt</code>:</strong> Configura a interrupção no pino 2 para detectar bordas de descida (<code>FALLING</code>).</li>
+</ul>
+<h3 id="23-boas-praticas-com-isrs">2.3 Boas Práticas com ISRs<a class="headerlink" href="#23-boas-praticas-com-isrs" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Mantenha as ISRs Curtas:</strong> Execute apenas o necessário dentro da ISR para evitar atrasos no processamento.</li>
+<li><strong>Use Variáveis Voláteis:</strong> Variáveis compartilhadas entre a ISR e o loop principal devem ser declaradas como <code>volatile</code>.</li>
+<li><strong>Evite Funções Complexas:</strong> Evite chamadas a funções que dependem de interrupções, como <code>Serial.print()</code>, dentro da ISR.</li>
+</ul>
+<hr />
+<h2 id="3-trabalhando-com-timers">3. Trabalhando com Timers<a class="headerlink" href="#3-trabalhando-com-timers" title="Permanent link">&para;</a></h2>
+<h3 id="31-tipos-de-timers-no-arduino">3.1 Tipos de Timers no Arduino<a class="headerlink" href="#31-tipos-de-timers-no-arduino" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Timer0:</strong> Usado pelo <code>millis()</code> e <code>delay()</code>. Não deve ser alterado para evitar conflitos.</li>
+<li><strong>Timer1:</strong> Um timer de 16 bits, ideal para aplicações que requerem precisão.</li>
+<li><strong>Timer2:</strong> Um timer de 8 bits, útil para tarefas menos precisas.</li>
+</ul>
+<h3 id="32-configuracao-de-timer1-para-gerar-uma-interrupcao">3.2 Configuração de Timer1 para Gerar uma Interrupção<a class="headerlink" href="#32-configuracao-de-timer1-para-gerar-uma-interrupcao" title="Permanent link">&para;</a></h3>
+<p><strong>Exemplo Prático:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">volatile</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">contador</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">ISR</span><span class="p">(</span><span class="n">TIMER1_COMPA_vect</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="n">contador</span><span class="o">++</span><span class="p">;</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="p">}</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="kt">void</span><span class="w"> </span><span class="n">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">    </span><span class="c1">// Configura Timer1 para CTC mode (Clear Timer on Compare Match)</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">    </span><span class="n">TCCR1A</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">    </span><span class="n">TCCR1B</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">    </span><span class="n">TCCR1B</span><span class="w"> </span><span class="o">|=</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">WGM12</span><span class="p">);</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">    </span><span class="c1">// Define valor de comparação para gerar interrupção a cada 1 segundo</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">    </span><span class="n">OCR1A</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">15624</span><span class="p">;</span><span class="w"> </span><span class="c1">// (16MHz / (Prescaler * Desired Frequency)) - 1</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">    </span><span class="n">TCCR1B</span><span class="w"> </span><span class="o">|=</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">CS12</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">CS10</span><span class="p">);</span><span class="w"> </span><span class="c1">// Prescaler = 1024</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">    </span><span class="n">TIMSK1</span><span class="w"> </span><span class="o">|=</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">OCIE1A</span><span class="p">);</span><span class="w"> </span><span class="c1">// Habilita interrupção por comparação</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">    </span><span class="n">sei</span><span class="p">();</span><span class="w"> </span><span class="c1">// Habilita interrupções globais</span>
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="p">}</span>
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="kt">void</span><span class="w"> </span><span class="n">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">contador</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// Após 5 segundos</span>
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="w">        </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;5 segundos se passaram!&quot;</span><span class="p">);</span>
+<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="w">        </span><span class="n">contador</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a><span class="p">}</span>
+</code></pre></div>
+<p><strong>Explicação:</strong></p>
+<ul>
+<li><strong>CTC Mode:</strong> Configura o timer para limpar o contador quando atingir o valor de comparação.</li>
+<li><strong>OCR1A:</strong> Define o valor de comparação para gerar uma interrupção a cada segundo.</li>
+<li><strong>Prescaler:</strong> Reduz a frequência do clock do timer para atingir a temporização desejada.</li>
+<li><strong><code>sei()</code>:</strong> Habilita interrupções globais.</li>
+<li><strong><code>ISR(TIMER1_COMPA_vect)</code>:</strong> ISR chamada a cada vez que o timer atinge o valor de comparação, incrementando o contador.</li>
+</ul>
+<h3 id="33-gerando-pwm-com-timers">3.3 Gerando PWM com Timers<a class="headerlink" href="#33-gerando-pwm-com-timers" title="Permanent link">&para;</a></h3>
+<p>Os timers também podem ser usados para gerar sinais PWM (Pulse Width Modulation) com maior precisão ou em pinos específicos.</p>
+<p><strong>Exemplo Prático:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="c1">// Configura o pino 9 como saída (usado pelo Timer1)</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="c1">// Configura Timer1 para Fast PWM mode</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="n">TCCR1A</span><span class="w"> </span><span class="o">|=</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">COM1A1</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">WGM11</span><span class="p">);</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="n">TCCR1B</span><span class="w"> </span><span class="o">|=</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">WGM13</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">WGM12</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">CS10</span><span class="p">);</span><span class="w"> </span><span class="c1">// Prescaler = 1</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="n">ICR1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">19999</span><span class="p">;</span><span class="w"> </span><span class="c1">// Define frequência de 50Hz (usando 16MHz)</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">    </span><span class="c1">// Define o ciclo de trabalho (Duty Cycle) para 7.5% (posição neutra)</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">    </span><span class="n">OCR1A</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1500</span><span class="p">;</span><span class="w"> </span><span class="c1">// 1.5ms pulse width</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="p">}</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">    </span><span class="c1">// Pode ajustar OCR1A para alterar o ciclo de trabalho</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="p">}</span>
+</code></pre></div>
+<p><strong>Explicação:</strong></p>
+<ul>
+<li><strong>Fast PWM Mode:</strong> Configura o timer para modo de PWM rápido, permitindo uma frequência estável.</li>
+<li><strong>ICR1:</strong> Define o período do PWM (por exemplo, 20ms para 50Hz).</li>
+<li><strong>OCR1A:</strong> Define a largura do pulso, controlando o ciclo de trabalho.</li>
+<li><strong>PWM Aplicação:</strong> Comumente usado para controlar servos ou LEDs com brilho ajustável.</li>
+</ul>
+<hr />
+<h2 id="4-exemplos-praticos">4. Exemplos Práticos<a class="headerlink" href="#4-exemplos-praticos" title="Permanent link">&para;</a></h2>
+<h3 id="41-monitorando-um-sensor-com-interrupcao">4.1 Monitorando um Sensor com Interrupção<a class="headerlink" href="#41-monitorando-um-sensor-com-interrupcao" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">volatile</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">leituraSensor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="p">;</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">sensorISR</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="n">leituraSensor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">analogRead</span><span class="p">(</span><span class="n">A0</span><span class="p">);</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="p">}</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT_PULLUP</span><span class="p">);</span><span class="w"> </span><span class="c1">// Sensor conectado ao pino 2</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">    </span><span class="n">attachInterrupt</span><span class="p">(</span><span class="n">digitalPinToInterrupt</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="n">sensorISR</span><span class="p">,</span><span class="w"> </span><span class="n">FALLING</span><span class="p">);</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="p">}</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">leituraSensor</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">        </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Leitura do Sensor: &quot;</span><span class="p">);</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="w">        </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">leituraSensor</span><span class="p">);</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="w">        </span><span class="n">leituraSensor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="p">;</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="p">}</span>
+</code></pre></div>
+<p><strong>Explicação:</strong></p>
+<ul>
+<li><strong><code>sensorISR</code>:</strong> ISR que lê o valor analógico do sensor quando ocorre uma interrupção no pino 2.</li>
+<li><strong>Loop Principal:</strong> Verifica se uma nova leitura está disponível e a imprime no Monitor Serial.</li>
+</ul>
+<h3 id="42-blink-com-timer1">4.2 Blink com Timer1<a class="headerlink" href="#42-blink-com-timer1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">volatile</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">toggle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="n">ISR</span><span class="p">(</span><span class="n">TIMER1_COMPA_vect</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="n">toggle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">!</span><span class="n">toggle</span><span class="p">;</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="p">}</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="kt">void</span><span class="w"> </span><span class="n">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">    </span><span class="c1">// Configura Timer1 para CTC mode</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">    </span><span class="n">TCCR1A</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">    </span><span class="n">TCCR1B</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">    </span><span class="n">TCCR1B</span><span class="w"> </span><span class="o">|=</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">WGM12</span><span class="p">);</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">    </span><span class="c1">// Define valor de comparação para 1Hz</span>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="w">    </span><span class="n">OCR1A</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">15624</span><span class="p">;</span>
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="w">    </span><span class="n">TCCR1B</span><span class="w"> </span><span class="o">|=</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">CS12</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">CS10</span><span class="p">);</span><span class="w"> </span><span class="c1">// Prescaler = 1024</span>
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="w">    </span><span class="n">TIMSK1</span><span class="w"> </span><span class="o">|=</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">OCIE1A</span><span class="p">);</span><span class="w"> </span><span class="c1">// Habilita interrupção</span>
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="w">    </span><span class="n">sei</span><span class="p">();</span><span class="w"> </span><span class="c1">// Habilita interrupções globais</span>
+<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="p">}</span>
+<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>
+<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a><span class="kt">void</span><span class="w"> </span><span class="n">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">toggle</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a><span class="w">        </span><span class="n">digitalWrite</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span>
+<a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a><span class="w">        </span><span class="n">digitalWrite</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span>
+<a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a><span class="p">}</span>
+</code></pre></div>
+<p><strong>Explicação:</strong></p>
+<ul>
+<li><strong>ISR <code>TIMER1_COMPA_vect</code>:</strong> Alterna o estado da variável <code>toggle</code> a cada segundo.</li>
+<li><strong>Loop Principal:</strong> Liga ou desliga o LED conectado ao pino 13 com base no estado de <code>toggle</code>.</li>
+</ul>
+<hr />
+<h2 id="5-exercicios-praticos">5. Exercícios Práticos<a class="headerlink" href="#5-exercicios-praticos" title="Permanent link">&para;</a></h2>
+<h3 id="exercicio-1-contador-de-pulsos-com-interrupcao">Exercício 1: Contador de Pulsos com Interrupção<a class="headerlink" href="#exercicio-1-contador-de-pulsos-com-interrupcao" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>Tarefa:</strong> Crie um programa que conta o número de pulsos recebidos em um pino específico usando interrupções e exibe o contador no Monitor Serial a cada segundo.</p>
+</li>
+<li>
+<p><strong>Dicas:</strong></p>
+</li>
+<li>Use Timer1 para criar uma interrupção a cada segundo.</li>
+<li>
+<p>Use uma ISR externa para contar os pulsos.</p>
+</li>
+<li>
+<p><strong>Exemplo de Código:</strong></p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">volatile</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">contadorPulsos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="k">volatile</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">atualizarDisplay</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="c1">// ISR para contar pulsos no pino 2</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="kt">void</span><span class="w"> </span><span class="nf">pulseISR</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">    </span><span class="n">contadorPulsos</span><span class="o">++</span><span class="p">;</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="p">}</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="c1">// ISR para Timer1 a cada segundo</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="n">ISR</span><span class="p">(</span><span class="n">TIMER1_COMPA_vect</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">    </span><span class="n">atualizarDisplay</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="p">}</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="kt">void</span><span class="w"> </span><span class="n">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT_PULLUP</span><span class="p">);</span><span class="w"> </span><span class="c1">// Pino de entrada para pulsos</span>
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="w">    </span><span class="n">attachInterrupt</span><span class="p">(</span><span class="n">digitalPinToInterrupt</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="n">pulseISR</span><span class="p">,</span><span class="w"> </span><span class="n">RISING</span><span class="p">);</span>
+<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>
+<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a><span class="w">    </span><span class="c1">// Configura Timer1 para CTC mode</span>
+<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a><span class="w">    </span><span class="n">TCCR1A</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a><span class="w">    </span><span class="n">TCCR1B</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a><span class="w">    </span><span class="n">TCCR1B</span><span class="w"> </span><span class="o">|=</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">WGM12</span><span class="p">);</span>
+<a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a>
+<a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a><span class="w">    </span><span class="n">OCR1A</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">15624</span><span class="p">;</span><span class="w"> </span><span class="c1">// Para 1 segundo</span>
+<a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a><span class="w">    </span><span class="n">TCCR1B</span><span class="w"> </span><span class="o">|=</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">CS12</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">CS10</span><span class="p">);</span><span class="w"> </span><span class="c1">// Prescaler = 1024</span>
+<a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a><span class="w">    </span><span class="n">TIMSK1</span><span class="w"> </span><span class="o">|=</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">OCIE1A</span><span class="p">);</span><span class="w"> </span><span class="c1">// Habilita interrupção por comparação</span>
+<a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a>
+<a id="__codelineno-6-28" name="__codelineno-6-28" href="#__codelineno-6-28"></a><span class="w">    </span><span class="n">sei</span><span class="p">();</span><span class="w"> </span><span class="c1">// Habilita interrupções globais</span>
+<a id="__codelineno-6-29" name="__codelineno-6-29" href="#__codelineno-6-29"></a><span class="p">}</span>
+<a id="__codelineno-6-30" name="__codelineno-6-30" href="#__codelineno-6-30"></a>
+<a id="__codelineno-6-31" name="__codelineno-6-31" href="#__codelineno-6-31"></a><span class="kt">void</span><span class="w"> </span><span class="n">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-32" name="__codelineno-6-32" href="#__codelineno-6-32"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">atualizarDisplay</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-33" name="__codelineno-6-33" href="#__codelineno-6-33"></a><span class="w">        </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Pulsos por segundo: &quot;</span><span class="p">);</span>
+<a id="__codelineno-6-34" name="__codelineno-6-34" href="#__codelineno-6-34"></a><span class="w">        </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">contadorPulsos</span><span class="p">);</span>
+<a id="__codelineno-6-35" name="__codelineno-6-35" href="#__codelineno-6-35"></a><span class="w">        </span><span class="n">contadorPulsos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-6-36" name="__codelineno-6-36" href="#__codelineno-6-36"></a><span class="w">        </span><span class="n">atualizarDisplay</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<a id="__codelineno-6-37" name="__codelineno-6-37" href="#__codelineno-6-37"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-6-38" name="__codelineno-6-38" href="#__codelineno-6-38"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="exercicio-2-pwm-controlado-por-timer">Exercício 2: PWM Controlado por Timer<a class="headerlink" href="#exercicio-2-pwm-controlado-por-timer" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>Tarefa:</strong> Desenvolva um programa que ajusta a intensidade de um LED usando PWM controlado por Timer1, permitindo aumentar e diminuir o brilho a cada 500ms.</p>
+</li>
+<li>
+<p><strong>Dicas:</strong></p>
+</li>
+<li>Configure Timer1 para gerar PWM em um pino específico.</li>
+<li>
+<p>Use uma ISR para alterar o ciclo de trabalho periodicamente.</p>
+</li>
+<li>
+<p><strong>Exemplo de Código:</strong></p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">volatile</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">cicloTrabalho</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">128</span><span class="p">;</span><span class="w"> </span><span class="c1">// Valor inicial (50%)</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="n">ISR</span><span class="p">(</span><span class="n">TIMER1_COMPA_vect</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span><span class="n">cicloTrabalho</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">32</span><span class="p">;</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">cicloTrabalho</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">255</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">        </span><span class="n">cicloTrabalho</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">    </span><span class="n">OCR1A</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cicloTrabalho</span><span class="p">;</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="p">}</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="kt">void</span><span class="w"> </span><span class="n">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span><span class="w"> </span><span class="c1">// LED conectado ao pino 9</span>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="w">    </span><span class="c1">// Configura Timer1 para Fast PWM mode</span>
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="w">    </span><span class="n">TCCR1A</span><span class="w"> </span><span class="o">|=</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">COM1A1</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">WGM11</span><span class="p">);</span>
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="w">    </span><span class="n">TCCR1B</span><span class="w"> </span><span class="o">|=</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">WGM13</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">WGM12</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">CS12</span><span class="p">);</span><span class="w"> </span><span class="c1">// Prescaler = 256</span>
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="w">    </span><span class="n">ICR1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4999</span><span class="p">;</span><span class="w"> </span><span class="c1">// Define período para 500ms (supondo 16MHz)</span>
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span class="w">    </span><span class="n">OCR1A</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cicloTrabalho</span><span class="p">;</span><span class="w"> </span><span class="c1">// Define ciclo de trabalho inicial</span>
+<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a>
+<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a><span class="w">    </span><span class="c1">// Configura interrupção para alterar ciclo de trabalho</span>
+<a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a><span class="w">    </span><span class="n">TIMSK1</span><span class="w"> </span><span class="o">|=</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">OCIE1A</span><span class="p">);</span>
+<a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a><span class="w">    </span><span class="n">sei</span><span class="p">();</span><span class="w"> </span><span class="c1">// Habilita interrupções globais</span>
+<a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a><span class="p">}</span>
+<a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a>
+<a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a><span class="kt">void</span><span class="w"> </span><span class="n">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a><span class="w">    </span><span class="c1">// Não há código no loop</span>
+<a id="__codelineno-7-28" name="__codelineno-7-28" href="#__codelineno-7-28"></a><span class="p">}</span>
+</code></pre></div>
+<p><strong>Explicação:</strong></p>
+<ul>
+<li><strong>ISR <code>TIMER1_COMPA_vect</code>:</strong> Incrementa o ciclo de trabalho do PWM a cada 500ms, alterando o brilho do LED.</li>
+<li><strong>PWM no Pino 9:</strong> Controla a intensidade do LED usando PWM gerado pelo Timer1.</li>
+</ul>
+<h3 id="exercicio-3-debounce-de-botao-com-interrupcao">Exercício 3: Debounce de Botão com Interrupção<a class="headerlink" href="#exercicio-3-debounce-de-botao-com-interrupcao" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>Tarefa:</strong> Implemente um sistema que detecta pressionamentos de botão usando interrupções, com debounce para evitar múltiplas detecções indesejadas.</p>
+</li>
+<li>
+<p><strong>Dicas:</strong></p>
+</li>
+<li>Use uma variável para armazenar o último tempo de interrupção.</li>
+<li>
+<p>Ignore interrupções que ocorram muito próximas umas das outras.</p>
+</li>
+<li>
+<p><strong>Exemplo de Código:</strong></p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">volatile</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">botaoPressionado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">ultimoTempo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="k">const</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">debounceDelay</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">200</span><span class="p">;</span><span class="w"> </span><span class="c1">// 200ms</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="kt">void</span><span class="w"> </span><span class="nf">botaoISR</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">tempoAtual</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">millis</span><span class="p">();</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">tempoAtual</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">ultimoTempo</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">debounceDelay</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">        </span><span class="n">botaoPressionado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="w">        </span><span class="n">ultimoTempo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tempoAtual</span><span class="p">;</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="p">}</span>
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT_PULLUP</span><span class="p">);</span><span class="w"> </span><span class="c1">// Botão conectado ao pino 2</span>
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="w">    </span><span class="n">attachInterrupt</span><span class="p">(</span><span class="n">digitalPinToInterrupt</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="n">botaoISR</span><span class="p">,</span><span class="w"> </span><span class="n">FALLING</span><span class="p">);</span>
+<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="p">}</span>
+<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>
+<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a><span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">botaoPressionado</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a><span class="w">        </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Botão pressionado!&quot;</span><span class="p">);</span>
+<a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a><span class="w">        </span><span class="n">botaoPressionado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a><span class="p">}</span>
+</code></pre></div>
+<p><strong>Explicação:</strong></p>
+<ul>
+<li><strong>Debounce:</strong> Garante que apenas pressões de botão com intervalo maior que <code>debounceDelay</code> sejam consideradas válidas.</li>
+<li><strong>ISR <code>botaoISR</code>:</strong> Marca que o botão foi pressionado se o debounce permitir.</li>
+</ul>
+<hr />
+<h2 id="6-conceitos-importantes">6. Conceitos Importantes<a class="headerlink" href="#6-conceitos-importantes" title="Permanent link">&para;</a></h2>
+<h3 id="61-isr-interrupt-service-routine">6.1 ISR (Interrupt Service Routine)<a class="headerlink" href="#61-isr-interrupt-service-routine" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Definição:</strong> Funções que são chamadas automaticamente em resposta a interrupções.</li>
+<li><strong>Características:</strong></li>
+<li>Não podem retornar valores.</li>
+<li>Devem ser rápidas e eficientes.</li>
+<li>Devem evitar o uso de funções que dependem de interrupções, como <code>Serial.print()</code>.</li>
+</ul>
+<h3 id="62-aritmetica-de-ponteiros-e-timers">6.2 Aritmética de Ponteiros e Timers<a class="headerlink" href="#62-aritmetica-de-ponteiros-e-timers" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Aritmética de Ponteiros:</strong> Permite navegar por arrays e estruturas de dados de forma eficiente.</li>
+<li><strong>Timers:</strong> Facilitam a criação de temporizações precisas e a geração de sinais PWM.</li>
+</ul>
+<h3 id="63-gerenciamento-de-tempo">6.3 Gerenciamento de Tempo<a class="headerlink" href="#63-gerenciamento-de-tempo" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Uso de Timers e <code>millis()</code>:</strong> Evita o bloqueio do loop principal, permitindo a execução de múltiplas tarefas simultaneamente.</li>
+<li><strong>Comparação com <code>delay()</code>:</strong> <code>delay()</code> bloqueia a execução, enquanto timers e interrupções permitem um controle mais granular e eficiente.</li>
+</ul>
+<h3 id="64-boas-praticas-com-interrupcoes-e-timers">6.4 Boas Práticas com Interrupções e Timers<a class="headerlink" href="#64-boas-praticas-com-interrupcoes-e-timers" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Minimize o Código nas ISRs:</strong> Execute apenas o essencial dentro das ISRs para evitar atrasos no processamento.</li>
+<li><strong>Evite Variáveis Complexas:</strong> Use variáveis simples e do tipo <code>volatile</code> para comunicação entre ISRs e o loop principal.</li>
+<li><strong>Gerencie a Memória dos Timers:</strong> Configure corretamente os timers para evitar conflitos e sobrecargas.</li>
+</ul>
+<hr />
+<h2 id="7-recursos-adicionais">7. Recursos Adicionais<a class="headerlink" href="#7-recursos-adicionais" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><strong>Documentação Oficial do Arduino:</strong></p>
+</li>
+<li>
+<p><a href="https://www.arduino.cc/reference/en/language/functions/external-interrupts/attachinterrupt/">Interrupções</a></p>
+</li>
+<li>
+<p><a href="https://www.arduino.cc/reference/en/language/functions/time/timers/">Timers</a></p>
+</li>
+<li>
+<p><strong>Tutoriais e Guias:</strong></p>
+</li>
+<li>
+<p><a href="https://www.arduino.cc/en/Tutorial/BuiltInExamples/Interrupt">Guia Completo de Interrupções no Arduino</a></p>
+</li>
+<li>
+<p><a href="https://www.arduino.cc/en/Tutorial/Timer1Interrupt">Manipulação Avançada de Timers</a></p>
+</li>
+<li>
+<p><strong>Vídeos Educacionais:</strong></p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=XYZ123">Entendendo Interrupções no Arduino</a></p>
+</li>
+<li><a href="https://www.youtube.com/watch?v=ABC456">Timers e PWM Avançados</a></li>
+</ul>
+<hr />
+<h2 id="8-exercicios-praticos">8. Exercícios Práticos<a class="headerlink" href="#8-exercicios-praticos" title="Permanent link">&para;</a></h2>
+<h3 id="exercicio-1-led-pisca-com-timer-e-interrupcao">Exercício 1: LED Pisca com Timer e Interrupção<a class="headerlink" href="#exercicio-1-led-pisca-com-timer-e-interrupcao" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>Tarefa:</strong> Crie um programa que faz um LED piscar a cada 250ms usando Timer1 e uma interrupção.</p>
+</li>
+<li>
+<p><strong>Dicas:</strong></p>
+</li>
+<li>Configure Timer1 para gerar interrupções a cada 250ms.</li>
+<li>
+<p>Use uma ISR para alternar o estado do LED.</p>
+</li>
+<li>
+<p><strong>Exemplo de Código:</strong></p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">volatile</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">ledEstado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="n">ISR</span><span class="p">(</span><span class="n">TIMER1_COMPA_vect</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">    </span><span class="n">ledEstado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">!</span><span class="n">ledEstado</span><span class="p">;</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="p">}</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="kt">void</span><span class="w"> </span><span class="n">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="w">    </span><span class="c1">// Configura Timer1 para CTC mode</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="w">    </span><span class="n">TCCR1A</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="w">    </span><span class="n">TCCR1B</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="w">    </span><span class="n">TCCR1B</span><span class="w"> </span><span class="o">|=</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">WGM12</span><span class="p">);</span>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="w">    </span><span class="n">OCR1A</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3906</span><span class="p">;</span><span class="w"> </span><span class="c1">// Para 250ms (16MHz / (Prescaler * Desired Frequency)) - 1</span>
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="w">    </span><span class="n">TCCR1B</span><span class="w"> </span><span class="o">|=</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">CS12</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">CS10</span><span class="p">);</span><span class="w"> </span><span class="c1">// Prescaler = 1024</span>
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="w">    </span><span class="n">TIMSK1</span><span class="w"> </span><span class="o">|=</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">OCIE1A</span><span class="p">);</span><span class="w"> </span><span class="c1">// Habilita interrupção por comparação</span>
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>
+<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a><span class="w">    </span><span class="n">sei</span><span class="p">();</span><span class="w"> </span><span class="c1">// Habilita interrupções globais</span>
+<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a><span class="p">}</span>
+<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a>
+<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a><span class="kt">void</span><span class="w"> </span><span class="n">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a><span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span><span class="w"> </span><span class="n">ledEstado</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">HIGH</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span>
+<a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="exercicio-2-leitura-de-sensor-com-interrupcao">Exercício 2: Leitura de Sensor com Interrupção<a class="headerlink" href="#exercicio-2-leitura-de-sensor-com-interrupcao" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>Tarefa:</strong> Desenvolva um programa que lê um valor de sensor sempre que um botão é pressionado, usando interrupções para detectar o pressionamento.</p>
+</li>
+<li>
+<p><strong>Dicas:</strong></p>
+</li>
+<li>Use uma ISR externa para detectar o botão.</li>
+<li>
+<p>Armazene o valor do sensor em uma variável <code>volatile</code>.</p>
+</li>
+<li>
+<p><strong>Exemplo de Código:</strong></p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">volatile</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">lerSensor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="k">volatile</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">valorSensor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="kt">void</span><span class="w"> </span><span class="nf">botaoISR</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">    </span><span class="n">lerSensor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="p">}</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT_PULLUP</span><span class="p">);</span><span class="w"> </span><span class="c1">// Botão conectado ao pino 2</span>
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="w">    </span><span class="n">attachInterrupt</span><span class="p">(</span><span class="n">digitalPinToInterrupt</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="n">botaoISR</span><span class="p">,</span><span class="w"> </span><span class="n">FALLING</span><span class="p">);</span>
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="p">}</span>
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>
+<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">lerSensor</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a><span class="w">        </span><span class="n">valorSensor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">analogRead</span><span class="p">(</span><span class="n">A0</span><span class="p">);</span>
+<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a><span class="w">        </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Valor do Sensor: &quot;</span><span class="p">);</span>
+<a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a><span class="w">        </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">valorSensor</span><span class="p">);</span>
+<a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a><span class="w">        </span><span class="n">lerSensor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="exercicio-3-controlar-servo-com-timer-e-interrupcao">Exercício 3: Controlar Servo com Timer e Interrupção<a class="headerlink" href="#exercicio-3-controlar-servo-com-timer-e-interrupcao" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>Tarefa:</strong> Implemente um sistema que controla a posição de um servo motor utilizando Timer1 e interrupções para ajustar a posição a cada 500ms.</p>
+</li>
+<li>
+<p><strong>Dicas:</strong></p>
+</li>
+<li>Use uma ISR para alterar o ângulo do servo.</li>
+<li>
+<p>Utilize a biblioteca <code>Servo</code> para facilitar o controle do servo.</p>
+</li>
+<li>
+<p><strong>Exemplo de Código:</strong></p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;Servo.h&gt;</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="n">Servo</span><span class="w"> </span><span class="n">meuServo</span><span class="p">;</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="k">volatile</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">angulo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="n">ISR</span><span class="p">(</span><span class="n">TIMER1_COMPA_vect</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="w">    </span><span class="n">angulo</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">angulo</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">180</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="w">        </span><span class="n">angulo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="w">    </span><span class="n">meuServo</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="n">angulo</span><span class="p">);</span>
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="p">}</span>
+<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>
+<a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a><span class="kt">void</span><span class="w"> </span><span class="n">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a><span class="w">    </span><span class="n">meuServo</span><span class="p">.</span><span class="n">attach</span><span class="p">(</span><span class="mi">9</span><span class="p">);</span><span class="w"> </span><span class="c1">// Servo conectado ao pino 9</span>
+<a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a><span class="w">    </span><span class="n">meuServo</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="n">angulo</span><span class="p">);</span>
+<a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a>
+<a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a><span class="w">    </span><span class="c1">// Configura Timer1 para CTC mode</span>
+<a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a><span class="w">    </span><span class="n">TCCR1A</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-11-20" name="__codelineno-11-20" href="#__codelineno-11-20"></a><span class="w">    </span><span class="n">TCCR1B</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-11-21" name="__codelineno-11-21" href="#__codelineno-11-21"></a><span class="w">    </span><span class="n">TCCR1B</span><span class="w"> </span><span class="o">|=</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">WGM12</span><span class="p">);</span>
+<a id="__codelineno-11-22" name="__codelineno-11-22" href="#__codelineno-11-22"></a>
+<a id="__codelineno-11-23" name="__codelineno-11-23" href="#__codelineno-11-23"></a><span class="w">    </span><span class="n">OCR1A</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">15624</span><span class="p">;</span><span class="w"> </span><span class="c1">// Para 1 segundo</span>
+<a id="__codelineno-11-24" name="__codelineno-11-24" href="#__codelineno-11-24"></a><span class="w">    </span><span class="n">TCCR1B</span><span class="w"> </span><span class="o">|=</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">CS12</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">CS10</span><span class="p">);</span><span class="w"> </span><span class="c1">// Prescaler = 1024</span>
+<a id="__codelineno-11-25" name="__codelineno-11-25" href="#__codelineno-11-25"></a><span class="w">    </span><span class="n">TIMSK1</span><span class="w"> </span><span class="o">|=</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">OCIE1A</span><span class="p">);</span><span class="w"> </span><span class="c1">// Habilita interrupção por comparação</span>
+<a id="__codelineno-11-26" name="__codelineno-11-26" href="#__codelineno-11-26"></a>
+<a id="__codelineno-11-27" name="__codelineno-11-27" href="#__codelineno-11-27"></a><span class="w">    </span><span class="n">sei</span><span class="p">();</span><span class="w"> </span><span class="c1">// Habilita interrupções globais</span>
+<a id="__codelineno-11-28" name="__codelineno-11-28" href="#__codelineno-11-28"></a><span class="p">}</span>
+<a id="__codelineno-11-29" name="__codelineno-11-29" href="#__codelineno-11-29"></a>
+<a id="__codelineno-11-30" name="__codelineno-11-30" href="#__codelineno-11-30"></a><span class="kt">void</span><span class="w"> </span><span class="n">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-11-31" name="__codelineno-11-31" href="#__codelineno-11-31"></a><span class="w">    </span><span class="c1">// Não há código no loop</span>
+<a id="__codelineno-11-32" name="__codelineno-11-32" href="#__codelineno-11-32"></a><span class="p">}</span>
+</code></pre></div>
+<hr />
+<h2 id="9-conceitos-importantes">9. Conceitos Importantes<a class="headerlink" href="#9-conceitos-importantes" title="Permanent link">&para;</a></h2>
+<h3 id="91-variaveis-volateis">9.1 Variáveis Voláteis<a class="headerlink" href="#91-variaveis-volateis" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Definição:</strong> Variáveis declaradas como <code>volatile</code> informam ao compilador que seu valor pode mudar a qualquer momento, prevenindo otimizações que poderiam ignorar atualizações provenientes de ISRs.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">volatile</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">contador</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</code></pre></div>
+<h3 id="92-prioridade-de-interrupcoes">9.2 Prioridade de Interrupções<a class="headerlink" href="#92-prioridade-de-interrupcoes" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Definição:</strong> Em sistemas com múltiplas interrupções, a prioridade determina qual ISR será executada primeiro.</li>
+<li><strong>Considerações:</strong></li>
+<li>No Arduino, todas as interrupções têm a mesma prioridade.</li>
+<li>Planeje o uso de interrupções de forma que não haja conflito entre diferentes ISRs.</li>
+</ul>
+<h3 id="93-uso-de-funcoes-nas-isrs">9.3 Uso de Funções nas ISRs<a class="headerlink" href="#93-uso-de-funcoes-nas-isrs" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Limitações:</strong> Evite usar funções que não sejam seguras para serem chamadas dentro de uma ISR, como <code>Serial.print()</code>.</li>
+<li><strong>Alternativas:</strong> Utilize flags (<code>bool</code>) para indicar ao loop principal que uma ação deve ser executada.</li>
+</ul>
+<h3 id="94-configuracao-correta-dos-timers">9.4 Configuração Correta dos Timers<a class="headerlink" href="#94-configuracao-correta-dos-timers" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Importância:</strong> Configurações incorretas dos timers podem levar a temporizações erradas ou ao não funcionamento das interrupções.</li>
+<li><strong>Verifique:</strong></li>
+<li>Modo de operação (CTC, Fast PWM, etc.).</li>
+<li>Prescaler adequado para a temporização desejada.</li>
+<li>Valores de comparação (<code>OCRnA</code>).</li>
+</ul>
+<h3 id="95-boas-praticas-com-interrupcoes-e-timers">9.5 Boas Práticas com Interrupções e Timers<a class="headerlink" href="#95-boas-praticas-com-interrupcoes-e-timers" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Evite Loops Longos nas ISRs:</strong> Mantenha as ISRs curtas e rápidas.</li>
+<li><strong>Use Variáveis Voláteis para Comunicação:</strong> Utilize variáveis <code>volatile</code> para comunicar eventos entre ISRs e o loop principal.</li>
+<li><strong>Gerencie a Prioridade e Frequência de Interrupções:</strong> Planeje a frequência de interrupções para evitar sobrecarga no processador.</li>
+</ul>
+<hr />
+<h2 id="10-recursos-adicionais">10. Recursos Adicionais<a class="headerlink" href="#10-recursos-adicionais" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><strong>Documentação Oficial do Arduino:</strong></p>
+</li>
+<li>
+<p><a href="https://www.arduino.cc/reference/en/language/functions/external-interrupts/attachinterrupt/">Interrupções</a></p>
+</li>
+<li>
+<p><a href="https://www.arduino.cc/reference/en/language/functions/time/timers/">Timers</a></p>
+</li>
+<li>
+<p><strong>Tutoriais e Guias:</strong></p>
+</li>
+<li>
+<p><a href="https://www.arduino.cc/en/Tutorial/BuiltInExamples/Interrupt">Guia Completo de Interrupções no Arduino</a></p>
+</li>
+<li>
+<p><a href="https://www.arduino.cc/en/Tutorial/Timer1Interrupt">Manipulação Avançada de Timers</a></p>
+</li>
+<li>
+<p><strong>Vídeos Educacionais:</strong></p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=V7aH7Zeo79Q">Entendendo Interrupções no Arduino</a></p>
+</li>
+<li><a href="https://www.youtube.com/watch?v=3dWk6mP2f8g">Timers e PWM Avançados</a></li>
+</ul>
+<hr />
+<h2 id="11-conclusao-do-modulo">11. Conclusão do Módulo<a class="headerlink" href="#11-conclusao-do-modulo" title="Permanent link">&para;</a></h2>
+<p>Neste módulo, você aprendeu:</p>
+<ul>
+<li>O que são interrupções e timers e sua importância na programação Arduino.</li>
+<li>Como configurar e utilizar interrupções externas para reagir a eventos assíncronos.</li>
+<li>Como configurar e utilizar timers para criar temporizações precisas e gerar sinais PWM.</li>
+<li>Boas práticas para implementar ISRs eficientes e seguras.</li>
+<li>Como integrar interrupções e timers em projetos reais para melhorar a responsividade e eficiência.</li>
+<li>Praticou com exemplos e exercícios que reforçam o entendimento das interrupções e timers.</li>
+</ul>
+<p>Você está agora preparado para avançar para o próximo módulo, onde exploraremos <strong>Comunicação Serial Avançada</strong>, aprofundando seu conhecimento em protocolos de comunicação e troca de dados entre dispositivos Arduino e computadores.</p>
+<hr />
+<h2 id="12-proximos-passos">12. Próximos Passos<a class="headerlink" href="#12-proximos-passos" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Revisar o conteúdo deste módulo e certificar-se de que compreendeu os conceitos apresentados.</strong></li>
+<li><strong>Completar os exercícios propostos para consolidar o aprendizado.</strong></li>
+<li><strong>Preparar-se para o Módulo 10: Comunicação Serial Avançada.</strong></li>
+</ul>
+<p>Se tiver dúvidas ou precisar de assistência, não hesite em procurar recursos adicionais ou participar de comunidades de aprendizagem para obter suporte.</p>
+<hr />
+<p><strong>Bom trabalho e continue assim!</strong></p>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 23, 2024</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.525ec568.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.0.0/js-yaml.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/gh/insper-education/active-handout-plugins-js@main/package/plugin-bundle.js"></script>
+      
+        <script src="../../../search/main.js"></script>
+      
+    
+  </body>
+</html>
