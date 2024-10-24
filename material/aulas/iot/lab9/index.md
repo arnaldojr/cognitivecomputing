@@ -1,26 +1,61 @@
-
-![logo](logo.png)
-
 ## O que vamos ver neste lab?
 
-- Configurar um servidor web Flask na Raspberry Pi.
-- Controlar um LED através de uma interface web.
-- Compreender os conceitos básicos de programação GPIO com a Raspberry Pi.
+- Raspberry Pi: 
+    - Conhecendo os pinos
+    - Usando a biblioteca RPI.GPIO 
 
 
 
-## Montando um Webserver em Flask
 
-Vamos montar um webserver na raspberry pi com flask. A ideia deste exemplo é controlar por um navegador web o status de um led entre ligado e desligado:
+## Conhecendo os pinos da Raspberry Pi
 
-![flask](flask.png)
+Podemos utilizar a Raspberry Pi para conectar sensores e atuadores, de forma semelhante como foi feito utilizando o Arduino, para isso utilizamos os barramento de pinos da Raspberry Pi chamado de GPIO (General Purpose Input Output). Ao todo são 40 pinos (para RPI 2 ou superior) e de forma geral cada pino possui uma função ou caracteristica especifica.
+
+!!! Warning
+    Cuidado: Devemos ter atenção para não conectar os perifericos na placa de forma incorreta. Existe risco de queimar a Raspberry Pi.  
+
+A imagem abaixo é um guia simples para cada pino. Parece complicado na primeira vez, mas é tranquilo.
+
+![raspberry_pi_3_model_b_plus_gpio](raspberry_pi_3_model_b_plus_gpio-1024x1024.jpg)
+
+Vamos conhecer o que é cada pino:
+
+    - Pinos de Alimentação: 
+        - 3.3V (ao todo 2 pinos)
+        - 5V (ao todo 2 pinos)
+        - GND/Ground/0V (ao todo 8 pinos)
+    
+    - Pinos de interface:
+        - GPIO (General purpose input and output): São os pinos de entrada/saida. A tensão de saida é de 3.3V.
+        - I2C/SPI/UART: Protocolos de comunicação especificos utilizados para realizar a interface módulos epecificos com a Raspberry Pi.
+ 
+!!! Warning
+    Atenção: Observe a correlação dos pinos para não ligar invertido.
+    ![raspberry_pi_3](Raspberry-Pi-GPIO-Header-with-Photo.png)
+     
+
+!!! exercise
+    Quantos pinos GPIO estão disponiveis?
 
 
-### Instalando o Flask e configurando o ambiente
+!!! progress
+    Continuar...
 
 
-!!! warning 
-    Ligue a Raspberry PI, faça o acesso SSH e certifique que está com acesso a internet. 
+## Configurando os GPIOs
+
+No final do lab07 montamos um simples pisca led e programamos configurando os valores dos registradores. Existem formas mais simples de programar os GPIOs da rasbperry pi, vamos programar em Python :) 
+
+Vamos utilizara biblioteca ``RPI.GPIO``, que permite de forma simples configurar e usar os GPIOs com script em Python, vamos preparar o nosso ambiente de desenvolvimento:
+
+!!! exercise
+    - Inicialize a Raspberry Pi. (modo Desktop ou SSH).
+
+        - Se tiver dúvida de como fazer, volte para o lab07.
+        
+    - Abra o terminal da raspberry pi.
+
+    - Certifique-se de estar com acesso a internet.
 
 
 No terminal da raspberry pi, atualize os repositórios:
@@ -30,238 +65,158 @@ No terminal da raspberry pi, atualize os repositórios:
 sudo apt update
 
 ```   
-
-Instale os pacotes do flask
+ 
+Em seguida, tente instalar o pacote RPi.GPIO: A documentação da biblioteca está disponivel no [aqui](https://pypi.org/project/RPi.GPIO/).
 
 ```bash
 
-sudo apt-get install python3-flask
+sudo apt install rpi.gpio
 
-```   
+```  
 
-Agora vamos criar nossa arvore de projeto:
+Se ainda não estiver instalado, será instalado. Se já estiver instalado, será atualizado se uma versão mais recente estiver disponível.
 
-``` shell
-- webserver
-    - static
-        - index.css
-    - templates
-        - index.html
-    - app.py
-```
-onde: 
 
-- webserver: diretório principal do projeto.
-    - static: diretório para arquivos estáticos.
-        - index.css: arquivo de estilos CSS para a interface web.
-    - templates: diretório para arquivos HTML.
-        - index.html: arquivo HTML principal da aplicação.
-    - app.py: script Python que contém a lógica do servidor Flask e a programação GPIO.
+
+!!! progress
+    Continuar...
+
+
+
+
+### Conhecendo a biblioteca RPi.GPIO
+
+É uma biblioteca simples de usar e vamos ver as principais funções da RPi.GPIO através do código de exemplo abaixo:
+
+- ``GPIO.setmode()`` = Define o modo de acesso aos pino da raspberry pi, existem 2 modos de definir a mesma coisa:
     
+    - GPIO.BOARD  = Posição física do pino na raspberry pi
+    - GPIO.BCM    = Numero após GPIOxx
 
-No terminal da Raspberry PI, crie a estrutura de diretórios:
-
-```bash
-cd ~
-mkdir webserver
-cd webserver
-mkdir static templates
-ls
-``` 
-
-!!! exercise 
-    O comando `ls` lista os arquivos e diretórios no diretório atual. Leia a saida do terminal e verifique se os diretorios foram criados corretamente.
- 
+> exemplo:
+> BOARD 11 = GPIO17
 
 
-### Vamos criar o ``app.py``.
+- ``GPIO.setup()`` = Define a função do pino, entrada (GPIO.IN) ou saida (GPIO.OUT)
 
-No terminal da Raspberry PI, digite:
+- ``GPIO.output()`` = Define o estado do pino definido como saida em nivel logico baixo (GPIO.LOW) ou alto (GPIO.HIGH)
 
-```bash
-
-nano app.py
-
-```  
-
-Com o editor nano aberto, insira o seguinte código:
-
-```python
-'''
-	Servidor web com flask para controle de um LED.
-'''
-import RPi.GPIO as GPIO
-from flask import Flask, render_template, request
-
-app = Flask(__name__)
-
-GPIO.setmode(GPIO.BCM)
-GPIO.setwarnings(False)
-
-# Define o pino GPIO para o LED
-ledRed = 2
-
-# Inicializa o status do LED como desligado
-ledRedSts = 0
-
-# Define o pino do LED como saída
-GPIO.setup(ledRed, GPIO.OUT)   
-
-# Desliga o LED inicialmente
-GPIO.output(ledRed, GPIO.LOW)
-	
-@app.route("/")
-def index():
-	# Lê o status do GPIO
-	ledRedSts = GPIO.input(ledRed)
-
-	templateData = {
-      		'ledRed'  : ledRedSts,
-      	}
-	return render_template('index.html', **templateData)
-	
-@app.route("/<deviceName>/<action>")
-def action(deviceName, action):
-	if deviceName == 'ledRed':
-		actuator = ledRed
-   
-	if action == "on":
-		GPIO.output(actuator, GPIO.HIGH)
-	if action == "off":
-		GPIO.output(actuator, GPIO.LOW)
-		     
-	ledRedSts = GPIO.input(ledRed)
-   
-	templateData = {
-      		'ledRed'  : ledRedSts,
-	}
-	return render_template('index.html', **templateData)
-
-if __name__ == "__main__":
-   app.run(host='0.0.0.0', port=80, debug=True)
-
-```  
+- ``GPIO.input()`` = Faz a leitura do estado do pino definido como entrada. Geralmente quando usamos um pino como entrada configuramos no setup o parametro pull_up_down (como exemplo: GPIO.setup(18, GPIO.IN, pull_up_down=GPIO.PUD_UP))
 
 
-**Shooooooowwwwww!** Não esqueça de Salvar e fechar o editor nano. Ctrl+X >> Y
+!!! exercise
+    Monte o circuito abaixo:
+    
+    ![blink led](blinkled.png)
+    
+    - No terminal da RPI, digite:
+    
+    ```shell
+    cd ~
+    mkdir src
+    cd src
+    touch blinkled.py  
 
+    ``` 
+    
+    - Criamos um diretorio chamado src e um arquivo python chamado blinkled.py
+    - Abra o arquivo blinkled.py e escreva o código abaixo.
+    - Para abrir o arquivo digite: nano blinkled.py
+    - Após digitar o código python, salve e feche o arquivo: Ctlr+X >>> Y 
+    - Vamos rodar nosso código python, no terminal digite:
+        * python blinkled.py
+    
+    - Se tudo deu certo, o led está piscando. :)
+        - para interromper o código aperte Ctrl+C.
 
-### Vamos criar a pagina html ``index.html``. 
+!!! Warning
+    Os 2 códigos realizam a mesma função, a diferença está apenas no **setmode**. Escolha um dos códigos para testar. 
 
-No terminal da Raspberry Pi, navegue até o diretório `templates` e crie o arquivo `index.html`:
+    ```python    
+    import RPi.GPIO as GPIO  ### import da biblioteca gpio
+    import time
 
-```bash
-cd templates
-nano index.html
+    # usando o a posição fisíca do pino na raspberry pi
+    GPIO.setmode(GPIO.BOARD)
+     
+    # configura o pino fisico 11 como saida
+    GPIO.setup(11, GPIO.OUT)
 
-```  
+    whille True:  
+        # escreve no pino 11 nivel logico alto
+        GPIO.output(11, GPIO.HIGH)
+        time.sleep(1) # delay de 1s
+    
+        # escreve no pino 11 nivel logico baixo
+        GPIO.output(11, GPIO.LOW)
+        time.sleep(1) # delay de 1s
 
-Insira o seguinte código:
+    GPIO.cleanup()  # Limpa configuração finaliza o programa
 
-```html
-<!DOCTYPE html>
-   <head>
-      <title>Webserver</title>
-      <link rel="stylesheet" href='../static/index.css'/>
-   </head>
+    ```
+    
+    ``` python 
+    import RPi.GPIO as GPIO  ### import da biblioteca gpio
+    
+    # usando o numero após GPIOxx da raspberry pi
+    GPIO.setmode(GPIO.BCM)
+    
+    # configura o GPIO17 como saida
+    GPIO.setup(17, GPIO.OUT)
+    
+    whille True:  
+        # escreve no GPIO17 nivel logico alto
+        GPIO.output(17, GPIO.HIGH)
+        time.sleep(1) # delay de 1s
+    
+        # escreve no GPIO17 nivel logico baixo
+        GPIO.output(17, GPIO.LOW)
+        time.sleep(1) # delay de 1s
 
-   <body>
-
-		<h2> Controle LED </h2>
-		
-		<h3> RED LED ==>  {{ ledRed  }}  ==>  
-			{% if  ledRed   == 1 %}
-				<a href="/ledRed/off"class="button">TURN OFF</a>
-			{% else %}
-				<a href="/ledRed/on" class="button">TURN ON</a> 
-			{% endif %}	
-		</h3>
-		
-   </body>
-</html>
-
-```
-
-**Shooooooowwwwww!** Não esqueça de Salvar e fechar o editor nano. Ctrl+X >> Y
-
-
-### Vamos criar o arquivo de estilo css ``index.css``. 
-
-No terminal da Raspberry Pi, navegue até o diretório `static` e crie o arquivo `index.css`:
-
-```bash
-cd ..
-cd static
-nano index.html
-
-```  
-> Com o editor nano aberto digite:
-
-```css
-
-body {
-   background: blue;
-   color: yellow;
-}
-
-.button {
-  font: bold 15px Arial;
-  text-decoration: none;
-  background-color: #EEEEEE;
-  color: #333333;
-  padding: 2px 6px 2px 6px;
-  border-collapse: separete;
-  border-spacing: 0;
-  border-top: 1px solid #CCCCCC;
-  border-right: 1px solid #333333;
-  border-bottom: 1px solid #333333;
-  border-left: 1px solid #CCCCCC;
-}
-
-```
-
-**Shooooooowwwwww!** Não esqueça de Salvar e fechar o editor nano. Ctrl+X >> Y
-
-
-### Hora de testar
-
-Vamos testar nosso webserver simples.
-
-No terminal da Raspberry Pi, retorne ao diretório principal e execute o script:
-
-```bash
-cd ..
-sudo python app.py
-
-```  
-
-
-> Deixe o Flask rodando na Raspberry Pi. Em um computador ou smartphone (que deve estar na mesma rede da Raspberry Pi), abra um navegador web e digite o IP da Raspberry Pi. Para encontrar o IP da Raspberry Pi, você pode usar o comando:
-
-```bash
-
-hostname -I
-
-```  
-!!! warning
-    O resultado esperado é abrir uma página web onde você pode controlar o LED.
-
- 
+    GPIO.cleanup()  # Limpa configuração finaliza o programa
+    
+    ```
 
 ## Desafios
     
-Agora que já entendemos a estrutura básica do webserver em Python, faça os `Desafios` abaixo.
+Agora que já entendemos a estrutura básica do script python, faça os `Desafios` abaixo.
 
 
 !!! exercise
-    Compreenda o código app.py e monte o circuito adequado para conseguir visualizar o led acender e apagar.
-
- 
-!!! exercise
-    Altere o código app.py e adicione mais 2 led e 2 botões (totalizando 3 leds, 2 botões), lembre-se de adaptar os arquivos HTML para exibir os status no frontend. 
-
-
-!!! exercise
-    Utilize seus conhecimentos web e proponha melhorias de UI/UX para o exercício anterior. Explore bibliotecas CSS como Bootstrap ou Materialize para aprimorar a interface.
+    Semáfaro de transito: 
     
+        - Monte um circuito com 3 leds (1 verde, 1 amarelo, 1 vermelho);
+        - crie um novo script chamado semaforo.py;
+        - Escreva um código que irá acender os leds na sequência e intervalo:
+            - Verde (5segundos)
+            - Amarelo (3segundos)
+            - Vermelho (6segundos)
+            - loop (volta para o verde)
 
+    
+!!! exercise
+    leitura de botão e Led: 
+    
+    - Monte o circuito: 
+
+    ![rpi_ledbot](rpi_ledbot.png)
+    
+    - Escreva um código que:
+        - Enquanto nenhum botão for pressionado, os leds ficam apagados;
+        - Se o botão1 for pressionado:
+            - os leds acendem na sequência: Verde - Amarelo - Vermelho
+        - Se o botão2 for pressionado:
+            - os leds acendem na sequencia: Vermelho - Amarelo - Verde 
+    
+    > Dica: Geralmente quando usamos algum pino como entrada configuramos no setup o parametro pull_up_down (como exemplo: GPIO.setup(18, GPIO.IN, pull_up_down=GPIO.PUD_UP) ou GPIO.setup(18, GPIO.IN, pull_up_down=GPIO.PUD_DOWN).
+
+!!! exercise
+    Sensor de temperatura: Para quem tiver curiosidade pode dar uma olhada como utilizar o sensor de temperatura DTH11 [neste link](https://www.filipeflop.com/blog/raspberry-pi-umidade-e-a-temperatura-com-o-sensor-dht11/).
+
+
+
+!!! exercise
+
+    ![estacionamento](estacionamento.gif)
+    
+    Desenvolva um Sensor de estacionamento veicular. A idéia é simples. Vamos utilizar 1 sensor de distância ultrassônico e 3 leds de cores difenciadas. Parte do problema já está resolvido você pode acessar o [tutorial](https://labprototipando.com.br/2020/06/22/como-configurar-o-sensor-de-distancia-hc-sr04-no-raspberry-pi/) adaptar o código do Sensor HC-SR04 e implementar a logica dos led.

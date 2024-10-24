@@ -1,222 +1,261 @@
-## O que vamos ver neste lab?
+## Raspberry PI
 
-- Raspberry Pi: 
-    - Conhecendo os pinos
-    - Usando a biblioteca RPI.GPIO 
+![](https://hackaday.com/wp-content/uploads/2016/02/pihero.jpg?w=800)
+
+Até agora em nosso curso, trabalhamos com pequenos projetos envolvendo sensores e atuadores, utilizando o Arduino UNO como nossa principal plataforma de hardware. Também exploramos integrações com Python e Node-Red.
+
+Neste módulo, iniciaremos nossa imersão em computação embarcada voltada para a Internet das Coisas (IoT) utilizando o ``Raspberry PI``. Abordaremos tópicos como: introdução à Raspberry Pi, Sistema Operacional Linux, inicialização da placa Raspberry PI, configuração e uso dos GPIOs, integração com Arduino, Node-Red e muito mais.
+
+## Conteúdo deste Laboratório
+
+- Introdução à Raspberry PI e comparação com o Arduino.
+- Primeiros passos com a Raspberry Pi:
+    - Conhecendo o hardware.
+    - Instalando o Sistema Operacional na Raspberry PI.
+    - Modos de uso: GUI vs. Headless.
+        - Configuração para acesso via SSH e Wi-Fi no modo Headless.
+        - Uso do VNC Viewer.
+        - Modo Desktop (GUI).
+    - Controlando os GPIOs: Exemplo com LED.
+        - Controle via linha de comando.
+        - Uso de Shell Script.
+        - E mais...
+
+## Raspberry PI vs. Arduino
+
+Lembrando do Arduino UNO que utilizamos, ele é baseado em um ``microcontrolador`` de 8-bit ([datasheet](https://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-7810-Automotive-Microcontrollers-ATmega328P_Datasheet.pdf)). Sua arquitetura RISC é adequada para sistemas embarcados simples, mas não suporta um sistema operacional completo, o que pode limitar a implementação de sistemas mais avançados.
+
+Para executar um sistema operacional completo, precisamos de um ``processador``, como os modelos Intel 386, i5, i7, Celeron, entre outros ([datasheet do Intel i7](https://www.intel.com/content/dam/www/public/us/en/documents/datasheets/core-i7-900-ee-and-desktop-processor-series-datasheet-vol-1.pdf)). Em aplicações de computação embarcada, muitas vezes optamos por uma alternativa mais compacta e econômica ao computador tradicional, como os ``SBCs`` (Single Board Computers).
+
+Os SBCs são computadores completos em uma única placa, combinando processador, memória, suporte de rede, vídeo, áudio e outros recursos. São compactos e geralmente mais acessíveis que um computador convencional.
+
+A ``Raspberry PI`` é um dos SBCs mais populares e versáteis disponíveis. Foi lançada em 2012 pela Raspberry Pi Foundation e utiliza processadores ARM da Broadcom, similares aos encontrados em smartphones. Desde seu lançamento, diversos modelos foram introduzidos, como a Raspberry PI 3, 4, Zero, entre outros.
+
+> [Documentação oficial da Raspberry PI](https://www.raspberrypi.org/)
+
+> [Outros modelos de SBCs](https://all3dp.com/pt/1/single-board-computer-computadores-placa-unica-alternativas-raspberry-pi/)
+
+Com essa introdução, vamos aprender a utilizar a Raspberry PI.
+
+## Desafio 1
+
+Responda as perguntas abaixo:
+
+!!! exercise choice "Question"
+    Pergunta 1: Qual dos dois, Raspberry PI ou Arduino, é mais adequado para rodar um sistema operacional completo?
+
+    - [X] Raspberry PI
+    - [ ] Arduino
+    - [ ] Ambos
 
 
+    !!! answer
+        O Raspberry PI possui capacidade de rodar um SO completo.
+
+!!! exercise choice "Question"
+    Pergunta 2: O Arduino UNO é baseado em qual tipo de componente central?
+
+    - [X] Microcontrolador
+    - [ ] Processador
+    - [ ] Disco rígido
+    - [ ] Placa de vídeo 
 
 
-## Conhecendo os pinos da Raspberry Pi
+    !!! answer
+        O arduino UNO é baseado em um microcontrolador.
 
-Podemos utilizar a Raspberry Pi para conectar sensores e atuadores, de forma semelhante como foi feito utilizando o Arduino, para isso utilizamos os barramento de pinos da Raspberry Pi chamado de GPIO (General Purpose Input Output). Ao todo são 40 pinos (para RPI 2 ou superior) e de forma geral cada pino possui uma função ou caracteristica especifica.
 
-!!! Warning
-    Cuidado: Devemos ter atenção para não conectar os perifericos na placa de forma incorreta. Existe risco de queimar a Raspberry Pi.  
+!!! exercise choice "Question"
+    Pergunta 3: Qual é a principal vantagem dos computadores de placa única (SBC) como o Raspberry PI em relação aos computadores convencionais?
 
-A imagem abaixo é um guia simples para cada pino. Parece complicado na primeira vez, mas é tranquilo.
+    - [ ] Eles têm mais poder de processamento.
+    - [ ] Eles podem executar múltiplos sistemas operacionais simultaneamente.
+    - [ ] Eles são mais caros e robustos.
+    - [X] Eles são de baixo custo e possuem pequenas dimensões.
 
-![raspberry_pi_3_model_b_plus_gpio](raspberry_pi_3_model_b_plus_gpio-1024x1024.jpg)
 
-Vamos conhecer o que é cada pino:
-
-    - Pinos de Alimentação: 
-        - 3.3V (ao todo 2 pinos)
-        - 5V (ao todo 2 pinos)
-        - GND/Ground/0V (ao todo 8 pinos)
-    
-    - Pinos de interface:
-        - GPIO (General purpose input and output): São os pinos de entrada/saida. A tensão de saida é de 3.3V.
-        - I2C/SPI/UART: Protocolos de comunicação especificos utilizados para realizar a interface módulos epecificos com a Raspberry Pi.
- 
-!!! Warning
-    Atenção: Observe a correlação dos pinos para não ligar invertido.
-    ![raspberry_pi_3](Raspberry-Pi-GPIO-Header-with-Photo.png)
-     
-
-!!! exercise
-    Quantos pinos GPIO estão disponiveis?
+    !!! answer
+        Eles são de baixo custo e possuem pequenas dimensões.
 
 
 !!! progress
     Continuar...
 
+## Raspberry PI - Primeiros Passos
 
-## Configurando os GPIOs
+### Visão Geral
 
-No final do lab07 montamos um simples pisca led e programamos configurando os valores dos registradores. Existem formas mais simples de programar os GPIOs da rasbperry pi, vamos programar em Python :) 
+Há vários modelos de Raspberry PI disponíveis. Em nosso curso, focaremos na [``Raspberry PI 3 Model B+``](https://www.raspberrypi.com/products/raspberry-pi-3-model-b-plus/).
 
-Vamos utilizara biblioteca ``RPI.GPIO``, que permite de forma simples configurar e usar os GPIOs com script em Python, vamos preparar o nosso ambiente de desenvolvimento:
+![rpi3](Pi3-Breakout-Feb-29-2016.png)
 
-!!! exercise
-    - Inicialize a Raspberry Pi. (modo Desktop ou SSH).
+![Especificações](https://hackaday.com/wp-content/uploads/2016/02/pispecs2.png)
 
-        - Se tiver dúvida de como fazer, volte para o lab07.
-        
-    - Abra o terminal da raspberry pi.
+> **Complemento**:
+> - Fonte de Alimentação: 5V @ >2A
+> - Cartão SD: micro SD Card >8GB Classe 10 ou superior
 
-    - Certifique-se de estar com acesso a internet.
+### Sistema Operacional
+
+Existem várias distribuições de sistemas operacionais compatíveis com a Raspberry PI, incluindo:
+
+- Raspbian - Uso geral.
+- Ubuntu - Uso geral.
+- RetroPie - Emulador de videogame.
+- OSMC - Media Center.
+- Home Assistant - Automação residencial.
+- E muitos outros...
+
+> Chega de teoria! Vamos à prática. Siga este guia atentamente e execute todos os passos.
+
+!!! progress
+    Continuar...
+
+### Instalando o Sistema Operacional
+
+O sistema operacional da Raspberry PI é armazenado em um ``micro SD Card``. Recomenda-se usar um cartão de pelo menos 8GB Classe 10 ou superior. Existem várias maneiras de instalar o sistema operacional, e aqui, vamos guiá-lo passo a passo.
+
+As versões do sistema operacional podem ser encontradas [aqui](https://www.raspberrypi.com/software/operating-systems/). Em nosso curso, utilizaremos o ``Raspberry Pi OS (legacy)``, baseado no Debian 10 (Buster).
+
+![RPI-OS](RPI-OS.png)
+
+!!! info
+    Para facilitar, [aqui está o link para download](https://downloads.raspberrypi.org/raspios_oldstable_armhf/images/raspios_oldstable_armhf-2022-04-07/2022-04-04-raspios-buster-armhf.img.xz).
+
+Para gravar o cartão SD, recomendamos o uso do ``Balena Etcher``, disponível para várias plataformas.
+
+> [Link para download do Balena Etcher](https://www.balena.io/etcher/)
+
+Siga os passos abaixo para preparar seu cartão SD:
+
+1. Insira o cartão SD no adaptador USB e conecte-o ao seu computador.
+2. Baixe o Raspberry Pi OS.
+3. Baixe e instale o Balena Etcher.
+4. Abra o Balena Etcher e siga os passos para gravar o cartão SD.
+5. Após a gravação, reconecte o adaptador USB ao computador.
+6. Você deve ver duas partições, uma delas chamada "boot". Se não, formate o cartão SD em FAT32 e repita o processo.
+
+!!! progress
+    Continuar...
+
+### Modo de Uso - Interface Gráfica
+
+> **Nota**: Esta seção é apenas para conhecimento adicional, pois **não usaremos a Raspberry PI desta maneira em nosso curso**.
+
+Para usar a Raspberry PI como um computador convencional, conecte um monitor via HDMI, um teclado e um mouse. Insira o cartão SD gravado e conecte a fonte de alimentação. O sistema operacional será inicializado e estará pronto para uso.
+
+![sdcard](sdcard.png)
+
+![Interface gráfica da Raspberry PI](rpidesk.jpg)
+
+### Modo de Uso - Headless
+
+Nesta seção, aprenderemos a usar a Raspberry PI no modo ``Headless``, sem a necessidade de monitor, teclado ou mouse. Algumas configurações são necessárias antes de iniciar a Raspberry PI neste modo.
+
+#### Habilitando SSH
+
+Para ativar o acesso SSH, crie um arquivo vazio chamado "ssh" na pasta "boot" do cartão SD.
+
+Siga os passos abaixo:
+
+1. Conecte o cartão SD ao adaptador USB e insira-o no computador.
+2. Acesse a partição chamada "boot".
+3. Crie um arquivo chamado "ssh" (sem extensão) na raiz da partição.
+
+O resultado deve ser semelhante ao mostrado na imagem:
+
+![ssh1](ssh1.png)
+
+!!! progress
+    Continuar...
+
+#### Configurando a Rede Wi-Fi
+
+A configuração da rede Wi-Fi é feita através do arquivo "wpa_supplicant.conf", que deve ser criado na pasta "boot" do cartão SD.
+
+Siga as instruções abaixo para configurar sua rede Wi-Fi:
+
+1. Crie um arquivo chamado "wpa_supplicant.conf" na raiz da partição "boot".
+2. Abra o arquivo com um editor de texto e configure-o de acordo com o exemplo fornecido.
+
+> **Nota**: Certifique-se de estar conectado à mesma rede Wi-Fi que a Raspberry PI.
+
+Agora, com tudo configurado, é hora de ligar a Raspberry PI e testá-la.
+
+## Desafio 2
+
+Responda as perguntas abaixo:
+
+!!! exercise choice "Question"
+    Pergunta 4: Qual é a principal função do arquivo `wpa_supplicant.conf` na pasta `boot` do Raspberry PI?
+
+    - [ ] Habilitar o SSH.
+    - [X] Configurar a rede Wi-Fi.
+    - [ ] Iniciar o sistema operacional.
+    - [ ] Configurar a saída de vídeo.
+
+    !!! answer
+        Configurar a rede Wi-Fi.
 
 
-No terminal da raspberry pi, atualize os repositórios:
 
-```bash
+!!! exercise choice "Question"
+    Pergunta 5: Ao configurar o Raspberry PI no modo `Headless`, o que é necessário fazer para habilitar o acesso SSH?
 
-sudo apt update
+    - [ ] Criar um arquivo chamado `ssh` na pasta `home`.
+    - [X] Criar um arquivo chamado `ssh` na pasta `boot`.
+    - [ ] Instalar um software adicional.
+    - [ ] Configurar o firewall para permitir o acesso SSH.
 
-```   
- 
-Em seguida, tente instalar o pacote RPi.GPIO: A documentação da biblioteca está disponivel no [aqui](https://pypi.org/project/RPi.GPIO/).
+    !!! answer
+        Criar um arquivo chamado `ssh` na pasta `boot`.
 
-```bash
 
-sudo apt install rpi.gpio
 
-```  
+!!! exercise choice "Question"
+    Pergunta 6: Qual software é recomendado para acessar o Raspberry PI via SSH a partir de um computador?
 
-Se ainda não estiver instalado, será instalado. Se já estiver instalado, será atualizado se uma versão mais recente estiver disponível.
+    - [ ] WinRAR
+    - [ ] Balena Etcher
+    - [X] PuTTY
+    - [ ] Microsoft Word
+
+    !!! answer
+        PuTTY
 
 
 
 !!! progress
     Continuar...
 
+## Primeiro Teste com a Raspberry PI
+
+Para nosso primeiro teste, montaremos um circuito simples para acender um LED. Siga o esquema abaixo:
+
+![blink led](blinkled.png)
+
+No terminal da Raspberry PI, execute os comandos a seguir para controlar o LED:
+
+```shell
+# Configura o pino GPIO 17 como saída (output)
+echo "17" > /sys/class/gpio/export
+echo "out" > /sys/class/gpio/gpio17/direction
+
+# Acende o LED (nível lógico alto)
+echo "1" > /sys/class/gpio/gpio17/value
+
+# Apaga o LED (nível lógico baixo)
+echo "0" > /sys/class/gpio/gpio17/value
+
+# Libera o pino GPIO 17
+echo "17" > /sys/class/gpio/unexport
+```
+
+Se tudo funcionou corretamente, você deve ter visto o LED acender e apagar.
 
 
+## Desafio 3 (opcional)
 
-### Conhecendo a biblioteca RPi.GPIO
-
-É uma biblioteca simples de usar e vamos ver as principais funções da RPi.GPIO através do código de exemplo abaixo:
-
-- ``GPIO.setmode()`` = Define o modo de acesso aos pino da raspberry pi, existem 2 modos de definir a mesma coisa:
-    
-    - GPIO.BOARD  = Posição física do pino na raspberry pi
-    - GPIO.BCM    = Numero após GPIOxx
-
-> exemplo:
-> BOARD 11 = GPIO17
+Agora é sua vez! A Raspberry PI permite controlar seus pinos GPIO usando várias linguagens de programação. Escolha sua linguagem preferida e escreva um código para fazer o LED piscar a cada segundo. Aqui está um exemplo para ajudá-lo. [Acesse Aqui](https://medium.com/geekculture/how-to-blink-led-using-raspberry-pi-8351b06348d7) 
 
 
-- ``GPIO.setup()`` = Define a função do pino, entrada (GPIO.IN) ou saida (GPIO.OUT)
-
-- ``GPIO.output()`` = Define o estado do pino definido como saida em nivel logico baixo (GPIO.LOW) ou alto (GPIO.HIGH)
-
-- ``GPIO.input()`` = Faz a leitura do estado do pino definido como entrada. Geralmente quando usamos um pino como entrada configuramos no setup o parametro pull_up_down (como exemplo: GPIO.setup(18, GPIO.IN, pull_up_down=GPIO.PUD_UP))
-
-
-!!! exercise
-    Monte o circuito abaixo:
-    
-    ![blink led](blinkled.png)
-    
-    - No terminal da RPI, digite:
-    
-    ```shell
-    cd ~
-    mkdir src
-    cd src
-    touch blinkled.py  
-
-    ``` 
-    
-    - Criamos um diretorio chamado src e um arquivo python chamado blinkled.py
-    - Abra o arquivo blinkled.py e escreva o código abaixo.
-    - Para abrir o arquivo digite: nano blinkled.py
-    - Após digitar o código python, salve e feche o arquivo: Ctlr+X >>> Y 
-    - Vamos rodar nosso código python, no terminal digite:
-        * python blinkled.py
-    
-    - Se tudo deu certo, o led está piscando. :)
-        - para interromper o código aperte Ctrl+C.
-
-!!! Warning
-    Os 2 códigos realizam a mesma função, a diferença está apenas no **setmode**. Escolha um dos códigos para testar. 
-
-    ```python    
-    import RPi.GPIO as GPIO  ### import da biblioteca gpio
-    import time
-
-    # usando o a posição fisíca do pino na raspberry pi
-    GPIO.setmode(GPIO.BOARD)
-     
-    # configura o pino fisico 11 como saida
-    GPIO.setup(11, GPIO.OUT)
-
-    whille True:  
-        # escreve no pino 11 nivel logico alto
-        GPIO.output(11, GPIO.HIGH)
-        time.sleep(1) # delay de 1s
-    
-        # escreve no pino 11 nivel logico baixo
-        GPIO.output(11, GPIO.LOW)
-        time.sleep(1) # delay de 1s
-
-    GPIO.cleanup()  # Limpa configuração finaliza o programa
-
-    ```
-    
-    ``` python 
-    import RPi.GPIO as GPIO  ### import da biblioteca gpio
-    
-    # usando o numero após GPIOxx da raspberry pi
-    GPIO.setmode(GPIO.BCM)
-    
-    # configura o GPIO17 como saida
-    GPIO.setup(17, GPIO.OUT)
-    
-    whille True:  
-        # escreve no GPIO17 nivel logico alto
-        GPIO.output(17, GPIO.HIGH)
-        time.sleep(1) # delay de 1s
-    
-        # escreve no GPIO17 nivel logico baixo
-        GPIO.output(17, GPIO.LOW)
-        time.sleep(1) # delay de 1s
-
-    GPIO.cleanup()  # Limpa configuração finaliza o programa
-    
-    ```
-
-## Desafios
-    
-Agora que já entendemos a estrutura básica do script python, faça os `Desafios` abaixo.
-
-
-!!! exercise
-    Semáfaro de transito: 
-    
-        - Monte um circuito com 3 leds (1 verde, 1 amarelo, 1 vermelho);
-        - crie um novo script chamado semaforo.py;
-        - Escreva um código que irá acender os leds na sequência e intervalo:
-            - Verde (5segundos)
-            - Amarelo (3segundos)
-            - Vermelho (6segundos)
-            - loop (volta para o verde)
-
-    
-!!! exercise
-    leitura de botão e Led: 
-    
-    - Monte o circuito: 
-
-    ![rpi_ledbot](rpi_ledbot.png)
-    
-    - Escreva um código que:
-        - Enquanto nenhum botão for pressionado, os leds ficam apagados;
-        - Se o botão1 for pressionado:
-            - os leds acendem na sequência: Verde - Amarelo - Vermelho
-        - Se o botão2 for pressionado:
-            - os leds acendem na sequencia: Vermelho - Amarelo - Verde 
-    
-    > Dica: Geralmente quando usamos algum pino como entrada configuramos no setup o parametro pull_up_down (como exemplo: GPIO.setup(18, GPIO.IN, pull_up_down=GPIO.PUD_UP) ou GPIO.setup(18, GPIO.IN, pull_up_down=GPIO.PUD_DOWN).
-
-!!! exercise
-    Sensor de temperatura: Para quem tiver curiosidade pode dar uma olhada como utilizar o sensor de temperatura DTH11 [neste link](https://www.filipeflop.com/blog/raspberry-pi-umidade-e-a-temperatura-com-o-sensor-dht11/).
-
-
-
-!!! exercise
-
-    ![estacionamento](estacionamento.gif)
-    
-    Desenvolva um Sensor de estacionamento veicular. A idéia é simples. Vamos utilizar 1 sensor de distância ultrassônico e 3 leds de cores difenciadas. Parte do problema já está resolvido você pode acessar o [tutorial](https://labprototipando.com.br/2020/06/22/como-configurar-o-sensor-de-distancia-hc-sr04-no-raspberry-pi/) adaptar o código do Sensor HC-SR04 e implementar a logica dos led.
