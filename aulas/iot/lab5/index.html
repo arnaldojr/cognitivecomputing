@@ -1276,19 +1276,37 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#mqtt" class="md-nav__link">
+  <a href="#mqtt-message-queuing-telemetry-transport" class="md-nav__link">
     <span class="md-ellipsis">
-      MQTT
+      MQTT (Message Queuing Telemetry Transport)
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="MQTT">
+    <nav class="md-nav" aria-label="MQTT (Message Queuing Telemetry Transport)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#servidores-mqtt" class="md-nav__link">
+  <a href="#caracteristicas-principais-do-mqtt" class="md-nav__link">
     <span class="md-ellipsis">
-      Servidores MQTT
+      Características principais do MQTT:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#funcionamento-do-mqtt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Funcionamento do MQTT:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplos-de-brokers-mqtt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplos de Brokers MQTT:
     </span>
   </a>
   
@@ -1305,15 +1323,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conclusao" class="md-nav__link">
-    <span class="md-ellipsis">
-      Conclusão
-    </span>
-  </a>
   
 </li>
       
@@ -2697,19 +2706,37 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#mqtt" class="md-nav__link">
+  <a href="#mqtt-message-queuing-telemetry-transport" class="md-nav__link">
     <span class="md-ellipsis">
-      MQTT
+      MQTT (Message Queuing Telemetry Transport)
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="MQTT">
+    <nav class="md-nav" aria-label="MQTT (Message Queuing Telemetry Transport)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#servidores-mqtt" class="md-nav__link">
+  <a href="#caracteristicas-principais-do-mqtt" class="md-nav__link">
     <span class="md-ellipsis">
-      Servidores MQTT
+      Características principais do MQTT:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#funcionamento-do-mqtt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Funcionamento do MQTT:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplos-de-brokers-mqtt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplos de Brokers MQTT:
     </span>
   </a>
   
@@ -2726,15 +2753,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conclusao" class="md-nav__link">
-    <span class="md-ellipsis">
-      Conclusão
-    </span>
-  </a>
   
 </li>
       
@@ -2768,7 +2786,7 @@
 <li>Instalação do Node-RED e primeiros testes</li>
 <li>Montagem de um dashboard no Node-RED</li>
 <li>Criação de um end-point</li>
-<li>Apre<img alt="alt text" src="image.png" /> MQTT</li>
+<li>Apresentação do MQTT</li>
 </ul>
 <h2 id="conectando-dispositivos-a-aplicacoes">Conectando dispositivos a aplicações<a class="headerlink" href="#conectando-dispositivos-a-aplicacoes" title="Permanent link">&para;</a></h2>
 <p>Agora que já exploramos as funcionalidades do Arduino e sua capacidade de conectar sensores e atuadores, vamos prosseguir conectando o Arduino a aplicações que fazem uso desse dispositivo.</p>
@@ -2850,17 +2868,58 @@
 - Umidade relativa
 - Sensação térmica</p>
 <p>Atualize os dados a cada 3 ou 5 segundos.</p>
-<h2 id="mqtt">MQTT<a class="headerlink" href="#mqtt" title="Permanent link">&para;</a></h2>
-<p>O MQTT é um protocolo leve para publicação e recebimento de mensagens, adequado para dispositivos com alta latência e baixa largura de banda. </p>
-<h3 id="servidores-mqtt">Servidores MQTT<a class="headerlink" href="#servidores-mqtt" title="Permanent link">&para;</a></h3>
+<h2 id="mqtt-message-queuing-telemetry-transport">MQTT (Message Queuing Telemetry Transport)<a class="headerlink" href="#mqtt-message-queuing-telemetry-transport" title="Permanent link">&para;</a></h2>
+<p>O MQTT é um protocolo de comunicação leve projetado especificamente para dispositivos com recursos limitados, como sensores e atuadores, e cenários de redes com alta latência e baixa largura de banda. Sua simplicidade e baixo overhead o tornam ideal para a Internet das Coisas (IoT).</p>
+<p><img alt="comparativo" src="image5.png" /></p>
+<h3 id="caracteristicas-principais-do-mqtt">Características principais do MQTT:<a class="headerlink" href="#caracteristicas-principais-do-mqtt" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>Brokers públicos</strong>: iot.eclipse.org, test.mosquitto.org, dev.rabbitmq.com, broker.mqttdashboard.com.</li>
-<li><strong>Uso local</strong>: O servidor Mosquitto é indicado para redes locais com poucos dispositivos.</li>
+<li><strong>Modelo Publish/Subscribe</strong>: O MQTT usa um modelo de comunicação assíncrono, onde os clientes se inscrevem (subscribe) em tópicos específicos para receber mensagens e publicam (publish) mensagens nesses tópicos para serem recebidas por outros clientes.</li>
+<li><strong>Broker</strong>: O broker é o servidor central que gerencia as mensagens publicadas e as distribui para os clientes inscritos em tópicos específicos.</li>
+<li><strong>Qualidade de Serviço (QoS)</strong>: O MQTT oferece três níveis de QoS que controlam a entrega das mensagens, garantindo diferentes níveis de confiabilidade:</li>
+<li><strong>QoS 0 - At most once</strong>: A mensagem é entregue no máximo uma vez, sem confirmação de recebimento. Risco de perda de mensagem.</li>
+<li><strong>QoS 1 - At least once</strong>: A mensagem é entregue ao menos uma vez. Há confirmação de recebimento, mas pode ocorrer duplicação de mensagens.</li>
+<li>
+<p><strong>QoS 2 - Exactly once</strong>: A mensagem é entregue exatamente uma vez, garantindo a entrega sem duplicação ou perda, porém com maior overhead.</p>
+</li>
+<li>
+<p><strong>Retained Messages</strong>: Uma mensagem publicada pode ser marcada como "retida", o que significa que o broker armazenará essa última mensagem publicada no tópico e enviará imediatamente aos novos clientes que se inscreverem no tópico, mesmo após a publicação original.</p>
+</li>
+<li><strong>Last Will and Testament (LWT)</strong>: O LWT é uma mensagem que o broker envia automaticamente caso um cliente MQTT se desconecte inesperadamente, notificando os outros clientes da rede sobre a falha.</li>
+</ul>
+<p><img alt="mqtt" src="image6.png" /></p>
+<h3 id="funcionamento-do-mqtt">Funcionamento do MQTT:<a class="headerlink" href="#funcionamento-do-mqtt" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Publicação de Mensagens</strong>: Um cliente publica uma mensagem em um tópico específico no broker.</li>
+<li><strong>Inscrição em Tópicos</strong>: Outros clientes se inscrevem em tópicos de interesse e, quando uma mensagem é publicada nesses tópicos, o broker a entrega aos inscritos.</li>
+<li><strong>Filtragem por Tópicos</strong>: O MQTT utiliza hierarquias de tópicos, permitindo o uso de caracteres coringa para subscrição:</li>
+<li><strong>+</strong>: Corresponde a um único nível de um tópico. Exemplo: <code>sala/+/temperatura</code> se inscreve em todos os sensores de temperatura de diferentes salas.</li>
+<li><strong>#</strong>: Corresponde a todos os níveis subsequentes do tópico. Exemplo: <code>sala/#</code> se inscreve em todos os tópicos que começam com "sala".</li>
+</ol>
+<h3 id="exemplos-de-brokers-mqtt">Exemplos de Brokers MQTT:<a class="headerlink" href="#exemplos-de-brokers-mqtt" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Brokers Públicos</strong>:</li>
+<li><a href="https://iot.eclipse.org">iot.eclipse.org</a></li>
+<li><a href="https://test.mosquitto.org">test.mosquitto.org</a></li>
+<li><a href="https://www.rabbitmq.com">dev.rabbitmq.com</a></li>
+<li><a href="https://www.mqtt-dashboard.com">broker.mqttdashboard.com</a></li>
 </ul>
 <h3 id="desafio-3-cliente-mqtt-no-node-red">Desafio 3: Cliente MQTT no Node-RED<a class="headerlink" href="#desafio-3-cliente-mqtt-no-node-red" title="Permanent link">&para;</a></h3>
-<p>Crie um chat usando o MQTT, configurando um tópico com camelCase para enviar e receber mensagens.</p>
-<h2 id="conclusao">Conclusão<a class="headerlink" href="#conclusao" title="Permanent link">&para;</a></h2>
-<p>Este conteúdo abordou a instalação do Node-RED, a configuração de um ambiente básico para dispositivos IoT e a utilização do protocolo MQTT para comunicação entre dispositivos. Desafios práticos foram propostos para solidificar o aprendizado.</p>
+<p>No Node-RED, um fluxo pode ser criado para simular um chat entre dois ou mais clientes MQTT. Para isso, deve-se configurar tópicos que sigam boas práticas de nomeação, como camelCase, e criar dois nós principais:</p>
+<ul>
+<li>Node MQTT In: Subscreva-se a um tópico específico e receba mensagens publicadas nesse tópico.</li>
+<li>Node MQTT Out: Publique mensagens em um tópico que os outros clientes estão escutando.</li>
+</ul>
+<p><img alt="nodered-mqtt" src="image7.png" /></p>
+<p><strong>Exemplo de configuração:</strong></p>
+<ul>
+<li>Tópico de envio: <code>arnaldoAVianaJr/chat/mensagem</code></li>
+<li>Para receber mensagens, crie um nó que se inscreva em: arnaldoAVianaJr/#.</li>
+</ul>
+<p><img alt="teste-mqtt" src="image8.png" /></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Esse fluxo de comunicação pode ser testado em um ambiente local ou em um dos brokers públicos mencionados anteriormente.</p>
+</div>
 
 
 
