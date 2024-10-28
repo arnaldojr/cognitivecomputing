@@ -21,7 +21,7 @@ Normalmente os criadores das bibliotecas descrevem o passo-a-passo para utilizar
 
 - Por Download: 
     - Fazer o download do arquivo .zip da biblioteca 
-    - Descompactar o arquivo dentro da pasta ~/Arduino/libraries/
+    - Descompactar o arquivo dentro da pasta `documentos/Arduino/libraries/`
     - Pronto! Podemos usar em nosso projeto.
     - De forma geral é isso, eventualmente o criador da biblioteca irá orientar eventuais etapas adicionais. 
 
