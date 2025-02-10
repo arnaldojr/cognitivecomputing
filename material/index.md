@@ -4,7 +4,7 @@ Olá pessoal, bem vindos!! Nesta página você irá encontrar os conteúdos mini
 
 - Curso: Sistemas da Informação
 - Disciplina: AI Engineering, Cognitive and Semantics Computing & IoT
-- Turmas 2023: 4SIA, 4SIR
+- Turmas 2025: 4SIPF, 4SIR
 - Repositório com todos os arquivos está disponivel em: [https://github.com/arnaldojr/cognitivecomputing/](https://github.com/arnaldojr/cognitivecomputing/)
 
 Prof. Arnaldo Viana
