@@ -3475,7 +3475,7 @@ plt.imshow(image, vmin=0, vmax=255); plt.show()</div>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [17]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-15">
@@ -3488,9 +3488,9 @@ plt.imshow(image, vmin=0, vmax=255); plt.show()</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">cv2</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">cv</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">cv2</span>
 
-<span class="n">cap</span> <span class="o">=</span> <span class="n">cv</span><span class="o">.</span><span class="n">VideoCapture</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">cap</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">VideoCapture</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="k">if</span> <span class="ow">not</span> <span class="n">cap</span><span class="o">.</span><span class="n">isOpened</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"Cannot open camera"</span><span class="p">)</span>
     <span class="n">exit</span><span class="p">()</span>
@@ -3504,22 +3504,22 @@ plt.imshow(image, vmin=0, vmax=255); plt.show()</div>
         <span class="k">break</span>
     
     <span class="c1"># processa o frame capturado</span>
-    <span class="n">gray</span> <span class="o">=</span> <span class="n">cv</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="n">cv</span><span class="o">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span>
+    <span class="n">gray</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span>
     
     <span class="c1"># Exibe o frame processado</span>
-    <span class="n">cv</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s1">'frame'</span><span class="p">,</span> <span class="n">gray</span><span class="p">)</span>
+    <span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s1">'frame'</span><span class="p">,</span> <span class="n">gray</span><span class="p">)</span>
     
     <span class="c1"># Aguarda 1 ms e verifica se a tecla 'q' foi pressionada para sair</span>
-    <span class="k">if</span> <span class="n">cv</span><span class="o">.</span><span class="n">waitKey</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">'q'</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">cv2</span><span class="o">.</span><span class="n">waitKey</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0xFF</span> <span class="o">==</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">'q'</span><span class="p">):</span>
         <span class="k">break</span>
 
 <span class="c1"># Libera a captura e fecha todas as janelas</span>
 <span class="n">cap</span><span class="o">.</span><span class="n">release</span><span class="p">()</span>
-<span class="n">cv</span><span class="o">.</span><span class="n">destroyAllWindows</span><span class="p">()</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">destroyAllWindows</span><span class="p">()</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-15">import cv2 as cv
+<div class="clipboard-copy-txt" id="cell-15">import cv2
 
-cap = cv.VideoCapture(0)
+cap = cv2.VideoCapture(0)
 if not cap.isOpened():
     print("Cannot open camera")
     exit()
@@ -3533,18 +3533,18 @@ while True:
         break
     
     # processa o frame capturado
-    gray = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
+    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     
     # Exibe o frame processado
-    cv.imshow('frame', gray)
+    cv2.imshow('frame', gray)
     
     # Aguarda 1 ms e verifica se a tecla 'q' foi pressionada para sair
-    if cv.waitKey(1) == ord('q'):
+    if cv2.waitKey(1) &amp; 0xFF == ord('q'):
         break
 
 # Libera a captura e fecha todas as janelas
 cap.release()
-cv.destroyAllWindows()</div>
+cv2.destroyAllWindows()</div>
 </div>
 </div>
 </div>
@@ -3556,7 +3556,7 @@ cv.destroyAllWindows()</div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>2025-02-20 14:04:53.738 Python[7268:13521499] WARNING: Secure coding is automatically enabled for restorable state! However, not on all supported macOS versions of this application. Opt-in to secure coding explicitly by implementing NSApplicationDelegate.applicationSupportsSecureRestorableState:.
+<pre>2025-02-20 15:41:22.970 Python[8393:13539867] WARNING: Secure coding is automatically enabled for restorable state! However, not on all supported macOS versions of this application. Opt-in to secure coding explicitly by implementing NSApplicationDelegate.applicationSupportsSecureRestorableState:.
 </pre>
 </div>
 </div>
