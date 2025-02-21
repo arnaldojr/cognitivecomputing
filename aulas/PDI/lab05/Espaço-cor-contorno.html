@@ -2390,21 +2390,6 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </div>
 </div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="espaco-de-cor-hsv"><strong>Espaço de cor HSV</strong><a class="anchor-link" href="#espaco-de-cor-hsv">¶</a></h3><p>Até o momento trabalhamos com imagens em escala de cinza, BGR, RGB e binaria. Agora vamos conhecer e trabalhar com HSV ou HSB.</p>
-<pre><code>H - hue (matriz)
-S - saturation (saturação)
-V - value (Value) ou B - brightness (brilho)</code></pre>
-<p>Utilizar esse espaço possui algumas vantagens vamos ver no exemplo abaixo.</p>
-</div>
-</div>
-</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -2424,35 +2409,91 @@ V - value (Value) ou B - brightness (brilho)</code></pre>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="err">!</span><span class="n">wget</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">raw</span><span class="o">.</span><span class="n">githubusercontent</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">arnaldojr</span><span class="o">/</span><span class="n">cognitivecomputing</span><span class="o">/</span><span class="n">master</span><span class="o">/</span><span class="n">material</span><span class="o">/</span><span class="n">aulas</span><span class="o">/</span><span class="n">PDI</span><span class="o">/</span><span class="n">lab05</span><span class="o">/</span><span class="n">HSV_colorspace</span><span class="o">.</span><span class="n">jpg</span> <span class="o">/</span><span class="n">content</span> 
-<span class="err">!</span><span class="n">wget</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">raw</span><span class="o">.</span><span class="n">githubusercontent</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">arnaldojr</span><span class="o">/</span><span class="n">cognitivecomputing</span><span class="o">/</span><span class="n">master</span><span class="o">/</span><span class="n">material</span><span class="o">/</span><span class="n">aulas</span><span class="o">/</span><span class="n">PDI</span><span class="o">/</span><span class="n">lab05</span><span class="o">/</span><span class="n">bolinha</span><span class="o">.</span><span class="n">png</span> <span class="o">/</span><span class="n">content</span>
-<span class="err">!</span><span class="n">wget</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">raw</span><span class="o">.</span><span class="n">githubusercontent</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">arnaldojr</span><span class="o">/</span><span class="n">cognitivecomputing</span><span class="o">/</span><span class="n">master</span><span class="o">/</span><span class="n">material</span><span class="o">/</span><span class="n">aulas</span><span class="o">/</span><span class="n">PDI</span><span class="o">/</span><span class="n">lab05</span><span class="o">/</span><span class="n">convolution</span><span class="o">.</span><span class="n">png</span> <span class="o">/</span><span class="n">content</span>
-<span class="err">!</span><span class="n">wget</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">raw</span><span class="o">.</span><span class="n">githubusercontent</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">arnaldojr</span><span class="o">/</span><span class="n">cognitivecomputing</span><span class="o">/</span><span class="n">master</span><span class="o">/</span><span class="n">material</span><span class="o">/</span><span class="n">aulas</span><span class="o">/</span><span class="n">PDI</span><span class="o">/</span><span class="n">lab05</span><span class="o">/</span><span class="n">formas</span><span class="o">.</span><span class="n">png</span> <span class="o">/</span><span class="n">content</span>
-<span class="err">!</span><span class="n">wget</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">raw</span><span class="o">.</span><span class="n">githubusercontent</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">arnaldojr</span><span class="o">/</span><span class="n">cognitivecomputing</span><span class="o">/</span><span class="n">master</span><span class="o">/</span><span class="n">material</span><span class="o">/</span><span class="n">aulas</span><span class="o">/</span><span class="n">PDI</span><span class="o">/</span><span class="n">lab05</span><span class="o">/</span><span class="n">formas_contorno</span><span class="o">.</span><span class="n">png</span> <span class="o">/</span><span class="n">content</span>
-<span class="err">!</span><span class="n">wget</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">raw</span><span class="o">.</span><span class="n">githubusercontent</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">arnaldojr</span><span class="o">/</span><span class="n">cognitivecomputing</span><span class="o">/</span><span class="n">master</span><span class="o">/</span><span class="n">material</span><span class="o">/</span><span class="n">aulas</span><span class="o">/</span><span class="n">PDI</span><span class="o">/</span><span class="n">lab05</span><span class="o">/</span><span class="n">formas_contornor</span><span class="o">.</span><span class="n">png</span> <span class="o">/</span><span class="n">content</span>
-<span class="err">!</span><span class="n">wget</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">raw</span><span class="o">.</span><span class="n">githubusercontent</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">arnaldojr</span><span class="o">/</span><span class="n">cognitivecomputing</span><span class="o">/</span><span class="n">master</span><span class="o">/</span><span class="n">material</span><span class="o">/</span><span class="n">aulas</span><span class="o">/</span><span class="n">PDI</span><span class="o">/</span><span class="n">lab05</span><span class="o">/</span><span class="n">lena</span><span class="o">.</span><span class="n">png</span> <span class="o">/</span><span class="n">content</span>
-<span class="err">!</span><span class="n">wget</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">raw</span><span class="o">.</span><span class="n">githubusercontent</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">arnaldojr</span><span class="o">/</span><span class="n">cognitivecomputing</span><span class="o">/</span><span class="n">master</span><span class="o">/</span><span class="n">material</span><span class="o">/</span><span class="n">aulas</span><span class="o">/</span><span class="n">PDI</span><span class="o">/</span><span class="n">lab05</span><span class="o">/</span><span class="n">melancia</span><span class="o">.</span><span class="n">png</span> <span class="o">/</span><span class="n">content</span>
-<span class="err">!</span><span class="n">wget</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">raw</span><span class="o">.</span><span class="n">githubusercontent</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">arnaldojr</span><span class="o">/</span><span class="n">cognitivecomputing</span><span class="o">/</span><span class="n">master</span><span class="o">/</span><span class="n">material</span><span class="o">/</span><span class="n">aulas</span><span class="o">/</span><span class="n">PDI</span><span class="o">/</span><span class="n">lab05</span><span class="o">/</span><span class="n">melancia_filtrada</span><span class="o">.</span><span class="n">png</span> <span class="o">/</span><span class="n">content</span>
-<span class="err">!</span><span class="n">wget</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">raw</span><span class="o">.</span><span class="n">githubusercontent</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">arnaldojr</span><span class="o">/</span><span class="n">cognitivecomputing</span><span class="o">/</span><span class="n">master</span><span class="o">/</span><span class="n">material</span><span class="o">/</span><span class="n">aulas</span><span class="o">/</span><span class="n">PDI</span><span class="o">/</span><span class="n">lab05</span><span class="o">/</span><span class="n">HSV_colorspace</span><span class="o">.</span><span class="n">jpg</span> <span class="o">/</span><span class="n">content</span>
-<span class="err">!</span><span class="n">wget</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">raw</span><span class="o">.</span><span class="n">githubusercontent</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">arnaldojr</span><span class="o">/</span><span class="n">cognitivecomputing</span><span class="o">/</span><span class="n">master</span><span class="o">/</span><span class="n">material</span><span class="o">/</span><span class="n">aulas</span><span class="o">/</span><span class="n">PDI</span><span class="o">/</span><span class="n">lab05</span><span class="o">/</span><span class="n">melancia_filtrada_rgb</span><span class="o">.</span><span class="n">png</span> <span class="o">/</span><span class="n">content</span>
-<span class="err">!</span><span class="n">wget</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">raw</span><span class="o">.</span><span class="n">githubusercontent</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">arnaldojr</span><span class="o">/</span><span class="n">cognitivecomputing</span><span class="o">/</span><span class="n">master</span><span class="o">/</span><span class="n">material</span><span class="o">/</span><span class="n">aulas</span><span class="o">/</span><span class="n">PDI</span><span class="o">/</span><span class="n">lab05</span><span class="o">/</span><span class="n">same_padding_no_strides</span><span class="o">.</span><span class="n">gif</span> <span class="o">/</span><span class="n">content</span>
-<span class="err">!</span><span class="n">wget</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">raw</span><span class="o">.</span><span class="n">githubusercontent</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">arnaldojr</span><span class="o">/</span><span class="n">cognitivecomputing</span><span class="o">/</span><span class="n">master</span><span class="o">/</span><span class="n">material</span><span class="o">/</span><span class="n">aulas</span><span class="o">/</span><span class="n">PDI</span><span class="o">/</span><span class="n">lab05</span><span class="o">/</span><span class="n">sudoku</span><span class="o">.</span><span class="n">png</span> <span class="o">/</span><span class="n">content</span>
-<span class="err">!</span><span class="n">wget</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">raw</span><span class="o">.</span><span class="n">githubusercontent</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">arnaldojr</span><span class="o">/</span><span class="n">cognitivecomputing</span><span class="o">/</span><span class="n">master</span><span class="o">/</span><span class="n">material</span><span class="o">/</span><span class="n">aulas</span><span class="o">/</span><span class="n">PDI</span><span class="o">/</span><span class="n">lab05</span><span class="o">/</span><span class="n">tux</span><span class="o">.</span><span class="n">png</span> <span class="o">/</span><span class="n">content</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1">## Vou fazer o download das imagens do laboratório diretamente do repositório para ficar mais facil....</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+
+<span class="c1"># Define o laboratório</span>
+<span class="n">laboratorio</span> <span class="o">=</span> <span class="s1">'lab05'</span>  <span class="c1">### altere para o laboratório desejado</span>
+<span class="n">diretorio</span> <span class="o">=</span> <span class="s1">'lab_images'</span>  <span class="c1">### altere para o diretório que deseja salvar as imagens</span>
+
+<span class="c1"># Download de um arquivo</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">download_file</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">destination</span><span class="p">):</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">destination</span><span class="p">,</span> <span class="s1">'wb'</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">iter_content</span><span class="p">(</span><span class="n">chunk_size</span><span class="o">=</span><span class="mi">8192</span><span class="p">):</span>
+                <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">chunk</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Baixado: </span><span class="si">{</span><span class="n">destination</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Erro ao baixar </span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="c1"># Monta a URL completa</span>
+<span class="n">api_url</span> <span class="o">=</span> <span class="s2">"https://api.github.com/repos/arnaldojr/cognitivecomputing/contents/material/aulas/PDI/"</span>
+<span class="n">url_completa</span> <span class="o">=</span> <span class="n">api_url</span> <span class="o">+</span> <span class="n">laboratorio</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Fazendo o download de: </span><span class="si">{</span><span class="n">url_completa</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="c1"># checa se a URL está acessível</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url_completa</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">!=</span> <span class="mi">200</span><span class="p">:</span>
+    <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Erro ao acessar o repositório: </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="n">files</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+
+<span class="c1"># Faz o download de cada arquivo</span>
+<span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">diretorio</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># Cria a pasta downloads</span>
+<span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+    <span class="n">file_name</span> <span class="o">=</span> <span class="n">file</span><span class="p">[</span><span class="s1">'name'</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">file_name</span><span class="o">.</span><span class="n">endswith</span><span class="p">((</span><span class="s1">'.png'</span><span class="p">,</span> <span class="s1">'.jpg'</span><span class="p">,</span> <span class="s1">'.jpeg'</span><span class="p">,</span> <span class="s1">'.mp4'</span><span class="p">)):</span>  <span class="c1"># Adicione mais extensões se necessário</span>
+        <span class="n">file_url</span> <span class="o">=</span> <span class="n">file</span><span class="p">[</span><span class="s1">'download_url'</span><span class="p">]</span>
+        <span class="n">destination</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">diretorio</span><span class="p">,</span> <span class="n">file_name</span><span class="p">)</span>
+        <span class="n">download_file</span><span class="p">(</span><span class="n">file_url</span><span class="p">,</span> <span class="n">destination</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Download concluído. Arquivos salvos na pasta </span><span class="si">{</span><span class="n">diretorio</span><span class="si">}</span><span class="s2">."</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-1">!wget https://raw.githubusercontent.com/arnaldojr/cognitivecomputing/master/material/aulas/PDI/lab05/HSV_colorspace.jpg /content 
-!wget https://raw.githubusercontent.com/arnaldojr/cognitivecomputing/master/material/aulas/PDI/lab05/bolinha.png /content
-!wget https://raw.githubusercontent.com/arnaldojr/cognitivecomputing/master/material/aulas/PDI/lab05/convolution.png /content
-!wget https://raw.githubusercontent.com/arnaldojr/cognitivecomputing/master/material/aulas/PDI/lab05/formas.png /content
-!wget https://raw.githubusercontent.com/arnaldojr/cognitivecomputing/master/material/aulas/PDI/lab05/formas_contorno.png /content
-!wget https://raw.githubusercontent.com/arnaldojr/cognitivecomputing/master/material/aulas/PDI/lab05/formas_contornor.png /content
-!wget https://raw.githubusercontent.com/arnaldojr/cognitivecomputing/master/material/aulas/PDI/lab05/lena.png /content
-!wget https://raw.githubusercontent.com/arnaldojr/cognitivecomputing/master/material/aulas/PDI/lab05/melancia.png /content
-!wget https://raw.githubusercontent.com/arnaldojr/cognitivecomputing/master/material/aulas/PDI/lab05/melancia_filtrada.png /content
-!wget https://raw.githubusercontent.com/arnaldojr/cognitivecomputing/master/material/aulas/PDI/lab05/HSV_colorspace.jpg /content
-!wget https://raw.githubusercontent.com/arnaldojr/cognitivecomputing/master/material/aulas/PDI/lab05/melancia_filtrada_rgb.png /content
-!wget https://raw.githubusercontent.com/arnaldojr/cognitivecomputing/master/material/aulas/PDI/lab05/same_padding_no_strides.gif /content
-!wget https://raw.githubusercontent.com/arnaldojr/cognitivecomputing/master/material/aulas/PDI/lab05/sudoku.png /content
-!wget https://raw.githubusercontent.com/arnaldojr/cognitivecomputing/master/material/aulas/PDI/lab05/tux.png /content</div>
+<div class="clipboard-copy-txt" id="cell-1">## Vou fazer o download das imagens do laboratório diretamente do repositório para ficar mais facil....
+
+import requests
+import os
+
+# Define o laboratório
+laboratorio = 'lab05'  ### altere para o laboratório desejado
+diretorio = 'lab_images'  ### altere para o diretório que deseja salvar as imagens
+
+# Download de um arquivo
+def download_file(url, destination):
+    response = requests.get(url, stream=True)
+    if response.status_code == 200:
+        with open(destination, 'wb') as file:
+            for chunk in response.iter_content(chunk_size=8192):
+                file.write(chunk)
+        print(f"Baixado: {destination}")
+    else:
+        print(f"Erro ao baixar {url}")
+
+# Monta a URL completa
+api_url = "https://api.github.com/repos/arnaldojr/cognitivecomputing/contents/material/aulas/PDI/"
+url_completa = api_url + laboratorio
+print(f"Fazendo o download de: {url_completa}")
+
+# checa se a URL está acessível
+response = requests.get(url_completa)
+if response.status_code != 200:
+    raise Exception(f"Erro ao acessar o repositório: {response.status_code}")
+files = response.json()
+
+
+# Faz o download de cada arquivo
+os.makedirs(diretorio, exist_ok=True) # Cria a pasta downloads
+for file in files:
+    file_name = file['name']
+    if file_name.endswith(('.png', '.jpg', '.jpeg', '.mp4')):  # Adicione mais extensões se necessário
+        file_url = file['download_url']
+        destination = os.path.join(diretorio, file_name)
+        download_file(file_url, destination)
+
+print(f"Download concluído. Arquivos salvos na pasta {diretorio}.")</div>
 </div>
 </div>
 </div>
@@ -2464,219 +2505,41 @@ V - value (Value) ou B - brightness (brilho)</code></pre>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>--2023-02-23 21:32:26--  https://raw.githubusercontent.com/arnaldojr/cognitivecomputing/master/material/aulas/lab05/HSV_colorspace.jpg
-Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.111.133, 185.199.108.133, 185.199.110.133, ...
-Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.111.133|:443... connected.
-HTTP request sent, awaiting response... 200 OK
-Length: 20800 (20K) [image/jpeg]
-Saving to: ‘HSV_colorspace.jpg’
-
-HSV_colorspace.jpg    0%[                    ]       0  --.-KB/s               HSV_colorspace.jpg  100%[===================&gt;]  20.31K  --.-KB/s    in 0.001s  
-
-2023-02-23 21:32:26 (21.7 MB/s) - ‘HSV_colorspace.jpg’ saved [20800/20800]
-
-/content: Scheme missing.
-FINISHED --2023-02-23 21:32:26--
-Total wall clock time: 0.2s
-Downloaded: 1 files, 20K in 0.001s (21.7 MB/s)
---2023-02-23 21:32:26--  https://raw.githubusercontent.com/arnaldojr/cognitivecomputing/master/material/aulas/lab05/bolinha.png
-Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.108.133, 185.199.109.133, 185.199.110.133, ...
-Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.108.133|:443... connected.
-HTTP request sent, awaiting response... 200 OK
-Length: 205355 (201K) [image/png]
-Saving to: ‘bolinha.png’
-
-bolinha.png         100%[===================&gt;] 200.54K  --.-KB/s    in 0.03s   
-
-2023-02-23 21:32:27 (7.75 MB/s) - ‘bolinha.png’ saved [205355/205355]
-
-/content: Scheme missing.
-FINISHED --2023-02-23 21:32:27--
-Total wall clock time: 0.2s
-Downloaded: 1 files, 201K in 0.03s (7.75 MB/s)
---2023-02-23 21:32:27--  https://raw.githubusercontent.com/arnaldojr/cognitivecomputing/master/material/aulas/lab05/convolution.png
-Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.109.133, 185.199.108.133, 185.199.111.133, ...
-Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.109.133|:443... connected.
-HTTP request sent, awaiting response... 200 OK
-Length: 162095 (158K) [image/png]
-Saving to: ‘convolution.png’
-
-convolution.png     100%[===================&gt;] 158.30K  --.-KB/s    in 0.02s   
-
-2023-02-23 21:32:27 (6.76 MB/s) - ‘convolution.png’ saved [162095/162095]
-
-/content: Scheme missing.
-FINISHED --2023-02-23 21:32:27--
-Total wall clock time: 0.2s
-Downloaded: 1 files, 158K in 0.02s (6.76 MB/s)
---2023-02-23 21:32:27--  https://raw.githubusercontent.com/arnaldojr/cognitivecomputing/master/material/aulas/lab05/formas.png
-Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.108.133, 185.199.109.133, 185.199.110.133, ...
-Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.108.133|:443... connected.
-HTTP request sent, awaiting response... 200 OK
-Length: 34765 (34K) [image/png]
-Saving to: ‘formas.png’
-
-formas.png          100%[===================&gt;]  33.95K  --.-KB/s    in 0.003s  
-
-2023-02-23 21:32:27 (10.2 MB/s) - ‘formas.png’ saved [34765/34765]
-
-/content: Scheme missing.
-FINISHED --2023-02-23 21:32:27--
-Total wall clock time: 0.1s
-Downloaded: 1 files, 34K in 0.003s (10.2 MB/s)
---2023-02-23 21:32:27--  https://raw.githubusercontent.com/arnaldojr/cognitivecomputing/master/material/aulas/lab05/formas_contorno.png
-Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.111.133, 185.199.110.133, 185.199.109.133, ...
-Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.111.133|:443... connected.
-HTTP request sent, awaiting response... 200 OK
-Length: 22192 (22K) [image/png]
-Saving to: ‘formas_contorno.png’
-
-formas_contorno.png 100%[===================&gt;]  21.67K  --.-KB/s    in 0.002s  
-
-2023-02-23 21:32:27 (14.1 MB/s) - ‘formas_contorno.png’ saved [22192/22192]
-
-/content: Scheme missing.
-FINISHED --2023-02-23 21:32:27--
-Total wall clock time: 0.1s
-Downloaded: 1 files, 22K in 0.002s (14.1 MB/s)
---2023-02-23 21:32:27--  https://raw.githubusercontent.com/arnaldojr/cognitivecomputing/master/material/aulas/lab05/formas_contornor.png
-Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.108.133, 185.199.109.133, 185.199.110.133, ...
-Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.108.133|:443... connected.
-HTTP request sent, awaiting response... 200 OK
-Length: 22192 (22K) [image/png]
-Saving to: ‘formas_contornor.png’
-
-formas_contornor.pn 100%[===================&gt;]  21.67K  --.-KB/s    in 0.002s  
-
-2023-02-23 21:32:27 (13.8 MB/s) - ‘formas_contornor.png’ saved [22192/22192]
-
-/content: Scheme missing.
-FINISHED --2023-02-23 21:32:27--
-Total wall clock time: 0.1s
-Downloaded: 1 files, 22K in 0.002s (13.8 MB/s)
---2023-02-23 21:32:27--  https://raw.githubusercontent.com/arnaldojr/cognitivecomputing/master/material/aulas/lab05/lena.png
-Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.111.133, 185.199.108.133, 185.199.110.133, ...
-Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.111.133|:443... connected.
-HTTP request sent, awaiting response... 200 OK
-Length: 218726 (214K) [image/png]
-Saving to: ‘lena.png’
-
-lena.png            100%[===================&gt;] 213.60K  --.-KB/s    in 0.03s   
-
-2023-02-23 21:32:28 (8.10 MB/s) - ‘lena.png’ saved [218726/218726]
-
-/content: Scheme missing.
-FINISHED --2023-02-23 21:32:28--
-Total wall clock time: 0.2s
-Downloaded: 1 files, 214K in 0.03s (8.10 MB/s)
---2023-02-23 21:32:28--  https://raw.githubusercontent.com/arnaldojr/cognitivecomputing/master/material/aulas/lab05/melancia.png
-Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.108.133, 185.199.109.133, 185.199.110.133, ...
-Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.108.133|:443... connected.
-HTTP request sent, awaiting response... 200 OK
-Length: 1359302 (1.3M) [image/png]
-Saving to: ‘melancia.png’
-
-melancia.png        100%[===================&gt;]   1.30M  --.-KB/s    in 0.06s   
-
-2023-02-23 21:32:28 (23.5 MB/s) - ‘melancia.png’ saved [1359302/1359302]
-
-/content: Scheme missing.
-FINISHED --2023-02-23 21:32:28--
-Total wall clock time: 0.3s
-Downloaded: 1 files, 1.3M in 0.06s (23.5 MB/s)
---2023-02-23 21:32:28--  https://raw.githubusercontent.com/arnaldojr/cognitivecomputing/master/material/aulas/lab05/melancia_filtrada.png
-Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.108.133, 185.199.109.133, 185.199.110.133, ...
-Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.108.133|:443... connected.
-HTTP request sent, awaiting response... 200 OK
-Length: 3956 (3.9K) [image/png]
-Saving to: ‘melancia_filtrada.png’
-
-melancia_filtrada.p 100%[===================&gt;]   3.86K  --.-KB/s    in 0s      
-
-2023-02-23 21:32:28 (46.7 MB/s) - ‘melancia_filtrada.png’ saved [3956/3956]
-
-/content: Scheme missing.
-FINISHED --2023-02-23 21:32:28--
-Total wall clock time: 0.1s
-Downloaded: 1 files, 3.9K in 0s (46.7 MB/s)
---2023-02-23 21:32:28--  https://raw.githubusercontent.com/arnaldojr/cognitivecomputing/master/material/aulas/lab05/HSV_colorspace.jpg
-Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.108.133, 185.199.109.133, 185.199.110.133, ...
-Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.108.133|:443... connected.
-HTTP request sent, awaiting response... 200 OK
-Length: 20800 (20K) [image/jpeg]
-Saving to: ‘HSV_colorspace.jpg.1’
-
-HSV_colorspace.jpg. 100%[===================&gt;]  20.31K  --.-KB/s    in 0.001s  
-
-2023-02-23 21:32:28 (18.7 MB/s) - ‘HSV_colorspace.jpg.1’ saved [20800/20800]
-
-/content: Scheme missing.
-FINISHED --2023-02-23 21:32:28--
-Total wall clock time: 0.05s
-Downloaded: 1 files, 20K in 0.001s (18.7 MB/s)
---2023-02-23 21:32:28--  https://raw.githubusercontent.com/arnaldojr/cognitivecomputing/master/material/aulas/lab05/melancia_filtrada_rgb.png
-Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.108.133, 185.199.109.133, 185.199.110.133, ...
-Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.108.133|:443... connected.
-HTTP request sent, awaiting response... 200 OK
-Length: 76721 (75K) [image/png]
-Saving to: ‘melancia_filtrada_rgb.png’
-
-melancia_filtrada_r 100%[===================&gt;]  74.92K  --.-KB/s    in 0.01s   
-
-2023-02-23 21:32:29 (6.08 MB/s) - ‘melancia_filtrada_rgb.png’ saved [76721/76721]
-
-/content: Scheme missing.
-FINISHED --2023-02-23 21:32:29--
-Total wall clock time: 0.2s
-Downloaded: 1 files, 75K in 0.01s (6.08 MB/s)
---2023-02-23 21:32:29--  https://raw.githubusercontent.com/arnaldojr/cognitivecomputing/master/material/aulas/lab05/same_padding_no_strides.gif
-Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.108.133, 185.199.109.133, 185.199.110.133, ...
-Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.108.133|:443... connected.
-HTTP request sent, awaiting response... 200 OK
-Length: 276460 (270K) [image/gif]
-Saving to: ‘same_padding_no_strides.gif’
-
-same_padding_no_str 100%[===================&gt;] 269.98K  --.-KB/s    in 0.03s   
-
-2023-02-23 21:32:29 (8.34 MB/s) - ‘same_padding_no_strides.gif’ saved [276460/276460]
-
-/content: Scheme missing.
-FINISHED --2023-02-23 21:32:29--
-Total wall clock time: 0.2s
-Downloaded: 1 files, 270K in 0.03s (8.34 MB/s)
---2023-02-23 21:32:29--  https://raw.githubusercontent.com/arnaldojr/cognitivecomputing/master/material/aulas/lab05/sudoku.png
-Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.108.133, 185.199.109.133, 185.199.110.133, ...
-Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.108.133|:443... connected.
-HTTP request sent, awaiting response... 200 OK
-Length: 191852 (187K) [image/png]
-Saving to: ‘sudoku.png’
-
-sudoku.png          100%[===================&gt;] 187.36K  --.-KB/s    in 0.02s   
-
-2023-02-23 21:32:29 (7.60 MB/s) - ‘sudoku.png’ saved [191852/191852]
-
-/content: Scheme missing.
-FINISHED --2023-02-23 21:32:29--
-Total wall clock time: 0.2s
-Downloaded: 1 files, 187K in 0.02s (7.60 MB/s)
---2023-02-23 21:32:29--  https://raw.githubusercontent.com/arnaldojr/cognitivecomputing/master/material/aulas/lab05/tux.png
-Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.110.133, 185.199.109.133, 185.199.108.133, ...
-Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.110.133|:443... connected.
-HTTP request sent, awaiting response... 200 OK
-Length: 140853 (138K) [image/png]
-Saving to: ‘tux.png’
-
-tux.png             100%[===================&gt;] 137.55K  --.-KB/s    in 0.02s   
-
-2023-02-23 21:32:29 (6.07 MB/s) - ‘tux.png’ saved [140853/140853]
-
-/content: Scheme missing.
-FINISHED --2023-02-23 21:32:29--
-Total wall clock time: 0.2s
-Downloaded: 1 files, 138K in 0.02s (6.07 MB/s)
+<pre>Fazendo o download de: https://api.github.com/repos/arnaldojr/cognitivecomputing/contents/material/aulas/PDI/lab05
+Baixado: lab_images/HSV_colorspace.jpg
+Baixado: lab_images/bolinha.png
+Baixado: lab_images/convolution.png
+Baixado: lab_images/formas.png
+Baixado: lab_images/formas_contorno.png
+Baixado: lab_images/formas_contornor.png
+Baixado: lab_images/hsv_colorspace.png
+Baixado: lab_images/lena.png
+Baixado: lab_images/melancia.png
+Baixado: lab_images/melancia_filtrada.png
+Baixado: lab_images/melancia_filtrada_rgb.png
+Baixado: lab_images/saida.png
+Baixado: lab_images/segmenta_melancia.mp4
+Baixado: lab_images/sudoku.png
+Baixado: lab_images/tux.png
+Download concluído. Arquivos salvos na pasta lab_images.
 </pre>
 </div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="espaco-de-cor-hsv"><strong>Espaço de cor HSV</strong><a class="anchor-link" href="#espaco-de-cor-hsv">¶</a></h3><p>Até o momento trabalhamos com imagens em escala de cinza, BGR, RGB e binaria. Agora vamos conhecer e trabalhar com HSV ou HSB.</p>
+<pre><code>H - hue (matriz)
+S - saturation (saturação)
+V - value (Value) ou B - brightness (brilho)</code></pre>
+<p>Utilizar esse espaço possui algumas vantagens vamos ver no exemplo abaixo.</p>
 </div>
 </div>
 </div>
@@ -2699,61 +2562,6 @@ Downloaded: 1 files, 138K in 0.02s (6.07 MB/s)
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="n">opencv</span><span class="o">-</span><span class="n">python</span>
-</pre></div>
-<div class="clipboard-copy-txt" id="cell-2">!pip install opencv-python</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Requirement already satisfied: opencv-python in c:\users\junior\appdata\local\programs\python\python310\lib\site-packages (4.5.5.62)</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>WARNING: You are using pip version 21.2.4; however, version 22.1 is available.
-You should consider upgrading via the 'C:\Users\junior\AppData\Local\Programs\Python\Python310\python.exe -m pip install --upgrade pip' command.
-</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>
-Requirement already satisfied: numpy&gt;=1.19.3 in c:\users\junior\appdata\local\programs\python\python310\lib\site-packages (from opencv-python) (1.22.2)
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="CodeMirror cm-s-jupyter">
-<div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-3">
-<div>
-<span class="notice" hidden="">Copied!</span>
-<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
-<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
-<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
-</svg>
-</div>
-</clipboard-copy>
-</div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">cv2</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
@@ -2765,7 +2573,7 @@ Requirement already satisfied: numpy&gt;=1.19.3 in c:\users\junior\appdata\local
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">20</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-3">%matplotlib inline
+<div class="clipboard-copy-txt" id="cell-2">%matplotlib inline
 import cv2
 from matplotlib import pyplot as plt
 import numpy as np
@@ -2829,7 +2637,7 @@ ou digita no google "colorpicker"</p>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-4">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-3">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -2850,7 +2658,7 @@ ou digita no google "colorpicker"</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img_hsv</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-4">img = cv2.imread('bolinha.png')
+<div class="clipboard-copy-txt" id="cell-3">img = cv2.imread('bolinha.png')
 
 img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 img_hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
@@ -2898,7 +2706,7 @@ plt.show()</div>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-5">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-4">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -2935,7 +2743,7 @@ plt.show()</div>
 <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">mask_hsv</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">"Greys_r"</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">255</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-5">%matplotlib inline
+<div class="clipboard-copy-txt" id="cell-4">%matplotlib inline
 import cv2
 from matplotlib import pyplot as plt
 import numpy as np
@@ -3001,7 +2809,7 @@ plt.show()
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-6">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-5">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -3029,7 +2837,7 @@ plt.show()
 <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img_res_rgb</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-6">%matplotlib inline
+<div class="clipboard-copy-txt" id="cell-5">%matplotlib inline
 import cv2
 from matplotlib import pyplot as plt
 import numpy as np
@@ -3073,7 +2881,7 @@ plt.show()
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-7">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-6">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -3085,7 +2893,7 @@ plt.show()
 </div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1">#Implemente seu código</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-7">#Implemente seu código
+<div class="clipboard-copy-txt" id="cell-6">#Implemente seu código
 
 
 
@@ -3117,7 +2925,7 @@ plt.show()
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-8">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-7">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -3145,7 +2953,7 @@ plt.show()
 <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img_res_rgb</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-8">%matplotlib inline
+<div class="clipboard-copy-txt" id="cell-7">%matplotlib inline
 import cv2
 from matplotlib import pyplot as plt
 import numpy as np
@@ -3188,7 +2996,7 @@ plt.show()</div>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-9">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-8">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -3200,7 +3008,7 @@ plt.show()</div>
 </div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1">#Implemente seu código</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-9">#Implemente seu código
+<div class="clipboard-copy-txt" id="cell-8">#Implemente seu código
 
 
 
@@ -3231,7 +3039,7 @@ plt.show()</div>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-10">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-9">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -3270,7 +3078,7 @@ plt.show()</div>
 <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">mask_hsv</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">"Greys_r"</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">255</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-10">#recarregando o nosso exemplo...
+<div class="clipboard-copy-txt" id="cell-9">#recarregando o nosso exemplo...
 
 %matplotlib inline
 import cv2
@@ -3325,7 +3133,7 @@ plt.show()
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-11">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-10">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -3339,7 +3147,7 @@ plt.show()
 
 <span class="n">contornos</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">findContours</span><span class="p">(</span><span class="n">mask_hsv</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">RETR_TREE</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">CHAIN_APPROX_SIMPLE</span><span class="p">)</span> 
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-11"># realizando o contorno da imagem
+<div class="clipboard-copy-txt" id="cell-10"># realizando o contorno da imagem
 
 contornos, _ = cv2.findContours(mask_hsv, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE) 
 </div>
@@ -3357,7 +3165,7 @@ contornos, _ = cv2.findContours(mask_hsv, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-12">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-11">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -3377,7 +3185,7 @@ contornos, _ = cv2.findContours(mask_hsv, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">contornos_img</span><span class="p">);</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-12"># para desenhar o contorno primeiro faz uma copia da imagem 
+<div class="clipboard-copy-txt" id="cell-11"># para desenhar o contorno primeiro faz uma copia da imagem 
 
 mask_rgb = cv2.cvtColor(mask_hsv, cv2.COLOR_GRAY2RGB) 
 contornos_img = mask_rgb.copy() # Cópia da máscara para ser desenhada "por cima"
@@ -3412,7 +3220,7 @@ plt.imshow(contornos_img);</div>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-13">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-12">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -3432,7 +3240,7 @@ plt.imshow(contornos_img);</div>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img_rgb</span><span class="p">);</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-13"># para desenhar o contorno primeiro faz uma copia da imagem 
+<div class="clipboard-copy-txt" id="cell-12"># para desenhar o contorno primeiro faz uma copia da imagem 
 
 mask_rgb = cv2.cvtColor(mask_hsv, cv2.COLOR_GRAY2RGB) 
 contornos_img = mask_rgb.copy() # Cópia da máscara para ser desenhada "por cima"
@@ -3478,7 +3286,7 @@ plt.imshow(img_rgb);</div>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-14">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-13">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -3490,7 +3298,7 @@ plt.imshow(img_rgb);</div>
 </div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"Quantidade de contornos encontrado: "</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">contornos</span><span class="p">))</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-14">print("Quantidade de contornos encontrado: ", len(contornos))</div>
+<div class="clipboard-copy-txt" id="cell-13">print("Quantidade de contornos encontrado: ", len(contornos))</div>
 </div>
 </div>
 </div>
@@ -3530,7 +3338,7 @@ plt.imshow(img_rgb);</div>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-15">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-14">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -3564,7 +3372,7 @@ plt.imshow(img_rgb);</div>
 <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img_res_rgb</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-15">
+<div class="clipboard-copy-txt" id="cell-14">
 %matplotlib inline
 import cv2
 from matplotlib import pyplot as plt
@@ -3614,7 +3422,7 @@ plt.show()</div>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-16">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-15">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -3626,7 +3434,7 @@ plt.show()</div>
 </div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1">#Implemente seu código</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-16">#Implemente seu código
+<div class="clipboard-copy-txt" id="cell-15">#Implemente seu código
 
 
 
@@ -3658,7 +3466,7 @@ plt.show()</div>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-17">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-16">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -3670,7 +3478,7 @@ plt.show()</div>
 </div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1">## Implemente seu código</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-17">## Implemente seu código
+<div class="clipboard-copy-txt" id="cell-16">## Implemente seu código
 
 
 
@@ -3700,7 +3508,7 @@ plt.show()</div>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-18">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-17">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -3712,7 +3520,7 @@ plt.show()</div>
 </div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">cv2</span><span class="o">.</span><span class="n">__version__</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-18">cv2.__version__</div>
+<div class="clipboard-copy-txt" id="cell-17">cv2.__version__</div>
 </div>
 </div>
 </div>
@@ -3739,7 +3547,7 @@ plt.show()</div>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-19">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-18">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -3780,7 +3588,7 @@ plt.show()</div>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">contornos_img</span><span class="p">);</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-19">#recarregando o nosso exemplo...
+<div class="clipboard-copy-txt" id="cell-18">#recarregando o nosso exemplo...
 
 %matplotlib inline
 import cv2
@@ -3836,7 +3644,7 @@ plt.imshow(contornos_img);</div>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-20">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-19">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -3854,7 +3662,7 @@ plt.imshow(contornos_img);</div>
 <span class="n">M</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">moments</span><span class="p">(</span><span class="n">cnt</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span> <span class="n">M</span> <span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-20"># usando o exemplo da documentação https://docs.opencv.org/master/dd/d49/tutorial_py_contour_features.html
+<div class="clipboard-copy-txt" id="cell-19"># usando o exemplo da documentação https://docs.opencv.org/master/dd/d49/tutorial_py_contour_features.html
 # notamos que a função devolve um dicionario. 
 
 cnt = contornos[0]
@@ -3888,7 +3696,7 @@ print( M )</div>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-21">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-20">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -3905,7 +3713,7 @@ print( M )</div>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">"centro de massa na possição: "</span><span class="p">,</span><span class="n">cx</span><span class="p">,</span> <span class="n">cy</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-21"># Calculo das coordenadas do centro de massa
+<div class="clipboard-copy-txt" id="cell-20"># Calculo das coordenadas do centro de massa
 
 cx = int(M['m10']/M['m00'])
 cy = int(M['m01']/M['m00'])
@@ -3949,7 +3757,7 @@ print("centro de massa na possição: ",cx, cy)</div>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-22">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-21">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -3978,7 +3786,7 @@ print("centro de massa na possição: ",cx, cy)</div>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">contornos_img</span><span class="p">);</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-22">## para desenhar a cruz vamos passar a cor e o tamanho em pixel
+<div class="clipboard-copy-txt" id="cell-21">## para desenhar a cruz vamos passar a cor e o tamanho em pixel
 size = 20
 color = (128,128,0)
 
@@ -4033,7 +3841,7 @@ plt.imshow(contornos_img);</div>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-23">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-22">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -4045,7 +3853,7 @@ plt.imshow(contornos_img);</div>
 </div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1">#### seu código aqui...</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-23">#### seu código aqui...</div>
+<div class="clipboard-copy-txt" id="cell-22">#### seu código aqui...</div>
 </div>
 </div>
 </div>
@@ -4060,7 +3868,7 @@ plt.imshow(contornos_img);</div>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-24">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-23">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -4072,7 +3880,7 @@ plt.imshow(contornos_img);</div>
 </div>
 <div class="highlight-ipynb hl-python"><pre><span></span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-24"></div>
+<div class="clipboard-copy-txt" id="cell-23"></div>
 </div>
 </div>
 </div>
@@ -4106,7 +3914,7 @@ plt.imshow(contornos_img);</div>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 8, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 21, 2025</span>
   </span>
 
     
