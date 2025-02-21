@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#desafio-0" class="md-skip">
+        <a href="#filtro-de-convolucao" class="md-skip">
           Skip to content
         </a>
       
@@ -668,6 +668,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#filtro-de-convolucao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Filtro de convolução
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#desafio-0" class="md-nav__link">
     <span class="md-ellipsis">
       Desafio 0
@@ -716,6 +725,15 @@
   <a href="#desafio-4" class="md-nav__link">
     <span class="md-ellipsis">
       Desafio 4
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#desafio-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Desafio 5
     </span>
   </a>
   
@@ -1804,6 +1822,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#filtro-de-convolucao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Filtro de convolução
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#desafio-0" class="md-nav__link">
     <span class="md-ellipsis">
       Desafio 0
@@ -1852,6 +1879,15 @@
   <a href="#desafio-4" class="md-nav__link">
     <span class="md-ellipsis">
       Desafio 4
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#desafio-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Desafio 5
     </span>
   </a>
   
@@ -2341,37 +2377,13 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </div>
 </div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Filtro de convolução</strong></p>
-<p>O <strong>filtro de convolução</strong> é um nomes dados para <strong>filtragem no domínio espacial</strong>. Esse processo ocorre com a aplicação de <strong>filtros</strong> (pequenas matrizes), posicionados sob cada pixel da imagem. Estes filtros, normalmente, são chamados de <strong>kernels (ou núcleos)</strong>. O resultado final do valor do pixel é calculado através de um <strong>produto de convolução</strong>.</p>
-<p>Normalmente os <strong>kernels</strong> são matrizes 3x3, 5x5 ou 7x7.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="desafio-0">Desafio 0<a class="anchor-link" href="#desafio-0">¶</a></h2><p>Abra o link <a href="https://setosa.io/ev/image-kernels/">https://setosa.io/ev/image-kernels/</a> e de forma intuitiva altere o valor do filtro/kernel e descubra efeitos resultantes.</p>
-</div>
-</div>
-</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-1">
@@ -2384,17 +2396,91 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="err">!</span><span class="n">wget</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">raw</span><span class="o">.</span><span class="n">githubusercontent</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">arnaldojr</span><span class="o">/</span><span class="n">cognitivecomputing</span><span class="o">/</span><span class="n">master</span><span class="o">/</span><span class="n">material</span><span class="o">/</span><span class="n">aulas</span><span class="o">/</span><span class="n">PDI</span><span class="o">/</span><span class="n">lab04</span><span class="o">/</span><span class="n">convolution</span><span class="o">.</span><span class="n">png</span> <span class="o">/</span><span class="n">content</span>
-<span class="err">!</span><span class="n">wget</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">raw</span><span class="o">.</span><span class="n">githubusercontent</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">arnaldojr</span><span class="o">/</span><span class="n">cognitivecomputing</span><span class="o">/</span><span class="n">master</span><span class="o">/</span><span class="n">material</span><span class="o">/</span><span class="n">aulas</span><span class="o">/</span><span class="n">PDI</span><span class="o">/</span><span class="n">lab04</span><span class="o">/</span><span class="n">lena</span><span class="o">.</span><span class="n">png</span> <span class="o">/</span><span class="n">content</span>
-<span class="err">!</span><span class="n">wget</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">raw</span><span class="o">.</span><span class="n">githubusercontent</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">arnaldojr</span><span class="o">/</span><span class="n">cognitivecomputing</span><span class="o">/</span><span class="n">master</span><span class="o">/</span><span class="n">material</span><span class="o">/</span><span class="n">aulas</span><span class="o">/</span><span class="n">PDI</span><span class="o">/</span><span class="n">lab04</span><span class="o">/</span><span class="n">saida</span><span class="o">.</span><span class="n">png</span> <span class="o">/</span><span class="n">content</span>
-<span class="err">!</span><span class="n">wget</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">raw</span><span class="o">.</span><span class="n">githubusercontent</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">arnaldojr</span><span class="o">/</span><span class="n">cognitivecomputing</span><span class="o">/</span><span class="n">master</span><span class="o">/</span><span class="n">material</span><span class="o">/</span><span class="n">aulas</span><span class="o">/</span><span class="n">PDI</span><span class="o">/</span><span class="n">lab04</span><span class="o">/</span><span class="n">same_padding_no_strides</span><span class="o">.</span><span class="n">gif</span> <span class="o">/</span><span class="n">content</span>
-<span class="err">!</span><span class="n">wget</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">raw</span><span class="o">.</span><span class="n">githubusercontent</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">arnaldojr</span><span class="o">/</span><span class="n">cognitivecomputing</span><span class="o">/</span><span class="n">master</span><span class="o">/</span><span class="n">material</span><span class="o">/</span><span class="n">aulas</span><span class="o">/</span><span class="n">PDI</span><span class="o">/</span><span class="n">lab04</span><span class="o">/</span><span class="n">tux</span><span class="o">.</span><span class="n">png</span> <span class="o">/</span><span class="n">content</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1">## Vou fazer o download das imagens do laboratório diretamente do repositório para ficar mais facil....</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+
+<span class="c1"># Define o laboratório</span>
+<span class="n">laboratorio</span> <span class="o">=</span> <span class="s1">'lab04'</span>  <span class="c1">### altere para o laboratório desejado</span>
+<span class="n">diretorio</span> <span class="o">=</span> <span class="s1">'lab_images'</span>  <span class="c1">### altere para o diretório que deseja salvar as imagens</span>
+
+<span class="c1"># Download de um arquivo</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">download_file</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">destination</span><span class="p">):</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">destination</span><span class="p">,</span> <span class="s1">'wb'</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">iter_content</span><span class="p">(</span><span class="n">chunk_size</span><span class="o">=</span><span class="mi">8192</span><span class="p">):</span>
+                <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">chunk</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Baixado: </span><span class="si">{</span><span class="n">destination</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Erro ao baixar </span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="c1"># Monta a URL completa</span>
+<span class="n">api_url</span> <span class="o">=</span> <span class="s2">"https://api.github.com/repos/arnaldojr/cognitivecomputing/contents/material/aulas/PDI/"</span>
+<span class="n">url_completa</span> <span class="o">=</span> <span class="n">api_url</span> <span class="o">+</span> <span class="n">laboratorio</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Fazendo o download de: </span><span class="si">{</span><span class="n">url_completa</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="c1"># checa se a URL está acessível</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url_completa</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">!=</span> <span class="mi">200</span><span class="p">:</span>
+    <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Erro ao acessar o repositório: </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="n">files</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+
+<span class="c1"># Faz o download de cada arquivo</span>
+<span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">diretorio</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># Cria a pasta downloads</span>
+<span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+    <span class="n">file_name</span> <span class="o">=</span> <span class="n">file</span><span class="p">[</span><span class="s1">'name'</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">file_name</span><span class="o">.</span><span class="n">endswith</span><span class="p">((</span><span class="s1">'.png'</span><span class="p">,</span> <span class="s1">'.jpg'</span><span class="p">,</span> <span class="s1">'.jpeg'</span><span class="p">,</span> <span class="s1">'.mp4'</span><span class="p">)):</span>  <span class="c1"># Adicione mais extensões se necessário</span>
+        <span class="n">file_url</span> <span class="o">=</span> <span class="n">file</span><span class="p">[</span><span class="s1">'download_url'</span><span class="p">]</span>
+        <span class="n">destination</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">diretorio</span><span class="p">,</span> <span class="n">file_name</span><span class="p">)</span>
+        <span class="n">download_file</span><span class="p">(</span><span class="n">file_url</span><span class="p">,</span> <span class="n">destination</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Download concluído. Arquivos salvos na pasta </span><span class="si">{</span><span class="n">diretorio</span><span class="si">}</span><span class="s2">."</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-1">!wget https://raw.githubusercontent.com/arnaldojr/cognitivecomputing/master/material/aulas/PDI/lab04/convolution.png /content
-!wget https://raw.githubusercontent.com/arnaldojr/cognitivecomputing/master/material/aulas/PDI/lab04/lena.png /content
-!wget https://raw.githubusercontent.com/arnaldojr/cognitivecomputing/master/material/aulas/PDI/lab04/saida.png /content
-!wget https://raw.githubusercontent.com/arnaldojr/cognitivecomputing/master/material/aulas/PDI/lab04/same_padding_no_strides.gif /content
-!wget https://raw.githubusercontent.com/arnaldojr/cognitivecomputing/master/material/aulas/PDI/lab04/tux.png /content</div>
+<div class="clipboard-copy-txt" id="cell-1">## Vou fazer o download das imagens do laboratório diretamente do repositório para ficar mais facil....
+
+import requests
+import os
+
+# Define o laboratório
+laboratorio = 'lab04'  ### altere para o laboratório desejado
+diretorio = 'lab_images'  ### altere para o diretório que deseja salvar as imagens
+
+# Download de um arquivo
+def download_file(url, destination):
+    response = requests.get(url, stream=True)
+    if response.status_code == 200:
+        with open(destination, 'wb') as file:
+            for chunk in response.iter_content(chunk_size=8192):
+                file.write(chunk)
+        print(f"Baixado: {destination}")
+    else:
+        print(f"Erro ao baixar {url}")
+
+# Monta a URL completa
+api_url = "https://api.github.com/repos/arnaldojr/cognitivecomputing/contents/material/aulas/PDI/"
+url_completa = api_url + laboratorio
+print(f"Fazendo o download de: {url_completa}")
+
+# checa se a URL está acessível
+response = requests.get(url_completa)
+if response.status_code != 200:
+    raise Exception(f"Erro ao acessar o repositório: {response.status_code}")
+files = response.json()
+
+
+# Faz o download de cada arquivo
+os.makedirs(diretorio, exist_ok=True) # Cria a pasta downloads
+for file in files:
+    file_name = file['name']
+    if file_name.endswith(('.png', '.jpg', '.jpeg', '.mp4')):  # Adicione mais extensões se necessário
+        file_url = file['download_url']
+        destination = os.path.join(diretorio, file_name)
+        download_file(file_url, destination)
+
+print(f"Download concluído. Arquivos salvos na pasta {diretorio}.")</div>
 </div>
 </div>
 </div>
@@ -2406,84 +2492,40 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>--2023-02-23 21:11:45--  https://raw.githubusercontent.com/arnaldojr/cognitivecomputing/master/material/aulas/lab04/convolution.png
-Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.108.133, 185.199.109.133, 185.199.110.133, ...
-Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.108.133|:443... connected.
-HTTP request sent, awaiting response... 200 OK
-Length: 162095 (158K) [image/png]
-Saving to: ‘convolution.png.1’
-
-convolution.png.1     0%[                    ]       0  --.-KB/s               convolution.png.1   100%[===================&gt;] 158.30K  --.-KB/s    in 0.02s   
-
-2023-02-23 21:11:45 (10.0 MB/s) - ‘convolution.png.1’ saved [162095/162095]
-
-/content: Scheme missing.
-FINISHED --2023-02-23 21:11:45--
-Total wall clock time: 0.06s
-Downloaded: 1 files, 158K in 0.02s (10.0 MB/s)
---2023-02-23 21:11:46--  https://raw.githubusercontent.com/arnaldojr/cognitivecomputing/master/material/aulas/lab04/lena.png
-Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.111.133, 185.199.110.133, 185.199.108.133, ...
-Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.111.133|:443... connected.
-HTTP request sent, awaiting response... 200 OK
-Length: 218726 (214K) [image/png]
-Saving to: ‘lena.png.1’
-
-lena.png.1          100%[===================&gt;] 213.60K  --.-KB/s    in 0.02s   
-
-2023-02-23 21:11:46 (12.3 MB/s) - ‘lena.png.1’ saved [218726/218726]
-
-/content: Scheme missing.
-FINISHED --2023-02-23 21:11:46--
-Total wall clock time: 0.06s
-Downloaded: 1 files, 214K in 0.02s (12.3 MB/s)
---2023-02-23 21:11:46--  https://raw.githubusercontent.com/arnaldojr/cognitivecomputing/master/material/aulas/lab04/saida.png
-Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.108.133, 185.199.109.133, 185.199.110.133, ...
-Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.108.133|:443... connected.
-HTTP request sent, awaiting response... 200 OK
-Length: 61272 (60K) [image/png]
-Saving to: ‘saida.png.1’
-
-saida.png.1         100%[===================&gt;]  59.84K  --.-KB/s    in 0.008s  
-
-2023-02-23 21:11:46 (7.01 MB/s) - ‘saida.png.1’ saved [61272/61272]
-
-/content: Scheme missing.
-FINISHED --2023-02-23 21:11:46--
-Total wall clock time: 0.05s
-Downloaded: 1 files, 60K in 0.008s (7.01 MB/s)
---2023-02-23 21:11:46--  https://raw.githubusercontent.com/arnaldojr/cognitivecomputing/master/material/aulas/lab04/same_padding_no_strides.gif
-Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.108.133, 185.199.109.133, 185.199.110.133, ...
-Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.108.133|:443... connected.
-HTTP request sent, awaiting response... 200 OK
-Length: 276460 (270K) [image/gif]
-Saving to: ‘same_padding_no_strides.gif.1’
-
-same_padding_no_str 100%[===================&gt;] 269.98K  --.-KB/s    in 0.02s   
-
-2023-02-23 21:11:46 (12.7 MB/s) - ‘same_padding_no_strides.gif.1’ saved [276460/276460]
-
-/content: Scheme missing.
-FINISHED --2023-02-23 21:11:46--
-Total wall clock time: 0.06s
-Downloaded: 1 files, 270K in 0.02s (12.7 MB/s)
---2023-02-23 21:11:46--  https://raw.githubusercontent.com/arnaldojr/cognitivecomputing/master/material/aulas/lab04/tux.png
-Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.108.133, 185.199.109.133, 185.199.110.133, ...
-Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.108.133|:443... connected.
-HTTP request sent, awaiting response... 200 OK
-Length: 140853 (138K) [image/png]
-Saving to: ‘tux.png’
-
-tux.png             100%[===================&gt;] 137.55K  --.-KB/s    in 0.01s   
-
-2023-02-23 21:11:46 (9.12 MB/s) - ‘tux.png’ saved [140853/140853]
-
-/content: Scheme missing.
-FINISHED --2023-02-23 21:11:46--
-Total wall clock time: 0.2s
-Downloaded: 1 files, 138K in 0.01s (9.12 MB/s)
+<pre>Fazendo o download de: https://api.github.com/repos/arnaldojr/cognitivecomputing/contents/material/aulas/PDI/lab04
+Baixado: lab_images/convolution.png
+Baixado: lab_images/lena.png
+Baixado: lab_images/people-walking.mp4
+Baixado: lab_images/saida.png
+Baixado: lab_images/sudoku.png
+Baixado: lab_images/tux.png
+Download concluído. Arquivos salvos na pasta lab_images.
 </pre>
 </div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="filtro-de-convolucao"><strong>Filtro de convolução</strong><a class="anchor-link" href="#filtro-de-convolucao">¶</a></h2><p>O <strong>filtro de convolução</strong> é um nomes dados para <strong>filtragem no domínio espacial</strong>. Esse processo ocorre com a aplicação de <strong>filtros</strong> (pequenas matrizes), posicionados sob cada pixel da imagem. Estes filtros, normalmente, são chamados de <strong>kernels (ou núcleos)</strong>. O resultado final do valor do pixel é calculado através de um <strong>produto de convolução</strong>.</p>
+<p>Normalmente os <strong>kernels</strong> são matrizes 3x3, 5x5 ou 7x7.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="desafio-0">Desafio 0<a class="anchor-link" href="#desafio-0">¶</a></h2><p>Abra o link <a href="https://setosa.io/ev/image-kernels/">https://setosa.io/ev/image-kernels/</a> e de forma intuitiva altere o valor do filtro/kernel e descubra efeitos resultantes.</p>
 </div>
 </div>
 </div>
@@ -3397,6 +3439,31 @@ plt.imshow(dst); plt.show()</div>
 </div>
 </div>
 </div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="desafio-5">Desafio 5<a class="anchor-link" href="#desafio-5">¶</a></h2><p>Faça um script python (.py) que processa um video (webcam ou .mp4) e processe cada frame aplicando uma operação de convolução (por exemplo, para detecção de bordas ou desfoque) e exiba o resultado em tempo real.</p>
+<p><strong>Definição da Máscara de Convolução:</strong></p>
+<ul>
+<li>Escolha e implemente pelo menos uma máscara de convolução.</li>
+<li>Exemplos:<ul>
+<li>Detecção de Bordas: Máscara de Sobel ou Laplaciano.</li>
+<li>Desfoque: Máscara média ou gaussiana.</li>
+</ul>
+</li>
+<li>Explique brevemente no código o efeito de cada máscara.</li>
+</ul>
+<p><strong>Organização de código</strong></p>
+<ul>
+<li>Código bem comentado, com funções (separando as responsabilidades) e estrutura clara.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
 </div> <!-- jp-Notebook -->
 </div> <!-- jupyter-wrapper -->
 
@@ -3424,7 +3491,7 @@ plt.imshow(dst); plt.show()</div>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 8, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 21, 2025</span>
   </span>
 
     
