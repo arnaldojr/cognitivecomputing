@@ -824,6 +824,48 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#transformada-de-hough-e-filtragem-por-angulo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transformada de Hough e Filtragem por Ângulo
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#calculo-do-angulo-de-uma-reta" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cálculo do Ângulo de uma Reta
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#filtro-de-linhas-por-angulo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Filtro de Linhas por Ângulo
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Filtro de Linhas por Ângulo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pseudocodigo" class="md-nav__link">
+    <span class="md-ellipsis">
+      pseudocódigo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#desafio-4" class="md-nav__link">
     <span class="md-ellipsis">
       DESAFIO 4
@@ -2120,6 +2162,48 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#transformada-de-hough-e-filtragem-por-angulo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transformada de Hough e Filtragem por Ângulo
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#calculo-do-angulo-de-uma-reta" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cálculo do Ângulo de uma Reta
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#filtro-de-linhas-por-angulo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Filtro de Linhas por Ângulo
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Filtro de Linhas por Ângulo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pseudocodigo" class="md-nav__link">
+    <span class="md-ellipsis">
+      pseudocódigo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#desafio-4" class="md-nav__link">
     <span class="md-ellipsis">
       DESAFIO 4
@@ -3353,6 +3437,46 @@ plt.imshow(hough_img_rgb); plt.show()</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="transformada-de-hough-e-filtragem-por-angulo">Transformada de Hough e Filtragem por Ângulo<a class="anchor-link" href="#transformada-de-hough-e-filtragem-por-angulo">¶</a></h3><p>Para aplicações avançadas, podemos filtrar os resultados com base no <strong>ângulo das linhas detectadas</strong>.</p>
+<h2 id="calculo-do-angulo-de-uma-reta">Cálculo do Ângulo de uma Reta<a class="anchor-link" href="#calculo-do-angulo-de-uma-reta">¶</a></h2><p>A Transformada de Hough detecta <strong>linhas retas</strong> identificando pontos alinhados em uma imagem de bordas. Cada linha detectada é representada por dois pontos:</p>
+<ul>
+<li>$ (x_1, y_1) $ - Primeiro ponto da linha</li>
+<li>$ (x_2, y_2) $ - Segundo ponto da linha</li>
+</ul>
+<p>A partir desses pontos, podemos calcular o <strong>ângulo da linha</strong> usando a seguinte fórmula:</p>
+<p>Cada linha detectada em <code>HoughLinesP</code> é representada por dois pontos $(x_1, y_1)$ e $(x_2, y_2)$. O <strong>ângulo $\theta$</strong>  da reta pode ser calculado com:</p>
+<p>$$
+\theta = \arctan \left( \frac{y_2 - y_1}{x_2 - x_1} \right)
+$$</p>
+<p>Para converter para graus:</p>
+<p>$$
+\theta_{graus} = \theta \times \frac{180}{\pi}
+$$</p>
+<h2 id="filtro-de-linhas-por-angulo">Filtro de Linhas por Ângulo<a class="anchor-link" href="#filtro-de-linhas-por-angulo">¶</a></h2><p>Podemos definir um intervalo de ângulos desejado para filtrar as linhas:</p>
+<ul>
+<li><strong>Linhas verticais</strong>: $\theta \approx 90^\circ$</li>
+<li><strong>Linhas horizontais</strong>: $\theta \approx 0^\circ$ ou $180^\circ$</li>
+<li><strong>Linhas inclinadas</strong>: qualquer outro intervalo necessário.</li>
+</ul>
+<h3 id="pseudocodigo">pseudocódigo<a class="anchor-link" href="#pseudocodigo">¶</a></h3><div class="highlight"><pre><span></span>    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
+        <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span> <span class="o">=</span> <span class="n">line</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        
+        <span class="c1"># Calcular o ângulo da linha</span>
+        <span class="n">angle_radianos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arctan2</span><span class="p">(</span><span class="n">y2</span> <span class="o">-</span> <span class="n">y1</span><span class="p">,</span> <span class="n">x2</span> <span class="o">-</span> <span class="n">x1</span><span class="p">)</span>
+        <span class="n">angle_graus</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">degrees</span><span class="p">(</span><span class="n">angle_radianos</span><span class="p">)</span>
+
+    
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="desafio-4">DESAFIO 4<a class="anchor-link" href="#desafio-4">¶</a></h3><p><img alt="" src="rua.png"/></p>
 <p>Você recebeu a imagem de uma rodovia e precisa detectar as <strong>linhas das faixas de trânsito</strong> usando técnicas de processamento de imagem com a <strong>Transformada de Hough</strong>.</p>
 <p>Note que o seu sistema deve ser inteligente o suficiente para detectar <strong>apenas as faixas de trânsito</strong>, ignorando outros segmentos de reta que possam aparecer na imagem. Para isso, será necessário um pipeline de processamento de imagem adequado. Crie e aplique uma máscara para isolar a estrada.</p>
@@ -4077,7 +4201,7 @@ plt.show()</div>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="March 6, 2025 01:52:33">March 6, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="March 6, 2025 13:03:46">March 6, 2025</span>
   </span>
 
     
