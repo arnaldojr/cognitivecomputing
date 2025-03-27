@@ -129,7 +129,7 @@ nav:
   - Agenda: agenda/agenda.md
   - CheckPoint:
     - Orientações gerais: checkpoint/index.md
-    # - CheckPoint 4: checkpoint/cp-ml.md
+    - CheckPoint 1: checkpoint/cp1.md
     # - CheckPoint 5: checkpoint/cp.md
     # - CheckPoint 6: checkpoint/cp6.md    
 
