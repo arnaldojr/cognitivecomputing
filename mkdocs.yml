@@ -134,38 +134,23 @@ nav:
     # - CheckPoint 6: checkpoint/cp6.md    
 
   - Introdução: 
-    # - IoT e Sistemas Embarcados:
-    #   - Introdução: aulas/iot/intro/index.md
-    #   - Eletronica básica: aulas/iot/intro/dicas.md 
-    #   - Programação Arduino: aulas/iot/modulos/modulos.md 
-    #   - Sistemas Embarcados: aulas/iot/intro/introarduino.md
-    #   - Exemplos:
-    #     - From 0 to Hero!: aulas/iot/ex0/index.md 
-    #     - Blink led: aulas/iot/ex1/index.md
-    #     - Led botão: aulas/iot/ex2/index.md
-    #     - Botão pot led: aulas/iot/ex3/index.md
-    #     - PWM: aulas/iot/ex7/index.md
-    #     - Função millis: aulas/iot/ex4/index.md
-    #     - Interrupção de pino: aulas/iot/ex5/index.md
-    #     - Comunicação Serial: aulas/iot/ex6/index.md  
+    - IoT e Sistemas Embarcados:
+      - Introdução: aulas/iot/intro/index.md
+      - Eletronica básica: aulas/iot/intro/dicas.md 
+      - Programação Arduino: aulas/iot/modulos/modulos.md 
+      - Sistemas Embarcados: aulas/iot/intro/introarduino.md
+      - Exemplos:
+        - From 0 to Hero!: aulas/iot/ex0/index.md 
+        - Blink led: aulas/iot/ex1/index.md
+        - Led botão: aulas/iot/ex2/index.md
+        - Botão pot led: aulas/iot/ex3/index.md
+        - PWM: aulas/iot/ex7/index.md
+        - Função millis: aulas/iot/ex4/index.md
+        - Interrupção de pino: aulas/iot/ex5/index.md
+        - Comunicação Serial: aulas/iot/ex6/index.md  
     - Processamento Digital de Imagens: aulas/PDI/intro/index.md
-    - IA: aulas/IA/intro/index.md
+    # - IA: aulas/IA/intro/index.md
   - Laboratórios: 
-    # - IoT:
-    #   - Arduino:
-    #     - Solução From Zero to Hero!: aulas/iot/ex0/solucao.md 
-    #     - Lab01 - Led: aulas/iot/lab1/index.md
-    #     - Lab02 - Botão: aulas/iot/lab2/index.md
-    #     - Lab03 - Serial : aulas/iot/lab3/index.md
-    #     - Lab04 - EEPROM : aulas/iot/lab4/index.md
-    #   - Node-Red:
-    #     - Lab05 : aulas/iot/lab5/index.md
-    #     - Lab06 : aulas/iot/lab6/index.md
-    #     - Lab07 : aulas/iot/lab7/index.md
-    #   # - Raspberry Pi:
-    #   #   - Lab08 : aulas/iot/lab8/index.md
-    #   #   - Lab09 : aulas/iot/lab9/index.md
-    #   #   - Lab10 : aulas/iot/lab10/index.md
     - Processamento Digital de Imagens:  
       # - Soluções PDI: aulas/PDI/solucoes/index.md
       - Lab01 - Intro PID: aulas/PDI/lab01/IntroPID.ipynb
@@ -186,34 +171,49 @@ nav:
       - Lab16 - Detector dlib: aulas/PDI/lab16/dlib2.ipynb
       - Lab17 - Mediapipe: aulas/PDI/lab17/mediapipe.ipynb
       - Lab18 - Yolo: aulas/PDI/lab18/index.md
-    - Machine Learning:
-      - Manipulação de Dados:
-        - Dataframe: aulas/IA/lab01/dataframe.ipynb 
-        - Pré-processamento: aulas/IA/lab04/dicasDePreprocessamento.ipynb  
-      - Aprendizado Supervisionado - Classificação:
-        - lab1: aulas/IA/lab02/classificador_knn.ipynb
-        # - lab2: aulas/IA/lab-04/aula8.ipynb
-      - Aprendizado Supervisionado - Regressão:
-        - lab1: aulas/IA/lab03/regressao.ipynb
-        - lab2: aulas/IA/lab03/preco-notebook.ipynb      
-      - Validação de Modelos: aulas/IA/lab05/validacaocruzada.ipynb
-      - Aprendizado Não Supervisionado: 
-        - lab1: aulas/IA/lab-01/aula5.ipynb
-        - lab2: aulas/IA/lab-01/aula5-parte2.ipynb
-        - lab2: aulas/IA/lab-02/aula6.ipynb
-        - lab3: aulas/IA/lab-03/aula7.ipynb
-        - PCA: aulas/IA/lab04/reducao_dimensionalidade_pca.ipynb 
-    - Deep Learning:
-      - Lab06 - Redes Neurais - Percepton : aulas/IA/lab06/rna.ipynb
-      - Lab07 - Redes Neurais - TensorFlow: aulas/IA/lab07/index.md
-      - Lab07b - Redes Neurais - MLP: aulas/IA/lab07/mlp.ipynb
-      - BATALHA DAS REDES: aulas/IA/batalharedes/batalha_das_redes.ipynb
-      - Lab08 - Redes Neurais - CNN parte1: aulas/IA/lab08/cnn.ipynb
-      - Lab08 - Redes Neurais - CNN parte2: aulas/IA/lab08/cnn_drive.ipynb
-      - Lab9 - Redes Neurais - Pré-treinadas: aulas/IA/lab09/transferlearning_1.ipynb
-      - Lab9 - Redes Neurais - Transfer learning: aulas/IA/lab09/transferlearning_2.ipynb
-      - Lab10 - Redes Neurais - Data Augmentation: aulas/IA/lab10/data-augmentation.ipynb
-      - Lab11 - Redes Neurais - resumo: aulas/IA/lab11/index.md
+    - IoT:
+      - Arduino:
+        - Solução From Zero to Hero!: aulas/iot/ex0/solucao.md 
+        - Lab01 - Led: aulas/iot/lab1/index.md
+        - Lab02 - Botão: aulas/iot/lab2/index.md
+        - Lab03 - Serial : aulas/iot/lab3/index.md
+        - Lab04 - EEPROM : aulas/iot/lab4/index.md
+      - Node-Red:
+        - Lab05 : aulas/iot/lab5/index.md
+        - Lab06 : aulas/iot/lab6/index.md
+        - Lab07 : aulas/iot/lab7/index.md
+    #   # - Raspberry Pi:
+    #   #   - Lab08 : aulas/iot/lab8/index.md
+    #   #   - Lab09 : aulas/iot/lab9/index.md
+    #   #   - Lab10 : aulas/iot/lab10/index.md
+    # - Machine Learning:
+    #   - Manipulação de Dados:
+    #     - Dataframe: aulas/IA/lab01/dataframe.ipynb 
+    #     - Pré-processamento: aulas/IA/lab04/dicasDePreprocessamento.ipynb  
+    #   - Aprendizado Supervisionado - Classificação:
+    #     - lab1: aulas/IA/lab02/classificador_knn.ipynb
+    #     # - lab2: aulas/IA/lab-04/aula8.ipynb
+    #   - Aprendizado Supervisionado - Regressão:
+    #     - lab1: aulas/IA/lab03/regressao.ipynb
+    #     - lab2: aulas/IA/lab03/preco-notebook.ipynb      
+    #   - Validação de Modelos: aulas/IA/lab05/validacaocruzada.ipynb
+    #   - Aprendizado Não Supervisionado: 
+    #     - lab1: aulas/IA/lab-01/aula5.ipynb
+    #     - lab2: aulas/IA/lab-01/aula5-parte2.ipynb
+    #     - lab2: aulas/IA/lab-02/aula6.ipynb
+    #     - lab3: aulas/IA/lab-03/aula7.ipynb
+    #     - PCA: aulas/IA/lab04/reducao_dimensionalidade_pca.ipynb 
+    # - Deep Learning:
+    #   - Lab06 - Redes Neurais - Percepton : aulas/IA/lab06/rna.ipynb
+    #   - Lab07 - Redes Neurais - TensorFlow: aulas/IA/lab07/index.md
+    #   - Lab07b - Redes Neurais - MLP: aulas/IA/lab07/mlp.ipynb
+    #   - BATALHA DAS REDES: aulas/IA/batalharedes/batalha_das_redes.ipynb
+    #   - Lab08 - Redes Neurais - CNN parte1: aulas/IA/lab08/cnn.ipynb
+    #   - Lab08 - Redes Neurais - CNN parte2: aulas/IA/lab08/cnn_drive.ipynb
+    #   - Lab9 - Redes Neurais - Pré-treinadas: aulas/IA/lab09/transferlearning_1.ipynb
+    #   - Lab9 - Redes Neurais - Transfer learning: aulas/IA/lab09/transferlearning_2.ipynb
+    #   - Lab10 - Redes Neurais - Data Augmentation: aulas/IA/lab10/data-augmentation.ipynb
+    #   - Lab11 - Redes Neurais - resumo: aulas/IA/lab11/index.md
     
 
 
