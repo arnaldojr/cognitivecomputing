@@ -1,143 +1,237 @@
-## Lab2 - Desafios
+## Comunicação Serial no Wokwi
 
-Os desafios 1, 2 e 3 devem ser entregues e compõem parte da nota do CP6.
+Ao final deste laboratório, você será capaz de:
 
-## Desafio 1
+- Compreender os princípios da comunicação serial
+- Implementar comunicação entre Arduino e computador
+- Enviar e receber dados via porta serial
+- Processar comandos recebidos pela porta serial
 
-Neste desafio vamos explorar como realizar a leitura de um pino digital do arduino, para isso monte o circuito do abaixo e vamos explorar o seu funcionamento:
+## Fundamentos da Comunicação Serial
 
-![](lab2-desafio1.png)
+### O que é Comunicação Serial?
 
-Use esse código de base:
+A comunicação serial é um protocolo de comunicação onde os dados são transmitidos um bit de cada vez, sequencialmente, através de um canal de comunicação. É amplamente utilizada para comunicação entre microcontroladores e outros dispositivos devido à sua simplicidade e confiabilidade.
+
+### Parâmetros da Comunicação Serial
+
+- **Baud Rate**: Velocidade de transmissão em bits por segundo (bps)
+- **Bits de Dados**: Número de bits em cada pacote (geralmente 8)
+- **Bits de Parada**: Bits que indicam o fim de um pacote (geralmente 1)
+- **Paridade**: Método de verificação de erros (geralmente nenhum)
+
+### UART no Arduino
+
+O Arduino possui um conversor USB-Serial integrado que permite a comunicação com o computador através da porta USB. 
+
+Internamente, o microcontrolador utiliza o periférico UART (Universal Asynchronous Receiver/Transmitter) para implementar a comunicação serial.
+
+![Diagrama UART](https://core-electronics.com.au/media/wysiwyg/tutorials/aidan/UART_protocol.png)
+
+## Comunicação Arduino-Computador
+
+### Configuração Básica
+
+Para iniciar a comunicação serial no Arduino, utilizamos a função `Serial.begin()` no `setup()`, especificando o baud rate:
+
+```cpp
+void setup() {
+  Serial.begin(9600); // Inicia comunicação serial a 9600 bps
+}
+```
+
+### Enviando Dados para o Computador
+
+Para enviar dados do Arduino para o computador, utilizamos as funções:
+
+- `Serial.print()`: Envia dados sem quebra de linha
+- `Serial.println()`: Envia dados com quebra de linha no final
+
+```cpp
+void loop() {
+  Serial.println("Olá, Mundo!"); // Envia a mensagem com quebra de linha
+  delay(1000); // Espera 1 segundo
+}
+```
+### Recebendo Dados do Computador
+
+Para receber dados do computador no Arduino, utilizamos as funções:
+
+- `Serial.available()`: Verifica se há dados disponíveis para leitura
+- `Serial.read()`: Lê um byte da porta serial
+- `Serial.readString()`: Lê uma string completa da porta serial
+
+```cpp
+void loop() {
+  if (Serial.available() > 0) { // Verifica se há dados disponíveis
+    String comando = Serial.readString(); // Lê a string enviada
+    // Processa o comando recebido
+  }
+}
+```
+
+Vamos pra prática!!!
+
+
+### Configuração do Ambiente no Wokwi
+
+- Acesse o site Wokwi.
+
+- Clique em Start New Project e selecione Arduino Uno.
+
+
+## Desafio 1: Comunicação entre Arduino e Computador
+
+Vamos estabelecer uma comunicação básica entre o Arduino e o computador utilizando o Monitor Serial do Wokwi.
+
+- Carregue o seguinte código no simulador:
 
 ```C
-// const é uma constante. logo o valor não muda
-const int buttonPin = 2;
-const int ledPin = 13;
-// cria uma variável
-int buttonState = 0;
-
 void setup() {
-    // configura botão no pino do arduino como entrada:
-    pinMode(ledPin, OUTPUT);
-    // configura botão no pino do arduino como entrada:
-    pinMode(buttonPin, INPUT_PULLUP);
+  Serial.begin(9600); // Inicia a comunicação serial a 9600 bps
 }
 
 void loop() {
-    // Lê o estado do botão:
-    buttonState = digitalRead(buttonPin);
-    // se o botão estiver em nível lógico alto
-    if (buttonState == LOW) {
-        // liga o led
-        digitalWrite(ledPin, HIGH);
-    } else {
-        // apaga o led
-        digitalWrite(ledPin, LOW);
-        delay(1000);
-    }
+  Serial.println("Olá, Mundo!"); // Envia a mensagem "Olá, Mundo!" para o computador
+  delay(1000); // Espera 1 segundo
 }
 
 ```
 
-1. Rode o código fornecido de base. Observe, entenda e anote o seu funcionamento;
+- Observe o painel "Serial Monitor" que aparecerá automaticamente
+
+- Você deve ver a mensagem "Olá, Mundo!" sendo exibida a cada segundo como a imagem a seguir.
+
+![](wokwi.png)
+
+- Modifique o código para enviar seu nome e número de matrícula
+
+## Desafio 2: Cronômetro virtual
+
+Com base no que foi aboradado no lab passado, você deverá criar um cronômetro virtual que exibe o tempo decorrido desde o início da simulação usando a função `millis()`.
+
+**Instruções:**
+
+- Utilize a função `millis()` para exibir no Serial Monitor quanto tempo se passou desde que o Arduino começou a funcionar, em segundos.
+- Faça com que a mensagem seja atualizada **inicialmente** a cada 1 segundo.
+
+- Agora com a base do código funcionando **ok**, modifique seu código para que o intervalo entre as mensagens seja alterado `dinamicamente`, da seguinte forma:
+
+  - 1 segundo durante os primeiros 10 segundos.
+  - 2 segundos entre 10 e 20 segundos.
+  - 5 segundos após 20 segundos.
+
+É esperado como resultado que seja exibido no serial monitor:
+
+```C
+Tempo decorrido: 1 segundos
+Tempo decorrido: 2 segundos
+//assim até 10...
+Tempo decorrido: 10 segundos
+Tempo decorrido: 12 segundos
+//assim até 20...
+Tempo decorrido: 20 segundos
+Tempo decorrido: 25 segundos
+Tempo decorrido: 30 segundos
+//assim acima de 20...
+```
+
+
+## Desafio 3: Recebendo Dados do Computador
+
+Vamos criar uma interface para controlar um LED através de comandos enviados pelo Serial Monitor.
+
+Carregue o seguinte código no seu Arduino:
+
+```C
+String comando = ""; // Variável para armazenar o comando recebido
+const int ledPin = 10;
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(ledPin, OUTPUT); // Define o pino como saída
+  Serial.println("Digite LIGAR ou DESLIGAR para controlar o LED");
+}
+
+void loop() {
+  if (Serial.available()) { // Verifica se há dados disponíveis para leitura
+    comando = Serial.readStringUntil('\n'); // Lê a string até encontrar uma quebra de linha
+    comando.trim(); // Remove espaços e quebras de linha extras
     
-    - O que acontece quando pressiona e solta o botão?
-    - ○ O que acontece quando pressiona e segura o botão?
-
-!!! warning 
-    Repare que o seu funcionamento é um pouco lento e as vezes, parece que ele não funciona corretamente. 
-
-Showwww agora vamos avançar um pouquinho….
-
-2. Altere o código para funcionar da seguinte forma:
-
-    - Quando pressionar e soltar o botão:
-        - O led muda o seu estado, de apagado para ligado e vice-versa…
-    
-    - Quando pressionar e segurar o botão:
-        - O led muda o seu estado uma única vez. (Se estava ligado, apaga e fica apagado)
-
-!!! tip
-    Para funcionar corretamente precisamos dominar o conceito de ``debounce de botões``, ele é um conceito importante ao trabalhar com o Arduino ou qualquer microcontrolador. Ele se refere ao processo de evitar leituras falsas ou instáveis quando um botão físico é pressionado ou liberado. Isso é especialmente importante porque os botões mecânicos podem gerar ruídos elétricos durante essas ações, levando a múltiplas leituras em vez de uma única leitura limpa.
-    Existem diversas formas de criar um debounce, vamos seguir boas as boas práticas e implementar o debounce com a função ``millis()``, como no exemplo abaixo. Note que esse código é parte da solução e não a solução completa, você precisa entender e ajustar ao desafio proposto.
-    
-    ```C
-    const int buttonPin = 2;   // Pino do botão
-    int lastButtonState = HIGH; // Último estado do botão
-    int buttonState;            // Estado atual do botão
-    unsigned long lastDebounceTime = 0;  // Último tempo de debounce
-    unsigned long debounceDelay = 50;    // Tempo de debounce de 50ms
-    
-    void setup() {
-      pinMode(buttonPin, INPUT_PULLUP);
+    if (comando.equalsIgnoreCase("LIGAR")) {
+      digitalWrite(ledPin, HIGH); // Acende o LED no pino
+      Serial.println("LED Ligado!");
+    } else if (comando.equalsIgnoreCase("DESLIGAR")) {
+      digitalWrite(ledPin, LOW); // Apaga o LED no pino
+      Serial.println("LED Desligado!");
+    } else {
+      Serial.println("Comando não reconhecido. Use LIGAR ou DESLIGAR");
     }
-    
-    void loop() {
-      int leBotao = digitalRead(buttonPin);
-    
-      if (leBotao != lastButtonState) {
-        lastDebounceTime = millis();
-      }
-    
-      if ((millis() - lastDebounceTime) > debounceDelay) {
-        if (leBotao != buttonState) {
-          buttonState = leBotao;
-    
-          if (buttonState == LOW) {
-            // Botão pressionado
-          }
-        }
-      }
-    
-      lastButtonState = leBotao;
-    }
-    ```
-        
+  }
+}
 
-## Desafio 2
+```
 
-Altere o código do **desafio 1** e implemente um log que exibe o status do botão e do led.
+#### Montagem no Wokwi:
 
-!!! tip
-    Para conseguir resolver esse desafio, Você deve inicialiar o periferico de comunicação serial. Fazemos isso com a instrução ``Serial.begin(9600);`` dentro da função ``void setup()``.
-    
-    ```C
-    void setup() {
-      // Inicia a comunicação serial com uma taxa de 9600 bps
-      Serial.begin(9600);
-    }
-    
-    void loop() {
-      // Seu código aqui
-    }
+- Adicione um LED ao pino que está configurado no código (da mesma forma que fizemos no labs anteriores).
 
-    ```
-    Além disso, depois de usar ``Serial.begin()``, você pode usar a função ``Serial.print()`` ou ``Serial.println()`` para enviar dados pela serial e criar seu log. Para visualizar, use o ``Serial Monitor`` no arduinoIDE clique em ``Ferramentas -> Monitor Serial``
+- Inicie a simulação, digite `LIGAR` e pressione Enter.
 
-## Desafio 3
+- O LED do Arduino deve acender.
 
-Neste desafio vamos explorar novos recursos do arduino. Para isso implemente um código que faz a leitura do pino analogico A0 que altera o tempo de delay do led. Monte o circuito abaixo:
+- Digite `DESLIGAR` e pressione Enter para apagar o LED.
 
-![](lab2-desafio3.png)
+![](liga-desliga.png)
 
 
-!!! tip
-    Vamos conhecer e utilizar as funções do arduino ``analogRead()`` e ``analogWrite()``.
-    
-    - **analogRead**: A função analogRead é usada para ler valores de sinais analógicos através de pinos analógicos no Arduino. Ela converte a tensão analógica presente no pino em um valor digital que pode variar de 0 a 1023, correspondendo a uma faixa de 0 a 5 volts (no Arduino Uno e outros modelos semelhantes).
-        
-        ```C
-        int analogValue = analogRead(A0); // Lê o valor analógico do pino A0
-        
-        ```
-    - **analogWrite**: A função analogWrite é usada para gerar uma saída PWM (modulação por largura de pulso) em um pino digital. Embora seja chamada de "analogWrite", na verdade ela gera um sinal digital pulsante com diferentes larguras de pulso, simulando uma saída analógica. Ela é frequentemente usada para controlar a intensidade luminosa de LEDs ou a velocidade de motores. 
-    
-    - Importante destacar que a função ``analogWrite`` funciona apenas em pinos específicos do Arduino que suportam PWM, geralmente marcados com o símbolo ``"~"``.
-    
-        ```C
-        int pwmValue = 128;
-        analogWrite(9, pwmValue); // Gera um sinal PWM no pino 9 com ciclo de trabalho de 50%
-    
-        ```
-    - Utilize a função ``map()`` do arduino para fazer a conversão de valores. Pesquise no google essa função.
+!!! warning
+    A comunicação serial é sensível a maiúsculas e minúsculas. Certifique-se de digitar os comandos exatamente como estão no código.
+
+    você pode usar o método `equalsIgnoreCase()` para torna o código mais robusto, aceitando variações como "ligar", "Ligar" ou "LIgaR".
+
+
+## Desafio 4: Cronômetro Dinâmico
+
+Com base nos desafio 2 e desafio 3, crie um `cronômetro inteligente`. 
+
+O intervalo das mensagens não será fixo: ele deverá mudar conforme comandos enviados pelo usuário através do Monitor Serial.
+
+### Requisitos do Desafio:
+
+- Crie um cronômetro que exiba, a cada intervalo, o tempo decorrido desde o início da execução (em segundos).
+
+- Inicialmente, o intervalo entre mensagens deve ser de 1 segundo.
+
+- Através do Monitor Serial, permita que o usuário altere dinamicamente o intervalo entre as mensagens digitando comandos como:
+
+  - intervalo 500 (define o intervalo para 500 ms)
+  - intervalo 2000 (define o intervalo para 2000 ms)
+
+- Implemente também comandos especiais:
+
+  - `pausar` para interromper temporariamente a exibição das mensagens.
+  - `continuar` para retomar a contagem.
+
+
+É esperado como resultado que seja exibido no serial monitor:
+
+```C
+Tempo decorrido: 1 segundos
+Tempo decorrido: 2 segundos
+Tempo decorrido: 3 segundos
+// Usuário digita: intervalo 3000
+Intervalo alterado para 3000 ms.
+Tempo decorrido: 6 segundos
+Tempo decorrido: 9 segundos
+// Usuário digita: pausar
+Cronômetro pausado.
+// Usuário digita: continuar
+Cronômetro retomado.
+Tempo decorrido: 12 segundos
+Tempo decorrido: 15 segundos
+// Usuário digita: intervalo 2000
+Intervalo alterado para 2000 ms.
+Tempo decorrido: 17 segundos
+Tempo decorrido: 19 segundos
+```
