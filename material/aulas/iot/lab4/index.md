@@ -1,4 +1,4 @@
-## Laboratório 3 - Entradas Analógicas e Controle PWM
+## Entradas Analógicas e Controle PWM
 
 ## Conceitos Fundamentais
 

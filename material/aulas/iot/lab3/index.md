@@ -1,4 +1,4 @@
-## Laboratório 2 - Entradas Digitais
+## Entradas Digitais
 
 ## Conceitos Importantes
 
@@ -167,63 +167,3 @@ void loop() {
    ```
 
 4. Acesse o Monitor Serial através do menu "Ferramentas > Monitor Serial" ou pressionando Ctrl+Shift+M.
-
-## Desafio 3: Controle de LED com Potenciômetro
-
-**Objetivo**: Usar um potenciômetro (entrada analógica) para controlar o tempo de intermitência de um LED.
-
-### Instruções:
-1. Monte o circuito conforme mostrado na imagem abaixo:
-   ![Circuito do Desafio 3](lab2-desafio3.png)
-
-2. Conecte:
-   - Potenciômetro ao pino analógico A0
-   - LED ao pino digital 13 (ou outro pino PWM se desejar controlar também a intensidade)
-
-3. Implemente um código que:
-   - Leia o valor do potenciômetro (0-1023)
-   - Converta esse valor para um intervalo de tempo entre 100ms e 2000ms
-   - Faça o LED piscar usando esse intervalo de tempo
-
-### Conceitos Necessários:
-
-#### Leitura Analógica (analogRead)
-A função `analogRead()` lê a tensão em um pino analógico e converte para um valor digital entre 0 e 1023:
-```cpp
-int sensorValue = analogRead(A0);  // Lê o valor analógico do pino A0
-```
-
-#### Saída PWM (analogWrite)
-A função `analogWrite()` permite gerar um sinal PWM (0-255) para simular uma saída analógica:
-```cpp
-analogWrite(9, 127);  // Saída em 50% do ciclo de trabalho no pino 9
-```
-> **Observação**: A função `analogWrite()` só funciona em pinos com capacidade PWM (geralmente marcados com ~).
-
-#### Mapeamento de Valores
-A função `map()` converte um valor de uma faixa para outra:
-```cpp
-int tempo = map(sensorValue, 0, 1023, 100, 2000);
-```
-
-### Dicas:
-- Utilize `millis()` para controlar o tempo de pisca sem bloquear o programa
-- Crie um código que atualize a velocidade do pisca de acordo com a posição do potenciômetro
-- Para um desafio extra, use o potenciômetro também para controlar o brilho do LED
-
-## Entrega e Avaliação
-
-### O que entregar:
-1. Código fonte comentado de cada desafio (.ino)
-2. Breve relatório contendo:
-   - Descrição do funcionamento de cada implementação
-   - Eventuais dificuldades encontradas e como foram resolvidas
-   - Capturas de tela do Monitor Serial (para o Desafio 2)
-   - Fotos ou vídeos curtos demonstrando o funcionamento dos circuitos
-
-### Critérios de avaliação:
-- Funcionamento correto conforme especificações
-- Qualidade do código (organização, comentários, lógica)
-- Implementação adequada de debounce no Desafio 1
-- Formatação clara e informativa dos dados no Monitor Serial (Desafio 2)
-- Uso apropriado da função `millis()` e técnicas de temporização não-bloqueante

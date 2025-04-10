@@ -1,4 +1,4 @@
-## Laboratório 1 - Introdução ao Arduino e Controle de LEDs
+## Introdução ao Arduino e Controle de LEDs
 
 ### Visão Geral
 Neste laboratório, você irá aprender os conceitos básicos do Arduino realizando experimentos com LEDs e um buzzer. Os desafios propostos ajudarão você a compreender os fundamentos de programação do Arduino, controle de pinos digitais e temporização.
