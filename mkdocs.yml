@@ -184,6 +184,7 @@ nav:
         - Lab07 : aulas/iot/lab7/index.md
       - Esp32:
         - Lab08 : aulas/iot/lab11/index.md
+        - Lab09 : aulas/iot/lab12/index.md
     #   # - Raspberry Pi:
     #   #   - Lab08 : aulas/iot/lab8/index.md
     #   #   - Lab09 : aulas/iot/lab9/index.md
