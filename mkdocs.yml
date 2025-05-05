@@ -139,15 +139,28 @@ nav:
       - Eletronica básica: aulas/iot/intro/dicas.md 
       - Programação Arduino: aulas/iot/modulos/modulos.md 
       - Sistemas Embarcados: aulas/iot/intro/introarduino.md
-      - Exemplos:
-        - From 0 to Hero!: aulas/iot/ex0/index.md 
-        - Blink led: aulas/iot/ex1/index.md
-        - Led botão: aulas/iot/ex2/index.md
-        - Botão pot led: aulas/iot/ex3/index.md
-        - PWM: aulas/iot/ex7/index.md
-        - Função millis: aulas/iot/ex4/index.md
-        - Interrupção de pino: aulas/iot/ex5/index.md
-        - Comunicação Serial: aulas/iot/ex6/index.md  
+      - Programação Arduino:
+        - Módulo 1 - Introdução: aulas/iot/modulos/modulo1.md
+        - Módulo 2 - Operadores: aulas/iot/modulos/modulo2.md
+        - Módulo 3 - Estruturas de Controle: aulas/iot/modulos/modulo3.md
+        - Módulo 4 - Funções: aulas/iot/modulos/modulo4.md
+        - Módulo 5 - Arrays: aulas/iot/modulos/modulo5.md
+        - Módulo 6 - Strings: aulas/iot/modulos/modulo6.md
+        - Módulo 7 - Ponteiros: aulas/iot/modulos/modulo7.md
+        - Módulo 8 - Structs e Classes: aulas/iot/modulos/modulo8.md
+        - Módulo 9 - Interrupções e Timers: aulas/iot/modulos/modulo9.md
+        - Módulo 10 - Comunicação Serial: aulas/iot/modulos/modulo10.md
+        - Módulo 11 - Sensores e Aquisição de Dados: aulas/iot/modulos/modulo12.md
+        - Módulo 12 - Gestão de Energia: aulas/iot/modulos/modulo17.md
+      # - Exemplos:
+      #   - From 0 to Hero!: aulas/iot/ex0/index.md 
+      #   - Blink led: aulas/iot/ex1/index.md
+      #   - Led botão: aulas/iot/ex2/index.md
+      #   - Botão pot led: aulas/iot/ex3/index.md
+      #   - PWM: aulas/iot/ex7/index.md
+      #   - Função millis: aulas/iot/ex4/index.md
+      #   - Interrupção de pino: aulas/iot/ex5/index.md
+      #   - Comunicação Serial: aulas/iot/ex6/index.md  
     - Processamento Digital de Imagens: aulas/PDI/intro/index.md
     # - IA: aulas/IA/intro/index.md
   - Laboratórios: 
@@ -179,12 +192,13 @@ nav:
         - Lab03 - Botão : aulas/iot/lab3/index.md
         - Lab04 - PWM e Analog: aulas/iot/lab4/index.md
       - Node-Red:
-        - Lab05 : aulas/iot/lab5/index.md
-        - Lab06 : aulas/iot/lab6/index.md
-        - Lab07 : aulas/iot/lab7/index.md
+        - Lab01 : aulas/iot/lab5/index.md
+        - Lab02 : aulas/iot/lab6/index.md
+        - Lab03 : aulas/iot/lab7/index.md
       - Esp32:
-        - Lab08 : aulas/iot/lab11/index.md
-        - Lab09 : aulas/iot/lab12/index.md
+        - Lab01 : aulas/iot/lab01-esp/index.md
+        - Lab02 : aulas/iot/lab02-esp/index.md
+        - Lab03 : aulas/iot/lab03-esp/index.md
     #   # - Raspberry Pi:
     #   #   - Lab08 : aulas/iot/lab8/index.md
     #   #   - Lab09 : aulas/iot/lab9/index.md
