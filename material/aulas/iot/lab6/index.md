@@ -1,19 +1,7 @@
-## Lab6 - Desafios
 
-Os ``desafios 1, 2 e 3`` devem ser entregues e compõem parte da nota do CP6.
+## Integração Arduino e Node-RED
 
-## Conteúdo deste laboratório
-
-- Instalação e uso de bibliotecas externas para arduino
- 
-    - Arduino JSON
-    - Sensor de temperatura e umidade DHT11
-
-- Comunicação serial entre Arduino e o Node-RED
-
-    - Como mandar dados do arduino para o node-RED no formato JSON
-
-- Como desenvolver um sistema supervisório para monitoramento de temperatura e umidade
+Vamo integrar sensores com Arduino, monitorar dados em tempo real no Node-RED, desenvolver sistemas supervisórios usando JSON, dashboards e protocolo MQTT.
 
 ## Instalação e uso de bibliotecas externas para arduino
 
@@ -42,12 +30,11 @@ Normalmente os criadores das bibliotecas descrevem o passo-a-passo para utilizar
 
 ## Biblioteca ArduinoJson
 
-A biblioteca ArduinoJSON é escrita em C++ para realizar a comunicação de dados no formato JSON (JavaScript Object Notation) com aplicações para IoT. 
-Pra quem conhece Python a estrutura é muito parecida com a de dicionários:
+A biblioteca ArduinoJson é uma ferramenta escrita em C++ que facilita a comunicação de dados no formato JSON (JavaScript Object Notation) em projetos de IoT com Arduino. O formato JSON é amplamente utilizado por ser leve, legível e compatível com diversas plataformas. Para quem já utiliza Python, a estrutura do JSON é semelhante à de dicionários, por exemplo:
 
 > {"Key1":"Value1", "Key2":"Value2", "Key3":"Value3","....":."...."}  
 
-Documentação oficial em: [arduinoJSON - https://arduinojson.org/](https://arduinojson.org/)
+A documentação oficial da biblioteca pode ser consultada em: [arduinoJSON - https://arduinojson.org/](https://arduinojson.org/)
 
 !!! exercise
     Faça a instalação da biblioteca arduinoJSON direto pelo ArduinoIDE, no campo de busca digite ``ArduinoJson`` e instale a biblioteca. Para mais detalhes de como realizar a instalação acesse [aqui a documentação oficial - https://arduinojson.org/v6/doc/installation/](https://arduinojson.org/v6/doc/installation/)
@@ -66,7 +53,7 @@ O DHT11 é um sensor digital de temperatura e umidade muito utilizado em diversa
 |    3 |    NC, Não Conectado             |
 |    4 |    Alimentação, GND, 0v          |
 
-> Cuidado para não inverter os pinos de alimentação. 
+> Atenção: Certifique-se de conectar corretamente os pinos de alimentação para evitar danos ao sensor.
 
 
 !!! exercise
@@ -80,7 +67,7 @@ O DHT11 é um sensor digital de temperatura e umidade muito utilizado em diversa
 
 ## Testando o sensor DHT11 
 
-Para testar o funcionamento do sensor vamos executar 2 etapas: Montagem do hardware e Desenvolvimento do Software.
+Para testar o funcionamento do sensor vamos executar `2 etapas`: Montagem do `hardware` e Desenvolvimento do `Software`.
 
 ### O hardware de teste
 
@@ -93,7 +80,7 @@ Monte o circuito da imagem abaixo e não esqueça de conectar o resistor
 
 ### O código de teste 
 
-Crie um novo projeto no ArduinoIDE e tilize o código de teste abaixo:
+Crie um novo projeto no ArduinoIDE e utilize o código de teste abaixo:
 Este código foi adaptado do site [filipeflop](https://www.filipeflop.com/blog/monitorando-temperatura-e-umidade-com-o-sensor-dht11/)
 
 ```c
@@ -127,7 +114,7 @@ void loop()
   {
     Serial.print("Umidade: ");
     Serial.print(h);
-    Serial.print(" %t");
+    Serial.print(" %\t");
     Serial.print("Temperatura: ");
     Serial.print(t);
     Serial.println(" *C");
@@ -137,18 +124,18 @@ void loop()
 ```
 ### O teste 
 
-Após montar o circuito e escrever o código, carregue o código no arduino e abra o Monitor Serial para visualizar o funcionamento com mas medidas da temperatura e umidade, o resultado esperado deve ser igual da imagem abaixo.
+Após montar o circuito e carregar o código, abra o `Monitor Serial` do Arduino IDE para visualizar as leituras de temperatura e umidade em tempo real. O resultado esperado é semelhante ao da imagem abaixo.
  
 ![](log.png)
 
 
 
-**Parabéns!!** Primeira parte concluida, vamos em frente... 
+- **`Parabéns!!`** Primeira parte concluida, vamos em frente... 
 
 
 ## Usando a biblioteca ArduinoJson
 
-Vamos alterar nosso código para enviar as informações do sensor DHT11 em formato JSON, observe o código abaixo com as alterações:
+Agora vamos aprimorar o código do Arduino para enviar as informações do sensor DHT11 em formato JSON. Isso facilita a integração com sistemas como o Node-RED e o uso de protocolos como MQTT.
 
 
 ```c
@@ -206,7 +193,7 @@ void loop()
 ```
 
 
-Um ponto importante: Definir a variavel ``TAMANHO`` que serve como buffer em bytes para alocar o JSON que vamos trabalhar. Para isso podemos utilizar o ``ArduinoJson Assistant`` [neste link: https://arduinojson.org/v6/assistant/#/step1](https://arduinojson.org/v6/assistant/#/step1), siga o passo-a-passo da ferramenta para descobrir o valor minimo que devemos utilizar. 
+`Um ponto importante`: Definir a variavel ``TAMANHO`` que serve como buffer em bytes para alocar o JSON que vamos trabalhar. Para isso podemos utilizar o ``ArduinoJson Assistant`` [neste link: https://arduinojson.org/v6/assistant/#/step1](https://arduinojson.org/v6/assistant/#/step1), siga o passo-a-passo da ferramenta para descobrir o valor minimo que devemos utilizar. 
 
 !!! exercise
     Utilizando o ``ArduinoJson Assistant`` qual o valor recomendado para o json do exemplo abaixo?
@@ -220,7 +207,8 @@ Um ponto importante: Definir a variavel ``TAMANHO`` que serve como buffer em byt
     
 
 
-Etapa 2 concluida! Agora o nosso programa envia dados no formato Json, facilitando a integração com outros sistemas incluindo o Node-RED.
+ - **`Parabéns!!`** Mais uma etapa completa! Agora o nosso programa envia dados no formato Json, facilitando a integração com outros sistemas incluindo o Node-RED. 
+ - É muito importante que ele não envie pela Serial nada diferente do formato JSON, por isso cuidado com um Serial.println de teste ou esquecido no meio do código.
 
 
 ## Comunicação serial com node-RED
@@ -246,14 +234,19 @@ Faça o deplay e se tudo estiver correto, no debug vai aparecer as mensagens rec
  
 ## Desenvolvimento de um sistema supervisório para monitoramento de temperatura e umidade
 
-Para o desenvolvimento do sistema de supervisório ficar completo basta adaptar o fluxo que temos no node-RED para receber os tópicos de temperatura e umidade separados e enviar para o dashboard.
+Agora que o Node-RED já está recebendo os dados do Arduino em formato JSON, vamos transformar esses dados em informações visuais e interativas em um dashboard, criando um sistema supervisório simples.
 
+Passos para criar o dashboard:
+- No Node-RED, utilize os nodes do pacote node-red-dashboard para criar a interface.
+- Separe os valores de temperatura e umidade do JSON recebido utilizando um node function ou change, conforme necessário.
+- Adicione dois widgets do tipo gauge (medidor) para exibir, separadamente, a temperatura e a umidade em tempo real.
+- Adicione dois widgets do tipo chart (gráfico) para acompanhar a evolução dos valores ao longo do tempo.
+- Conecte os nodes de acordo com o fluxo desejado para garantir que os dados recebidos do Arduino sejam corretamente encaminhados para os widgets do dashboard.
 
 !!! exercise
     Faça as adaptações necessárias para exibir os valores de temperatura e umidade em 2 gauge e 2 chart como na imagem abaixo:
 
     ![](flow6.png)
-
 
 
 !!! exercise
@@ -262,7 +255,7 @@ Para o desenvolvimento do sistema de supervisório ficar completo basta adaptar 
 
 ## Controlando o arduino pelo node-RED
 
-Chegou a hora de fazer o caminho de volta, ja mandamos dados para o node-RED, agora é vez de receber dados do node-RED. 
+Até aqui, enviamos dados do Arduino para o Node-RED. Agora, vamos realizar o caminho inverso: controlar dispositivos conectados ao Arduino a partir de comandos enviados pelo Node-RED via comunicação serial. 
 
 !!! exercise
     Adicione um ``dashboard switch`` e configure para enviar a string “liga” e “desliga” pela serial, para controlar um LED do arduino.
@@ -292,6 +285,71 @@ Chegou a hora de fazer o caminho de volta, ja mandamos dados para o node-RED, ag
     }
         
     ```
+
+## Validando regas de decisão
+
+Vamos a criar lógicas de decisão no Node-RED para analisar dados recebidos via MQTT e gerar respostas personalizadas.
+
+Fluxo Básico de Trabalho:
+1. Receber JSON via MQTT: Configure um node MQTT in para assinar um tópico específico (ex: sensor/temperatura).
+2. Conversão para Objeto JavaScript: Conecte, se necessário, a um node JSON para parsear a mensagem recebida.
+3. Validação com `Node Function`: Utilize um node function para implementar suas regras de negócio.
+4. Envio da Resposta via MQTT: Conecte a um node MQTT out para publicar o resultado do processamento.
+
+### Sistema de Alerta de Temperatura
+
+> [MQTT in] --> [JSON] --> [Function] --> [MQTT out]
+
+### Código do Node Function
+
+```js
+// Recebe mensagem do tópico 'sensor/temperatura'
+const temp = msg.payload.temperatura;
+const umid = msg.payload.umidade;
+
+// Regras de negócio
+let status = "NORMAL";
+if(temp > 30) {
+    status = "ALERTA: Temperatura crítica!";
+} else if(umid > 70) {
+    status = "AVISO: Umidade elevada";
+}
+
+// Cria novo JSON de controle
+msg.payload = {
+    "timestamp": Date.now(),
+    "sensor_id": msg.topic.split("/")[1],
+    "status": status,
+    "acao_recomendada": temp > 30 ? "Ligar ventilação" : "Nenhuma ação"
+};
+
+return msg;
+
+```
+
+| Tabela de Regras de Negócio: |                           |                          |
+| ---------------------------- | ------------------------- | ------------------------ |
+| Condição                     | Ação                      | Tópico de Resposta       |
+| Temperatura > 30°C           | Enviar comando ventilação | controle/ventilador/1    |
+| Umidade > 70%                | Ativar desumidificador    | controle/desumidificador |
+| Ambos valores normais        | Manter sistema em standby | sistema/status           |
+
+!!! exercise
+    Crie um flow que recebe dados do tópico `sensor/temperatura`
+    Adicione validação para umidade `abaixo de 30%`
+  
+    Gere um novo JSON com estrutura:
+
+    ```json
+    {
+      "alerta": "BAIXA_UMIDADE",
+      "comando": "ligar_umidificador"
+    }
+    ```
+    
+    Publique no tópico `controle/umidificador`
+
+    **Dica**: Utilize o Debug node para monitorar a transformação dos dados em cada etapa do processo.
 
 
 ## Desafios
