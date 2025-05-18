@@ -133,13 +133,33 @@ nav:
     # - CheckPoint 5: checkpoint/cp.md
     # - CheckPoint 6: checkpoint/cp6.md    
 
-  - Introdução: 
-    - IoT e Sistemas Embarcados:
+  - Processamento Digital de Imagens:  
+    - Soluções PDI: aulas/PDI/solucoes/index.md
+    - Introdução: aulas/PDI/intro/index.md
+    - Lab01 - Intro PID: aulas/PDI/lab01/IntroPID.ipynb
+    - Lab02 - Seguimentação por pixel: aulas/PDI/lab02/atividade2.ipynb
+    - Lab03 - Histograma e equalização: aulas/PDI/lab03/atividade3.ipynb
+    - Lab04 - Filtros de Convolução: aulas/PDI/lab04/Filtros_de_Convolução.ipynb
+    - Lab05 - Espaço de cor e contorno: aulas/PDI/lab05/Espaço-cor-contorno.ipynb    
+    - Lab06 - Transformada de Hough e morfologia: aulas/PDI/lab06/Transformada-Hough-morfologia.ipynb
+    - Lab07 - Traking de objetos e movimento: aulas/PDI/lab07/Aula09/motion.ipynb
+    - Lab08 - Relacionamento e operações entre imagens: aulas/PDI/lab08/Aula4.ipynb
+    - Lab09 - FFT: aulas/PDI/lab09/aula.ipynb
+    - Lab10 - Medidas aproximadas: aulas/PDI/lab10/medidas.ipynb
+    - Lab11 - Transformada de watershed: aulas/PDI/lab11/watershed.ipynb
+    - Lab12 - Template matching: aulas/PDI/lab12/Template_matching.ipynb
+    - Lab13 - Features: aulas/PDI/lab13/Features.ipynb
+    - Lab14 - Detector haar Cascade: aulas/PDI/lab14/haarCascade.ipynb
+    - Lab15 - Event Mouse: aulas/PDI/lab15/EventMouse.ipynb
+    - Lab16 - Detector dlib: aulas/PDI/lab16/dlib2.ipynb
+    - Lab17 - Mediapipe: aulas/PDI/lab17/mediapipe.ipynb
+    - Lab18 - Yolo: aulas/PDI/lab18/index.md
+  - IoT:
+    - Básico:
       - Introdução: aulas/iot/intro/index.md
       - Eletronica básica: aulas/iot/intro/dicas.md 
-      - Programação Arduino: aulas/iot/modulos/modulos.md 
       - Sistemas Embarcados: aulas/iot/intro/introarduino.md
-      - Programação Arduino:
+      - Linguagem C/C++ para Arduino:
         - Módulo 1 - Introdução: aulas/iot/modulos/modulo1.md
         - Módulo 2 - Operadores: aulas/iot/modulos/modulo2.md
         - Módulo 3 - Estruturas de Controle: aulas/iot/modulos/modulo3.md
@@ -152,58 +172,26 @@ nav:
         - Módulo 10 - Comunicação Serial: aulas/iot/modulos/modulo10.md
         - Módulo 11 - Sensores e Aquisição de Dados: aulas/iot/modulos/modulo12.md
         - Módulo 12 - Gestão de Energia: aulas/iot/modulos/modulo17.md
-      # - Exemplos:
-      #   - From 0 to Hero!: aulas/iot/ex0/index.md 
-      #   - Blink led: aulas/iot/ex1/index.md
-      #   - Led botão: aulas/iot/ex2/index.md
-      #   - Botão pot led: aulas/iot/ex3/index.md
-      #   - PWM: aulas/iot/ex7/index.md
-      #   - Função millis: aulas/iot/ex4/index.md
-      #   - Interrupção de pino: aulas/iot/ex5/index.md
-      #   - Comunicação Serial: aulas/iot/ex6/index.md  
-    - Processamento Digital de Imagens: aulas/PDI/intro/index.md
+    - Arduino:
+      - Solução From Zero to Hero!: aulas/iot/ex0/solucao.md 
+      - Lab01 - Led: aulas/iot/lab1/index.md
+      - Lab02 - Serial: aulas/iot/lab2/index.md
+      - Lab03 - Botão : aulas/iot/lab3/index.md
+      - Lab04 - PWM e Analog: aulas/iot/lab4/index.md
+    - Node-Red:
+      - Lab01 : aulas/iot/lab5/index.md
+      - Lab02 : aulas/iot/lab6/index.md
+      - Lab03 : aulas/iot/lab7/index.md
+    - Esp32:
+      - Lab01 : aulas/iot/lab01-esp/index.md
+      - Lab02 : aulas/iot/lab02-esp/index.md
+      - Lab03 : aulas/iot/lab03-esp/index.md      
+    - Raspberry Pi:
+      - Lab01 : aulas/iot/lab8/index.md
+      - Lab02 : aulas/iot/lab9/index.md
+      - Lab03 : aulas/iot/lab10/index.md
+
     # - IA: aulas/IA/intro/index.md
-  - Laboratórios: 
-    - Processamento Digital de Imagens:  
-      # - Soluções PDI: aulas/PDI/solucoes/index.md
-      - Lab01 - Intro PID: aulas/PDI/lab01/IntroPID.ipynb
-      - Lab02 - Seguimentação por pixel: aulas/PDI/lab02/atividade2.ipynb
-      - Lab03 - Histograma e equalização: aulas/PDI/lab03/atividade3.ipynb
-      - Lab04 - Filtros de Convolução: aulas/PDI/lab04/Filtros_de_Convolução.ipynb
-      - Lab05 - Espaço de cor e contorno: aulas/PDI/lab05/Espaço-cor-contorno.ipynb    
-      - Lab06 - Transformada de Hough e morfologia: aulas/PDI/lab06/Transformada-Hough-morfologia.ipynb
-      - Lab07 - Traking de objetos e movimento: aulas/PDI/lab07/Aula09/motion.ipynb
-      - Lab08 - Relacionamento e operações entre imagens: aulas/PDI/lab08/Aula4.ipynb
-      - Lab09 - FFT: aulas/PDI/lab09/aula.ipynb
-      - Lab10 - Medidas aproximadas: aulas/PDI/lab10/medidas.ipynb
-      - Lab11 - Transformada de watershed: aulas/PDI/lab11/watershed.ipynb
-      - Lab12 - Template matching: aulas/PDI/lab12/Template_matching.ipynb
-      - Lab13 - Features: aulas/PDI/lab13/Features.ipynb
-      - Lab14 - Detector haar Cascade: aulas/PDI/lab14/haarCascade.ipynb
-      - Lab15 - Event Mouse: aulas/PDI/lab15/EventMouse.ipynb
-      - Lab16 - Detector dlib: aulas/PDI/lab16/dlib2.ipynb
-      - Lab17 - Mediapipe: aulas/PDI/lab17/mediapipe.ipynb
-      - Lab18 - Yolo: aulas/PDI/lab18/index.md
-    - IoT:
-      - Arduino:
-        - Solução From Zero to Hero!: aulas/iot/ex0/solucao.md 
-        - Lab01 - Led: aulas/iot/lab1/index.md
-        - Lab02 - Serial: aulas/iot/lab2/index.md
-        - Lab03 - Botão : aulas/iot/lab3/index.md
-        - Lab04 - PWM e Analog: aulas/iot/lab4/index.md
-      - Node-Red:
-        - Lab01 : aulas/iot/lab5/index.md
-        - Lab02 : aulas/iot/lab6/index.md
-        - Lab03 : aulas/iot/lab7/index.md
-      - Esp32:
-        - Lab01 : aulas/iot/lab01-esp/index.md
-        - Lab02 : aulas/iot/lab02-esp/index.md
-        - Lab03 : aulas/iot/lab03-esp/index.md
-        
-    #   # - Raspberry Pi:
-    #   #   - Lab08 : aulas/iot/lab8/index.md
-    #   #   - Lab09 : aulas/iot/lab9/index.md
-    #   #   - Lab10 : aulas/iot/lab10/index.md
     # - Machine Learning:
     #   - Manipulação de Dados:
     #     - Dataframe: aulas/IA/lab01/dataframe.ipynb 
