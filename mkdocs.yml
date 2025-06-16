@@ -191,35 +191,35 @@ nav:
       - Lab02 : aulas/iot/lab9/index.md
       - Lab03 : aulas/iot/lab10/index.md
 
-    # - IA: aulas/IA/intro/index.md
-    # - Machine Learning:
-    #   - Manipulação de Dados:
-    #     - Dataframe: aulas/IA/lab01/dataframe.ipynb 
-    #     - Pré-processamento: aulas/IA/lab04/dicasDePreprocessamento.ipynb  
-    #   - Aprendizado Supervisionado - Classificação:
-    #     - lab1: aulas/IA/lab02/classificador_knn.ipynb
-    #     # - lab2: aulas/IA/lab-04/aula8.ipynb
-    #   - Aprendizado Supervisionado - Regressão:
-    #     - lab1: aulas/IA/lab03/regressao.ipynb
-    #     - lab2: aulas/IA/lab03/preco-notebook.ipynb      
-    #   - Validação de Modelos: aulas/IA/lab05/validacaocruzada.ipynb
-    #   - Aprendizado Não Supervisionado: 
-    #     - lab1: aulas/IA/lab-01/aula5.ipynb
-    #     - lab2: aulas/IA/lab-01/aula5-parte2.ipynb
-    #     - lab2: aulas/IA/lab-02/aula6.ipynb
-    #     - lab3: aulas/IA/lab-03/aula7.ipynb
-    #     - PCA: aulas/IA/lab04/reducao_dimensionalidade_pca.ipynb 
-    # - Deep Learning:
-    #   - Lab06 - Redes Neurais - Percepton : aulas/IA/lab06/rna.ipynb
-    #   - Lab07 - Redes Neurais - TensorFlow: aulas/IA/lab07/index.md
-    #   - Lab07b - Redes Neurais - MLP: aulas/IA/lab07/mlp.ipynb
-    #   - BATALHA DAS REDES: aulas/IA/batalharedes/batalha_das_redes.ipynb
-    #   - Lab08 - Redes Neurais - CNN parte1: aulas/IA/lab08/cnn.ipynb
-    #   - Lab08 - Redes Neurais - CNN parte2: aulas/IA/lab08/cnn_drive.ipynb
-    #   - Lab9 - Redes Neurais - Pré-treinadas: aulas/IA/lab09/transferlearning_1.ipynb
-    #   - Lab9 - Redes Neurais - Transfer learning: aulas/IA/lab09/transferlearning_2.ipynb
-    #   - Lab10 - Redes Neurais - Data Augmentation: aulas/IA/lab10/data-augmentation.ipynb
-    #   - Lab11 - Redes Neurais - resumo: aulas/IA/lab11/index.md
-    
+  - IA: aulas/IA/intro/index.md
+  - Machine Learning:
+    - Manipulação de Dados:
+      - Dataframe: aulas/IA/lab01/dataframe.ipynb 
+      - Pré-processamento: aulas/IA/lab04/dicasDePreprocessamento.ipynb  
+    - Aprendizado Supervisionado - Classificação:
+      - lab1: aulas/IA/lab02/classificador_knn.ipynb
+      # - lab2: aulas/IA/lab-04/aula8.ipynb
+    - Aprendizado Supervisionado - Regressão:
+      - lab1: aulas/IA/lab03/regressao.ipynb
+      - lab2: aulas/IA/lab03/preco-notebook.ipynb      
+    - Validação de Modelos: aulas/IA/lab05/validacaocruzada.ipynb
+    - Aprendizado Não Supervisionado: 
+      - lab1: aulas/IA/lab-01/aula5.ipynb
+      - lab2: aulas/IA/lab-01/aula5-parte2.ipynb
+      - lab2: aulas/IA/lab-02/aula6.ipynb
+      - lab3: aulas/IA/lab-03/aula7.ipynb
+      - PCA: aulas/IA/lab04/reducao_dimensionalidade_pca.ipynb 
+  - Deep Learning:
+    - Lab06 - Redes Neurais - Percepton : aulas/IA/lab06/rna.ipynb
+    - Lab07 - Redes Neurais - TensorFlow: aulas/IA/lab07/index.md
+    - Lab07b - Redes Neurais - MLP: aulas/IA/lab07/mlp.ipynb
+    - BATALHA DAS REDES: aulas/IA/batalharedes/batalha_das_redes.ipynb
+    - Lab08 - Redes Neurais - CNN parte1: aulas/IA/lab08/cnn.ipynb
+    - Lab08 - Redes Neurais - CNN parte2: aulas/IA/lab08/cnn_drive.ipynb
+    - Lab9 - Redes Neurais - Pré-treinadas: aulas/IA/lab09/transferlearning_1.ipynb
+    - Lab9 - Redes Neurais - Transfer learning: aulas/IA/lab09/transferlearning_2.ipynb
+    - Lab10 - Redes Neurais - Data Augmentation: aulas/IA/lab10/data-augmentation.ipynb
+    - Lab11 - Redes Neurais - resumo: aulas/IA/lab11/index.md
+  
 
 
