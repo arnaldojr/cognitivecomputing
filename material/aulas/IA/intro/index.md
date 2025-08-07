@@ -340,7 +340,6 @@ Dados não-estruturados como textos, imagens e áudios requerem técnicas especi
 
 <?quiz?>
 question: Uma empresa de e-commerce quer implementar um sistema de recomendação de produtos. Ordene as fases do CRISP-DM que seriam seguidas.
-answer: Entendimento do Negócio → Entendimento dos Dados → Preparação dos Dados → Modelagem → Avaliação → Implantação
 answer-correct: Entendimento do Negócio → Entendimento dos Dados → Preparação dos Dados → Modelagem → Avaliação → Implantação
 answer: Preparação dos Dados → Modelagem → Entendimento do Negócio → Avaliação → Entendimento dos Dados → Implantação
 answer: Modelagem → Entendimento do Negócio → Preparação dos Dados → Avaliação → Implantação → Entendimento dos Dados
@@ -360,15 +359,19 @@ content:
 <details>
 <summary><strong>Quais são os principais desafios éticos que um cientista de dados deve considerar ao desenvolver um modelo de credit scoring?</strong></summary>
 
+<br>
+
 **Principais desafios éticos:**
 
-1. **Bias e Discriminação**: Evitar discriminação baseada em gênero, raça, idade ou outras características protegidas  
-2. **Transparência**: Capacidade de explicar como as decisões de crédito são tomadas  
-3. **Privacidade**: Proteção dos dados pessoais dos clientes  
-4. **Fairness**: Garantir que o modelo seja justo para diferentes grupos demográficos  
-5. **Responsabilidade**: Estabelecer responsabilidade pelas decisões automatizadas  
-6. **Conformidade Legal**: Aderência a regulamentações como LGPD e normas bancárias  
+- **Bias e Discriminação**: Evitar discriminação baseada em gênero, raça, idade ou outras características protegidas  
+- **Transparência**: Capacidade de explicar como as decisões de crédito são tomadas  
+- **Privacidade**: Proteção dos dados pessoais dos clientes  
+- **Fairness**: Garantir que o modelo seja justo para diferentes grupos demográficos  
+- **Responsabilidade**: Estabelecer responsabilidade pelas decisões automatizadas  
+- **Conformidade Legal**: Aderência a regulamentações como LGPD e normas bancárias  
+
 </details>
+
 
 
 ### Questões de Reflexão
@@ -376,35 +379,45 @@ content:
 <details>
 <summary><strong>Explique como a preparação de dados pode impactar significativamente os resultados de um projeto de machine learning. Dê exemplos práticos.</strong></summary>
 
+<br>
+
 **A preparação de dados é crucial porque:**
 
-**Qualidade dos dados → Qualidade do modelo**
+> **Qualidade dos dados → Qualidade do modelo**
 
 **Exemplos de impacto:**
 
-1. **Outliers não tratados**: Podem distorcer modelos de regressão  
-2. **Dados faltantes**: Podem criar viés se não tratados adequadamente  
-3. **Escalas diferentes**: Variáveis não normalizadas podem dominar outras em algoritmos como KNN  
-4. **Vazamento de dados**: Features que não estarão disponíveis na produção podem inflar artificialmente a performance  
-5. **Dados desbalanceados**: Podem resultar em modelos enviesados para a classe majoritária  
+- **Outliers não tratados**: Podem distorcer modelos de regressão  
+- **Dados faltantes**: Podem criar viés se não tratados adequadamente  
+- **Escalas diferentes**: Variáveis não normalizadas podem dominar outras em algoritmos como KNN  
+- **Vazamento de dados**: Features que não estarão disponíveis na produção podem inflar artificialmente a performance  
+- **Dados desbalanceados**: Podem resultar em modelos enviesados para a classe majoritária  
 
-**Princípio**: *"Garbage in, garbage out"* - dados de baixa qualidade resultam em modelos de baixa qualidade.
+> **Princípio**: *"Garbage in, garbage out"* – dados de baixa qualidade resultam em modelos de baixa qualidade.
+
 </details>
+
 
 
 <details>
 <summary><strong>Compare e contraste três tipos de aprendizado de máquina (supervisionado, não-supervisionado e por reforço), fornecendo um exemplo de aplicação para cada um.</strong></summary>
 
-| Aspecto | Supervisionado | Não-supervisionado | Por Reforço |
-|--------|----------------|--------------------|--------------|
-| **Dados** | Rótulos/targets conhecidos | Sem rótulos | Feedback de recompensas |
-| **Objetivo** | Prever outputs | Descobrir padrões | Maximizar recompensas |
-| **Exemplos** | Classificação de emails (spam/não-spam) | Segmentação de clientes | Jogos (AlphaGo) |
-| **Avaliação** | Métricas de performance | Métricas de qualidade de cluster | Recompensa cumulativa |
+<br>
+
+**Comparação dos tipos de aprendizado:**
+
+| Aspecto       | Supervisionado                        | Não-supervisionado                | Por Reforço                           |
+|---------------|----------------------------------------|-----------------------------------|----------------------------------------|
+| **Dados**     | Rótulos/targets conhecidos             | Sem rótulos                       | Feedback de recompensas                |
+| **Objetivo**  | Prever outputs                         | Descobrir padrões                 | Maximizar recompensas                  |
+| **Exemplos**  | Classificação de e-mails (spam/não)    | Segmentação de clientes           | Jogos (AlphaGo)                        |
+| **Avaliação** | Métricas de performance                | Métricas de qualidade de cluster  | Recompensa cumulativa                  |
 
 **Aplicações práticas:**
 
 - **Supervisionado**: Diagnóstico médico baseado em sintomas  
 - **Não-supervisionado**: Detecção de anomalias em transações bancárias  
 - **Por Reforço**: Otimização de rotas de entrega em tempo real  
+
 </details>
+
