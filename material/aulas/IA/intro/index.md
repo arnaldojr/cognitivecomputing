@@ -411,10 +411,13 @@ CRISP-DM é uma metodologia amplamente utilizada em ciência de dados que fornec
 
 
 
-  <? quiz?>
-  question: What is MkDocs?
-  answer-correct: A static site generator for documentation.
-  answer: A programming language.
-  answer: A database.
-  content: <h2>Additional information about MkDocs.</h2>
-  <?/quiz?>
+<?quiz?>
+question: Assinale o que você entende sobre Algoritmo
+answer: Organizar um passo a passo que não deve ser testado na solução do problema
+answer-correct: Organizar os passos para a solução de um problema e testar
+answer: Listar as ações que o problema não apresentou
+answer: Organizar a escrita do problema
+content:
+
+<h2>Um algoritmo é uma sequência definida de passos ou instruções para resolver um problema.</h2>
+<?/quiz?>
