@@ -407,3 +407,17 @@ CRISP-DM é uma metodologia amplamente utilizada em ciência de dados que fornec
         - **Supervisionado**: Diagnóstico médico baseado em sintomas
         - **Não-supervisionado**: Detecção de anomalias em transações bancárias
         - **Por Reforço**: Otimização de rotas de entrega em tempo real
+
+
+
+
+
+
+???+ question "Qual é a capital da França?"
+    - [ ] Berlim  
+    - [x] Paris  
+    - [ ] Madri  
+    - [ ] Roma  
+
+    === "Resposta"
+        **Correto:** Paris é a capital da França.
