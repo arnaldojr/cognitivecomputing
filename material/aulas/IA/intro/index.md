@@ -303,121 +303,108 @@ CRISP-DM é uma metodologia amplamente utilizada em ciência de dados que fornec
 
 ### Questões Conceituais
 
-!!! exercise choice "Question"
-    **O que diferencia a Ciência de Dados da Estatística tradicional?**
-    
-    - [ ] Ciência de Dados usa apenas dados digitais
-    - [ ] Estatística não usa computadores
-    - [X] Ciência de Dados combina programação, estatística e conhecimento de domínio para trabalhar com big data
-    - [ ] Não há diferença entre elas
+<?quiz?>
+question: O que diferencia a Ciência de Dados da Estatística tradicional?
+answer: Ciência de Dados usa apenas dados digitais
+answer: Estatística não usa computadores
+answer-correct: Ciência de Dados combina programação, estatística e conhecimento de domínio para trabalhar com big data
+answer: Não há diferença entre elas
+content:
 
-    !!! answer
-        A Ciência de Dados é interdisciplinar, combinando estatística com programação e conhecimento específico do domínio para extrair insights de grandes volumes de dados estruturados e não estruturados.
+A Ciência de Dados é interdisciplinar, combinando estatística com programação e conhecimento específico do domínio para extrair insights de grandes volumes de dados estruturados e não estruturados.
+<?/quiz?>
 
-!!! exercise choice "Question"
-    **Qual é a primeira fase do CRISP-DM e por que ela é crucial?**
-    
-    - [ ] Preparação dos Dados - porque dados limpos são essenciais
-    - [X] Entendimento do Negócio - porque define objetivos e critérios de sucesso
-    - [ ] Modelagem - porque é onde a IA acontece
-    - [ ] Coleta de Dados - porque precisamos de dados para começar
+<?quiz?>
+question: Qual é a primeira fase do CRISP-DM e por que ela é crucial?
+answer: Preparação dos Dados - porque dados limpos são essenciais
+answer-correct: Entendimento do Negócio - porque define objetivos e critérios de sucesso
+answer: Modelagem - porque é onde a IA acontece
+answer: Coleta de Dados - porque precisamos de dados para começar
+content:
 
-    !!! answer
-        O entendimento do negócio é fundamental porque estabelece o que realmente precisa ser resolvido, como o sucesso será medido e garante que o projeto esteja alinhado com os objetivos organizacionais.
+O entendimento do negócio é fundamental porque estabelece o que realmente precisa ser resolvido, como o sucesso será medido e garante que o projeto esteja alinhado com os objetivos organizacionais.
+<?/quiz?>
 
-!!! exercise choice "Question"
-    **Qual tipo de dados requer maior processamento para análise?**
-    
-    - [ ] Dados estruturados
-    - [ ] Dados semi-estruturados
-    - [X] Dados não-estruturados
-    - [ ] Todos requerem o mesmo nível de processamento
+<?quiz?>
+question: Qual tipo de dados requer maior processamento para análise?
+answer: Dados estruturados
+answer: Dados semi-estruturados
+answer-correct: Dados não-estruturados
+answer: Todos requerem o mesmo nível de processamento
+content:
 
-    !!! answer
-        Dados não-estruturados como textos, imagens e áudios requerem técnicas especiais de processamento (NLP, Computer Vision, etc.) antes de poderem ser analisados, ao contrário de dados estruturados que já estão em formato tabular.
+Dados não-estruturados como textos, imagens e áudios requerem técnicas especiais de processamento (NLP, Computer Vision, etc.) antes de poderem ser analisados, ao contrário de dados estruturados que já estão em formato tabular.
+<?/quiz?>
 
 ### Questões Aplicadas
 
-!!! exercise text long
-    **Uma empresa de e-commerce quer implementar um sistema de recomendação de produtos. Ordene as fases do CRISP-DM que seriam seguidas:**
-    
-    1. Treinar modelos de collaborative filtering
-    2. Definir métricas de sucesso (CTR, conversão)
-    3. Limpar dados de navegação e compras
-    4. Implementar API de recomendações
-    5. Analisar padrões de comportamento dos usuários
-    6. Validar precisão das recomendações
+<?quiz?>
+question: Uma empresa de e-commerce quer implementar um sistema de recomendação de produtos. Ordene as fases do CRISP-DM que seriam seguidas.
+answer: Entendimento do Negócio → Entendimento dos Dados → Preparação dos Dados → Modelagem → Avaliação → Implantação
+answer-correct: Entendimento do Negócio → Entendimento dos Dados → Preparação dos Dados → Modelagem → Avaliação → Implantação
+answer: Preparação dos Dados → Modelagem → Entendimento do Negócio → Avaliação → Entendimento dos Dados → Implantação
+answer: Modelagem → Entendimento do Negócio → Preparação dos Dados → Avaliação → Implantação → Entendimento dos Dados
+answer: Entendimento dos Dados → Modelagem → Preparação dos Dados → Avaliação → Entendimento do Negócio → Implantação
+content:
 
-    !!! answer
-        **Ordem correta:**
-        1. **Entendimento do Negócio**: Definir métricas de sucesso (CTR, conversão)
-        2. **Entendimento dos Dados**: Analisar padrões de comportamento dos usuários
-        3. **Preparação dos Dados**: Limpar dados de navegação e compras
-        4. **Modelagem**: Treinar modelos de collaborative filtering
-        5. **Avaliação**: Validar precisão das recomendações
-        6. **Implantação**: Implementar API de recomendações
+**Ordem correta:**
+1. Entendimento do Negócio: Definir métricas de sucesso (CTR, conversão)  
+2. Entendimento dos Dados: Analisar padrões de comportamento dos usuários  
+3. Preparação dos Dados: Limpar dados de navegação e compras  
+4. Modelagem: Treinar modelos de collaborative filtering  
+5. Avaliação: Validar precisão das recomendações  
+6. Implantação: Implementar API de recomendações  
+<?/quiz?>
 
-!!! exercise text long
-    **Quais são os principais desafios éticos que um cientista de dados deve considerar ao desenvolver um modelo de credit scoring?**
 
-    !!! answer
-        **Principais desafios éticos:**
-        
-        1. **Bias e Discriminação**: Evitar discriminação baseada em gênero, raça, idade ou outras características protegidas
-        2. **Transparência**: Capacidade de explicar como as decisões de crédito são tomadas
-        3. **Privacidade**: Proteção dos dados pessoais dos clientes
-        4. **Fairness**: Garantir que o modelo seja justo para diferentes grupos demográficos
-        5. **Responsabilidade**: Estabelecer responsabilidade pelas decisões automatizadas
-        6. **Conformidade Legal**: Aderência a regulamentações como LGPD e normas bancárias
+<details>
+<summary><strong>Quais são os principais desafios éticos que um cientista de dados deve considerar ao desenvolver um modelo de credit scoring?</strong></summary>
+
+**Principais desafios éticos:**
+
+1. **Bias e Discriminação**: Evitar discriminação baseada em gênero, raça, idade ou outras características protegidas  
+2. **Transparência**: Capacidade de explicar como as decisões de crédito são tomadas  
+3. **Privacidade**: Proteção dos dados pessoais dos clientes  
+4. **Fairness**: Garantir que o modelo seja justo para diferentes grupos demográficos  
+5. **Responsabilidade**: Estabelecer responsabilidade pelas decisões automatizadas  
+6. **Conformidade Legal**: Aderência a regulamentações como LGPD e normas bancárias  
+</details>
+
 
 ### Questões de Reflexão
 
-!!! exercise text long
-    **Explique como a preparação de dados pode impactar significativamente os resultados de um projeto de machine learning. Dê exemplos práticos.**
+<details>
+<summary><strong>Explique como a preparação de dados pode impactar significativamente os resultados de um projeto de machine learning. Dê exemplos práticos.</strong></summary>
 
-    !!! answer
-        **A preparação de dados é crucial porque:**
-        
-        **Qualidade dos dados → Qualidade do modelo**
-        
-        **Exemplos de impacto:**
-        
-        1. **Outliers não tratados**: Podem distorcer modelos de regressão
-        2. **Dados faltantes**: Podem criar viés se não tratados adequadamente
-        3. **Escalas diferentes**: Variáveis não normalizadas podem dominar outras em algoritmos como KNN
-        4. **Vazamento de dados**: Features que não estarão disponíveis na produção podem inflar artificialmente a performance
-        5. **Dados desbalanceados**: Podem resultar em modelos enviesados para a classe majoritária
-        
-        **Princípio**: "Garbage in, garbage out" - dados de baixa qualidade resultam em modelos de baixa qualidade.
+**A preparação de dados é crucial porque:**
 
-!!! exercise text long
-    **Compare e contraste três tipos de aprendizado de máquina (supervisionado, não-supervisionado e por reforço) fornecendo um exemplo de aplicação para cada um.**
+**Qualidade dos dados → Qualidade do modelo**
 
-    !!! answer
-        **Comparação dos tipos de aprendizado:**
-        
-        | Aspecto | Supervisionado | Não-supervisionado | Por Reforço |
-        |---------|---------------|-------------------|-------------|
-        | **Dados** | Rótulos/targets conhecidos | Sem rótulos | Feedback de recompensas |
-        | **Objetivo** | Prever outputs | Descobrir padrões | Maximizar recompensas |
-        | **Exemplos** | Classificação de emails (spam/não-spam) | Segmentação de clientes | Jogos (AlphaGo) |
-        | **Avaliação** | Métricas de performance | Métricas de qualidade de cluster | Recompensa cumulativa |
-        
-        **Aplicações práticas:**
-        - **Supervisionado**: Diagnóstico médico baseado em sintomas
-        - **Não-supervisionado**: Detecção de anomalias em transações bancárias
-        - **Por Reforço**: Otimização de rotas de entrega em tempo real
+**Exemplos de impacto:**
+
+1. **Outliers não tratados**: Podem distorcer modelos de regressão  
+2. **Dados faltantes**: Podem criar viés se não tratados adequadamente  
+3. **Escalas diferentes**: Variáveis não normalizadas podem dominar outras em algoritmos como KNN  
+4. **Vazamento de dados**: Features que não estarão disponíveis na produção podem inflar artificialmente a performance  
+5. **Dados desbalanceados**: Podem resultar em modelos enviesados para a classe majoritária  
+
+**Princípio**: *"Garbage in, garbage out"* - dados de baixa qualidade resultam em modelos de baixa qualidade.
+</details>
 
 
+<details>
+<summary><strong>Compare e contraste três tipos de aprendizado de máquina (supervisionado, não-supervisionado e por reforço), fornecendo um exemplo de aplicação para cada um.</strong></summary>
 
+| Aspecto | Supervisionado | Não-supervisionado | Por Reforço |
+|--------|----------------|--------------------|--------------|
+| **Dados** | Rótulos/targets conhecidos | Sem rótulos | Feedback de recompensas |
+| **Objetivo** | Prever outputs | Descobrir padrões | Maximizar recompensas |
+| **Exemplos** | Classificação de emails (spam/não-spam) | Segmentação de clientes | Jogos (AlphaGo) |
+| **Avaliação** | Métricas de performance | Métricas de qualidade de cluster | Recompensa cumulativa |
 
-<?quiz?>
-question: Assinale o que você entende sobre Algoritmo
-answer: Organizar um passo a passo que não deve ser testado na solução do problema
-answer-correct: Organizar os passos para a solução de um problema e testar
-answer: Listar as ações que o problema não apresentou
-answer: Organizar a escrita do problema
-content:
+**Aplicações práticas:**
 
-<h2>Um algoritmo é uma sequência definida de passos ou instruções para resolver um problema.</h2>
-<?/quiz?>
+- **Supervisionado**: Diagnóstico médico baseado em sintomas  
+- **Não-supervisionado**: Detecção de anomalias em transações bancárias  
+- **Por Reforço**: Otimização de rotas de entrega em tempo real  
+</details>
