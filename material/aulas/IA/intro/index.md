@@ -314,35 +314,31 @@ CRISP-DM é uma metodologia amplamente utilizada em ciência de dados que fornec
     !!! answer
         A Ciência de Dados é interdisciplinar, combinando estatística com programação e conhecimento específico do domínio para extrair insights de grandes volumes de dados estruturados e não estruturados.
 
-!!! question "Questão 2"
+!!! exercise choice "Question"
     **Qual é a primeira fase do CRISP-DM e por que ela é crucial?**
     
-    a) Preparação dos Dados - porque dados limpos são essenciais
-    b) Entendimento do Negócio - porque define objetivos e critérios de sucesso
-    c) Modelagem - porque é onde a IA acontece
-    d) Coleta de Dados - porque precisamos de dados para começar
+    - [ ] Preparação dos Dados - porque dados limpos são essenciais
+    - [X] Entendimento do Negócio - porque define objetivos e critérios de sucesso
+    - [ ] Modelagem - porque é onde a IA acontece
+    - [ ] Coleta de Dados - porque precisamos de dados para começar
 
-    ??? success "Resposta"
-        **Resposta: b) Entendimento do Negócio - porque define objetivos e critérios de sucesso**
-        
+    !!! answer
         O entendimento do negócio é fundamental porque estabelece o que realmente precisa ser resolvido, como o sucesso será medido e garante que o projeto esteja alinhado com os objetivos organizacionais.
 
-!!! question "Questão 3"
+!!! exercise choice "Question"
     **Qual tipo de dados requer maior processamento para análise?**
     
-    a) Dados estruturados
-    b) Dados semi-estruturados
-    c) Dados não-estruturados
-    d) Todos requerem o mesmo nível de processamento
+    - [ ] Dados estruturados
+    - [ ] Dados semi-estruturados
+    - [X] Dados não-estruturados
+    - [ ] Todos requerem o mesmo nível de processamento
 
-    ??? success "Resposta"
-        **Resposta: c) Dados não-estruturados**
-        
+    !!! answer
         Dados não-estruturados como textos, imagens e áudios requerem técnicas especiais de processamento (NLP, Computer Vision, etc.) antes de poderem ser analisados, ao contrário de dados estruturados que já estão em formato tabular.
 
 ### Questões Aplicadas
 
-!!! question "Questão 4"
+!!! exercise text long
     **Uma empresa de e-commerce quer implementar um sistema de recomendação de produtos. Ordene as fases do CRISP-DM que seriam seguidas:**
     
     1. Treinar modelos de collaborative filtering
@@ -352,7 +348,7 @@ CRISP-DM é uma metodologia amplamente utilizada em ciência de dados que fornec
     5. Analisar padrões de comportamento dos usuários
     6. Validar precisão das recomendações
 
-    ??? success "Resposta"
+    !!! answer
         **Ordem correta:**
         1. **Entendimento do Negócio**: Definir métricas de sucesso (CTR, conversão)
         2. **Entendimento dos Dados**: Analisar padrões de comportamento dos usuários
@@ -361,10 +357,10 @@ CRISP-DM é uma metodologia amplamente utilizada em ciência de dados que fornec
         5. **Avaliação**: Validar precisão das recomendações
         6. **Implantação**: Implementar API de recomendações
 
-!!! question "Questão 5"
+!!! exercise text long
     **Quais são os principais desafios éticos que um cientista de dados deve considerar ao desenvolver um modelo de credit scoring?**
 
-    ??? success "Resposta"
+    !!! answer
         **Principais desafios éticos:**
         
         1. **Bias e Discriminação**: Evitar discriminação baseada em gênero, raça, idade ou outras características protegidas
@@ -376,10 +372,10 @@ CRISP-DM é uma metodologia amplamente utilizada em ciência de dados que fornec
 
 ### Questões de Reflexão
 
-!!! question "Questão 6"
+!!! exercise text long
     **Explique como a preparação de dados pode impactar significativamente os resultados de um projeto de machine learning. Dê exemplos práticos.**
 
-    ??? success "Resposta"
+    !!! answer
         **A preparação de dados é crucial porque:**
         
         **Qualidade dos dados → Qualidade do modelo**
@@ -394,10 +390,10 @@ CRISP-DM é uma metodologia amplamente utilizada em ciência de dados que fornec
         
         **Princípio**: "Garbage in, garbage out" - dados de baixa qualidade resultam em modelos de baixa qualidade.
 
-!!! question "Questão 7"
+!!! exercise text long
     **Compare e contraste três tipos de aprendizado de máquina (supervisionado, não-supervisionado e por reforço) fornecendo um exemplo de aplicação para cada um.**
 
-    ??? success "Resposta"
+    !!! answer
         **Comparação dos tipos de aprendizado:**
         
         | Aspecto | Supervisionado | Não-supervisionado | Por Reforço |
