@@ -135,25 +135,7 @@ nav:
     # - CheckPoint 5: checkpoint/cp.md
     # - CheckPoint 6: checkpoint/cp6.md    
 
-  - 1 semestre:
-    - Introdução: 
-      - IoT e Sistemas Embarcados:
-        - Introdução: aulas/iot/intro/index.md
-        - Eletrônica básica: aulas/iot/intro/dicas.md 
-        - Sistemas Embarcados: aulas/iot/intro/introarduino.md
-        - Linguagem C/C++ para Arduino:
-          - Módulo 1 - Introdução: aulas/iot/modulos/modulo1.md
-          - Módulo 2 - Operadores: aulas/iot/modulos/modulo2.md
-          - Módulo 3 - Estruturas de Controle: aulas/iot/modulos/modulo3.md
-          - Módulo 4 - Funções: aulas/iot/modulos/modulo4.md
-          - Módulo 5 - Arrays: aulas/iot/modulos/modulo5.md
-          - Módulo 6 - Strings: aulas/iot/modulos/modulo6.md
-          - Módulo 7 - Ponteiros: aulas/iot/modulos/modulo7.md
-          - Módulo 8 - Structs e Classes: aulas/iot/modulos/modulo8.md
-          - Módulo 9 - Interrupções e Timers: aulas/iot/modulos/modulo9.md
-          - Módulo 10 - Comunicação Serial: aulas/iot/modulos/modulo10.md
-          - Módulo 11 - Sensores e Aquisição de Dados: aulas/iot/modulos/modulo12.md
-          - Módulo 12 - Gestão de Energia: aulas/iot/modulos/modulo17.md
+  - 1º Semestre:
     - Processamento Digital de Imagens:  
       - Soluções PDI: aulas/PDI/solucoes/index.md
       - Introdução: aulas/PDI/intro/index.md
@@ -176,6 +158,23 @@ nav:
       - Lab17 - Mediapipe: aulas/PDI/lab17/mediapipe.ipynb
       - Lab18 - Yolo: aulas/PDI/lab18/index.md
     - IoT:
+      - IoT e Sistemas Embarcados:
+        - Introdução: aulas/iot/intro/index.md
+        - Eletrônica básica: aulas/iot/intro/dicas.md 
+        - Sistemas Embarcados: aulas/iot/intro/introarduino.md
+        - Linguagem C/C++ para Arduino:
+          - Módulo 1 - Introdução: aulas/iot/modulos/modulo1.md
+          - Módulo 2 - Operadores: aulas/iot/modulos/modulo2.md
+          - Módulo 3 - Estruturas de Controle: aulas/iot/modulos/modulo3.md
+          - Módulo 4 - Funções: aulas/iot/modulos/modulo4.md
+          - Módulo 5 - Arrays: aulas/iot/modulos/modulo5.md
+          - Módulo 6 - Strings: aulas/iot/modulos/modulo6.md
+          - Módulo 7 - Ponteiros: aulas/iot/modulos/modulo7.md
+          - Módulo 8 - Structs e Classes: aulas/iot/modulos/modulo8.md
+          - Módulo 9 - Interrupções e Timers: aulas/iot/modulos/modulo9.md
+          - Módulo 10 - Comunicação Serial: aulas/iot/modulos/modulo10.md
+          - Módulo 11 - Sensores e Aquisição de Dados: aulas/iot/modulos/modulo12.md
+          - Módulo 12 - Gestão de Energia: aulas/iot/modulos/modulo17.md
       - Básico:
         - Introdução: aulas/iot/intro/index.md
         - Eletronica básica: aulas/iot/intro/dicas.md 
