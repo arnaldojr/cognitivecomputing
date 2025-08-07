@@ -77,6 +77,7 @@ plugins:
   - search
   - mkdocs-jupyter:
       execute: False
+  - mkdocs_quiz
 
 extra_css:
   - css/termynal.css

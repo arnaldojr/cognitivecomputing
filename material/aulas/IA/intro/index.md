@@ -411,13 +411,10 @@ CRISP-DM é uma metodologia amplamente utilizada em ciência de dados que fornec
 
 
 
-
-
-???+ question "Qual é a capital da França?"
-    - [ ] Berlim  
-    - [x] Paris  
-    - [ ] Madri  
-    - [ ] Roma  
-
-    === "Resposta"
-        **Correto:** Paris é a capital da França.
+  <? quiz?>
+  question: What is MkDocs?
+  answer-correct: A static site generator for documentation.
+  answer: A programming language.
+  answer: A database.
+  content: <h2>Additional information about MkDocs.</h2>
+  <?/quiz?>
