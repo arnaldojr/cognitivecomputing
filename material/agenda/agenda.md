@@ -1,6 +1,28 @@
-## Cronograma
+## Agenda
 
-### 1º Semestre - 2025
+## Cronograma 2º Semestre - 2025
+
+| Semana    | Segundo Semestre - Conteúdo                                       | 4SIR<br>Quarta-Feira  |
+| --------- | ----------------------------------------------------------------- | ------------ |
+| 1  | Apresentação do semestre, datas importantes (CP, GS)<br>Exploração de dados | 07/08/2025   |
+| 2  | ML Supervisionado - Classificação                                 | 14/08/2025   |
+| 3  | ML Supervisionado - Regressão                                     | 21/08/2025   |
+| 4  | <span style="color:#d32f2f"><strong>CP1 – Avaliação</strong></span><br>CP1 - ML Conceitos e aplicação | 28/08/2025   |
+| 5  | Introdução ao Deep Learning, Perceptron, MLP                      | 04/09/2025   |
+| 6  | CNN                                                               | 11/09/2025   |
+| 7  | CNN Continuação                                                   | 18/09/2025   |
+| 8  | Aplicação de DL (batalha das redes)                               | 25/09/2025   |
+| 9  | Estudio para o CP2 (simulado)                                     | 02/10/2025   |
+| 10 | 	<span style="color:#d32f2f"><strong>CP2 – Avaliação</strong></span><br>CP2 - Redes Neurais conceitos e aplicação | 09/10/2025   |
+| 11 | Transfer Learning, lançamento CP3                                 | 16/10/2025   |
+| 12 | Redes modernas, aplicações com DL                                 | 23/10/2025   |
+| 13 | Aplicações com Yolo e deploy de aplicações.                       | 30/10/2025   |
+| 14 | <span style="color:#d32f2f"><strong>CP3 – Apresentação Final CP3</strong></span><br>CP3 - Sistema de VC com Deploy em Aplicação Web | 06/11/2025   |
+| 15 | <span style="color:#388e3c"><strong>GS - Avaliação Global Solution segundo semestre </strong></span> | 13/11/2025   |
+
+
+
+<!-- ### 1º Semestre - 2025
 
 | 4SIPF<br>(Segunda) | 4SIPF<br>(Sexta) | 4SIR<br>(Quinta) | LABORATÓRIO               | CONTEÚDO                                                                                        |
 | ----------------- | ---------------- | ---------------- | ------------------------- | ----------------------------------------------------------------------------------------------- |
@@ -38,16 +60,4 @@
 | semana 14 | 04/11                    | 06/11                   | 07/11                  | CP                            | CP - Sistema IoT                                                                      |
 | semana 15 | 11/11                    | 13/11                   | 14/11                  |                               | 11 - GS                                                                               |
 
-
-
-### Já passaram...
-
-| Data      | 4SIA<br>(Segunta-feira ) | 4SIA<br>(Quarta-feira ) | 4SIR<br>(Quinta-feira) | LABORATÓRIO                   | CONTEÚDO                                                                              |
-|-----------|--------------------------|-------------------------|------------------------|-------------------------------|---------------------------------------------------------------------------------------|
-| semana 1  | 05/08                    | 07/08                   | 08/08                  | intro e lab1                  | Introdução à Data Science e CRISP-DM ; Visualização de Dados e Estatística Descritiva |
-| semana 2  | 12/08                    | 14/08                   | 15/08                  | Preparação e limpeza de dados | Preparação e Engenharia de Dados                                                      |
-| semana 3  | 19/08                    | 21/08                   | 22/08                  | lab 2                         | Machine Learning Supervisionado - Classificação                                       |
-| semana 4  | 26/08                    | 28/08                   | 29/08                  | lab 3                         | Machine Learning Supervisionado - Regressão                                           |
-| semana 5  | 02/09                    | 04/09                   | 05/09                  | lab 6 (novo)                  | Machine Learning Não Supervisionado                                                   |
-| semana 6  | 09/09                    | 11/09                   | 12/09                  | lab 4 e lab 5                 | Dicas e truques                                                                       |
-| semana 7  | 16/09                    | 18/09                   | 19/09                  | CP                            | Projeto Final e Apresentação                                                          | -->
+ -->
