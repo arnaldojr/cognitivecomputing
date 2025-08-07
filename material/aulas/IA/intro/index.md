@@ -303,17 +303,15 @@ CRISP-DM é uma metodologia amplamente utilizada em ciência de dados que fornec
 
 ### Questões Conceituais
 
-!!! question "Questão 1"
+!!! exercise choice "Question"
     **O que diferencia a Ciência de Dados da Estatística tradicional?**
     
-    a) Ciência de Dados usa apenas dados digitais
-    b) Estatística não usa computadores
-    c) Ciência de Dados combina programação, estatística e conhecimento de domínio para trabalhar com big data
-    d) Não há diferença entre elas
+    - [ ] Ciência de Dados usa apenas dados digitais
+    - [ ] Estatística não usa computadores
+    - [X] Ciência de Dados combina programação, estatística e conhecimento de domínio para trabalhar com big data
+    - [ ] Não há diferença entre elas
 
-    ??? success "Resposta"
-        **Resposta: c) Ciência de Dados combina programação, estatística e conhecimento de domínio para trabalhar com big data**
-        
+    !!! answer
         A Ciência de Dados é interdisciplinar, combinando estatística com programação e conhecimento específico do domínio para extrair insights de grandes volumes de dados estruturados e não estruturados.
 
 !!! question "Questão 2"
