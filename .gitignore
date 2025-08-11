@@ -22,3 +22,7 @@ __pycache__/
 
 # Backup files
 *.bak
+
+# Python virtual environments
+.venv/
+.env    
