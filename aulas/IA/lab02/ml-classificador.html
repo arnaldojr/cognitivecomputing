@@ -13,6 +13,10 @@
         <link rel="canonical" href="https://arnaldojr.github.io/cognitivecomputing/aulas/IA/lab02/ml-classificador.html">
       
       
+        <link rel="prev" href="../lab04/dicasDePreprocessamento.html">
+      
+      
+        <link rel="next" href="../lab03/regressao.html">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -20,7 +24,7 @@
     
     
       
-        <title>Ml classificador - cognitivecomputing</title>
+        <title>lab1 - cognitivecomputing</title>
       
     
     
@@ -110,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Ml classificador
+              lab1
             
           </span>
         </div>
@@ -2396,18 +2400,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
         
           
           <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
@@ -2423,7 +2429,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             Machine Learning
@@ -2526,18 +2532,20 @@
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" checked>
         
           
           <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
@@ -2553,7 +2561,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_7_2">
             <span class="md-nav__icon md-icon"></span>
             Aprendizado Supervisionado - Classificação
@@ -2564,10 +2572,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="classificador_knn.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    lab1
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="ml-classificador.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -2578,6 +2606,249 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objetivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objetivos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#problemas-de-classicacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problemas de classicação
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resumo-sobre-knn-e-arvore-de-decisao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resumo sobre KNN e Árvore de Decisão
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#definicao-do-problema" class="md-nav__link">
+    <span class="md-ellipsis">
+      Definição do problema
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#relembrando-o-dataset-iris" class="md-nav__link">
+    <span class="md-ellipsis">
+      Relembrando o dataset Iris
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Relembrando o dataset Iris">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#desafio-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Desafio 1
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pare" class="md-nav__link">
+    <span class="md-ellipsis">
+      PARE!!!
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scikit-learn" class="md-nav__link">
+    <span class="md-ellipsis">
+      scikit-learn
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="scikit-learn">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instalacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalação
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#codificando-os-dados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Codificando os dados
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Codificando os dados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#labelencoder" class="md-nav__link">
+    <span class="md-ellipsis">
+      LabelEncoder
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dividindo-os-dados-em-conjunto-de-treinamento-e-de-testes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dividindo os dados em conjunto de treinamento e de testes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chegou-a-hora-de-treinar-os-modelos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chegou a hora de treinar os modelos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#treinamento-usando-algoritmo-knn" class="md-nav__link">
+    <span class="md-ellipsis">
+      Treinamento usando algoritmo KNN
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#predicao-para-novos-dados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Predição para novos dados
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#avaliacao-do-modelo-treinado" class="md-nav__link">
+    <span class="md-ellipsis">
+      Avaliação do modelo treinado
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ajustando-os-hiperparametros-do-modelo-knn" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ajustando os hiperparâmetros do modelo KNN
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#treinamento-usando-algoritmo-arvore-de-decisao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Treinamento usando algoritmo Árvore de Decisão
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ajustando-os-hiperparametros-do-modelo-de-arvore-de-decisao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ajustando os hiperparâmetros do modelo de árvore de decisão
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparando-os-melhores-modelos-treinados-de-cada-algoritmo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comparando os melhores modelos treinados de cada algoritmo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classificacao-de-digitos-0-9" class="md-nav__link">
+    <span class="md-ellipsis">
+      Classificação de digitos 0-9
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#desafio-1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Desafio 1
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#desafio-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Desafio 2
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -3243,11 +3514,50 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#scikit-learn" class="md-nav__link">
+    <span class="md-ellipsis">
+      scikit-learn
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="scikit-learn">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instalacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalação
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#codificando-os-dados" class="md-nav__link">
     <span class="md-ellipsis">
       Codificando os dados
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Codificando os dados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#labelencoder" class="md-nav__link">
+    <span class="md-ellipsis">
+      LabelEncoder
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3273,6 +3583,24 @@
   <a href="#treinamento-usando-algoritmo-knn" class="md-nav__link">
     <span class="md-ellipsis">
       Treinamento usando algoritmo KNN
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#predicao-para-novos-dados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Predição para novos dados
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#avaliacao-do-modelo-treinado" class="md-nav__link">
+    <span class="md-ellipsis">
+      Avaliação do modelo treinado
     </span>
   </a>
   
@@ -3315,9 +3643,27 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#novo-exemplo-com-o-dataset-load_digits" class="md-nav__link">
+  <a href="#classificacao-de-digitos-0-9" class="md-nav__link">
     <span class="md-ellipsis">
-      Novo exemplo com o dataset load_Digits
+      Classificação de digitos 0-9
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#desafio-1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Desafio 1
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#desafio-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Desafio 2
     </span>
   </a>
   
@@ -3342,7 +3688,7 @@
   
 
 
-  <h1>Ml classificador</h1>
+  <h1>lab1</h1>
 
 <script>
 (function (global, factory) {
@@ -3786,7 +4132,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><a href="https://colab.research.google.com/github/arnaldojr/cognitivecomputing/blob/master/material/aulas/IA/lab02/classificador-knn.ipynb" target="_parent"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></p>
+<p><a href="https://colab.research.google.com/github/arnaldojr/cognitivecomputing/blob/master/material/aulas/IA/lab02/ml-classificador.ipynb" target="_parent"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></p>
 </div>
 </div>
 </div>
@@ -3798,7 +4144,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="objetivos">Objetivos<a class="anchor-link" href="#objetivos">¶</a></h2><ul>
-<li>Comparação entre dois algoritmos de classificação populares, K-Nearest Neighbors (KNN) e Árvore de Decisão;</li>
+<li>Conhecer algoritmos de classificação, K-Nearest Neighbors (KNN) e Árvore de Decisão;</li>
 <li>Como aplicar o Grid Search para encontrar os melhores parâmetros para esses modelos.</li>
 </ul>
 </div>
@@ -3879,16 +4225,74 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </div>
 </div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-1">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">U</span> <span class="n">scikit</span><span class="o">-</span><span class="n">learn</span> <span class="n">matplotlib</span> <span class="n">pandas</span> <span class="n">seaborn</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-1">!pip install -U scikit-learn matplotlib pandas seaborn</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Requirement already satisfied: scikit-learn in /Users/arnaldoalvesvianajunior/cognitivecomputing/.venv/lib/python3.12/site-packages (1.7.1)
+Requirement already satisfied: matplotlib in /Users/arnaldoalvesvianajunior/cognitivecomputing/.venv/lib/python3.12/site-packages (3.10.5)
+Requirement already satisfied: pandas in /Users/arnaldoalvesvianajunior/cognitivecomputing/.venv/lib/python3.12/site-packages (2.3.1)
+Requirement already satisfied: seaborn in /Users/arnaldoalvesvianajunior/cognitivecomputing/.venv/lib/python3.12/site-packages (0.13.2)
+Requirement already satisfied: numpy&gt;=1.22.0 in /Users/arnaldoalvesvianajunior/cognitivecomputing/.venv/lib/python3.12/site-packages (from scikit-learn) (2.3.2)
+Requirement already satisfied: scipy&gt;=1.8.0 in /Users/arnaldoalvesvianajunior/cognitivecomputing/.venv/lib/python3.12/site-packages (from scikit-learn) (1.16.1)
+Requirement already satisfied: joblib&gt;=1.2.0 in /Users/arnaldoalvesvianajunior/cognitivecomputing/.venv/lib/python3.12/site-packages (from scikit-learn) (1.5.1)
+Requirement already satisfied: threadpoolctl&gt;=3.1.0 in /Users/arnaldoalvesvianajunior/cognitivecomputing/.venv/lib/python3.12/site-packages (from scikit-learn) (3.6.0)
+Requirement already satisfied: contourpy&gt;=1.0.1 in /Users/arnaldoalvesvianajunior/cognitivecomputing/.venv/lib/python3.12/site-packages (from matplotlib) (1.3.3)
+Requirement already satisfied: cycler&gt;=0.10 in /Users/arnaldoalvesvianajunior/cognitivecomputing/.venv/lib/python3.12/site-packages (from matplotlib) (0.12.1)
+Requirement already satisfied: fonttools&gt;=4.22.0 in /Users/arnaldoalvesvianajunior/cognitivecomputing/.venv/lib/python3.12/site-packages (from matplotlib) (4.59.0)
+Requirement already satisfied: kiwisolver&gt;=1.3.1 in /Users/arnaldoalvesvianajunior/cognitivecomputing/.venv/lib/python3.12/site-packages (from matplotlib) (1.4.9)
+Requirement already satisfied: packaging&gt;=20.0 in /Users/arnaldoalvesvianajunior/cognitivecomputing/.venv/lib/python3.12/site-packages (from matplotlib) (25.0)
+Requirement already satisfied: pillow&gt;=8 in /Users/arnaldoalvesvianajunior/cognitivecomputing/.venv/lib/python3.12/site-packages (from matplotlib) (11.3.0)
+Requirement already satisfied: pyparsing&gt;=2.3.1 in /Users/arnaldoalvesvianajunior/cognitivecomputing/.venv/lib/python3.12/site-packages (from matplotlib) (3.2.3)
+Requirement already satisfied: python-dateutil&gt;=2.7 in /Users/arnaldoalvesvianajunior/cognitivecomputing/.venv/lib/python3.12/site-packages (from matplotlib) (2.9.0.post0)
+Requirement already satisfied: pytz&gt;=2020.1 in /Users/arnaldoalvesvianajunior/cognitivecomputing/.venv/lib/python3.12/site-packages (from pandas) (2025.2)
+Requirement already satisfied: tzdata&gt;=2022.7 in /Users/arnaldoalvesvianajunior/cognitivecomputing/.venv/lib/python3.12/site-packages (from pandas) (2025.2)
+Requirement already satisfied: six&gt;=1.5 in /Users/arnaldoalvesvianajunior/cognitivecomputing/.venv/lib/python3.12/site-packages (from python-dateutil&gt;=2.7-&gt;matplotlib) (1.17.0)
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-1">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-2">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -3904,7 +4308,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-1"># Inicializção das bibliotecas
+<div class="clipboard-copy-txt" id="cell-2"># Inicializção das bibliotecas
 %matplotlib inline
 
 import pandas as pd
@@ -3921,10 +4325,10 @@ import matplotlib.pyplot as plt
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-2">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-3">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -3941,7 +4345,7 @@ import matplotlib.pyplot as plt
 <span class="c1"># Lê e carrega o arquivo para a memória</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="n">header</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-2"># Caminho do arquivo
+<div class="clipboard-copy-txt" id="cell-3"># Caminho do arquivo
 url = "https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data"
 # Define o nome das colunas
 header = ['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'species']
@@ -3958,10 +4362,10 @@ df = pd.read_csv(url, header=None, names=header)</div>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-3">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-4">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -3974,7 +4378,7 @@ df = pd.read_csv(url, header=None, names=header)</div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Retorna um trecho com as 5 primeiras linhas do dataframe</span>
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-3"># Retorna um trecho com as 5 primeiras linhas do dataframe
+<div class="clipboard-copy-txt" id="cell-4"># Retorna um trecho com as 5 primeiras linhas do dataframe
 df.head()</div>
 </div>
 </div>
@@ -3985,7 +4389,7 @@ df.head()</div>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[3]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[7]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -4067,10 +4471,10 @@ df.head()</div>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-4">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-5">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -4082,7 +4486,7 @@ df.head()</div>
 </div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-4">df.tail()</div>
+<div class="clipboard-copy-txt" id="cell-5">df.tail()</div>
 </div>
 </div>
 </div>
@@ -4092,7 +4496,7 @@ df.head()</div>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[4]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[8]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -4174,10 +4578,10 @@ df.head()</div>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-5">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-6">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -4190,7 +4594,7 @@ df.head()</div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Mostra informações sobre o dataframe em si</span>
 <span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-5"># Mostra informações sobre o dataframe em si
+<div class="clipboard-copy-txt" id="cell-6"># Mostra informações sobre o dataframe em si
 df.info()</div>
 </div>
 </div>
@@ -4227,10 +4631,10 @@ memory usage: 6.0+ KB
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-6">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-7">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -4243,7 +4647,7 @@ memory usage: 6.0+ KB
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># class distribution</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'species'</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">())</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-6"># class distribution
+<div class="clipboard-copy-txt" id="cell-7"># class distribution
 print(df.groupby('species').size())</div>
 </div>
 </div>
@@ -4284,10 +4688,10 @@ dtype: int64
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-7">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-8">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -4299,7 +4703,7 @@ dtype: int64
 </div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1">## Sua resposta e seus gráficos para análisar..</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-7">## Sua resposta e seus gráficos para análisar..
+<div class="clipboard-copy-txt" id="cell-8">## Sua resposta e seus gráficos para análisar..
 
 
 
@@ -4329,7 +4733,79 @@ dtype: int64
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="scikit-learn">scikit-learn<a class="anchor-link" href="#scikit-learn">¶</a></h2><p>Também conhecida como sklearn, é uma biblioteca de código aberto (open source) para a linguagem Python, essa biblioteca fornece uma ampla gama de ferramentas e algoritmos de aprendizado de máquina de forma acessível e eficiente.</p>
+<p><img alt="" src="sklearn.png"/></p>
+<p>Podemos dizer que o scikit-learn é a ferramenta mais popular e utilizada em aprendizado de máquina e existem alguns motivos para isso, tais como:</p>
+<ul>
+<li>Simplicidade e Consistência: Todos os algoritmos no scikit-learn compartilham uma interface consistente, que segue um padrão de métodos como fit(), predict(), e transform(). Isso facilita a troca e experimentação de diferentes algoritmos, promovendo um ambiente de desenvolvimento rápido e eficiente.</li>
+<li>Compatibilidade e Integração: O scikit-learn é projetado para interoperabilidade com outras bibliotecas do ecossistema Python, como pandas para manipulação de dados, numpy para operações numéricas, e matplotlib para visualização. Essa integração permite uma fácil manipulação e transformação de dados, bem como a visualização de resultados de modelos.</li>
+<li>Foco em Performance e Eficiência Computacional: Embora Python seja uma linguagem interpretada, a scikit-learn faz uso extensivo de operações vetorizadas através de numpy e implementações otimizadas em Cython (que é uma linguagem de programação que facilita a escrita de extensões em C para Python) para acelerar o processamento de dados e a execução de algoritmos. Isso proporciona uma execução eficiente de tarefas complexas de machine learning, como treinamento de modelos e ajuste de hiperparâmetros.</li>
+</ul>
+<h3 id="instalacao">Instalação<a class="anchor-link" href="#instalacao">¶</a></h3><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>scikit-learn
+</pre></div>
+<p><strong>Saiba mais:</strong> site da documentação oficial <a href="https://scikit-learn.org/stable/">https://scikit-learn.org/stable/</a></p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-9">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># instalando a biblioteca scikit-learn</span>
+
+<span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="n">scikit</span><span class="o">-</span><span class="n">learn</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-9"># instalando a biblioteca scikit-learn
+
+!pip install scikit-learn</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Requirement already satisfied: scikit-learn in /Users/arnaldoalvesvianajunior/cognitivecomputing/.venv/lib/python3.12/site-packages (1.7.1)
+Requirement already satisfied: numpy&gt;=1.22.0 in /Users/arnaldoalvesvianajunior/cognitivecomputing/.venv/lib/python3.12/site-packages (from scikit-learn) (2.3.2)
+Requirement already satisfied: scipy&gt;=1.8.0 in /Users/arnaldoalvesvianajunior/cognitivecomputing/.venv/lib/python3.12/site-packages (from scikit-learn) (1.16.1)
+Requirement already satisfied: joblib&gt;=1.2.0 in /Users/arnaldoalvesvianajunior/cognitivecomputing/.venv/lib/python3.12/site-packages (from scikit-learn) (1.5.1)
+Requirement already satisfied: threadpoolctl&gt;=3.1.0 in /Users/arnaldoalvesvianajunior/cognitivecomputing/.venv/lib/python3.12/site-packages (from scikit-learn) (3.6.0)
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="codificando-os-dados">Codificando os dados<a class="anchor-link" href="#codificando-os-dados">¶</a></h2><p>Com essa etapa concluída, vamos codificar os rótulos de especie para que possam ser usados pelos modelos que vamos treinar.</p>
+<h3 id="labelencoder">LabelEncoder<a class="anchor-link" href="#labelencoder">¶</a></h3><ul>
+<li>LabelEncoder: Converte cada categoria em um valor inteiro único. Cada categoria recebe um número inteiro diferente, e os valores numéricos não têm relação direta entre si além de representar categorias distintas. As categorias são ordenadas alfabeticamente e cada categoria recebe um valor correspondente.</li>
+</ul>
 </div>
 </div>
 </div>
@@ -4339,10 +4815,10 @@ dtype: int64
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-8">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-10">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -4359,12 +4835,164 @@ dtype: int64
 <span class="n">le</span> <span class="o">=</span> <span class="n">LabelEncoder</span><span class="p">()</span>
 <span class="n">df</span><span class="p">[</span><span class="s1">'species'</span><span class="p">]</span> <span class="o">=</span> <span class="n">le</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'species'</span><span class="p">])</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-8"># Codificando os rótulos de especies
+<div class="clipboard-copy-txt" id="cell-10"># Codificando os rótulos de especies
 
 from sklearn.preprocessing import LabelEncoder
 
 le = LabelEncoder()
 df['species'] = le.fit_transform(df['species'])</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-11">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Verificando o dataframe após a codificação</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-11"># Verificando o dataframe após a codificação
+df.head()</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[14]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>sepal_length</th>
+<th>sepal_width</th>
+<th>petal_length</th>
+<th>petal_width</th>
+<th>species</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>5.1</td>
+<td>3.5</td>
+<td>1.4</td>
+<td>0.2</td>
+<td>0</td>
+</tr>
+<tr>
+<th>1</th>
+<td>4.9</td>
+<td>3.0</td>
+<td>1.4</td>
+<td>0.2</td>
+<td>0</td>
+</tr>
+<tr>
+<th>2</th>
+<td>4.7</td>
+<td>3.2</td>
+<td>1.3</td>
+<td>0.2</td>
+<td>0</td>
+</tr>
+<tr>
+<th>3</th>
+<td>4.6</td>
+<td>3.1</td>
+<td>1.5</td>
+<td>0.2</td>
+<td>0</td>
+</tr>
+<tr>
+<th>4</th>
+<td>5.0</td>
+<td>3.6</td>
+<td>1.4</td>
+<td>0.2</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-12">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'species'</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-12">df.groupby('species').size()</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[15]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>species
+0    50
+1    50
+2    50
+dtype: int64</pre>
 </div>
 </div>
 </div>
@@ -4377,10 +5005,13 @@ df['species'] = le.fit_transform(df['species'])</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="dividindo-os-dados-em-conjunto-de-treinamento-e-de-testes">Dividindo os dados em conjunto de treinamento e de testes<a class="anchor-link" href="#dividindo-os-dados-em-conjunto-de-treinamento-e-de-testes">¶</a></h2><p>Dividir nosso dataset em dois conjuntos de dados.</p>
-<pre><code>Treinamento - Representa 80% das amostras do conjunto de dados original,
-Teste - com 20% das amostras</code></pre>
-<p>Vamos escolher aleatoriamente algumas amostras do conjunto original. Isto pode ser feito com Scikit-Learn usando a função <em><strong>train_test_split()</strong></em></p>
+<h2 id="dividindo-os-dados-em-conjunto-de-treinamento-e-de-testes">Dividindo os dados em conjunto de treinamento e de testes<a class="anchor-link" href="#dividindo-os-dados-em-conjunto-de-treinamento-e-de-testes">¶</a></h2><p>Em qualquer projeto de aprendizado de máquina, uma prática essencial é <code>separar</code> os dados em conjuntos de <code>treinamento e teste</code>. Isso permite treinar o modelo em um subconjunto dos dados e avaliá-lo em outro subconjunto, garantindo que o modelo não seja avaliado nos mesmos dados em que foi treinado.
+A função train_test_split facilita esse processo, dividindo os dados em duas ou mais partes de forma aleatória ou estratificada. O parâmetro test_size define a proporção dos dados reservada para o teste, e o parâmetro random_state garante a reprodutibilidade do processo.</p>
+<p>Dividir nosso dataset em dois conjuntos de dados.</p>
+<ul>
+<li><code>Treinamento</code> - Representa <code>80%</code> das amostras do conjunto de dados original.</li>
+<li><code>Teste</code> - com <code>20%</code> das amostras</li>
+</ul>
 </div>
 </div>
 </div>
@@ -4390,10 +5021,10 @@ Teste - com 20% das amostras</code></pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-9">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-13">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -4416,7 +5047,7 @@ Teste - com 20% das amostras</code></pre>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Formato das tabelas de dados de treino </span><span class="si">{</span><span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2"> e teste </span><span class="si">{</span><span class="n">y_train</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-9"># Separamos 20% para o teste
+<div class="clipboard-copy-txt" id="cell-13"># Separamos 20% para o teste
 from sklearn.model_selection import train_test_split
 
 ## define entradas de dados e o target
@@ -4452,10 +5083,10 @@ print(f"Formato das tabelas de dados de treino {X_train.shape} e teste {y_train.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [17]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-10">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-14">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -4468,7 +5099,7 @@ print(f"Formato das tabelas de dados de treino {X_train.shape} e teste {y_train.
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1">#Primeiras linhas do dataframe de treino </span>
 <span class="n">X_train</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-10">#Primeiras linhas do dataframe de treino 
+<div class="clipboard-copy-txt" id="cell-14">#Primeiras linhas do dataframe de treino 
 X_train.head()</div>
 </div>
 </div>
@@ -4479,7 +5110,7 @@ X_train.head()</div>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[10]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[17]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -4555,10 +5186,10 @@ X_train.head()</div>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-11">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-15">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -4570,7 +5201,7 @@ X_train.head()</div>
 </div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">y_train</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-11">y_train.tail()</div>
+<div class="clipboard-copy-txt" id="cell-15">y_train.tail()</div>
 </div>
 </div>
 </div>
@@ -4580,14 +5211,14 @@ X_train.head()</div>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[11]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[18]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>71     1
 106    2
 14     0
 92     1
 102    2
-Name: species, dtype: int32</pre>
+Name: species, dtype: int64</pre>
 </div>
 </div>
 </div>
@@ -4600,8 +5231,9 @@ Name: species, dtype: int32</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="chegou-a-hora-de-treinar-os-modelos">Chegou a hora de treinar os modelos<a class="anchor-link" href="#chegou-a-hora-de-treinar-os-modelos">¶</a></h2><p>Treinar um modelo no python é simples se usar o Scikit-Learn.
-Treinar um modelo no Scikit-Learn é simples: basta criar o classificador, e chamar o método fit().</p>
+<h2 id="chegou-a-hora-de-treinar-os-modelos">Chegou a hora de treinar os modelos<a class="anchor-link" href="#chegou-a-hora-de-treinar-os-modelos">¶</a></h2><p>Treinar um modelo no python é simples se usar o Scikit-Learn.</p>
+<p><img alt="" src="fit.png"/></p>
+<p>Treinar um modelo no Scikit-Learn é simples: basta criar o classificador, e chamar o método fit().</p>
 <p>Uma observação sobre a sintaxe dos classificadores do <code>scikit-learn</code></p>
 <ul>
 <li>O método <code>fit(X,Y)</code> recebe uma matriz ou dataframe X onde cada linha é uma amostra de aprendizado, e um array Y contendo as saídas esperadas do classificador, seja na forma de texto ou de inteiros</li>
@@ -4627,10 +5259,10 @@ Treinar um modelo no Scikit-Learn é simples: basta criar o classificador, e cha
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [19]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-12">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-16">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -4650,7 +5282,7 @@ Treinar um modelo no Scikit-Learn é simples: basta criar o classificador, e cha
 <span class="c1"># Cria o modelo de machine learning</span>
 <span class="n">knn</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-12"># Importa a biblioteca
+<div class="clipboard-copy-txt" id="cell-16"># Importa a biblioteca
 from sklearn.neighbors import KNeighborsClassifier
 
 # Cria o classificar KNN
@@ -4668,9 +5300,586 @@ knn.fit(X_train, y_train)</div>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[12]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>KNeighborsClassifier(n_neighbors=3)</pre>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[19]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<style>#sk-container-id-1 {
+  /* Definition of color scheme common for light and dark mode */
+  --sklearn-color-text: #000;
+  --sklearn-color-text-muted: #666;
+  --sklearn-color-line: gray;
+  /* Definition of color scheme for unfitted estimators */
+  --sklearn-color-unfitted-level-0: #fff5e6;
+  --sklearn-color-unfitted-level-1: #f6e4d2;
+  --sklearn-color-unfitted-level-2: #ffe0b3;
+  --sklearn-color-unfitted-level-3: chocolate;
+  /* Definition of color scheme for fitted estimators */
+  --sklearn-color-fitted-level-0: #f0f8ff;
+  --sklearn-color-fitted-level-1: #d4ebff;
+  --sklearn-color-fitted-level-2: #b3dbfd;
+  --sklearn-color-fitted-level-3: cornflowerblue;
+
+  /* Specific color for light theme */
+  --sklearn-color-text-on-default-background: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, black)));
+  --sklearn-color-background: var(--sg-background-color, var(--theme-background, var(--jp-layout-color0, white)));
+  --sklearn-color-border-box: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, black)));
+  --sklearn-color-icon: #696969;
+
+  @media (prefers-color-scheme: dark) {
+    /* Redefinition of color scheme for dark theme */
+    --sklearn-color-text-on-default-background: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, white)));
+    --sklearn-color-background: var(--sg-background-color, var(--theme-background, var(--jp-layout-color0, #111)));
+    --sklearn-color-border-box: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, white)));
+    --sklearn-color-icon: #878787;
+  }
+}
+
+#sk-container-id-1 {
+  color: var(--sklearn-color-text);
+}
+
+#sk-container-id-1 pre {
+  padding: 0;
+}
+
+#sk-container-id-1 input.sk-hidden--visually {
+  border: 0;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+#sk-container-id-1 div.sk-dashed-wrapped {
+  border: 1px dashed var(--sklearn-color-line);
+  margin: 0 0.4em 0.5em 0.4em;
+  box-sizing: border-box;
+  padding-bottom: 0.4em;
+  background-color: var(--sklearn-color-background);
+}
+
+#sk-container-id-1 div.sk-container {
+  /* jupyter's `normalize.less` sets `[hidden] { display: none; }`
+     but bootstrap.min.css set `[hidden] { display: none !important; }`
+     so we also need the `!important` here to be able to override the
+     default hidden behavior on the sphinx rendered scikit-learn.org.
+     See: https://github.com/scikit-learn/scikit-learn/issues/21755 */
+  display: inline-block !important;
+  position: relative;
+}
+
+#sk-container-id-1 div.sk-text-repr-fallback {
+  display: none;
+}
+
+div.sk-parallel-item,
+div.sk-serial,
+div.sk-item {
+  /* draw centered vertical line to link estimators */
+  background-image: linear-gradient(var(--sklearn-color-text-on-default-background), var(--sklearn-color-text-on-default-background));
+  background-size: 2px 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+/* Parallel-specific style estimator block */
+
+#sk-container-id-1 div.sk-parallel-item::after {
+  content: "";
+  width: 100%;
+  border-bottom: 2px solid var(--sklearn-color-text-on-default-background);
+  flex-grow: 1;
+}
+
+#sk-container-id-1 div.sk-parallel {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  background-color: var(--sklearn-color-background);
+  position: relative;
+}
+
+#sk-container-id-1 div.sk-parallel-item {
+  display: flex;
+  flex-direction: column;
+}
+
+#sk-container-id-1 div.sk-parallel-item:first-child::after {
+  align-self: flex-end;
+  width: 50%;
+}
+
+#sk-container-id-1 div.sk-parallel-item:last-child::after {
+  align-self: flex-start;
+  width: 50%;
+}
+
+#sk-container-id-1 div.sk-parallel-item:only-child::after {
+  width: 0;
+}
+
+/* Serial-specific style estimator block */
+
+#sk-container-id-1 div.sk-serial {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--sklearn-color-background);
+  padding-right: 1em;
+  padding-left: 1em;
+}
+
+
+/* Toggleable style: style used for estimator/Pipeline/ColumnTransformer box that is
+clickable and can be expanded/collapsed.
+- Pipeline and ColumnTransformer use this feature and define the default style
+- Estimators will overwrite some part of the style using the `sk-estimator` class
+*/
+
+/* Pipeline and ColumnTransformer style (default) */
+
+#sk-container-id-1 div.sk-toggleable {
+  /* Default theme specific background. It is overwritten whether we have a
+  specific estimator or a Pipeline/ColumnTransformer */
+  background-color: var(--sklearn-color-background);
+}
+
+/* Toggleable label */
+#sk-container-id-1 label.sk-toggleable__label {
+  cursor: pointer;
+  display: flex;
+  width: 100%;
+  margin-bottom: 0;
+  padding: 0.5em;
+  box-sizing: border-box;
+  text-align: center;
+  align-items: start;
+  justify-content: space-between;
+  gap: 0.5em;
+}
+
+#sk-container-id-1 label.sk-toggleable__label .caption {
+  font-size: 0.6rem;
+  font-weight: lighter;
+  color: var(--sklearn-color-text-muted);
+}
+
+#sk-container-id-1 label.sk-toggleable__label-arrow:before {
+  /* Arrow on the left of the label */
+  content: "▸";
+  float: left;
+  margin-right: 0.25em;
+  color: var(--sklearn-color-icon);
+}
+
+#sk-container-id-1 label.sk-toggleable__label-arrow:hover:before {
+  color: var(--sklearn-color-text);
+}
+
+/* Toggleable content - dropdown */
+
+#sk-container-id-1 div.sk-toggleable__content {
+  display: none;
+  text-align: left;
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-0);
+}
+
+#sk-container-id-1 div.sk-toggleable__content.fitted {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+}
+
+#sk-container-id-1 div.sk-toggleable__content pre {
+  margin: 0.2em;
+  border-radius: 0.25em;
+  color: var(--sklearn-color-text);
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-0);
+}
+
+#sk-container-id-1 div.sk-toggleable__content.fitted pre {
+  /* unfitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+}
+
+#sk-container-id-1 input.sk-toggleable__control:checked~div.sk-toggleable__content {
+  /* Expand drop-down */
+  display: block;
+  width: 100%;
+  overflow: visible;
+}
+
+#sk-container-id-1 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {
+  content: "▾";
+}
+
+/* Pipeline/ColumnTransformer-specific style */
+
+#sk-container-id-1 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  color: var(--sklearn-color-text);
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+#sk-container-id-1 div.sk-label.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+/* Estimator-specific style */
+
+/* Colorize estimator box */
+#sk-container-id-1 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+#sk-container-id-1 div.sk-estimator.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+#sk-container-id-1 div.sk-label label.sk-toggleable__label,
+#sk-container-id-1 div.sk-label label {
+  /* The background is the default theme color */
+  color: var(--sklearn-color-text-on-default-background);
+}
+
+/* On hover, darken the color of the background */
+#sk-container-id-1 div.sk-label:hover label.sk-toggleable__label {
+  color: var(--sklearn-color-text);
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+/* Label box, darken color on hover, fitted */
+#sk-container-id-1 div.sk-label.fitted:hover label.sk-toggleable__label.fitted {
+  color: var(--sklearn-color-text);
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+/* Estimator label */
+
+#sk-container-id-1 div.sk-label label {
+  font-family: monospace;
+  font-weight: bold;
+  display: inline-block;
+  line-height: 1.2em;
+}
+
+#sk-container-id-1 div.sk-label-container {
+  text-align: center;
+}
+
+/* Estimator-specific */
+#sk-container-id-1 div.sk-estimator {
+  font-family: monospace;
+  border: 1px dotted var(--sklearn-color-border-box);
+  border-radius: 0.25em;
+  box-sizing: border-box;
+  margin-bottom: 0.5em;
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-0);
+}
+
+#sk-container-id-1 div.sk-estimator.fitted {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+}
+
+/* on hover */
+#sk-container-id-1 div.sk-estimator:hover {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+#sk-container-id-1 div.sk-estimator.fitted:hover {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+/* Specification for estimator info (e.g. "i" and "?") */
+
+/* Common style for "i" and "?" */
+
+.sk-estimator-doc-link,
+a:link.sk-estimator-doc-link,
+a:visited.sk-estimator-doc-link {
+  float: right;
+  font-size: smaller;
+  line-height: 1em;
+  font-family: monospace;
+  background-color: var(--sklearn-color-background);
+  border-radius: 1em;
+  height: 1em;
+  width: 1em;
+  text-decoration: none !important;
+  margin-left: 0.5em;
+  text-align: center;
+  /* unfitted */
+  border: var(--sklearn-color-unfitted-level-1) 1pt solid;
+  color: var(--sklearn-color-unfitted-level-1);
+}
+
+.sk-estimator-doc-link.fitted,
+a:link.sk-estimator-doc-link.fitted,
+a:visited.sk-estimator-doc-link.fitted {
+  /* fitted */
+  border: var(--sklearn-color-fitted-level-1) 1pt solid;
+  color: var(--sklearn-color-fitted-level-1);
+}
+
+/* On hover */
+div.sk-estimator:hover .sk-estimator-doc-link:hover,
+.sk-estimator-doc-link:hover,
+div.sk-label-container:hover .sk-estimator-doc-link:hover,
+.sk-estimator-doc-link:hover {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-3);
+  color: var(--sklearn-color-background);
+  text-decoration: none;
+}
+
+div.sk-estimator.fitted:hover .sk-estimator-doc-link.fitted:hover,
+.sk-estimator-doc-link.fitted:hover,
+div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
+.sk-estimator-doc-link.fitted:hover {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-3);
+  color: var(--sklearn-color-background);
+  text-decoration: none;
+}
+
+/* Span, style for the box shown on hovering the info icon */
+.sk-estimator-doc-link span {
+  display: none;
+  z-index: 9999;
+  position: relative;
+  font-weight: normal;
+  right: .2ex;
+  padding: .5ex;
+  margin: .5ex;
+  width: min-content;
+  min-width: 20ex;
+  max-width: 50ex;
+  color: var(--sklearn-color-text);
+  box-shadow: 2pt 2pt 4pt #999;
+  /* unfitted */
+  background: var(--sklearn-color-unfitted-level-0);
+  border: .5pt solid var(--sklearn-color-unfitted-level-3);
+}
+
+.sk-estimator-doc-link.fitted span {
+  /* fitted */
+  background: var(--sklearn-color-fitted-level-0);
+  border: var(--sklearn-color-fitted-level-3);
+}
+
+.sk-estimator-doc-link:hover span {
+  display: block;
+}
+
+/* "?"-specific style due to the `<a>` HTML tag */
+
+#sk-container-id-1 a.estimator_doc_link {
+  float: right;
+  font-size: 1rem;
+  line-height: 1em;
+  font-family: monospace;
+  background-color: var(--sklearn-color-background);
+  border-radius: 1rem;
+  height: 1rem;
+  width: 1rem;
+  text-decoration: none;
+  /* unfitted */
+  color: var(--sklearn-color-unfitted-level-1);
+  border: var(--sklearn-color-unfitted-level-1) 1pt solid;
+}
+
+#sk-container-id-1 a.estimator_doc_link.fitted {
+  /* fitted */
+  border: var(--sklearn-color-fitted-level-1) 1pt solid;
+  color: var(--sklearn-color-fitted-level-1);
+}
+
+/* On hover */
+#sk-container-id-1 a.estimator_doc_link:hover {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-3);
+  color: var(--sklearn-color-background);
+  text-decoration: none;
+}
+
+#sk-container-id-1 a.estimator_doc_link.fitted:hover {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-3);
+}
+
+.estimator-table summary {
+    padding: .5rem;
+    font-family: monospace;
+    cursor: pointer;
+}
+
+.estimator-table details[open] {
+    padding-left: 0.1rem;
+    padding-right: 0.1rem;
+    padding-bottom: 0.3rem;
+}
+
+.estimator-table .parameters-table {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.estimator-table .parameters-table tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+.estimator-table .parameters-table tr:nth-child(even) {
+    background-color: #f6f6f6;
+}
+
+.estimator-table .parameters-table tr:hover {
+    background-color: #e0e0e0;
+}
+
+.estimator-table table td {
+    border: 1px solid rgba(106, 105, 104, 0.232);
+}
+
+.user-set td {
+    color:rgb(255, 94, 0);
+    text-align: left;
+}
+
+.user-set td.value pre {
+    color:rgb(255, 94, 0) !important;
+    background-color: transparent !important;
+}
+
+.default td {
+    color: black;
+    text-align: left;
+}
+
+.user-set td i,
+.default td i {
+    color: black;
+}
+
+.copy-paste-icon {
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NDggNTEyIj48IS0tIUZvbnQgQXdlc29tZSBGcmVlIDYuNy4yIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlL2ZyZWUgQ29weXJpZ2h0IDIwMjUgRm9udGljb25zLCBJbmMuLS0+PHBhdGggZD0iTTIwOCAwTDMzMi4xIDBjMTIuNyAwIDI0LjkgNS4xIDMzLjkgMTQuMWw2Ny45IDY3LjljOSA5IDE0LjEgMjEuMiAxNC4xIDMzLjlMNDQ4IDMzNmMwIDI2LjUtMjEuNSA0OC00OCA0OGwtMTkyIDBjLTI2LjUgMC00OC0yMS41LTQ4LTQ4bDAtMjg4YzAtMjYuNSAyMS41LTQ4IDQ4LTQ4ek00OCAxMjhsODAgMCAwIDY0LTY0IDAgMCAyNTYgMTkyIDAgMC0zMiA2NCAwIDAgNDhjMCAyNi41LTIxLjUgNDgtNDggNDhMNDggNTEyYy0yNi41IDAtNDgtMjEuNS00OC00OEwwIDE3NmMwLTI2LjUgMjEuNS00OCA0OC00OHoiLz48L3N2Zz4=);
+    background-repeat: no-repeat;
+    background-size: 14px 14px;
+    background-position: 0;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+}
+</style><body><div class="sk-top-container" id="sk-container-id-1"><div class="sk-text-repr-fallback"><pre>KNeighborsClassifier(n_neighbors=3)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br/>On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden=""><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input checked="" class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox"/><label class="sk-toggleable__label fitted sk-toggleable__label-arrow" for="sk-estimator-id-1"><div><div>KNeighborsClassifier</div></div><div><a class="sk-estimator-doc-link fitted" href="https://scikit-learn.org/1.7/modules/generated/sklearn.neighbors.KNeighborsClassifier.html" rel="noreferrer" target="_blank">?<span>Documentation for KNeighborsClassifier</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></div></label><div class="sk-toggleable__content fitted" data-param-prefix="">
+<div class="estimator-table">
+<details>
+<summary>Parameters</summary>
+<table class="parameters-table">
+<tbody>
+<tr class="user-set">
+<td><i class="copy-paste-icon" onclick="copyToClipboard('n_neighbors',
+                          this.parentElement.nextElementSibling)"></i></td>
+<td class="param">n_neighbors </td>
+<td class="value">3</td>
+</tr>
+<tr class="default">
+<td><i class="copy-paste-icon" onclick="copyToClipboard('weights',
+                          this.parentElement.nextElementSibling)"></i></td>
+<td class="param">weights </td>
+<td class="value">'uniform'</td>
+</tr>
+<tr class="default">
+<td><i class="copy-paste-icon" onclick="copyToClipboard('algorithm',
+                          this.parentElement.nextElementSibling)"></i></td>
+<td class="param">algorithm </td>
+<td class="value">'auto'</td>
+</tr>
+<tr class="default">
+<td><i class="copy-paste-icon" onclick="copyToClipboard('leaf_size',
+                          this.parentElement.nextElementSibling)"></i></td>
+<td class="param">leaf_size </td>
+<td class="value">30</td>
+</tr>
+<tr class="default">
+<td><i class="copy-paste-icon" onclick="copyToClipboard('p',
+                          this.parentElement.nextElementSibling)"></i></td>
+<td class="param">p </td>
+<td class="value">2</td>
+</tr>
+<tr class="default">
+<td><i class="copy-paste-icon" onclick="copyToClipboard('metric',
+                          this.parentElement.nextElementSibling)"></i></td>
+<td class="param">metric </td>
+<td class="value">'minkowski'</td>
+</tr>
+<tr class="default">
+<td><i class="copy-paste-icon" onclick="copyToClipboard('metric_params',
+                          this.parentElement.nextElementSibling)"></i></td>
+<td class="param">metric_params </td>
+<td class="value">None</td>
+</tr>
+<tr class="default">
+<td><i class="copy-paste-icon" onclick="copyToClipboard('n_jobs',
+                          this.parentElement.nextElementSibling)"></i></td>
+<td class="param">n_jobs </td>
+<td class="value">None</td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+</div></div></div></div></div><script>function copyToClipboard(text, element) {
+    // Get the parameter prefix from the closest toggleable content
+    const toggleableContent = element.closest('.sk-toggleable__content');
+    const paramPrefix = toggleableContent ? toggleableContent.dataset.paramPrefix : '';
+    const fullParamName = paramPrefix ? `${paramPrefix}${text}` : text;
+
+    const originalStyle = element.style;
+    const computedStyle = window.getComputedStyle(element);
+    const originalWidth = computedStyle.width;
+    const originalHTML = element.innerHTML.replace('Copied!', '');
+
+    navigator.clipboard.writeText(fullParamName)
+        .then(() => {
+            element.style.width = originalWidth;
+            element.style.color = 'green';
+            element.innerHTML = "Copied!";
+
+            setTimeout(() => {
+                element.innerHTML = originalHTML;
+                element.style = originalStyle;
+            }, 2000);
+        })
+        .catch(err => {
+            console.error('Failed to copy:', err);
+            element.style.color = 'red';
+            element.innerHTML = "Failed!";
+            setTimeout(() => {
+                element.innerHTML = originalHTML;
+                element.style = originalStyle;
+            }, 2000);
+        });
+    return false;
+}
+
+document.querySelectorAll('.fa-regular.fa-copy').forEach(function(element) {
+    const toggleableContent = element.closest('.sk-toggleable__content');
+    const paramPrefix = toggleableContent ? toggleableContent.dataset.paramPrefix : '';
+    const paramName = element.parentElement.nextElementSibling.textContent.trim();
+    const fullParamName = paramPrefix ? `${paramPrefix}${paramName}` : paramName;
+
+    element.setAttribute('title', fullParamName);
+});
+</script></body>
 </div>
 </div>
 </div>
@@ -4684,6 +5893,7 @@ knn.fit(X_train, y_train)</div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>Pronto!! bora testar se esta funcionando....</p>
+<p>Vamos fazer predições para os dados do conjunto de teste</p>
 </div>
 </div>
 </div>
@@ -4693,10 +5903,10 @@ knn.fit(X_train, y_train)</div>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [20]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-13">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-17">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -4710,8 +5920,213 @@ knn.fit(X_train, y_train)</div>
 
 <span class="n">y_pred</span> <span class="o">=</span> <span class="n">knn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
 
+<span class="c1"># vendo as previsões</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y_pred</span><span class="p">)</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-17"># Realizando previsões
 
-<span class="c1"># Avaliando o modelo</span>
+y_pred = knn.predict(X_test)
+
+# vendo as previsões
+print(y_pred)
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>[1 0 2 1 1 0 1 2 1 1 2 0 0 0 0 1 2 1 1 2 0 2 0 2 2 2 2 2 0 0]
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="predicao-para-novos-dados">Predição para novos dados<a class="anchor-link" href="#predicao-para-novos-dados">¶</a></h2><p>Vamos fazer a predição para uma flor com as seguintes dimensões:</p>
+<ul>
+<li><strong>sepal_length</strong> = 5.1</li>
+<li><strong>sepal_width</strong> = 3.5</li>
+<li><strong>petal_length</strong> = 1.4</li>
+<li><strong>petal_width</strong> = 0.2</li>
+</ul>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [21]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-18">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># novas previsões</span>
+<span class="n">sepal_length</span> <span class="o">=</span> <span class="mf">5.1</span>
+<span class="n">sepal_width</span> <span class="o">=</span> <span class="mf">3.5</span>
+<span class="n">petal_length</span> <span class="o">=</span> <span class="mf">1.4</span>
+<span class="n">petal_width</span> <span class="o">=</span> <span class="mf">0.2</span>
+
+<span class="n">dado</span> <span class="o">=</span> <span class="p">[[</span><span class="n">sepal_length</span><span class="p">,</span> <span class="n">sepal_width</span><span class="p">,</span> <span class="n">petal_length</span><span class="p">,</span> <span class="n">petal_width</span><span class="p">]]</span>
+
+<span class="n">nova_previsao</span> <span class="o">=</span> <span class="n">knn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">dado</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Novas previsões:"</span><span class="p">,</span> <span class="n">nova_previsao</span><span class="p">)</span>
+
+<span class="c1"># com o rótulo original</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Rótulo original:"</span><span class="p">,</span> <span class="n">le</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">nova_previsao</span><span class="p">))</span>  
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-18"># novas previsões
+sepal_length = 5.1
+sepal_width = 3.5
+petal_length = 1.4
+petal_width = 0.2
+
+dado = [[sepal_length, sepal_width, petal_length, petal_width]]
+
+nova_previsao = knn.predict(dado)
+
+print("Novas previsões:", nova_previsao)
+
+# com o rótulo original
+print("Rótulo original:", le.inverse_transform(nova_previsao))  </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Novas previsões: [0]
+Rótulo original: ['Iris-setosa']
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>/Users/arnaldoalvesvianajunior/cognitivecomputing/.venv/lib/python3.12/site-packages/sklearn/utils/validation.py:2749: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
+  warnings.warn(
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [22]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-19">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># a probabilidade da predição</span>
+<span class="n">prob</span> <span class="o">=</span> <span class="n">knn</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">dado</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Probabilidade da predição:"</span><span class="p">,</span> <span class="n">prob</span><span class="p">)</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-19"># a probabilidade da predição
+prob = knn.predict_proba(dado)
+print("Probabilidade da predição:", prob)</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Probabilidade da predição: [[1. 0. 0.]]
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>/Users/arnaldoalvesvianajunior/cognitivecomputing/.venv/lib/python3.12/site-packages/sklearn/utils/validation.py:2749: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
+  warnings.warn(
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="avaliacao-do-modelo-treinado">Avaliação do modelo treinado<a class="anchor-link" href="#avaliacao-do-modelo-treinado">¶</a></h2><p>A avaliação de modelos é uma etapa importante no pipeline de machine learning.</p>
+<p>Para cada tipo de tarefa (classificação, regressão ou clusterização), diferentes métricas são usadas para medir o quão bem o modelo está desempenhando. A seguir, exploramos as principais métricas oferecidas pelo scikit-learn.</p>
+<p><strong>Acurácia</strong> ou taxa de acerto é a métrica bastante popular em problemas de classificação pois mede o número de acertos do modelo dividido pelo número total testado.</p>
+<p>Por exemplo, se o modelo possui uma acurácia de 0.95 (95%) o seu modelo acerta 95 de 100 previsões. Trata-se da métrica mais simples e usada em datasets onde as classes são balanceadas, ou seja, possuímos proporções parecidas de amostras para cada uma das categorias.</p>
+<p>Outras tão importante quanto são: F1-Score, Recall, Precision e Especificidade.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [23]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-20">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Avaliando o modelo</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">accuracy_score</span><span class="p">,</span> <span class="n">precision_score</span><span class="p">,</span> <span class="n">recall_score</span><span class="p">,</span> <span class="n">f1_score</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">"Acurácia: "</span><span class="p">,</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">))</span>
@@ -4722,11 +6137,7 @@ knn.fit(X_train, y_train)</div>
 <span class="c1">## average='macro': métrica é calculada para cada classe individualmente e, em seguida, a média não ponderada das métricas de cada classe é retornada.</span>
 <span class="c1">##  Isso significa que todas as classes têm a mesma importância no cálculo da métrica.</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-13"># Realizando previsões
-
-y_pred = knn.predict(X_test)
-
-
+<div class="clipboard-copy-txt" id="cell-20">
 # Avaliando o modelo
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
 
@@ -4788,10 +6199,10 @@ F1-score:  1.0
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [24]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-14">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-21">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -4823,7 +6234,7 @@ F1-score:  1.0
 <span class="nb">print</span><span class="p">(</span><span class="s2">"Recall: "</span><span class="p">,</span> <span class="n">recall_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">average</span><span class="o">=</span><span class="s1">'macro'</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"F1-score: "</span><span class="p">,</span> <span class="n">f1_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">average</span><span class="o">=</span><span class="s1">'macro'</span><span class="p">))</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-14">from sklearn.model_selection import GridSearchCV
+<div class="clipboard-copy-txt" id="cell-21">from sklearn.model_selection import GridSearchCV
 
 
 # Definindo os valores para os hiperparâmetros
@@ -4884,10 +6295,10 @@ F1-score:  1.0
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [25]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-15">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-22">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -4910,7 +6321,7 @@ F1-score:  1.0
 <span class="nb">print</span><span class="p">(</span><span class="s2">"Recall: "</span><span class="p">,</span> <span class="n">recall_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">average</span><span class="o">=</span><span class="s1">'macro'</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"F1-score: "</span><span class="p">,</span> <span class="n">f1_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">average</span><span class="o">=</span><span class="s1">'macro'</span><span class="p">))</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-15">from sklearn.tree import DecisionTreeClassifier
+<div class="clipboard-copy-txt" id="cell-22">from sklearn.tree import DecisionTreeClassifier
 
 # Definindo o modelo de árvore de decisão com hiperparâmetros padrão
 tree = DecisionTreeClassifier(criterion='gini', max_depth=None, min_samples_split=2, min_samples_leaf=1, random_state=42)
@@ -4976,10 +6387,10 @@ F1-score:  1.0
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [26]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-16">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-23">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -5008,7 +6419,7 @@ F1-score:  1.0
 <span class="nb">print</span><span class="p">(</span><span class="s2">"Recall: "</span><span class="p">,</span> <span class="n">recall_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">average</span><span class="o">=</span><span class="s1">'macro'</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"F1-score: "</span><span class="p">,</span> <span class="n">f1_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">average</span><span class="o">=</span><span class="s1">'macro'</span><span class="p">))</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-16"># Definindo os valores para os hiperparâmetros
+<div class="clipboard-copy-txt" id="cell-23"># Definindo os valores para os hiperparâmetros
 param_grid = {'criterion': ['gini', 'entropy'], 'max_depth': [None, 3, 5, 7], 'min_samples_split': [2, 5, 10], 'min_samples_leaf': [1, 2, 4]}
 
 # Criando o objeto GridSearchCV
@@ -5066,10 +6477,10 @@ F1-score:  1.0
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [17]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [27]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-17">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-24">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -5101,7 +6512,7 @@ F1-score:  1.0
 <span class="nb">print</span><span class="p">(</span><span class="s2">"Árvore de Decisão - Recall: "</span><span class="p">,</span> <span class="n">recall_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">tree_pred</span><span class="p">,</span> <span class="n">average</span><span class="o">=</span><span class="s1">'macro'</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"Árvore de Decisão - F1-score: "</span><span class="p">,</span> <span class="n">f1_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">tree_pred</span><span class="p">,</span> <span class="n">average</span><span class="o">=</span><span class="s1">'macro'</span><span class="p">))</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-17"># Criando os modelos ( altere os parametros para os melhores hiperparâmetros encontrados)
+<div class="clipboard-copy-txt" id="cell-24"># Criando os modelos ( altere os parametros para os melhores hiperparâmetros encontrados)
 knn = KNeighborsClassifier(n_neighbors=5, weights='uniform', algorithm='ball_tree', p=2) 
 tree = DecisionTreeClassifier(criterion='entropy', max_depth=None, min_samples_split=2, min_samples_leaf=1)
 
@@ -5154,7 +6565,7 @@ KNN - F1-score:  1.0
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="novo-exemplo-com-o-dataset-load_digits">Novo exemplo com o dataset load_Digits<a class="anchor-link" href="#novo-exemplo-com-o-dataset-load_digits">¶</a></h2><p>Carrega um dataset de imagens de digits 8x8px.</p>
+<h2 id="classificacao-de-digitos-0-9">Classificação de digitos 0-9<a class="anchor-link" href="#classificacao-de-digitos-0-9">¶</a></h2><p><img alt="" src="digits.png"/></p>
 </div>
 </div>
 </div>
@@ -5164,10 +6575,10 @@ KNN - F1-score:  1.0
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [28]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-18">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-25">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -5182,7 +6593,7 @@ KNN - F1-score:  1.0
 <span class="n">digits</span> <span class="o">=</span> <span class="n">load_digits</span><span class="p">()</span>
 <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">digits</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">digits</span><span class="o">.</span><span class="n">target</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-18">from sklearn.datasets import load_digits
+<div class="clipboard-copy-txt" id="cell-25">from sklearn.datasets import load_digits
 
 digits = load_digits()
 X, y = digits.data, digits.target
@@ -5198,10 +6609,10 @@ X, y = digits.data, digits.target
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [19]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [29]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-19">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-26">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -5216,7 +6627,7 @@ X, y = digits.data, digits.target
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Formato das tabelas de dados de treino </span><span class="si">{</span><span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2"> e teste </span><span class="si">{</span><span class="n">y_train</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-19"># Separando os dados em conjunto de treinamento e teste
+<div class="clipboard-copy-txt" id="cell-26"># Separando os dados em conjunto de treinamento e teste
 X_train, X_test, y_train, y_test = train_test_split(X,y, test_size=0.2)
 
 print(f"Formato das tabelas de dados de treino {X_train.shape} e teste {y_train.shape}")</div>
@@ -5244,10 +6655,10 @@ print(f"Formato das tabelas de dados de treino {X_train.shape} e teste {y_train.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [20]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [30]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-20">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-27">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -5279,7 +6690,7 @@ print(f"Formato das tabelas de dados de treino {X_train.shape} e teste {y_train.
 <span class="nb">print</span><span class="p">(</span><span class="s2">"Árvore de Decisão - Recall: "</span><span class="p">,</span> <span class="n">recall_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">tree_pred</span><span class="p">,</span> <span class="n">average</span><span class="o">=</span><span class="s1">'macro'</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"Árvore de Decisão - F1-score: "</span><span class="p">,</span> <span class="n">f1_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">tree_pred</span><span class="p">,</span> <span class="n">average</span><span class="o">=</span><span class="s1">'macro'</span><span class="p">))</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-20"># Criando os modelos ( altere os parametros para os melhores hiperparâmetros encontrados)
+<div class="clipboard-copy-txt" id="cell-27"># Criando os modelos ( altere os parametros para os melhores hiperparâmetros encontrados)
 knn = KNeighborsClassifier(n_neighbors=3, weights='uniform', algorithm='ball_tree', p=2) 
 tree = DecisionTreeClassifier(criterion='entropy', max_depth=None, min_samples_split=2, min_samples_leaf=1)
 
@@ -5314,14 +6725,14 @@ print("Árvore de Decisão - F1-score: ", f1_score(y_test, tree_pred, average='m
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>KNN - Acurácia:  0.9916666666666667
-KNN - Precisão:  0.9916107948555768
-KNN - Recall:  0.9924263674614305
-KNN - F1-score:  0.9918829564341367
-Árvore de Decisão - Acurácia:  0.8638888888888889
-Árvore de Decisão - Precisão:  0.8696557411216153
-Árvore de Decisão - Recall:  0.8609678867182373
-Árvore de Decisão - F1-score:  0.8636191869030079
+<pre>KNN - Acurácia:  0.9861111111111112
+KNN - Precisão:  0.9850960061443932
+KNN - Recall:  0.9880952380952381
+KNN - F1-score:  0.9862017096827221
+Árvore de Decisão - Acurácia:  0.8972222222222223
+Árvore de Decisão - Precisão:  0.8956477087541643
+Árvore de Decisão - Recall:  0.9023418466493803
+Árvore de Decisão - F1-score:  0.897590096385669
 </pre>
 </div>
 </div>
@@ -5334,10 +6745,10 @@ KNN - F1-score:  0.9918829564341367
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [21]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [31]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-21">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-28">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -5352,7 +6763,7 @@ KNN - F1-score:  0.9918829564341367
 <span class="nb">print</span><span class="p">(</span><span class="n">classification_report</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">knn_pred</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">classification_report</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">tree_pred</span><span class="p">))</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-21">from sklearn.metrics import classification_report
+<div class="clipboard-copy-txt" id="cell-28">from sklearn.metrics import classification_report
 
 print(classification_report(y_test, knn_pred))
 print(classification_report(y_test, tree_pred))</div>
@@ -5369,16 +6780,16 @@ print(classification_report(y_test, tree_pred))</div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>              precision    recall  f1-score   support
 
-           0       1.00      1.00      1.00        40
-           1       0.98      1.00      0.99        44
-           2       1.00      1.00      1.00        35
-           3       1.00      0.96      0.98        46
-           4       1.00      1.00      1.00        26
-           5       1.00      1.00      1.00        36
-           6       1.00      1.00      1.00        39
-           7       0.97      1.00      0.98        30
-           8       1.00      0.97      0.98        31
-           9       0.97      1.00      0.99        33
+           0       1.00      1.00      1.00        44
+           1       1.00      1.00      1.00        33
+           2       1.00      1.00      1.00        32
+           3       1.00      1.00      1.00        46
+           4       0.96      1.00      0.98        27
+           5       0.98      0.98      0.98        42
+           6       0.97      1.00      0.99        39
+           7       1.00      1.00      1.00        26
+           8       0.94      1.00      0.97        29
+           9       1.00      0.90      0.95        42
 
     accuracy                           0.99       360
    macro avg       0.99      0.99      0.99       360
@@ -5386,20 +6797,20 @@ weighted avg       0.99      0.99      0.99       360
 
               precision    recall  f1-score   support
 
-           0       0.97      0.90      0.94        40
-           1       0.87      0.89      0.88        44
-           2       0.97      0.83      0.89        35
-           3       0.82      0.87      0.84        46
-           4       0.92      0.88      0.90        26
-           5       0.80      0.92      0.86        36
-           6       0.92      0.87      0.89        39
-           7       0.93      0.83      0.88        30
-           8       0.65      0.71      0.68        31
-           9       0.86      0.91      0.88        33
+           0       0.93      0.91      0.92        44
+           1       0.94      0.91      0.92        33
+           2       0.88      0.91      0.89        32
+           3       0.95      0.80      0.87        46
+           4       0.86      0.93      0.89        27
+           5       0.91      0.93      0.92        42
+           6       0.88      0.95      0.91        39
+           7       0.93      0.96      0.94        26
+           8       0.79      0.90      0.84        29
+           9       0.90      0.83      0.86        42
 
-    accuracy                           0.86       360
-   macro avg       0.87      0.86      0.86       360
-weighted avg       0.87      0.86      0.87       360
+    accuracy                           0.90       360
+   macro avg       0.90      0.90      0.90       360
+weighted avg       0.90      0.90      0.90       360
 
 </pre>
 </div>
@@ -5407,16 +6818,27 @@ weighted avg       0.87      0.86      0.87       360
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="desafio-1">Desafio 1<a class="anchor-link" href="#desafio-1">¶</a></h2><p>Tente ajustar os hiperparâmetros dos modelos de KNN e árvore de decisão para melhorar ainda mais a performance dos modelos.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [23]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [32]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-22">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-29">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -5426,132 +6848,12 @@ weighted avg       0.87      0.86      0.87       360
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">skimage</span><span class="w"> </span><span class="kn">import</span> <span class="n">exposure</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">imutils</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">cv2</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
-
-
-<span class="n">model</span> <span class="o">=</span> <span class="n">knn</span>
-
-<span class="c1"># loop over a few random digits</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">y_test</span><span class="p">),</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,)))):</span>
-	<span class="c1"># grab the image and classify it</span>
-	<span class="n">image</span> <span class="o">=</span> <span class="n">X_test</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-	<span class="n">prediction</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">image</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
-
-	<span class="c1"># convert the image for a 64-dim array to an 8 x 8 image compatible with OpenCV,</span>
-	<span class="c1"># then resize it to 32 x 32 pixels so we can see it better</span>
-	<span class="n">image</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s2">"uint8"</span><span class="p">)</span>
-	<span class="n">image</span> <span class="o">=</span> <span class="n">exposure</span><span class="o">.</span><span class="n">rescale_intensity</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">out_range</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">))</span>
-	<span class="n">image</span> <span class="o">=</span> <span class="n">imutils</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span> <span class="n">inter</span><span class="o">=</span><span class="n">cv2</span><span class="o">.</span><span class="n">INTER_CUBIC</span><span class="p">)</span>
-
-	<span class="c1"># show the prediction</span>
-	<span class="nb">print</span><span class="p">(</span><span class="s2">"I think that digit is: </span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">prediction</span><span class="p">))</span>
-	<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">"gray"</span><span class="p">)</span>
-	<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-	<span class="c1">#cv2.imshow("Image", image)</span>
-	<span class="c1">#cv2.waitKey(0)</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># sua resposta aqui...</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-22">from skimage import exposure
-import imutils
-import numpy as np
-import cv2
-from matplotlib import pyplot as plt
+<div class="clipboard-copy-txt" id="cell-29"># sua resposta aqui...
 
 
-model = knn
-
-# loop over a few random digits
-for i in list(map(int, np.random.randint(0, high=len(y_test), size=(5,)))):
-	# grab the image and classify it
-	image = X_test[i]
-	prediction = model.predict(image.reshape(1, -1))[0]
-
-	# convert the image for a 64-dim array to an 8 x 8 image compatible with OpenCV,
-	# then resize it to 32 x 32 pixels so we can see it better
-	image = image.reshape((8, 8)).astype("uint8")
-	image = exposure.rescale_intensity(image, out_range=(0, 255))
-	image = imutils.resize(image, width=32, inter=cv2.INTER_CUBIC)
-
-	# show the prediction
-	print("I think that digit is: {}".format(prediction))
-	plt.imshow(image, cmap="gray")
-	plt.show()
-	#cv2.imshow("Image", image)
-	#cv2.waitKey(0)</div>
 </div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>I think that digit is: 3
-</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedImage jp-OutputArea-output" tabindex="0">
-<img alt="No description has been provided for this image" class="jp-needs-light-background" src="data:image/png;base64,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"/>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>I think that digit is: 9
-</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedImage jp-OutputArea-output" tabindex="0">
-<img alt="No description has been provided for this image" class="jp-needs-light-background" src="data:image/png;base64,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"/>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>I think that digit is: 1
-</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedImage jp-OutputArea-output" tabindex="0">
-<img alt="No description has been provided for this image" class="jp-needs-light-background" src="data:image/png;base64,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"/>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>I think that digit is: 6
-</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedImage jp-OutputArea-output" tabindex="0">
-<img alt="No description has been provided for this image" class="jp-needs-light-background" src="data:image/png;base64,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"/>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>I think that digit is: 7
-</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedImage jp-OutputArea-output" tabindex="0">
-<img alt="No description has been provided for this image" class="jp-needs-light-background" src="data:image/png;base64,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"/>
 </div>
 </div>
 </div>
@@ -5564,19 +6866,8 @@ for i in list(map(int, np.random.randint(0, high=len(y_test), size=(5,)))):
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Tente ajustar os hiperparâmetros dos modelos de KNN e árvore de decisão para melhorar ainda mais a performance dos modelos.</p>
-<p>Tente aplicar os modelos em outros conjuntos de dados de classificação para ver como eles se saem.</p>
-<p>Pesquise sobre outros modelos de classificação e compare-os com o KNN e árvore de decisão. Qual modelo é o mais adequado para diferentes tipos de problemas de classificação?</p>
+<h2 id="desafio-2">Desafio 2<a class="anchor-link" href="#desafio-2">¶</a></h2><p>Pesquise sobre outros modelos de classificação e compare-os com o KNN e árvore de decisão.</p>
+<p>Qual modelo é o mais adequado para diferentes tipos de problemas de classificação?</p>
 </div>
 </div>
 </div>
@@ -5718,7 +7009,7 @@ function resetFieldset(fieldset) {
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 8, 2024 01:15:45 UTC">October 8, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 11, 2025 20:53:39 UTC">August 11, 2025</span>
   </span>
 
     

@@ -13,10 +13,6 @@
         <link rel="canonical" href="https://arnaldojr.github.io/cognitivecomputing/aulas/IA/lab02/classificador_knn.html">
       
       
-        <link rel="prev" href="../lab04/dicasDePreprocessamento.html">
-      
-      
-        <link rel="next" href="../lab03/regressao.html">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -24,7 +20,7 @@
     
     
       
-        <title>lab1 - cognitivecomputing</title>
+        <title>Classificador knn - cognitivecomputing</title>
       
     
     
@@ -114,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              lab1
+              Classificador knn
             
           </span>
         </div>
@@ -2400,20 +2396,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
         
           
           <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
@@ -2429,7 +2423,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             Machine Learning
@@ -2532,20 +2526,18 @@
                 
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" >
         
           
           <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
@@ -2561,7 +2553,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_7_2">
             <span class="md-nav__icon md-icon"></span>
             Aprendizado Supervisionado - Classificação
@@ -2572,30 +2564,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    lab1
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="classificador_knn.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="ml-classificador.html" class="md-nav__link">
         
   
   
@@ -2606,186 +2578,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#objetivos" class="md-nav__link">
-    <span class="md-ellipsis">
-      Objetivos
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#comecando" class="md-nav__link">
-    <span class="md-ellipsis">
-      Começando
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#k-nearest-neighbors" class="md-nav__link">
-    <span class="md-ellipsis">
-      k-Nearest Neighbors
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="k-Nearest Neighbors">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#uma-intuicao-sobre-o-metodo" class="md-nav__link">
-    <span class="md-ellipsis">
-      Uma intuição sobre o método
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bora-la" class="md-nav__link">
-    <span class="md-ellipsis">
-      Bora lá!!
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#definicao-do-problema" class="md-nav__link">
-    <span class="md-ellipsis">
-      Definição do problema
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Definição do problema">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#desafio-1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Desafio 1
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#desafio-2" class="md-nav__link">
-    <span class="md-ellipsis">
-      Desafio 2
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pare" class="md-nav__link">
-    <span class="md-ellipsis">
-      PARE!!!
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dividindo-os-dados-em-conjunto-de-treinamento-e-de-testes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Dividindo os dados em conjunto de treinamento e de testes
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#chegou-a-hora-de-aplicar-o-modelo-preditivo" class="md-nav__link">
-    <span class="md-ellipsis">
-      Chegou a hora de aplicar o modelo preditivo
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#utilizando-o-modelo-treinado-com-amostras-fora-do-dataset" class="md-nav__link">
-    <span class="md-ellipsis">
-      Utilizando o modelo treinado com amostras fora do dataset
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#visualizando-o-modelo-de-forma-grafica" class="md-nav__link">
-    <span class="md-ellipsis">
-      Visualizando o modelo de forma gráfica
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Visualizando o modelo de forma gráfica">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#desafio-3" class="md-nav__link">
-    <span class="md-ellipsis">
-      Desafio 3
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#desafio-4" class="md-nav__link">
-    <span class="md-ellipsis">
-      Desafio 4
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#desafio-5" class="md-nav__link">
-    <span class="md-ellipsis">
-      Desafio 5
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -3562,7 +3354,7 @@
   
 
 
-  <h1>lab1</h1>
+  <h1>Classificador knn</h1>
 
 <script>
 (function (global, factory) {

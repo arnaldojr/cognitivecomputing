@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#2-aprendizagem-de-maquina" class="md-skip">
+        <a href="#objetivos" class="md-skip">
           Skip to content
         </a>
       
@@ -2567,7 +2567,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../lab02/classificador_knn.html" class="md-nav__link">
+      <a href="../lab02/ml-classificador.html" class="md-nav__link">
         
   
   
@@ -3174,53 +3174,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#2-aprendizagem-de-maquina" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Aprendizagem de máquina
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2. Aprendizagem de máquina">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#objetivos" class="md-nav__link">
     <span class="md-ellipsis">
       Objetivos
     </span>
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#objetivos-especificos" class="md-nav__link">
-    <span class="md-ellipsis">
-      Objetivos específicos
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#dinamica-da-aula" class="md-nav__link">
-    <span class="md-ellipsis">
-      Dinamica da aula
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#projeto-completo-de-aprendizado-de-maquina" class="md-nav__link">
-    <span class="md-ellipsis">
-      Projeto completo de aprendizado de máquina
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -3753,41 +3711,10 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="2-aprendizagem-de-maquina">2. Aprendizagem de máquina<a class="anchor-link" href="#2-aprendizagem-de-maquina">¶</a></h2><h3 id="objetivos">Objetivos<a class="anchor-link" href="#objetivos">¶</a></h3><ul>
+<h2 id="objetivos">Objetivos<a class="anchor-link" href="#objetivos">¶</a></h2><ul>
 <li>Praticar os algoritmos de aprendizado de maquina</li>
 <li>Conhecer e aplicar o algoritmo Naive Bayes</li>
 </ul>
-<h3 id="objetivos-especificos">Objetivos específicos<a class="anchor-link" href="#objetivos-especificos">¶</a></h3><ul>
-<li>Obter ao final da aula de hoje um roteiro com dicas de como processar algoritmos de aprendizado de maquina.</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="dinamica-da-aula">Dinamica da aula<a class="anchor-link" href="#dinamica-da-aula">¶</a></h3><pre><code>- 10min - Apresentação do notebook e do case a ser resolvido. 
-- 30min - Desenvolvimento do grupo para resolver o notebook
-- 60min - Resolução em conjunto (aluno + professor) do problema.</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="projeto-completo-de-aprendizado-de-maquina">Projeto completo de aprendizado de máquina<a class="anchor-link" href="#projeto-completo-de-aprendizado-de-maquina">¶</a></h3><p>O objetivo deste notebook é servir como inspiração para realizar uma análise exploratória de dados e desenvolimento de modelos preditivos usando ML.</p>
-<p>De forma geral, e bem superficial, podemos separar esse processo em algumas etapa:</p>
-<pre><code>[ ] Análise exploratória e preparação dos dados 
-[ ] Treina um(uns) modelo(s) de ML
-[ ] Análisa e valida o modelo, responde as perguntas </code></pre>
 </div>
 </div>
 </div>
@@ -3820,7 +3747,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [19]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-1">
@@ -3870,7 +3797,7 @@ import seaborn as sns # graficos estatisticos
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [20]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-2">
@@ -3909,7 +3836,7 @@ df.shape</div>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[20]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[2]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>(32561, 15)</pre>
 </div>
@@ -3950,7 +3877,7 @@ income – renda anual</code></pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [21]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-3">
@@ -3975,7 +3902,7 @@ income – renda anual</code></pre>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[21]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[3]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -4159,7 +4086,7 @@ income – renda anual</code></pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [22]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-5">
@@ -4188,7 +4115,7 @@ df.isnull().sum()</div>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[22]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[4]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>age               0
 workclass         0
@@ -4228,7 +4155,7 @@ dtype: int64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [23]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-6">
@@ -4271,15 +4198,15 @@ dtype: int64</pre>
 87      1
 Name: count, Length: 73, dtype: int64
 workclass
- Private             22696
- Self-emp-not-inc     2541
- Local-gov            2093
- ?                    1836
- State-gov            1298
- Self-emp-inc         1116
- Federal-gov           960
- Without-pay            14
- Never-worked            7
+Private             22696
+Self-emp-not-inc     2541
+Local-gov            2093
+?                    1836
+State-gov            1298
+Self-emp-inc         1116
+Federal-gov           960
+Without-pay            14
+Never-worked            7
 Name: count, dtype: int64
 fnlwgt
 164190    13
@@ -4295,22 +4222,22 @@ fnlwgt
 257302     1
 Name: count, Length: 21648, dtype: int64
 education
- HS-grad         10501
- Some-college     7291
- Bachelors        5355
- Masters          1723
- Assoc-voc        1382
- 11th             1175
- Assoc-acdm       1067
- 10th              933
- 7th-8th           646
- Prof-school       576
- 9th               514
- 12th              433
- Doctorate         413
- 5th-6th           333
- 1st-4th           168
- Preschool          51
+HS-grad         10501
+Some-college     7291
+Bachelors        5355
+Masters          1723
+Assoc-voc        1382
+11th             1175
+Assoc-acdm       1067
+10th              933
+7th-8th           646
+Prof-school       576
+9th               514
+12th              433
+Doctorate         413
+5th-6th           333
+1st-4th           168
+Preschool          51
 Name: count, dtype: int64
 education_num
 9     10501
@@ -4331,49 +4258,49 @@ education_num
 1        51
 Name: count, dtype: int64
 marital_status
- Married-civ-spouse       14976
- Never-married            10683
- Divorced                  4443
- Separated                 1025
- Widowed                    993
- Married-spouse-absent      418
- Married-AF-spouse           23
+Married-civ-spouse       14976
+Never-married            10683
+Divorced                  4443
+Separated                 1025
+Widowed                    993
+Married-spouse-absent      418
+Married-AF-spouse           23
 Name: count, dtype: int64
 occupation
- Prof-specialty       4140
- Craft-repair         4099
- Exec-managerial      4066
- Adm-clerical         3770
- Sales                3650
- Other-service        3295
- Machine-op-inspct    2002
- ?                    1843
- Transport-moving     1597
- Handlers-cleaners    1370
- Farming-fishing       994
- Tech-support          928
- Protective-serv       649
- Priv-house-serv       149
- Armed-Forces            9
+Prof-specialty       4140
+Craft-repair         4099
+Exec-managerial      4066
+Adm-clerical         3770
+Sales                3650
+Other-service        3295
+Machine-op-inspct    2002
+?                    1843
+Transport-moving     1597
+Handlers-cleaners    1370
+Farming-fishing       994
+Tech-support          928
+Protective-serv       649
+Priv-house-serv       149
+Armed-Forces            9
 Name: count, dtype: int64
 relationship
- Husband           13193
- Not-in-family      8305
- Own-child          5068
- Unmarried          3446
- Wife               1568
- Other-relative      981
+Husband           13193
+Not-in-family      8305
+Own-child          5068
+Unmarried          3446
+Wife               1568
+Other-relative      981
 Name: count, dtype: int64
 race
- White                 27816
- Black                  3124
- Asian-Pac-Islander     1039
- Amer-Indian-Eskimo      311
- Other                   271
+White                 27816
+Black                  3124
+Asian-Pac-Islander     1039
+Amer-Indian-Eskimo      311
+Other                   271
 Name: count, dtype: int64
 sex
- Male      21790
- Female    10771
+Male      21790
+Female    10771
 Name: count, dtype: int64
 capital_gain
 0        29849
@@ -4415,52 +4342,52 @@ hours_per_week
 94        1
 Name: count, Length: 94, dtype: int64
 native_country
- United-States                 29170
- Mexico                          643
- ?                               583
- Philippines                     198
- Germany                         137
- Canada                          121
- Puerto-Rico                     114
- El-Salvador                     106
- India                           100
- Cuba                             95
- England                          90
- Jamaica                          81
- South                            80
- China                            75
- Italy                            73
- Dominican-Republic               70
- Vietnam                          67
- Guatemala                        64
- Japan                            62
- Poland                           60
- Columbia                         59
- Taiwan                           51
- Haiti                            44
- Iran                             43
- Portugal                         37
- Nicaragua                        34
- Peru                             31
- France                           29
- Greece                           29
- Ecuador                          28
- Ireland                          24
- Hong                             20
- Cambodia                         19
- Trinadad&amp;Tobago                  19
- Laos                             18
- Thailand                         18
- Yugoslavia                       16
- Outlying-US(Guam-USVI-etc)       14
- Honduras                         13
- Hungary                          13
- Scotland                         12
- Holand-Netherlands                1
+United-States                 29170
+Mexico                          643
+?                               583
+Philippines                     198
+Germany                         137
+Canada                          121
+Puerto-Rico                     114
+El-Salvador                     106
+India                           100
+Cuba                             95
+England                          90
+Jamaica                          81
+South                            80
+China                            75
+Italy                            73
+Dominican-Republic               70
+Vietnam                          67
+Guatemala                        64
+Japan                            62
+Poland                           60
+Columbia                         59
+Taiwan                           51
+Haiti                            44
+Iran                             43
+Portugal                         37
+Nicaragua                        34
+Peru                             31
+France                           29
+Greece                           29
+Ecuador                          28
+Ireland                          24
+Hong                             20
+Cambodia                         19
+Trinadad&amp;Tobago                  19
+Laos                             18
+Thailand                         18
+Yugoslavia                       16
+Outlying-US(Guam-USVI-etc)       14
+Honduras                         13
+Hungary                          13
+Scotland                         12
+Holand-Netherlands                1
 Name: count, dtype: int64
 income
- &lt;=50K    24720
- &gt;50K      7841
+&lt;=50K    24720
+&gt;50K      7841
 Name: count, dtype: int64
 </pre>
 </div>
@@ -4487,7 +4414,7 @@ Name: count, dtype: int64
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [24]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-7">
@@ -4530,7 +4457,7 @@ df=df.replace(' ?', np.nan)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [26]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-8">
@@ -4577,14 +4504,14 @@ df.isnull().sum()</div>
 87      1
 Name: count, Length: 73, dtype: int64
 workclass
- Private             22696
- Self-emp-not-inc     2541
- Local-gov            2093
- State-gov            1298
- Self-emp-inc         1116
- Federal-gov           960
- Without-pay            14
- Never-worked            7
+Private             22696
+Self-emp-not-inc     2541
+Local-gov            2093
+State-gov            1298
+Self-emp-inc         1116
+Federal-gov           960
+Without-pay            14
+Never-worked            7
 Name: count, dtype: int64
 fnlwgt
 164190    13
@@ -4600,22 +4527,22 @@ fnlwgt
 257302     1
 Name: count, Length: 21648, dtype: int64
 education
- HS-grad         10501
- Some-college     7291
- Bachelors        5355
- Masters          1723
- Assoc-voc        1382
- 11th             1175
- Assoc-acdm       1067
- 10th              933
- 7th-8th           646
- Prof-school       576
- 9th               514
- 12th              433
- Doctorate         413
- 5th-6th           333
- 1st-4th           168
- Preschool          51
+HS-grad         10501
+Some-college     7291
+Bachelors        5355
+Masters          1723
+Assoc-voc        1382
+11th             1175
+Assoc-acdm       1067
+10th              933
+7th-8th           646
+Prof-school       576
+9th               514
+12th              433
+Doctorate         413
+5th-6th           333
+1st-4th           168
+Preschool          51
 Name: count, dtype: int64
 education_num
 9     10501
@@ -4636,48 +4563,48 @@ education_num
 1        51
 Name: count, dtype: int64
 marital_status
- Married-civ-spouse       14976
- Never-married            10683
- Divorced                  4443
- Separated                 1025
- Widowed                    993
- Married-spouse-absent      418
- Married-AF-spouse           23
+Married-civ-spouse       14976
+Never-married            10683
+Divorced                  4443
+Separated                 1025
+Widowed                    993
+Married-spouse-absent      418
+Married-AF-spouse           23
 Name: count, dtype: int64
 occupation
- Prof-specialty       4140
- Craft-repair         4099
- Exec-managerial      4066
- Adm-clerical         3770
- Sales                3650
- Other-service        3295
- Machine-op-inspct    2002
- Transport-moving     1597
- Handlers-cleaners    1370
- Farming-fishing       994
- Tech-support          928
- Protective-serv       649
- Priv-house-serv       149
- Armed-Forces            9
+Prof-specialty       4140
+Craft-repair         4099
+Exec-managerial      4066
+Adm-clerical         3770
+Sales                3650
+Other-service        3295
+Machine-op-inspct    2002
+Transport-moving     1597
+Handlers-cleaners    1370
+Farming-fishing       994
+Tech-support          928
+Protective-serv       649
+Priv-house-serv       149
+Armed-Forces            9
 Name: count, dtype: int64
 relationship
- Husband           13193
- Not-in-family      8305
- Own-child          5068
- Unmarried          3446
- Wife               1568
- Other-relative      981
+Husband           13193
+Not-in-family      8305
+Own-child          5068
+Unmarried          3446
+Wife               1568
+Other-relative      981
 Name: count, dtype: int64
 race
- White                 27816
- Black                  3124
- Asian-Pac-Islander     1039
- Amer-Indian-Eskimo      311
- Other                   271
+White                 27816
+Black                  3124
+Asian-Pac-Islander     1039
+Amer-Indian-Eskimo      311
+Other                   271
 Name: count, dtype: int64
 sex
- Male      21790
- Female    10771
+Male      21790
+Female    10771
 Name: count, dtype: int64
 capital_gain
 0        29849
@@ -4719,57 +4646,57 @@ hours_per_week
 94        1
 Name: count, Length: 94, dtype: int64
 native_country
- United-States                 29170
- Mexico                          643
- Philippines                     198
- Germany                         137
- Canada                          121
- Puerto-Rico                     114
- El-Salvador                     106
- India                           100
- Cuba                             95
- England                          90
- Jamaica                          81
- South                            80
- China                            75
- Italy                            73
- Dominican-Republic               70
- Vietnam                          67
- Guatemala                        64
- Japan                            62
- Poland                           60
- Columbia                         59
- Taiwan                           51
- Haiti                            44
- Iran                             43
- Portugal                         37
- Nicaragua                        34
- Peru                             31
- France                           29
- Greece                           29
- Ecuador                          28
- Ireland                          24
- Hong                             20
- Cambodia                         19
- Trinadad&amp;Tobago                  19
- Laos                             18
- Thailand                         18
- Yugoslavia                       16
- Outlying-US(Guam-USVI-etc)       14
- Honduras                         13
- Hungary                          13
- Scotland                         12
- Holand-Netherlands                1
+United-States                 29170
+Mexico                          643
+Philippines                     198
+Germany                         137
+Canada                          121
+Puerto-Rico                     114
+El-Salvador                     106
+India                           100
+Cuba                             95
+England                          90
+Jamaica                          81
+South                            80
+China                            75
+Italy                            73
+Dominican-Republic               70
+Vietnam                          67
+Guatemala                        64
+Japan                            62
+Poland                           60
+Columbia                         59
+Taiwan                           51
+Haiti                            44
+Iran                             43
+Portugal                         37
+Nicaragua                        34
+Peru                             31
+France                           29
+Greece                           29
+Ecuador                          28
+Ireland                          24
+Hong                             20
+Cambodia                         19
+Trinadad&amp;Tobago                  19
+Laos                             18
+Thailand                         18
+Yugoslavia                       16
+Outlying-US(Guam-USVI-etc)       14
+Honduras                         13
+Hungary                          13
+Scotland                         12
+Holand-Netherlands                1
 Name: count, dtype: int64
 income
- &lt;=50K    24720
- &gt;50K      7841
+&lt;=50K    24720
+&gt;50K      7841
 Name: count, dtype: int64
 </pre>
 </div>
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[26]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[7]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>age                  0
 workclass         1836
@@ -4810,7 +4737,7 @@ dtype: int64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [27]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-9">
@@ -4840,7 +4767,7 @@ df.fillna(0)
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[27]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[8]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -5091,7 +5018,7 @@ df.fillna(0)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [30]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-10">
@@ -5116,23 +5043,23 @@ df.fillna(0)
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[30]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[9]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>occupation
- Prof-specialty       4140
- Craft-repair         4099
- Exec-managerial      4066
- Adm-clerical         3770
- Sales                3650
- Other-service        3295
- Machine-op-inspct    2002
- Transport-moving     1597
- Handlers-cleaners    1370
- Farming-fishing       994
- Tech-support          928
- Protective-serv       649
- Priv-house-serv       149
- Armed-Forces            9
+Prof-specialty       4140
+Craft-repair         4099
+Exec-managerial      4066
+Adm-clerical         3770
+Sales                3650
+Other-service        3295
+Machine-op-inspct    2002
+Transport-moving     1597
+Handlers-cleaners    1370
+Farming-fishing       994
+Tech-support          928
+Protective-serv       649
+Priv-house-serv       149
+Armed-Forces            9
 Name: count, dtype: int64</pre>
 </div>
 </div>
@@ -5158,7 +5085,7 @@ Name: count, dtype: int64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [31]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-11">
@@ -5173,19 +5100,19 @@ Name: count, dtype: int64</pre>
 </div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1">## Se necessário, pip install category_encoders</span>
 
-<span class="kn">import</span><span class="w"> </span><span class="nn">category_encoders</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ce</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">OneHotEncoder</span>
 
-<span class="n">encoder</span> <span class="o">=</span> <span class="n">ce</span><span class="o">.</span><span class="n">OneHotEncoder</span><span class="p">(</span><span class="n">cols</span><span class="o">=</span><span class="p">[</span><span class="s2">"----Coloque aqui as colunas categoricas para realizar a transformação----"</span><span class="p">])</span>
+<span class="n">onehot_encoder</span> <span class="o">=</span> <span class="n">OneHotEncoder</span><span class="p">(</span><span class="n">sparse_output</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">cols</span><span class="o">=</span><span class="p">[</span><span class="s2">"----Coloque aqui as colunas categoricas para realizar a transformação----"</span><span class="p">])</span>
 
-<span class="n">df</span> <span class="o">=</span> <span class="n">encoder</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">onehot_encoder</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </pre></div>
 <div class="clipboard-copy-txt" id="cell-11">## Se necessário, pip install category_encoders
 
-import category_encoders as ce
+from sklearn.preprocessing import OneHotEncoder
 
-encoder = ce.OneHotEncoder(cols=["----Coloque aqui as colunas categoricas para realizar a transformação----"])
+onehot_encoder = OneHotEncoder(sparse_output=False, cols=["----Coloque aqui as colunas categoricas para realizar a transformação----"])
 
-df = encoder.fit_transform(df)
+df = onehot_encoder.fit_transform(df)
 
 </div>
 </div>
@@ -5201,26 +5128,26 @@ df = encoder.fit_transform(df)
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
 <pre>
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">ModuleNotFoundError</span>                       Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In[31], line 3</span>
-<span class="ansi-green-intense-fg ansi-bold">      1</span> <span style="color: rgb(95,135,135)">## Se necessário, pip install category_encoders</span>
-<span class="ansi-green-fg">----&gt; 3</span> <span class="ansi-bold" style="color: rgb(0,135,0)">import</span> <span class="ansi-bold" style="color: rgb(0,0,255)">category_encoders</span> <span class="ansi-bold" style="color: rgb(0,135,0)">as</span> <span class="ansi-bold" style="color: rgb(0,0,255)">ce</span>
-<span class="ansi-green-intense-fg ansi-bold">      5</span> encoder <span style="color: rgb(98,98,98)">=</span> ce<span style="color: rgb(98,98,98)">.</span>OneHotEncoder(cols<span style="color: rgb(98,98,98)">=</span>[<span style="color: rgb(175,0,0)">"</span><span style="color: rgb(175,0,0)">----Coloque aqui as colunas categoricas para realizar a transformação----</span><span style="color: rgb(175,0,0)">"</span>])
-<span class="ansi-green-intense-fg ansi-bold">      7</span> df <span style="color: rgb(98,98,98)">=</span> encoder<span style="color: rgb(98,98,98)">.</span>fit_transform(df)
+<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
+<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[11]</span><span class="ansi-green-fg">, line 5</span>
+<span class="ansi-green-fg">      1</span> <span style="color: rgb(95,135,135)">## Se necessário, pip install category_encoders</span>
+<span class="ansi-green-fg">      3</span> <span class="ansi-bold" style="color: rgb(0,135,0)">from</span><span style="color: rgb(188,188,188)"> </span><span class="ansi-blue-intense-fg ansi-bold">sklearn</span><span class="ansi-blue-intense-fg ansi-bold">.</span><span class="ansi-blue-intense-fg ansi-bold">preprocessing</span><span style="color: rgb(188,188,188)"> </span><span class="ansi-bold" style="color: rgb(0,135,0)">import</span> OneHotEncoder
+<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">5</span> onehot_encoder = <span class="ansi-yellow-bg">OneHotEncoder</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">sparse_output</span><span class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg ansi-bold" style="color: rgb(0,135,0)">False</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">cols</span><span class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg">[</span><span class="ansi-yellow-fg ansi-yellow-bg">"</span><span class="ansi-yellow-fg ansi-yellow-bg">----Coloque aqui as colunas categoricas para realizar a transformação----</span><span class="ansi-yellow-fg ansi-yellow-bg">"</span><span class="ansi-yellow-bg">]</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-fg">      7</span> df = onehot_encoder.fit_transform(df)
 
-<span class="ansi-red-fg">ModuleNotFoundError</span>: No module named 'category_encoders'</pre>
+<span class="ansi-red-fg">TypeError</span>: OneHotEncoder.__init__() got an unexpected keyword argument 'cols'</pre>
 </div>
 </div>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-12">
@@ -5236,6 +5163,146 @@ Cell <span class="ansi-green-fg">In[31], line 3</span>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 <div class="clipboard-copy-txt" id="cell-12">df.head()</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[12]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>age</th>
+<th>workclass</th>
+<th>fnlwgt</th>
+<th>education</th>
+<th>education_num</th>
+<th>marital_status</th>
+<th>occupation</th>
+<th>relationship</th>
+<th>race</th>
+<th>sex</th>
+<th>capital_gain</th>
+<th>capital_loss</th>
+<th>hours_per_week</th>
+<th>native_country</th>
+<th>income</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>39</td>
+<td>State-gov</td>
+<td>77516</td>
+<td>Bachelors</td>
+<td>13</td>
+<td>Never-married</td>
+<td>Adm-clerical</td>
+<td>Not-in-family</td>
+<td>White</td>
+<td>Male</td>
+<td>2174</td>
+<td>0</td>
+<td>40</td>
+<td>United-States</td>
+<td>&lt;=50K</td>
+</tr>
+<tr>
+<th>1</th>
+<td>50</td>
+<td>Self-emp-not-inc</td>
+<td>83311</td>
+<td>Bachelors</td>
+<td>13</td>
+<td>Married-civ-spouse</td>
+<td>Exec-managerial</td>
+<td>Husband</td>
+<td>White</td>
+<td>Male</td>
+<td>0</td>
+<td>0</td>
+<td>13</td>
+<td>United-States</td>
+<td>&lt;=50K</td>
+</tr>
+<tr>
+<th>2</th>
+<td>38</td>
+<td>Private</td>
+<td>215646</td>
+<td>HS-grad</td>
+<td>9</td>
+<td>Divorced</td>
+<td>Handlers-cleaners</td>
+<td>Not-in-family</td>
+<td>White</td>
+<td>Male</td>
+<td>0</td>
+<td>0</td>
+<td>40</td>
+<td>United-States</td>
+<td>&lt;=50K</td>
+</tr>
+<tr>
+<th>3</th>
+<td>53</td>
+<td>Private</td>
+<td>234721</td>
+<td>11th</td>
+<td>7</td>
+<td>Married-civ-spouse</td>
+<td>Handlers-cleaners</td>
+<td>Husband</td>
+<td>Black</td>
+<td>Male</td>
+<td>0</td>
+<td>0</td>
+<td>40</td>
+<td>United-States</td>
+<td>&lt;=50K</td>
+</tr>
+<tr>
+<th>4</th>
+<td>28</td>
+<td>Private</td>
+<td>338409</td>
+<td>Bachelors</td>
+<td>13</td>
+<td>Married-civ-spouse</td>
+<td>Prof-specialty</td>
+<td>Wife</td>
+<td>Black</td>
+<td>Female</td>
+<td>0</td>
+<td>0</td>
+<td>40</td>
+<td>Cuba</td>
+<td>&lt;=50K</td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 </div>
 </div>
@@ -5302,7 +5369,7 @@ Variavel dependente: --&gt; y</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-14">
@@ -5367,7 +5434,7 @@ y - &gt; é a nossa variavel de interesse.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-15">
@@ -5406,7 +5473,7 @@ from sklearn.model_selection import train_test_split
 2.Multinomial Naive Bayes
 
 3.Bernoulli Naive Bayes</code></pre>
-<p>São muiiiitttooo utilizados em aplicação com texto e NLP e aplicações como:</p>
+<p>São muiiiitttooo utilizados em aplicações com texto e NLP e aplicações como:</p>
 <pre><code>[X] Filtro de Spam
 [X] Classificação de Texto
 [X] Analise de sentimento
@@ -5415,13 +5482,13 @@ from sklearn.model_selection import train_test_split
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-16">
@@ -5453,14 +5520,36 @@ y_pred</div>
 </div>
 </div>
 </div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[15]</span><span class="ansi-green-fg">, line 5</span>
+<span class="ansi-green-fg">      1</span> <span class="ansi-bold" style="color: rgb(0,135,0)">from</span><span style="color: rgb(188,188,188)"> </span><span class="ansi-blue-intense-fg ansi-bold">sklearn</span><span class="ansi-blue-intense-fg ansi-bold">.</span><span class="ansi-blue-intense-fg ansi-bold">naive_bayes</span><span style="color: rgb(188,188,188)"> </span><span class="ansi-bold" style="color: rgb(0,135,0)">import</span> GaussianNB
+<span class="ansi-green-fg">      3</span> gnb = GaussianNB()
+<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">5</span> gnb.fit(<span class="ansi-yellow-bg">X_train</span>, y_train)
+<span class="ansi-green-fg">      6</span> y_pred = gnb.predict(X_test)
+<span class="ansi-green-fg">      7</span> y_pred
+
+<span class="ansi-red-fg">NameError</span>: name 'X_train' is not defined</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-17">
@@ -5484,14 +5573,33 @@ accuracy_score(y_test, y_pred)</div>
 </div>
 </div>
 </div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[16]</span><span class="ansi-green-fg">, line 3</span>
+<span class="ansi-green-fg">      1</span> <span class="ansi-bold" style="color: rgb(0,135,0)">from</span><span style="color: rgb(188,188,188)"> </span><span class="ansi-blue-intense-fg ansi-bold">sklearn</span><span class="ansi-blue-intense-fg ansi-bold">.</span><span class="ansi-blue-intense-fg ansi-bold">metrics</span><span style="color: rgb(188,188,188)"> </span><span class="ansi-bold" style="color: rgb(0,135,0)">import</span> accuracy_score
+<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">3</span> accuracy_score(<span class="ansi-yellow-bg">y_test</span>, y_pred)
+
+<span class="ansi-red-fg">NameError</span>: name 'y_test' is not defined</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [17]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-18">
@@ -5513,14 +5621,33 @@ y_pred_train</div>
 </div>
 </div>
 </div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[17]</span><span class="ansi-green-fg">, line 1</span>
+<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">1</span> y_pred_train = gnb.predict(<span class="ansi-yellow-bg">X_train</span>)
+<span class="ansi-green-fg">      2</span> y_pred_train
+
+<span class="ansi-red-fg">NameError</span>: name 'X_train' is not defined</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-19">
@@ -5536,6 +5663,24 @@ y_pred_train</div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">y_pred_train</span><span class="p">)</span>
 </pre></div>
 <div class="clipboard-copy-txt" id="cell-19">accuracy_score(y_train, y_pred_train)</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[18]</span><span class="ansi-green-fg">, line 1</span>
+<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">1</span> accuracy_score(<span class="ansi-yellow-bg">y_train</span>, y_pred_train)
+
+<span class="ansi-red-fg">NameError</span>: name 'y_train' is not defined</pre>
 </div>
 </div>
 </div>
@@ -5747,7 +5892,7 @@ function resetFieldset(fieldset) {
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 22, 2024 19:38:06 UTC">August 22, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 11, 2025 20:53:39 UTC">August 11, 2025</span>
   </span>
 
     
