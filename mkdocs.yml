@@ -217,8 +217,9 @@ nav:
       - Dataframe: aulas/IA/lab01/dataframe.ipynb 
       - Pré-processamento: aulas/IA/lab04/dicasDePreprocessamento.ipynb  
     - Aprendizado Supervisionado - Classificação:
-      - lab1: aulas/IA/lab02/ml-classificador.ipynb
-      # - lab2: aulas/IA/lab-04/aula8.ipynb
+      - lab1: aulas/IA/lab02/ml-classificador-iris.ipynb
+      - lab2: aulas/IA/lab02/ml-classificador-digito.ipynb
+      - lab3: aulas/IA/lab-04/aula8.ipynb
     - Aprendizado Supervisionado - Regressão:
       - lab1: aulas/IA/lab03/regressao.ipynb
       - lab2: aulas/IA/lab03/preco-notebook.ipynb      
