@@ -1,53 +1,43 @@
-# Instruções para a instalação da infraestrutura
+# Instruções para Instalação da Infraestrutura
 
-## Arduino IDE (Win/Linux/MAC)
+## 1. Arduino IDE (Windows / Linux / macOS)
 
-* Fazer o download e instalar a ide do arduino pelo site oficial - [https://www.arduino.cc](https://www.arduino.cc)
+1. Acesse o site oficial do Arduino: [https://www.arduino.cc](https://www.arduino.cc)  
+2. Faça o download da versão compatível com o seu sistema operacional.  
+3. Instale a IDE seguindo as instruções fornecidas pelo instalador.
 
+## 2. Simuladores de Arduino 
+ 
+- **Wokwi**: [https://wokwi.com/](https://wokwi.com/) 
+- crie uma conta gratuita.
 
-## Simulador de Arduino online (não vamos usar em aula)
+## 3. Instalação do Python 3.x
 
-* Tinkercad - [https://www.tinkercad.com/](https://www.tinkercad.com/)
+### Windows
+1. Acesse: [https://www.python.org/downloads/](https://www.python.org/downloads/)  
+2. Baixe o instalador da versão 3.x.  
+3. **Importante:** marque a opção `Add Python to PATH` durante a instalação.  
 
-* Wokwi - [https://wokwi.com/](https://wokwi.com/)
+### Linux / macOS
+- O Python 3.x já vem pré-instalado na maioria das distribuições e versões.  
+- Para instalar pacotes, utilize o terminal:  
+  ```bash
+  pip3 install <nome_do_pacote>
+  ```
+### Alternativa – Anaconda
+Se preferir, é possível utilizar o Anaconda para gerenciar ambientes virtuais.
 
-* SimulIDE - [https://www.simulide.com/p/home.html](https://www.simulide.com/p/home.html)
-
-## Instalação Python 3.x
-
-* Windows:
-
-    * Fazer o download do python no site oficial:
-
-    * [https://www.python.org/downloads/](https://www.python.org/downloads/) * selecionar a opção: `adicionar o Python ao PATH`
-
-* Linux/mac:
-    
-    * Só precisa executar “pip3 install pacote” no terminal.
-
-
-* Alternativa: Não é necessário, masssss… quem preferir, pode usar o `anaconda` e criar uma virtual env para instalar a infra
-    
-    * Instalação ANACONDA - [https://www.anaconda.com/download/](https://www.anaconda.com/download/)
-
-
-* Com o Python instalado, abra o terminal/cmd e instale os pacotes abaixo:
-
-        * pip install matplotlib
-        * pip install opencv-python
-        * pip install notebook
-        * pip install pyserial
-        * pip install mediapipe
+1. Instale o Anaconda.
+2. Crie um ambiente virtual e instale os pacotes necessários.
 
 
-## VM - Virtual box (Alternativa)
+## Pacotes Necessários
+Com o Python configurado, abra o terminal (Linux/macOS) ou Prompt de Comando (Windows) e execute:
 
-Tem uma VM (Máquina Virtual) pronta para usar com tudo instalado e configurado, basta instalar o VirtualBox e os extension pack:
+```python
+pip install opencv-python 
+pip install matplotlib pandas numpy
+pip install notebook
+pip install scikit-learn tensorflow
+```
 
-
-* [https://www.virtualbox.org/wiki/Downloads](https://www.virtualbox.org/wiki/Downloads) - são 2 arquivos para fazer o download.
-* Fazer o download do arquivo iot.ova que está no google drive [***`Clique aqui para fazer o download`***](https://drive.google.com/drive/folders/1HrtLCNFSyUQ0nkCwthz7dv5RqcHx7h4t?usp=sharing)
-
-* Usuário: iot
-* Senha: iot
-* `sugestão:` rodar com pelo menos 2 CPU’s e 4G de Ram

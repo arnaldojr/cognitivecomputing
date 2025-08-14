@@ -12,7 +12,7 @@ Você já se perguntou como a Netflix sempre sabe qual filme você vai querer as
 A **Ciência de Dados** é um campo interdisciplinar que utiliza métodos científicos, processos, algoritmos e sistemas para `extrair conhecimento` e insights valiosos de dados estruturados e não estruturados. É evolução natural da estatística tradicional, só que com programação, matemática e conhecimento específico para resolver problemas complexos do mundo real.
 
 !!! tip
-   "Ciência de Dados é o campo que combina estatística, análise de dados, machine learning e métodos relacionados para entender e analisar fenômenos reais através de dados." https://dl.acm.org/doi/pdf/10.1145/2500499 *Dhar, 2013*
+      "Ciência de Dados é o campo que combina estatística, análise de dados, machine learning e métodos relacionados para entender e analisar fenômenos reais através de dados." https://dl.acm.org/doi/pdf/10.1145/2500499 *Dhar, 2013*
 
 ### Componentes Fundamentais da Ciência de Dados
 
@@ -25,7 +25,7 @@ A Ciência de Dados pode ser compreendida como a convergência de três conjunto
 3. **Expertise de Domínio** Compreensão aprofundada do contexto específico em que o problema está inserido, permitindo a formulação de hipóteses realistas, a correta interpretação dos resultados e a tomada de decisões embasadas.
 
 !!! tip
-   **Dica importante**: Embora não seja necessário dominar todas as áreas desde o início, a atuação consistente em Ciência de Dados requer o desenvolvimento progressivo e equilibrado dessas competências, com aprofundamento gradual de acordo com o foco profissional ou acadêmico.
+      **Dica importante**: Embora não seja necessário dominar todas as áreas desde o início, a atuação consistente em Ciência de Dados requer o desenvolvimento progressivo e equilibrado dessas competências, com aprofundamento gradual de acordo com o foco profissional ou acadêmico.
 
 <?quiz?>
 question: Por que a Ciência de Dados precisa dos três componentes (programação, matemática e conhecimento de domínio)?
