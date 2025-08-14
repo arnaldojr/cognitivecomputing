@@ -3,305 +3,56 @@
 Faça o download do pdf de Introdução.
 > - arquivo pdf: [Introdução](slides.pdf)
 
+![alt text](image.png)
+
 ## O que é Ciência de Dados?
 
-A **Ciência de Dados** é um campo interdisciplinar que utiliza métodos científicos, processos, algoritmos e sistemas para extrair conhecimento e insights de dados estruturados e não estruturados. É uma evolução natural da estatística tradicional, combinando programação, matemática, estatística e conhecimento de domínio para resolver problemas complexos do mundo real.
+Você já se perguntou como a Netflix sempre sabe qual filme você vai querer assistir? Ou como o seu banco detecta uma compra suspeita no seu cartão em segundos? A resposta está na **Ciência de Dados**!
 
-### Definição Formal
+A **Ciência de Dados** é um campo interdisciplinar que utiliza métodos científicos, processos, algoritmos e sistemas para `extrair conhecimento` e insights valiosos de dados estruturados e não estruturados. É evolução natural da estatística tradicional, só que com programação, matemática e conhecimento específico para resolver problemas complexos do mundo real.
 
-> "Ciência de Dados é o campo que combina estatística, análise de dados, machine learning e métodos relacionados para entender e analisar fenômenos reais através de dados." - *Dhar, 2013*
+!!! tip
+   "Ciência de Dados é o campo que combina estatística, análise de dados, machine learning e métodos relacionados para entender e analisar fenômenos reais através de dados." https://dl.acm.org/doi/pdf/10.1145/2500499 *Dhar, 2013*
 
 ### Componentes Fundamentais da Ciência de Dados
 
-A Ciência de Dados pode ser visualizada como a interseção de três áreas principais:
+A Ciência de Dados pode ser compreendida como a convergência de três conjuntos de competências essenciais, cuja integração é indispensável para a prática profissional eficaz:
 
-1. **Habilidades de Programação**: Capacidade de manipular, processar e analisar grandes volumes de dados
-2. **Conhecimento Matemático e Estatístico**: Compreensão de algoritmos, probabilidade, estatística inferencial e descritiva
-3. **Expertise de Domínio**: Conhecimento específico da área de aplicação do problema
+![data-science](image-5.png)
 
-![Diagrama de Venn da Ciência de Dados - Interseção entre Programação, Matemática/Estatística e Conhecimento de Domínio]
+1. **Habilidades de Programação** Competência para manipulação, processamento e análise de dados por meio de linguagens e ferramentas computacionais, possibilitando a implementação de algoritmos e a automação de tarefas analíticas.
+2. **Conhecimento Matemático e Estatístico** Fundamentação teórica para modelagem, inferência e interpretação de dados, abrangendo conceitos como probabilidade, estatística descritiva e inferencial, álgebra linear e análise de algoritmos.
+3. **Expertise de Domínio** Compreensão aprofundada do contexto específico em que o problema está inserido, permitindo a formulação de hipóteses realistas, a correta interpretação dos resultados e a tomada de decisões embasadas.
+
+!!! tip
+   **Dica importante**: Embora não seja necessário dominar todas as áreas desde o início, a atuação consistente em Ciência de Dados requer o desenvolvimento progressivo e equilibrado dessas competências, com aprofundamento gradual de acordo com o foco profissional ou acadêmico.
+
+<?quiz?>
+question: Por que a Ciência de Dados precisa dos três componentes (programação, matemática e conhecimento de domínio)?
+answer: Para impressionar os chefes com termos técnicos
+answer-correct: Porque cada um resolve uma parte específica do problema de forma complementar
+answer: Porque assim o salário fica mais alto
+answer: Na verdade, só a programação é importante
+content:
+
+Exato! Programação te dá as ferramentas, matemática/estatística te dá os métodos corretos, e conhecimento de domínio garante que você está resolvendo o problema certo da forma certa. É como um tripé - tire uma perna e tudo desaba!
+<?/quiz?>
 
 ## História e Evolução da Ciência de Dados
 
+
+A Ciência de Dados é resultado de um processo evolutivo que integra estatística, ciência da computação e conhecimento de domínio, impulsionado por avanços tecnológicos e pela crescente disponibilidade de dados em larga escala.
+
 ### Marcos Históricos
 
-- **1962**: John Tukey propõe uma "ciência dos dados" em seu artigo "The Future of Data Analysis"
-- **1970s-1980s**: Desenvolvimento de sistemas de banco de dados relacionais
-- **1990s**: Surgimento do termo "Data Mining" e desenvolvimento de algoritmos de machine learning
-- **2001**: William S. Cleveland propõe um plano de ação para expandir o campo da estatística
-- **2008**: DJ Patil e Jeff Hammerbacher cunham o termo "Data Scientist" no LinkedIn e Facebook
-- **2010s**: Era do Big Data - explosão de dados digitais e desenvolvimento de tecnologias distribuídas
-- **2020s**: Democratização da IA e MLOps (Machine Learning Operations)
+- **1962**: O estatístico John W. Tukey, em seu artigo "The Future of Data Analysis", propôs uma abordagem mais abrangente para a análise de dados, antecipando a integração entre estatística e métodos computacionais. Embora não tenha utilizado diretamente o termo Data Science, sua visão foi precursora.
 
-## Tipos de Dados em Ciência de Dados
-
-### 1. Dados Estruturados
-Dados organizados em formato tabular com linhas e colunas bem definidas.
-
-**Exemplos:**
-- Planilhas Excel
-- Bancos de dados relacionais (SQL)
-- Arquivos CSV
-- Dados de sensores IoT com schema fixo
-
-### 2. Dados Semi-estruturados
-Dados que não seguem um formato rígido de tabela, mas possuem alguma organização.
-
-**Exemplos:**
-- JSON (JavaScript Object Notation)
-- XML (eXtensible Markup Language)
-- Logs de sistemas
-- Emails com metadados
-
-### 3. Dados Não-estruturados
-Dados sem organização predefinida que requerem processamento especial.
-
-**Exemplos:**
-- Textos livres (artigos, posts em redes sociais)
-- Imagens e vídeos
-- Áudios e podcasts
-- Documentos PDF
-
-## O Papel do Cientista de Dados
-
-### Responsabilidades Principais
-
-1. **Coleta e Preparação de Dados**
-   - Identificar fontes de dados relevantes
-   - Extrair, transformar e carregar dados (ETL)
-   - Garantir qualidade e integridade dos dados
-
-2. **Análise Exploratória**
-   - Compreender padrões e tendências nos dados
-   - Identificar anomalias e outliers
-   - Formular hipóteses baseadas em evidências
-
-3. **Modelagem e Machine Learning**
-   - Selecionar algoritmos apropriados
-   - Treinar e validar modelos preditivos
-   - Otimizar performance dos modelos
-
-4. **Comunicação de Resultados**
-   - Criar visualizações impactantes
-   - Traduzir insights técnicos para linguagem de negócio
-   - Apresentar recomendações acionáveis
-
-### Habilidades Técnicas Essenciais
-
-#### Programação
-- **Python**: Pandas, NumPy, Scikit-learn, TensorFlow/PyTorch
-- **R**: Para análise estatística avançada
-- **SQL**: Para manipulação de dados em bancos relacionais
-- **Git**: Controle de versão e colaboração
-
-#### Matemática e Estatística
-- Álgebra linear e cálculo
-- Probabilidade e estatística inferencial
-- Métodos de otimização
-- Teoria da informação
-
-#### Ferramentas de Visualização
-- Matplotlib, Seaborn, Plotly (Python)
-- Tableau, Power BI
-- D3.js para visualizações web interativas
-
-## Aplicações da Ciência de Dados
-
-### Indústria Financeira
-- **Detecção de Fraudes**: Algoritmos de machine learning para identificar transações suspeitas
-- **Credit Scoring**: Modelos preditivos para avaliar risco de crédito
-- **Trading Algorítmico**: Sistemas automatizados de negociação baseados em dados
-
-### Saúde e Medicina
-- **Diagnóstico por Imagem**: CNNs para detectar doenças em radiografias e ressonâncias
-- **Descoberta de Medicamentos**: Análise de dados moleculares para desenvolvimento de novos fármacos
-- **Epidemiologia**: Modelagem de spread de doenças e pandemias
-
-### E-commerce e Marketing
-- **Sistemas de Recomendação**: Como Netflix, Amazon e Spotify
-- **Segmentação de Clientes**: Clustering para personalização de campanhas
-- **Otimização de Preços**: Análise de elasticidade de demanda
-
-### Cidades Inteligentes
-- **Gestão de Tráfego**: Otimização de semáforos baseada em dados de sensores
-- **Eficiência Energética**: Previsão de demanda e otimização de distribuição
-- **Segurança Pública**: Análise preditiva para alocação de recursos policiais
-
-## Introdução ao CRISP-DM
-
-Vamos começar essa etapa do nosso curso com o ciclo de vida de dados em projetos de ciência de dados. Com foco especial no CRISP-DM (Cross-Industry Standard Process for Data Mining).
-
-## Ciclo de Vida de Dados em Projetos de Ciência de Dados
-
-![](CRISP-DM_Process_Diagram.png)
-
-### 1. Entendimento do Negócio
-O primeiro passo em qualquer projeto de ciência de dados é entender o problema de negócio. É fundamental definir claramente os objetivos do projeto e como os resultados serão utilizados pela organização. Isso geralmente envolve reuniões com stakeholders, levantamento de requisitos e definição de KPIs (Key Performance Indicators) que ajudarão a medir o sucesso do projeto.
-
-#### Perguntas-Chave desta Fase
-- Qual é o problema de negócio que estamos tentando resolver?
-- Como o sucesso será medido?
-- Quais são as restrições de tempo, orçamento e recursos?
-- Como os resultados serão implementados?
-
-#### Ferramentas e Técnicas
-- **Entrevistas e Workshops**: Para coletar informações dos stakeholders e especialistas
-- **Mapas Mentais**: Para visualizar o problema e suas possíveis soluções
-- **5W2H**: Framework para definir escopo (What, Why, Who, When, Where, How, How much)
-
-### 2. Entendimento dos Dados
-Após definir o problema de negócio, é necessário coletar dados relevantes. Esta etapa inclui a coleta, descrição, exploração e verificação da qualidade dos dados disponíveis. O entendimento dos dados ajuda a identificar quais dados são necessários e como eles podem ser usados para resolver o problema.
-
-#### Atividades Principais
-- **Coleta Inicial**: Reunir todos os dados disponíveis
-- **Descrição dos Dados**: Documentar estrutura, formato e significado
-- **Exploração**: Análise estatística descritiva inicial
-- **Verificação de Qualidade**: Identificar problemas nos dados
-
-#### Ferramentas e Técnicas
-- **SQL e NoSQL**: Para coleta de dados de bases de dados estruturadas e não estruturadas
-- **Exploração de Dados**: Usando ferramentas como pandas, matplotlib e seaborn para análise exploratória dos dados (EDA)
-- **Análise de Qualidade dos Dados**: Verificação de inconsistências, valores ausentes e outliers
-- **Profiling de Dados**: Ferramentas automatizadas para gerar relatórios de qualidade
-
-### 3. Preparação dos Dados
-A preparação dos dados é uma das etapas mais críticas e trabalhosas. Envolve a limpeza, transformação e formatação dos dados para torná-los adequados para modelagem. Esta etapa pode incluir a imputação de valores ausentes, normalização, codificação de variáveis categóricas e seleção de features.
-
-#### Atividades Detalhadas
-- **Limpeza**: Remoção de duplicatas, correção de inconsistências
-- **Integração**: Combinação de dados de múltiplas fontes
-- **Transformação**: Normalização, padronização, discretização
-- **Redução**: Seleção de features e redução de dimensionalidade
-- **Construção**: Feature engineering e criação de variáveis derivadas
-
-#### Ferramentas e Técnicas
-- **Pandas e NumPy**: Para manipulação e transformação de dados
-- **Scikit-learn**: Para técnicas de pré-processamento como normalização, padronização e codificação de variáveis
-- **Feature Engineering**: Criação de novas features a partir dos dados existentes para melhorar a performance dos modelos
-- **Pipelines**: Automatização do processo de preparação de dados
-
-### 4. Modelagem
-Nesta etapa, diferentes técnicas de modelagem são aplicadas aos dados preparados. A escolha do modelo depende da natureza do problema e dos dados.
-
-#### Tipos de Problemas e Técnicas
-
-**Problemas Supervisionados:**
-- **Classificação**: Prever categorias discretas
-  - Árvores de Decisão, Random Forest, SVM, Redes Neurais
-- **Regressão**: Prever valores contínuos
-  - Regressão Linear/Polinomial, Ridge, Lasso, XGBoost
-
-**Problemas Não-Supervisionados:**
-- **Clustering**: Agrupar dados similares
-  - K-Means, Hierarchical Clustering, DBSCAN
-- **Redução de Dimensionalidade**: Simplificar dados complexos
-  - PCA, t-SNE, UMAP
-
-**Problemas de Reinforcement Learning:**
-- **Aprendizado por Reforço**: Aprender através de tentativa e erro
-  - Q-Learning, Policy Gradient, Actor-Critic
-
-#### Ferramentas e Técnicas
-- **Scikit-learn**: Para algoritmos de machine learning tradicionais
-- **TensorFlow e Keras**: Para construção e treinamento de redes neurais profundas
-- **PyTorch**: Framework flexível para deep learning
-- **Cross-validation**: Para avaliação e validação de modelos
-- **Grid Search e Random Search**: Para otimização de hiperparâmetros
-
-### 5. Avaliação
-A avaliação do modelo é crucial para garantir que ele atenda aos objetivos do negócio. Esta fase vai além das métricas técnicas, considerando também o impacto nos negócios.
-
-#### Métricas de Avaliação por Tipo de Problema
-
-**Classificação:**
-- Accuracy, Precision, Recall, F1-Score
-- AUC-ROC, AUC-PR
-- Confusion Matrix
-
-**Regressão:**
-- RMSE (Root Mean Square Error)
-- MAE (Mean Absolute Error)
-- R² (Coeficiente de Determinação)
-
-**Clustering:**
-- Silhouette Score
-- Calinski-Harabasz Index
-- Davies-Bouldin Index
-
-#### Ferramentas e Técnicas
-- **Métricas de Avaliação**: Como precisão, recall, F1-score, AUC-ROC para classificação; RMSE, MAE para regressão
-- **Confusion Matrix**: Para análise detalhada de modelos de classificação
-- **ROC Curves e Precision-Recall Curves**: Para avaliação de modelos binários
-- **A/B Testing**: Para validação em ambiente real
-- **Análise de Bias**: Verificação de vieses nos modelos
-
-### 6. Implantação
-Uma vez que o modelo é avaliado e aprovado, ele é implantado no ambiente de produção. Esta etapa envolve a integração do modelo nos sistemas existentes e a configuração de monitoramento e manutenção contínua.
-
-#### Estratégias de Deploy
-- **Batch Processing**: Processamento em lotes programados
-- **Real-time APIs**: Serviços web para predições instantâneas
-- **Edge Computing**: Modelos executados em dispositivos locais
-- **Streaming**: Processamento contínuo de dados em tempo real
-
-#### Ferramentas e Técnicas
-- **Flask e FastAPI**: Para servir modelos como APIs web
-- **Docker e Kubernetes**: Para containerização e orquestração de serviços
-- **MLflow**: Para tracking de experimentos e versionamento de modelos
-- **Monitoramento**: Usando ferramentas como Prometheus e Grafana para monitorar a performance do modelo em produção
-- **CI/CD**: Integração e deploy contínuo para modelos de ML
-
-## Ética em Ciência de Dados
-
-### Principais Desafios Éticos
-
-1. **Privacidade de Dados**
-   - LGPD (Lei Geral de Proteção de Dados)
-   - GDPR (General Data Protection Regulation)
-   - Anonimização e pseudonimização
-
-2. **Bias e Fairness**
-   - Vieses algorítmicos
-   - Discriminação automatizada
-   - Fairness metrics
-
-3. **Transparência e Explicabilidade**
-   - Modelos interpretáveis vs. black box
-   - XAI (Explainable AI)
-   - Right to explanation
-
-4. **Responsabilidade e Accountability**
-   - Responsabilidade pelos resultados dos modelos
-   - Auditoria de algoritmos
-   - Governança de dados
-
-## CRISP-DM: Cross-Industry Standard Process for Data Mining
-
-CRISP-DM é uma metodologia amplamente utilizada em ciência de dados que fornece um processo estruturado para a condução de projetos de data mining. Ele consiste em seis fases principais:
-
-1. **Entendimento do Negócio**: Compreender os objetivos e requisitos do negócio
-2. **Entendimento dos Dados**: Coletar, descrever e explorar os dados iniciais
-3. **Preparação dos Dados**: Selecionar, limpar e transformar dados para modelagem
-4. **Modelagem**: Selecionar e aplicar técnicas de modelagem apropriadas
-5. **Avaliação**: Avaliar a qualidade e eficácia dos modelos
-6. **Implantação**: Implementar o modelo no ambiente de produção
-
-### Vantagens do CRISP-DM
-- **Flexibilidade**: Pode ser aplicado a uma ampla gama de indústrias e problemas
-- **Estruturado**: Fornece uma abordagem sistemática para projetos de data mining
-- **Iterativo**: Permite revisões e melhorias contínuas em cada fase
-- **Agnóstico a Ferramentas**: Não depende de tecnologias específicas
-- **Orientado a Negócio**: Mantém foco nos objetivos empresariais
-
-### Alternativas ao CRISP-DM
-- **KDD (Knowledge Discovery in Databases)**
-- **SEMMA (Sample, Explore, Modify, Model, Assess)**
-- **TDSP (Team Data Science Process) da Microsoft**
-- **MLOps (Machine Learning Operations)**
-
-## Questões de Avaliação
-
-### Questões Conceituais
+- **1970s-1980s**: A criação do modelo relacional por Edgar F. Codd (1970) e a popularização dos sistemas de gerenciamento de bancos de dados relacionais (SGBDR) transformaram a forma de armazenar e consultar dados.
+- **1990s**: O termo Data Mining ganhou destaque, descrevendo técnicas para extração de padrões de grandes conjuntos de dados. Paralelamente, algoritmos de aprendizado de máquina, como árvores de decisão, redes neurais artificiais e métodos de vizinhança, começaram a ser aplicados de forma mais ampla (essas técnicas já existiam antes) em cenários comerciais.
+- **2001**: William S. Cleveland em seu trabalho "Data Science: An Action Plan for Expanding the Technical Areas of the Field of Statistics", propôs ampliar o escopo da estatística para incluir computação, visualização de dados e aplicações multidisciplinares, formalizando parte da base conceitual da Ciência de Dados.
+- **2008**: DJ Patil (LinkedIn) e Jeff Hammerbacher (Facebook) são frequentemente creditados por popularizar o termo Data Scientist para descrever um profissional com competências em programação, estatística e entendimento de negócios.
+- **2010s**: Explosão do Big Data! Com o crescimento exponencial da geração de dados, tecnologias como Hadoop e Spark possibilitaram o processamento distribuído em larga escala. A quantidade de dados gerada globalmente passou a crescer de forma acelerada, superando rapidamente a capacidade de armazenamento e processamento tradicionais.
+- **2020s**: Democratização da IA e MLOps com ferramentas de inteligência artificial de código aberto e serviços baseados em nuvem tornaram o acesso à IA mais acessível. O MLOps consolidou-se como disciplina para integrar modelos de machine learning ao ciclo de desenvolvimento e operação de sistemas.
 
 <?quiz?>
 question: O que diferencia a Ciência de Dados da Estatística tradicional?
@@ -314,16 +65,45 @@ content:
 A Ciência de Dados é interdisciplinar, combinando estatística com programação e conhecimento específico do domínio para extrair insights de grandes volumes de dados estruturados e não estruturados.
 <?/quiz?>
 
-<?quiz?>
-question: Qual é a primeira fase do CRISP-DM e por que ela é crucial?
-answer: Preparação dos Dados - porque dados limpos são essenciais
-answer-correct: Entendimento do Negócio - porque define objetivos e critérios de sucesso
-answer: Modelagem - porque é onde a IA acontece
-answer: Coleta de Dados - porque precisamos de dados para começar
-content:
+## Tipos de Dados em Ciência de Dados
 
-O entendimento do negócio é fundamental porque estabelece o que realmente precisa ser resolvido, como o sucesso será medido e garante que o projeto esteja alinhado com os objetivos organizacionais.
-<?/quiz?>
+Nem todo dado é igual! Cada tipo tem suas características e requer técnicas específicas de preparação. Vamos conhecer os três principais:
+
+### 1. Dados Estruturados
+São os "certinhos" da turma! Organizados em formato tabular com linhas e colunas bem definidas, como uma planilha Excel bem organizada.
+
+**Exemplos práticos:**
+- Planilhas Excel (vendas mensais, cadastro de clientes)
+- Bancos de dados relacionais (SQL) - como o sistema de uma loja online
+- Arquivos CSV - formato universal de troca de dados
+- Dados de sensores IoT com schema fixo (temperatura, umidade, pressão)
+
+**Vantagem**: Fáceis de analisar e processar
+**Desvantagem**: Representam apenas uma pequena parte dos dados do mundo real (cerca de 20%)
+
+### 2. Dados Semi-estruturados
+Os "meio organizados"! Não seguem um formato rígido de tabela, mas possuem alguma organização que podemos aproveitar.
+
+**Exemplos práticos:**
+- JSON (JavaScript Object Notation) - usado em APIs web
+- XML (eXtensible Markup Language) - comum em sistemas antigos
+- Logs de sistemas - rastros digitais de aplicações
+- Emails com metadados (remetente, data, assunto)
+
+**Vantagem**: Mais flexíveis que dados estruturados
+**Desvantagem**: Precisam de algum processamento antes da análise
+
+### 3. Dados Não-estruturados
+Os "brabosssss"! Sem organização predefinida que requerem técnicas especiais de processamento. São a maioria absoluta dos dados no mundo digital!
+
+**Exemplos práticos:**
+- Textos livres (artigos, posts no Twitter, reviews de produtos)
+- Imagens e vídeos (fotos do Instagram, vídeos do YouTube)
+- Áudios e podcasts (gravações de call center, música)
+- Documentos PDF (contratos, relatórios, livros)
+
+**Vantagem**: Contêm informações riquíssimas e insights únicos
+**Desvantagem**: Requerem técnicas avançadas (NLP, Computer Vision) para análise
 
 <?quiz?>
 question: Qual tipo de dados requer maior processamento para análise?
@@ -335,89 +115,3 @@ content:
 
 Dados não-estruturados como textos, imagens e áudios requerem técnicas especiais de processamento (NLP, Computer Vision, etc.) antes de poderem ser analisados, ao contrário de dados estruturados que já estão em formato tabular.
 <?/quiz?>
-
-### Questões Aplicadas
-
-<?quiz?>
-question: Uma empresa de e-commerce quer implementar um sistema de recomendação de produtos. Ordene as fases do CRISP-DM que seriam seguidas.
-answer-correct: Entendimento do Negócio → Entendimento dos Dados → Preparação dos Dados → Modelagem → Avaliação → Implantação
-answer: Preparação dos Dados → Modelagem → Entendimento do Negócio → Avaliação → Entendimento dos Dados → Implantação
-answer: Modelagem → Entendimento do Negócio → Preparação dos Dados → Avaliação → Implantação → Entendimento dos Dados
-answer: Entendimento dos Dados → Modelagem → Preparação dos Dados → Avaliação → Entendimento do Negócio → Implantação
-content:
-
-**Ordem correta:**
-1. Entendimento do Negócio: Definir métricas de sucesso (CTR, conversão)  
-2. Entendimento dos Dados: Analisar padrões de comportamento dos usuários  
-3. Preparação dos Dados: Limpar dados de navegação e compras  
-4. Modelagem: Treinar modelos de collaborative filtering  
-5. Avaliação: Validar precisão das recomendações  
-6. Implantação: Implementar API de recomendações  
-<?/quiz?>
-
-
-<details>
-<summary><strong>Quais são os principais desafios éticos que um cientista de dados deve considerar ao desenvolver um modelo de credit scoring?</strong></summary>
-
-<br>
-
-**Principais desafios éticos:**
-
-- **Bias e Discriminação**: Evitar discriminação baseada em gênero, raça, idade ou outras características protegidas  
-- **Transparência**: Capacidade de explicar como as decisões de crédito são tomadas  
-- **Privacidade**: Proteção dos dados pessoais dos clientes  
-- **Fairness**: Garantir que o modelo seja justo para diferentes grupos demográficos  
-- **Responsabilidade**: Estabelecer responsabilidade pelas decisões automatizadas  
-- **Conformidade Legal**: Aderência a regulamentações como LGPD e normas bancárias  
-
-</details>
-
-
-
-### Questões de Reflexão
-
-<details>
-<summary><strong>Explique como a preparação de dados pode impactar significativamente os resultados de um projeto de machine learning. Dê exemplos práticos.</strong></summary>
-
-<br>
-
-**A preparação de dados é crucial porque:**
-
-> **Qualidade dos dados → Qualidade do modelo**
-
-**Exemplos de impacto:**
-
-- **Outliers não tratados**: Podem distorcer modelos de regressão  
-- **Dados faltantes**: Podem criar viés se não tratados adequadamente  
-- **Escalas diferentes**: Variáveis não normalizadas podem dominar outras em algoritmos como KNN  
-- **Vazamento de dados**: Features que não estarão disponíveis na produção podem inflar artificialmente a performance  
-- **Dados desbalanceados**: Podem resultar em modelos enviesados para a classe majoritária  
-
-> **Princípio**: *"Garbage in, garbage out"* – dados de baixa qualidade resultam em modelos de baixa qualidade.
-
-</details>
-
-
-
-<details>
-<summary><strong>Compare e contraste três tipos de aprendizado de máquina (supervisionado, não-supervisionado e por reforço), fornecendo um exemplo de aplicação para cada um.</strong></summary>
-
-<br>
-
-**Comparação dos tipos de aprendizado:**
-
-| Aspecto       | Supervisionado                        | Não-supervisionado                | Por Reforço                           |
-|---------------|----------------------------------------|-----------------------------------|----------------------------------------|
-| **Dados**     | Rótulos/targets conhecidos             | Sem rótulos                       | Feedback de recompensas                |
-| **Objetivo**  | Prever outputs                         | Descobrir padrões                 | Maximizar recompensas                  |
-| **Exemplos**  | Classificação de e-mails (spam/não)    | Segmentação de clientes           | Jogos (AlphaGo)                        |
-| **Avaliação** | Métricas de performance                | Métricas de qualidade de cluster  | Recompensa cumulativa                  |
-
-**Aplicações práticas:**
-
-- **Supervisionado**: Diagnóstico médico baseado em sintomas  
-- **Não-supervisionado**: Detecção de anomalias em transações bancárias  
-- **Por Reforço**: Otimização de rotas de entrega em tempo real  
-
-</details>
-

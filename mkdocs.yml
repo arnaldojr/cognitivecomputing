@@ -5,10 +5,10 @@ site_author: Arnaldo Viana
 extra:
     materia: cognitivecomputing
     professor: Arnaldo Viana
-    ano: 2024
+    ano: 2025
 
 theme:
-  name: material #active-handout
+  name: material
   feature:
     - content.code.copy
     - content.code.annotate 
@@ -50,25 +50,11 @@ repo_url: https://github.com/arnaldojr/cognitivecomputing/
 repo_name: "cognitivecomputing"
 site_url: https://arnaldojr.github.io/cognitivecomputing/
 
-# Extensions / plugins
-
-
 extra_javascript:
   - https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.0.0/js-yaml.min.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
   - https://cdn.jsdelivr.net/gh/insper-education/active-handout-plugins-js@main/package/plugin-bundle.js
-
-# extra:
-#   ihandout_config:
-#    counter:
-#      - question
-#      - tip
-#      - exercise
-#      - example
-    # report:
-    #   api-base: https://devlife.insper-comp.com.br/api/offerings/1/
-    #   url: https://devlife.insper-comp.com.br/api/offerings/1/exercises/
 
 
 # Extensions / plugins
@@ -82,7 +68,7 @@ plugins:
 
 extra_css:
   - css/termynal.css
-# - https://cdn.jsdelivr.net/gh/insper-education/active-handout-css@main/devlife.css
+
 
 
 markdown_extensions:
@@ -211,7 +197,9 @@ nav:
         - Lab02 : aulas/iot/lab9/index.md
         - Lab03 : aulas/iot/lab10/index.md
 
-  - IA: aulas/IA/intro/index.md
+  - Ciência de Dados:
+    - Introdução: aulas/IA/intro/index.md
+    - Descoberta do Conhecimento: aulas/IA/intro/index2.md
   - Machine Learning:
     - Manipulação de Dados:
       - Dataframe: aulas/IA/lab01/dataframe.ipynb 
