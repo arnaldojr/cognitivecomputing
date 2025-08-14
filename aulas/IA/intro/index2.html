@@ -1,0 +1,4170 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Arnaldo Viana">
+      
+      
+        <link rel="canonical" href="https://arnaldojr.github.io/cognitivecomputing/aulas/IA/intro/index2.html">
+      
+      
+        <link rel="prev" href="index.html">
+      
+      
+        <link rel="next" href="../lab01/dataframe.html">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
+    
+    
+      
+        <title>Descoberta do Conhecimento - cognitivecomputing</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/termynal.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#descoberta-do-conhecimento" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../index.html" title="cognitivecomputing" class="md-header__button md-logo" aria-label="cognitivecomputing" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            cognitivecomputing
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Descoberta do Conhecimento
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/arnaldojr/cognitivecomputing/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    cognitivecomputing
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../index.html" title="cognitivecomputing" class="md-nav__button md-logo" aria-label="cognitivecomputing" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    cognitivecomputing
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/arnaldojr/cognitivecomputing/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    cognitivecomputing
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../instalacao/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Instalação
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../agenda/agenda.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agenda
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    CheckPoint
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            CheckPoint
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../checkpoint/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Orientações gerais
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    1º Semestre
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            1º Semestre
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Processamento Digital de Imagens
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            Processamento Digital de Imagens
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/solucoes/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Soluções PDI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/intro/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introdução
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/lab01/IntroPID.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab01 - Intro PID
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/lab02/atividade2.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab02 - Seguimentação por pixel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/lab03/atividade3.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab03 - Histograma e equalização
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/lab04/Filtros_de_Convolu%C3%A7%C3%A3o.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab04 - Filtros de Convolução
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/lab05/Espa%C3%A7o-cor-contorno.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab05 - Espaço de cor e contorno
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/lab06/Transformada-Hough-morfologia.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab06 - Transformada de Hough e morfologia
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/lab07/Aula09/motion.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab07 - Traking de objetos e movimento
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/lab08/Aula4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab08 - Relacionamento e operações entre imagens
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/lab09/aula.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab09 - FFT
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/lab10/medidas.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab10 - Medidas aproximadas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/lab11/watershed.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab11 - Transformada de watershed
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/lab12/Template_matching.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Template Matching com OpenCV
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/lab13/Features.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab13 - Features
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/lab14/haarCascade.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab14 - Detector haar Cascade
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/lab15/EventMouse.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab15 - Event Mouse
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/lab16/dlib2.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab16 - Detector dlib
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/lab17/mediapipe.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab17 - Mediapipe
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PDI/lab18/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab18 - Yolo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    IoT
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            IoT
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2_1" id="__nav_5_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    IoT e Sistemas Embarcados
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            IoT e Sistemas Embarcados
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../iot/intro/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introdução
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../iot/intro/dicas.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Eletrônica básica
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../iot/intro/introarduino.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sistemas Embarcados
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_1_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2_1_4" id="__nav_5_2_1_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Linguagem C/C++ para Arduino
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_5_2_1_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_1_4">
+            <span class="md-nav__icon md-icon"></span>
+            Linguagem C/C++ para Arduino
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../iot/modulos/modulo1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Módulo 1 - Introdução
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../iot/modulos/modulo2.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Módulo 2 - Operadores
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../iot/modulos/modulo3.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Módulo 3 - Estruturas de Controle
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../iot/modulos/modulo4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Módulo 4 - Funções
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../iot/modulos/modulo5.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Módulo 5 - Arrays
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../iot/modulos/modulo6.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Módulo 6 - Strings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../iot/modulos/modulo7.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Módulo 7 - Ponteiros
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../iot/modulos/modulo8.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Módulo 8 - Structs e Classes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../iot/modulos/modulo9.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Módulo 9 - Interrupções e Timers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../iot/modulos/modulo10.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Módulo 10 - Comunicação Serial
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../iot/modulos/modulo12.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Módulo 11 - Sensores e Aquisição de Dados
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../iot/modulos/modulo17.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Módulo 12 - Gestão de Energia
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2_2" id="__nav_5_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Básico
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Básico
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../iot/intro/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introdução
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../iot/intro/dicas.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Eletrônica básica
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../iot/intro/introarduino.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sistemas Embarcados
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2_2_4" id="__nav_5_2_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Linguagem C/C++ para Arduino
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_5_2_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Linguagem C/C++ para Arduino
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../iot/modulos/modulo1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Módulo 1 - Introdução
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../iot/modulos/modulo2.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Módulo 2 - Operadores
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../iot/modulos/modulo3.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Módulo 3 - Estruturas de Controle
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../iot/modulos/modulo4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Módulo 4 - Funções
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../iot/modulos/modulo5.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Módulo 5 - Arrays
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../iot/modulos/modulo6.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Módulo 6 - Strings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../iot/modulos/modulo7.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Módulo 7 - Ponteiros
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../iot/modulos/modulo8.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Módulo 8 - Structs e Classes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../iot/modulos/modulo9.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Módulo 9 - Interrupções e Timers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../iot/modulos/modulo10.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Módulo 10 - Comunicação Serial
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../iot/modulos/modulo12.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Módulo 11 - Sensores e Aquisição de Dados
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../iot/modulos/modulo17.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Módulo 12 - Gestão de Energia
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2_3" id="__nav_5_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Arduino
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Arduino
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../iot/ex0/solucao.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Solução From Zero to Hero!
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../iot/lab1/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab01 - Led
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../iot/lab2/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab02 - Serial
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../iot/lab3/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab03 - Botão
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../iot/lab4/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab04 - PWM e Analog
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2_4" id="__nav_5_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Node-Red
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Node-Red
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../iot/lab5/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab01
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../iot/lab6/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab02
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../iot/lab7/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab03
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2_5" id="__nav_5_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Esp32
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Esp32
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../iot/lab01-esp/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab01
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../iot/lab02-esp/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab02
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../iot/lab03-esp/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab03
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2_6" id="__nav_5_2_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Raspberry Pi
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            Raspberry Pi
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../iot/lab8/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab01
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../iot/lab9/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab02
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../iot/lab10/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab03
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Ciência de Dados
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Ciência de Dados
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introdução
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Descoberta do Conhecimento
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="index2.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Descoberta do Conhecimento
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#descoberta-do-conhecimento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Descoberta do conhecimento
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Descoberta do conhecimento">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introducao-ao-crisp-dm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introdução ao CRISP-DM
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-entendimento-do-negocio" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Entendimento do Negócio
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Entendimento do Negócio">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#perguntas-chave-desta-fase" class="md-nav__link">
+    <span class="md-ellipsis">
+      Perguntas-Chave desta Fase
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ferramentas-e-tecnicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ferramentas e Técnicas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-entendimento-dos-dados" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Entendimento dos Dados
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Entendimento dos Dados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#atividades-principais" class="md-nav__link">
+    <span class="md-ellipsis">
+      Atividades Principais
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ferramentas-e-tecnicas_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ferramentas e Técnicas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-preparacao-dos-dados" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Preparação dos Dados
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Preparação dos Dados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#atividades-detalhadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Atividades Detalhadas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ferramentas-e-tecnicas_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ferramentas e Técnicas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-modelagem" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Modelagem
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Modelagem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-problemas-e-tecnicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tipos de Problemas e Técnicas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ferramentas-e-tecnicas_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ferramentas e Técnicas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-avaliacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Avaliação
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Avaliação">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metricas-de-avaliacao-por-tipo-de-problema" class="md-nav__link">
+    <span class="md-ellipsis">
+      Métricas de Avaliação por Tipo de Problema
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ferramentas-e-tecnicas_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ferramentas e Técnicas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-implantacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Implantação
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Implantação">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ferramentas-e-tecnicas_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ferramentas e Técnicas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outras-estrategias" class="md-nav__link">
+    <span class="md-ellipsis">
+      Outras estratégias
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Machine Learning
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Machine Learning
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_1" id="__nav_7_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Manipulação de Dados
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_1">
+            <span class="md-nav__icon md-icon"></span>
+            Manipulação de Dados
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab01/dataframe.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dataframe
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab04/dicasDePreprocessamento.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pré-processamento
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Aprendizado Supervisionado - Classificação
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            Aprendizado Supervisionado - Classificação
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab02/ml-classificador-iris.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    lab1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab02/ml-classificador-digito.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    lab2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab-04/aula8.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    lab3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Aprendizado Supervisionado - Regressão
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            Aprendizado Supervisionado - Regressão
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab03/regressao.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    lab1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab03/preco-notebook.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    lab2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab05/validacaocruzada.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Validação de Modelos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_5" id="__nav_7_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Aprendizado Não Supervisionado
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_5">
+            <span class="md-nav__icon md-icon"></span>
+            Aprendizado Não Supervisionado
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab-01/aula5.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    lab1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab-01/aula5-parte2.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    lab2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab-02/aula6.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    lab2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab-03/aula7.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    lab3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab04/reducao_dimensionalidade_pca.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PCA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Deep Learning
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Deep Learning
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab06/rna.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab06 - Redes Neurais - Percepton
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab07/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab07 - Redes Neurais - TensorFlow
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab07/mlp.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab07b - Redes Neurais - MLP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../batalharedes/batalha_das_redes.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    BATALHA DAS REDES
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab08/cnn.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab08 - Redes Neurais - CNN parte1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab08/cnn_drive.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab08 - Redes Neurais - CNN parte2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab09/transferlearning_1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab9 - Redes Neurais - Pré-treinadas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab09/transferlearning_2.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab9 - Redes Neurais - Transfer learning
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab10/data-augmentation.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab10 - Redes Neurais - Data Augmentation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab11/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab11 - Redes Neurais - resumo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#descoberta-do-conhecimento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Descoberta do conhecimento
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Descoberta do conhecimento">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introducao-ao-crisp-dm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introdução ao CRISP-DM
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-entendimento-do-negocio" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Entendimento do Negócio
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Entendimento do Negócio">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#perguntas-chave-desta-fase" class="md-nav__link">
+    <span class="md-ellipsis">
+      Perguntas-Chave desta Fase
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ferramentas-e-tecnicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ferramentas e Técnicas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-entendimento-dos-dados" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Entendimento dos Dados
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Entendimento dos Dados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#atividades-principais" class="md-nav__link">
+    <span class="md-ellipsis">
+      Atividades Principais
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ferramentas-e-tecnicas_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ferramentas e Técnicas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-preparacao-dos-dados" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Preparação dos Dados
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Preparação dos Dados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#atividades-detalhadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Atividades Detalhadas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ferramentas-e-tecnicas_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ferramentas e Técnicas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-modelagem" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Modelagem
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Modelagem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-problemas-e-tecnicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tipos de Problemas e Técnicas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ferramentas-e-tecnicas_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ferramentas e Técnicas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-avaliacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Avaliação
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Avaliação">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metricas-de-avaliacao-por-tipo-de-problema" class="md-nav__link">
+    <span class="md-ellipsis">
+      Métricas de Avaliação por Tipo de Problema
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ferramentas-e-tecnicas_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ferramentas e Técnicas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-implantacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Implantação
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Implantação">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ferramentas-e-tecnicas_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ferramentas e Técnicas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outras-estrategias" class="md-nav__link">
+    <span class="md-ellipsis">
+      Outras estratégias
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+  <h1>Descoberta do Conhecimento</h1>
+
+<h2 id="descoberta-do-conhecimento">Descoberta do conhecimento<a class="headerlink" href="#descoberta-do-conhecimento" title="Permanent link">&para;</a></h2>
+<p>Imagine que você tem uma montanha de dados na sua empresa e precisa transformá-los em decisões inteligentes. Como fazer isso de forma organizada e eficiente? É exatamente isso que vamos descobrir!</p>
+<p>Vamos começar essa etapa do nosso curso explorando o ciclo de vida de dados em projetos de ciência de dados - um roteiro que todo cientista de dados segue para extrair conhecimento valioso dos dados.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>A descoberta do conhecimento é um conjunto estruturado de etapas que nos permite transformar grandes volumes de dados brutos em informações úteis e compreensíveis.</p>
+</div>
+<h3 id="introducao-ao-crisp-dm">Introdução ao CRISP-DM<a class="headerlink" href="#introducao-ao-crisp-dm" title="Permanent link">&para;</a></h3>
+<p>O CRISP-DM (Cross-Industry Standard Process for Data Mining) é uma ferramenta amplamente utilizada na indústria para projetos de ciência de dados.</p>
+<p><img alt="crisp-dm" src="CRISP-DM_Process_Diagram.png" /></p>
+<p>Repare que o processo é cíclico - isso significa que podemos voltar a etapas anteriores conforme descobrimos novos <code>insights</code>!</p>
+<div class="quiz"><h3>Por que o CRISP-DM é representado como um processo cíclico e não linear?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-0-0" ><label for="quiz-0-0">Porque os dados sempre mudam com o tempo</label></div><div><input type="radio" name="answer" value="1" id="quiz-0-1" correct><label for="quiz-0-1">Porque podemos descobrir novos insights que nos fazem repensar etapas anteriores</label></div><div><input type="radio" name="answer" value="2" id="quiz-0-2" ><label for="quiz-0-2">Porque é mais bonito visualmente</label></div><div><input type="radio" name="answer" value="3" id="quiz-0-3" ><label for="quiz-0-3">Porque sempre precisamos começar do zero</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden">
+Exato! O processo é iterativo porque conforme avançamos, podemos descobrir que precisamos coletar mais dados, redefinir o problema ou ajustar nossa abordagem. É um processo de aprendizado contínuo!</section></div>
+
+<h3 id="1-entendimento-do-negocio">1. Entendimento do Negócio<a class="headerlink" href="#1-entendimento-do-negocio" title="Permanent link">&para;</a></h3>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><strong>"Antes de resolver um problema, certifique-se de que está resolvendo o problema certo!"</strong></p>
+</div>
+<p>O primeiro passo é como ser um detetive: você precisa investigar e entender completamente o "crime" (problema) que precisa resolver. Muitos projetos falham porque pulam esta etapa crucial!</p>
+<p>Imagine que você trabalha em uma loja online e o gerente diz: "Queremos usar IA para aumentar as vendas". Parece claro, né? Mas não é! Você precisa descobrir:
+- As vendas estão baixas em quais produtos específicos?
+- O problema é atrair novos clientes ou fazer os existentes comprarem mais?
+- Qual é o orçamento disponível?
+- Em quanto tempo precisam ver resultados?</p>
+<h4 id="perguntas-chave-desta-fase">Perguntas-Chave desta Fase<a class="headerlink" href="#perguntas-chave-desta-fase" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Qual é o problema de negócio que estamos tentando resolver?</li>
+<li>Como o sucesso será medido?</li>
+<li>Quais são as restrições de tempo, orçamento e recursos?</li>
+<li>Como os resultados serão implementados?</li>
+</ul>
+<div class="quiz"><h3>Um gerente pede para "usar machine learning para melhorar o atendimento ao cliente". O que você deveria perguntar primeiro?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-1-0" ><label for="quiz-1-0">Quais algoritmos ele prefere usar</label></div><div><input type="radio" name="answer" value="1" id="quiz-1-1" ><label for="quiz-1-1">Quantos dados históricos temos disponíveis</label></div><div><input type="radio" name="answer" value="2" id="quiz-1-2" correct><label for="quiz-1-2">Como exatamente ele define "melhorar o atendimento" e como vamos medir essa melhoria</label></div><div><input type="radio" name="answer" value="3" id="quiz-1-3" ><label for="quiz-1-3">Qual é o orçamento do projeto</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden">
+Perfeito! Sem definir claramente o que significa "melhorar" e como medir isso, você pode acabar resolvendo o problema errado. Pode ser reduzir tempo de espera, aumentar satisfação, reduzir reclamações... cada um requer uma abordagem diferente!</section></div>
+
+<h4 id="ferramentas-e-tecnicas">Ferramentas e Técnicas<a class="headerlink" href="#ferramentas-e-tecnicas" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Entrevistas e Workshops</strong>: Para coletar informações dos stakeholders e especialistas</li>
+<li><strong>Mapas Mentais</strong>: Para visualizar o problema e suas possíveis soluções</li>
+<li><strong>5W2H</strong>: Framework para definir escopo (What, Why, Who, When, Where, How, How much)</li>
+</ul>
+<h3 id="2-entendimento-dos-dados">2. Entendimento dos Dados<a class="headerlink" href="#2-entendimento-dos-dados" title="Permanent link">&para;</a></h3>
+<p>Agora que você sabe qual problema resolver, é hora de conhecer seus os dados! Esta fase é como explorar uma nova cidade: você precisa conhecer o território antes de planejar seu roteiro.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Dados ruins produzem modelos ruins, não importa quão sofisticado seja seu algoritmo! É como tentar fazer um bolo delicioso com ingredientes estragados.</p>
+</div>
+<h4 id="atividades-principais">Atividades Principais<a class="headerlink" href="#atividades-principais" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Coleta Inicial</strong>: Reunir todos os dados disponíveis (como fazer um inventário da sua cozinha)</li>
+<li><strong>Descrição dos Dados</strong>: Documentar estrutura, formato e significado (criar um catálogo dos ingredientes)</li>
+<li><strong>Exploração</strong>: Análise estatística descritiva inicial (provar os ingredientes)</li>
+<li><strong>Verificação de Qualidade</strong>: Identificar problemas nos dados (verificar se estão frescos)</li>
+</ul>
+<h4 id="ferramentas-e-tecnicas_1">Ferramentas e Técnicas<a class="headerlink" href="#ferramentas-e-tecnicas_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>SQL e NoSQL</strong>: Para coleta de dados de bases estruturadas e não estruturadas</li>
+<li><strong>Exploração de Dados</strong>: Usando pandas, matplotlib e seaborn para análise exploratória (EDA)</li>
+<li><strong>Análise de Qualidade</strong>: Verificação de inconsistências, valores ausentes e outliers</li>
+<li><strong>Profiling de Dados</strong>: Ferramentas automatizadas para gerar relatórios de qualidade</li>
+</ul>
+<div class="quiz"><h3>Durante a exploração inicial dos dados de vendas de uma empresa, você descobre que 30% dos registros têm valores ausentes na coluna "idade do cliente". Qual deve ser sua primeira ação?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-2-0" ><label for="quiz-2-0">Excluir imediatamente todos os registros com dados ausentes</label></div><div><input type="radio" name="answer" value="1" id="quiz-2-1" ><label for="quiz-2-1">Preencher com a média de idade de todos os clientes</label></div><div><input type="radio" name="answer" value="2" id="quiz-2-2" correct><label for="quiz-2-2">Investigar por que esses dados estão ausentes e se há um padrão</label></div><div><input type="radio" name="answer" value="3" id="quiz-2-3" ><label for="quiz-2-3">Ignorar a coluna idade completamente</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden">
+Correto! Primeiro você precisa entender o "porquê" dos dados ausentes. Talvez clientes de certas regiões não informem idade, ou o sistema teve problemas em períodos específicos. Essa investigação pode revelar insights importantes!</section></div>
+
+<h3 id="3-preparacao-dos-dados">3. Preparação dos Dados<a class="headerlink" href="#3-preparacao-dos-dados" title="Permanent link">&para;</a></h3>
+<p>Chegamos à fase que consome 70-80% do tempo de qualquer projeto de ciência de dados! É trabalhoso, mas essencial para o sucesso.</p>
+<p><strong>Realidade check</strong>: Se você acha que ciência de dados é só treinar modelos sofisticados, prepare-se para uma surpresa! A maior parte do tempo você será um "faxineiro de dados" - e isso é perfeitamente normal e necessário.</p>
+<h4 id="atividades-detalhadas">Atividades Detalhadas<a class="headerlink" href="#atividades-detalhadas" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Limpeza</strong>: Remoção de duplicatas, correção de inconsistências</li>
+<li><strong>Integração</strong>: Combinação de dados de múltiplas fontes (como juntar ingredientes de fornecedores diferentes)</li>
+<li><strong>Transformação</strong>: Normalização, padronização, discretização</li>
+<li><strong>Redução</strong>: Seleção de features e redução de dimensionalidade</li>
+<li><strong>Construção</strong>: Feature engineering - criar novas variáveis que ajudem o modelo</li>
+</ul>
+<h4 id="ferramentas-e-tecnicas_2">Ferramentas e Técnicas<a class="headerlink" href="#ferramentas-e-tecnicas_2" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Pandas e NumPy</strong>: Para manipulação e transformação de dados</li>
+<li><strong>Scikit-learn</strong>: Para pré-processamento como normalização e codificação</li>
+<li><strong>Feature Engineering</strong>: Criação de novas features (a parte mais criativa!)</li>
+<li><strong>Pipelines</strong>: Automatização do processo de preparação</li>
+</ul>
+<h3 id="4-modelagem">4. Modelagem<a class="headerlink" href="#4-modelagem" title="Permanent link">&para;</a></h3>
+<p>Aqui é onde a mágica acontece e você aplica algoritmos de machine learning aos seus dados preparados.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><strong>Importante</strong>: Não existe um algoritmo <code>melhor</code> para todos os problemas. É como escolher uma ferramenta, você usaria um martelo para apertar um parafuso?</p>
+</div>
+<h4 id="tipos-de-problemas-e-tecnicas">Tipos de Problemas e Técnicas<a class="headerlink" href="#tipos-de-problemas-e-tecnicas" title="Permanent link">&para;</a></h4>
+<p><strong>Problemas Supervisionados</strong> (quando você tem as "respostas corretas" para treinar):
+- <strong>Classificação</strong>: Prever categorias (spam ou não spam, gato ou cachorro)
+  - Árvores de Decisão, Random Forest, SVM, Redes Neurais
+- <strong>Regressão</strong>: Prever valores numéricos (preço de casa, vendas do próximo mês)
+  - Regressão Linear, Ridge, Lasso, XGBoost</p>
+<p><strong>Problemas Não-Supervisionados</strong> (quando você explora sem "respostas" pré-definidas):
+- <strong>Clustering</strong>: Agrupar dados similares (segmentar clientes)
+  - K-Means, Hierarchical Clustering, DBSCAN
+- <strong>Redução de Dimensionalidade</strong>: Simplificar dados complexos
+  - PCA, t-SNE, UMAP</p>
+<p><img alt="spam-filter" src="image-4.png" /></p>
+<div class="quiz"><h3>Você precisa prever se um e-mail é spam ou não. Que tipo de problema é este?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-3-0" ><label for="quiz-3-0">Regressão, porque queremos um valor numérico</label></div><div><input type="radio" name="answer" value="1" id="quiz-3-1" correct><label for="quiz-3-1">Classificação, porque queremos categorizar em duas classes</label></div><div><input type="radio" name="answer" value="2" id="quiz-3-2" ><label for="quiz-3-2">Clustering, porque queremos agrupar e-mails similares</label></div><div><input type="radio" name="answer" value="3" id="quiz-3-3" ><label for="quiz-3-3">Redução de dimensionalidade, porque temos muitas palavras</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden">
+Perfeito! É um problema de classificação binária pois queremos classificar cada e-mail em uma de duas categorias: spam ou não spam. O resultado é uma categoria, não um valor numérico.</section></div>
+
+<h4 id="ferramentas-e-tecnicas_3">Ferramentas e Técnicas<a class="headerlink" href="#ferramentas-e-tecnicas_3" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Scikit-learn</strong>: Para algoritmos tradicionais de machine learning</li>
+<li><strong>TensorFlow/Keras e PyTorch</strong>: Para redes neurais profundas</li>
+<li><strong>Cross-validation</strong>: Para avaliar modelos de forma robusta</li>
+<li><strong>Grid Search</strong>: Para encontrar os melhores parâmetros</li>
+</ul>
+<h3 id="5-avaliacao">5. Avaliação<a class="headerlink" href="#5-avaliacao" title="Permanent link">&para;</a></h3>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><strong>"Um modelo que parece bom no papel pode ser um desastre na vida real!"</strong></p>
+</div>
+<p>É importante validar se o modelo realmente resolve o problema de negócio. Esta fase de avaliação vai além de olhar métricas técnicas.</p>
+<h4 id="metricas-de-avaliacao-por-tipo-de-problema">Métricas de Avaliação por Tipo de Problema<a class="headerlink" href="#metricas-de-avaliacao-por-tipo-de-problema" title="Permanent link">&para;</a></h4>
+<p><strong>Classificação:</strong>
+- <strong>Accuracy</strong>: Quantos acertei do total (cuidado com dados desbalanceados!)
+- <strong>Precision</strong>: Dos que previ como positivos, quantos realmente eram?
+- <strong>Recall</strong>: Dos positivos reais, quantos consegui encontrar?
+- <strong>F1-Score</strong>: Harmonia entre precision e recall</p>
+<p><strong>Regressão:</strong>
+- <strong>RMSE</strong>: Quão longe, em média, minhas previsões estão da realidade?
+- <strong>MAE</strong>: Erro médio absoluto (mais fácil de interpretar)
+- <strong>R²</strong>: Quanto da variação consigo explicar? (0-100%)</p>
+<div class="quiz"><h3>Você criou um modelo para detectar fraudes bancárias. O modelo tem 99% de accuracy, mas detecta apenas 10% das fraudes reais. Qual é o problema principal?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-4-0" ><label for="quiz-4-0">O modelo está overfittado</label></div><div><input type="radio" name="answer" value="1" id="quiz-4-1" ><label for="quiz-4-1">Precisamos de mais dados de treino</label></div><div><input type="radio" name="answer" value="2" id="quiz-4-2" correct><label for="quiz-4-2">O modelo tem baixo recall - está perdendo muitas fraudes reais</label></div><div><input type="radio" name="answer" value="3" id="quiz-4-3" ><label for="quiz-4-3">A accuracy está muito alta, deve estar errado</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden">
+Exato! Com dados desbalanceados (poucas fraudes), alta accuracy pode ser enganosa. Se apenas 1% das transações são fraudes, um modelo que sempre diz "não é fraude" teria 99% accuracy, mas seria inútil! O recall baixo indica que estamos perdendo fraudes reais.</section></div>
+
+<h4 id="ferramentas-e-tecnicas_4">Ferramentas e Técnicas<a class="headerlink" href="#ferramentas-e-tecnicas_4" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Métricas de Avaliação</strong>: Precision, recall, F1-score, AUC-ROC</li>
+<li><strong>Confusion Matrix</strong>: Para análise visual detalhada</li>
+<li><strong>ROC Curves</strong>: Para avaliar trade-offs entre sensibilidade e especificidade</li>
+<li><strong>A/B Testing</strong>: Para validação no mundo real</li>
+<li><strong>Análise de Bias</strong>: Verificação de vieses e fairness</li>
+</ul>
+<h3 id="6-implantacao">6. Implantação<a class="headerlink" href="#6-implantacao" title="Permanent link">&para;</a></h3>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><strong>"Um modelo que não vai para produção é apenas um hobby caro!"</strong></p>
+</div>
+<p>Aqui é onde seu modelo sai do laboratório e entra no mundo real.</p>
+<h4 id="ferramentas-e-tecnicas_5">Ferramentas e Técnicas<a class="headerlink" href="#ferramentas-e-tecnicas_5" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Flask e FastAPI</strong>: Para criar APIs web</li>
+<li><strong>Docker e Kubernetes</strong>: Para containerização e escalabilidade</li>
+<li><strong>MLflow</strong>: Para versionar e rastrear modelos</li>
+<li><strong>Monitoramento</strong>: Prometheus e Grafana para acompanhar performance</li>
+<li><strong>CI/CD</strong>: Deploy automatizado e seguro</li>
+</ul>
+<div class="quiz"><h3>Seu modelo de recomendação está em produção há 3 meses e a performance começou a cair. Qual é a causa mais provável?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-5-0" ><label for="quiz-5-0">O código do modelo foi corrompido</label></div><div><input type="radio" name="answer" value="1" id="quiz-5-1" ><label for="quiz-5-1">Os servidores estão sobrecarregados</label></div><div><input type="radio" name="answer" value="2" id="quiz-5-2" correct><label for="quiz-5-2">Os dados mudaram e o modelo precisa ser retreinado</label></div><div><input type="radio" name="answer" value="3" id="quiz-5-3" ><label for="quiz-5-3">Os usuários pararam de usar o sistema</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden">
+Correto! Este é um fenômeno comum chamado "model drift". Com o tempo, os padrões nos dados mudam (novos produtos, mudanças no comportamento do usuário), e o modelo fica "desatualizado". É por isso que monitoramento e retreinamento são essenciais!</section></div>
+
+<h3 id="outras-estrategias">Outras estratégias<a class="headerlink" href="#outras-estrategias" title="Permanent link">&para;</a></h3>
+<p>Embora o CRISP-DM seja o mais popular, existem outras metodologias interessantes:</p>
+<ul>
+<li><strong>KDD (Knowledge Discovery in Databases)</strong> - O "avô" do CRISP-DM, mais acadêmico</li>
+</ul>
+<p><img alt="kdd" src="image-1.png" /></p>
+<ul>
+<li><strong>SEMMA (Sample, Explore, Modify, Model, Assess)</strong> - Criado pela SAS, focado nas ferramentas</li>
+</ul>
+<p><img alt="semma" src="image-2.png" /></p>
+<ul>
+<li><strong>MLOps (Machine Learning Operations)</strong> - A evolução moderna, focada em automação e DevOps</li>
+</ul>
+<p><img alt="mlops" src="image-3.png" /></p>
+<div class="quiz"><h3>Qual é a primeira fase do CRISP-DM e por que ela é crucial?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-6-0" ><label for="quiz-6-0">Preparação dos Dados - porque dados limpos são essenciais</label></div><div><input type="radio" name="answer" value="1" id="quiz-6-1" correct><label for="quiz-6-1">Entendimento do Negócio - porque define objetivos e critérios de sucesso</label></div><div><input type="radio" name="answer" value="2" id="quiz-6-2" ><label for="quiz-6-2">Modelagem - porque é onde a IA acontece</label></div><div><input type="radio" name="answer" value="3" id="quiz-6-3" ><label for="quiz-6-3">Coleta de Dados - porque precisamos de dados para começar</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden">
+O entendimento do negócio é fundamental porque estabelece o que realmente precisa ser resolvido, como o sucesso será medido e garante que o projeto esteja alinhado com os objetivos organizacionais.</section></div>
+
+<div class="quiz"><h3>Uma empresa de e-commerce quer implementar um sistema de recomendação de produtos. Ordene as fases do CRISP-DM que seriam seguidas.</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-7-0" correct><label for="quiz-7-0">Entendimento do Negócio → Entendimento dos Dados → Preparação dos Dados → Modelagem → Avaliação → Implantação</label></div><div><input type="radio" name="answer" value="1" id="quiz-7-1" ><label for="quiz-7-1">Preparação dos Dados → Modelagem → Entendimento do Negócio → Avaliação → Entendimento dos Dados → Implantação</label></div><div><input type="radio" name="answer" value="2" id="quiz-7-2" ><label for="quiz-7-2">Modelagem → Entendimento do Negócio → Preparação dos Dados → Avaliação → Implantação → Entendimento dos Dados</label></div><div><input type="radio" name="answer" value="3" id="quiz-7-3" ><label for="quiz-7-3">Entendimento dos Dados → Modelagem → Preparação dos Dados → Avaliação → Entendimento do Negócio → Implantação</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden">
+Correto! Entendimento do Negócio → Entendimento dos Dados → Preparação dos Dados → Modelagem → Avaliação → Implantação</section></div>
+
+<div class="quiz"><h3>Você está trabalhando em um projeto de ciência de dados e percebe que está gastando mais tempo preparando dados do que criando modelos. Isso é:</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-8-0" ><label for="quiz-8-0">Um sinal de que você está fazendo algo errado</label></div><div><input type="radio" name="answer" value="1" id="quiz-8-1" ><label for="quiz-8-1">Motivo para pular algumas etapas de limpeza</label></div><div><input type="radio" name="answer" value="2" id="quiz-8-2" correct><label for="quiz-8-2">Completamente normal - preparação de dados consome 70-80% do tempo</label></div><div><input type="radio" name="answer" value="3" id="quiz-8-3" ><label for="quiz-8-3">Indicação de que os dados são de baixa qualidade</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden">
+Isso é absolutamente normal! A preparação de dados é a parte mais trabalhosa, mas também mais importante de qualquer projeto. Dados bem preparados são a base para modelos de sucesso. Como dizem: "Garbage in, garbage out!"</section></div><style type="text/css">.quiz {
+  border: 1px solid black;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+/* Set margin-top of first quiz child */
+.quiz > *:first-child {
+  margin-top: 0;
+}
+.hidden {
+  display: none;
+}
+
+form button {
+  background-color: var(--md-primary-fg-color);
+  border: none;
+  color: var(--md-primary-bg-color);
+  padding: 0.5rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 0.8rem;
+}
+
+.wrong label {
+  color: red;
+}
+.correct label {
+  color: green;
+}
+
+fieldset {
+  border: none;
+  display: flex;
+  flex-direction: column;
+}
+fieldset input {
+  margin: 0 10px;
+}
+fieldset label {
+  margin: 0 10px;
+}
+
+label.correct {
+  color: green;
+}
+label.wrong {
+  color: red;
+}
+input[type='radio'].correct {
+  accent-color: green;
+}
+input[type='radio'].wrong {
+  accent-color: red;
+}
+.content {
+  margin: 10px;
+}
+</style><script type="text/javascript" defer>document.querySelectorAll('.quiz').forEach((quiz) => {
+  let form = quiz.querySelector('form');
+  let fieldset = form.querySelector('fieldset');
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    let selectedAnswers = form.querySelectorAll('input[name="answer"]:checked');
+    let correctAnswers = fieldset.querySelectorAll(
+      'input[name="answer"][correct]'
+    );
+    // Check if all correct answers are selected
+    let is_correct = selectedAnswers.length === correctAnswers.length;
+    for (let i = 0; i < selectedAnswers.length; i++) {
+      if (!selectedAnswers[i].hasAttribute('correct')) {
+        is_correct = false;
+        break;
+      }
+    }
+    let section = quiz.querySelector('section');
+    if (is_correct) {
+      section.classList.remove('hidden');
+      resetFieldset(fieldset);
+      // Mark all fields with colors
+      const allAnswers = fieldset.querySelectorAll('input[name="answer"]');
+      for (let i = 0; i < allAnswers.length; i++) {
+        if (allAnswers[i].hasAttribute('correct')) {
+          allAnswers[i].parentElement.classList.add('correct');
+        } else {
+          allAnswers[i].parentElement.classList.add('wrong');
+        }
+      }
+    } else {
+      section.classList.add('hidden');
+      resetFieldset(fieldset);
+      // Mark wrong fields with colors
+      for (let i = 0; i < selectedAnswers.length; i++) {
+        if (!selectedAnswers[i].hasAttribute('correct')) {
+          selectedAnswers[i].parentElement.classList.add('wrong');
+        } else {
+          selectedAnswers[i].parentElement.classList.add('correct');
+        }
+      }
+    }
+  });
+});
+
+function resetFieldset(fieldset) {
+  const fieldsetChildren = fieldset.children;
+  for (let i = 0; i < fieldsetChildren.length; i++) {
+    fieldsetChildren[i].classList.remove('wrong');
+    fieldsetChildren[i].classList.remove('correct');
+  }
+}
+</script>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 14, 2025 16:07:49 UTC">August 14, 2025</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.50899def.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.0.0/js-yaml.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/gh/insper-education/active-handout-plugins-js@main/package/plugin-bundle.js"></script>
+      
+    
+  </body>
+</html>
