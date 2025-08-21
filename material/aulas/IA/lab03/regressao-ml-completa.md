@@ -1,9 +1,38 @@
 
 # Regressão em Machine Learning
 
+Nesta aula, vamos explorar os fundamentos de problemas de regressão, entender como modelar relações entre variáveis e aplicar esses conceitos em atividades práticas. Nosso objetivo é aprender a entender o problema a ser resolvido e treinar modelos de forma precisa e eficiente.
+
+### Atividades Práticas
+As seguintes atividades foram preparadas para reforçar os conceitos abordados:
+
+- **[Lab 1: Regressão Simples](regressao.ipynb)**  
+  Introdução aos conceitos básicos de regressão, com aplicação prática na predição de preços de casas na Califórnia.
+- **[Lab 2: Técnicas Avançadas](regressao2.ipynb)**  
+  Exploração de métodos como regressão polinomial e XGBoost para modelagem mais robusta.
+- **[Lab 3: Predição de Preços de Notebooks](laptop_data.csv)**  
+  Treinamento de um modelo para prever o valor de notebooks com base em suas características.
+
+### Datasets
+Os laboratórios utilizam os seguintes conjuntos de dados:
+- **[Housing](housing.csv)**: Informações sobre casas na Califórnia, usado no Lab 1.
+- **[Laptop Data](laptop_data.csv)**: Dados de notebooks, usado no Lab 3.
+
+
 ## O que é regressão?
 
 A regressão é uma técnica de aprendizado supervisionado usada para prever valores numéricos contínuos a partir de variáveis de entrada (features). Em vez de atribuir classes, buscamos estimar quantidades — por exemplo, o preço de um imóvel ou a temperatura amanhã.
+
+
+### Classificação vs Regressão
+
+| Aspecto | Classificação | Regressão |
+|---------|---------------|-----------|
+| Saída | Categórica / Discreta | Numérica / Contínua |
+| Exemplos | Spam / Sentimento / Tipo de flor | Preço / Temperatura / Altura |
+| Métricas | Acurácia, Precisão, Recall | MAE, MSE, RMSE, R² |
+| Exemplos de algoritmos | KNN, SVM, Random Forest (class.) | Regressão Linear, Ridge, Lasso, SVR, Árvores/Boosting |
+
 
 <?quiz?>
 question: Qual é a principal diferença entre regressão e classificação?
@@ -15,16 +44,6 @@ content:
 
 Regressão estima valores numéricos contínuos (por exemplo, preço), enquanto classificação atribui uma categoria ou rótulo (por exemplo, spam ou não-spam).
 <?/quiz?>
-
-### Classificação vs Regressão
-
-| Aspecto | Classificação | Regressão |
-|---------|---------------|-----------|
-| Saída | Categórica / Discreta | Numérica / Contínua |
-| Exemplos | Spam / Sentimento / Tipo de flor | Preço / Temperatura / Altura |
-| Métricas | Acurácia, Precisão, Recall | MAE, MSE, RMSE, R² |
-| Exemplos de algoritmos | KNN, SVM, Random Forest (class.) | Regressão Linear, Ridge, Lasso, SVR, Árvores/Boosting |
-
 
 ## Ideia matemática
 
@@ -50,20 +69,24 @@ content:
 ## Principais famílias de modelos
 
 1. Regressão Linear Simples
-- Uma variável explicativa; relação aproximadamente linear: `y = β₀ + β₁x + ε`.
+    - Uma variável explicativa; relação aproximadamente linear: `y = β₀ + β₁x + ε`.
 
 2. Regressão Linear Múltipla
-- Várias features: `y = β₀ + β₁x₁ + β₂x₂ + ... + βₙxₙ + ε`.
+    - Várias features: `y = β₀ + β₁x₁ + β₂x₂ + ... + βₙxₙ + ε`.
 
 3. Regressão Polinomial
-- Quando a relação é não linear, aumentamos a base com potências de x: `y = β₀ + β₁x + β₂x² + ...`.
+    - Quando a relação é não linear, aumentamos a base com potências de x: `y = β₀ + β₁x + β₂x² + ...`.
 
 4. Regressão Regularizada
-- Ridge (L2): penaliza coeficientes grandes — útil quando há multicolinearidade.
-- Lasso (L1): pode zerar coeficientes — ajuda a selecionar features.
-- Elastic Net: combinação L1 + L2.
-!!! tip
-    Dica: com muitas features correlacionadas, comece por Ridge; quando quiser seleção automática, experimente Lasso.
+    - Ridge (L2): penaliza coeficientes grandes — útil quando há multicolinearidade.
+    - Lasso (L1): pode zerar coeficientes — ajuda a selecionar features.
+    - Elastic Net: combinação L1 + L2.
+
+5. SVR
+    - Bom para relações complexas quando precisamos de flexibilidade sem muitos features polinomiais.
+
+6. Árvores, Florestas e Boosting
+    - Lidam bem com não linearidades e interações; geralmente exigem menos engenharia de features, mas são menos transparentes que modelos lineares.
 
 <?quiz?>
 question: Qual método tende a zerar coeficientes, ajudando na seleção de features?
@@ -75,13 +98,6 @@ content:
 
 Lasso (L1) pode reduzir coeficientes a zero, realizando seleção de features; Ridge (L2) encolhe coeficientes sem zerá-los.
 <?/quiz?>
-
-5. SVR
-- Bom para relações complexas quando precisamos de flexibilidade sem muitos features polinomiais.
-
-6. Árvores, Florestas e Boosting
-- Lidam bem com não linearidades e interações; geralmente exigem menos engenharia de features, mas são menos transparentes que modelos lineares.
-
 
 ## Intuição de Regressão Linear
 
@@ -197,16 +213,6 @@ Onde:
 R² indica a proporção da variância explicada pelo modelo. Valores mais altos são melhores, mas atenção: R² pode ser negativo se o modelo for pior que prever a média.
 
 
-<?quiz?>
-question: Qual métrica é menos sensível a outliers?
-answer: MSE
-answer: RMSE
-answer-correct: MAE
-answer: R²
-content:
-
-MAE (Erro Absoluto Médio) penaliza menos discrepâncias grandes que o MSE/RMSE, sendo mais robusto a outliers.
-<?/quiz?>
 
 ### Exemplo em Python
 
@@ -226,8 +232,14 @@ print(f"MAE: {mae:.4f}")
 print(f"R²: {r2:.4f}")
 ```
 
-### datasets utilizados nos notebooks para download 
+<?quiz?>
+question: Qual métrica é menos sensível a outliers?
+answer: MSE
+answer: RMSE
+answer-correct: MAE
+answer: R²
+content:
 
-<a href="housing.csv" download>Baixar o arquivo housing.csv</a>
+MAE (Erro Absoluto Médio) penaliza menos discrepâncias grandes que o MSE/RMSE, sendo mais robusto a outliers.
+<?/quiz?>
 
-<a href="laptop_data.csv" download>Baixar o arquivo laptop_data.csv</a>
