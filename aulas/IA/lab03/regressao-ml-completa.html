@@ -2809,6 +2809,24 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#atividades-praticas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Atividades Práticas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#datasets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Datasets
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#o-que-e-regressao" class="md-nav__link">
     <span class="md-ellipsis">
       O que é regressão?
@@ -2942,15 +2960,6 @@
   <a href="#exemplo-em-python_1" class="md-nav__link">
     <span class="md-ellipsis">
       Exemplo em Python
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#datasets-utilizados-nos-notebooks-para-download" class="md-nav__link">
-    <span class="md-ellipsis">
-      datasets utilizados nos notebooks para download
     </span>
   </a>
   
@@ -3540,6 +3549,24 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#atividades-praticas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Atividades Práticas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#datasets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Datasets
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#o-que-e-regressao" class="md-nav__link">
     <span class="md-ellipsis">
       O que é regressão?
@@ -3678,15 +3705,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#datasets-utilizados-nos-notebooks-para-download" class="md-nav__link">
-    <span class="md-ellipsis">
-      datasets utilizados nos notebooks para download
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -3712,11 +3730,23 @@
 
 
 <h1 id="regressao-em-machine-learning">Regressão em Machine Learning<a class="headerlink" href="#regressao-em-machine-learning" title="Permanent link">&para;</a></h1>
+<p>Nesta aula, vamos explorar os fundamentos de problemas de regressão, entender como modelar relações entre variáveis e aplicar esses conceitos em atividades práticas. Nosso objetivo é aprender a entender o problema a ser resolvido e treinar modelos de forma precisa e eficiente.</p>
+<h3 id="atividades-praticas">Atividades Práticas<a class="headerlink" href="#atividades-praticas" title="Permanent link">&para;</a></h3>
+<p>As seguintes atividades foram preparadas para reforçar os conceitos abordados:</p>
+<ul>
+<li><strong><a href="regressao.html">Lab 1: Regressão Simples</a></strong><br />
+  Introdução aos conceitos básicos de regressão, com aplicação prática na predição de preços de casas na Califórnia.</li>
+<li><strong><a href="regressao2.html">Lab 2: Técnicas Avançadas</a></strong><br />
+  Exploração de métodos como regressão polinomial e XGBoost para modelagem mais robusta.</li>
+<li><strong><a href="laptop_data.csv">Lab 3: Predição de Preços de Notebooks</a></strong><br />
+  Treinamento de um modelo para prever o valor de notebooks com base em suas características.</li>
+</ul>
+<h3 id="datasets">Datasets<a class="headerlink" href="#datasets" title="Permanent link">&para;</a></h3>
+<p>Os laboratórios utilizam os seguintes conjuntos de dados:
+- <strong><a href="housing.csv">Housing</a></strong>: Informações sobre casas na Califórnia, usado no Lab 1.
+- <strong><a href="laptop_data.csv">Laptop Data</a></strong>: Dados de notebooks, usado no Lab 3.</p>
 <h2 id="o-que-e-regressao">O que é regressão?<a class="headerlink" href="#o-que-e-regressao" title="Permanent link">&para;</a></h2>
 <p>A regressão é uma técnica de aprendizado supervisionado usada para prever valores numéricos contínuos a partir de variáveis de entrada (features). Em vez de atribuir classes, buscamos estimar quantidades — por exemplo, o preço de um imóvel ou a temperatura amanhã.</p>
-<div class="quiz"><h3>Qual é a principal diferença entre regressão e classificação?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-0-0" ><label for="quiz-0-0">Regressão prediz categorias; Classificação prediz números</label></div><div><input type="radio" name="answer" value="1" id="quiz-0-1" ><label for="quiz-0-1">Ambas só funcionam com dados categóricos</label></div><div><input type="radio" name="answer" value="2" id="quiz-0-2" correct><label for="quiz-0-2">Regressão prediz números; Classificação prediz categorias</label></div><div><input type="radio" name="answer" value="3" id="quiz-0-3" ><label for="quiz-0-3">Classificação é sempre não supervisionada</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden">
-Regressão estima valores numéricos contínuos (por exemplo, preço), enquanto classificação atribui uma categoria ou rótulo (por exemplo, spam ou não-spam).</section></div>
-
 <h3 id="classificacao-vs-regressao">Classificação vs Regressão<a class="headerlink" href="#classificacao-vs-regressao" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -3749,6 +3779,9 @@ Regressão estima valores numéricos contínuos (por exemplo, preço), enquanto 
 </tr>
 </tbody>
 </table>
+<div class="quiz"><h3>Qual é a principal diferença entre regressão e classificação?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-0-0" ><label for="quiz-0-0">Regressão prediz categorias; Classificação prediz números</label></div><div><input type="radio" name="answer" value="1" id="quiz-0-1" ><label for="quiz-0-1">Ambas só funcionam com dados categóricos</label></div><div><input type="radio" name="answer" value="2" id="quiz-0-2" correct><label for="quiz-0-2">Regressão prediz números; Classificação prediz categorias</label></div><div><input type="radio" name="answer" value="3" id="quiz-0-3" ><label for="quiz-0-3">Classificação é sempre não supervisionada</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden">
+Regressão estima valores numéricos contínuos (por exemplo, preço), enquanto classificação atribui uma categoria ou rótulo (por exemplo, spam ou não-spam).</section></div>
+
 <h2 id="ideia-matematica">Ideia matemática<a class="headerlink" href="#ideia-matematica" title="Permanent link">&para;</a></h2>
 <p>Procuramos uma função f que aproxime a relação entre entradas X e alvo y:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>y = f(X) + ε
@@ -3759,46 +3792,48 @@ Regressão estima valores numéricos contínuos (por exemplo, preço), enquanto 
 
 <h2 id="principais-familias-de-modelos">Principais famílias de modelos<a class="headerlink" href="#principais-familias-de-modelos" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Regressão Linear Simples</li>
 <li>
-<p>Uma variável explicativa; relação aproximadamente linear: <code>y = β₀ + β₁x + ε</code>.</p>
+<p>Regressão Linear Simples</p>
+<ul>
+<li>Uma variável explicativa; relação aproximadamente linear: <code>y = β₀ + β₁x + ε</code>.</li>
+</ul>
 </li>
 <li>
 <p>Regressão Linear Múltipla</p>
-</li>
-<li>
-<p>Várias features: <code>y = β₀ + β₁x₁ + β₂x₂ + ... + βₙxₙ + ε</code>.</p>
+<ul>
+<li>Várias features: <code>y = β₀ + β₁x₁ + β₂x₂ + ... + βₙxₙ + ε</code>.</li>
+</ul>
 </li>
 <li>
 <p>Regressão Polinomial</p>
-</li>
-<li>
-<p>Quando a relação é não linear, aumentamos a base com potências de x: <code>y = β₀ + β₁x + β₂x² + ...</code>.</p>
+<ul>
+<li>Quando a relação é não linear, aumentamos a base com potências de x: <code>y = β₀ + β₁x + β₂x² + ...</code>.</li>
+</ul>
 </li>
 <li>
 <p>Regressão Regularizada</p>
-</li>
+<ul>
 <li>Ridge (L2): penaliza coeficientes grandes — útil quando há multicolinearidade.</li>
 <li>Lasso (L1): pode zerar coeficientes — ajuda a selecionar features.</li>
 <li>Elastic Net: combinação L1 + L2.</li>
-</ol>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Dica: com muitas features correlacionadas, comece por Ridge; quando quiser seleção automática, experimente Lasso.</p>
-</div>
-<div class="quiz"><h3>Qual método tende a zerar coeficientes, ajudando na seleção de features?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-2-0" ><label for="quiz-2-0">Ridge</label></div><div><input type="radio" name="answer" value="1" id="quiz-2-1" correct><label for="quiz-2-1">Lasso</label></div><div><input type="radio" name="answer" value="2" id="quiz-2-2" ><label for="quiz-2-2">Regressão Polinomial</label></div><div><input type="radio" name="answer" value="3" id="quiz-2-3" ><label for="quiz-2-3">SVR</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden">
-Lasso (L1) pode reduzir coeficientes a zero, realizando seleção de features; Ridge (L2) encolhe coeficientes sem zerá-los.</section></div>
-
-<ol>
-<li>SVR</li>
+</ul>
+</li>
 <li>
-<p>Bom para relações complexas quando precisamos de flexibilidade sem muitos features polinomiais.</p>
+<p>SVR</p>
+<ul>
+<li>Bom para relações complexas quando precisamos de flexibilidade sem muitos features polinomiais.</li>
+</ul>
 </li>
 <li>
 <p>Árvores, Florestas e Boosting</p>
-</li>
+<ul>
 <li>Lidam bem com não linearidades e interações; geralmente exigem menos engenharia de features, mas são menos transparentes que modelos lineares.</li>
+</ul>
+</li>
 </ol>
+<div class="quiz"><h3>Qual método tende a zerar coeficientes, ajudando na seleção de features?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-2-0" ><label for="quiz-2-0">Ridge</label></div><div><input type="radio" name="answer" value="1" id="quiz-2-1" correct><label for="quiz-2-1">Lasso</label></div><div><input type="radio" name="answer" value="2" id="quiz-2-2" ><label for="quiz-2-2">Regressão Polinomial</label></div><div><input type="radio" name="answer" value="3" id="quiz-2-3" ><label for="quiz-2-3">SVR</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden">
+Lasso (L1) pode reduzir coeficientes a zero, realizando seleção de features; Ridge (L2) encolhe coeficientes sem zerá-los.</section></div>
+
 <h2 id="intuicao-de-regressao-linear">Intuição de Regressão Linear<a class="headerlink" href="#intuicao-de-regressao-linear" title="Permanent link">&para;</a></h2>
 <p>A regressão linear procura a reta (ou hiperplano) que melhor explica a relação entre X e y, minimizando discrepâncias entre valores reais e previstos.</p>
 <h3 id="metodo-dos-minimos-quadrados">Método dos Mínimos Quadrados<a class="headerlink" href="#metodo-dos-minimos-quadrados" title="Permanent link">&para;</a></h3>
@@ -3871,9 +3906,6 @@ Homocedasticidade significa que a variância dos resíduos é aproximadamente co
 - SSres = Σ(yᵢ - ŷᵢ)²
 - SStot = Σ(yᵢ - ȳ)²</p>
 <p>R² indica a proporção da variância explicada pelo modelo. Valores mais altos são melhores, mas atenção: R² pode ser negativo se o modelo for pior que prever a média.</p>
-<div class="quiz"><h3>Qual métrica é menos sensível a outliers?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-4-0" ><label for="quiz-4-0">MSE</label></div><div><input type="radio" name="answer" value="1" id="quiz-4-1" ><label for="quiz-4-1">RMSE</label></div><div><input type="radio" name="answer" value="2" id="quiz-4-2" correct><label for="quiz-4-2">MAE</label></div><div><input type="radio" name="answer" value="3" id="quiz-4-3" ><label for="quiz-4-3">R²</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden">
-MAE (Erro Absoluto Médio) penaliza menos discrepâncias grandes que o MSE/RMSE, sendo mais robusto a outliers.</section></div>
-
 <h3 id="exemplo-em-python_1">Exemplo em Python<a class="headerlink" href="#exemplo-em-python_1" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">mean_squared_error</span><span class="p">,</span> <span class="n">mean_absolute_error</span><span class="p">,</span> <span class="n">r2_score</span>
 <a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
@@ -3889,9 +3921,8 @@ MAE (Erro Absoluto Médio) penaliza menos discrepâncias grandes que o MSE/RMSE,
 <a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;MAE: </span><span class="si">{</span><span class="n">mae</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;R²: </span><span class="si">{</span><span class="n">r2</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </code></pre></div>
-<h3 id="datasets-utilizados-nos-notebooks-para-download">datasets utilizados nos notebooks para download<a class="headerlink" href="#datasets-utilizados-nos-notebooks-para-download" title="Permanent link">&para;</a></h3>
-<p><a href="housing.csv" download>Baixar o arquivo housing.csv</a></p>
-<p><a href="laptop_data.csv" download>Baixar o arquivo laptop_data.csv</a></p><style type="text/css">.quiz {
+<div class="quiz"><h3>Qual métrica é menos sensível a outliers?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-4-0" ><label for="quiz-4-0">MSE</label></div><div><input type="radio" name="answer" value="1" id="quiz-4-1" ><label for="quiz-4-1">RMSE</label></div><div><input type="radio" name="answer" value="2" id="quiz-4-2" correct><label for="quiz-4-2">MAE</label></div><div><input type="radio" name="answer" value="3" id="quiz-4-3" ><label for="quiz-4-3">R²</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden">
+MAE (Erro Absoluto Médio) penaliza menos discrepâncias grandes que o MSE/RMSE, sendo mais robusto a outliers.</section></div><style type="text/css">.quiz {
   border: 1px solid black;
   padding: 1rem;
   margin: 1rem 0;
@@ -4022,7 +4053,7 @@ function resetFieldset(fieldset) {
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 21, 2025 17:08:57 UTC">August 21, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 21, 2025 22:02:52 UTC">August 21, 2025</span>
   </span>
 
     
