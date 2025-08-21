@@ -82,11 +82,11 @@ content:
     - Lasso (L1): pode zerar coeficientes — ajuda a selecionar features.
     - Elastic Net: combinação L1 + L2.
 
-5. SVR
-    - Bom para relações complexas quando precisamos de flexibilidade sem muitos features polinomiais.
-
+5. SVR (Support Vector Regression) 
+    - Ideal para datasets pequenos/médios com relações não lineares, usando kernels (como RBF) para capturar padrões complexos sem necessidade de features polinomiais.
 6. Árvores, Florestas e Boosting
-    - Lidam bem com não linearidades e interações; geralmente exigem menos engenharia de features, mas são menos transparentes que modelos lineares.
+    - Modelos como Random Forest e XGBoost são poderosos para capturar não linearidades e interações entre features. São menos sensíveis a outliers e requerem menos pré-processamento, mas podem ser mais difíceis de interpretar.
+
 
 <?quiz?>
 question: Qual método tende a zerar coeficientes, ajudando na seleção de features?
@@ -118,13 +118,12 @@ Para regressão linear simples, os coeficientes têm fórmulas fechadas úteis p
 β₀ = ȳ - β₁x̄
 ```
 
-### Pressupostos importantes
-
-1. Linearidade entre X e y
-2. Observações independentes
-3. Homocedasticidade (resíduos com variância constante)
-4. Resíduos aproximadamente normais
-5. Pouca multicolinearidade entre as features
+### Intuição de Pressupostos Importantes
+- **Linearidade**: A relação entre X e y deve parecer uma reta (ou um plano em múltiplas dimensões). Se os dados formam uma curva, regressão linear pode não funcionar bem.
+- **Independência**: Cada observação (e.g., preço de uma casa) não deve ser influenciada por outra.
+- **Homocedasticidade**: Os erros do modelo (diferença entre valores reais e previstos) devem ter variação constante. Imagine que os pontos estão igualmente espalhados ao redor da reta de regressão.
+- **Normalidade dos resíduos**: Os erros devem seguir uma distribuição normal (isso é mais importante para testes estatísticos).
+- **Baixa multicolinearidade**: As features não devem ser muito correlacionadas entre si (e.g., se "área da casa" e "número de quartos" são quase idênticas, isso pode confundir o modelo).
 
 
 <?quiz?>
@@ -171,6 +170,22 @@ print(f"MSE: {mse:.2f}")
 print(f"R²: {r2:.2f}")
 ```
 
+Para visualizar o resultado:
+
+```python
+import matplotlib.pyplot as plt
+
+# Plot dos dados e da reta de regressão
+plt.scatter(X_test, y_test, color='blue', label='Dados reais')
+plt.plot(X_test, y_pred, color='red', label='Reta de regressão')
+plt.xlabel('X')
+plt.ylabel('y')
+plt.title('Regressão Linear Simples')
+plt.legend()
+plt.show()
+```
+
+![alt text](image.png)
 
 ## Métricas de avaliação 
 
