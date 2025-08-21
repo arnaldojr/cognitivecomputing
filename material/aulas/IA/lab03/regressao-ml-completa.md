@@ -225,3 +225,9 @@ print(f"RMSE: {rmse:.4f}")
 print(f"MAE: {mae:.4f}")
 print(f"R²: {r2:.4f}")
 ```
+
+### datasets utilizados nos notebooks para download 
+
+<a href="housing.csv" download>Baixar o arquivo housing.csv</a>
+
+<a href="laptop_data.csv" download>Baixar o arquivo laptop_data.csv</a>
