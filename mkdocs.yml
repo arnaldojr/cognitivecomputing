@@ -209,8 +209,10 @@ nav:
       - lab2: aulas/IA/lab02/ml-classificador-digito.ipynb
       - lab3: aulas/IA/lab-04/aula8.ipynb
     - Aprendizado Supervisionado - Regressão:
+      - Introdução: aulas/IA/lab03/regressao-ml-completa.md
       - lab1: aulas/IA/lab03/regressao.ipynb
-      - lab2: aulas/IA/lab03/preco-notebook.ipynb      
+      - lab2: aulas/IA/lab03/regressao2.ipynb
+      - lab3: aulas/IA/lab03/preco-notebook.ipynb
     - Validação de Modelos: aulas/IA/lab05/validacaocruzada.ipynb
     - Aprendizado Não Supervisionado: 
       - lab1: aulas/IA/lab-01/aula5.ipynb
