@@ -10,7 +10,7 @@ As seguintes atividades foram preparadas para reforçar os conceitos abordados:
   Introdução aos conceitos básicos de regressão, com aplicação prática na predição de preços de casas na Califórnia.
 - **[Lab 2: Técnicas Avançadas](regressao2.ipynb)**  
   Exploração de métodos como regressão polinomial e XGBoost para modelagem mais robusta.
-- **[Lab 3: Predição de Preços de Notebooks](laptop_data.csv)**  
+- **[Lab 3: Predição de Preços de Notebooks](preco-notebook.ipynb)**  
   Treinamento de um modelo para prever o valor de notebooks com base em suas características.
 
 ### Datasets
@@ -258,3 +258,48 @@ content:
 MAE (Erro Absoluto Médio) penaliza menos discrepâncias grandes que o MSE/RMSE, sendo mais robusto a outliers.
 <?/quiz?>
 
+
+
+<!-- Exercício: Ajuste de Parâmetros (Linear Regression) -->
+<div id="linreg-widget" style="max-width:980px;margin:1.25rem 0;padding:1rem;border:1px solid var(--md-default-fg-color--lightest,#e0e0e0);border-radius:14px;background:var(--md-default-bg-color,#fff)">
+  <h3 style="margin:0 0 .5rem 0">Ajuste w (peso) e b (viés) para minimizar o MSE</h3>
+
+  <div style="display:flex;gap:1rem;flex-wrap:wrap;align-items:flex-end">
+    <label style="flex:1 1 260px">
+      <div>peso <code>w</code>: <strong><span id="wVal">0.50</span></strong></div>
+      <input id="w" type="range" min="-8" max="2" step="0.01" value="-6.5" style="width:100%">
+    </label>
+
+    <label style="flex:1 1 260px">
+      <div>viés <code>b</code>: <strong><span id="bVal">0.00</span></strong></div>
+      <input id="b" type="range" min="-10" max="60" step="0.01" value="46.0" style="width:100%">
+    </label>
+
+    <div style="flex:1 1 220px;line-height:1.6">
+      <div><strong>MSE</strong>: <span id="mse">—</span></div>
+      <div>Equação: <code id="eqn">y = w·x + b</code></div>
+      <label style="display:flex;gap:.5rem;align-items:center;margin-top:.25rem;font-size:.95em">
+        <input id="resid" type="checkbox"> Mostrar resíduos
+      </label>
+    </div>
+
+    <div style="flex:1 1 220px;display:flex;gap:.5rem;justify-content:flex-end">
+      <button id="btnFit" class="md-button md-button--primary" style="white-space:nowrap">Auto-ajustar (OLS)</button>
+      <button id="btnReset" class="md-button" style="white-space:nowrap">Reset</button>
+    </div>
+  </div>
+
+  <div style="position:relative;margin-top:.75rem">
+    <!-- width/height lógicos; JS ajusta para retina -->
+    <canvas id="plot" width="920" height="440" style="width:100%;display:block;background:#fff;border-radius:10px"></canvas>
+    <div style="position:absolute;left:8px;bottom:8px;color:#666;font-size:.85em">x: peso (milhares de lbs) • y: mpg</div>
+  </div>
+
+  <details style="margin-top:.75rem">
+    <summary><strong>Como funciona</strong></summary>
+    <p style="margin:.5rem 0 0 0">
+      Dados fixos (x,y). A reta <code>y = w·x + b</code> é desenhada. O erro é
+      <code>MSE = (1/n) Σ (y − (w·x+b))²</code>. Ajuste os sliders para reduzir o MSE ou use <em>Auto-ajustar (OLS)</em>.
+    </p>
+  </details>
+</div>

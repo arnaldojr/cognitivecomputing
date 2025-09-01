@@ -12,8 +12,8 @@
 | 6  | CNN                                                               | 11/09/2025   |
 | 7  | CNN Continuação                                                   | 18/09/2025   |
 | 8  | Aplicação de DL (batalha das redes)                               | 25/09/2025   |
-| 9  | Estudio para o CP2 (simulado)                                     | 02/10/2025   |
-| 10 | 	<span style="color:#d32f2f"><strong>CP2 – Avaliação</strong></span><br>CP2 - Redes Neurais conceitos e aplicação | 09/10/2025   |
+| 9  | <span style="color:#d32f2f"><strong>Avaliação Projeto challenge Santander</strong></span><br>  | 02/10/2025   |
+| 10 | <span style="color:#d32f2f"><strong>CP2 – Avaliação</strong></span><br>CP2 - Redes Neurais conceitos e aplicação | 09/10/2025   |
 | 11 | Transfer Learning, lançamento CP3                                 | 16/10/2025   |
 | 12 | Redes modernas, aplicações com DL                                 | 23/10/2025   |
 | 13 | Aplicações com Yolo e deploy de aplicações.                       | 30/10/2025   |

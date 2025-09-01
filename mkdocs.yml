@@ -52,24 +52,21 @@ site_url: https://arnaldojr.github.io/cognitivecomputing/
 
 extra_javascript:
   - https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.0.0/js-yaml.min.js
-  - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
-  - https://cdn.jsdelivr.net/gh/insper-education/active-handout-plugins-js@main/package/plugin-bundle.js
-
+  - js/exercicio-linreg.js
+  - js/knn-widget.js
+  - js/logreg-widget.js
 
 # Extensions / plugins
 plugins:
   - git-revision-date-localized
   - search
-  
   - mkdocs-jupyter:
       execute: False
   - mkdocs_quiz
 
 extra_css:
   - css/termynal.css
-
-
 
 markdown_extensions:
   - attr_list
@@ -205,6 +202,7 @@ nav:
       - Dataframe: aulas/IA/lab01/dataframe.ipynb 
       - Pré-processamento: aulas/IA/lab04/dicasDePreprocessamento.ipynb  
     - Aprendizado Supervisionado - Classificação:
+      - Introdução: aulas/IA/lab02/classificacao-ml-completa.md
       - lab1: aulas/IA/lab02/ml-classificador-iris.ipynb
       - lab2: aulas/IA/lab02/ml-classificador-digito.ipynb
       - lab3: aulas/IA/lab-04/aula8.ipynb
