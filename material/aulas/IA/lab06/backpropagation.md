@@ -13,13 +13,13 @@ O **backpropagation** faz exatamente isso, mas para redes neurais: é um método
 Este algoritmo revolucionou a inteligência artificial e é a base de praticamente tudo que vemos hoje em IA, desde reconhecimento de voz até carros autônomos!
 
 
-[![RNA](https://markdown-videos-api.jorgenkh.no/url?url=https://youtu.be/mBqfY_TX_8o?si=5MPHq_4fcbatMgD2)](https://youtu.be/mBqfY_TX_8o?si=5MPHq_4fcbatMgD2)
+[![RNA](https://markdown-videos-api.jorgenkh.no/url?url=https://youtu.be/mBqfY_TX_8o)](https://youtu.be/mBqfY_TX_8o)
 
 
 ## O problema do aprendizado
 
 
-Encontrar o peso para um perceptron é facil porque era é um neurônio. Mas em uma rede com várias camadas, surge um problema: **como saber qual neurônio da camada oculta é responsável pelo erro?**
+Encontrar os pesos para um perceptron é fácil porque há apenas um neurônio. Mas em uma rede com várias camadas, surge um problema: **como saber qual neurônio da camada oculta é responsável pelo erro?**
 
 É como tentar descobrir qual jogador de um time de futebol errou quando o time perde — pode ter sido o goleiro, o zagueiro, o meio-campo ou o atacante. Todos contribuíram para o resultado final!
 
@@ -73,6 +73,33 @@ content:
 
 A função de custo quantifica o erro da rede, fornecendo uma métrica clara de quão distantes estamos do resultado desejado, permitindo ajustar os pesos na direção correta.
 <?/quiz?>
+
+
+#### O que é *loss* (função de perda) e o que é **BCE**?
+
+**Função de perda (*loss*)** é a medida de “quão errada” está a previsão da rede para um (ou um conjunto de) exemplo(s).  
+- Para um exemplo $$i$$: $$\ell(\hat{y}^{(i)}, y^{(i)})$$.  
+- Para um mini‑batch com $$m$$ exemplos:  
+  \[
+  J = \frac{1}{m} \sum_{i=1}^{m} \ell\big(\hat{y}^{(i)}, y^{(i)}\big)
+  \]
+Ela precisa ser **diferenciável** para que possamos calcular gradientes via backpropagation.
+
+**BCE — Entropia Cruzada Binária (classificação binária)**  
+Para rótulos $$y\in\{0,1\}$$ e saída $$\hat{y}=\sigma(z)\in(0,1)$$ (sigmoide):
+\[
+\ell_{\text{BCE}}(y,\hat{y}) = -\Big[ y\log(\hat{y}) + (1-y)\log(1-\hat{y}) \Big].
+\]
+- **Interpretação**: negativo do log‑likelihood da Bernoulli (penaliza previsões confiantes e erradas).  
+- **Propriedade chave** (com sigmoide na saída): o gradiente em relação ao *logit* $$z$$ **simplifica** para
+  \[
+  \frac{\partial \ell}{\partial z} = \hat{y} - y,
+  \]
+  o que torna o backprop mais simples e estável.  
+- **Dica numérica**: faça *clipping* de $$\hat{y}$$ (ex.: $$[10^{-15},\,1-10^{-15}]$$) para evitar $$\log(0)$$.
+
+> **Multiclasse (extra)**: para $$K$$ classes, use **softmax + entropia cruzada**; com rótulo *one‑hot* $$y$$, também vale $$\delta^{[L]} = \hat{y} - y$$.
+
 
 ### Gradiente
 
@@ -174,6 +201,8 @@ Familiarizar-se com o funcionamento interno do backpropagation e entender o impa
       <div><strong>Época:</strong> <span id="bp_epoch">0</span></div>
       <div><strong>Erro (MSE):</strong> <span id="bp_err">—</span></div>
       <div><strong>Saída prevista:</strong> <span id="bp_out">—</span></div>
+      <div><strong>Alvo (y):</strong> <span id="bp_target">1</span></div>
+      <div><strong>Erro absoluto |ŷ − y|:</strong> <span id="bp_abs">—</span></div>
       <div><strong>Gradientes:</strong> <pre id="bp_grads" style="white-space:pre-wrap;background:#f7f7f7;padding:0.5rem;border-radius:4px">—</pre></div>
     </div>
   </div>
@@ -183,6 +212,23 @@ Familiarizar-se com o funcionamento interno do backpropagation e entender o impa
   </div>
 </div>
 
+Para uma rede 2–2–1 com saída Sigmoid e MSE:
+$$
+L=\tfrac12(y - \hat y)^2
+\hat y=\sigma(z_2)
+z_2 = v_1 a_1 + v_2 a_2 + c 
+a_i = g(z_i),\ z_i = w_{i1}x_1 + w_{i2}x_2 + b_i
+$$
+
+Gradientes principais:
+
+$$
+\frac{\partial L}{\partial z_2} = (\hat y - y)\,\sigma'(z_2)
+\frac{\partial L}{\partial v_i} = a_i \frac{\partial L}{\partial z_2}
+\frac{\partial L}{\partial a_i} = v_i \frac{\partial L}{\partial z_2}
+\frac{\partial L}{\partial z_i} = \frac{\partial L}{\partial a_i}\, g'(z_i)
+\frac{\partial L}{\partial w_{ij}} = x_j \frac{\partial L}{\partial z_i}
+$$
 
 
 Reflexão:
@@ -212,7 +258,7 @@ content:
 Começamos pela saída porque conhecemos o erro desejado ali. Isso permite calcular como cada camada anterior contribuiu para esse erro, propagando a informação de volta pela rede.
 <?/quiz?>
 
-## Implementação conceitual (pseudocódigo)
+## Pseudocódigo
 
 ```python
 # Algoritmo Backpropagation Simplificado
@@ -221,7 +267,7 @@ def treinar_rede(rede, dados_treino, taxa_aprendizado):
     for cada_época:
         for cada_exemplo in dados_treino:
             
-            # FORWARD PASS
+            # FORWARD PASS (predição)
             entrada = exemplo.dados
             for camada in rede:
                 entrada = camada.processar(entrada)
@@ -236,20 +282,10 @@ def treinar_rede(rede, dados_treino, taxa_aprendizado):
                 gradiente = camada.calcular_gradiente(gradiente)
                 camada.atualizar_pesos(gradiente, taxa_aprendizado)
 ```
+!!! note "Regra da cadeia"
+    O backpropagation usa a **regra da cadeia** do cálculo para "quebrar" gradientes complexos em pedaços menores.
 
-## Detalhes importantes
-
-### Chain Rule (Regra da Cadeia)
-
-O backpropagation usa a **regra da cadeia** do cálculo para "quebrar" gradientes complexos em pedaços menores.
-
-**Analogia da fábrica**:
-- Produto final depende da máquina C
-- Máquina C depende da máquina B  
-- Máquina B depende da máquina A
-- Para otimizar A, precisamos saber como A afeta B, como B afeta C, e como C afeta o produto final
-
-### Funções de ativação e derivadas
+## Funções de ativação e derivadas
 
 Por que ReLU é tão popular? Sua derivada é super simples:
 
@@ -259,7 +295,13 @@ Derivada = { 1 se x > 0
            { 0 se x ≤ 0
 ```
 
-Sigmóide tem derivada mais complicada, tornando o cálculo mais lento.
+Sigmoid tem derivada mais complicada, tornando o cálculo mais lento.
+
+
+!!! tip "Loss em classificação binária"
+    - **Didático (ok para este exercício):** MSE com saída **Sigmoid**.  
+    - **Prática comum:** **Entropia Cruzada Binária** (BCE) com saída **Sigmoid** — converge mais rápido e com gradientes mais estáveis.
+
 
 <?quiz?>
 question: Por que a derivada da função de ativação é importante no backpropagation?
@@ -272,54 +314,40 @@ content:
 A derivada da função de ativação é essencial para aplicar a regra da cadeia e calcular como pequenas mudanças nos pesos afetam o erro final da rede.
 <?/quiz?>
 
-## Hiperparâmetros importantes
-
-### Taxa de Aprendizado (Learning Rate)
-
-- **Muito alta** (ex: 1.0): pode divergir, "pulando" soluções
-- **Muito baixa** (ex: 0.0001): aprende muito devagar
-- **Típica**: entre 0.001 e 0.1
-
-### Batch Size
-
-- **Batch completo**: usa todos os dados para cada atualização
-- **Mini-batch**: usa pequenos grupos (ex: 32 exemplos)
-- **Stochastic**: usa um exemplo por vez
-
-### Épocas
-
-Número de vezes que a rede "vê" todo o conjunto de dados.
 
 ## Problemas comuns e soluções
 
 ### 1. Vanishing Gradients (gradientes que somem)
 
-**Problema**: Em redes muito profundas, gradientes ficam minúsculos nas primeiras camadas.
+**Problema**: Em redes neurais com muitas camadas, o gradiente (que é a informação sobre o quão rápido a rede está aprendendo) se torna extremamente pequeno à medida que volta para as primeiras camadas. Isso faz com que os pesos nessas camadas iniciais sejam atualizados de forma muito lenta, impedindo a rede de aprender de maneira eficaz. É como se a informação de erro se "evaporasse" antes de chegar onde é mais necessária.
 
 **Soluções**:
-- Use ReLU em vez de sigmóide
-- Inicialização adequada dos pesos
-- Batch Normalization
-- Skip connections (ResNet)
+
+- `Funções de Ativação`: Troque funções como a Sigmoid ou tanh por ReLU (Rectified Linear Unit), que não "sufoca" o gradiente.
+- `Inicialização de Pesos`: Comece o treinamento com pesos que não sejam nem muito grandes, nem muito pequenos. Técnicas como a inicialização de `He` ou de Xavier ajudam a manter os gradientes saudáveis.
+- `Normalização de Batch (Batch Normalization)`: Essa técnica ajusta as ativações dentro da rede, garantindo que os dados que fluem entre as camadas mantenham uma distribuição estável.
+- `Conexões de Salto (Skip Connections)`: Em arquiteturas como a ResNet, as camadas "pulam" e se conectam diretamente a camadas posteriores, criando um "caminho alternativo" para que o gradiente flua sem ser enfraquecido.
 
 ### 2. Exploding Gradients (gradientes que explodem)
 
-**Problema**: Gradientes ficam enormes, causando instabilidade.
+**Problema**: É o oposto do anterior. O gradiente se torna extremamente grande, levando a atualizações massivas e instáveis nos pesos. Isso faz com que o modelo "exploda", e o treinamento não converge.
 
 **Soluções**:
-- Gradient clipping (cortar gradientes muito grandes)
-- Taxa de aprendizado menor
-- Melhor inicialização
+
+- `Corte de Gradiente (Gradient Clipping)`: Simplesmente "corte" o gradiente quando ele atingir um valor muito alto, limitando-o a um limite pré-definido.
+- `Taxa de Aprendizado (Learning Rate) Menor`: Reduza a taxa de aprendizado para que as atualizações de peso sejam mais graduais e menos propensas a "explodir".
+- `Inicialização Melhor`: A mesma solução para o problema de "vanishing gradients" também ajuda a prevenir as explosões.
 
 ### 3. Overfitting
 
-**Problema**: Rede "decora" dados de treino, não generaliza.
+**Problema**: O modelo aprende os dados de treinamento com perfeição, mas não consegue generalizar para novos dados. É como um aluno que memoriza as respostas da prova, mas não entende a matéria. O modelo se torna bom demais nos dados que já viu, mas falha em aplicar o conhecimento em situações novas.
 
 **Soluções**:
-- Dropout
-- Regularização (L1/L2)
-- Mais dados
-- Early stopping
+
+- `Aumente os Dados`: A maneira mais eficaz de evitar o overfitting é dar mais exemplos de treinamento para o modelo.
+- `Dropout`: Durante o treinamento, essa técnica "desliga" aleatoriamente alguns neurônios em cada iteração. Isso força a rede a não depender de neurônios específicos, tornando-a mais robusta.
+- `Regularização (L1/L2)`: Adicione uma "penalidade" à função de perda para desincentivar pesos muito grandes. Isso ajuda a manter o modelo mais simples e com maior poder de generalização.
+- `Parada Antecipada (Early Stopping)`: Monitore a performance do modelo em um conjunto de validação e pare o treinamento assim que a performance começar a piorar.
 
 <?quiz?>
 question: O que caracteriza o problema de "vanishing gradients"?
@@ -332,9 +360,7 @@ content:
 Vanishing gradients ocorre quando gradientes se tornam exponencialmente menores à medida que se propagam para trás, fazendo com que as primeiras camadas aprendam muito lentamente ou parem de aprender.
 <?/quiz?>
 
-## Variações e melhorias
-
-### Otimizadores avançados
+## Otimizadores 
 
 **SGD (Stochastic Gradient Descent)**: O básico
 ```
@@ -348,6 +374,7 @@ peso = peso - taxa_aprendizado × velocidade
 ```
 
 **Adam**: Adapta taxa de aprendizado automaticamente
+
 - Muito popular atualmente
 - Combina momentum com adaptação automática
 
@@ -357,66 +384,6 @@ peso = peso - taxa_aprendizado × velocidade
 - **Exponential decay**: Reduz exponencialmente
 - **Cosine annealing**: Varia como coseno
 
-## Exemplo prático: XOR com backpropagation
-
-Vamos resolver o problema que quebrou o Perceptron!
-
-```python
-# Rede para XOR (conceitual)
-import numpy as np
-
-# Dados XOR
-X = [[0,0], [0,1], [1,0], [1,1]]
-Y = [0, 1, 1, 0]
-
-# Arquitetura: 2 entradas → 2 ocultos → 1 saída
-# Consegue resolver XOR!
-
-for época in range(1000):
-    for x, y_real in zip(X, Y):
-        # Forward pass
-        hidden = sigmoid(x @ W1 + b1)
-        output = sigmoid(hidden @ W2 + b2)
-        
-        # Calcular erro
-        erro = y_real - output
-        
-        # Backward pass
-        grad_output = erro * sigmoid_derivative(output)
-        grad_hidden = (grad_output @ W2.T) * sigmoid_derivative(hidden)
-        
-        # Atualizar pesos
-        W2 += learning_rate * hidden.T @ grad_output
-        W1 += learning_rate * x.T @ grad_hidden
-```
-
-## Resumo e próximos passos
-
-### O que aprendemos hoje
-
-1. **Backpropagation** resolve o problema de como treinar redes multicamadas
-2. Funciona **propagando erros de volta** através da rede
-3. Usa **gradientes** para saber como ajustar cada peso
-4. É a base de praticamente toda IA moderna
-5. Tem **hiperparâmetros importantes** que precisam ser ajustados
-
-### Conceitos-chave para lembrar
-
-- **Forward pass**: dados fluem da entrada para saída
-- **Backward pass**: erros fluem da saída para entrada  
-- **Gradiente**: direção para reduzir o erro
-- **Taxa de aprendizado**: tamanho do passo de otimização
-- **Regra da cadeia**: como "quebrar" derivadas complexas
-
-### Para onde vamos?
-
-- **Redes Convolucionais (CNNs)**: especializadas em imagens
-- **Redes Recorrentes (RNNs)**: memória para sequências
-- **Transformers**: revolução atual da IA
-- **Técnicas de regularização**: evitando overfitting
-- **Transfer Learning**: aproveitando modelos pré-treinados
-
-### Quiz final de revisão
 
 <?quiz?>
 question: Qual é a ideia central do algoritmo backpropagation?
@@ -451,20 +418,5 @@ content:
 Enquanto o Perceptron só consegue ajustar pesos de uma única camada, backpropagation resolve o problema de como treinar todas as camadas de uma rede neural profunda simultaneamente.
 <?/quiz?>
 
----
-
-**Próxima aula**: Redes Neurais Convolucionais (CNNs) — como as máquinas aprenderam a "ver" e revolucionaram o processamento de imagens!
-
-## Exercícios recomendados
-
-1. **Implementação manual**: Tente implementar backpropagation para XOR usando apenas numpy
-2. **Experimentos com hiperparâmetros**: Varie taxa de aprendizado e veja o impacto
-3. **Visualização**: Plote como o erro diminui durante o treinamento
-4. **Comparação**: Compare SGD, Momentum e Adam no mesmo problema
-
-## Leituras complementares
-
-- Deep Learning (Goodfellow, Bengio, Courville) - Capítulo 6
-- Neural Networks and Deep Learning (Michael Nielsen) - online
-- CS231n Stanford - Lecture notes sobre backpropagation
-- Documentação PyTorch/TensorFlow sobre otimizadores
+<!-- 
+**Próxima aula**: Redes Neurais Convolucionais (CNNs) — como as máquinas aprenderam a "ver" e revolucionaram o processamento de imagens! -->

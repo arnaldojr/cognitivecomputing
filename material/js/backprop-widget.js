@@ -22,6 +22,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const lossCanvas = document.getElementById("bp_loss");
     const lossCtx = lossCanvas.getContext("2d");
 
+    const targetEl = document.getElementById("bp_target");
+    const absEl = document.getElementById("bp_abs");
+
+
     // problema: entrada [1,0] => y=1
     const X = [1, 0];
     const y_true = 1;
@@ -57,6 +61,8 @@ document.addEventListener("DOMContentLoaded", function () {
       drawNetwork();
       drawLoss();
       updateInfo();
+      targetEl.textContent = y_true; // já que seu y_true = 1
+      absEl.textContent = "—";
     }
 
     // desenhar loss
@@ -195,6 +201,15 @@ document.addEventListener("DOMContentLoaded", function () {
       epochEl.textContent = epoch;
       errEl.textContent = isNaN(err) ? "—" : err.toFixed(4);
       outEl.textContent = isNaN(out) ? "—" : out.toFixed(4);
+
+      // novo: erro absoluto
+      if (!isNaN(out)) {
+        const y = parseFloat(targetEl.textContent);
+        absEl.textContent = Math.abs(out - y).toFixed(4);
+      } else {
+        absEl.textContent = "—";
+      }
+
       gradsEl.textContent = grads ? JSON.stringify(grads, null, 2) : "—";
     }
 
