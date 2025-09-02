@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#deep-learning-e-visao-computacional-usando-tensorflow" class="md-skip">
+        <a href="#sua-primeira-rede-neural-com-tensorflow-reconhecendo-digitos" class="md-skip">
           Skip to content
         </a>
       
@@ -3251,11 +3251,122 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#objetivos" class="md-nav__link">
+  <a href="#preparando-o-ambiente" class="md-nav__link">
     <span class="md-ellipsis">
-      Objetivos
+      Preparando o ambiente
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#carregando-os-dados-o-combustivel-da-ia" class="md-nav__link">
+    <span class="md-ellipsis">
+      Carregando os dados: o combustível da IA
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#construindo-nossa-rede-neural-como-montar-um-lego-inteligente" class="md-nav__link">
+    <span class="md-ellipsis">
+      Construindo nossa rede neural: como montar um Lego inteligente
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Construindo nossa rede neural: como montar um Lego inteligente">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#os-blocos-fundamentais" class="md-nav__link">
+    <span class="md-ellipsis">
+      Os blocos fundamentais
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configurando-os-hiperparametros" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configurando os hiperparâmetros
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configurando-o-cerebro-compilacao-do-modelo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configurando o cérebro: compilação do modelo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hora-do-treino-ensinando-nossa-ia-a-reconhecer-digitos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hora do treino: ensinando nossa IA a reconhecer dígitos!
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visualizando-o-progresso-os-graficos-que-contam-a-historia" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visualizando o progresso: os gráficos que contam a história
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#o-momento-da-verdade-testando-nossa-ia" class="md-nav__link">
+    <span class="md-ellipsis">
+      O momento da verdade: testando nossa IA
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#salvando-nossa-criacao-preservando-o-conhecimento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Salvando nossa criação: preservando o conhecimento
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testando-com-suas-proprias-imagens-o-momento-magico" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testando com suas próprias imagens: o momento mágico!
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Testando com suas próprias imagens: o momento mágico!">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#preparando-uma-imagem-personalizada" class="md-nav__link">
+    <span class="md-ellipsis">
+      Preparando uma imagem personalizada
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3486,11 +3597,122 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#objetivos" class="md-nav__link">
+  <a href="#preparando-o-ambiente" class="md-nav__link">
     <span class="md-ellipsis">
-      Objetivos
+      Preparando o ambiente
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#carregando-os-dados-o-combustivel-da-ia" class="md-nav__link">
+    <span class="md-ellipsis">
+      Carregando os dados: o combustível da IA
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#construindo-nossa-rede-neural-como-montar-um-lego-inteligente" class="md-nav__link">
+    <span class="md-ellipsis">
+      Construindo nossa rede neural: como montar um Lego inteligente
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Construindo nossa rede neural: como montar um Lego inteligente">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#os-blocos-fundamentais" class="md-nav__link">
+    <span class="md-ellipsis">
+      Os blocos fundamentais
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configurando-os-hiperparametros" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configurando os hiperparâmetros
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configurando-o-cerebro-compilacao-do-modelo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configurando o cérebro: compilação do modelo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hora-do-treino-ensinando-nossa-ia-a-reconhecer-digitos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hora do treino: ensinando nossa IA a reconhecer dígitos!
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visualizando-o-progresso-os-graficos-que-contam-a-historia" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visualizando o progresso: os gráficos que contam a história
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#o-momento-da-verdade-testando-nossa-ia" class="md-nav__link">
+    <span class="md-ellipsis">
+      O momento da verdade: testando nossa IA
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#salvando-nossa-criacao-preservando-o-conhecimento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Salvando nossa criação: preservando o conhecimento
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testando-com-suas-proprias-imagens-o-momento-magico" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testando com suas próprias imagens: o momento mágico!
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Testando com suas próprias imagens: o momento mágico!">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#preparando-uma-imagem-personalizada" class="md-nav__link">
+    <span class="md-ellipsis">
+      Preparando uma imagem personalizada
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3513,218 +3735,305 @@
   
 
 
-<h1 id="deep-learning-e-visao-computacional-usando-tensorflow">Deep Learning e Visão Computacional usando TensorFlow<a class="headerlink" href="#deep-learning-e-visao-computacional-usando-tensorflow" title="Permanent link">&para;</a></h1>
-<p>Este tutorial é um guia rápido de consulta para o mundo do deep learning. </p>
-<p>Aqui você encontra por meio de exemplos um pouco de teoria para compreesão e aplicação dos conceitos.</p>
-<h2 id="objetivos">Objetivos<a class="headerlink" href="#objetivos" title="Permanent link">&para;</a></h2>
-<ol>
-<li><a href="#introdução">Introdução</a></li>
-<li><a href="#configuração-e-instalação">Configuração e Instalação</a></li>
-<li><a href="#entendendo-os-conceitos-básicos">Entendendo os Conceitos Básicos</a></li>
-<li><a href="#perceptron">Perceptron</a></li>
-<li><a href="#perceptron-de-múltiplas-camadas-mlp">Perceptron de Múltiplas Camadas (MLP)</a></li>
-<li><a href="#retropropagação">Retropropagação</a></li>
-<li><a href="#otimizadores">Otimizadores</a></li>
-<li><a href="#redes-neurais-convolucionais-cnn">Redes Neurais Convolucionais (CNN)</a></li>
-<li><a href="#implementando-uma-cnn-simples">Implementando uma MLP Simples</a></li>
-<li><a href="#treinando-o-modelo">Treinando o Modelo</a></li>
-<li><a href="#avaliação-e-conclusão">Avaliação e Conclusão</a></li>
-</ol>
-<h1 id="introducao">Introdução<a class="headerlink" href="#introducao" title="Permanent link">&para;</a></h1>
-<p>Deep learning é um subconjunto de aprendizado de máquina onde redes neurais artificiais, algoritmos inspirados no cérebro humano, aprendem a partir de grandes quantidades de dados. Da mesma forma, visão computacional é um campo da inteligência artificial que treina computadores para interpretar e compreender o mundo visual.</p>
-<h2 id="configuracao-e-instalacao">Configuração e Instalação<a class="headerlink" href="#configuracao-e-instalacao" title="Permanent link">&para;</a></h2>
-<p>Primeiro, certifique-se de que Python e TensorFlow estão instalados em seu sistema. Você pode instalar o TensorFlow com o seguinte comando:</p>
+<h1 id="sua-primeira-rede-neural-com-tensorflow-reconhecendo-digitos">Sua Primeira Rede Neural com TensorFlow: Reconhecendo Dígitos!<a class="headerlink" href="#sua-primeira-rede-neural-com-tensorflow-reconhecendo-digitos" title="Permanent link">&para;</a></h1>
+<p>Chegou a hora de sair da teoria e colocar a mão na massa! Nesta aula prática, você vai construir sua primeira rede neural do zero usando <strong>TensorFlow</strong> — uma das bibliotecas mais populares para Deep Learning no mundo.</p>
+<p>Nosso desafio é ensinar um computador a reconhecer dígitos manuscritos, usando o famoso dataset <strong>MNIST</strong>. É como ensinar uma criança a ler números, mas em vez de mostrar flashcards, vamos mostrar milhares de exemplos para a máquina aprender os padrões!</p>
+<p><img alt="" src="mnist-samples.png" /></p>
+<p><strong>Por que o MNIST é perfeito para começar?</strong>
+- São <strong>60.000 imagens</strong> de treino (muito dados para aprender!)
+- Imagens pequenas (<strong>28x28 pixels</strong>) — rápido de processar
+- Problema <strong>bem definido</strong>: 10 classes (dígitos 0-9)
+- É o "Hello World" do Deep Learning — se funcionar aqui, você entendeu os conceitos!</p>
+<h2 id="preparando-o-ambiente">Preparando o ambiente<a class="headerlink" href="#preparando-o-ambiente" title="Permanent link">&para;</a></h2>
+<p>Primeiro, vamos garantir que você tem as ferramentas certas. O TensorFlow é como uma caixa de ferramentas cheia de componentes pré-construídos para redes neurais:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip<span class="w"> </span>install<span class="w"> </span>tensorflow
 </code></pre></div>
-<h2 id="entendendo-os-conceitos-basicos">Entendendo os Conceitos Básicos<a class="headerlink" href="#entendendo-os-conceitos-basicos" title="Permanent link">&para;</a></h2>
-<h3 id="perceptron">Perceptron<a class="headerlink" href="#perceptron" title="Permanent link">&para;</a></h3>
-<p>O <strong>Perceptron</strong> é um modelo de rede neural simples, geralmente utilizado para classificação binária. Consiste em uma única camada de neurônios, e sua operação pode ser descrita pela fórmula:</p>
-<p><img alt="" src="percep.png" /></p>
-<p>Podemos calcular o valor de um neuronio da seguinte forma:</p>
-<p>output = activation_function(weighted_sum + bias)</p>
-<p>O perceptron é uma das formas mais simples de uma rede neural, utilizado para classificação binária. A saída de um neurônio no perceptron pode ser calculada usando a seguinte fórmula:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">output</span> <span class="o">=</span> <span class="n">activation_function</span><span class="p">(</span><span class="n">weighted_sum</span> <span class="o">+</span> <span class="n">bias</span><span class="p">)</span>
+<p>Agora crie um novo notebook Jupyter — vai ser nosso laboratório de experimentos!</p>
+<h2 id="carregando-os-dados-o-combustivel-da-ia">Carregando os dados: o combustível da IA<a class="headerlink" href="#carregando-os-dados-o-combustivel-da-ia" title="Permanent link">&para;</a></h2>
+<p>Toda rede neural precisa de dados para aprender, assim como você precisa de exemplos para aprender matemática. O TensorFlow já vem com o MNIST "de fábrica" — que conveniência!</p>
+<p><strong>O que estamos fazendo aqui:</strong>
+1. <strong>Carregamos o dataset</strong> direto da biblioteca do TensorFlow
+2. <strong>Separamos</strong> em treino (para ensinar) e teste (para avaliar)
+3. <strong>Normalizamos</strong> os pixels de 0-255 para 0-1 (redes neurais gostam de números pequenos!)</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">tensorflow</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">tf</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1"># Carregando o conjunto de dados MNIST - como abrir um livro de exercícios</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">mnist</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">mnist</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">),</span> <span class="p">(</span><span class="n">x_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span> <span class="o">=</span> <span class="n">mnist</span><span class="o">.</span><span class="n">load_data</span><span class="p">()</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="c1"># Normalizando os dados - convertendo de 0-255 para 0-1</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="c1"># É como ajustar o volume do rádio para o nível ideal</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="n">x_train</span><span class="p">,</span> <span class="n">x_test</span> <span class="o">=</span> <span class="n">x_train</span> <span class="o">/</span> <span class="mf">255.0</span><span class="p">,</span> <span class="n">x_test</span> <span class="o">/</span> <span class="mf">255.0</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Dados de treino: </span><span class="si">{</span><span class="n">x_train</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Rótulos de treino: </span><span class="si">{</span><span class="n">y_train</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Dados de teste: </span><span class="si">{</span><span class="n">x_test</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Rótulos de teste: </span><span class="si">{</span><span class="n">y_test</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </code></pre></div>
-<p>Onde: </p>
-<ul>
-<li><code>weighted_sum</code>: é a soma ponderada das entradas (inputs) multiplicadas pelos respectivos pesos (weights).</li>
-<li><code>activation_function</code>: refere-se à função que define o limiar de ativação do neurônio, como sigmoid, relu ou softmax.</li>
-<li><code>bias</code>: é um termo adicional que permite ajustar a saída ao longo da função de ativação para melhor adaptação dos dados</li>
-</ul>
-<h3 id="perceptron-de-multiplas-camadas-mlp">Perceptron de Múltiplas Camadas (MLP)<a class="headerlink" href="#perceptron-de-multiplas-camadas-mlp" title="Permanent link">&para;</a></h3>
-<p>O <code>MLP (Multilayer Perceptron)</code> é uma extensão do modelo perceptron que inclui múltiplas camadas. A estrutura típica de um MLP consiste em:</p>
-<ul>
-<li><code>Uma camada de entrada</code>, que recebe os dados.</li>
-<li><code>Uma ou mais camadas ocultas</code>, que transformam os dados de entrada através de pesos, biases e funções de ativação.</li>
-<li><code>Uma camada de saída</code>, que produz a previsão final do modelo.</li>
-</ul>
-<p>Cada camada é <code>totalmente conectada</code> à próxima, o que significa que cada neurônio em uma camada está conectado a todos os neurônios na camada seguinte. O MLP é capaz de aprender representações não-lineares dos dados, o que o torna adequado para problemas complexos de classificação e regressão.</p>
-<p><img alt="" src="mlp.png" /></p>
-<h3 id="funcoes-de-ativacao">Funções de Ativação<a class="headerlink" href="#funcoes-de-ativacao" title="Permanent link">&para;</a></h3>
-<p>As <strong>funções de ativação</strong> são componentes essenciais nas redes neurais, responsáveis por introduzir não-linearidades no modelo. Sem elas, a rede seria essencialmente um modelo linear e incapaz de aprender e representar dados complexos que requerem não-linearidade para sua modelagem. As funções de ativação decidem se um neurônio deve ser ativado ou não, com base no valor da soma ponderada de suas entradas.</p>
-<h4 id="exemplos-comuns">Exemplos Comuns:<a class="headerlink" href="#exemplos-comuns" title="Permanent link">&para;</a></h4>
-<ul>
-<li><strong><code>ReLU (Rectified Linear Unit)</code></strong>: Oferece uma resposta linear para todos os valores positivos e zero para valores negativos. É a mais usada devido à sua eficiência computacional e à capacidade de mitigar o problema do desaparecimento do gradiente em redes profundas.</li>
-<li><strong><code>Sigmoid</code></strong>: Transforma os valores em uma faixa entre 0 e 1, útil especialmente para modelos onde precisamos de uma probabilidade como saída; contudo, é menos usada em camadas ocultas devido a problemas de desaparecimento de gradiente.</li>
-<li><strong><code>Tanh (Tangente Hiperbólica)</code></strong>: Semelhante à sigmoid, mas transforma os valores em uma faixa entre -1 e 1, centrando os dados e, portanto, melhorando a eficiência do aprendizado nas camadas ocultas.</li>
-</ul>
-<h3 id="retropropagacao-backpropagation">Retropropagação (Backpropagation)<a class="headerlink" href="#retropropagacao-backpropagation" title="Permanent link">&para;</a></h3>
-<p>A <strong>Retropropagação</strong> é uma técnica para treinar redes neurais, permitindo o ajuste dos pesos de conexão após cada iteração de treinamento. Este método utiliza o <code>cálculo do gradiente</code> da <code>função de perda</code> em relação a cada peso, propagando o erro de saída de volta pela rede para atualizar os pesos. Isso minimiza a função de perda ao longo do tempo, melhorando a precisão do modelo ao ajustá-lo mais eficazmente aos dados de treinamento.</p>
-<h4 id="funcionamento">Funcionamento:<a class="headerlink" href="#funcionamento" title="Permanent link">&para;</a></h4>
-<ul>
-<li>Calcula-se o gradiente da função de perda para determinar a direção na qual os pesos devem ser ajustados para minimizar o erro.</li>
-<li>Os pesos são atualizados utilizando este gradiente, geralmente com a ajuda de um otimizador como SGD, Adam, entre outros.</li>
-<li>Este processo é repetido para cada lote de dados (batch) durante várias épocas, ajustando progressivamente os pesos para melhorar o desempenho do modelo.</li>
-</ul>
-<p>Esses ajustes permitem que a rede aprenda de forma eficiente, refinando seus pesos para reduzir o erro total e aumentar a precisão nas tarefas de classificação ou regressão.</p>
-<h3 id="otimizadores">Otimizadores<a class="headerlink" href="#otimizadores" title="Permanent link">&para;</a></h3>
-<p><strong>Otimizadores</strong> são algoritmos projetados para otimizar o processo de treinamento de uma rede neural, ajustando os pesos e a taxa de aprendizagem. É importante para determinar a rapidez e eficácia com que uma rede neural aprende. </p>
-<p>Alguns exemplos comuns incluem:</p>
-<ul>
-<li>SGD (Descida do Gradiente Estocástico)</li>
-<li>Adam</li>
-<li>RMSprop</li>
-<li>Dentre outros, cada um com suas próprias características e adequações a diferentes tipos de problemas e conjuntos de dados.</li>
-</ul>
-<p><img alt="grad" src="https://media.giphy.com/media/jUvoKxaLa7kxG/giphy.gif" /></p>
-<h3 id="redes-neurais-convolucionais-cnn">Redes Neurais Convolucionais (CNN)<a class="headerlink" href="#redes-neurais-convolucionais-cnn" title="Permanent link">&para;</a></h3>
-<p><strong>Redes Neurais Convolucionais (CNNs)</strong> são uma classe especializada de redes neurais profundas que são particularmente para tarefas de processamento de imagem e vídeo. Utilizam o processo de convolução para capturar características visuais importantes como bordas, texturas e padrões mais complexos sem a necessidade de intervenção ou extração manual de características.</p>
-<h3 id="principais-componentes">Principais Componentes<a class="headerlink" href="#principais-componentes" title="Permanent link">&para;</a></h3>
-<ul>
-<li><strong>Camadas Convolucionais</strong>: O coração de uma CNN. Estas camadas utilizam filtros que realizam a convolução sobre a entrada para criar mapas de características que resumem as presenças de características específicas na entrada.</li>
-<li><strong>Função de Ativação</strong>: Normalmente, uma função ReLU é aplicada após cada convolução para introduzir não-linearidades ao modelo, ajudando-o a aprender mais complexidades.</li>
-<li><strong>Camadas de Pooling</strong>: Seguem as camadas convolucionais e são usadas para reduzir as dimensões dos mapas de características, o que ajuda a diminuir o cálculo necessário e também controla o overfitting.</li>
-<li><strong>Camadas Densas (Fully Connected Layers)</strong>: Após várias camadas convolucionais e de pooling, a rede utiliza uma ou mais camadas densas onde a classificação final é realizada baseada nas características extraídas anteriormente.</li>
-</ul>
-<h4 id="funcionamento_1">Funcionamento<a class="headerlink" href="#funcionamento_1" title="Permanent link">&para;</a></h4>
-<p>Uma CNN recebe uma imagem como entrada, que é passada através de uma série de camadas convolucionais com filtros (kernels), camadas de pooling, e eventualmente camadas densas para produzir uma saída, que pode ser uma classificação ou outra interpretação da imagem. Em cada camada convolucional, a rede aprende a identificar características cada vez mais complexas. À medida que os dados avançam pela rede, a "visão" da rede torna-se cada vez mais abstrata, permitindo que ela reconheça grandes padrões compostos por características menores capturadas nas primeiras camadas.</p>
-<h4 id="aplicacoes">Aplicações<a class="headerlink" href="#aplicacoes" title="Permanent link">&para;</a></h4>
-<p>As CNNs têm sido usadas com grande sucesso em uma variedade de aplicações de visão computacional:</p>
-<ul>
-<li><strong><code>Reconhecimento de Imagens</code></strong>: Identificação de objetos, pessoas, cenas e atividades em imagens.</li>
-<li><strong><code>Classificação de Imagens</code></strong>: Classificar imagens em categorias pré-definidas.</li>
-<li><strong><code>Detecção de Objetos</code></strong>: Localizar e identificar múltiplos objetos dentro de uma única imagem.</li>
-<li><strong><code>Segmentação Semântica</code></strong>: Classificar cada pixel de uma imagem em uma categoria de objeto, permitindo uma compreensão detalhada da cena.</li>
-</ul>
-<h2 id="implementando-um-mlp-simples">Implementando um MLP Simples<a class="headerlink" href="#implementando-um-mlp-simples" title="Permanent link">&para;</a></h2>
-<p>Vamos implementar um exemplo simples de uma rede neural multicamadas (MLP) usando TensorFlow, aplicada ao conjunto de dados <code>MNIST</code>, que consiste em <code>imagens de dígitos escritos à mão</code>:</p>
-<p><img alt="" src="mnist-samples.png" /></p>
-<h3 id="importando-o-dataset-e-bibliotecas">Importando o dataset e bibliotecas<a class="headerlink" href="#importando-o-dataset-e-bibliotecas" title="Permanent link">&para;</a></h3>
-<p>Começamos importando a biblioteca <code>tensorflow</code> e o dataset mninst. Esse dataset é bem famoso e faz parte dos do da biblioteca tensorflow. Precisamos fazer uma transformação simples nas imagens de entrada para normalizar entre 0 e 1.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">tensorflow</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">tf</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1"># Carregando o conjunto de dados MNIST</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="n">mnist</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">mnist</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">),</span> <span class="p">(</span><span class="n">x_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span> <span class="o">=</span> <span class="n">mnist</span><span class="o">.</span><span class="n">load_data</span><span class="p">()</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="c1"># Normalizando os dados</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="n">x_train</span><span class="p">,</span> <span class="n">x_test</span> <span class="o">=</span> <span class="n">x_train</span> <span class="o">/</span> <span class="mf">255.0</span><span class="p">,</span> <span class="n">x_test</span> <span class="o">/</span> <span class="mf">255.0</span>
+<div class="quiz"><h3>Por que normalizamos os pixels das imagens de 0-255 para 0-1?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-0-0" ><label for="quiz-0-0">Para economizar espaço de armazenamento</label></div><div><input type="radio" name="answer" value="1" id="quiz-0-1" ><label for="quiz-0-1">Porque o TensorFlow exige essa conversão</label></div><div><input type="radio" name="answer" value="2" id="quiz-0-2" correct><label for="quiz-0-2">Porque redes neurais aprendem melhor com valores pequenos e padronizados</label></div><div><input type="radio" name="answer" value="3" id="quiz-0-3" ><label for="quiz-0-3">Para acelerar o download dos dados</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden">
+A normalização ajuda a rede neural a convergir mais rapidamente durante o treinamento, evitando que valores grandes dominem o processo de aprendizado e garantindo estabilidade numérica.</section></div>
+
+<h2 id="construindo-nossa-rede-neural-como-montar-um-lego-inteligente">Construindo nossa rede neural: como montar um Lego inteligente<a class="headerlink" href="#construindo-nossa-rede-neural-como-montar-um-lego-inteligente" title="Permanent link">&para;</a></h2>
+<p>Agora vem a parte divertida — vamos construir nossa rede neural como se fosse um Lego gigante! O TensorFlow nos dá peças pré-fabricadas que podemos empilhar para criar nossa "máquina de reconhecer dígitos".</p>
+<h3 id="os-blocos-fundamentais">Os blocos fundamentais<a class="headerlink" href="#os-blocos-fundamentais" title="Permanent link">&para;</a></h3>
+<p><strong>🧱 Sequential</strong>: Nossa "base" — uma pilha simples onde cada camada se conecta à próxima
+<strong>🔄 Flatten</strong>: O "achatador" — transforma a imagem 28x28 em uma linha de 784 números<br />
+<strong>🧠 Dense</strong>: As "camadas pensantes" — onde a mágica acontece!</p>
+<h3 id="configurando-os-hiperparametros">Configurando os hiperparâmetros<a class="headerlink" href="#configurando-os-hiperparametros" title="Permanent link">&para;</a></h3>
+<p>Antes de construir, você precisa tomar algumas decisões importantes:</p>
+<p><strong>Para as camadas ocultas:</strong>
+- <strong>Quantos neurônios?</strong> Comece com 128 ou 256 — é um bom meio-termo
+- <strong>Qual ativação?</strong> Use <code>'relu'</code> — ela é rápida e eficiente</p>
+<p><strong>Para a camada de saída:</strong>
+- <strong>Quantos neurônios?</strong> 10 (um para cada dígito: 0, 1, 2... 9)
+- <strong>Qual ativação?</strong> Use <code>'softmax'</code> — transforma saídas em probabilidades</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Construindo nossa rede neural - como montar um robô inteligente!</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">model</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">Sequential</span><span class="p">([</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="c1"># Camada 1: Achatar a imagem 28x28 em um vetor de 784 elementos</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Flatten</span><span class="p">(</span><span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="mi">28</span><span class="p">,</span> <span class="mi">28</span><span class="p">)),</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    <span class="c1"># Camada 2: Primeira camada &quot;pensante&quot; com 128 neurônios</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">),</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>    <span class="c1"># Camada 3: Segunda camada &quot;pensante&quot; com 64 neurônios</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>    <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">),</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>    <span class="c1"># Camada 4: Saída final - 10 neurônios para 10 dígitos</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>    <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;softmax&#39;</span><span class="p">)</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="p">])</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="c1"># Vendo nossa criação</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="n">model</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
 </code></pre></div>
-<h3 id="criando-a-rede-neural">Criando a Rede Neural<a class="headerlink" href="#criando-a-rede-neural" title="Permanent link">&para;</a></h3>
-<p>Para construir nossa rede neural, utilizaremos a classe Sequential do TensorFlow, que permite compor modelos camada por camada de maneira simples e direta. Aqui está o detalhamento de cada componente utilizado:</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Substitua os campos <code>&lt;QUANTIDADE_NEURONIOS&gt;</code>e <code>&lt;FUNCAO_ATIVACAO&gt;</code> nos lugares indicados para configurar o número de neurônios e as funções de ativação.</p>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>A quantidade de neurônios na <code>camada de saída</code> deve ser igual à quantidade de classes a serem preditas no MNIST, que são 10 (dígitos de 0 a 9).</p>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Utilize a função de ativação <code>relu</code> para as camadas intermediárias, pois ajuda a resolver o problema do desaparecimento do gradiente em redes profundas. Para a camada de saída, use <code>softmax</code> para converter as saídas em probabilidades de pertencimento às classes.</p>
-</div>
-<h4 id="componentes-do-modelo">Componentes do Modelo<a class="headerlink" href="#componentes-do-modelo" title="Permanent link">&para;</a></h4>
-<ul>
-<li><code>Sequential</code>: Esta é a classe base para definir uma pilha de camadas de rede neural. Você começa com uma lista vazia e adiciona camadas usando a notação de lista. Cada camada adicionada é empilhada sobre a anterior, o que facilita a modelagem de um fluxo de dados direto (feedforward).</li>
-<li><code>Flatten</code>: Transforma a matriz 2D de entrada (28x28 pixels da imagem) em um vetor 1D. Isso é necessário porque a primeira camada densa (Dense) espera um vetor como entrada.</li>
-<li><code>Dense</code>: É a camada de neurônios densamente conectados ou completamente conectados. Cada neurônio recebe entrada de todos os neurônios da camada anterior, mantendo uma conexão densa.</li>
-<li><QUANTIDADE_NEURONIOS>: Aqui você define quantos neurônios deseja nesta camada.</li>
-<li><FUNCAO_ATIVACAO>: Define a função de ativação a ser usada. A função relu é comum para camadas internas.</li>
-</ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># Criando o modelo MLP</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">model</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">Sequential</span><span class="p">([</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>  <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Flatten</span><span class="p">(</span><span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="mi">28</span><span class="p">,</span> <span class="mi">28</span><span class="p">)),</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>  <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="o">&lt;</span><span class="n">QUANTIDADE_NEURONIOS</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">activation</span><span class="o">=&lt;</span><span class="n">FUNCAO_ATIVACAO</span><span class="o">&gt;</span><span class="p">),</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>  <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="o">&lt;</span><span class="n">QUANTIDADE_NEURONIOS</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">activation</span><span class="o">=&lt;</span><span class="n">FUNCAO_ATIVACAO</span><span class="o">&gt;</span><span class="p">)</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="p">])</span>
+<div class="quiz"><h3>Por que usamos a função de ativação 'softmax' na camada de saída?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-1-0" ><label for="quiz-1-0">Porque é mais rápida que outras funções</label></div><div><input type="radio" name="answer" value="1" id="quiz-1-1" ><label for="quiz-1-1">Para reduzir o overfitting</label></div><div><input type="radio" name="answer" value="2" id="quiz-1-2" correct><label for="quiz-1-2">Para converter as saídas em probabilidades que somam 1</label></div><div><input type="radio" name="answer" value="3" id="quiz-1-3" ><label for="quiz-1-3">Para acelerar o treinamento</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden">
+Softmax transforma os valores de saída em probabilidades válidas (entre 0 e 1) que somam 1, permitindo interpretar qual dígito é mais provável de ser a resposta correta.</section></div>
+
+<h2 id="configurando-o-cerebro-compilacao-do-modelo">Configurando o cérebro: compilação do modelo<a class="headerlink" href="#configurando-o-cerebro-compilacao-do-modelo" title="Permanent link">&para;</a></h2>
+<p>Agora que construímos nossa rede, precisamos ensiná-la como aprender! É como configurar os "instintos" de aprendizado da nossa IA. Precisamos definir três componentes essenciais:</p>
+<p><strong>🎯 Otimizador</strong>: Como a rede ajusta seus pesos (o "professor")
+<strong>📊 Função de perda</strong>: Como medir o quão errada está a resposta
+<strong>📈 Métricas</strong>: O que queremos acompanhar durante o treino</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># Configurando como nossa rede vai aprender</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    <span class="n">optimizer</span><span class="o">=</span><span class="s1">&#39;adam&#39;</span><span class="p">,</span>                    <span class="c1"># Adam: otimizador inteligente que adapta a velocidade</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span class="n">loss</span><span class="o">=</span><span class="s1">&#39;sparse_categorical_crossentropy&#39;</span><span class="p">,</span>  <span class="c1"># Para classificação com números inteiros</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">]</span>                 <span class="c1"># Queremos acompanhar a precisão</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="p">)</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Modelo configurado e pronto para treinar! 🚀&quot;</span><span class="p">)</span>
 </code></pre></div>
-<h2 id="compilando-o-modelo">Compilando o Modelo<a class="headerlink" href="#compilando-o-modelo" title="Permanent link">&para;</a></h2>
-<p>Agora, vamos compilar o modelo utilizando o <code>otimizador Adam</code> e a função de perda <code>sparse_categorical_crossentropy</code>, adequada para classificação de múltiplas classes onde as classes são fornecidas como números inteiros:</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Substitua os campos <code>&lt;KEY&gt;</code> por valores convenientes. Para <code>&lt;METRICA&gt;</code> utilize <code>accuracy</code>.</p>
-</div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=&lt;</span><span class="n">OTIMIZADOR</span><span class="o">&gt;</span><span class="p">,</span> 
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>              <span class="n">loss</span><span class="o">=&lt;</span><span class="n">LOSS</span><span class="o">&gt;</span><span class="p">,</span> 
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>              <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="o">&lt;</span><span class="n">METRICA</span><span class="o">&gt;</span><span class="p">])</span>
+<p><strong>Por que essas escolhas?</strong>
+- <strong>Adam</strong>: É como um professor experiente que sabe quando ir devagar e quando acelerar
+- <strong>sparse_categorical_crossentropy</strong>: Perfeito quando nossos rótulos são números (0, 1, 2... 9)
+- <strong>accuracy</strong>: A métrica mais intuitiva — quantos % acertamos?</p>
+<div class="quiz"><h3>Qual é a função do otimizador em uma rede neural?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-2-0" ><label for="quiz-2-0">Definir a arquitetura da rede</label></div><div><input type="radio" name="answer" value="1" id="quiz-2-1" ><label for="quiz-2-1">Calcular a função de perda</label></div><div><input type="radio" name="answer" value="2" id="quiz-2-2" correct><label for="quiz-2-2">Controlar como os pesos são ajustados durante o treinamento</label></div><div><input type="radio" name="answer" value="3" id="quiz-2-3" ><label for="quiz-2-3">Normalizar os dados de entrada</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden">
+O otimizador é responsável por ajustar os pesos da rede neural baseado nos gradientes calculados, determinando a direção e magnitude das mudanças para minimizar a função de perda.</section></div>
+
+<h2 id="hora-do-treino-ensinando-nossa-ia-a-reconhecer-digitos">Hora do treino: ensinando nossa IA a reconhecer dígitos!<a class="headerlink" href="#hora-do-treino-ensinando-nossa-ia-a-reconhecer-digitos" title="Permanent link">&para;</a></h2>
+<p>Este é o momento mais emocionante — vamos colocar nossa rede para aprender! É como matricular um aluno em uma escola intensiva onde ele vai ver milhares de exemplos de dígitos manuscritos.</p>
+<p><strong>O que vai acontecer:</strong>
+- A rede vai ver cada imagem e tentar adivinhar o dígito
+- Quando errar, vai ajustar seus "neurônios" para melhorar
+- Vai repetir isso por <strong>30 épocas</strong> (30 vezes todo o dataset)
+- 20% dos dados ficam separados para <strong>validação</strong> (como um teste surpresa!)</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1"># Começando o treinamento - prepare a pipoca! 🍿</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Iniciando treinamento... Isso pode demorar alguns minutos!&quot;</span><span class="p">)</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="n">history</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>    <span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span>           <span class="c1"># Dados de treino (professor e aluno)</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>    <span class="n">epochs</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span>                  <span class="c1"># 30 &quot;aulas&quot; completas</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>    <span class="n">validation_split</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>       <span class="c1"># 20% para teste durante o treino</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>    <span class="n">verbose</span><span class="o">=</span><span class="mi">1</span>                   <span class="c1"># Mostrar progresso na tela</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="p">)</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Treinamento concluído! 🎉&quot;</span><span class="p">)</span>
 </code></pre></div>
-<h2 id="compilando-o-modelo_1">Compilando o Modelo<a class="headerlink" href="#compilando-o-modelo_1" title="Permanent link">&para;</a></h2>
-<p>Agora, vamos compilar o modelo passando os conjuntos de dados <code>x_train</code> e <code>y_train</code>, definindo a quantidade épocas de treinamento e ajustando um subset de 20% para validação. </p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Substitua os campos <code>&lt;KEY&gt;</code> por valores convenientes. Defina 30 épocas e 0.2 de valiçao.</p>
-</div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># Treinando o modelo</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">epocas_hist</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="o">&lt;</span><span class="n">X_TREINO</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">Y_TREINO</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=&lt;</span><span class="n">EPOCAS</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">validation_split</span><span class="o">=&lt;</span><span class="n">VALIDACAO</span><span class="o">&gt;</span><span class="p">)</span>
+<p><strong>O que significam os números que aparecem:</strong>
+- <strong>loss</strong>: Quão "confusa" está a rede (menor = melhor)
+- <strong>accuracy</strong>: % de acertos (maior = melhor)<br />
+- <strong>val_loss</strong> e <strong>val_accuracy</strong>: Mesmas métricas nos dados de validação</p>
+<div class="quiz"><h3>Por que separamos parte dos dados para validação durante o treinamento?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-3-0" ><label for="quiz-3-0">Para acelerar o processo de treinamento</label></div><div><input type="radio" name="answer" value="1" id="quiz-3-1" ><label for="quiz-3-1">Para economizar memória do computador</label></div><div><input type="radio" name="answer" value="2" id="quiz-3-2" correct><label for="quiz-3-2">Para monitorar se a rede está generalizando bem ou apenas decorando</label></div><div><input type="radio" name="answer" value="3" id="quiz-3-3" ><label for="quiz-3-3">Para reduzir o tamanho do dataset</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden">
+A validação nos permite detectar overfitting - se a acurácia de treino sobe mas a de validação estagnar ou cair, significa que a rede está "decorando" em vez de aprender padrões gerais.</section></div>
+
+<h2 id="visualizando-o-progresso-os-graficos-que-contam-a-historia">Visualizando o progresso: os gráficos que contam a história<a class="headerlink" href="#visualizando-o-progresso-os-graficos-que-contam-a-historia" title="Permanent link">&para;</a></h2>
+<p>Números são legais, mas gráficos são muito mais divertidos! Vamos transformar o histórico de treinamento em visualizações que mostram como nossa IA evoluiu a cada época.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1"># Transformando o histórico em um DataFrame para análise</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="n">df_historico</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">)</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Métricas disponíveis:&quot;</span><span class="p">,</span> <span class="n">df_historico</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="n">df_historico</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="c1"># Criando gráficos informativos</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="c1"># Gráfico 1: Evolução da Loss (erro)</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df_historico</span><span class="p">[</span><span class="s1">&#39;loss&#39;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Treino&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df_historico</span><span class="p">[</span><span class="s1">&#39;val_loss&#39;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Validação&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Evolução da Loss ao Longo do Treino&#39;</span><span class="p">)</span>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Épocas&#39;</span><span class="p">)</span>
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Loss&#39;</span><span class="p">)</span>
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="n">ax1</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>
+<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="c1"># Gráfico 2: Evolução da Acurácia</span>
+<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a><span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df_historico</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Treino&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a><span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df_historico</span><span class="p">[</span><span class="s1">&#39;val_accuracy&#39;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Validação&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a><span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Evolução da Acurácia ao Longo do Treino&#39;</span><span class="p">)</span>
+<a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a><span class="n">ax2</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Épocas&#39;</span><span class="p">)</span>
+<a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a><span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Acurácia&#39;</span><span class="p">)</span>
+<a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a><span class="n">ax2</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a><span class="n">ax2</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a>
+<a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a><span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a>
+<a id="__codelineno-5-33" name="__codelineno-5-33" href="#__codelineno-5-33"></a><span class="c1"># Resumo final dos resultados</span>
+<a id="__codelineno-5-34" name="__codelineno-5-34" href="#__codelineno-5-34"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">📊 RESUMO DO TREINAMENTO:&quot;</span><span class="p">)</span>
+<a id="__codelineno-5-35" name="__codelineno-5-35" href="#__codelineno-5-35"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;✅ Acurácia final (treino): </span><span class="si">{</span><span class="n">df_historico</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-5-36" name="__codelineno-5-36" href="#__codelineno-5-36"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;✅ Acurácia final (validação): </span><span class="si">{</span><span class="n">df_historico</span><span class="p">[</span><span class="s1">&#39;val_accuracy&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-5-37" name="__codelineno-5-37" href="#__codelineno-5-37"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;📉 Loss final (treino): </span><span class="si">{</span><span class="n">df_historico</span><span class="p">[</span><span class="s1">&#39;loss&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-5-38" name="__codelineno-5-38" href="#__codelineno-5-38"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;📉 Loss final (validação): </span><span class="si">{</span><span class="n">df_historico</span><span class="p">[</span><span class="s1">&#39;val_loss&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </code></pre></div>
-<h2 id="visualizando-o-historico-de-treinamento">Visualizando o historico de treinamento<a class="headerlink" href="#visualizando-o-historico-de-treinamento" title="Permanent link">&para;</a></h2>
-<p>O historico de treinamento é salvo na variavel <code>epocas_hist</code>, podemos visualizar utlizando o pandas</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">df_historico</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">epocas_hist</span><span class="o">.</span><span class="n">history</span><span class="p">)</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="n">df_historico</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+<p><strong>Como interpretar os gráficos:</strong>
+- <strong>Curvas descendentes de loss</strong>: Nossa rede está aprendendo! ⬇️
+- <strong>Curvas ascendentes de acurácia</strong>: Cada vez mais certeira! ⬆️
+- <strong>Linhas próximas</strong>: Sem overfitting — ótimo sinal! ✅
+- <strong>Linhas distantes</strong>: Possível overfitting — precisa investigar 🔍</p>
+<h2 id="o-momento-da-verdade-testando-nossa-ia">O momento da verdade: testando nossa IA<a class="headerlink" href="#o-momento-da-verdade-testando-nossa-ia" title="Permanent link">&para;</a></h2>
+<p>Chegou a hora do exame final! Vamos ver como nossa rede se sai com dados que ela <strong>nunca viu antes</strong>. É como fazer uma prova após estudar — vamos descobrir se ela realmente aprendeu ou apenas decorou!</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># Avaliação no conjunto de teste - o momento da verdade! </span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;🎯 Testando a rede neural com dados nunca vistos...&quot;</span><span class="p">)</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="n">test_loss</span><span class="p">,</span> <span class="n">test_accuracy</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">x_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="n">df_historico</span><span class="p">[[</span><span class="s1">&#39;loss&#39;</span><span class="p">,</span><span class="s1">&#39;val_loss&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">plot</span><span class="p">();</span> <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">();</span>
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="n">df_historico</span><span class="p">[[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">,</span><span class="s1">&#39;val_accuracy&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">plot</span><span class="p">();</span> <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">();</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">📋 RESULTADOS FINAIS:&quot;</span><span class="p">)</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;🎯 Acurácia no teste: </span><span class="si">{</span><span class="n">test_accuracy</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">test_accuracy</span><span class="o">*</span><span class="mi">100</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">%)&quot;</span><span class="p">)</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;📉 Loss no teste: </span><span class="si">{</span><span class="n">test_loss</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="c1"># Interpretando os resultados</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="k">if</span> <span class="n">test_accuracy</span> <span class="o">&gt;</span> <span class="mf">0.95</span><span class="p">:</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;🏆 EXCELENTE! Sua rede é um verdadeiro especialista em dígitos!&quot;</span><span class="p">)</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="k">elif</span> <span class="n">test_accuracy</span> <span class="o">&gt;</span> <span class="mf">0.90</span><span class="p">:</span>
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;👍 MUITO BOM! Sua rede está bem treinada!&quot;</span><span class="p">)</span>
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="k">elif</span> <span class="n">test_accuracy</span> <span class="o">&gt;</span> <span class="mf">0.80</span><span class="p">:</span>
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;😊 BOM! Há espaço para melhorias, mas está no caminho certo!&quot;</span><span class="p">)</span>
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;🔧 Precisa de ajustes! Tente mais épocas ou ajustar a arquitetura.&quot;</span><span class="p">)</span>
 </code></pre></div>
-<h2 id="avaliacao-e-conclusao">Avaliação e Conclusão<a class="headerlink" href="#avaliacao-e-conclusao" title="Permanent link">&para;</a></h2>
-<p>Após o treinamento, avaliamos o modelo no conjunto de teste para verificar sua acurácia e a perda:</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Substitua os campos <code>&lt;KEY&gt;</code> por valores convenientes. </p>
-</div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">test_loss</span><span class="p">,</span> <span class="n">test_acc</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="o">&lt;</span><span class="n">X_TESTE</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">Y_TESTE</span><span class="o">&gt;</span><span class="p">)</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Teste Acurácia: </span><span class="si">{</span><span class="n">test_acc</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">, Teste Loss: </span><span class="si">{</span><span class="n">test_loss</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="quiz"><h3>Por que é importante avaliar o modelo em um conjunto de teste separado?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-4-0" ><label for="quiz-4-0">Para acelerar o processo de avaliação</label></div><div><input type="radio" name="answer" value="1" id="quiz-4-1" ><label for="quiz-4-1">Para economizar recursos computacionais</label></div><div><input type="radio" name="answer" value="2" id="quiz-4-2" correct><label for="quiz-4-2">Para verificar se o modelo generaliza bem para dados não vistos durante o treinamento</label></div><div><input type="radio" name="answer" value="3" id="quiz-4-3" ><label for="quiz-4-3">Para comparar diferentes arquiteturas de rede</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden">
+O conjunto de teste simula dados do "mundo real" que o modelo nunca viu, permitindo uma avaliação honesta da capacidade de generalização da rede neural.</section></div>
+
+<h2 id="salvando-nossa-criacao-preservando-o-conhecimento">Salvando nossa criação: preservando o conhecimento<a class="headerlink" href="#salvando-nossa-criacao-preservando-o-conhecimento" title="Permanent link">&para;</a></h2>
+<p>Parabéns! Você acabou de treinar uma rede neural funcional! Agora vamos salvá-la para usar depois — afinal, não queremos perder todo esse aprendizado.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># Salvando nossa rede neural treinada - como arquivar um diploma! </span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">model</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;mnist_mlp_model.h5&#39;</span><span class="p">)</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;✅ Modelo salvo como &#39;mnist_mlp_model.h5&#39;&quot;</span><span class="p">)</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;🎓 Sua IA agora é persistente e pode ser usada a qualquer momento!&quot;</span><span class="p">)</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="c1"># Informações sobre o arquivo salvo</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="n">file_size</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">getsize</span><span class="p">(</span><span class="s1">&#39;mnist_mlp_model.h5&#39;</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1024</span> <span class="o">*</span> <span class="mi">1024</span><span class="p">)</span>  <span class="c1"># MB</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;📁 Tamanho do arquivo: </span><span class="si">{</span><span class="n">file_size</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> MB&quot;</span><span class="p">)</span>
 </code></pre></div>
-<h2 id="salvando-o-modelo">Salvando o modelo<a class="headerlink" href="#salvando-o-modelo" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># Salvando o modelo treinado</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="n">model</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;mnist_mlp_model.h5&#39;</span><span class="p">)</span>
+<p><strong>O que contém o arquivo .h5:</strong>
+- 🧠 <strong>Arquitetura completa</strong> da rede (camadas, neurônios, conexões)
+- ⚖️ <strong>Todos os pesos</strong> aprendidos durante o treinamento<br />
+- ⚙️ <strong>Configurações</strong> de compilação (otimizador, loss, métricas)
+- 📊 <strong>Estado interno</strong> para continuar o treinamento se necessário</p>
+<h2 id="testando-com-suas-proprias-imagens-o-momento-magico">Testando com suas próprias imagens: o momento mágico!<a class="headerlink" href="#testando-com-suas-proprias-imagens-o-momento-magico" title="Permanent link">&para;</a></h2>
+<p>Agora vem a parte mais legal — vamos testar nossa IA com imagens que <strong>você</strong> criou! É como mostrar um desenho para um amigo e perguntar "que número é este?"</p>
+<h3 id="preparando-uma-imagem-personalizada">Preparando uma imagem personalizada<a class="headerlink" href="#preparando-uma-imagem-personalizada" title="Permanent link">&para;</a></h3>
+<p>Para que funcione perfeitamente, sua imagem precisa seguir o "padrão MNIST":
+- ✏️ <strong>Fundo branco, número preto</strong> (ou vice-versa)
+- 📐 <strong>Formato quadrado</strong> (será redimensionada para 28x28)
+- 🎨 <strong>Escala de cinza</strong> (sem cores)
+- ✋ <strong>Número manuscrito</strong> bem centralizado</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">tensorflow</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">tf</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">tensorflow.keras.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">image</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="c1"># Carregando nossa IA treinada</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;🤖 Carregando a IA especialista em dígitos...&quot;</span><span class="p">)</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="n">model</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="s1">&#39;mnist_mlp_model.h5&#39;</span><span class="p">)</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;✅ IA carregada e pronta para reconhecer seus desenhos!&quot;</span><span class="p">)</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="k">def</span><span class="w"> </span><span class="nf">preparar_imagem_personalizada</span><span class="p">(</span><span class="n">caminho_arquivo</span><span class="p">):</span>
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="sd">    Prepara uma imagem personalizada para ser reconhecida pela IA</span>
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>    <span class="c1"># Carregando e redimensionando para 28x28 pixels em escala de cinza</span>
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>    <span class="n">img</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">load_img</span><span class="p">(</span><span class="n">caminho_arquivo</span><span class="p">,</span> <span class="n">color_mode</span><span class="o">=</span><span class="s1">&#39;grayscale&#39;</span><span class="p">,</span> <span class="n">target_size</span><span class="o">=</span><span class="p">(</span><span class="mi">28</span><span class="p">,</span> <span class="mi">28</span><span class="p">))</span>
+<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a>
+<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>    <span class="c1"># Convertendo para array numpy</span>
+<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a>    <span class="n">img_array</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">img_to_array</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+<a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a>    <span class="n">img_array</span> <span class="o">=</span> <span class="n">img_array</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">28</span><span class="p">)</span>  <span class="c1"># Formato que a rede espera</span>
+<a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a>
+<a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a>    <span class="c1"># Normalizando para 0-1 (mesmo que no treinamento)</span>
+<a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a>    <span class="n">img_array</span> <span class="o">=</span> <span class="n">img_array</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;float32&#39;</span><span class="p">)</span> <span class="o">/</span> <span class="mf">255.0</span>
+<a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a>
+<a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a>    <span class="k">return</span> <span class="n">img_array</span>
+<a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a>
+<a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a><span class="k">def</span><span class="w"> </span><span class="nf">reconhecer_digito</span><span class="p">(</span><span class="n">caminho_arquivo</span><span class="p">):</span>
+<a id="__codelineno-8-28" name="__codelineno-8-28" href="#__codelineno-8-28"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-8-29" name="__codelineno-8-29" href="#__codelineno-8-29"></a><span class="sd">    Função completa para reconhecer um dígito em uma imagem</span>
+<a id="__codelineno-8-30" name="__codelineno-8-30" href="#__codelineno-8-30"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-8-31" name="__codelineno-8-31" href="#__codelineno-8-31"></a>    <span class="k">try</span><span class="p">:</span>
+<a id="__codelineno-8-32" name="__codelineno-8-32" href="#__codelineno-8-32"></a>        <span class="c1"># Preparando a imagem</span>
+<a id="__codelineno-8-33" name="__codelineno-8-33" href="#__codelineno-8-33"></a>        <span class="n">img_preparada</span> <span class="o">=</span> <span class="n">preparar_imagem_personalizada</span><span class="p">(</span><span class="n">caminho_arquivo</span><span class="p">)</span>
+<a id="__codelineno-8-34" name="__codelineno-8-34" href="#__codelineno-8-34"></a>
+<a id="__codelineno-8-35" name="__codelineno-8-35" href="#__codelineno-8-35"></a>        <span class="c1"># Fazendo a previsão</span>
+<a id="__codelineno-8-36" name="__codelineno-8-36" href="#__codelineno-8-36"></a>        <span class="n">predicoes</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">img_preparada</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<a id="__codelineno-8-37" name="__codelineno-8-37" href="#__codelineno-8-37"></a>        <span class="n">digito_previsto</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">predicoes</span><span class="p">)</span>
+<a id="__codelineno-8-38" name="__codelineno-8-38" href="#__codelineno-8-38"></a>        <span class="n">confianca</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">predicoes</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
+<a id="__codelineno-8-39" name="__codelineno-8-39" href="#__codelineno-8-39"></a>
+<a id="__codelineno-8-40" name="__codelineno-8-40" href="#__codelineno-8-40"></a>        <span class="c1"># Mostrando o resultado</span>
+<a id="__codelineno-8-41" name="__codelineno-8-41" href="#__codelineno-8-41"></a>        <span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<a id="__codelineno-8-42" name="__codelineno-8-42" href="#__codelineno-8-42"></a>
+<a id="__codelineno-8-43" name="__codelineno-8-43" href="#__codelineno-8-43"></a>        <span class="c1"># Imagem original</span>
+<a id="__codelineno-8-44" name="__codelineno-8-44" href="#__codelineno-8-44"></a>        <span class="n">ax1</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img_preparada</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">28</span><span class="p">,</span> <span class="mi">28</span><span class="p">),</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+<a id="__codelineno-8-45" name="__codelineno-8-45" href="#__codelineno-8-45"></a>        <span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Sua imagem (28x28 pixels)&#39;</span><span class="p">)</span>
+<a id="__codelineno-8-46" name="__codelineno-8-46" href="#__codelineno-8-46"></a>        <span class="n">ax1</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+<a id="__codelineno-8-47" name="__codelineno-8-47" href="#__codelineno-8-47"></a>
+<a id="__codelineno-8-48" name="__codelineno-8-48" href="#__codelineno-8-48"></a>        <span class="c1"># Gráfico de probabilidades</span>
+<a id="__codelineno-8-49" name="__codelineno-8-49" href="#__codelineno-8-49"></a>        <span class="n">ax2</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span> <span class="n">predicoes</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<a id="__codelineno-8-50" name="__codelineno-8-50" href="#__codelineno-8-50"></a>        <span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Previsão: </span><span class="si">{</span><span class="n">digito_previsto</span><span class="si">}</span><span class="s1"> (Confiança: </span><span class="si">{</span><span class="n">confianca</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">%)&#39;</span><span class="p">)</span>
+<a id="__codelineno-8-51" name="__codelineno-8-51" href="#__codelineno-8-51"></a>        <span class="n">ax2</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Dígitos&#39;</span><span class="p">)</span>
+<a id="__codelineno-8-52" name="__codelineno-8-52" href="#__codelineno-8-52"></a>        <span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Probabilidade&#39;</span><span class="p">)</span>
+<a id="__codelineno-8-53" name="__codelineno-8-53" href="#__codelineno-8-53"></a>        <span class="n">ax2</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<a id="__codelineno-8-54" name="__codelineno-8-54" href="#__codelineno-8-54"></a>
+<a id="__codelineno-8-55" name="__codelineno-8-55" href="#__codelineno-8-55"></a>        <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<a id="__codelineno-8-56" name="__codelineno-8-56" href="#__codelineno-8-56"></a>        <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<a id="__codelineno-8-57" name="__codelineno-8-57" href="#__codelineno-8-57"></a>
+<a id="__codelineno-8-58" name="__codelineno-8-58" href="#__codelineno-8-58"></a>        <span class="c1"># Mensagem personalizada baseada na confiança</span>
+<a id="__codelineno-8-59" name="__codelineno-8-59" href="#__codelineno-8-59"></a>        <span class="k">if</span> <span class="n">confianca</span> <span class="o">&gt;</span> <span class="mi">90</span><span class="p">:</span>
+<a id="__codelineno-8-60" name="__codelineno-8-60" href="#__codelineno-8-60"></a>            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;🎯 CERTEZA ABSOLUTA: É um </span><span class="si">{</span><span class="n">digito_previsto</span><span class="si">}</span><span class="s2">! (Confiança: </span><span class="si">{</span><span class="n">confianca</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">%)&quot;</span><span class="p">)</span>
+<a id="__codelineno-8-61" name="__codelineno-8-61" href="#__codelineno-8-61"></a>        <span class="k">elif</span> <span class="n">confianca</span> <span class="o">&gt;</span> <span class="mi">70</span><span class="p">:</span>
+<a id="__codelineno-8-62" name="__codelineno-8-62" href="#__codelineno-8-62"></a>            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;🤔 PROVÁVEL: Parece ser um </span><span class="si">{</span><span class="n">digito_previsto</span><span class="si">}</span><span class="s2"> (Confiança: </span><span class="si">{</span><span class="n">confianca</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">%)&quot;</span><span class="p">)</span>
+<a id="__codelineno-8-63" name="__codelineno-8-63" href="#__codelineno-8-63"></a>        <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-8-64" name="__codelineno-8-64" href="#__codelineno-8-64"></a>            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;🤷 INCERTO: Talvez seja um </span><span class="si">{</span><span class="n">digito_previsto</span><span class="si">}</span><span class="s2">? (Confiança: </span><span class="si">{</span><span class="n">confianca</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">%)&quot;</span><span class="p">)</span>
+<a id="__codelineno-8-65" name="__codelineno-8-65" href="#__codelineno-8-65"></a>            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;💡 Dica: Tente uma imagem com traços mais nítidos!&quot;</span><span class="p">)</span>
+<a id="__codelineno-8-66" name="__codelineno-8-66" href="#__codelineno-8-66"></a>
+<a id="__codelineno-8-67" name="__codelineno-8-67" href="#__codelineno-8-67"></a>        <span class="k">return</span> <span class="n">digito_previsto</span><span class="p">,</span> <span class="n">confianca</span>
+<a id="__codelineno-8-68" name="__codelineno-8-68" href="#__codelineno-8-68"></a>
+<a id="__codelineno-8-69" name="__codelineno-8-69" href="#__codelineno-8-69"></a>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<a id="__codelineno-8-70" name="__codelineno-8-70" href="#__codelineno-8-70"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;❌ Erro: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-8-71" name="__codelineno-8-71" href="#__codelineno-8-71"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;💡 Verifique se o caminho da imagem está correto!&quot;</span><span class="p">)</span>
+<a id="__codelineno-8-72" name="__codelineno-8-72" href="#__codelineno-8-72"></a>        <span class="k">return</span> <span class="kc">None</span><span class="p">,</span> <span class="mi">0</span>
+<a id="__codelineno-8-73" name="__codelineno-8-73" href="#__codelineno-8-73"></a>
+<a id="__codelineno-8-74" name="__codelineno-8-74" href="#__codelineno-8-74"></a><span class="c1"># Exemplo de uso - substitua pelo caminho da sua imagem</span>
+<a id="__codelineno-8-75" name="__codelineno-8-75" href="#__codelineno-8-75"></a><span class="n">caminho_da_sua_imagem</span> <span class="o">=</span> <span class="s1">&#39;seu_numero.png&#39;</span>  <span class="c1"># ← Coloque aqui o caminho da sua imagem!</span>
+<a id="__codelineno-8-76" name="__codelineno-8-76" href="#__codelineno-8-76"></a>
+<a id="__codelineno-8-77" name="__codelineno-8-77" href="#__codelineno-8-77"></a><span class="c1"># Testando com sua imagem</span>
+<a id="__codelineno-8-78" name="__codelineno-8-78" href="#__codelineno-8-78"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;🧪 Testando IA com sua imagem personalizada...&quot;</span><span class="p">)</span>
+<a id="__codelineno-8-79" name="__codelineno-8-79" href="#__codelineno-8-79"></a><span class="n">digito</span><span class="p">,</span> <span class="n">confianca</span> <span class="o">=</span> <span class="n">reconhecer_digito</span><span class="p">(</span><span class="n">caminho_da_sua_imagem</span><span class="p">)</span>
 </code></pre></div>
-<h2 id="importando-uma-imagem-e-usando-com-o-modelo-treinado">Importando uma Imagem e Usando com o Modelo Treinado<a class="headerlink" href="#importando-uma-imagem-e-usando-com-o-modelo-treinado" title="Permanent link">&para;</a></h2>
-<p>Para usar uma imagem própria e verificar como o modelo MLP prevê o dígito, precisamos garantir que a imagem seja processada de maneira semelhante ao conjunto de dados MNIST. A imagem deve ser em escala de cinza, de tamanho 28x28 pixels, e normalizada.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">tensorflow</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">tf</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">tensorflow.keras.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">image</span>
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="c1"># Carregando o modelo treinado (certifique-se de que o modelo está disponível)</span>
-<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="n">model</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="s1">&#39;mnist_mlp_model.h5&#39;</span><span class="p">)</span>
-<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>
-<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="c1"># Função para carregar e preparar a imagem</span>
-<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="k">def</span><span class="w"> </span><span class="nf">load_and_prepare_image</span><span class="p">(</span><span class="n">filepath</span><span class="p">):</span>
-<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>    <span class="n">img</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">load_img</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="n">color_mode</span><span class="o">=</span><span class="s1">&#39;grayscale&#39;</span><span class="p">,</span> <span class="n">target_size</span><span class="o">=</span><span class="p">(</span><span class="mi">28</span><span class="p">,</span> <span class="mi">28</span><span class="p">))</span>
-<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>    <span class="n">img</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">img_to_array</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
-<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>    <span class="n">img</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">28</span><span class="p">)</span>
-<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>    <span class="n">img</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;float32&#39;</span><span class="p">)</span>
-<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>    <span class="n">img</span> <span class="o">/=</span> <span class="mf">255.0</span>
-<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>    <span class="k">return</span> <span class="n">img</span>
-<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>
-<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a><span class="c1"># Caminho para a sua imagem</span>
-<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a><span class="n">filepath</span> <span class="o">=</span> <span class="s1">&#39;path_to_your_image.png&#39;</span> <span class="c1"># escolha uma imagem com um numero simples </span>
-<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a>
-<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a><span class="c1"># Carregando e preparando a imagem</span>
-<a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a><span class="n">img</span> <span class="o">=</span> <span class="n">load_and_prepare_image</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span>
-<a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a>
-<a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a><span class="c1"># Fazendo a previsão</span>
-<a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a><span class="n">predictions</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
-<a id="__codelineno-9-26" name="__codelineno-9-26" href="#__codelineno-9-26"></a><span class="n">predicted_digit</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">predictions</span><span class="p">)</span>
-<a id="__codelineno-9-27" name="__codelineno-9-27" href="#__codelineno-9-27"></a>
-<a id="__codelineno-9-28" name="__codelineno-9-28" href="#__codelineno-9-28"></a><span class="c1"># Mostrando a imagem e a previsão</span>
-<a id="__codelineno-9-29" name="__codelineno-9-29" href="#__codelineno-9-29"></a><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">28</span><span class="p">,</span> <span class="mi">28</span><span class="p">),</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
-<a id="__codelineno-9-30" name="__codelineno-9-30" href="#__codelineno-9-30"></a><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Previsão: </span><span class="si">{</span><span class="n">predicted_digit</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<a id="__codelineno-9-31" name="__codelineno-9-31" href="#__codelineno-9-31"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</code></pre></div><style type="text/css">.quiz {
+<div class="quiz"><h3>Por que a imagem precisa ser convertida para 28x28 pixels e normalizada?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-5-0" ><label for="quiz-5-0">Para economizar espaço de armazenamento</label></div><div><input type="radio" name="answer" value="1" id="quiz-5-1" ><label for="quiz-5-1">Para acelerar o processamento da GPU</label></div><div><input type="radio" name="answer" value="2" id="quiz-5-2" correct><label for="quiz-5-2">Para manter o mesmo formato dos dados usados no treinamento</label></div><div><input type="radio" name="answer" value="3" id="quiz-5-3" ><label for="quiz-5-3">Para melhorar a qualidade visual da imagem</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden">
+A rede neural foi treinada com imagens 28x28 normalizadas, então qualquer nova imagem deve passar pelo mesmo pré-processamento para que a IA possa interpretá-la corretamente.</section></div><style type="text/css">.quiz {
   border: 1px solid black;
   padding: 1rem;
   margin: 1rem 0;
@@ -3855,7 +4164,7 @@ function resetFieldset(fieldset) {
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="April 25, 2024 11:45:30 UTC">April 25, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 2, 2025 18:10:58 UTC">September 2, 2025</span>
   </span>
 
     
