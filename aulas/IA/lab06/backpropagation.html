@@ -4147,8 +4147,10 @@
 
 <h1 id="backpropagation">Backpropagation<a class="headerlink" href="#backpropagation" title="Permanent link">&para;</a></h1>
 <h2 id="introducao">Introdução<a class="headerlink" href="#introducao" title="Permanent link">&para;</a></h2>
-<p>Na aula anterior, você aprendeu que as redes neurais são como calculadoras especializadas que podem resolver problemas complexos. Mas uma pergunta ficou no ar: <strong>como elas aprendem?</strong> Como uma rede neural descobre quais pesos usar para acertar as respostas?</p>
-<p>Imagine que você está tentando ensinar um amigo a chutar penalidades. Você não pode simplesmente dizer "chute melhor" — precisa ser específico: "mire um pouco mais para a esquerda", "chute com menos força", "ajuste o ângulo do pé". O <strong>backpropagation</strong> é exatamente isso: uma forma sistemática de dizer para cada neurônio da rede como se ajustar para melhorar o resultado final.</p>
+<p><img alt="alt text" src="image-2.png" /></p>
+<p>Sabemos que redes neurais são como calculadoras especializadas que podem resolver problemas complexos. Mas uma pergunta ficou no ar: <strong>como elas aprendem?</strong> Como uma rede neural descobre quais pesos usar para acertar as respostas?</p>
+<p>Pense em ensinar um amigo a cobrar pênaltis. Não adianta dizer apenas “chute melhor”, isso é vago demais. É preciso dar instruções precisas, como: “mire um pouco mais para a esquerda”, “reduza a força do chute” ou “ajuste o ângulo do pé”.</p>
+<p>O <strong>backpropagation</strong> faz exatamente isso, mas para redes neurais: é um método sistemático para indicar a cada neurônio o quanto e em que direção ajustar seus parâmetros, a fim de melhorar o resultado final.</p>
 <p>Este algoritmo revolucionou a inteligência artificial e é a base de praticamente tudo que vemos hoje em IA, desde reconhecimento de voz até carros autônomos!</p>
 <p><a href="https://youtu.be/mBqfY_TX_8o?si=5MPHq_4fcbatMgD2"><img alt="RNA" src="https://markdown-videos-api.jorgenkh.no/url?url=https://youtu.be/mBqfY_TX_8o?si=5MPHq_4fcbatMgD2" /></a></p>
 <h2 id="o-problema-do-aprendizado">O problema do aprendizado<a class="headerlink" href="#o-problema-do-aprendizado" title="Permanent link">&para;</a></h2>
@@ -4280,13 +4282,15 @@ A função de custo quantifica o erro da rede, fornecendo uma métrica clara de 
       <div><strong>Gradientes:</strong> <pre id="bp_grads" style="white-space:pre-wrap;background:#f7f7f7;padding:0.5rem;border-radius:4px">—</pre></div>
     </div>
   </div>
+  <div style="margin-top:1rem">
+    <h4 style="margin:.25rem 0">Curva de perda (MSE)</h4>
+    <canvas id="bp_loss" width="760" height="200" style="width:100%;background:#fff;border:1px solid #ccc;border-radius:8px"></canvas>
+  </div>
 </div>
 
 <p>Reflexão:</p>
 <ol>
-<li>
-<p>O que acontece quando a taxa de aprendizado é <strong>muito alta</strong>? E quando é <strong>muito baixa</strong>?</p>
-</li>
+<li>O que acontece quando a taxa de aprendizado é <strong>muito alta</strong>? E quando é <strong>muito baixa</strong>?</li>
 <li>
 <p>Compare o comportamento do gradiente com <strong>Sigmoid</strong>, <strong>Tanh</strong> e <strong>ReLU</strong>.  </p>
 </li>
@@ -4617,7 +4621,7 @@ function resetFieldset(fieldset) {
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 2, 2025 04:18:07 UTC">September 2, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 2, 2025 13:55:46 UTC">September 2, 2025</span>
   </span>
 
     
