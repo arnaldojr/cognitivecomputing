@@ -2,9 +2,13 @@
 
 ## Introdução
 
-Na aula anterior, você aprendeu que as redes neurais são como calculadoras especializadas que podem resolver problemas complexos. Mas uma pergunta ficou no ar: **como elas aprendem?** Como uma rede neural descobre quais pesos usar para acertar as respostas?
+![alt text](image-2.png)
 
-Imagine que você está tentando ensinar um amigo a chutar penalidades. Você não pode simplesmente dizer "chute melhor" — precisa ser específico: "mire um pouco mais para a esquerda", "chute com menos força", "ajuste o ângulo do pé". O **backpropagation** é exatamente isso: uma forma sistemática de dizer para cada neurônio da rede como se ajustar para melhorar o resultado final.
+Sabemos que redes neurais são como calculadoras especializadas que podem resolver problemas complexos. Mas uma pergunta ficou no ar: **como elas aprendem?** Como uma rede neural descobre quais pesos usar para acertar as respostas?
+
+Pense em ensinar um amigo a cobrar pênaltis. Não adianta dizer apenas “chute melhor”, isso é vago demais. É preciso dar instruções precisas, como: “mire um pouco mais para a esquerda”, “reduza a força do chute” ou “ajuste o ângulo do pé”.
+
+O **backpropagation** faz exatamente isso, mas para redes neurais: é um método sistemático para indicar a cada neurônio o quanto e em que direção ajustar seus parâmetros, a fim de melhorar o resultado final.
 
 Este algoritmo revolucionou a inteligência artificial e é a base de praticamente tudo que vemos hoje em IA, desde reconhecimento de voz até carros autônomos!
 
@@ -173,6 +177,10 @@ Familiarizar-se com o funcionamento interno do backpropagation e entender o impa
       <div><strong>Gradientes:</strong> <pre id="bp_grads" style="white-space:pre-wrap;background:#f7f7f7;padding:0.5rem;border-radius:4px">—</pre></div>
     </div>
   </div>
+  <div style="margin-top:1rem">
+    <h4 style="margin:.25rem 0">Curva de perda (MSE)</h4>
+    <canvas id="bp_loss" width="760" height="200" style="width:100%;background:#fff;border:1px solid #ccc;border-radius:8px"></canvas>
+  </div>
 </div>
 
 
@@ -180,14 +188,12 @@ Familiarizar-se com o funcionamento interno do backpropagation e entender o impa
 Reflexão:
 
 1. O que acontece quando a taxa de aprendizado é **muito alta**? E quando é **muito baixa**?
-
 2. Compare o comportamento do gradiente com **Sigmoid**, **Tanh** e **ReLU**.  
 
    - Em qual caso o gradiente tende a "desaparecer" (vanishing gradient)?
    - Em qual caso o gradiente é mais estável?
 
 3. Como o número de passos influencia na convergência do erro?
-
 4. Observe o gráfico de erro:
 
    - Ele desce de forma suave ou com oscilações?
