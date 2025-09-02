@@ -56,7 +56,10 @@ extra_javascript:
   - js/exercicio-linreg.js
   - js/knn-widget.js
   - js/logreg-widget.js
-
+  - js/perceptron-widget.js
+  - js/mlp-xor-widget.js
+  - js/backprop-widget.js
+  
 # Extensions / plugins
 plugins:
   - git-revision-date-localized
@@ -219,16 +222,18 @@ nav:
       - lab3: aulas/IA/lab-03/aula7.ipynb
       - PCA: aulas/IA/lab04/reducao_dimensionalidade_pca.ipynb 
   - Deep Learning:
-    - Lab06 - Redes Neurais - Percepton : aulas/IA/lab06/rna.ipynb
-    - Lab07 - Redes Neurais - TensorFlow: aulas/IA/lab07/index.md
-    - Lab07b - Redes Neurais - MLP: aulas/IA/lab07/mlp.ipynb
+    - Introdução Redes Neurais: 
+        - aulas/IA/lab06/redesneurais.md
+        - aulas/IA/lab06/backpropagation.md
+    - Lab07 - TensorFlow: aulas/IA/lab07/index.md
+    - Lab07b - MLP: aulas/IA/lab07/mlp.ipynb
     - BATALHA DAS REDES: aulas/IA/batalharedes/batalha_das_redes.ipynb
-    - Lab08 - Redes Neurais - CNN parte1: aulas/IA/lab08/cnn.ipynb
-    - Lab08 - Redes Neurais - CNN parte2: aulas/IA/lab08/cnn_drive.ipynb
-    - Lab9 - Redes Neurais - Pré-treinadas: aulas/IA/lab09/transferlearning_1.ipynb
-    - Lab9 - Redes Neurais - Transfer learning: aulas/IA/lab09/transferlearning_2.ipynb
-    - Lab10 - Redes Neurais - Data Augmentation: aulas/IA/lab10/data-augmentation.ipynb
-    - Lab11 - Redes Neurais - resumo: aulas/IA/lab11/index.md
+    - Lab08 - CNN parte1: aulas/IA/lab08/cnn.ipynb
+    - Lab08 - CNN parte2: aulas/IA/lab08/cnn_drive.ipynb
+    - Lab9 - Pré-treinadas: aulas/IA/lab09/transferlearning_1.ipynb
+    - Lab9 - Transfer learning: aulas/IA/lab09/transferlearning_2.ipynb
+    - Lab10 - Data Augmentation: aulas/IA/lab10/data-augmentation.ipynb
+    - Lab11 - resumo: aulas/IA/lab11/index.md
   
 
 
