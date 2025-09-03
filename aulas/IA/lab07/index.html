@@ -24,7 +24,7 @@
     
     
       
-        <title>Trabalhando com Redes Neurais com TensorFlow - cognitivecomputing</title>
+        <title>TensorFlow - cognitivecomputing</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#trabalhando-com-redes-neurais-com-tensorflow" class="md-skip">
+        <a href="#tensorflow" class="md-skip">
           Skip to content
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Trabalhando com Redes Neurais com TensorFlow
+              TensorFlow
             
           </span>
         </div>
@@ -3255,7 +3255,7 @@
   
   
   <span class="md-ellipsis">
-    Trabalhando com Redes Neurais com TensorFlow
+    TensorFlow
     
   </span>
   
@@ -3268,7 +3268,7 @@
   
   
   <span class="md-ellipsis">
-    Trabalhando com Redes Neurais com TensorFlow
+    TensorFlow
     
   </span>
   
@@ -3317,15 +3317,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#datasets" class="md-nav__link">
-    <span class="md-ellipsis">
-      Datasets
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -3347,7 +3338,7 @@
   
   
   <span class="md-ellipsis">
-    Problema de Regressão
+    MLP
     
   </span>
   
@@ -3587,15 +3578,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#datasets" class="md-nav__link">
-    <span class="md-ellipsis">
-      Datasets
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -3615,8 +3597,9 @@
   
 
 
-<h1 id="trabalhando-com-redes-neurais-com-tensorflow">Trabalhando com Redes Neurais com TensorFlow<a class="headerlink" href="#trabalhando-com-redes-neurais-com-tensorflow" title="Permanent link">&para;</a></h1>
-<p>Neste módulo, exploraremos os fundamentos das redes neurais e aprenderemos a aplicar esses conceitos poderosos usando a biblioteca TensorFlow. O TensorFlow não apenas facilita a construção e o treinamento de modelos complexos, mas também oferece ferramentas robustas para o processamento de dados, essenciais para qualquer projeto de machine learning.</p>
+<h1 id="tensorflow">TensorFlow<a class="headerlink" href="#tensorflow" title="Permanent link">&para;</a></h1>
+<p>Neste módulo, vamos explorar os fundamentos das redes neurais e aplicar esses conceitos usando a biblioteca TensorFlow. </p>
+<p>O TensorFlow não apenas facilita a construção e o treinamento de modelos complexos, mas também oferece ferramentas robustas para o processamento de dados, essenciais para qualquer projeto de machine learning.</p>
 <h3 id="objetivos-de-aprendizado">Objetivos de Aprendizado<a class="headerlink" href="#objetivos-de-aprendizado" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Entender o funcionamento das redes neurais.</li>
@@ -3624,61 +3607,43 @@
 <li>Aplicar redes neurais em problemas reais de classificação e regressão.</li>
 </ul>
 <h3 id="atividades-praticas">Atividades Práticas<a class="headerlink" href="#atividades-praticas" title="Permanent link">&para;</a></h3>
-<p>As seguintes atividades foram preparadas para reforçar os conceitos abordados:</p>
-<ol>
-<li><strong>Problema de Regressão</strong> – Despesas Médicas</li>
+<p>As seguintes atividades foram preparadas para reforçar os conceitos abordados (<strong>Faça o downlod dos datasets nos links a seguir</strong>)</p>
+<p><strong>Despesas Médicas</strong> – Problema de Regressão</p>
+<ul>
 <li><strong>Contexto</strong>: Informações sobre pacientes (idade, índice de massa corporal, número de filhos, tabagismo, região, etc.) para prever o custo anual de despesas médicas.</li>
 <li><strong>Modelo Sugerido</strong>: Rede Neural Multilayer Perceptron (MLP) para regressão.</li>
-<li>
-<p><strong>Métricas de Avaliação</strong>: RMSE e R² para avaliar a performance na estimativa dos custos.</p>
-</li>
-<li>
-<p><strong>Problema de Regressão</strong> – Vendas com Base em Investimento Publicitário</p>
-</li>
+<li><strong>Métricas de Avaliação</strong>: RMSE e R² para avaliar a performance na estimativa dos custos.</li>
+<li><strong><a href="insurance.csv">insurance</a></strong>: Dataset com informações sobre pacientes (idade, IMC, número de filhos, tabagismo, região, etc.) para prever o custo anual de despesas médicas.</li>
+</ul>
+<p><strong>Vendas com Base em Investimento Publicitário</strong> – Problema de Regressão</p>
+<ul>
 <li><strong>Contexto</strong>: Dados sobre investimentos em TV, rádio e jornal, com o objetivo de prever o volume de vendas obtido.</li>
 <li><strong>Modelo Sugerido</strong>: Rede Neural Multilayer Perceptron (MLP) para regressão.</li>
-<li>
-<p><strong>Métricas de Avaliação</strong>: RMSE (Root Mean Square Error) e R² para mensurar o erro e a capacidade explicativa do modelo.</p>
-</li>
-<li>
-<p><strong>Problema de Classificação Binária</strong> – Rotatividade de Funcionários</p>
-</li>
+<li><strong>Métricas de Avaliação</strong>: RMSE (Root Mean Square Error) e R² para mensurar o erro e a capacidade explicativa do modelo.</li>
+<li><strong><a href="Advertising.csv">Advertising</a></strong>: Dataset com dados sobre investimentos em TV, rádio e jornal, com o objetivo de prever o volume de vendas obtido.</li>
+</ul>
+<p><strong>Rotatividade de Funcionários</strong> - Problema de Classificação Binária</p>
+<ul>
 <li><strong>Contexto</strong>: Dataset com informações de funcionários, incluindo desempenho, tempo de casa, salário e histórico profissional, para prever se o colaborador irá deixar a organização.</li>
 <li><strong>Modelo Sugerido</strong>: Rede Neural Multilayer Perceptron (MLP) com camadas densas.</li>
-<li>
-<p><strong>Métricas de Avaliação</strong>: Acurácia, Recall (especialmente para a classe de saída), F1-score e AUC para medir a capacidade do modelo em prever desligamentos.</p>
-</li>
-<li>
-<p><strong>Problema de Classificação Binária</strong> – Churn de Clientes</p>
-</li>
+<li><strong>Métricas de Avaliação</strong>: Acurácia, Recall (especialmente para a classe de saída), F1-score e AUC para medir a capacidade do modelo em prever desligamentos.</li>
+<li><strong><a href="turnover.csv">turnover</a></strong>: Dataset com informações de funcionários (nível de satisfação, avaliações, número de projetos, carga horária, tempo de empresa, setor e salário) para prever se o colaborador irá deixar a organização.</li>
+</ul>
+<p><strong>Churn de Clientes</strong> – Problema de Classificação Binária </p>
+<ul>
 <li><strong>Contexto</strong>: Dataset com informações demográficas e financeiras de clientes de um banco, visando prever se o cliente irá encerrar sua conta (<em>churn</em>).</li>
 <li><strong>Modelo Sugerido</strong>: Rede Neural Multilayer Perceptron (MLP) com camadas densas.</li>
 <li><strong>Métricas de Avaliação</strong>: Acurácia, Precisão, Recall, F1-score e AUC para avaliar a capacidade do modelo em identificar clientes propensos ao churn.</li>
-</ol>
+<li><strong><a href="Churn_Modelling.csv">Churn_Modelling</a></strong>: Dataset com informações demográficas e financeiras de clientes de um banco, visando prever se o cliente irá encerrar sua conta (<em>churn</em>).</li>
+</ul>
 <h3 id="pre-processamento-e-tratamento-de-dados">Pré-processamento e Tratamento de Dados<a class="headerlink" href="#pre-processamento-e-tratamento-de-dados" title="Permanent link">&para;</a></h3>
-<p>Antes de aplicar o treinamento de modelos, é essencial realizar o pré-processamento e o tratamento adequado dos dados. Esse processo inclui:</p>
+<p>Antes de aplicar o treinamento de modelos, é necessário realizar o pré-processamento e o tratamento adequado dos dados. Esse processo inclui:</p>
 <ul>
 <li><strong>Limpeza de Dados</strong>: Remoção de valores ausentes ou correção de dados corrompidos.</li>
 <li><strong>Normalização/Padronização</strong>: Escalonamento dos valores numéricos para que o modelo não seja enviesado por características com escalas grandes.</li>
 <li><strong>Codificação de Variáveis Categóricas</strong>: Transformação de variáveis categóricas em formatos numéricos que podem ser interpretados pelo modelo, como one-hot encoding.</li>
 </ul>
-<p>Vamos começar!!!</p>
-<h3 id="datasets">Datasets<a class="headerlink" href="#datasets" title="Permanent link">&para;</a></h3>
-<p>Os laboratórios utilizam os seguintes conjuntos de dados:</p>
-<ul>
-<li>
-<p><strong><a href="Advertising.csv">Advertising</a></strong>: Dataset com dados sobre investimentos em TV, rádio e jornal, com o objetivo de prever o volume de vendas obtido.</p>
-</li>
-<li>
-<p><strong><a href="Churn_Modelling.csv">Churn_Modelling</a></strong>: Dataset com informações demográficas e financeiras de clientes de um banco, visando prever se o cliente irá encerrar sua conta (<em>churn</em>).</p>
-</li>
-<li>
-<p><strong><a href="insurance.csv">insurance</a></strong>: Dataset com informações sobre pacientes (idade, IMC, número de filhos, tabagismo, região, etc.) para prever o custo anual de despesas médicas.</p>
-</li>
-<li>
-<p><strong><a href="turnover.csv">turnover</a></strong>: Dataset com informações de funcionários (nível de satisfação, avaliações, número de projetos, carga horária, tempo de empresa, setor e salário) para prever se o colaborador irá deixar a organização.</p>
-</li>
-</ul><style type="text/css">.quiz {
+<p>Vamos começar!!!</p><style type="text/css">.quiz {
   border: 1px solid black;
   padding: 1rem;
   margin: 1rem 0;
@@ -3809,7 +3774,7 @@ function resetFieldset(fieldset) {
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 3, 2025 02:40:00 UTC">September 3, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 3, 2025 20:52:58 UTC">September 3, 2025</span>
   </span>
 
     
