@@ -227,7 +227,7 @@ nav:
         - aulas/IA/lab06/backpropagation.md
     - Lab01 - Prática: 
         - aulas/IA/lab07/index.md
-        - aulas/IA/lab07/Praticando_redes_neurais_com_Tensorflow.ipynb
+        - MLP: aulas/IA/lab07/Praticando_redes_neurais_com_Tensorflow.ipynb
     - BATALHA DAS REDES: aulas/IA/batalharedes/batalha_das_redes.ipynb
     - Lab08 - CNN parte1: aulas/IA/lab08/cnn.ipynb
     - Lab08 - CNN parte2: aulas/IA/lab08/cnn_drive.ipynb
