@@ -3251,41 +3251,26 @@
         <li class="md-nav__item">
   <a href="#intuicao-matematica" class="md-nav__link">
     <span class="md-ellipsis">
-      Intuição matemática
+      Intuição Matemática
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Intuição matemática">
+    <nav class="md-nav" aria-label="Intuição Matemática">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#funcao-de-custo-medindo-o-erro" class="md-nav__link">
+  <a href="#funcao-de-perda-loss-e-entropia-cruzada-binaria-bce" class="md-nav__link">
     <span class="md-ellipsis">
-      Função de custo: medindo o erro
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Função de custo: medindo o erro">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#o-que-e-loss-funcao-de-perda-e-o-que-e-bce" class="md-nav__link">
-    <span class="md-ellipsis">
-      O que é loss (função de perda) e o que é BCE?
+      Função de Perda (Loss) e Entropia Cruzada Binária (BCE)
     </span>
   </a>
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-        
           <li class="md-nav__item">
-  <a href="#gradiente" class="md-nav__link">
+  <a href="#o-gradiente-a-direcao-da-mudanca" class="md-nav__link">
     <span class="md-ellipsis">
-      Gradiente
+      O Gradiente: A Direção da Mudança
     </span>
   </a>
   
@@ -3294,7 +3279,7 @@
           <li class="md-nav__item">
   <a href="#regra-de-atualizacao-dos-pesos" class="md-nav__link">
     <span class="md-ellipsis">
-      Regra de atualização dos pesos
+      Regra de Atualização dos Pesos
     </span>
   </a>
   
@@ -3694,41 +3679,26 @@
         <li class="md-nav__item">
   <a href="#intuicao-matematica" class="md-nav__link">
     <span class="md-ellipsis">
-      Intuição matemática
+      Intuição Matemática
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Intuição matemática">
+    <nav class="md-nav" aria-label="Intuição Matemática">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#funcao-de-custo-medindo-o-erro" class="md-nav__link">
+  <a href="#funcao-de-perda-loss-e-entropia-cruzada-binaria-bce" class="md-nav__link">
     <span class="md-ellipsis">
-      Função de custo: medindo o erro
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Função de custo: medindo o erro">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#o-que-e-loss-funcao-de-perda-e-o-que-e-bce" class="md-nav__link">
-    <span class="md-ellipsis">
-      O que é loss (função de perda) e o que é BCE?
+      Função de Perda (Loss) e Entropia Cruzada Binária (BCE)
     </span>
   </a>
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-        
           <li class="md-nav__item">
-  <a href="#gradiente" class="md-nav__link">
+  <a href="#o-gradiente-a-direcao-da-mudanca" class="md-nav__link">
     <span class="md-ellipsis">
-      Gradiente
+      O Gradiente: A Direção da Mudança
     </span>
   </a>
   
@@ -3737,7 +3707,7 @@
           <li class="md-nav__item">
   <a href="#regra-de-atualizacao-dos-pesos" class="md-nav__link">
     <span class="md-ellipsis">
-      Regra de atualização dos pesos
+      Regra de Atualização dos Pesos
     </span>
   </a>
   
@@ -3892,63 +3862,95 @@ Em redes multicamadas, todos os neurônios contribuem para o resultado final, to
 <li><strong>Ajuste os pesos</strong> baseado na "responsabilidade" de cada um</li>
 </ol>
 <p>É como investigar um acidente: você começa pelo resultado e vai voltando para descobrir todas as causas que contribuíram.</p>
-<h2 id="intuicao-matematica">Intuição matemática<a class="headerlink" href="#intuicao-matematica" title="Permanent link">&para;</a></h2>
-<h3 id="funcao-de-custo-medindo-o-erro">Função de custo: medindo o erro<a class="headerlink" href="#funcao-de-custo-medindo-o-erro" title="Permanent link">&para;</a></h3>
-<p>Primeiro, precisamos medir "o quanto erramos". Usamos uma <strong>função de custo</strong> (ou função de perda / loss function):</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Erro = (Saída_Desejada - Saída_Real)²
-</code></pre></div>
-<p>Para múltiplos exemplos:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Custo_Total = Média_de_todos_os_erros
-</code></pre></div>
-<p><strong>Objetivo</strong>: Minimizar esse custo ajustando os pesos!</p>
+<h2 id="intuicao-matematica">Intuição Matemática<a class="headerlink" href="#intuicao-matematica" title="Permanent link">&para;</a></h2>
+<h3 id="funcao-de-perda-loss-e-entropia-cruzada-binaria-bce">Função de Perda (Loss) e Entropia Cruzada Binária (BCE)<a class="headerlink" href="#funcao-de-perda-loss-e-entropia-cruzada-binaria-bce" title="Permanent link">&para;</a></h3>
+<p>Em redes neurais, o treinamento envolve ajustar os parâmetros (pesos e biases) para que o modelo produza saídas o mais próximas possível das saídas desejadas. Para guiar esse ajuste, precisamos de uma métrica quantitativa que capture <code>o quanto o modelo está errando</code>. Essa métrica é a <strong>função de perda</strong> (ou função de custo, <em>loss function</em>), que mede a discrepância entre as predições do modelo (<span class="arithmatex"><span class="MathJax_Preview">\hat{y}</span><script type="math/tex">\hat{y}</script></span>) e os rótulos verdadeiros (<span class="arithmatex"><span class="MathJax_Preview">y</span><script type="math/tex">y</script></span>).</p>
+<p>Suponha uma tarefa de regressão linear, onde queremos prever um valor contínuo. Uma função de perda comum é o <strong>erro quadrático médio</strong> (Mean Squared Error, MSE):</p>
+<ul>
+<li>
+<p>Para um único exemplo <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span>:<br />
+  $$
+  \ell(\hat{y}^{(i)}, y^{(i)}) = \left( y^{(i)} - \hat{y}^{(i)} \right)^2
+  $$</p>
+</li>
+<li>
+<p>Para um lote (<em>batch</em>) de <span class="arithmatex"><span class="MathJax_Preview">m</span><script type="math/tex">m</script></span> exemplos:<br />
+  $$
+  J = \frac{1}{m} \sum_{i=1}^{m} \ell\left( \hat{y}^{(i)}, y^{(i)} \right) = \frac{1}{m} \sum_{i=1}^{m} \left( y^{(i)} - \hat{y}^{(i)} \right)^2
+  $$</p>
+</li>
+</ul>
+<p>Aqui, o quadrado garante que erros positivos e negativos não se cancelem, e penaliza erros maiores de forma quadrática (ou seja, um erro de 2 é penalizado 4 vezes mais que um erro de 1, incentivando o modelo a evitar grandes desvios).</p>
+<div class="admonition note">
+<p class="admonition-title">Requisitos para uma Boa Função de Perda</p>
+<p>A função de perda deve ser <strong>diferenciável</strong> (quase em todos os pontos) para permitir o cálculo de gradientes via backpropagation. Além disso, ela deve ser convexa ou quasi-convexa em problemas ideais, facilitando a convergência para um mínimo global. O objetivo do treinamento é minimizar <span class="arithmatex"><span class="MathJax_Preview">J</span><script type="math/tex">J</script></span> ajustando os pesos <span class="arithmatex"><span class="MathJax_Preview">\theta</span><script type="math/tex">\theta</script></span> do modelo:<br />
+$$
+\theta^* = \arg\min_{\theta} J(\theta)
+$$
+Usamos otimização baseada em gradientes para isso, como o <code>Gradiente Descendente</code>.</p>
+</div>
+<p>Agora, foquemos em tarefas de classificação binária, onde <span class="arithmatex"><span class="MathJax_Preview">y \in \{0, 1\}</span><script type="math/tex">y \in \{0, 1\}</script></span> (ex.: "é spam ou não?"). Aqui, a saída do modelo é tipicamente uma probabilidade <span class="arithmatex"><span class="MathJax_Preview">\hat{y} = \sigma(z) \in (0,1)</span><script type="math/tex">\hat{y} = \sigma(z) \in (0,1)</script></span>, onde <span class="arithmatex"><span class="MathJax_Preview">\sigma</span><script type="math/tex">\sigma</script></span> é a função Sigmoid aplicada ao <em>logit</em> <span class="arithmatex"><span class="MathJax_Preview">z</span><script type="math/tex">z</script></span> (saída linear antes da ativação). 
+A função de perda tipica é a <strong>Entropia Cruzada Binária</strong> (Binary Cross-Entropy, BCE) ou <strong>log loss</strong>:</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\ell_{\text{BCE}}(y, \hat{y}) = -\left[ y \log(\hat{y}) + (1 - y) \log(1 - \hat{y}) \right]
+</div>
+<script type="math/tex; mode=display">
+\ell_{\text{BCE}}(y, \hat{y}) = -\left[ y \log(\hat{y}) + (1 - y) \log(1 - \hat{y}) \right]
+</script>
+</div>
+<ul>
+<li>
+<p><strong>Interpretação Probabilística</strong>: A BCE deriva do negativo do logaritmo da verossimilhança (<em>negative log-likelihood</em>) sob uma distribuição de Bernoulli. Se <span class="arithmatex"><span class="MathJax_Preview">y=1</span><script type="math/tex">y=1</script></span>, a perda penaliza quando <span class="arithmatex"><span class="MathJax_Preview">\hat{y}</span><script type="math/tex">\hat{y}</script></span> está longe de 1 (ou seja, <span class="arithmatex"><span class="MathJax_Preview">\log(\hat{y})</span><script type="math/tex">\log(\hat{y})</script></span> é muito negativo se <span class="arithmatex"><span class="MathJax_Preview">\hat{y}</span><script type="math/tex">\hat{y}</script></span> for pequeno). Se <span class="arithmatex"><span class="MathJax_Preview">y=0</span><script type="math/tex">y=0</script></span>, penaliza quando <span class="arithmatex"><span class="MathJax_Preview">\hat{y}</span><script type="math/tex">\hat{y}</script></span> está longe de 0. Isso incentiva predições "confiantes" apenas quando corretas; predições erradas e confiantes (ex.: <span class="arithmatex"><span class="MathJax_Preview">\hat{y}=0.99</span><script type="math/tex">\hat{y}=0.99</script></span> quando <span class="arithmatex"><span class="MathJax_Preview">y=0</span><script type="math/tex">y=0</script></span>) recebem penalidades altas devido ao logaritmo.</p>
+</li>
+<li>
+<p><strong>Derivação Rápida do Gradiente</strong>: Uma propriedade chave da BCE combinada com Sigmoid é a simplificação do gradiente. Vamos derivar brevemente:<br />
+  A perda em termos do logit <span class="arithmatex"><span class="MathJax_Preview">z</span><script type="math/tex">z</script></span> é <span class="arithmatex"><span class="MathJax_Preview">\ell(y, \sigma(z)) = -[y \log(\sigma(z)) + (1-y) \log(1 - \sigma(z))]</span><script type="math/tex">\ell(y, \sigma(z)) = -[y \log(\sigma(z)) + (1-y) \log(1 - \sigma(z))]</script></span>.<br />
+  Usando a regra da cadeia:<br />
+  $$
+  \frac{\partial \ell}{\partial z} = \frac{\partial \ell}{\partial \hat{y}} \cdot \frac{\partial \hat{y}}{\partial z} = \left( \frac{\hat{y} - y}{\hat{y}(1 - \hat{y})} \right) \cdot \hat{y}(1 - \hat{y}) = \hat{y} - y
+  $$
+  Essa simplificação torna o backpropagation computacionalmente eficiente e numericamente estável, evitando problemas como vanishing gradients em camadas profundas.</p>
+</li>
+</ul>
+<p>Para um batch:<br />
+$$
+J_{\text{BCE}} = \frac{1}{m} \sum_{i=1}^{m} \ell_{\text{BCE}}(y^{(i)}, \hat{y}^{(i)})
+$$</p>
+<div class="admonition tip">
+<p class="admonition-title">Extensão para Classificação Multiclasse</p>
+<p>Para <span class="arithmatex"><span class="MathJax_Preview">K</span><script type="math/tex">K</script></span> classes, use a ativação softmax na saída final (<span class="arithmatex"><span class="MathJax_Preview">\hat{y}_k = \frac{e^{z_k}}{\sum_{j=1}^K e^{z_j}}</span><script type="math/tex">\hat{y}_k = \frac{e^{z_k}}{\sum_{j=1}^K e^{z_j}}</script></span>) e a Entropia Cruzada Categórica:<br />
+$$
+\ell_{\text{CE}}(y, \hat{y}) = -\sum_{k=1}^K y_k \log(\hat{y}_k)
+$$<br />
+onde <span class="arithmatex"><span class="MathJax_Preview">y</span><script type="math/tex">y</script></span> é um vetor <em>one-hot</em>. O gradiente em relação aos logits também simplifica para <span class="arithmatex"><span class="MathJax_Preview">\frac{\partial \ell}{\partial z_k} = \hat{y}_k - y_k</span><script type="math/tex">\frac{\partial \ell}{\partial z_k} = \hat{y}_k - y_k</script></span>, facilitando o treinamento.</p>
+</div>
 <div class="quiz"><h3>Qual é o objetivo principal da função de custo no backpropagation?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-1-0" ><label for="quiz-1-0">Acelerar o treinamento da rede neural</label></div><div><input type="radio" name="answer" value="1" id="quiz-1-1" ><label for="quiz-1-1">Escolher a melhor arquitetura de rede</label></div><div><input type="radio" name="answer" value="2" id="quiz-1-2" correct><label for="quiz-1-2">Medir quantitativamente o erro para guiar o ajuste dos pesos</label></div><div><input type="radio" name="answer" value="3" id="quiz-1-3" ><label for="quiz-1-3">Determinar o número ideal de neurônios</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden">
-A função de custo quantifica o erro da rede, fornecendo uma métrica clara de quão distantes estamos do resultado desejado, permitindo ajustar os pesos na direção correta.</section></div>
+A função de custo quantifica o erro da rede, fornecendo uma métrica clara de quão distantes estamos do resultado desejado, permitindo ajustar os pesos na direção correta via gradientes.</section></div>
 
-<h4 id="o-que-e-loss-funcao-de-perda-e-o-que-e-bce">O que é <em>loss</em> (função de perda) e o que é <strong>BCE</strong>?<a class="headerlink" href="#o-que-e-loss-funcao-de-perda-e-o-que-e-bce" title="Permanent link">&para;</a></h4>
-<p><strong>Função de perda (<em>loss</em>)</strong> é a medida de “quão errada” está a previsão da rede para um (ou um conjunto de) exemplo(s).<br />
-- Para um exemplo <span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span></script></span>: <span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">\ell(\hat{y}^{(i)}, y^{(i)})</span><script type="math/tex">\ell(\hat{y}^{(i)}, y^{(i)})</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">\ell(\hat{y}^{(i)}, y^{(i)})</span><script type="math/tex">\ell(\hat{y}^{(i)}, y^{(i)})</script></span></script></span>.<br />
-- Para um mini‑batch com <span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">m</span><script type="math/tex">m</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">m</span><script type="math/tex">m</script></span></script></span> exemplos:<br />
-  [
-  J = \frac{1}{m} \sum_{i=1}^{m} \ell\big(\hat{y}^{(i)}, y^{(i)}\big)
-  ]
-Ela precisa ser <strong>diferenciável</strong> para que possamos calcular gradientes via backpropagation.</p>
-<p><strong>BCE — Entropia Cruzada Binária (classificação binária)</strong><br />
-Para rótulos <span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">y\in\{0,1\}</span><script type="math/tex">y\in\{0,1\}</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">y\in\{0,1\}</span><script type="math/tex">y\in\{0,1\}</script></span></script></span> e saída <span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">\hat{y}=\sigma(z)\in(0,1)</span><script type="math/tex">\hat{y}=\sigma(z)\in(0,1)</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">\hat{y}=\sigma(z)\in(0,1)</span><script type="math/tex">\hat{y}=\sigma(z)\in(0,1)</script></span></script></span> (sigmoide):
-[
-\ell_{\text{BCE}}(y,\hat{y}) = -\Big[ y\log(\hat{y}) + (1-y)\log(1-\hat{y}) \Big].
-]
-- <strong>Interpretação</strong>: negativo do log‑likelihood da Bernoulli (penaliza previsões confiantes e erradas).<br />
-- <strong>Propriedade chave</strong> (com sigmoide na saída): o gradiente em relação ao <em>logit</em> <span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">z</span><script type="math/tex">z</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">z</span><script type="math/tex">z</script></span></script></span> <strong>simplifica</strong> para
-  [
-  \frac{\partial \ell}{\partial z} = \hat{y} - y,
-  ]
-  o que torna o backprop mais simples e estável.<br />
-- <strong>Dica numérica</strong>: faça <em>clipping</em> de <span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">\hat{y}</span><script type="math/tex">\hat{y}</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">\hat{y}</span><script type="math/tex">\hat{y}</script></span></script></span> (ex.: <span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">[10^{-15},\,1-10^{-15}]</span><script type="math/tex">[10^{-15},\,1-10^{-15}]</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">[10^{-15},\,1-10^{-15}]</span><script type="math/tex">[10^{-15},\,1-10^{-15}]</script></span></script></span>) para evitar <span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">\log(0)</span><script type="math/tex">\log(0)</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">\log(0)</span><script type="math/tex">\log(0)</script></span></script></span>.</p>
-<blockquote>
-<p><strong>Multiclasse (extra)</strong>: para <span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">K</span><script type="math/tex">K</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">K</span><script type="math/tex">K</script></span></script></span> classes, use <strong>softmax + entropia cruzada</strong>; com rótulo <em>one‑hot</em> <span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">y</span><script type="math/tex">y</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">y</span><script type="math/tex">y</script></span></script></span>, também vale <span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">\delta^{[L]} = \hat{y} - y</span><script type="math/tex">\delta^{[L]} = \hat{y} - y</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">\delta^{[L]} = \hat{y} - y</span><script type="math/tex">\delta^{[L]} = \hat{y} - y</script></span></script></span>.</p>
-</blockquote>
-<h3 id="gradiente">Gradiente<a class="headerlink" href="#gradiente" title="Permanent link">&para;</a></h3>
-<p>O <strong>gradiente</strong> nos diz em qual direção ajustar cada peso para reduzir o erro. É como uma bússola que aponta para a direção da melhoria!</p>
+<h3 id="o-gradiente-a-direcao-da-mudanca">O Gradiente: A Direção da Mudança<a class="headerlink" href="#o-gradiente-a-direcao-da-mudanca" title="Permanent link">&para;</a></h3>
+<p>O <strong>gradiente</strong> de uma função <span class="arithmatex"><span class="MathJax_Preview">J(\theta)</span><script type="math/tex">J(\theta)</script></span> em relação aos parâmetros <span class="arithmatex"><span class="MathJax_Preview">\theta</span><script type="math/tex">\theta</script></span> é um vetor que aponta na direção de maior aumento de <span class="arithmatex"><span class="MathJax_Preview">J</span><script type="math/tex">J</script></span>. Para minimizar <span class="arithmatex"><span class="MathJax_Preview">J</span><script type="math/tex">J</script></span>, movemos na direção oposta (descida). Matematicamente, para um parâmetro <span class="arithmatex"><span class="MathJax_Preview">\theta_j</span><script type="math/tex">\theta_j</script></span>:<br />
+$$
+\frac{\partial J}{\partial \theta_j}
+$$<br />
+representa quanto <span class="arithmatex"><span class="MathJax_Preview">J</span><script type="math/tex">J</script></span> muda se alterarmos <span class="arithmatex"><span class="MathJax_Preview">\theta_j</span><script type="math/tex">\theta_j</script></span> infinitesimalmente.</p>
+<p><strong>Analogia da Montanha (com Toque Técnico)</strong>:<br />
+Imagine <span class="arithmatex"><span class="MathJax_Preview">J(\theta)</span><script type="math/tex">J(\theta)</script></span> como uma superfície montanhosa em um espaço de alta dimensionalidade (cada dimensão é um parâmetro <span class="arithmatex"><span class="MathJax_Preview">\theta</span><script type="math/tex">\theta</script></span>). Você está em um ponto <span class="arithmatex"><span class="MathJax_Preview">\theta</span><script type="math/tex">\theta</script></span> atual, envolto em neblina (sem visão global). O gradiente <span class="arithmatex"><span class="MathJax_Preview">\nabla J(\theta)</span><script type="math/tex">\nabla J(\theta)</script></span> é como uma bússola que mede a inclinação local mais íngreme para cima. Para descer, siga <span class="arithmatex"><span class="MathJax_Preview">-\nabla J(\theta)</span><script type="math/tex">-\nabla J(\theta)</script></span>. Em cada passo, recalcule o gradiente localmente — isso é o Gradiente Descendente Estocástico (SGD) ou variantes como Adam.</p>
 <p><img alt="alt text" src="image-1.png" /></p>
-<p><strong>Analogia da montanha</strong>:</p>
+<p>Em redes neurais, o gradiente é computado via backpropagation: propagamos o erro da saída para as camadas anteriores, usando a regra da cadeia para calcular derivadas parciais em cada peso.</p>
+<h3 id="regra-de-atualizacao-dos-pesos">Regra de Atualização dos Pesos<a class="headerlink" href="#regra-de-atualizacao-dos-pesos" title="Permanent link">&para;</a></h3>
+<p>A atualização dos pesos segue o Gradiente Descendente:<br />
+$$
+\theta_{\text{novo}} = \theta_{\text{antigo}} - \eta \cdot \nabla J(\theta)
+$$<br />
+onde <span class="arithmatex"><span class="MathJax_Preview">\eta</span><script type="math/tex">\eta</script></span> (se pronuncia eta) é a <strong>taxa de aprendizado</strong> (<em>learning rate</em>), controlando o tamanho do passo.</p>
 <ul>
-<li>Você está perdido numa montanha com neblina (não vê o objetivo)</li>
-<li>Quer chegar ao vale (minimizar o erro)</li>
-<li>O gradiente é como uma bússola que sempre aponta "descida mais íngreme"</li>
-<li>Seguindo essa direção, eventualmente chegará ao fundo</li>
+<li><strong>Escolha de <span class="arithmatex"><span class="MathJax_Preview">\eta</span><script type="math/tex">\eta</script></span></strong>:  </li>
+<li>Muito grande: Pode oscilar ou divergir (ex.: "pular" sobre o mínimo).  </li>
+<li>Muito pequeno: Convergência lenta, risco de ficar preso em mínimos locais.<br />
+  Soluções comuns: Agendadores de learning rate (ex.: decaimento exponencial) ou otimizadores adaptativos como Adam, que ajustam <span class="arithmatex"><span class="MathJax_Preview">\eta</span><script type="math/tex">\eta</script></span> por parâmetro com base em momentos de gradientes passados.</li>
 </ul>
-<h3 id="regra-de-atualizacao-dos-pesos">Regra de atualização dos pesos<a class="headerlink" href="#regra-de-atualizacao-dos-pesos" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Peso_Novo = Peso_Antigo - Taxa_de_Aprendizado × Gradiente
-</code></pre></div>
-<ul>
-<li>
-<p><strong>Taxa de aprendizado</strong>: o tamanho do "passo" que damos</p>
-</li>
-<li>
-<p>Muito grande → podemos "pular" a solução</p>
-</li>
-<li>Muito pequeno → demora muito para aprender</li>
-</ul>
+<p>Em prática, para estabilidade, usamos mini-batches (SGD) em vez de batches completos, introduzindo ruído que ajuda a escapar de mínimos locais. Variantes avançadas incluem momentum (acelera em direções consistentes) e RMSProp (normaliza gradientes em dimensões variáveis).</p>
 <h2 id="o-algoritmo-passo-a-passo">O algoritmo passo a passo<a class="headerlink" href="#o-algoritmo-passo-a-passo" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
@@ -3962,7 +3964,7 @@ Para rótulos <span class="arithmatex"><span class="MathJax_Preview"><span class
 <ul>
 <li>Comparação entre a saída prevista e a saída real usando uma função de custo (ex.: erro quadrático médio).</li>
 </ul>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Input → Camada1 → Camada2 → ... → Output → Calcular_Erro
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Input → Camada1 → Camada2 → ... → Output → Calcular_Erro
 </code></pre></div>
 3. <strong>Propagação reversa (backward pass)</strong>:  </p>
 <ul>
@@ -3974,7 +3976,7 @@ Para rótulos <span class="arithmatex"><span class="MathJax_Preview"><span class
 <ul>
 <li>Cada peso é ajustado na direção que reduz o erro, de acordo com a taxa de aprendizado.</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Ajustar_Pesos ← ... ← Camada2 ← Camada1 ← Calcular_Gradientes ← Erro
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Ajustar_Pesos ← ... ← Camada2 ← Camada1 ← Calcular_Gradientes ← Erro
 </code></pre></div>
 </li>
 </ol>
@@ -4044,23 +4046,12 @@ L=\tfrac12(y - \hat y)^2
 z_2 = v_1 a_1 + v_2 a_2 + c 
 a_i = g(z_i), z_i = w_{i1}x_1 + w_{i2}x_2 + b_i
 $$</p>
-<p>Gradientes principais:</p>
+<p>As equações a seguir mostram como o erro é propagado da camada de saída para as camadas anteriores:</p>
 <div class="arithmatex">
-<div class="MathJax_Preview">
-\frac{\partial L}{\partial z_2} = (\hat y - y)\,\sigma'(z_2)
-\frac{\partial L}{\partial v_i} = a_i \frac{\partial L}{\partial z_2}
-\frac{\partial L}{\partial a_i} = v_i \frac{\partial L}{\partial z_2}
-\frac{\partial L}{\partial z_i} = \frac{\partial L}{\partial a_i}\, g'(z_i)
-\frac{\partial L}{\partial w_{ij}} = x_j \frac{\partial L}{\partial z_i}
+<div class="MathJax_Preview"> \begin{align} \frac{\partial \ell}{\partial z_2} &amp;= (\hat{y} - y) \cdot \sigma'(z_2) \ \frac{\partial \ell}{\partial v_i} &amp;= a_i \cdot \frac{\partial \ell}{\partial z_2} \ \frac{\partial \ell}{\partial a_i} &amp;= v_i \cdot \frac{\partial \ell}{\partial z_2} \ \frac{\partial \ell}{\partial z_i} &amp;= \frac{\partial \ell}{\partial a_i} \cdot g'(z_i) \ \frac{\partial \ell}{\partial w_{ij}} &amp;= x_j \cdot \frac{\partial \ell}{\partial z_i} \end{align} </div>
+<script type="math/tex; mode=display"> \begin{align} \frac{\partial \ell}{\partial z_2} &= (\hat{y} - y) \cdot \sigma'(z_2) \ \frac{\partial \ell}{\partial v_i} &= a_i \cdot \frac{\partial \ell}{\partial z_2} \ \frac{\partial \ell}{\partial a_i} &= v_i \cdot \frac{\partial \ell}{\partial z_2} \ \frac{\partial \ell}{\partial z_i} &= \frac{\partial \ell}{\partial a_i} \cdot g'(z_i) \ \frac{\partial \ell}{\partial w_{ij}} &= x_j \cdot \frac{\partial \ell}{\partial z_i} \end{align} </script>
 </div>
-<script type="math/tex; mode=display">
-\frac{\partial L}{\partial z_2} = (\hat y - y)\,\sigma'(z_2)
-\frac{\partial L}{\partial v_i} = a_i \frac{\partial L}{\partial z_2}
-\frac{\partial L}{\partial a_i} = v_i \frac{\partial L}{\partial z_2}
-\frac{\partial L}{\partial z_i} = \frac{\partial L}{\partial a_i}\, g'(z_i)
-\frac{\partial L}{\partial w_{ij}} = x_j \frac{\partial L}{\partial z_i}
-</script>
-</div>
+<p>Essas equações formam a base do algoritmo de backpropagation, permitindo que os gradientes sejam calculados camada por camada, da saída para a entrada, para atualizar os pesos da rede neural de forma eficiente.</p>
 <p>Reflexão:</p>
 <ol>
 <li>O que acontece quando a taxa de aprendizado é <strong>muito alta</strong>? E quando é <strong>muito baixa</strong>?</li>
@@ -4088,26 +4079,26 @@ $$</p>
 Começamos pela saída porque conhecemos o erro desejado ali. Isso permite calcular como cada camada anterior contribuiu para esse erro, propagando a informação de volta pela rede.</section></div>
 
 <h2 id="pseudocodigo">Pseudocódigo<a class="headerlink" href="#pseudocodigo" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># Algoritmo Backpropagation Simplificado</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="k">def</span><span class="w"> </span><span class="nf">treinar_rede</span><span class="p">(</span><span class="n">rede</span><span class="p">,</span> <span class="n">dados_treino</span><span class="p">,</span> <span class="n">taxa_aprendizado</span><span class="p">):</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    <span class="k">for</span> <span class="n">cada_época</span><span class="p">:</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>        <span class="k">for</span> <span class="n">cada_exemplo</span> <span class="ow">in</span> <span class="n">dados_treino</span><span class="p">:</span>
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>            <span class="c1"># FORWARD PASS (predição)</span>
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>            <span class="n">entrada</span> <span class="o">=</span> <span class="n">exemplo</span><span class="o">.</span><span class="n">dados</span>
-<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>            <span class="k">for</span> <span class="n">camada</span> <span class="ow">in</span> <span class="n">rede</span><span class="p">:</span>
-<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>                <span class="n">entrada</span> <span class="o">=</span> <span class="n">camada</span><span class="o">.</span><span class="n">processar</span><span class="p">(</span><span class="n">entrada</span><span class="p">)</span>
-<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>            <span class="n">saída_predita</span> <span class="o">=</span> <span class="n">entrada</span>
-<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>
-<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>            <span class="c1"># CALCULAR ERRO</span>
-<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>            <span class="n">erro</span> <span class="o">=</span> <span class="n">exemplo</span><span class="o">.</span><span class="n">resposta_correta</span> <span class="o">-</span> <span class="n">saída_predita</span>
-<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>
-<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>            <span class="c1"># BACKWARD PASS</span>
-<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>            <span class="n">gradiente</span> <span class="o">=</span> <span class="n">calcular_gradiente_saída</span><span class="p">(</span><span class="n">erro</span><span class="p">)</span>
-<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>            <span class="k">for</span> <span class="n">camada</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">rede</span><span class="p">):</span>
-<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>                <span class="n">gradiente</span> <span class="o">=</span> <span class="n">camada</span><span class="o">.</span><span class="n">calcular_gradiente</span><span class="p">(</span><span class="n">gradiente</span><span class="p">)</span>
-<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>                <span class="n">camada</span><span class="o">.</span><span class="n">atualizar_pesos</span><span class="p">(</span><span class="n">gradiente</span><span class="p">,</span> <span class="n">taxa_aprendizado</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Algoritmo Backpropagation Simplificado</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="k">def</span><span class="w"> </span><span class="nf">treinar_rede</span><span class="p">(</span><span class="n">rede</span><span class="p">,</span> <span class="n">dados_treino</span><span class="p">,</span> <span class="n">taxa_aprendizado</span><span class="p">):</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    <span class="k">for</span> <span class="n">cada_época</span><span class="p">:</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>        <span class="k">for</span> <span class="n">cada_exemplo</span> <span class="ow">in</span> <span class="n">dados_treino</span><span class="p">:</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>            <span class="c1"># FORWARD PASS (predição)</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>            <span class="n">entrada</span> <span class="o">=</span> <span class="n">exemplo</span><span class="o">.</span><span class="n">dados</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>            <span class="k">for</span> <span class="n">camada</span> <span class="ow">in</span> <span class="n">rede</span><span class="p">:</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>                <span class="n">entrada</span> <span class="o">=</span> <span class="n">camada</span><span class="o">.</span><span class="n">processar</span><span class="p">(</span><span class="n">entrada</span><span class="p">)</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>            <span class="n">saída_predita</span> <span class="o">=</span> <span class="n">entrada</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>            <span class="c1"># CALCULAR ERRO</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>            <span class="n">erro</span> <span class="o">=</span> <span class="n">exemplo</span><span class="o">.</span><span class="n">resposta_correta</span> <span class="o">-</span> <span class="n">saída_predita</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>            <span class="c1"># BACKWARD PASS</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>            <span class="n">gradiente</span> <span class="o">=</span> <span class="n">calcular_gradiente_saída</span><span class="p">(</span><span class="n">erro</span><span class="p">)</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>            <span class="k">for</span> <span class="n">camada</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">rede</span><span class="p">):</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>                <span class="n">gradiente</span> <span class="o">=</span> <span class="n">camada</span><span class="o">.</span><span class="n">calcular_gradiente</span><span class="p">(</span><span class="n">gradiente</span><span class="p">)</span>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>                <span class="n">camada</span><span class="o">.</span><span class="n">atualizar_pesos</span><span class="p">(</span><span class="n">gradiente</span><span class="p">,</span> <span class="n">taxa_aprendizado</span><span class="p">)</span>
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Regra da cadeia</p>
@@ -4115,9 +4106,9 @@ Começamos pela saída porque conhecemos o erro desejado ali. Isso permite calcu
 </div>
 <h2 id="funcoes-de-ativacao-e-derivadas">Funções de ativação e derivadas<a class="headerlink" href="#funcoes-de-ativacao-e-derivadas" title="Permanent link">&para;</a></h2>
 <p>Por que ReLU é tão popular? Sua derivada é super simples:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>ReLU(x) = max(0, x)
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>Derivada = { 1 se x &gt; 0
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>           { 0 se x ≤ 0
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>ReLU(x) = max(0, x)
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>Derivada = { 1 se x &gt; 0
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>           { 0 se x ≤ 0
 </code></pre></div>
 <p>Sigmoid tem derivada mais complicada, tornando o cálculo mais lento.</p>
 <div class="admonition tip">
@@ -4162,11 +4153,11 @@ Vanishing gradients ocorre quando gradientes se tornam exponencialmente menores 
 
 <h2 id="otimizadores">Otimizadores<a class="headerlink" href="#otimizadores" title="Permanent link">&para;</a></h2>
 <p><strong>SGD (Stochastic Gradient Descent)</strong>: O básico
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>peso = peso - taxa_aprendizado × gradiente
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>peso = peso - taxa_aprendizado × gradiente
 </code></pre></div></p>
 <p><strong>Momentum</strong>: Adiciona "inércia"
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>velocidade = momentum × velocidade_anterior + gradiente
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>peso = peso - taxa_aprendizado × velocidade
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>velocidade = momentum × velocidade_anterior + gradiente
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>peso = peso - taxa_aprendizado × velocidade
 </code></pre></div></p>
 <p><strong>Adam</strong>: Adapta taxa de aprendizado automaticamente</p>
 <ul>
@@ -4320,7 +4311,7 @@ function resetFieldset(fieldset) {
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 2, 2025 17:51:19 UTC">September 2, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 3, 2025 01:55:44 UTC">September 3, 2025</span>
   </span>
 
     
