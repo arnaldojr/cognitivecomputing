@@ -292,14 +292,14 @@ Você poderá:
 O Perceptron tinha um problema fatal: **só funcionava para problemas linearmente separáveis**. 
 
 **O famoso problema XOR:**
-```
-Entradas | Saída XOR
-A  B     | Resultado
-0  0     | 0
-0  1     | 1  
-1  0     | 1
-1  1     | 0
-```
+
+| Entradas 	| Saída XOR 	| 
+|:---:	|:---:	|
+| A  B 	| Resultado 	|  
+| 0  0 	| 0 	|  
+| 0  1 	| 1 	| 
+| 1  0 	| 1 	| 
+| 1  1 	| 0 	| 
 
 Não importa como você tente, **não existe uma linha reta** que separe corretamente os 1s dos 0s neste problema! Essa limitação quase matou a pesquisa em redes neurais nos anos 1970.
 
@@ -333,17 +333,9 @@ Os cientistas descobriram algo incrível: **se você empilhar neurônios em cama
 
 ![alt text](image.png)
 
-```
-Camada de    Camada(s)      Camada de
-Entrada   →   Oculta(s)   →   Saída
-
-x₁ ──────┐   h₁ ────────┐   y₁
-x₂ ──────┤   h₂ ────────┤   y₂
-  ...    ├─→  ... ────────┤→  ...
-xₙ ──────┘   hₘ ────────┘   yₖ
-```
 
 **O que cada camada faz:**
+
 - **Entrada**: Recebe os dados originais
 - **Oculta(s)**: Transformam os dados em representações mais úteis
 - **Saída**: Produz a resposta final
@@ -351,7 +343,7 @@ xₙ ──────┘   hₘ ────────┘   yₖ
 
 ### Objetivo deste exercício
 
-Você poderá:
+Você deve:
 
 1. Treinar um MLP para aprender o XOR usando **backpropagation**.
 2. Alterar taxa de aprendizado, épocas e função de ativação (tanh/ReLU).
@@ -364,7 +356,7 @@ Você poderá:
 > - Troque para `ReLU` e compare a convergência.
 
 <div id="mlp-xor-widget" style="max-width:980px;margin:1.25rem 0;padding:1rem;border:1px solid var(--md-default-fg-color--lightest,#e0e0e0);border-radius:14px;background:var(--md-default-bg-color,#fff)">
-  <h3 style="margin:0 0 .5rem 0">MLP 2–2–1 — Aprende XOR (Backprop)</h3>
+  <h3 style="margin:0 0 .5rem 0">MLP 2–2–1 — XOR </h3>
 
   <div style="display:flex;gap:1rem;flex-wrap:wrap;align-items:flex-end">
     <label style="flex:1 1 180px">
