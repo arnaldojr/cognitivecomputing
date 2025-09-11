@@ -231,7 +231,7 @@ nav:
         - MLP: aulas/IA/lab07/Praticando_redes_neurais_com_Tensorflow.ipynb
     - Lab02 - CNN: 
       - Teoria: aulas/IA/lab08/cnn.md
-      - Prática: aulas/IA/lab08/cnn.ipynb
+      - Prática: aulas/IA/lab08/cnn-pratica.ipynb
     - Lab03 - CNN parte2: 
       - Teoria: aulas/IA/lab08/cnn_drive.md
       - Prática: aulas/IA/lab08/cnn_drive.ipynb
