@@ -232,6 +232,7 @@ nav:
     - Lab02 - CNN: 
       - Teoria: aulas/IA/lab08/cnn.md
       - Prática: aulas/IA/lab08/cnn-pratica.ipynb
+      - Exercício: aulas/IA/lab08/cnn2.md
     - Lab03 - CNN parte2: 
       - Teoria: aulas/IA/lab08/cnn_drive.md
       - Prática: aulas/IA/lab08/cnn_drive.ipynb
