@@ -229,13 +229,13 @@ nav:
     - Lab01 - Prática: 
         - aulas/IA/lab07/index.md
         - MLP: aulas/IA/lab07/Praticando_redes_neurais_com_Tensorflow.ipynb
+    - Lab02 - CNN: 
+      - Teoria: aulas/IA/lab08/cnn.md
+      - Prática: aulas/IA/lab08/cnn.ipynb
+    - Lab03 - CNN parte2: 
+      - Teoria: aulas/IA/lab08/cnn_drive.md
+      - Prática: aulas/IA/lab08/cnn_drive.ipynb
     - BATALHA DAS REDES: aulas/IA/batalharedes/batalha_das_redes.ipynb
-    - Lab08 - CNN parte1: 
-      - teoria: aulas/IA/lab08/cnn_guia_completo.md
-      - pratica: aulas/IA/lab08/cnn.ipynb
-    - Lab08 - CNN parte2: 
-      - teoria: aulas/IA/lab08/cnn_drive.md
-      - pratica: aulas/IA/lab08/cnn_drive.ipynb
     - Lab9 - Pré-treinadas: aulas/IA/lab09/transferlearning_1.ipynb
     - Lab9 - Transfer learning: aulas/IA/lab09/transferlearning_2.ipynb
     - Lab10 - Data Augmentation: aulas/IA/lab10/data-augmentation.ipynb

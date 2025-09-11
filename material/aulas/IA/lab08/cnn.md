@@ -4,20 +4,22 @@
 
 As **Redes Neurais Convolucionais (CNNs)** são um tipo de rede neural artificial, projetada para processar dados que possuem uma **estrutura topológica similar a uma grade**, como:
 
-- **Imagens** (grade 2D de pixels)
-- **Sinais de áudio** (grade 1D temporal)
-- **Vídeos** (grade 3D: altura × largura × tempo)
-- **Sequências de DNA** (grade 1D de nucleotídeos)
+Aplicações comuns:
 
-### **Vantagens sobre MLPs Tradicionais**
+- Classificação e segmentação de imagens
+- Reconhecimento facial e detecção de objetos
+- Análise de sinais e séries temporais
+- Bioinformática (motivos em DNA/RNA)
 
-| Aspecto | MLP Tradicional | CNN |
-|---------|----------------|-----|
-| **Parâmetros** | 24M+ para imagem 400×600 | ~100K para mesma imagem |
-| **Estrutura espacial** | Ignorada | Preservada |
-| **Invariância** | Sensível à posição | Invariante à translação |
-| **Compartilhamento** | Sem reutilização | Compartilha pesos |
-| **Eficiência** | Computacionalmente caro | Eficiente |
+### Vantagens sobre MLPs
+
+| Aspecto | MLP | CNN |
+|---------|-----|-----|
+| Parâmetros | Crescem explosivamente | Muito menos (filtros reutilizados) |
+| Estrutura espacial | Perdida | Preservada |
+| Robustez a deslocamentos | Baixa | Maior (quase invariante a translação) |
+| Compartilhamento de pesos | Não | Sim |
+| Escalabilidade em visão | Limitada | Alta |
 
 ### Arquitetura Geral de uma CNN
 
@@ -26,9 +28,9 @@ As **Redes Neurais Convolucionais (CNNs)** são um tipo de rede neural artificia
 
 ## Fundamentos Matemáticos
 
-### Operação de Convolução Matemática
+### Convolução (Intuição)
 
-A **convolução** é uma operação matemática fundamental definida como:
+A convolução mede o alinhamento entre um pequeno padrão (kernel) e regiões da entrada. 
 
 ![alt text](convnet.png)
 
@@ -48,7 +50,7 @@ A **convolução** é uma operação matemática fundamental definida como:
 
 ### Convolução 2D para Imagens
 
-Para imagens, usamos **correlação cruzada** (tecnicamente, não convolução pura):
+Em visão usamos, tecnicamente, **correlação cruzada** (não invertendo o kernel), mas chamamos de convolução por convenção.
 
 ![alt text](conv3d.gif)
 
@@ -58,6 +60,7 @@ S(i,j) = (I * K)(i,j) = ΣΣ I(i+m, j+n) × K(m,n)
 ```
 
 Onde:
+
 - `I`: Imagem de entrada
 - `K`: Kernel (filtro)
 - `S`: Feature map (mapa de características)
@@ -87,33 +90,58 @@ Posição (1,1): (-1×1) + (-1×2) + (-1×3) + (-1×0) + (8×1) + (-1×2) + (-1�
 
 ## Parametros da Camada Convolucional
 
-### 1. **Kernels/Filtros**
+### 1. Kernel/Filtro
+
 - **Tamanho**: Normalmente 3×3, 5×5, 7×7
-- **Profundidade**: Igual à profundidade da entrada
-- **Quantidade**: Hyperparâmetro (32, 64, 128, 256...)
+- **Profundidade do kernel**: Igual à profundidade da entrada
+- **Nº de filtros**: Hyperparâmetro (32, 64, 128, 256...)
 - **Pesos**: Aprendidos durante treinamento
 
-### 2. **Stride (Passo)**
+### 2. Stride (Passo)
+
 - **Definição**: Quantos pixels o kernel "pula" a cada operação
 - **Stride = 1**: Sobreposição máxima
 - **Stride = 2**: Reduz dimensão pela metade
-- **Fórmula de saída**: `(W - F + 2P) / S + 1`
 
-### 3. **Padding (Preenchimento)**
+
+### 3. Padding (Preenchimento)
+
 - **Valid**: Sem padding (saída menor)
 - **Same**: Padding para manter dimensão
 - **Causal**: Para dados sequenciais
 
-### Tipos de Convoluções
+<?quiz?>
+question: Efeito de padding='valid' com kernel 3×3 e stride=1 em H×W?
+answer: Aumenta tamanho
+answer-correct: Reduz 2 pixels (1 por borda)
+answer: Não altera
+answer: Dobra dimensões
+content:
+Sem padding, a janela não cobre bordas externas totalmente, reduzindo largura e altura em 1 de cada lado.
+<?/quiz?>
 
-#### **Convolução Standard**
+<?quiz?>
+question: Principal efeito de stride=2 em convolução?
+answer: Aumentar resolução espacial
+answer-correct: Diminuir resolução e custo computacional
+answer: Substituir função de ativação
+answer: Tornar o kernel maior
+content:
+Stride>1 “pula” posições, gerando feature maps menores e operação mais barata.
+<?/quiz?>
+
+
+
+## Tipos de Convoluções
+
+### Convolução Standard
 
 ```python
 # Exemplo com TensorFlow/Keras
 layers.Conv2D(filters=32, kernel_size=(3,3), stride=(1,1), padding='same')
 ```
 
-#### **Convolução Depthwise Separable**
+### Convolução Depthwise Separable
 
 ```python
 layers.SeparableConv2D(filters=32, kernel_size=(3,3))
@@ -121,14 +149,15 @@ layers.SeparableConv2D(filters=32, kernel_size=(3,3))
 - **Vantagem**: Menos parâmetros (~9x redução)
 - **Uso**: MobileNets, Xception
 
-#### **Convolução Dilatada (Atrous)**
+### Convolução Dilatada (Atrous)
+
 ```python
 layers.Conv2D(filters=32, kernel_size=(3,3), dilation_rate=(2,2))
 ```
 - **Vantagem**: Campo receptivo maior sem perder resolução
 - **Uso**: Segmentação semântica
 
-#### **Convolução Transposta (Deconvolução)**
+### Convolução Transposta (Deconvolução)
 ```python
 layers.Conv2DTranspose(filters=32, kernel_size=(3,3), strides=(2,2))
 ```
@@ -243,71 +272,57 @@ layers.Conv2DTranspose(filters=32, kernel_size=(3,3), strides=(2,2))
 
 ![alt text](poolingexp1.png)
 
-1. **Redução dimensional**: Diminui tamanho dos feature maps
-2. **Invariância**: Pequenas translações não afetam resultado
-3. **Redução de overfitting**: Menos parâmetros
-4. **Eficiência computacional**: Operação mais rápida
+Diminui tamanho dos feature maps alem de permitir que pequenas translações não afetem resultado, ajuda na redução de overfitting e acelera o processamento.
 
-### Tipos de Pooling
-
-#### **Max Pooling**
+### Max Pooling
 
 ![alt text](pooling.png)
 
 ```python
 layers.MaxPool2D(pool_size=(2,2), strides=(2,2))
 ```
-#### **Average Pooling**
+Mantém o valor mais forte (presença de padrão).
 
-reduz parcialmente a dimensão espacial (em blocos).
+### Average Pooling
+
+Suaviza (média local), diluindo picos.
 
 ```python
 layers.AveragePooling2D(pool_size=(2,2))
 ```
 
-#### **Global Average Pooling**
+### Global Average Pooling 
 
-reduz totalmente a dimensão espacial, sobrando apenas os canais.
+Resume cada feature map em um único número. Substitui densas finais, reduz parâmetros.
 
 ```python
 layers.GlobalAveragePooling2D()
 ```
 
-- **Uso**: Substituir camadas FC finais
-- **Vantagem**: Reduz overfitting, menos parâmetros
+<?quiz?>
+question: Diferença essencial Max vs Average Pooling?
+answer: Max reduz canais, Average aumenta canais
+answer-correct: Max preserva picos; Average suaviza respostas
+answer: Average não é diferenciável
+answer: São iguais em prática
+content:
+Max enfatiza presença; Average enfatiza contexto médio.
+<?/quiz?>
 
-#### **Adaptive Pooling**
-- **Objetivo**: Saída com tamanho fixo independente da entrada
-- **Uso**: Redes com entradas de tamanhos variados
-
-### Pooling vs Stride Convolution
-
-| Aspecto | Pooling | Strided Convolution |
-|---------|---------|-------------------|
-| **Parâmetros** | 0 | Sim |
-| **Aprendizado** | Não | Sim |
-| **Flexibilidade** | Fixa | Adaptável |
-| **Tendência atual** | ↓ Diminuindo | ↑ Aumentando |
-
-## Arquiteturas Clássicas
+## Arquiteturas Clássicas de CNN
 
 ### LeNet-5 (1998) - Yann LeCun
-
 
 [![lenet](https://markdown-videos-api.jorgenkh.no/url?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DFwFduRA_L6Q)](https://www.youtube.com/watch?v=FwFduRA_L6Q)
 
 
 
-```
-INPUT(32×32×1) → CONV1(28×28×6) → POOL1(14×14×6) → 
-CONV2(10×10×16) → POOL2(5×5×16) → FC1(120) → FC2(84) → OUTPUT(10)
-```
-
 ![alt text](lenet.png)
 
-**Implementação:**
-
 ```python
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Conv2D, AveragePooling2D, Flatten, Dense
+
 model = Sequential([
     Conv2D(6, (5,5), activation='tanh', input_shape=(32,32,1)),
     AveragePooling2D((2,2)),
@@ -318,39 +333,24 @@ model = Sequential([
     Dense(84, activation='tanh'),
     Dense(10, activation='softmax')
 ])
+
 ```
 
 ### AlexNet (2012) - Alex Krizhevsky
 
+Primeira grande vitória em ImageNet: ReLU em larga escala, Dropout, Data Augmentation pesado, uso de múltiplas GPUs.
 
 ![alt text](AlexNet-1.png)
 
 
-**Inovações:**
-- **ReLU**: Primeira CNN com ReLU em larga escala
-- **Dropout**: Regularização efetiva
-- **Data Augmentation**: Aumento artificial do dataset
-- **GPU**: Treinamento paralelo
-
-**Arquitetura:**
-```
-INPUT(224×224×3) → CONV1(55×55×96) → POOL1 → CONV2(27×27×256) → POOL2 →
-CONV3(13×13×384) → CONV4(13×13×384) → CONV5(13×13×256) → POOL3 →
-FC1(4096) → FC2(4096) → FC3(1000)
-```
+!!! note
+    A AlexNet foi um marco pois provou que CNNs profundas funcionavam em datasets massivos e impulsionou a revolução do Deep Learning.
 
 ### VGGNet (2014) - Oxford
 
 ![alt text](image-1.png)
 
-**Filosofia:** "Convoluções pequenas e profundas"
-
-**Princípios:**
-- **Kernels 3×3**: Exclusivamente
-- **Profundidade**: 16-19 camadas
-- **Repetição**: Padrões consistentes
-
-**VGG-16 Arquitetura:**
+Convoluções pequenas (blocos de conv 3×3 + pooling) e profundas (16/19 camdas). 
 
 ```python
 # Bloco 1
@@ -370,18 +370,8 @@ MaxPooling2D((2,2), strides=(2,2))
 
 ![alt text](image.png)
 
-**Problema Resolvido:** Degradação em redes muito profundas
+Resolveu o problema da degradação em redes muito profundas com Conexões Residuais (Skip Connections).
 
-**Inovação:** **Conexões Residuais (Skip Connections)**
-
-```
-x → [CONV→BN→ReLU→CONV→BN] → + → ReLU
-↓                              ↑
-└─────────────────────────────┘
-        (skip connection)
-```
-
-**Bloco Residual:**
 ```python
 def residual_block(x, filters):
     shortcut = x
@@ -393,84 +383,17 @@ def residual_block(x, filters):
     x = Conv2D(filters, (3,3), padding='same')(x)
     x = BatchNormalization()(x)
     
-    x = Add()([x, shortcut])
+    x = Add()([x, shortcut]) # concatena
     x = Activation('relu')(x)
     
     return x
 ```
-
-### Arquiteturas Modernas
-
-#### **EfficientNet (2019)**
-- **Compound Scaling**: Balanceia largura, profundidade e resolução
-- **Neural Architecture Search**: Arquitetura otimizada automaticamente
-
-#### **Vision Transformer (ViT) (2020)**
-- **Attention Mechanism**: Substitui convoluções por atenção
-- **Patches**: Divide imagem em patches como tokens
-
-#### **ConvNeXt (2022)**
-- **CNN Modernizada**: Incorpora ideias dos Transformers
-- **Performance**: Competitiva com ViTs
-
-## Implementação Prática
-
-### Preparação dos Dados
-
-```python
-import tensorflow as tf
-from tensorflow import keras
-from tensorflow.keras import layers
-import numpy as np
-import matplotlib.pyplot as plt
-
-# Carregamento e preparação
-(x_train, y_train), (x_test, y_test) = keras.datasets.cifar10.load_data()
-
-# Normalização
-x_train = x_train.astype('float32') / 255.0
-x_test = x_test.astype('float32') / 255.0
-
-# One-hot encoding
-y_train = keras.utils.to_categorical(y_train, 10)
-y_test = keras.utils.to_categorical(y_test, 10)
-```
-
-### CNN Básica para CIFAR-10
-
-```python
-def create_basic_cnn():
-    model = keras.Sequential([
-        # Bloco 1
-        layers.Conv2D(32, (3,3), activation='relu', input_shape=(32,32,3)),
-        layers.BatchNormalization(),
-        layers.Conv2D(32, (3,3), activation='relu'),
-        layers.MaxPooling2D((2,2)),
-        layers.Dropout(0.25),
-        
-        # Bloco 2
-        layers.Conv2D(64, (3,3), activation='relu'),
-        layers.BatchNormalization(),
-        layers.Conv2D(64, (3,3), activation='relu'),
-        layers.MaxPooling2D((2,2)),
-        layers.Dropout(0.25),
-        
-        # Bloco 3
-        layers.Conv2D(128, (3,3), activation='relu'),
-        layers.BatchNormalization(),
-        layers.Conv2D(128, (3,3), activation='relu'),
-        layers.MaxPooling2D((2,2)),
-        layers.Dropout(0.25),
-        
-        # Classificador
-        layers.GlobalAveragePooling2D(),
-        layers.Dense(512, activation='relu'),
-        layers.Dropout(0.5),
-        layers.Dense(10, activation='softmax')
-    ])
-    
-    return model
-
-model = create_basic_cnn()
-model.summary()
-```
+<?quiz?>
+question: Conexões residuais ajudam principalmente a:
+answer: Diminuir o uso de GPU
+answer-correct: Facilitar fluxo de gradiente em redes profundas
+answer: Remover necessidade de normalização
+answer: Eliminar funções de ativação
+content:
+O atalho preserva sinais e gradientes, mitigando o problema de degradação.
+<?/quiz?>
