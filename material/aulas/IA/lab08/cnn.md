@@ -309,6 +309,42 @@ content:
 Max enfatiza presença; Average enfatiza contexto médio.
 <?/quiz?>
 
+
+## Batch Normalization
+
+![alt text](image-2.png)
+
+A **Batch Normalization** é uma técnica que normaliza as ativações de uma camada, mantendo a média próxima de 0 e o desvio padrão próximo de 1.
+
+- Acelera o treinamento
+- Reduz a sensibilidade à inicialização dos pesos
+- Permite usar taxas de aprendizado maiores
+- Atua como uma forma leve de regularização
+
+> Saiba mais em: [https://machinelearningmastery.com/batch-normalization-for-training-of-deep-neural-networks/](https://machinelearningmastery.com/batch-normalization-for-training-of-deep-neural-networks/)
+
+```python
+
+layers.BatchNormalization()
+
+```
+
+## Dropout
+
+![alt text](image-3.png)
+
+O **Dropout** é uma técnica de regularização que desativa aleatoriamente uma fração dos neurônios durante o treinamento. Isso força a rede a não depender de neurônios específicos, promovendo robustez e generalização. Utilize dropout principalmente em redes densas (fully connected).
+
+- Reduz o overfitting
+- Simples de implementar
+- Funciona bem em redes densas e convolucionais
+
+```python
+layers.Dropout(0.5)  # desativa 50% dos neurônios durante o treinamento
+```
+> Saiba mais em: [https://www.deeplearningbook.com.br/capitulo-23-como-funciona-o-dropout/](https://www.deeplearningbook.com.br/capitulo-23-como-funciona-o-dropout/)
+
+
 ## Arquiteturas Clássicas de CNN
 
 ### LeNet-5 (1998) - Yann LeCun
