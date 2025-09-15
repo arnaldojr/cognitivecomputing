@@ -27,7 +27,7 @@ O dataset está em CSV e possui a seguinte estrutura:
 
 Faça o downlod dos arquivos desse projeto:
 
-  - **[Notebook da implementação](detecta_emocao.ipynb)**
+  - **[Notebook da implementação](detecta_emocao_notebook.ipynb)**
   - **[Script Python](detecta_emocao.py)** para execução em tempo real com webcam
   - **[Modelo treinado](best_model.h5)** Rede treinada para inferência
 
