@@ -234,10 +234,10 @@ nav:
       - Prática: aulas/IA/lab08/cnn-pratica.ipynb
       - Exercício: aulas/IA/lab08/cnn2.md
     - Lab03 - Data Augmentation: aulas/IA/lab10/data-augmentation.ipynb
-    - Lab03 - GDrive: aulas/IA/lab08/cnn_drive.ipynb
-    - Lab04 - Resumo: aulas/IA/lab11/index.md
-    - Lab05 - Pré-treinadas: aulas/IA/lab09/transferlearning_1.ipynb
-    - Lab06 - Transfer learning: aulas/IA/lab09/transferlearning_2.ipynb
+    - Lab04 - GDrive: aulas/IA/lab08/cnn_drive.ipynb
+    - Lab05 - Resumo: aulas/IA/lab11/index.md
+    - Lab06 - Pré-treinadas: aulas/IA/lab09/transferlearning_1.ipynb
+    - Lab07 - Transfer learning: aulas/IA/lab09/transferlearning_2.ipynb
     - BATALHA DAS REDES: aulas/IA/batalharedes/batalha_das_redes.ipynb
   
 
