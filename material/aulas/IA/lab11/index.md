@@ -1,6 +1,6 @@
 ## Resumo sobre redes neurais
 
-A criação de redes neurais envolve muitas etapas onde devem ser consideradow diversos pontos e aspectos de complexidade do problema envolvido, tratando-se de modelos para visão computacional tivemos contato com alguns tipos de arquitetura, otimização, dados, e implementação.
+A criação de redes neurais envolve muitas etapas onde devem ser considerados diversos pontos e aspectos de complexidade do problema envolvido, tratando-se de modelos para visão computacional tivemos contato com alguns tipos de arquitetura, otimização, dados, e implementação.
 
 
 ## Notebook completo 
