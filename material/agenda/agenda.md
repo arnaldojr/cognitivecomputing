@@ -11,12 +11,12 @@
 | 5  | Introdução ao Deep Learning, Perceptron, MLP                      | 04/09/2025   |
 | 6  | CNN                                                               | 11/09/2025   |
 | 7  | CNN Continuação                                                   | 18/09/2025   |
-| 8  | Aplicação de DL (batalha das redes)                               | 25/09/2025   |
+| 8  | Redes Pré-treinadas e Transfer Learning                           | 25/09/2025   |
 | 9  | <span style="color:#d32f2f"><strong>Avaliação Projeto challenge Santander</strong></span><br>  | 02/10/2025   |
 | 10 | <span style="color:#d32f2f"><strong>CP2 – Avaliação</strong></span><br>CP2 - Redes Neurais conceitos e aplicação | 09/10/2025   |
-| 11 | Transfer Learning, lançamento CP3                                 | 16/10/2025   |
-| 12 | Redes modernas, aplicações com DL                                 | 23/10/2025   |
-| 13 | Aplicações com Yolo e deploy de aplicações.                       | 30/10/2025   |
+| 11 | Redes modernas, lançamento CP3                                    | 16/10/2025   |
+| 12 | Yolo, aplicações com DL                                           | 23/10/2025   |
+| 13 | Deploy de aplicações.                                             | 30/10/2025   |
 | 14 | <span style="color:#d32f2f"><strong>CP3 – Apresentação Final CP3</strong></span><br>CP3 - Sistema de VC com Deploy em Aplicação Web | 06/11/2025   |
 | 15 | <span style="color:#388e3c"><strong>GS - Avaliação Global Solution segundo semestre </strong></span> | 13/11/2025   |
 
