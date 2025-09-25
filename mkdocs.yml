@@ -239,7 +239,11 @@ nav:
     - Lab06 - Resumo: aulas/IA/lab11/index.md
     - Lab07 - Pré-treinadas: aulas/IA/lab09/transferlearning_1.ipynb
     - Lab08 - Transfer learning: aulas/IA/lab09/transferlearning_2.ipynb
-    # - Lab09 - YOLO: aulas/IA/lab13/yolo.md
+    - Redes Avançadas:
+        - Teoria - YOLO: aulas/IA/lab13/teoria_yolo.md
+        - lab09 - YOLO - Básico: aulas/IA/lab13/yolo.ipynb
+        - lab10 - YOLO - Multi-tarefa: aulas/IA/lab13/yolo1.ipynb
+        - lab11 - YOLO - Treinamento customizado: aulas/IA/lab13/yolo2.ipynb
     # - Lab10 - Vision Transformer: aulas/IA/lab14/vit.md
     # - lab11 - RNN e LSTM: aulas/IA/lab15/rnn-lstm.ipynb
     # - Lab12 - NLP: aulas/IA/lab16/nlp.ipynb
