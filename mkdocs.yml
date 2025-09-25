@@ -239,7 +239,9 @@ nav:
     - Lab06 - Resumo: aulas/IA/lab11/index.md
     - Lab07 - Pré-treinadas: aulas/IA/lab09/transferlearning_1.ipynb
     - Lab08 - Transfer learning: aulas/IA/lab09/transferlearning_2.ipynb
-    - BATALHA DAS REDES: aulas/IA/batalharedes/batalha_das_redes.ipynb
-  
-
-
+    # - Lab09 - YOLO: aulas/IA/lab13/yolo.md
+    # - Lab10 - Vision Transformer: aulas/IA/lab14/vit.md
+    # - lab11 - RNN e LSTM: aulas/IA/lab15/rnn-lstm.ipynb
+    # - Lab12 - NLP: aulas/IA/lab16/nlp.ipynb
+    # - Lab13 - Transformers: aulas/IA/lab17/transformers.ipynb
+    # - Lab14 - MCP: aulas/IA/lab18/mcp.ipynb
