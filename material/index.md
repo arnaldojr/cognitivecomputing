@@ -1,10 +1,10 @@
-# Bem vindo disciplina de AI Engineering, Cognitive and Semantics Computing & IoT
+# Bem vindo disciplina de Cognitive Computing, Computer Vision and IoT Systems
 
 Olá pessoal, bem vindos!! Nesta página você irá encontrar os conteúdos ministrados em sala de aula assim como dicas,atividades, laborórios e muito mais. 
 
 - Curso: Sistemas da Informação
-- Disciplina: AI Engineering, Cognitive and Semantics Computing & IoT
-- Turmas 2025: 4SIPF, 4SIR
+- Disciplina: Cognitive Computing, Computer Vision and IoT Systems
+- Turmas 2026: 4SIR
 - Repositório com todos os arquivos está disponivel em: [https://github.com/arnaldojr/cognitivecomputing/](https://github.com/arnaldojr/cognitivecomputing/)
 
 Prof. Arnaldo Viana

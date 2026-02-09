@@ -1,6 +1,6 @@
 ## Agenda
 
-## Cronograma 2º Semestre - 2025
+<!-- ## Cronograma 2º Semestre - 2025
 
 | Semana    | Segundo Semestre - Conteúdo                                       | 4SIR<br>Quarta-Feira  |
 | --------- | ----------------------------------------------------------------- | ------------ |
@@ -18,31 +18,30 @@
 | 12 | Yolo, aplicações com DL                                           | 23/10/2025   |
 | 13 | Deploy de aplicações.                                             | 30/10/2025   |
 | 14 | <span style="color:#d32f2f"><strong>CP3 – Apresentação Final CP3</strong></span><br>CP3 - Sistema de VC com Deploy em Aplicação Web | 06/11/2025   |
-| 15 | <span style="color:#388e3c"><strong>GS - Avaliação Global Solution segundo semestre </strong></span> | 13/11/2025   |
+| 15 | <span style="color:#388e3c"><strong>GS - Avaliação Global Solution segundo semestre </strong></span> | 13/11/2025   | -->
 
 
 
-<!-- ### 1º Semestre - 2025
+### 1º Semestre - 2026
 
-| 4SIPF<br>(Segunda) | 4SIPF<br>(Sexta) | 4SIR<br>(Quinta) | LABORATÓRIO               | CONTEÚDO                                                                                        |
-| ----------------- | ---------------- | ---------------- | ------------------------- | ----------------------------------------------------------------------------------------------- |
-| 10/02/2025      | 14/02/2025      | 13/02/2025      | lab1                      | Aula Magna<br>Apresentação do curso, dinâmica das aulas, datas importantes (CP), lançamento CP1   |
-| 17/02/2025      | 21/02/2025      | 20/02/2025      | lab02, lab03              | Processamento de imagem digital. Segmentação por pixel, histograma e equalização de histograma      |
-| 24/02/2025      | 28/02/2025      | 27/02/2025      | lab04, lab05              | filtos de convolução, espaço de cores e contorno                                                |
-| 03/03/2025      | 07/03/2025      | 06/03/2025      | lab06, la07               | transformada de hough, traking de objetos                                                       |
-| 10/03/2025      | 14/03/2025      | 13/03/2025      | lab08, lab09              | Relacionamento e operações entre imagens, FFT                                                   |
-| 17/03/2025      | 21/03/2025      | 20/03/2025      | lab10, lab11              | medidas aproximadas, transformada de watershed                                                  |
-| 24/03/2025      | 28/03/2025      | 27/03/2025      | avaliação CP1             | AVALIAÇÃO EM AULA CP1<br>CP1 - Sistema de segmentação de objetos                                |
-| 31/03/2025      | 04/04/2025      | 03/04/2025      | \--                      | feriado (quinta e sexta) paixão de cristo                                                       |
-| 07/04/2025      | 11/04/2025      | 10/04/2025      | lab12, lab13              | template matching, features ORB, SIFT                                                           |
-| 14/04/2025      | 18/04/2025      | 17/04/2025      | lab14, lab15              | Haar Cascade, Event Mouse                                                                       |
-| 21/04/2025      | 25/04/2025      | 24/04/2025      | lab16, lab17              | Detector dlib, aplicações media pipe                                                            |
-| 28/04/2025      | 02/05/2025      | 01/05/2025      | Deep Learing, lab7-IA     | Introdução ao deep learning - MLP                                                               |
-| 05/05/2025      | 09/05/2025      | 08/05/2025      | lab8-IA                   | Treinamento de CNN, Aplicações em Redes Neurais pré-treinadas                                   |
-| 12/05/2025      | 16/05/2025      | 15/05/2025      | lab9-IA, lab10-IA         | Aplicação de Transfer Learning                                                                  |
-| 19/05/2025      | 23/05/2025      | 22/05/2025      | lab9-IA p.2, lab10-IA Simulado GS | Aplicação de redes neurais com transfer learning e libera o simulado da GS                     |
-| 26/05/2025      | 30/05/2025      | 29/05/2025      | apresnta mini projeto CP2  | AAVALIAÇÃO EM AULA CP2<br>CP2 - Apresentação Mini-projeto de Visão Computacional                  |
-| 02/06/2025      | 06/06/2025      | 05/06/2025      | avaliação GS1             | 02/06 - Inicio Global Solutions                                                                 |
+| 4SIR<br>(Quinta-feira) | LABORATÓRIO               | CONTEÚDO                                                                                        |
+| ---------------- | ------------------------- | ----------------------------------------------------------------------------------------------- |
+| 12/02/2025      | lab1                      | Aula Magna<br>Apresentação do curso, dinâmica das aulas, datas importantes (CP), lançamento CP1   |
+| 19/02/2025      | lab02, lab03              | Processamento de imagem digital. Segmentação por pixel, histograma e equalização de histograma      |
+| 26/02/2025      | lab04, lab05              | filtos de convolução, espaço de cores e contorno                                                |
+| 05/03/2025      | lab06, la07               | transformada de hough, traking de objetos                                                       |
+| 12/03/2025      | lab08, lab09              | Relacionamento e operações entre imagens, FFT                                                   |
+| 19/03/2025      | lab10, lab11              | medidas aproximadas, transformada de watershed                                                  |
+| 26/03/2025      | avaliação CP1             | AVALIAÇÃO EM AULA CP1<br>CP1 - Sistema de segmentação de objetos                                |
+| 02/04/2025      | \--                      | feriado (quinta e sexta) paixão de cristo                                                       |
+| 09/04/2025      | lab12, lab13              | template matching, features ORB, SIFT                                                           |
+| 16/04/2025      | lab14, lab15              | Haar Cascade, Event Mouse                                                                       |
+| 23/04/2025      | lab16, lab17              | Detector dlib, aplicações media pipe                                                            |
+| 30/04/2025      | Deep Learing, lab7-IA     | Introdução ao deep learning - MLP                                                               |
+| 07/05/2025      | lab8-IA                   | Treinamento de CNN, Aplicações em Redes Neurais pré-treinadas                                   |
+| 14/05/2025      | lab9-IA, lab10-IA         | Aplicação de Transfer Learning                                                                  |
+| 21/05/2025      | lab9-IA p.2, lab10-IA Simulado GS | Aplicação de redes neurais com transfer learning e libera o simulado da GS                     |
+| 28/05/2025      | avaliação GS1             | 25/05 - Inicio Global Solutions                                                                 |
 
 
 

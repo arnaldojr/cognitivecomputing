@@ -1,4 +1,4 @@
-# Bem vindo disciplina de AI Engineering, Cognitive and Semantics Computing & IoT
+# Bem vindo disciplina de COGNITIVE COMPUTING, COMPUTER VISION AND IoT SYSTEMS
 
 Olá pessoal, bem vindos!! Neste repositório você irá encontrar os conteúdos ministrados em sala de aula assim como os exemplos e laborórios. 
 

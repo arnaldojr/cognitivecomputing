@@ -1,17 +1,6 @@
 # Instruções para Instalação da Infraestrutura
 
-## 1. Arduino IDE (Windows / Linux / macOS)
-
-1. Acesse o site oficial do Arduino: [https://www.arduino.cc](https://www.arduino.cc)  
-2. Faça o download da versão compatível com o seu sistema operacional.  
-3. Instale a IDE seguindo as instruções fornecidas pelo instalador.
-
-## 2. Simuladores de Arduino 
- 
-- **Wokwi**: [https://wokwi.com/](https://wokwi.com/) 
-- crie uma conta gratuita.
-
-## 3. Instalação do Python 3.x
+## 1. Instalação do Python 3.x
 
 ### Windows
 1. Acesse: [https://www.python.org/downloads/](https://www.python.org/downloads/)  
@@ -21,9 +10,11 @@
 ### Linux / macOS
 - O Python 3.x já vem pré-instalado na maioria das distribuições e versões.  
 - Para instalar pacotes, utilize o terminal:  
+
   ```bash
   pip3 install <nome_do_pacote>
   ```
+  
 ### Alternativa – Anaconda
 Se preferir, é possível utilizar o Anaconda para gerenciar ambientes virtuais.
 
@@ -41,3 +32,13 @@ pip install notebook
 pip install scikit-learn tensorflow
 ```
 
+## 2. Arduino IDE (Windows / Linux / macOS)
+
+1. Acesse o site oficial do Arduino: [https://www.arduino.cc](https://www.arduino.cc)  
+2. Faça o download da versão compatível com o seu sistema operacional.  
+3. Instale a IDE seguindo as instruções fornecidas pelo instalador.
+
+## 3. Simuladores de Arduino 
+ 
+- **Wokwi**: [https://wokwi.com/](https://wokwi.com/) 
+- crie uma conta gratuita.

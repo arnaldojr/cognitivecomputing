@@ -121,131 +121,129 @@ nav:
     # - CheckPoint 1: checkpoint/cp1.md
     # - CheckPoint 5: checkpoint/cp.md
     # - CheckPoint 6: checkpoint/cp6.md    
+  - Processamento Digital de Imagens:  
+    # - Soluções PDI: aulas/PDI/solucoes/index.md
+    - Introdução: aulas/PDI/intro/index.md
+    - Lab01 - Intro PID: aulas/PDI/lab01/IntroPID.ipynb
+    - Lab02 - Seguimentação por pixel: aulas/PDI/lab02/atividade2.ipynb
+    - Lab03 - Histograma e equalização: aulas/PDI/lab03/atividade3.ipynb
+    - Lab04 - Filtros de Convolução: aulas/PDI/lab04/Filtros_de_Convolução.ipynb
+    - Lab05 - Espaço de cor e contorno: aulas/PDI/lab05/Espaço-cor-contorno.ipynb    
+    - Lab06 - Transformada de Hough e morfologia: aulas/PDI/lab06/Transformada-Hough-morfologia.ipynb
+    - Lab07 - Traking de objetos e movimento: aulas/PDI/lab07/Aula09/motion.ipynb
+    - Lab08 - Relacionamento e operações entre imagens: aulas/PDI/lab08/Aula4.ipynb
+    - Lab09 - FFT: aulas/PDI/lab09/aula.ipynb
+    - Lab10 - Medidas aproximadas: aulas/PDI/lab10/medidas.ipynb
+    - Lab11 - Transformada de watershed: aulas/PDI/lab11/watershed.ipynb
+    - Lab12 - Template matching: aulas/PDI/lab12/Template_matching.ipynb
+    - Lab13 - Features: aulas/PDI/lab13/Features.ipynb
+    - Lab14 - Detector haar Cascade: aulas/PDI/lab14/haarCascade.ipynb
+    - Lab15 - Event Mouse: aulas/PDI/lab15/EventMouse.ipynb
+    - Lab16 - Detector dlib: aulas/PDI/lab16/dlib2.ipynb
+    - Lab17 - Mediapipe: aulas/PDI/lab17/mediapipe.ipynb
+    - Lab18 - Yolo: aulas/PDI/lab18/index.md
+    # - IoT:
+    #   - IoT e Sistemas Embarcados:
+    #     - Introdução: aulas/iot/intro/index.md
+    #     - Eletrônica básica: aulas/iot/intro/dicas.md 
+    #     - Sistemas Embarcados: aulas/iot/intro/introarduino.md
+    #     - Linguagem C/C++ para Arduino:
+    #       - Módulo 1 - Introdução: aulas/iot/modulos/modulo1.md
+    #       - Módulo 2 - Operadores: aulas/iot/modulos/modulo2.md
+    #       - Módulo 3 - Estruturas de Controle: aulas/iot/modulos/modulo3.md
+    #       - Módulo 4 - Funções: aulas/iot/modulos/modulo4.md
+    #       - Módulo 5 - Arrays: aulas/iot/modulos/modulo5.md
+    #       - Módulo 6 - Strings: aulas/iot/modulos/modulo6.md
+    #       - Módulo 7 - Ponteiros: aulas/iot/modulos/modulo7.md
+    #       - Módulo 8 - Structs e Classes: aulas/iot/modulos/modulo8.md
+    #       - Módulo 9 - Interrupções e Timers: aulas/iot/modulos/modulo9.md
+    #       - Módulo 10 - Comunicação Serial: aulas/iot/modulos/modulo10.md
+    #       - Módulo 11 - Sensores e Aquisição de Dados: aulas/iot/modulos/modulo12.md
+    #       - Módulo 12 - Gestão de Energia: aulas/iot/modulos/modulo17.md
+    #   - Básico:
+    #     - Introdução: aulas/iot/intro/index.md
+    #     - Eletronica básica: aulas/iot/intro/dicas.md 
+    #     - Sistemas Embarcados: aulas/iot/intro/introarduino.md
+    #     - Linguagem C/C++ para Arduino:
+    #       - Módulo 1 - Introdução: aulas/iot/modulos/modulo1.md
+    #       - Módulo 2 - Operadores: aulas/iot/modulos/modulo2.md
+    #       - Módulo 3 - Estruturas de Controle: aulas/iot/modulos/modulo3.md
+    #       - Módulo 4 - Funções: aulas/iot/modulos/modulo4.md
+    #       - Módulo 5 - Arrays: aulas/iot/modulos/modulo5.md
+    #       - Módulo 6 - Strings: aulas/iot/modulos/modulo6.md
+    #       - Módulo 7 - Ponteiros: aulas/iot/modulos/modulo7.md
+    #       - Módulo 8 - Structs e Classes: aulas/iot/modulos/modulo8.md
+    #       - Módulo 9 - Interrupções e Timers: aulas/iot/modulos/modulo9.md
+    #       - Módulo 10 - Comunicação Serial: aulas/iot/modulos/modulo10.md
+    #       - Módulo 11 - Sensores e Aquisição de Dados: aulas/iot/modulos/modulo12.md
+    #       - Módulo 12 - Gestão de Energia: aulas/iot/modulos/modulo17.md
+    #   - Arduino:
+    #     - Solução From Zero to Hero!: aulas/iot/ex0/solucao.md 
+    #     - Lab01 - Led: aulas/iot/lab1/index.md
+    #     - Lab02 - Serial: aulas/iot/lab2/index.md
+    #     - Lab03 - Botão : aulas/iot/lab3/index.md
+    #     - Lab04 - PWM e Analog: aulas/iot/lab4/index.md
+    #   - Node-Red:
+    #     - Lab01 : aulas/iot/lab5/index.md
+    #     - Lab02 : aulas/iot/lab6/index.md
+    #     - Lab03 : aulas/iot/lab7/index.md
+    #   - Esp32:
+    #     - Lab01 : aulas/iot/lab01-esp/index.md
+    #     - Lab02 : aulas/iot/lab02-esp/index.md
+    #     - Lab03 : aulas/iot/lab03-esp/index.md      
+    #   - Raspberry Pi:
+    #     - Lab01 : aulas/iot/lab8/index.md
+    #     - Lab02 : aulas/iot/lab9/index.md
+    #     - Lab03 : aulas/iot/lab10/index.md
 
-  - 1º Semestre:
-    - Processamento Digital de Imagens:  
-      - Soluções PDI: aulas/PDI/solucoes/index.md
-      - Introdução: aulas/PDI/intro/index.md
-      - Lab01 - Intro PID: aulas/PDI/lab01/IntroPID.ipynb
-      - Lab02 - Seguimentação por pixel: aulas/PDI/lab02/atividade2.ipynb
-      - Lab03 - Histograma e equalização: aulas/PDI/lab03/atividade3.ipynb
-      - Lab04 - Filtros de Convolução: aulas/PDI/lab04/Filtros_de_Convolução.ipynb
-      - Lab05 - Espaço de cor e contorno: aulas/PDI/lab05/Espaço-cor-contorno.ipynb    
-      - Lab06 - Transformada de Hough e morfologia: aulas/PDI/lab06/Transformada-Hough-morfologia.ipynb
-      - Lab07 - Traking de objetos e movimento: aulas/PDI/lab07/Aula09/motion.ipynb
-      - Lab08 - Relacionamento e operações entre imagens: aulas/PDI/lab08/Aula4.ipynb
-      - Lab09 - FFT: aulas/PDI/lab09/aula.ipynb
-      - Lab10 - Medidas aproximadas: aulas/PDI/lab10/medidas.ipynb
-      - Lab11 - Transformada de watershed: aulas/PDI/lab11/watershed.ipynb
-      - Lab12 - Template matching: aulas/PDI/lab12/Template_matching.ipynb
-      - Lab13 - Features: aulas/PDI/lab13/Features.ipynb
-      - Lab14 - Detector haar Cascade: aulas/PDI/lab14/haarCascade.ipynb
-      - Lab15 - Event Mouse: aulas/PDI/lab15/EventMouse.ipynb
-      - Lab16 - Detector dlib: aulas/PDI/lab16/dlib2.ipynb
-      - Lab17 - Mediapipe: aulas/PDI/lab17/mediapipe.ipynb
-      - Lab18 - Yolo: aulas/PDI/lab18/index.md
-    - IoT:
-      - IoT e Sistemas Embarcados:
-        - Introdução: aulas/iot/intro/index.md
-        - Eletrônica básica: aulas/iot/intro/dicas.md 
-        - Sistemas Embarcados: aulas/iot/intro/introarduino.md
-        - Linguagem C/C++ para Arduino:
-          - Módulo 1 - Introdução: aulas/iot/modulos/modulo1.md
-          - Módulo 2 - Operadores: aulas/iot/modulos/modulo2.md
-          - Módulo 3 - Estruturas de Controle: aulas/iot/modulos/modulo3.md
-          - Módulo 4 - Funções: aulas/iot/modulos/modulo4.md
-          - Módulo 5 - Arrays: aulas/iot/modulos/modulo5.md
-          - Módulo 6 - Strings: aulas/iot/modulos/modulo6.md
-          - Módulo 7 - Ponteiros: aulas/iot/modulos/modulo7.md
-          - Módulo 8 - Structs e Classes: aulas/iot/modulos/modulo8.md
-          - Módulo 9 - Interrupções e Timers: aulas/iot/modulos/modulo9.md
-          - Módulo 10 - Comunicação Serial: aulas/iot/modulos/modulo10.md
-          - Módulo 11 - Sensores e Aquisição de Dados: aulas/iot/modulos/modulo12.md
-          - Módulo 12 - Gestão de Energia: aulas/iot/modulos/modulo17.md
-      - Básico:
-        - Introdução: aulas/iot/intro/index.md
-        - Eletronica básica: aulas/iot/intro/dicas.md 
-        - Sistemas Embarcados: aulas/iot/intro/introarduino.md
-        - Linguagem C/C++ para Arduino:
-          - Módulo 1 - Introdução: aulas/iot/modulos/modulo1.md
-          - Módulo 2 - Operadores: aulas/iot/modulos/modulo2.md
-          - Módulo 3 - Estruturas de Controle: aulas/iot/modulos/modulo3.md
-          - Módulo 4 - Funções: aulas/iot/modulos/modulo4.md
-          - Módulo 5 - Arrays: aulas/iot/modulos/modulo5.md
-          - Módulo 6 - Strings: aulas/iot/modulos/modulo6.md
-          - Módulo 7 - Ponteiros: aulas/iot/modulos/modulo7.md
-          - Módulo 8 - Structs e Classes: aulas/iot/modulos/modulo8.md
-          - Módulo 9 - Interrupções e Timers: aulas/iot/modulos/modulo9.md
-          - Módulo 10 - Comunicação Serial: aulas/iot/modulos/modulo10.md
-          - Módulo 11 - Sensores e Aquisição de Dados: aulas/iot/modulos/modulo12.md
-          - Módulo 12 - Gestão de Energia: aulas/iot/modulos/modulo17.md
-      - Arduino:
-        - Solução From Zero to Hero!: aulas/iot/ex0/solucao.md 
-        - Lab01 - Led: aulas/iot/lab1/index.md
-        - Lab02 - Serial: aulas/iot/lab2/index.md
-        - Lab03 - Botão : aulas/iot/lab3/index.md
-        - Lab04 - PWM e Analog: aulas/iot/lab4/index.md
-      - Node-Red:
-        - Lab01 : aulas/iot/lab5/index.md
-        - Lab02 : aulas/iot/lab6/index.md
-        - Lab03 : aulas/iot/lab7/index.md
-      - Esp32:
-        - Lab01 : aulas/iot/lab01-esp/index.md
-        - Lab02 : aulas/iot/lab02-esp/index.md
-        - Lab03 : aulas/iot/lab03-esp/index.md      
-      - Raspberry Pi:
-        - Lab01 : aulas/iot/lab8/index.md
-        - Lab02 : aulas/iot/lab9/index.md
-        - Lab03 : aulas/iot/lab10/index.md
-
-  - Ciência de Dados:
-    - Introdução: aulas/IA/intro/index.md
-    - Descoberta do Conhecimento: aulas/IA/intro/index2.md
-  - Machine Learning:
-    - Manipulação de Dados:
-      - Dataframe: aulas/IA/lab01/dataframe.ipynb 
-      - Pré-processamento: aulas/IA/lab04/dicasDePreprocessamento.ipynb  
-    - Aprendizado Supervisionado - Classificação:
-      - Introdução: aulas/IA/lab02/classificacao-ml-completa.md
-      - lab1: aulas/IA/lab02/ml-classificador-iris.ipynb
-      - lab2: aulas/IA/lab02/ml-classificador-digito.ipynb
-      - lab3: aulas/IA/lab-04/aula8.ipynb
-    - Aprendizado Supervisionado - Regressão:
-      - Introdução: aulas/IA/lab03/regressao-ml-completa.md
-      - lab1: aulas/IA/lab03/regressao.ipynb
-      - lab2: aulas/IA/lab03/regressao2.ipynb
-      - lab3: aulas/IA/lab03/preco-notebook.ipynb
-    - Validação de Modelos: aulas/IA/lab05/validacaocruzada.ipynb
-    - Aprendizado Não Supervisionado: 
-      - lab1: aulas/IA/lab-01/aula5.ipynb
-      - lab2: aulas/IA/lab-01/aula5-parte2.ipynb
-      - lab2: aulas/IA/lab-02/aula6.ipynb
-      - lab3: aulas/IA/lab-03/aula7.ipynb
-      - PCA: aulas/IA/lab04/reducao_dimensionalidade_pca.ipynb 
-  - Deep Learning:
-    - Introdução Redes Neurais: 
-        - aulas/IA/lab06/redesneurais.md
-        - aulas/IA/lab06/backpropagation.md
-    - Lab01 - Prática: 
-        - aulas/IA/lab07/index.md
-        - MLP: aulas/IA/lab07/Praticando_redes_neurais_com_Tensorflow.ipynb
-    - Lab02 - CNN: 
-      - Teoria: aulas/IA/lab08/cnn.md
-      - Prática: aulas/IA/lab08/cnn-pratica.ipynb
-      - Exercício: aulas/IA/lab08/cnn2.md
-    - Lab03 - Data Augmentation: aulas/IA/lab10/data-augmentation.ipynb
-    - Lab04 - GDrive: aulas/IA/lab08/cnn_drive.ipynb
-    - Lab05 - Desafio: aulas/IA/lab12/index.md
-    - Lab06 - Resumo: aulas/IA/lab11/index.md
-    - Lab07 - Pré-treinadas: aulas/IA/lab09/transferlearning_1.ipynb
-    - Lab08 - Transfer learning: aulas/IA/lab09/transferlearning_2.ipynb
-    - Redes Avançadas:
-        - Teoria - YOLO: aulas/IA/lab13/teoria_yolo.md
-        - lab09 - YOLO - Básico: aulas/IA/lab13/yolo.ipynb
-        - lab10 - YOLO - Multi-tarefa: aulas/IA/lab13/yolo1.ipynb
-        - lab11 - YOLO - Treinamento customizado: aulas/IA/lab13/yolo2.ipynb
-    # - Lab10 - Vision Transformer: aulas/IA/lab14/vit.md
-    # - lab11 - RNN e LSTM: aulas/IA/lab15/rnn-lstm.ipynb
-    # - Lab12 - NLP: aulas/IA/lab16/nlp.ipynb
-    # - Lab13 - Transformers: aulas/IA/lab17/transformers.ipynb
-    # - Lab14 - MCP: aulas/IA/lab18/mcp.ipynb
+  # - Ciência de Dados:
+  #   - Introdução: aulas/IA/intro/index.md
+  #   - Descoberta do Conhecimento: aulas/IA/intro/index2.md
+  # - Machine Learning:
+  #   - Manipulação de Dados:
+  #     - Dataframe: aulas/IA/lab01/dataframe.ipynb 
+  #     - Pré-processamento: aulas/IA/lab04/dicasDePreprocessamento.ipynb  
+  #   - Aprendizado Supervisionado - Classificação:
+  #     - Introdução: aulas/IA/lab02/classificacao-ml-completa.md
+  #     - lab1: aulas/IA/lab02/ml-classificador-iris.ipynb
+  #     - lab2: aulas/IA/lab02/ml-classificador-digito.ipynb
+  #     - lab3: aulas/IA/lab-04/aula8.ipynb
+  #   - Aprendizado Supervisionado - Regressão:
+  #     - Introdução: aulas/IA/lab03/regressao-ml-completa.md
+  #     - lab1: aulas/IA/lab03/regressao.ipynb
+  #     - lab2: aulas/IA/lab03/regressao2.ipynb
+  #     - lab3: aulas/IA/lab03/preco-notebook.ipynb
+  #   - Validação de Modelos: aulas/IA/lab05/validacaocruzada.ipynb
+  #   - Aprendizado Não Supervisionado: 
+  #     - lab1: aulas/IA/lab-01/aula5.ipynb
+  #     - lab2: aulas/IA/lab-01/aula5-parte2.ipynb
+  #     - lab2: aulas/IA/lab-02/aula6.ipynb
+  #     - lab3: aulas/IA/lab-03/aula7.ipynb
+  #     - PCA: aulas/IA/lab04/reducao_dimensionalidade_pca.ipynb 
+  # - Deep Learning:
+  #   - Introdução Redes Neurais: 
+  #       - aulas/IA/lab06/redesneurais.md
+  #       - aulas/IA/lab06/backpropagation.md
+  #   - Lab01 - Prática: 
+  #       - aulas/IA/lab07/index.md
+  #       - MLP: aulas/IA/lab07/Praticando_redes_neurais_com_Tensorflow.ipynb
+  #   - Lab02 - CNN: 
+  #     - Teoria: aulas/IA/lab08/cnn.md
+  #     - Prática: aulas/IA/lab08/cnn-pratica.ipynb
+  #     - Exercício: aulas/IA/lab08/cnn2.md
+  #   - Lab03 - Data Augmentation: aulas/IA/lab10/data-augmentation.ipynb
+  #   - Lab04 - GDrive: aulas/IA/lab08/cnn_drive.ipynb
+  #   - Lab05 - Desafio: aulas/IA/lab12/index.md
+  #   - Lab06 - Resumo: aulas/IA/lab11/index.md
+  #   - Lab07 - Pré-treinadas: aulas/IA/lab09/transferlearning_1.ipynb
+  #   - Lab08 - Transfer learning: aulas/IA/lab09/transferlearning_2.ipynb
+  #   - Redes Avançadas:
+  #       - Teoria - YOLO: aulas/IA/lab13/teoria_yolo.md
+  #       - lab09 - YOLO - Básico: aulas/IA/lab13/yolo.ipynb
+  #       - lab10 - YOLO - Multi-tarefa: aulas/IA/lab13/yolo1.ipynb
+  #       - lab11 - YOLO - Treinamento customizado: aulas/IA/lab13/yolo2.ipynb
+  #   # - Lab10 - Vision Transformer: aulas/IA/lab14/vit.md
+  #   # - lab11 - RNN e LSTM: aulas/IA/lab15/rnn-lstm.ipynb
+  #   # - Lab12 - NLP: aulas/IA/lab16/nlp.ipynb
+  #   # - Lab13 - Transformers: aulas/IA/lab17/transformers.ipynb
+  #   # - Lab14 - MCP: aulas/IA/lab18/mcp.ipynb
