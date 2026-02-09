@@ -26,22 +26,22 @@
 
 | 4SIR<br>(Quinta-feira) | LABORATÓRIO               | CONTEÚDO                                                                                        |
 | ---------------- | ------------------------- | ----------------------------------------------------------------------------------------------- |
-| 12/02/2025      | lab1                      | Aula Magna<br>Apresentação do curso, dinâmica das aulas, datas importantes (CP), lançamento CP1   |
-| 19/02/2025      | lab02, lab03              | Processamento de imagem digital. Segmentação por pixel, histograma e equalização de histograma      |
-| 26/02/2025      | lab04, lab05              | filtos de convolução, espaço de cores e contorno                                                |
-| 05/03/2025      | lab06, la07               | transformada de hough, traking de objetos                                                       |
-| 12/03/2025      | lab08, lab09              | Relacionamento e operações entre imagens, FFT                                                   |
-| 19/03/2025      | lab10, lab11              | medidas aproximadas, transformada de watershed                                                  |
-| 26/03/2025      | avaliação CP1             | AVALIAÇÃO EM AULA CP1<br>CP1 - Sistema de segmentação de objetos                                |
-| 02/04/2025      | \--                      | feriado (quinta e sexta) paixão de cristo                                                       |
-| 09/04/2025      | lab12, lab13              | template matching, features ORB, SIFT                                                           |
-| 16/04/2025      | lab14, lab15              | Haar Cascade, Event Mouse                                                                       |
-| 23/04/2025      | lab16, lab17              | Detector dlib, aplicações media pipe                                                            |
-| 30/04/2025      | Deep Learing, lab7-IA     | Introdução ao deep learning - MLP                                                               |
-| 07/05/2025      | lab8-IA                   | Treinamento de CNN, Aplicações em Redes Neurais pré-treinadas                                   |
-| 14/05/2025      | lab9-IA, lab10-IA         | Aplicação de Transfer Learning                                                                  |
-| 21/05/2025      | lab9-IA p.2, lab10-IA Simulado GS | Aplicação de redes neurais com transfer learning e libera o simulado da GS                     |
-| 28/05/2025      | avaliação GS1             | 25/05 - Inicio Global Solutions                                                                 |
+| 12/02/2026      | lab1                      | Aula Magna<br>Apresentação do curso, dinâmica das aulas, datas importantes (CP), lançamento CP1   |
+| 19/02/2026      | lab02, lab03              | Processamento de imagem digital. Segmentação por pixel, histograma e equalização de histograma      |
+| 26/02/2026      | lab04, lab05              | filtos de convolução, espaço de cores e contorno                                                |
+| 05/03/2026      | lab06, la07               | transformada de hough, traking de objetos                                                       |
+| 12/03/2026      | lab08, lab09              | Relacionamento e operações entre imagens, FFT                                                   |
+| 19/03/2026      | lab10, lab11              | medidas aproximadas, transformada de watershed                                                  |
+| 26/03/2026      | avaliação CP1             | AVALIAÇÃO EM AULA CP1<br>CP1 - Sistema de segmentação de objetos                                |
+| 02/04/2026      | \--                      | feriado (quinta e sexta) paixão de cristo                                                       |
+| 09/04/2026      | lab12, lab13              | template matching, features ORB, SIFT                                                           |
+| 16/04/2026      | lab14, lab15              | Haar Cascade, Event Mouse                                                                       |
+| 23/04/2026      | lab16, lab17              | Detector dlib, aplicações media pipe                                                            |
+| 30/04/2026      | Deep Learing, lab7-IA     | Introdução ao deep learning - MLP                                                               |
+| 07/05/2026      | lab8-IA                   | Treinamento de CNN, Aplicações em Redes Neurais pré-treinadas                                   |
+| 14/05/2026      | lab9-IA, lab10-IA         | Aplicação de Transfer Learning                                                                  |
+| 21/05/2026      | lab9-IA p.2, lab10-IA Simulado GS | Aplicação de redes neurais com transfer learning e libera o simulado da GS                     |
+| 28/05/2026      | avaliação GS1             | 25/05 - Inicio Global Solutions                                                                 |
 
 
 
