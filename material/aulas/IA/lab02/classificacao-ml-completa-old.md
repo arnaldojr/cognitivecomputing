@@ -33,16 +33,15 @@ Os laboratórios utilizam os seguintes conjuntos de dados:
 - Multiclasse: mais de duas classes mutuamente exclusivas. Ex.: classificação de espécies.
 - Multilabel: cada exemplo pode ter múltiplos rótulos simultâneos. Ex.: tags em artigos.
 
-<?quiz?>
-question: Qual tipo de problema permite múltiplos rótulos por exemplo?
-answer: Binária
-answer: Multiclasse
-answer-correct: Multilabel
-answer: Regressão
-content:
+<quiz>
+Qual tipo de problema permite múltiplos rótulos por exemplo?
+- [ ] Binária
+- [ ] Multiclasse
+- [x] Multilabel
+- [ ] Regressão
 
 Multilabel permite que um mesmo exemplo pertença a várias classes ao mesmo tempo (por exemplo, um artigo pode ser "ciência" e "educação").
-<?/quiz?>
+</quiz>
 
 
 ## 2. Representação do problema: probabilística vs determinística
@@ -52,16 +51,15 @@ Multilabel permite que um mesmo exemplo pertença a várias classes ao mesmo tem
 
 Probabilidades permitem ajustar limiares e tomar decisões custo-sensitivas.
 
-<?quiz?>
-question: Por que probabilidades preditas são úteis em vez de rótulos diretos?
-answer: Porque são mais rápidas de computar
-answer-correct: Porque permitem ajustar limiares e tomar decisões custo-sensitivas
-answer: Porque evitam overfitting
-answer: Porque convertem modelos em regressão
-content:
+<quiz>
+Por que probabilidades preditas são úteis em vez de rótulos diretos?
+- [ ] Porque são mais rápidas de computar
+- [x] Porque permitem ajustar limiares e tomar decisões custo-sensitivas
+- [ ] Porque evitam overfitting
+- [ ] Porque convertem modelos em regressão
 
 Probabilidades possibilitam escolher thresholds diferentes para otimizar precisão, recall ou custo esperado; também são essenciais para calibração.
-<?/quiz?>
+</quiz>
 
 
 ## 3. Métricas e interpretação da matriz de confusão
@@ -88,16 +86,15 @@ Precision-Recall curve: mais informativa quando as classes são desbalanceadas.
 
 Log loss (cross-entropy): penaliza previsões probabilísticas erradas — útil para modelos calibrados.
 
-<?quiz?>
-question: Em cenário com classes muito desbalanceadas, qual curva tende a ser mais informativa?
-answer: ROC
-answer-correct: Precision-Recall
-answer: Curva de calibração
-answer: Curva de aprendizagem
-content:
+<quiz>
+Em cenário com classes muito desbalanceadas, qual curva tende a ser mais informativa?
+- [ ] ROC
+- [x] Precision-Recall
+- [ ] Curva de calibração
+- [ ] Curva de aprendizagem
 
 Quando a classe positiva é rara, PRC destaca o trade-off entre precisão e recall sem ser influenciada pelo grande número de verdadeiros negativos.
-<?/quiz?>
+</quiz>
 
 
 ## 4. Pré-processamento e engenharia de features
@@ -112,16 +109,15 @@ Boas práticas:
 - Encapsular transformações em um Pipeline — evita vazamento de informação.
 - Aplicar transformação apenas no conjunto de treino durante validação cruzada.
 
-<?quiz?>
-question: Por que usar `Pipeline` do scikit-learn?
-answer: Para treinar múltiplos modelos sequenciais
-answer-correct: Para encapsular pré-processamento e estimador evitando vazamento durante validação
-answer: Para paralelizar o treinamento em GPU
-answer: Para converter regressão em classificação
-content:
+<quiz>
+Por que usar `Pipeline` do scikit-learn?
+- [ ] Para treinar múltiplos modelos sequenciais
+- [x] Para encapsular pré-processamento e estimador evitando vazamento durante validação
+- [ ] Para paralelizar o treinamento em GPU
+- [ ] Para converter regressão em classificação
 
 Pipeline garante que as transformações (fit/transform) sejam aplicadas corretamente apenas com dados de treino em cada fold, mantendo reprodutibilidade.
-<?/quiz?>
+</quiz>
 
 
 ## 5. Estratégias de validação
@@ -145,16 +141,15 @@ Abordagens:
 - Reamostragem: oversampling (SMOTE), undersampling, combinação
 - Algoritmos especializados: anomaly detection, one-class SVM
 
-<?quiz?>
-question: O que o SMOTE faz?
-answer: Remove amostras da classe majoritária
-answer-correct: Gera novas amostras sintéticas da classe minoritária
-answer: Ajusta pesos de classe automaticamente
-answer: Aplica regularização L1 nas features
-content:
+<quiz>
+O que o SMOTE faz?
+- [ ] Remove amostras da classe majoritária
+- [x] Gera novas amostras sintéticas da classe minoritária
+- [ ] Ajusta pesos de classe automaticamente
+- [ ] Aplica regularização L1 nas features
 
 SMOTE cria novos pontos sintéticos interpolando entre exemplos minoritários — ajuda a fornecer mais variedade para o modelo aprender.
-<?/quiz?>
+</quiz>
 
 
 ## 7. Modelos e regularização
@@ -175,16 +170,15 @@ Nem todo modelo produz probabilidades bem calibradas. Técnicas:
 
 Calibração é importante quando probabilidades são usadas em decisões custo-sensitivas.
 
-<?quiz?>
-question: Qual técnica de calibração é não-paramétrica?
-answer: Platt scaling
-answer-correct: Isotonic regression
-answer: Regularização L2
-answer: MinMax scaling
-content:
+<quiz>
+Qual técnica de calibração é não-paramétrica?
+- [ ] Platt scaling
+- [x] Isotonic regression
+- [ ] Regularização L2
+- [ ] MinMax scaling
 
 Isotonic regression ajusta uma função monotônica não-paramétrica entre scores e probabilidades observadas; é flexível, mas requer dados.
-<?/quiz?>
+</quiz>
 
 
 ## 9. Estratégias de thresholding e custo
@@ -206,16 +200,15 @@ Isotonic regression ajusta uma função monotônica não-paramétrica entre scor
 - Importâncias de features em árvores — olhar com parcimônia (bias para categóricos com muitas categorias).
 - SHAP/LIME: explicações locais e globais; SHAP tem fundamento teórico (valores de Shapley) e é robusto.
 
-<?quiz?>
-question: Qual método gera explicações locais e tem base em teoria dos valores de Shapley?
-answer: LIME
-answer-correct: SHAP
-answer: PCA
-answer: t-SNE
-content:
+<quiz>
+Qual método gera explicações locais e tem base em teoria dos valores de Shapley?
+- [ ] LIME
+- [x] SHAP
+- [ ] PCA
+- [ ] t-SNE
 
 SHAP explica contribuição de cada feature para uma predição específica com base em jogos cooperativos (Shapley values).
-<?/quiz?>
+</quiz>
 
 
 ## 12. Pipelines reproduzíveis e hiperparametrização
@@ -297,59 +290,54 @@ for name, m in models.items():
 
 ## Quizzes (sumário)
 
-<?quiz?>
-question: Em problemas de classificação, qual é o objetivo principal?
-answer: Estimar um valor numérico contínuo
-answer-correct: Atribuir um rótulo ou categoria a cada exemplo
-answer: Reduzir a dimensionalidade dos dados
-answer: Gerar novas amostras sintéticas
-content:
+<quiz>
+Em problemas de classificação, qual é o objetivo principal?
+- [ ] Estimar um valor numérico contínuo
+- [x] Atribuir um rótulo ou categoria a cada exemplo
+- [ ] Reduzir a dimensionalidade dos dados
+- [ ] Gerar novas amostras sintéticas
 
 Classificação mapeia entradas para classes discretas; regressão mapeia para valores contínuos.
-<?/quiz?>
+</quiz>
 
-<?quiz?>
-question: Em validação cruzada para classificação, qual técnica preserva a proporção das classes em cada fold?
-answer: KFold simples
-answer-correct: StratifiedKFold
-answer: LeaveOneOut
-answer: TimeSeriesSplit
-content:
+<quiz>
+Em validação cruzada para classificação, qual técnica preserva a proporção das classes em cada fold?
+- [ ] KFold simples
+- [x] StratifiedKFold
+- [ ] LeaveOneOut
+- [ ] TimeSeriesSplit
 
 StratifiedKFold garante que cada fold mantenha a proporção de classes observada no conjunto completo.
-<?/quiz?>
+</quiz>
 
-<?quiz?>
-question: O que significa calibrar um modelo de classificação?
-answer: Ajustar o hiperparâmetro C na regressão logística
-answer: Remover features com baixa importância
-answer-correct: Ajustar as probabilidades preditas para que representem verdadeiras frequências
-answer: Aumentar o número de árvores na floresta
-content:
+<quiz>
+O que significa calibrar um modelo de classificação?
+- [ ] Ajustar o hiperparâmetro C na regressão logística
+- [ ] Remover features com baixa importância
+- [x] Ajustar as probabilidades preditas para que representem verdadeiras frequências
+- [ ] Aumentar o número de árvores na floresta
 
 Calibração transforma scores do modelo em probabilidades que correspondam às frequências observadas (p.ex., 0.8 significa ~80% de chance).
-<?/quiz?>
+</quiz>
 
-<?quiz?>
-question: O que é Nested Cross-Validation usado para?
-answer: Acelerar o treinamento de modelos
-answer-correct: Obter estimativas de generalização honestas ao ajustar hiperparâmetros
-answer: Calcular probabilidades calibradas
-answer: Balancear classes automaticamente
-content:
+<quiz>
+O que é Nested Cross-Validation usado para?
+- [ ] Acelerar o treinamento de modelos
+- [x] Obter estimativas de generalização honestas ao ajustar hiperparâmetros
+- [ ] Calcular probabilidades calibradas
+- [ ] Balancear classes automaticamente
 
 Nested CV envolve uma CV externa para avaliação e uma CV interna para busca de hiperparâmetros, evitando viés de otimização.
-<?/quiz?>
+</quiz>
 
-<?quiz?>
-question: Qual métrica é mais indicada quando você tem custo alto para falsos positivos e quer controlar a proporção de previsões positivas corretas?
-answer: Recall
-answer-correct: Precisão
-answer: Acurácia
-answer: ROC AUC
-content:
+<quiz>
+Qual métrica é mais indicada quando você tem custo alto para falsos positivos e quer controlar a proporção de previsões positivas corretas?
+- [ ] Recall
+- [x] Precisão
+- [ ] Acurácia
+- [ ] ROC AUC
 
 Precisão (precision) mede a proporção das previsões positivas que são corretas — útil quando FP são caros.
-<?/quiz?>
+</quiz>
 
 

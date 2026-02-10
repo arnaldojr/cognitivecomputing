@@ -110,25 +110,25 @@ Posição (1,1): (-1×1) + (-1×2) + (-1×3) + (-1×0) + (8×1) + (-1×2) + (-1�
 - **Same**: Padding para manter dimensão
 - **Causal**: Para dados sequenciais
 
-<?quiz?>
-question: Efeito de padding='valid' com kernel 3×3 e stride=1 em H×W?
-answer: Aumenta tamanho
-answer-correct: Reduz 2 pixels (1 por borda)
-answer: Não altera
-answer: Dobra dimensões
-content:
-Sem padding, a janela não cobre bordas externas totalmente, reduzindo largura e altura em 1 de cada lado.
-<?/quiz?>
+<quiz>
+Efeito de padding='valid' com kernel 3×3 e stride=1 em H×W?
+- [ ] Aumenta tamanho
+- [x] Reduz 2 pixels (1 por borda)
+- [ ] Não altera
+- [ ] Dobra dimensões
 
-<?quiz?>
-question: Principal efeito de stride=2 em convolução?
-answer: Aumentar resolução espacial
-answer-correct: Diminuir resolução e custo computacional
-answer: Substituir função de ativação
-answer: Tornar o kernel maior
-content:
+Sem padding, a janela não cobre bordas externas totalmente, reduzindo largura e altura em 1 de cada lado.
+</quiz>
+
+<quiz>
+Principal efeito de stride=2 em convolução?
+- [ ] Aumentar resolução espacial
+- [x] Diminuir resolução e custo computacional
+- [ ] Substituir função de ativação
+- [ ] Tornar o kernel maior
+
 Stride>1 “pula” posições, gerando feature maps menores e operação mais barata.
-<?/quiz?>
+</quiz>
 
 
 
@@ -299,15 +299,15 @@ Resume cada feature map em um único número. Substitui densas finais, reduz par
 layers.GlobalAveragePooling2D()
 ```
 
-<?quiz?>
-question: Diferença essencial Max vs Average Pooling?
-answer: Max reduz canais, Average aumenta canais
-answer-correct: Max preserva picos; Average suaviza respostas
-answer: Average não é diferenciável
-answer: São iguais em prática
-content:
+<quiz>
+Diferença essencial Max vs Average Pooling?
+- [ ] Max reduz canais, Average aumenta canais
+- [x] Max preserva picos; Average suaviza respostas
+- [ ] Average não é diferenciável
+- [ ] São iguais em prática
+
 Max enfatiza presença; Average enfatiza contexto médio.
-<?/quiz?>
+</quiz>
 
 
 ## Batch Normalization
@@ -424,12 +424,12 @@ def residual_block(x, filters):
     
     return x
 ```
-<?quiz?>
-question: Conexões residuais ajudam principalmente a:
-answer: Diminuir o uso de GPU
-answer-correct: Facilitar fluxo de gradiente em redes profundas
-answer: Remover necessidade de normalização
-answer: Eliminar funções de ativação
-content:
+<quiz>
+Conexões residuais ajudam principalmente a:
+- [ ] Diminuir o uso de GPU
+- [x] Facilitar fluxo de gradiente em redes profundas
+- [ ] Remover necessidade de normalização
+- [ ] Eliminar funções de ativação
+
 O atalho preserva sinais e gradientes, mitigando o problema de degradação.
-<?/quiz?>
+</quiz>

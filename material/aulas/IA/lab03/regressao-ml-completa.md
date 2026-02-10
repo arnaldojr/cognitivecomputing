@@ -34,16 +34,15 @@ A regressão é uma técnica de aprendizado supervisionado usada para prever val
 | Exemplos de algoritmos | KNN, SVM, Random Forest (class.) | Regressão Linear, Ridge, Lasso, SVR, Árvores/Boosting |
 
 
-<?quiz?>
-question: Qual é a principal diferença entre regressão e classificação?
-answer: Regressão prediz categorias; Classificação prediz números
-answer: Ambas só funcionam com dados categóricos
-answer-correct: Regressão prediz números; Classificação prediz categorias
-answer: Classificação é sempre não supervisionada
-content:
+<quiz>
+Qual é a principal diferença entre regressão e classificação?
+- [ ] Regressão prediz categorias; Classificação prediz números
+- [ ] Ambas só funcionam com dados categóricos
+- [x] Regressão prediz números; Classificação prediz categorias
+- [ ] Classificação é sempre não supervisionada
 
 Regressão estima valores numéricos contínuos (por exemplo, preço), enquanto classificação atribui uma categoria ou rótulo (por exemplo, spam ou não-spam).
-<?/quiz?>
+</quiz>
 
 ## Ideia matemática
 
@@ -55,15 +54,14 @@ y = f(X) + ε
 
 ε representa o ruído — sempre haverá alguma incerteza.
 
-<?quiz?>
-question: O que representa ε na equação y = f(X) + ε ?
-answer: Um parâmetro do modelo
-answer-correct: O ruído ou erro aleatório
-answer: A variável de entrada
-content:
+<quiz>
+O que representa ε na equação y = f(X) + ε ?
+- [ ] Um parâmetro do modelo
+- [x] O ruído ou erro aleatório
+- [ ] A variável de entrada
 
 ε simboliza o erro aleatório ou ruído que não é explicado pela função f(X); é a parte imprevisível dos dados.
-<?/quiz?>
+</quiz>
 
 
 ## Principais famílias de modelos
@@ -88,16 +86,15 @@ content:
     - Modelos como Random Forest e XGBoost são poderosos para capturar não linearidades e interações entre features. São menos sensíveis a outliers e requerem menos pré-processamento, mas podem ser mais difíceis de interpretar.
 
 
-<?quiz?>
-question: Qual método tende a zerar coeficientes, ajudando na seleção de features?
-answer: Ridge
-answer-correct: Lasso
-answer: Regressão Polinomial
-answer: SVR
-content:
+<quiz>
+Qual método tende a zerar coeficientes, ajudando na seleção de features?
+- [ ] Ridge
+- [x] Lasso
+- [ ] Regressão Polinomial
+- [ ] SVR
 
 Lasso (L1) pode reduzir coeficientes a zero, realizando seleção de features; Ridge (L2) encolhe coeficientes sem zerá-los.
-<?/quiz?>
+</quiz>
 
 ## Intuição de Regressão Linear
 
@@ -126,16 +123,15 @@ Para regressão linear simples, os coeficientes têm fórmulas fechadas úteis p
 - **Baixa multicolinearidade**: As features não devem ser muito correlacionadas entre si (e.g., se "área da casa" e "número de quartos" são quase idênticas, isso pode confundir o modelo).
 
 
-<?quiz?>
-question: Qual pressuposto implica que os resíduos tenham variância constante?
-answer: Linearidade
-answer-correct: Homocedasticidade
-answer: Normalidade
-answer: Independência das observações
-content:
+<quiz>
+Qual pressuposto implica que os resíduos tenham variância constante?
+- [ ] Linearidade
+- [x] Homocedasticidade
+- [ ] Normalidade
+- [ ] Independência das observações
 
 Homocedasticidade significa que a variância dos resíduos é aproximadamente constante ao longo das predições; quando isso falha, temos heterocedasticidade.
-<?/quiz?>
+</quiz>
 
 ### Exemplo em Python
 
@@ -247,16 +243,15 @@ print(f"MAE: {mae:.4f}")
 print(f"R²: {r2:.4f}")
 ```
 
-<?quiz?>
-question: Qual métrica é menos sensível a outliers?
-answer: MSE
-answer: RMSE
-answer-correct: MAE
-answer: R²
-content:
+<quiz>
+Qual métrica é menos sensível a outliers?
+- [ ] MSE
+- [ ] RMSE
+- [x] MAE
+- [ ] R²
 
 MAE (Erro Absoluto Médio) penaliza menos discrepâncias grandes que o MSE/RMSE, sendo mais robusto a outliers.
-<?/quiz?>
+</quiz>
 
 
 

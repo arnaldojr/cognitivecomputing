@@ -27,16 +27,17 @@ A Ciência de Dados pode ser compreendida como a convergência de três conjunto
 !!! tip
       **Dica importante**: Embora não seja necessário dominar todas as áreas desde o início, a atuação consistente em Ciência de Dados requer o desenvolvimento progressivo e equilibrado dessas competências, com aprofundamento gradual de acordo com o foco profissional ou acadêmico.
 
-<?quiz?>
-question: Por que a Ciência de Dados precisa dos três componentes (programação, matemática e conhecimento de domínio)?
-answer: Para impressionar os chefes com termos técnicos
-answer-correct: Porque cada um resolve uma parte específica do problema de forma complementar
-answer: Porque assim o salário fica mais alto
-answer: Na verdade, só a programação é importante
-content:
+<quiz>
+Por que a Ciência de Dados precisa dos três componentes (programação, matemática e conhecimento de domínio)?
+
+- [ ] Para impressionar os chefes com termos técnicos
+- [x] Porque cada um resolve uma parte específica do problema de forma complementar
+- [ ] Porque assim o salário fica mais alto
+- [ ] Na verdade, só a programação é importante
 
 Exato! Programação te dá as ferramentas, matemática/estatística te dá os métodos corretos, e conhecimento de domínio garante que você está resolvendo o problema certo da forma certa. É como um tripé - tire uma perna e tudo desaba!
-<?/quiz?>
+</quiz>
+
 
 ## História e Evolução da Ciência de Dados
 
@@ -54,16 +55,17 @@ A Ciência de Dados é resultado de um processo evolutivo que integra estatísti
 - **2010s**: Explosão do Big Data! Com o crescimento exponencial da geração de dados, tecnologias como Hadoop e Spark possibilitaram o processamento distribuído em larga escala. A quantidade de dados gerada globalmente passou a crescer de forma acelerada, superando rapidamente a capacidade de armazenamento e processamento tradicionais.
 - **2020s**: Democratização da IA e MLOps com ferramentas de inteligência artificial de código aberto e serviços baseados em nuvem tornaram o acesso à IA mais acessível. O MLOps consolidou-se como disciplina para integrar modelos de machine learning ao ciclo de desenvolvimento e operação de sistemas.
 
-<?quiz?>
-question: O que diferencia a Ciência de Dados da Estatística tradicional?
-answer: Ciência de Dados usa apenas dados digitais
-answer: Estatística não usa computadores
-answer-correct: Ciência de Dados combina programação, estatística e conhecimento de domínio para trabalhar com big data
-answer: Não há diferença entre elas
-content:
+<quiz>
+O que diferencia a Ciência de Dados da Estatística tradicional?
+
+- [ ] Ciência de Dados usa apenas dados digitais
+- [ ] Estatística não usa computadores
+- [x] Ciência de Dados combina programação, estatística e conhecimento de domínio para trabalhar com big data
+- [ ] Não há diferença entre elas
 
 A Ciência de Dados é interdisciplinar, combinando estatística com programação e conhecimento específico do domínio para extrair insights de grandes volumes de dados estruturados e não estruturados.
-<?/quiz?>
+</quiz>
+
 
 ## Tipos de Dados em Ciência de Dados
 
@@ -105,13 +107,14 @@ Os "brabosssss"! Sem organização predefinida que requerem técnicas especiais 
 **Vantagem**: Contêm informações riquíssimas e insights únicos
 **Desvantagem**: Requerem técnicas avançadas (NLP, Computer Vision) para análise
 
-<?quiz?>
-question: Qual tipo de dados requer maior processamento para análise?
-answer: Dados estruturados
-answer: Dados semi-estruturados
-answer-correct: Dados não-estruturados
-answer: Todos requerem o mesmo nível de processamento
-content:
+<quiz>
+Qual tipo de dados requer maior processamento para análise?
+
+- [ ] Dados estruturados
+- [ ] Dados semi-estruturados
+- [x] Dados não-estruturados
+- [ ] Todos requerem o mesmo nível de processamento
 
 Dados não-estruturados como textos, imagens e áudios requerem técnicas especiais de processamento (NLP, Computer Vision, etc.) antes de poderem ser analisados, ao contrário de dados estruturados que já estão em formato tabular.
-<?/quiz?>
+</quiz>
+

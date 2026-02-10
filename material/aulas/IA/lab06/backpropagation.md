@@ -23,16 +23,15 @@ Encontrar os pesos para um perceptron é fácil porque há apenas um neurônio. 
 
 É como tentar descobrir qual jogador de um time de futebol errou quando o time perde — pode ter sido o goleiro, o zagueiro, o meio-campo ou o atacante. Todos contribuíram para o resultado final!
 
-<?quiz?>
-question: Por que o algoritmo de aprendizado do Perceptron não funciona diretamente em redes multicamadas?
-answer: Porque redes multicamadas são muito lentas
-answer: Porque usa muita memória computacional
-answer-correct: Porque não sabemos como atribuir responsabilidade pelo erro aos neurônios das camadas ocultas
-answer: Porque as funções de ativação são diferentes
-content:
+<quiz>
+Por que o algoritmo de aprendizado do Perceptron não funciona diretamente em redes multicamadas?
+- [ ] Porque redes multicamadas são muito lentas
+- [ ] Porque usa muita memória computacional
+- [x] Porque não sabemos como atribuir responsabilidade pelo erro aos neurônios das camadas ocultas
+- [ ] Porque as funções de ativação são diferentes
 
 Em redes multicamadas, todos os neurônios contribuem para o resultado final, tornando difícil saber exatamente como ajustar cada peso individual quando há um erro na saída.
-<?/quiz?>
+</quiz>
 
 ## O Backpropagation
 
@@ -101,16 +100,15 @@ $$
     $$  
     onde $y$ é um vetor *one-hot*. O gradiente em relação aos logits também simplifica para $\frac{\partial \ell}{\partial z_k} = \hat{y}_k - y_k$, facilitando o treinamento.
 
-<?quiz?>
-question: Qual é o objetivo principal da função de custo no backpropagation?
-answer: Acelerar o treinamento da rede neural
-answer: Escolher a melhor arquitetura de rede
-answer-correct: Medir quantitativamente o erro para guiar o ajuste dos pesos
-answer: Determinar o número ideal de neurônios
-content:
+<quiz>
+Qual é o objetivo principal da função de custo no backpropagation?
+- [ ] Acelerar o treinamento da rede neural
+- [ ] Escolher a melhor arquitetura de rede
+- [x] Medir quantitativamente o erro para guiar o ajuste dos pesos
+- [ ] Determinar o número ideal de neurônios
 
 A função de custo quantifica o erro da rede, fornecendo uma métrica clara de quão distantes estamos do resultado desejado, permitindo ajustar os pesos na direção correta via gradientes.
-<?/quiz?>
+</quiz>
 
 ### O Gradiente: A Direção da Mudança
 
@@ -260,16 +258,15 @@ Reflexão:
 
 
 
-<?quiz?>
-question: Por que o backpropagation calcula gradientes "de trás para frente"?
-answer: Porque é mais rápido computacionalmente
-answer: Porque usa menos memória
-answer-correct: Porque o erro na saída é conhecido, facilitando o cálculo dos gradientes das camadas anteriores
-answer: Porque as camadas ocultas são mais importantes
-content:
+<quiz>
+Por que o backpropagation calcula gradientes "de trás para frente"?
+- [ ] Porque é mais rápido computacionalmente
+- [ ] Porque usa menos memória
+- [x] Porque o erro na saída é conhecido, facilitando o cálculo dos gradientes das camadas anteriores
+- [ ] Porque as camadas ocultas são mais importantes
 
 Começamos pela saída porque conhecemos o erro desejado ali. Isso permite calcular como cada camada anterior contribuiu para esse erro, propagando a informação de volta pela rede.
-<?/quiz?>
+</quiz>
 
 ## Pseudocódigo
 
@@ -316,16 +313,15 @@ Sigmoid tem derivada mais complicada, tornando o cálculo mais lento.
     - **Prática comum:** **Entropia Cruzada Binária** (BCE) com saída **Sigmoid** — converge mais rápido e com gradientes mais estáveis.
 
 
-<?quiz?>
-question: Por que a derivada da função de ativação é importante no backpropagation?
-answer: Para determinar o número de neurônios necessários
-answer: Para escolher a arquitetura da rede
-answer-correct: Para calcular como o erro se propaga através de cada neurônio
-answer: Para definir a taxa de aprendizado ideal
-content:
+<quiz>
+Por que a derivada da função de ativação é importante no backpropagation?
+- [ ] Para determinar o número de neurônios necessários
+- [ ] Para escolher a arquitetura da rede
+- [x] Para calcular como o erro se propaga através de cada neurônio
+- [ ] Para definir a taxa de aprendizado ideal
 
 A derivada da função de ativação é essencial para aplicar a regra da cadeia e calcular como pequenas mudanças nos pesos afetam o erro final da rede.
-<?/quiz?>
+</quiz>
 
 
 ## Problemas comuns e soluções
@@ -362,16 +358,15 @@ A derivada da função de ativação é essencial para aplicar a regra da cadeia
 - `Regularização (L1/L2)`: Adicione uma "penalidade" à função de perda para desincentivar pesos muito grandes. Isso ajuda a manter o modelo mais simples e com maior poder de generalização.
 - `Parada Antecipada (Early Stopping)`: Monitore a performance do modelo em um conjunto de validação e pare o treinamento assim que a performance começar a piorar.
 
-<?quiz?>
-question: O que caracteriza o problema de "vanishing gradients"?
-answer: A rede aprende muito rapidamente
-answer: Os pesos ficam muito grandes
-answer-correct: Os gradientes se tornam muito pequenos nas camadas iniciais de redes profundas
-answer: A função de custo aumenta durante o treinamento
-content:
+<quiz>
+O que caracteriza o problema de "vanishing gradients"?
+- [ ] A rede aprende muito rapidamente
+- [ ] Os pesos ficam muito grandes
+- [x] Os gradientes se tornam muito pequenos nas camadas iniciais de redes profundas
+- [ ] A função de custo aumenta durante o treinamento
 
 Vanishing gradients ocorre quando gradientes se tornam exponencialmente menores à medida que se propagam para trás, fazendo com que as primeiras camadas aprendam muito lentamente ou parem de aprender.
-<?/quiz?>
+</quiz>
 
 ## Otimizadores 
 
@@ -398,38 +393,35 @@ peso = peso - taxa_aprendizado × velocidade
 - **Cosine annealing**: Varia como coseno
 
 
-<?quiz?>
-question: Qual é a ideia central do algoritmo backpropagation?
-answer: Treinar apenas a última camada da rede
-answer: Usar apenas exemplos positivos para treinar
-answer-correct: Propagar o erro da saída de volta através da rede para ajustar todos os pesos
-answer: Treinar cada camada separadamente
-content:
+<quiz>
+Qual é a ideia central do algoritmo backpropagation?
+- [ ] Treinar apenas a última camada da rede
+- [ ] Usar apenas exemplos positivos para treinar
+- [x] Propagar o erro da saída de volta através da rede para ajustar todos os pesos
+- [ ] Treinar cada camada separadamente
 
 Backpropagation propaga o erro calculado na saída de volta através de todas as camadas, permitindo que cada peso seja ajustado proporcionalmente à sua contribuição para o erro final.
-<?/quiz?>
+</quiz>
 
-<?quiz?>
-question: Por que a taxa de aprendizado é um hiperparâmetro crítico?
-answer: Porque determina o número de camadas da rede
-answer: Porque escolhe a função de ativação
-answer-correct: Porque controla o tamanho dos ajustes nos pesos durante o treinamento
-answer: Porque define quantos dados usar para treinar
-content:
+<quiz>
+Por que a taxa de aprendizado é um hiperparâmetro crítico?
+- [ ] Porque determina o número de camadas da rede
+- [ ] Porque escolhe a função de ativação
+- [x] Porque controla o tamanho dos ajustes nos pesos durante o treinamento
+- [ ] Porque define quantos dados usar para treinar
 
 A taxa de aprendizado determina quão grandes são os passos de otimização. Muito alta pode causar instabilidade, muito baixa torna o aprendizado lento demais.
-<?/quiz?>
+</quiz>
 
-<?quiz?>
-question: O que diferencia o backpropagation do aprendizado do Perceptron simples?
-answer: Backpropagation é mais lento
-answer: Backpropagation usa menos memória
-answer-correct: Backpropagation pode treinar redes com múltiplas camadas ocultas
-answer: Backpropagation funciona apenas com ReLU
-content:
+<quiz>
+O que diferencia o backpropagation do aprendizado do Perceptron simples?
+- [ ] Backpropagation é mais lento
+- [ ] Backpropagation usa menos memória
+- [x] Backpropagation pode treinar redes com múltiplas camadas ocultas
+- [ ] Backpropagation funciona apenas com ReLU
 
 Enquanto o Perceptron só consegue ajustar pesos de uma única camada, backpropagation resolve o problema de como treinar todas as camadas de uma rede neural profunda simultaneamente.
-<?/quiz?>
+</quiz>
 
 <!-- 
 **Próxima aula**: Redes Neurais Convolucionais (CNNs) — como as máquinas aprenderam a "ver" e revolucionaram o processamento de imagens! -->

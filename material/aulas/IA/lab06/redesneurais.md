@@ -24,16 +24,15 @@ As RNAs são uma das família de arquiteturas de modelos para aprendizado de má
 - Precisa de **interpretabilidade total** — prefira modelos mais transparentes como árvores ou regressão linear
 - Tem pressa para colocar em produção — RNAs precisam de mais tempo para ajuste fino
 
-<?quiz?>
-question: Quando as redes neurais são especialmente recomendadas?
-answer: Apenas para problemas simples com poucos dados
-answer: Somente quando precisamos de máxima interpretabilidade
-answer-correct: Para problemas com padrões não lineares complexos e grandes volumes de dados
-answer: Exclusivamente para processamento de texto
-content:
+<quiz>
+Quando as redes neurais são especialmente recomendadas?
+- [ ] Apenas para problemas simples com poucos dados
+- [ ] Somente quando precisamos de máxima interpretabilidade
+- [x] Para problemas com padrões não lineares complexos e grandes volumes de dados
+- [ ] Exclusivamente para processamento de texto
 
 Redes neurais são boas em cenários com relações complexas não lineares, grandes datasets e quando precisamos que o modelo aprenda automaticamente quais características são importantes.
-<?/quiz?>
+</quiz>
 
 ## Intuição RNA
 
@@ -63,16 +62,15 @@ Dendritos → Soma → Axônio → Sinapses
 
 É como uma corrente de dominós inteligentes — cada peça decide se vai derrubar a próxima baseado na força do impulso que recebeu!
 
-<?quiz?>
-question: Qual é a função principal do soma (corpo celular) no neurônio biológico?
-answer: Receber sinais de outros neurônios
-answer: Transmitir sinais para outros neurônios
-answer-correct: Integrar e processar os sinais recebidos
-answer: Armazenar memórias de longo prazo
-content:
+<quiz>
+Qual é a função principal do soma (corpo celular) no neurônio biológico?
+- [ ] Receber sinais de outros neurônios
+- [ ] Transmitir sinais para outros neurônios
+- [x] Integrar e processar os sinais recebidos
+- [ ] Armazenar memórias de longo prazo
 
 O soma é responsável por integrar (somar) todos os sinais recebidos pelos dendritos e decidir se o neurônio deve "disparar" ou não, baseado em um limiar de ativação.
-<?/quiz?>
+</quiz>
 
 ## O neurônio artificial
 
@@ -105,16 +103,15 @@ net = w₁×x₁ + w₂×x₂ + ... + wₙ×xₙ + b
 y = f(net)
 ```
 
-<?quiz?>
-question: O que representam os "pesos" em um neurônio artificial?
-answer: O número de entradas do neurônio
-answer-correct: A importância relativa de cada entrada na decisão final
-answer: O tipo de função de ativação utilizada
-answer: O valor mínimo para ativação do neurônio
-content:
+<quiz>
+O que representam os "pesos" em um neurônio artificial?
+- [ ] O número de entradas do neurônio
+- [x] A importância relativa de cada entrada na decisão final
+- [ ] O tipo de função de ativação utilizada
+- [ ] O valor mínimo para ativação do neurônio
 
 Os pesos determinam o quanto cada entrada influencia na saída final do neurônio. Pesos maiores significam maior importância, enquanto pesos próximos de zero indicam que aquela entrada é quase irrelevante.
-<?/quiz?>
+</quiz>
 
 ### Funções de ativação
 
@@ -157,16 +154,15 @@ f(x) = max(0, x)
 - **Regra**: Se positivo, passa; se negativo, zero
 - **Por que é popular**: Simples, rápida e resolve problemas de gradientes em redes profundas
 
-<?quiz?>
-question: Por que a função ReLU é tão popular em redes neurais modernas?
-answer: Porque sempre retorna valores entre 0 e 1
-answer: Porque é a mais complexa matematicamente
-answer-correct: Porque é simples, rápida e resolve problemas de gradientes em redes profundas
-answer: Porque funciona melhor com dados negativos
-content:
+<quiz>
+Por que a função ReLU é tão popular em redes neurais modernas?
+- [ ] Porque sempre retorna valores entre 0 e 1
+- [ ] Porque é a mais complexa matematicamente
+- [x] Porque é simples, rápida e resolve problemas de gradientes em redes profundas
+- [ ] Porque funciona melhor com dados negativos
 
 ReLU (Rectified Linear Unit) se tornou popular porque sua simplicidade (max(0,x)) a torna computacionalmente eficiente e ajuda a resolver o problema do desvanecimento de gradientes em redes profundas.
-<?/quiz?>
+</quiz>
 
 ## Perceptron:
 
@@ -194,16 +190,15 @@ x₁,x₂,...,xₙ → w₁,w₂,...,wₙ → Σ → f → y
 3. **Repita** até parar de cometer erros
 
 
-<?quiz?>
-question: Qual foi a principal contribuição histórica do Perceptron?
-answer: Foi a primeira rede neural a processar imagens
-answer-correct: Foi o primeiro algoritmo de aprendizado para redes neurais com garantia de convergência
-answer: Inventou as funções de ativação modernas
-answer: Criou o conceito de backpropagation
-content:
+<quiz>
+Qual foi a principal contribuição histórica do Perceptron?
+- [ ] Foi a primeira rede neural a processar imagens
+- [x] Foi o primeiro algoritmo de aprendizado para redes neurais com garantia de convergência
+- [ ] Inventou as funções de ativação modernas
+- [ ] Criou o conceito de backpropagation
 
 O Perceptron foi revolucionário porque demonstrou pela primeira vez que uma máquina podia aprender automaticamente a classificar dados, estabelecendo as bases para toda a área de redes neurais.
-<?/quiz?>
+</quiz>
 
 ### O Teorema da Convergência
 
@@ -304,16 +299,15 @@ O Perceptron tinha um problema fatal: **só funcionava para problemas linearment
 Não importa como você tente, **não existe uma linha reta** que separe corretamente os 1s dos 0s neste problema! Essa limitação quase matou a pesquisa em redes neurais nos anos 1970.
 
 
-<?quiz?>
-question: Por que o problema XOR foi tão significativo para a história das redes neurais?
-answer: Porque era muito complexo computacionalmente
-answer: Porque envolvia muitas variáveis de entrada
-answer-correct: Porque demonstrou que o Perceptron não consegue resolver problemas não linearmente separáveis
-answer: Porque precisava de dados muito grandes para treinar
-content:
+<quiz>
+Por que o problema XOR foi tão significativo para a história das redes neurais?
+- [ ] Porque era muito complexo computacionalmente
+- [ ] Porque envolvia muitas variáveis de entrada
+- [x] Porque demonstrou que o Perceptron não consegue resolver problemas não linearmente separáveis
+- [ ] Porque precisava de dados muito grandes para treinar
 
 O XOR mostrou uma limitação fundamental do Perceptron: ele só funciona quando os dados podem ser separados por uma linha reta, o que levou ao "inverno da IA" até o desenvolvimento de redes com múltiplas camadas.
-<?/quiz?>
+</quiz>
 
 ## Multilayer Perceptron (MLP)
 
@@ -426,28 +420,26 @@ Você deve:
 1. Por que o MLP consegue resolver o XOR, mas o Perceptron simples não?
 3. Como a taxa de aprendizado afeta a convergência?
 
-<?quiz?>
-question: Qual é a principal vantagem das camadas ocultas em um MLP?
-answer: Reduzem o tempo de treinamento
-answer: Diminuem a quantidade de dados necessários
-answer-correct: Permitem aprender representações não lineares dos dados
-answer: Simplificam a interpretação do modelo
-content:
+<quiz>
+Qual é a principal vantagem das camadas ocultas em um MLP?
+- [ ] Reduzem o tempo de treinamento
+- [ ] Diminuem a quantidade de dados necessários
+- [x] Permitem aprender representações não lineares dos dados
+- [ ] Simplificam a interpretação do modelo
 
 As camadas ocultas permitem que a rede neural crie transformações não lineares dos dados de entrada, possibilitando resolver problemas como XOR que são impossíveis para um único neurônio.
-<?/quiz?>
+</quiz>
 
 
-<?quiz?>
-question: Qual é a diferença fundamental entre um Perceptron e um MLP?
-answer: O Perceptron usa função ReLU, o MLP usa sigmóide
-answer: O Perceptron é mais rápido para treinar
-answer-correct: O MLP possui camadas ocultas que permitem resolver problemas não lineares
-answer: O Perceptron funciona melhor com grandes datasets
-content:
+<quiz>
+Qual é a diferença fundamental entre um Perceptron e um MLP?
+- [ ] O Perceptron usa função ReLU, o MLP usa sigmóide
+- [ ] O Perceptron é mais rápido para treinar
+- [x] O MLP possui camadas ocultas que permitem resolver problemas não lineares
+- [ ] O Perceptron funciona melhor com grandes datasets
 
 A principal diferença é que o MLP possui camadas ocultas entre a entrada e saída, permitindo aprender padrões não lineares que o Perceptron (com apenas entrada e saída) não consegue capturar.
-<?/quiz?>
+</quiz>
 
 
 ### O Teorema da Aproximação Universal
@@ -489,13 +481,12 @@ neurônios ocultos ≈ √(entradas × saídas)
 - **2 camadas**: Qualquer função contínua (teorema da aproximação)
 - **3+ camadas**: Funções descontínuas e padrões muito complexos (`Deep Learning!`)
 
-<?quiz?>
-question: Segundo o Teorema da Aproximação Universal, quantas camadas ocultas são teoricamente necessárias para aproximar qualquer função contínua?
-answer: Infinitas camadas
-answer: Pelo menos 3 camadas
-answer-correct: Apenas 1 camada oculta (com neurônios suficientes)
-answer: Depende do tipo de dados
-content:
+<quiz>
+Segundo o Teorema da Aproximação Universal, quantas camadas ocultas são teoricamente necessárias para aproximar qualquer função contínua?
+- [ ] Infinitas camadas
+- [ ] Pelo menos 3 camadas
+- [x] Apenas 1 camada oculta (com neurônios suficientes)
+- [ ] Depende do tipo de dados
 
 O teorema estabelece que uma única camada oculta com neurônios suficientes pode aproximar qualquer função contínua, embora na prática múltiplas camadas muitas vezes sejam mais eficientes.
-<?/quiz?>
+</quiz>

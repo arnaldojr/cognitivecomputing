@@ -16,16 +16,17 @@ O CRISP-DM (Cross-Industry Standard Process for Data Mining) é uma ferramenta a
 
 Repare que o processo é cíclico - isso significa que podemos voltar a etapas anteriores conforme descobrimos novos `insights`!
 
-<?quiz?>
-question: Por que o CRISP-DM é representado como um processo cíclico e não linear?
-answer: Porque os dados sempre mudam com o tempo
-answer-correct: Porque podemos descobrir novos insights que nos fazem repensar etapas anteriores
-answer: Porque é mais bonito visualmente
-answer: Porque sempre precisamos começar do zero
-content:
+<quiz>
+Por que o CRISP-DM é representado como um processo cíclico e não linear?
+
+- [ ] Porque os dados sempre mudam com o tempo
+- [x] Porque podemos descobrir novos insights que nos fazem repensar etapas anteriores
+- [ ] Porque é mais bonito visualmente
+- [ ] Porque sempre precisamos começar do zero
 
 Exato! O processo é iterativo porque conforme avançamos, podemos descobrir que precisamos coletar mais dados, redefinir o problema ou ajustar nossa abordagem. É um processo de aprendizado contínuo!
-<?/quiz?>
+</quiz>
+
 
 ### 1. Entendimento do Negócio
 
@@ -46,16 +47,17 @@ Imagine que você trabalha em uma loja online e o gerente diz: "Queremos usar IA
 - Quais são as restrições de tempo, orçamento e recursos?
 - Como os resultados serão implementados?
 
-<?quiz?>
-question: Um gerente pede para "usar machine learning para melhorar o atendimento ao cliente". O que você deveria perguntar primeiro?
-answer: Quais algoritmos ele prefere usar
-answer: Quantos dados históricos temos disponíveis
-answer-correct: Como exatamente ele define "melhorar o atendimento" e como vamos medir essa melhoria
-answer: Qual é o orçamento do projeto
-content:
+<quiz>
+Um gerente pede para "usar machine learning para melhorar o atendimento ao cliente". O que você deveria perguntar primeiro?
+
+- [ ] Quais algoritmos ele prefere usar
+- [ ] Quantos dados históricos temos disponíveis
+- [x] Como exatamente ele define "melhorar o atendimento" e como vamos medir essa melhoria
+- [ ] Qual é o orçamento do projeto
 
 Perfeito! Sem definir claramente o que significa "melhorar" e como medir isso, você pode acabar resolvendo o problema errado. Pode ser reduzir tempo de espera, aumentar satisfação, reduzir reclamações... cada um requer uma abordagem diferente!
-<?/quiz?>
+</quiz>
+
 
 #### Ferramentas e Técnicas
 - **Entrevistas e Workshops**: Para coletar informações dos stakeholders e especialistas
@@ -81,16 +83,17 @@ Agora que você sabe qual problema resolver, é hora de conhecer seus os dados! 
 - **Análise de Qualidade**: Verificação de inconsistências, valores ausentes e outliers
 - **Profiling de Dados**: Ferramentas automatizadas para gerar relatórios de qualidade
 
-<?quiz?>
-question: Durante a exploração inicial dos dados de vendas de uma empresa, você descobre que 30% dos registros têm valores ausentes na coluna "idade do cliente". Qual deve ser sua primeira ação?
-answer: Excluir imediatamente todos os registros com dados ausentes
-answer: Preencher com a média de idade de todos os clientes
-answer-correct: Investigar por que esses dados estão ausentes e se há um padrão
-answer: Ignorar a coluna idade completamente
-content:
+<quiz>
+Durante a exploração inicial dos dados de vendas de uma empresa, você descobre que 30% dos registros têm valores ausentes na coluna "idade do cliente". Qual deve ser sua primeira ação?
+
+- [ ] Excluir imediatamente todos os registros com dados ausentes
+- [ ] Preencher com a média de idade de todos os clientes
+- [x] Investigar por que esses dados estão ausentes e se há um padrão
+- [ ] Ignorar a coluna idade completamente
 
 Correto! Primeiro você precisa entender o "porquê" dos dados ausentes. Talvez clientes de certas regiões não informem idade, ou o sistema teve problemas em períodos específicos. Essa investigação pode revelar insights importantes!
-<?/quiz?>
+</quiz>
+
 
 ### 3. Preparação dos Dados
 
@@ -135,16 +138,17 @@ Aqui é onde a mágica acontece e você aplica algoritmos de machine learning ao
 
 ![spam-filter](image-4.png)
 
-<?quiz?>
-question: Você precisa prever se um e-mail é spam ou não. Que tipo de problema é este?
-answer: Regressão, porque queremos um valor numérico
-answer-correct: Classificação, porque queremos categorizar em duas classes
-answer: Clustering, porque queremos agrupar e-mails similares
-answer: Redução de dimensionalidade, porque temos muitas palavras
-content:
+<quiz>
+Você precisa prever se um e-mail é spam ou não. Que tipo de problema é este?
+
+- [ ] Regressão, porque queremos um valor numérico
+- [x] Classificação, porque queremos categorizar em duas classes
+- [ ] Clustering, porque queremos agrupar e-mails similares
+- [ ] Redução de dimensionalidade, porque temos muitas palavras
 
 Perfeito! É um problema de classificação binária pois queremos classificar cada e-mail em uma de duas categorias: spam ou não spam. O resultado é uma categoria, não um valor numérico.
-<?/quiz?>
+</quiz>
+
 
 #### Ferramentas e Técnicas
 - **Scikit-learn**: Para algoritmos tradicionais de machine learning
@@ -172,16 +176,17 @@ Perfeito! É um problema de classificação binária pois queremos classificar c
 - **MAE**: Erro médio absoluto (mais fácil de interpretar)
 - **R²**: Quanto da variação consigo explicar? (0-100%)
 
-<?quiz?>
-question: Você criou um modelo para detectar fraudes bancárias. O modelo tem 99% de accuracy, mas detecta apenas 10% das fraudes reais. Qual é o problema principal?
-answer: O modelo está overfittado
-answer: Precisamos de mais dados de treino
-answer-correct: O modelo tem baixo recall - está perdendo muitas fraudes reais
-answer: A accuracy está muito alta, deve estar errado
-content:
+<quiz>
+Você criou um modelo para detectar fraudes bancárias. O modelo tem 99% de accuracy, mas detecta apenas 10% das fraudes reais. Qual é o problema principal?
+
+- [ ] O modelo está overfittado
+- [ ] Precisamos de mais dados de treino
+- [x] O modelo tem baixo recall - está perdendo muitas fraudes reais
+- [ ] A accuracy está muito alta, deve estar errado
 
 Exato! Com dados desbalanceados (poucas fraudes), alta accuracy pode ser enganosa. Se apenas 1% das transações são fraudes, um modelo que sempre diz "não é fraude" teria 99% accuracy, mas seria inútil! O recall baixo indica que estamos perdendo fraudes reais.
-<?/quiz?>
+</quiz>
+
 
 #### Ferramentas e Técnicas
 - **Métricas de Avaliação**: Precision, recall, F1-score, AUC-ROC
@@ -204,16 +209,17 @@ Aqui é onde seu modelo sai do laboratório e entra no mundo real.
 - **Monitoramento**: Prometheus e Grafana para acompanhar performance
 - **CI/CD**: Deploy automatizado e seguro
 
-<?quiz?>
-question: Seu modelo de recomendação está em produção há 3 meses e a performance começou a cair. Qual é a causa mais provável?
-answer: O código do modelo foi corrompido
-answer: Os servidores estão sobrecarregados
-answer-correct: Os dados mudaram e o modelo precisa ser retreinado
-answer: Os usuários pararam de usar o sistema
-content:
+<quiz>
+Seu modelo de recomendação está em produção há 3 meses e a performance começou a cair. Qual é a causa mais provável?
+
+- [ ] O código do modelo foi corrompido
+- [ ] Os servidores estão sobrecarregados
+- [x] Os dados mudaram e o modelo precisa ser retreinado
+- [ ] Os usuários pararam de usar o sistema
 
 Correto! Este é um fenômeno comum chamado "model drift". Com o tempo, os padrões nos dados mudam (novos produtos, mudanças no comportamento do usuário), e o modelo fica "desatualizado". É por isso que monitoramento e retreinamento são essenciais!
-<?/quiz?>
+</quiz>
+
 
 ### Outras estratégias
 
@@ -231,38 +237,41 @@ Embora o CRISP-DM seja o mais popular, existem outras metodologias interessantes
 
 ![mlops](image-3.png)
 
-<?quiz?>
-question: Qual é a primeira fase do CRISP-DM e por que ela é crucial?
-answer: Preparação dos Dados - porque dados limpos são essenciais
-answer-correct: Entendimento do Negócio - porque define objetivos e critérios de sucesso
-answer: Modelagem - porque é onde a IA acontece
-answer: Coleta de Dados - porque precisamos de dados para começar
-content:
+<quiz>
+Qual é a primeira fase do CRISP-DM e por que ela é crucial?
+
+- [ ] Preparação dos Dados - porque dados limpos são essenciais
+- [x] Entendimento do Negócio - porque define objetivos e critérios de sucesso
+- [ ] Modelagem - porque é onde a IA acontece
+- [ ] Coleta de Dados - porque precisamos de dados para começar
 
 O entendimento do negócio é fundamental porque estabelece o que realmente precisa ser resolvido, como o sucesso será medido e garante que o projeto esteja alinhado com os objetivos organizacionais.
-<?/quiz?>
+</quiz>
 
-<?quiz?>
-question: Uma empresa de e-commerce quer implementar um sistema de recomendação de produtos. Ordene as fases do CRISP-DM que seriam seguidas.
-answer-correct: Entendimento do Negócio → Entendimento dos Dados → Preparação dos Dados → Modelagem → Avaliação → Implantação
-answer: Preparação dos Dados → Modelagem → Entendimento do Negócio → Avaliação → Entendimento dos Dados → Implantação
-answer: Modelagem → Entendimento do Negócio → Preparação dos Dados → Avaliação → Implantação → Entendimento dos Dados
-answer: Entendimento dos Dados → Modelagem → Preparação dos Dados → Avaliação → Entendimento do Negócio → Implantação
-content:
+
+<quiz>
+Uma empresa de e-commerce quer implementar um sistema de recomendação de produtos. Ordene as fases do CRISP-DM que seriam seguidas.
+
+- [x] Entendimento do Negócio → Entendimento dos Dados → Preparação dos Dados → Modelagem → Avaliação → Implantação
+- [ ] Preparação dos Dados → Modelagem → Entendimento do Negócio → Avaliação → Entendimento dos Dados → Implantação
+- [ ] Modelagem → Entendimento do Negócio → Preparação dos Dados → Avaliação → Implantação → Entendimento dos Dados
+- [ ] Entendimento dos Dados → Modelagem → Preparação dos Dados → Avaliação → Entendimento do Negócio → Implantação
 
 Correto! Entendimento do Negócio → Entendimento dos Dados → Preparação dos Dados → Modelagem → Avaliação → Implantação
-<?/quiz?>
+</quiz>
 
-<?quiz?>
-question: Você está trabalhando em um projeto de ciência de dados e percebe que está gastando mais tempo preparando dados do que criando modelos. Isso é:
-answer: Um sinal de que você está fazendo algo errado
-answer: Motivo para pular algumas etapas de limpeza
-answer-correct: Completamente normal - preparação de dados consome 70-80% do tempo
-answer: Indicação de que os dados são de baixa qualidade
-content:
+
+<quiz>
+Você está trabalhando em um projeto de ciência de dados e percebe que está gastando mais tempo preparando dados do que criando modelos. Isso é:
+
+- [ ] Um sinal de que você está fazendo algo errado
+- [ ] Motivo para pular algumas etapas de limpeza
+- [x] Completamente normal - preparação de dados consome 70-80% do tempo
+- [ ] Indicação de que os dados são de baixa qualidade
 
 Isso é absolutamente normal! A preparação de dados é a parte mais trabalhosa, mas também mais importante de qualquer projeto. Dados bem preparados são a base para modelos de sucesso. Como dizem: "Garbage in, garbage out!"
-<?/quiz?>
+</quiz>
+
 
 
 
