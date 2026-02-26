@@ -29,10 +29,10 @@
 | 12/02/2026      | lab1                      | Aula Magna<br>Apresentação do curso, dinâmica das aulas, datas importantes (CP), lançamento CP1   |
 | 19/02/2026      | lab02, lab03              | Processamento de imagem digital. Segmentação por pixel, histograma e equalização de histograma      |
 | 26/02/2026      | lab04, lab05              | filtos de convolução, espaço de cores e contorno                                                |
-| 05/03/2026      | lab06, la07               | transformada de hough, traking de objetos                                                       |
-| 12/03/2026      | lab08, lab09              | Relacionamento e operações entre imagens, FFT                                                   |
-| 19/03/2026      | lab10, lab11              | medidas aproximadas, transformada de watershed                                                  |
-| 26/03/2026      | avaliação CP1             | AVALIAÇÃO EM AULA CP1<br>CP1 - Sistema de segmentação de objetos                                |
+| 05/03/2026      | avaliação CP1             | AVALIAÇÃO EM AULA CP1<br>CP1 - Sistema de segmentação de objetos                                |
+| 12/03/2026      | lab06, la07               | transformada de hough, traking de objetos                                                       |
+| 19/03/2026      | lab08, lab09              | Relacionamento e operações entre imagens, FFT                                                   |
+| 26/03/2026      | lab10, lab11              | medidas aproximadas, transformada de watershed                                                  |
 | 02/04/2026      | \--                      | feriado (quinta e sexta) paixão de cristo                                                       |
 | 09/04/2026      | lab12, lab13              | template matching, features ORB, SIFT                                                           |
 | 16/04/2026      | lab14, lab15              | Haar Cascade, Event Mouse                                                                       |
