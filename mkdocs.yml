@@ -122,7 +122,7 @@ nav:
     # - CheckPoint 5: checkpoint/cp.md
     # - CheckPoint 6: checkpoint/cp6.md    
   - Processamento Digital de Imagens:  
-    # - Soluções PDI: aulas/PDI/solucoes/index.md
+    - Soluções PDI: aulas/PDI/solucoes/index.md
     - Labs download: aulas/PDI/labs-download.md
     - Introdução: aulas/PDI/intro/index.md
     - Lab01 - Intro PID: aulas/PDI/lab01/IntroPID.ipynb
