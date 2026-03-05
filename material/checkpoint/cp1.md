@@ -2,9 +2,9 @@
 
 - Leia com atenção as instruções gerais sobre checkpoint;
 - clique [aqui no link](https://classroom.github.com/a/HzSBhDFk) para criar uma cópia do repositório do CP em seu github;
-- Leia com atenção as intruções do CP e desenvolva o projeto;
-- O estudante deve realizar a entrega ANTES da data definida para avaliação do checkpoint;
-- O CP pode ser feito em até 3 estudantes. O primeiro estudante cria o grupo (através do link do Classroom) e os demais estudante acessam o grupo criado.
+- Leia com atenção as intruções do CP e desenvolva as questões;
+- O estudante deve realizar a entrega (commit e push) até o final da aula;
+- O CP pode ser feito individualmente. 
 
 | CP1 | link |    
 | ---- | ----- |

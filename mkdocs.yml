@@ -118,7 +118,7 @@ nav:
   - Agenda: agenda/agenda.md
   - CheckPoint:
     - Orientações gerais: checkpoint/index.md
-    - CheckPoint 1: checkpoint/cp1.md
+    # - CheckPoint 1: checkpoint/cp1.md
     # - CheckPoint 5: checkpoint/cp.md
     # - CheckPoint 6: checkpoint/cp6.md    
   - Processamento Digital de Imagens:  
