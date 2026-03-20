@@ -2,7 +2,7 @@ import numpy as np
 import cv2
 
 #carrega o video 
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture("videoname.mp4")
 
 # Cria a subtração do fundo
 fgbg = cv2.createBackgroundSubtractorMOG2()
@@ -48,7 +48,7 @@ while(1):
     ### exibo o resultado
     cv2.imshow('frame',frame)
 
-    cv2.imshow('processado',dilation)
+    cv2.imshow('processado',fgmask)
 
     
     k = cv2.waitKey(30) & 0xff
