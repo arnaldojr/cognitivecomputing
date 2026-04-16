@@ -119,6 +119,7 @@ nav:
   - CheckPoint:
     - Orientações gerais: checkpoint/index.md
     - CP1: checkpoint/cp1.md
+    - CP2: checkpoint/cp2.md
     # - CheckPoint 5: checkpoint/cp.md
     # - CheckPoint 6: checkpoint/cp6.md    
   - Processamento Digital de Imagens:  
