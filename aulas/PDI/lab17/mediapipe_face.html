@@ -215,40 +215,13 @@
     <div class="md-container" data-md-component="container">
       
       
-  
-  <nav id="quiz-progress-mobile" class="quiz-progress-mobile md-nav" aria-label="Quiz Progress" style="display: none;">
-    <!-- mkdocs-quiz progress sidebar (mobile) -->
-    <div class="quiz-progress-bar">
-      <div class="quiz-progress-bar-incorrect" style="width: 0%"></div>
-      <div class="quiz-progress-bar-correct" style="width: 0%"></div>
-    </div>
-    <div data-md-component="quiz-progress">
-        <div class="quiz-correct-reset">
-          <span class="md-ellipsis">
-            <span data-quiz-translate="Answered:">Answered:</span> <span class="quiz-progress-answered">0</span> / <span class="quiz-progress-total">0</span>
-          </span>
-          <span class="md-ellipsis">
-            <span data-quiz-translate="Correct:">Correct:</span> <span class="quiz-progress-score">0</span> / <span class="quiz-progress-score-total">0</span>
-          </span>
-          <a href="#" class="quiz-reset-all-link" style="color: var(--md-primary-fg-color); text-decoration: none;">
-            <span data-quiz-translate="Reset">Reset</span>
-          </a>
-        </div>
-    </div>
-  </nav>
-
-  
-  
         
           
         
       
-
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
           
-  
-  
             
               
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
@@ -1028,43 +1001,6 @@
               </div>
             
           
-
-  
-  <div id="quiz-progress-sidebar" aria-label="Quiz Progress" style="display: none;">
-    <!-- mkdocs-quiz progress sidebar (desktop) -->
-    <label class="md-nav__title">
-      <span class="md-nav__icon md-icon"></span>
-      <span data-quiz-translate="Quiz Progress">Quiz Progress</span>
-    </label>
-    <ul class="md-nav__list" data-md-component="quiz-progress">
-      <li class="md-nav__item">
-        <div class="md-nav__link">
-          <span class="md-ellipsis">
-            <span data-quiz-translate="Answered:">Answered:</span> <span class="quiz-progress-answered">0</span> / <span class="quiz-progress-total">0</span> (<span class="quiz-progress-answered-percentage">0%</span>)
-          </span>
-        </div>
-      </li>
-      <li class="md-nav__item">
-        <div class="md-nav__link">
-          <div class="quiz-progress-bar">
-            <div class="quiz-progress-bar-incorrect" style="width: 0%"></div>
-            <div class="quiz-progress-bar-correct" style="width: 0%"></div>
-          </div>
-        </div>
-      </li>
-      <li class="md-nav__item">
-        <div class="md-nav__link quiz-correct-reset">
-          <span class="md-ellipsis">
-            <span data-quiz-translate="Correct:">Correct:</span> <span class="quiz-progress-score">0</span> / <span class="quiz-progress-score-total">0</span> (<span class="quiz-progress-score-percentage">0%</span>)
-          </span>
-          <a href="#" class="quiz-reset-all-link" style="color: var(--md-primary-fg-color); text-decoration: none;">
-            <span data-quiz-translate="Reset">Reset</span>
-          </a>
-        </div>
-      </li>
-    </ul>
-  </div>
-
           
             <div class="md-content" data-md-component="content">
               
@@ -1801,7 +1737,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <!-- End of mermaid configuration --><div class="jupyter-wrapper">
 <div class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=9d859232">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=1f4cf368">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1821,16 +1757,18 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">cv2</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">mediapipe</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mp</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
 </pre></div>
 <div class="clipboard-copy-txt" id="cell-1">import cv2
-import mediapipe as mp</div>
+import mediapipe as mp
+import time</div>
 </div>
 </div>
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=aa123cba">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=313f4ca6">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1848,16 +1786,24 @@ import mediapipe as mp</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># --- Atalhos da nova API ---</span>
+<span class="n">BaseOptions</span> <span class="o">=</span> <span class="n">mp</span><span class="o">.</span><span class="n">tasks</span><span class="o">.</span><span class="n">BaseOptions</span>
+<span class="n">FaceLandmarker</span> <span class="o">=</span> <span class="n">mp</span><span class="o">.</span><span class="n">tasks</span><span class="o">.</span><span class="n">vision</span><span class="o">.</span><span class="n">FaceLandmarker</span>
+<span class="n">FaceLandmarkerOptions</span> <span class="o">=</span> <span class="n">mp</span><span class="o">.</span><span class="n">tasks</span><span class="o">.</span><span class="n">vision</span><span class="o">.</span><span class="n">FaceLandmarkerOptions</span>
+<span class="n">VisionRunningMode</span> <span class="o">=</span> <span class="n">mp</span><span class="o">.</span><span class="n">tasks</span><span class="o">.</span><span class="n">vision</span><span class="o">.</span><span class="n">RunningMode</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-2"></div>
+<div class="clipboard-copy-txt" id="cell-2"># --- Atalhos da nova API ---
+BaseOptions = mp.tasks.BaseOptions
+FaceLandmarker = mp.tasks.vision.FaceLandmarker
+FaceLandmarkerOptions = mp.tasks.vision.FaceLandmarkerOptions
+VisionRunningMode = mp.tasks.vision.RunningMode</div>
 </div>
 </div>
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=0e7172c3">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=a4e4c5ea">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1875,18 +1821,18 @@ import mediapipe as mp</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">mp_face_mesh</span> <span class="o">=</span> <span class="n">mp</span><span class="o">.</span><span class="n">solutions</span><span class="o">.</span><span class="n">face_mesh</span>
-<span class="n">face_mesh</span> <span class="o">=</span> <span class="n">mp_face_mesh</span><span class="o">.</span><span class="n">FaceMesh</span><span class="p">()</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Caminho do modelo baixado</span>
+<span class="n">MODEL_PATH</span> <span class="o">=</span> <span class="s2">"face_landmarker.task"</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-3">mp_face_mesh = mp.solutions.face_mesh
-face_mesh = mp_face_mesh.FaceMesh()</div>
+<div class="clipboard-copy-txt" id="cell-3"># Caminho do modelo baixado
+MODEL_PATH = "face_landmarker.task"</div>
 </div>
 </div>
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=85081ee3">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=53036018">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1904,16 +1850,32 @@ face_mesh = mp_face_mesh.FaceMesh()</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">cap</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">VideoCapture</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Cria o detector</span>
+<span class="n">options</span> <span class="o">=</span> <span class="n">FaceLandmarkerOptions</span><span class="p">(</span>
+    <span class="n">base_options</span><span class="o">=</span><span class="n">BaseOptions</span><span class="p">(</span><span class="n">model_asset_path</span><span class="o">=</span><span class="n">MODEL_PATH</span><span class="p">),</span>
+    <span class="n">running_mode</span><span class="o">=</span><span class="n">VisionRunningMode</span><span class="o">.</span><span class="n">VIDEO</span><span class="p">,</span>
+    <span class="n">num_faces</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">min_face_detection_confidence</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+    <span class="n">min_face_presence_confidence</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+    <span class="n">min_tracking_confidence</span><span class="o">=</span><span class="mf">0.5</span>
+<span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-4">cap = cv2.VideoCapture(0)</div>
+<div class="clipboard-copy-txt" id="cell-4"># Cria o detector
+options = FaceLandmarkerOptions(
+    base_options=BaseOptions(model_asset_path=MODEL_PATH),
+    running_mode=VisionRunningMode.VIDEO,
+    num_faces=1,
+    min_face_detection_confidence=0.5,
+    min_face_presence_confidence=0.5,
+    min_tracking_confidence=0.5
+)</div>
 </div>
 </div>
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=225e05de">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=a2abf212">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1931,16 +1893,16 @@ face_mesh = mp_face_mesh.FaceMesh()</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">cap</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">VideoCapture</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-5"></div>
+<div class="clipboard-copy-txt" id="cell-5">cap = cv2.VideoCapture(1)</div>
 </div>
 </div>
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=c6f39adb">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=871143c4">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1958,64 +1920,80 @@ face_mesh = mp_face_mesh.FaceMesh()</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="k">with</span> <span class="n">FaceLandmarker</span><span class="o">.</span><span class="n">create_from_options</span><span class="p">(</span><span class="n">options</span><span class="p">)</span> <span class="k">as</span> <span class="n">landmarker</span><span class="p">:</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">ret</span><span class="p">,</span> <span class="n">frame</span> <span class="o">=</span> <span class="n">cap</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">ret</span><span class="p">:</span>
+            <span class="k">break</span>
 
-    <span class="n">ret</span><span class="p">,</span><span class="n">frame</span> <span class="o">=</span> <span class="n">cap</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+        <span class="n">h</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">frame</span><span class="o">.</span><span class="n">shape</span>
 
-    <span class="k">if</span> <span class="n">ret</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">True</span><span class="p">:</span>
-        <span class="k">break</span>
+        <span class="c1"># Converte BGR (OpenCV) -&gt; RGB (MediaPipe)</span>
+        <span class="n">rgb_frame</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2RGB</span><span class="p">)</span>
 
-    <span class="n">h</span><span class="p">,</span><span class="n">w</span><span class="p">,</span><span class="n">_</span> <span class="o">=</span> <span class="n">frame</span><span class="o">.</span><span class="n">shape</span>
-    <span class="n">rgb_image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">frame</span><span class="p">,</span><span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2RGB</span><span class="p">)</span>
+        <span class="c1"># Cria objeto de imagem do MediaPipe</span>
+        <span class="n">mp_image</span> <span class="o">=</span> <span class="n">mp</span><span class="o">.</span><span class="n">Image</span><span class="p">(</span><span class="n">image_format</span><span class="o">=</span><span class="n">mp</span><span class="o">.</span><span class="n">ImageFormat</span><span class="o">.</span><span class="n">SRGB</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">rgb_frame</span><span class="p">)</span>
 
+        <span class="c1"># Timestamp em ms obrigatório para VIDEO</span>
+        <span class="n">timestamp_ms</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span>
 
-    <span class="n">ressult</span> <span class="o">=</span> <span class="n">face_mesh</span><span class="o">.</span><span class="n">process</span><span class="p">(</span><span class="n">rgb_image</span><span class="p">)</span>
+        <span class="c1"># Executa a detecção</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">landmarker</span><span class="o">.</span><span class="n">detect_for_video</span><span class="p">(</span><span class="n">mp_image</span><span class="p">,</span> <span class="n">timestamp_ms</span><span class="p">)</span>
 
-    <span class="k">for</span> <span class="n">facial_landmarks</span> <span class="ow">in</span> <span class="n">ressult</span><span class="o">.</span><span class="n">multi_face_landmarks</span><span class="p">:</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">468</span><span class="p">):</span>
-            <span class="n">pt1</span> <span class="o">=</span> <span class="n">facial_landmarks</span><span class="o">.</span><span class="n">landmark</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-            <span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">pt1</span><span class="o">.</span><span class="n">x</span><span class="o">*</span><span class="n">w</span><span class="p">)</span>
-            <span class="n">y</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">pt1</span><span class="o">.</span><span class="n">y</span><span class="o">*</span><span class="n">h</span><span class="p">)</span>
-            <span class="n">cv2</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">),</span> <span class="mi">1</span><span class="p">,(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-    
-    <span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s2">"Img"</span><span class="p">,</span> <span class="n">frame</span><span class="p">)</span>
+        <span class="c1"># Desenha landmarks, se houver</span>
+        <span class="k">if</span> <span class="n">result</span><span class="o">.</span><span class="n">face_landmarks</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">face_landmarks</span> <span class="ow">in</span> <span class="n">result</span><span class="o">.</span><span class="n">face_landmarks</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">landmark</span> <span class="ow">in</span> <span class="n">face_landmarks</span><span class="p">:</span>
+                    <span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">landmark</span><span class="o">.</span><span class="n">x</span> <span class="o">*</span> <span class="n">w</span><span class="p">)</span>
+                    <span class="n">y</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">landmark</span><span class="o">.</span><span class="n">y</span> <span class="o">*</span> <span class="n">h</span><span class="p">)</span>
+                    <span class="n">cv2</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 
-    <span class="n">key</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">waitKey</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="mi">27</span><span class="p">:</span>           
-        <span class="k">break</span>               
+        <span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s2">"Img"</span><span class="p">,</span> <span class="n">frame</span><span class="p">)</span>
+
+        <span class="n">key</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">waitKey</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="mi">27</span><span class="p">:</span>
+            <span class="k">break</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-6">while True:
+<div class="clipboard-copy-txt" id="cell-6">with FaceLandmarker.create_from_options(options) as landmarker:
+    while True:
+        ret, frame = cap.read()
+        if not ret:
+            break
 
-    ret,frame = cap.read()
+        h, w, _ = frame.shape
 
-    if ret is not True:
-        break
+        # Converte BGR (OpenCV) -&gt; RGB (MediaPipe)
+        rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
 
-    h,w,_ = frame.shape
-    rgb_image = cv2.cvtColor(frame,cv2.COLOR_BGR2RGB)
+        # Cria objeto de imagem do MediaPipe
+        mp_image = mp.Image(image_format=mp.ImageFormat.SRGB, data=rgb_frame)
 
+        # Timestamp em ms obrigatório para VIDEO
+        timestamp_ms = int(time.time() * 1000)
 
-    ressult = face_mesh.process(rgb_image)
+        # Executa a detecção
+        result = landmarker.detect_for_video(mp_image, timestamp_ms)
 
-    for facial_landmarks in ressult.multi_face_landmarks:
-        for i in range(0,468):
-            pt1 = facial_landmarks.landmark[i]
-            x = int(pt1.x*w)
-            y = int(pt1.y*h)
-            cv2.circle(frame, (x,y), 1,(0,255,0),-1)
-    
-    cv2.imshow("Img", frame)
+        # Desenha landmarks, se houver
+        if result.face_landmarks:
+            for face_landmarks in result.face_landmarks:
+                for landmark in face_landmarks:
+                    x = int(landmark.x * w)
+                    y = int(landmark.y * h)
+                    cv2.circle(frame, (x, y), 1, (0, 255, 0), -1)
 
-    key = cv2.waitKey(1)
-    if key == 27:           
-        break               </div>
+        cv2.imshow("Img", frame)
+
+        key = cv2.waitKey(1)
+        if key == 27:
+            break</div>
 </div>
 </div>
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=8a362e04">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=a25fa45e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -2033,11 +2011,11 @@ face_mesh = mp_face_mesh.FaceMesh()</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">cv2</span><span class="o">.</span><span class="n">destroyAllWindows</span><span class="p">()</span>
-<span class="n">cap</span><span class="o">.</span><span class="n">release</span><span class="p">()</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">cap</span><span class="o">.</span><span class="n">release</span><span class="p">()</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">destroyAllWindows</span><span class="p">()</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-7">cv2.destroyAllWindows()
-cap.release()</div>
+<div class="clipboard-copy-txt" id="cell-7">cap.release()
+cv2.destroyAllWindows()</div>
 </div>
 </div>
 </div>
@@ -2046,7 +2024,60 @@ cap.release()</div>
 </div>
 </div> <!-- jp-Notebook -->
 </div> <!-- jupyter-wrapper -->
-<style type="text/css">.quiz {
+<div id="quiz-progress-sidebar" aria-label="Quiz Progress" style="display: none;">
+  <!-- mkdocs-quiz progress sidebar (desktop) -->
+  <label class="md-nav__title">
+    <span class="md-nav__icon md-icon"></span>
+    Quiz Progress
+  </label>
+  <ul class="md-nav__list" data-md-component="quiz-progress">
+    <li class="md-nav__item">
+      <div class="md-nav__link">
+        <span class="md-ellipsis">
+          Answered: <span class="quiz-progress-answered">0</span> / <span class="quiz-progress-total">0</span> (<span class="quiz-progress-answered-percentage">0%</span>)
+        </span>
+      </div>
+    </li>
+    <li class="md-nav__item">
+      <div class="md-nav__link">
+        <div class="quiz-progress-bar">
+          <div class="quiz-progress-bar-incorrect" style="width: 0%"></div>
+          <div class="quiz-progress-bar-correct" style="width: 0%"></div>
+        </div>
+      </div>
+    </li>
+    <li class="md-nav__item">
+      <div class="md-nav__link quiz-correct-reset">
+        <span class="md-ellipsis">
+          Correct: <span class="quiz-progress-score">0</span> / <span class="quiz-progress-score-total">0</span> (<span class="quiz-progress-score-percentage">0%</span>)
+        </span>
+        <a href="#" class="quiz-reset-all-link" style="color: var(--md-primary-fg-color); text-decoration: none;">
+          Reset
+        </a>
+      </div>
+    </li>
+  </ul>
+</div>
+<nav id="quiz-progress-mobile" class="quiz-progress-mobile md-nav" aria-label="Quiz Progress" style="display: none;">
+  <!-- mkdocs-quiz progress sidebar (mobile) -->
+  <div class="quiz-progress-bar">
+    <div class="quiz-progress-bar-incorrect" style="width: 0%"></div>
+    <div class="quiz-progress-bar-correct" style="width: 0%"></div>
+  </div>
+  <div data-md-component="quiz-progress">
+    <div class="quiz-correct-reset">
+      <span class="md-ellipsis">
+        Answered: <span class="quiz-progress-answered">0</span> / <span class="quiz-progress-total">0</span>
+      </span>
+      <span class="md-ellipsis">
+        Correct: <span class="quiz-progress-score">0</span> / <span class="quiz-progress-score-total">0</span>
+      </span>
+      <a href="#" class="quiz-reset-all-link" style="color: var(--md-primary-fg-color); text-decoration: none;">
+        Reset
+      </a>
+    </div>
+  </div>
+</nav><style type="text/css">.quiz {
   border: 1px solid black;
   padding: 1rem;
   margin: 1rem 0;
@@ -2093,10 +2124,12 @@ cap.release()</div>
 .wrong label,
 .wrong label * {
   color: #dc3545;
+  text-decoration: line-through;
 }
 .correct label,
 .correct label * {
   color: #198754;
+  font-weight: bold;
 }
 
 fieldset {
@@ -3017,16 +3050,6 @@ window.mkdocsQuizConfig = {
     },
   };
 
-  // Translate template elements with data-quiz-translate attributes
-  function translateTemplateElements() {
-    document.querySelectorAll("[data-quiz-translate]").forEach((element) => {
-      const key = element.getAttribute("data-quiz-translate");
-      if (key) {
-        element.textContent = t(key);
-      }
-    });
-  }
-
   // Truncate text to a maximum length, adding ellipsis if needed
   function truncateText(text, maxLength) {
     if (text.length <= maxLength) return text;
@@ -3661,9 +3684,6 @@ window.mkdocsQuizConfig = {
     // Initialize tracker
     quizTracker.init();
 
-    // Translate template elements
-    translateTemplateElements();
-
     // Reposition sidebar for Material theme TOC integration
     repositionSidebar();
 
@@ -3724,7 +3744,7 @@ window.mkdocsQuizConfig = {
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="April 24, 2023 23:40:17 UTC">April 24, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="April 16, 2026 17:09:04 UTC">April 16, 2026</span>
   </span>
 
     
