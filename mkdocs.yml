@@ -198,9 +198,9 @@ nav:
     #     - Lab02 : aulas/iot/lab9/index.md
     #     - Lab03 : aulas/iot/lab10/index.md
 
-  # - Ciência de Dados:
-  #   - Introdução: aulas/IA/intro/index.md
-  #   - Descoberta do Conhecimento: aulas/IA/intro/index2.md
+  - Ciência de Dados:
+    - Introdução: aulas/IA/intro/index.md
+    - Descoberta do Conhecimento: aulas/IA/intro/index2.md
   # - Machine Learning:
   #   - Manipulação de Dados:
   #     - Dataframe: aulas/IA/lab01/dataframe.ipynb 
