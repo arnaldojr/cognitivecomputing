@@ -201,15 +201,15 @@ nav:
   - Ciência de Dados:
     - Introdução: aulas/IA/intro/index.md
     - Descoberta do Conhecimento: aulas/IA/intro/index2.md
-  # - Machine Learning:
-  #   - Manipulação de Dados:
-  #     - Dataframe: aulas/IA/lab01/dataframe.ipynb 
-  #     - Pré-processamento: aulas/IA/lab04/dicasDePreprocessamento.ipynb  
-  #   - Aprendizado Supervisionado - Classificação:
-  #     - Introdução: aulas/IA/lab02/classificacao-ml-completa.md
-  #     - lab1: aulas/IA/lab02/ml-classificador-iris.ipynb
-  #     - lab2: aulas/IA/lab02/ml-classificador-digito.ipynb
-  #     - lab3: aulas/IA/lab-04/aula8.ipynb
+    - Manipulação de Dados:
+      - Dataframe: aulas/IA/lab01/dataframe.ipynb 
+      - Pré-processamento: aulas/IA/lab04/dicasDePreprocessamento.ipynb  
+  - Machine Learning:
+    - Aprendizado Supervisionado - Classificação:
+      - Introdução: aulas/IA/lab02/classificacao-ml-completa.md
+      - lab1: aulas/IA/lab02/ml-classificador-iris.ipynb
+      - lab2: aulas/IA/lab02/ml-classificador-digito.ipynb
+      - lab3: aulas/IA/lab-04/aula8.ipynb
   #   - Aprendizado Supervisionado - Regressão:
   #     - Introdução: aulas/IA/lab03/regressao-ml-completa.md
   #     - lab1: aulas/IA/lab03/regressao.ipynb
