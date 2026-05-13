@@ -8,6 +8,12 @@ Depois disso, cada grupo deverá levantar **duas hipóteses** e investigar se os
 
 ---
 
+## data de apresentação
+
+DATA DE APRESENTAÇÃO PRESENCIAL DO CP3 **21 de MAIO de 2026**.
+
+---
+
 ## O que o grupo deve fazer
 
 Cada grupo deverá:
