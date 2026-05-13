@@ -1,46 +1,70 @@
-# CHECKPOINT 3
+## CHECKPOINT 3
 
-Leia com atenção as instruções gerais sobre checkpoint;
+Pessoal, como combinamos em aula, o CP é baseado em uma investigação orientada por dados reais.
 
-O checkpoint3 é a cereja do bolo antes das férias e será sobre comunicação entre sistemas, no nosso caso Arduino e visão computacional.
+A ideia é partir de uma **matéria da mídia**, o grupo deve inicialmente localizar a **fonte original dos dados**, analisar os **dados brutos** e verificar se as informações apresentadas na notícia estão coerentes com a fonte oficial.
 
+Depois disso, cada grupo deverá levantar **duas hipóteses** e investigar se os dados apresentam evidências, padrões ou associações que ajudem a responder essas hipóteses.
 
-## Descrição do problema:
+---
 
-O objetivo deste desafio é criar um sistema que utilize visão computacional em Python e um Arduino para realizar diferentes tarefas de acordo com o objetivo escolhido pelo grupo.
+## O que o grupo deve fazer
 
-O grupo pode escolher entre três alternativas de objetivos: ``classificação de cores, detecção de mãos ou detecção de faces``. O sistema deve capturar imagens utilizando uma câmera e processá-las usando a biblioteca OpenCV e/ou Mediapipe. O sistema deve então comunicar-se com um Arduino via comunicação serial para realizar tarefas específicas com base no objetivo escolhido.
+Cada grupo deverá:
 
-### Alternativas de objetivos:
+1. escolher um dos temas indicados a seguir;
+2. ler as duas matérias-base do tema escolhido;
+3. identificar quais informações quantitativas aparecem nas matérias;
+4. localizar a fonte primária dos dados;
+5. obter os dados oficiais ou dados brutos disponíveis;
+6. verificar se as informações da matéria estão corretas;
+7. organizar e preparar os dados para análise;
+8. levantar duas hipóteses investigáveis;
+9. realizar uma análise exploratória dos dados;
+10. apresentar os resultados obtidos.
 
-- ``Classificação de cores``: O sistema deverá identificar e classificar objetos de diferentes cores e realizar ações específicas com base na cor identificada.
-- ``Detecção de mãos com Mediapipe``: O sistema deverá detectar mãos em tempo real e identificar gestos específicos, realizando ações específicas com base nos gestos identificados.
-- ``Detecção de faces``: O sistema deverá detectar faces em tempo real e realizar ações específicas com base na quantidade de faces detectadas ou nas características faciais (olho aberto/fechado, sorrindo..).
+Sigam a lógica do **CRISP-DM**, com as etapas de entendimento do problema, entendimento dos dados, preparação dos dados...
 
-## Requisitos técnicos:
+---
 
-1. Utilização da linguagem Python para desenvolver a parte de visão computacional.
-2. Utilização da biblioteca OpenCV para processar e analisar as imagens.
-3. Comunicação serial entre o sistema de visão computacional em Python e o Arduino.
-4. Implementação de tarefas específicas no Arduino com base na cor do objeto detectado.
-5. Documentação em repositório github de forma clara e completa do projeto, incluindo instruções para replicar o sistema e testes realizados.
+## Resultado esperado
 
-## Rubrica de avaliação:
+Ao final, o grupo deverá apresentar:
 
-### Funcionalidade (até 5 pontos)
+- a matéria jornalística utilizada como ponto de partida;
+- a fonte oficial dos dados encontrada;
+- a validação dos principais números apresentados na matéria;
+- a base de dados utilizada ou o link para a base oficial;
+- as duas hipóteses investigadas;
+- a análise exploratória realizada nos dados brutos;
+- conclusões obtidas a partir dos dados brutos, incluindo evidências, padrões ou associações encontrados.
 
-- O sistema consegue capturar e processar imagens adequadamente.
-- A comunicação serial entre o Python e o Arduino é estabelecida e funciona corretamente.
-- O Arduino realiza as tarefas específicas de acordo com o objeto desejado.
+---
 
-### Qualidade do código (até 2 pontos)
+## Apresentação
 
-- O código é bem estruturado e fácil de entender.
-- Boas práticas de programação são utilizadas, incluindo comentários, nomes de variáveis e funções apropriados, facilitando a manutenção e a compreensão.
+Cada grupo deverá realizar uma apresentação curta, com duração aproximada de **5 a 7 minutos**, contemplando:
 
+1. tema escolhido;
+2. problema apresentado na matéria;
+3. fonte oficial dos dados;
+4. validação das informações da notícia;
+5. hipóteses analisadas;
+6. principais resultados;
+7. conclusão crítica.
 
-### Documentação (até 3 pontos)
+---
 
-- A documentação do projeto em repositório github de forma clara e completa, incluindo instruções para replicar o sistema.
-- Video demonstrando o funcionamento do projeto de forma clara e completa.
+## Temas e matérias-base
+
+| Tema | Matéria-base 1 | Matéria-base 2 |
+|---|---|---|
+| **Feminicídio e violência contra a mulher** | [CNN Brasil — Feminicídios sobem 31% em São Paulo no bimestre](https://www.cnnbrasil.com.br/nacional/sudeste/sp/feminicidios-sobem-31-em-sao-paulo-no-bimestre/) | [Globoplay / SP1 — SP registrou um feminicídio a cada 25 horas no primeiro bimestre](https://globoplay.globo.com/v/14481626/) | SSP-SP, Sinesp/MJSP, estatísticas criminais |
+| **Dengue, saúde pública e clima** | [Agência Brasil — Casos de dengue no Brasil caem 75% em 2026](https://agenciabrasil.ebc.com.br/saude/noticia/2026-04/casos-de-dengue-no-brasil-caem-75-em-2026) | [Globoplay — Casos de dengue no Brasil caem 75% nos primeiros meses de 2026](https://globoplay.globo.com/v/14537831/) | Ministério da Saúde, Painel de Arboviroses, DataSUS, INMET |
+| **Queimadas, focos de calor e clima** | [Agência Brasil — Janeiro tem número de focos de calor duas vezes maior que a média](https://agenciabrasil.ebc.com.br/meio-ambiente/noticia/2026-01/janeiro-tem-numero-de-focos-de-calor-duas-vezes-maior-que-media) | [CNN Brasil — Seca recua, mas risco de fogo volta a subir em 2026](https://www.cnnbrasil.com.br/blogs/pedro-cortes/nacional/brasil/seca-recua-mas-risco-de-fogo-volta-a-subir-em-2026/) | INPE, BDQueimadas, TerraBrasilis, INMET |
+| **Mercado de trabalho, desemprego e renda** | [CNN Brasil — Desemprego sobe para 6,1% no trimestre encerrado em março, diz IBGE](https://www.cnnbrasil.com.br/economia/macroeconomia/pnad-desemprego-ibge-30-abril-26/) | [CNN Brasil — IBGE: mercado aquecido faz Brasil ter recorde de 143 milhões com rendimento](https://www.cnnbrasil.com.br/economia/macroeconomia/ibge-mercado-aquecido-faz-brasil-ter-recorde-de-143-milhoes-com-rendimento/) | IBGE, PNAD Contínua, SIDRA, Ipeadata |
+| **Enem, educação e desigualdade** | [CNN Brasil — Veja quais são as 50 escolas com as melhores notas no Enem 2024](https://www.cnnbrasil.com.br/educacao/veja-quais-sao-as-50-escolas-com-as-melhores-notas-no-enem-2024/) | [CNN Brasil — Escolas particulares tiveram as melhores notas no Enem 2024, aponta Inep](https://www.cnnbrasil.com.br/educacao/escolas-particulares-tiveram-as-melhores-notas-no-enem-2024-aponta-inep/) | INEP, Microdados do Enem, Censo Escolar |
+| **Acidentes de trânsito e rodovias federais** | [CNN Brasil — Com 130 mortes, rodovias federais registram Carnaval mais letal da década](https://www.cnnbrasil.com.br/nacional/brasil/com-130-mortes-rodovias-federais-registram-carnaval-mais-letal-da-decada/) | [CNN Brasil — Acidentes em rodovias federais deixam ao menos 84 mortos durante feriado](https://www.cnnbrasil.com.br/nacional/brasil/acidentes-em-rodovias-federais-deixam-ao-menos-84-mortos-durante-feriado/) | PRF, dados abertos de acidentes em rodovias federais, SENATRAN |
+| **Saneamento básico e desigualdade urbana** | [CNN Brasil — Saneamento básico: apenas três cidades têm 100% de atendimento de coleta total de esgoto](https://www.cnnbrasil.com.br/nacional/brasil/saneamento-7-capitais-tem-90-de-atendimento-de-coleta-total-de-esgoto/) | [CNN Brasil — Apenas 2,5% das cidades do país estão rumo à universalização do saneamento](https://www.cnnbrasil.com.br/saude/apenas-25-das-cidades-do-pais-estao-rumo-a-universalizacao-do-saneamento/) | SINISA, SNIS, Ministério das Cidades, Instituto Trata Brasil |
+
 

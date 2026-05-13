@@ -120,6 +120,7 @@ nav:
     - Orientações gerais: checkpoint/index.md
     - CP1: checkpoint/cp1.md
     - CP2: checkpoint/cp2.md
+    - CP3: checkpoint/cp3.md
     # - CheckPoint 5: checkpoint/cp.md
     # - CheckPoint 6: checkpoint/cp6.md    
   - Processamento Digital de Imagens:  
@@ -210,18 +211,18 @@ nav:
       - lab1: aulas/IA/lab02/ml-classificador-iris.ipynb
       - lab2: aulas/IA/lab02/ml-classificador-digito.ipynb
       - lab3: aulas/IA/lab-04/aula8.ipynb
-  #   - Aprendizado Supervisionado - Regressão:
-  #     - Introdução: aulas/IA/lab03/regressao-ml-completa.md
-  #     - lab1: aulas/IA/lab03/regressao.ipynb
-  #     - lab2: aulas/IA/lab03/regressao2.ipynb
-  #     - lab3: aulas/IA/lab03/preco-notebook.ipynb
-  #   - Validação de Modelos: aulas/IA/lab05/validacaocruzada.ipynb
-  #   - Aprendizado Não Supervisionado: 
-  #     - lab1: aulas/IA/lab-01/aula5.ipynb
-  #     - lab2: aulas/IA/lab-01/aula5-parte2.ipynb
-  #     - lab2: aulas/IA/lab-02/aula6.ipynb
-  #     - lab3: aulas/IA/lab-03/aula7.ipynb
-  #     - PCA: aulas/IA/lab04/reducao_dimensionalidade_pca.ipynb 
+    - Aprendizado Supervisionado - Regressão:
+      - Introdução: aulas/IA/lab03/regressao-ml-completa.md
+      - lab1: aulas/IA/lab03/regressao.ipynb
+      - lab2: aulas/IA/lab03/regressao2.ipynb
+      - lab3: aulas/IA/lab03/preco-notebook.ipynb
+    - Validação de Modelos: aulas/IA/lab05/validacaocruzada.ipynb
+    - Aprendizado Não Supervisionado: 
+      - lab1: aulas/IA/lab-01/aula5.ipynb
+      - lab2: aulas/IA/lab-01/aula5-parte2.ipynb
+      - lab2: aulas/IA/lab-02/aula6.ipynb
+      - lab3: aulas/IA/lab-03/aula7.ipynb
+      - PCA: aulas/IA/lab04/reducao_dimensionalidade_pca.ipynb 
   # - Deep Learning:
   #   - Introdução Redes Neurais: 
   #       - aulas/IA/lab06/redesneurais.md
