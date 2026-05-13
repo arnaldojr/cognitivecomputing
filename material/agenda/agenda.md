@@ -38,8 +38,8 @@
 | 16/04/2026      | aplicações media pipe                                                                     |
 | 23/04/2026      | AVALIAÇÃO EM AULA CP2<br>CP2 - Sistema de deteção de objetos                    |
 | 30/04/2026      | Introdução a ciência de dados                                                             |
-| 07/05/2026      | - - -                                  |
-| 14/05/2026      | - - -                                                                |
+| 07/05/2026      | Introdução ao aprendizado de máquina                                  |
+| 14/05/2026      | aula estudio para o cp3                                                                |
 | 21/05/2026      | AVALIAÇÃO EM AULA CP3<br>CP3                    |
 | 28/05/2026      | 25/05 - Inicio Global Solutions                                                                 |
 
