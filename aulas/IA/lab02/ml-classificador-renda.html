@@ -13,6 +13,10 @@
         <link rel="canonical" href="https://arnaldojr.github.io/cognitivecomputing/aulas/IA/lab02/ml-classificador-renda.html">
       
       
+        <link rel="prev" href="ml-classificador-digito.html">
+      
+      
+        <link rel="next" href="../lab03/regressao-ml-completa.html">
       
       
         
@@ -23,7 +27,7 @@
     
     
       
-        <title>Ml classificador renda - cognitivecomputing</title>
+        <title>lab3 - cognitivecomputing</title>
       
     
     
@@ -112,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Ml classificador renda
+              lab3
             
           </span>
         </div>
@@ -1263,18 +1267,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
         
           
           <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
@@ -1295,7 +1301,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1310,18 +1316,20 @@
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1" checked>
         
           
           <label class="md-nav__link" for="__nav_7_1" id="__nav_7_1_label" tabindex="0">
@@ -1342,7 +1350,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_7_1">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1441,10 +1449,35 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../lab-04/aula8.ipynb" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    lab3
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="ml-classificador-renda.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1460,6 +1493,113 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objetivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivos
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classificador-de-renda" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Classificador de renda
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Classificador de renda">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#importa-as-bibliotecas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Importa as bibliotecas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#carrega-o-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Carrega o dataset
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Carrega o dataset">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#verificar-se-possui-dados-ausentes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verificar se possui dados ausentes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#classificadores-naive-bayes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Classificadores Naive Bayes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compare-o-resultado-de-acuracia-com-pelo-menos-1-outro-metodo-de-machine-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compare o resultado de acuracia com pelo menos 1 outro método de machine learning.
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2003,7 +2143,7 @@
   
 
 
-  <h1>Ml classificador renda</h1>
+  <h1>lab3</h1>
 
 <script>
 (function (global, factory) {
