@@ -1,184 +1,186 @@
 # Classificação em Machine Learning
 
-Nesta aula, vamos aprender a treinar modelos de machine learning para problemas de classificação, passando por casos binários, múltiplas classes e múltiplos rótulos. Também vamos entender como selecionar e interpretar as métricas mais adequadas, analisando a matriz de confusão e os níveis de confiança das previsões.
+Nesta aula, vamos estudar classificação de forma prática e tecnicamente correta: formulação do problema, escolha de algoritmo, avaliação com métricas adequadas e interpretação de erros do modelo.
 
 ### Atividades Práticas
 As seguintes atividades foram preparadas para reforçar os conceitos abordados:
 
 - **[Lab 1: Flores Iris](ml-classificador-iris.ipynb)**  
-  Uma introdução aos conceitos básicos de classificação, utilizando o famoso dataset Iris para prever a espécie de uma flor.
+  Introdução aos conceitos básicos de classificação usando o dataset Iris.
 - **[Lab 2: Classificação de dígitos](ml-classificador-digito.ipynb)**  
-  Uma exploração mais aprofundada, com foco em problemas multiclasses. O objetivo é criar um modelo para identificar dígitos manuscritos (de 0 a 9) a partir de imagens.
+  Foco em problema multiclasse com imagens de dígitos (0 a 9).
 - **[Lab 3: Classificação de renda](ml-classificador-renda.ipynb)**  
-  Um desafio de classificação binária, onde treinamos um modelo para prever se a renda de uma pessoa é superior ou inferior a 50 mil dólares por ano, com base em suas características demográficas.
+  Problema binário para prever se a renda anual é maior que 50 mil dólares.
 
 ### Datasets
 Os laboratórios utilizam os seguintes conjuntos de dados:
-- **[renda](df.csv)**: Dataset de características demográficas, utilizado no Lab 3 para o problema de classificação de renda.
+- **[renda](df.csv)**: dataset de características demográficas usado no Lab 3.
 
 ## O que é Classificação?
 
-A **classificação** em *Machine Learning* é uma tarefa em que o objetivo do modelo é **prever a qual categoria ou classe um determinado exemplo pertence**, a partir de suas características (também chamadas de *features*).
+A **classificação** em *Machine Learning* é uma tarefa supervisionada em que o modelo aprende uma função que mapeia entradas (features) para uma classe discreta.
 
-Pense nela como um processo de **tomada de decisão automatizada**: o modelo analisa padrões nos dados de treinamento e aprende regras internas que o ajudam a classificar novos exemplos corretamente.
+Em termos simples: dado um novo exemplo, o modelo escolhe qual rótulo é o mais provável.
 
 ### Tipos de Problemas de Classificação
 
-1. **Classificação binária** – Quando existem apenas duas classes possíveis.  
-   *Exemplo:* detectar se um e-mail é “spam” ou “não spam”.
+1. **Classificação binária**: duas classes possíveis.  
+   *Exemplo:* spam vs. não spam.
+2. **Classificação multiclasse**: mais de duas classes e cada amostra pertence a uma única classe.  
+   *Exemplo:* reconhecer o dígito de 0 a 9.
+3. **Classificação multilabel**: uma mesma amostra pode ter vários rótulos ao mesmo tempo.  
+   *Exemplo:* uma imagem marcada como "praia", "pôr do sol" e "pessoas".
 
-2. **Classificação multiclasses** – Quando há mais de duas classes e cada exemplo pertence a apenas uma delas.  
-   *Exemplo:* identificar o gênero de um filme como “comédia”, “drama” ou “ação”.
+Aplicações comuns:
 
-A classificação pode ser aplicada em diversas áreas, como:
-
-- Saúde (diagnóstico de doenças)
+- Saúde (triagem e apoio ao diagnóstico)
+- Finanças (risco de crédito e fraude)
 - Indústria (detecção de falhas)
-- Finanças (análise de risco)
-- Reconhecimento de imagens
-- Processamento de linguagem natural
+- Visão computacional e NLP
 
-## Como Funciona o Treinamento
+## Fluxo de Treinamento Recomendado
 
-No aprendizado supervisionado de um modelo de classificação, trabalhamos com dois conjuntos de dados:
+Em cenários reais, o fluxo mínimo recomendado é:
 
-- **Conjunto de Treinamento**: É o conjunto de dados rotulados (com as respostas corretas) que usamos para ensinar o modelo a reconhecer padrões. O modelo "aprende" a mapear as características de entrada para suas respectivas classes de saída.
+1. Separar os dados em treino e teste (e validação quando necessário).
+2. Ajustar pré-processamento e modelo **apenas no treino** para evitar vazamento de dados.
+3. Selecionar hiperparâmetros com validação cruzada.
+4. Avaliar no teste apenas no final.
 
-- **Conjunto de Teste**: É um conjunto de dados completamente novo, não utilizado durante o treinamento. Ele serve para avaliar se o modelo aprendeu bem e consegue generalizar para dados que ele nunca viu antes, simulando o uso no mundo real.
+Boas práticas importantes:
 
+- Em classificação, prefira `train_test_split(..., stratify=y)` para manter proporções de classes.
+- Use `Pipeline` quando houver transformação de dados (escala, imputação, encoding).
+- Não escolha modelo usando o conjunto de teste.
 
-## Principais algoritmos de classificação
+## Principais Algoritmos de Classificação
 
-Existem diferentes tipos de algoritmos para classificação. Entre os mais usados, temos:
+- **KNN**: baseado em vizinhança; sensível à escala das features.
+- **Árvores/Random Forest**: capturam relações não lineares e interações.
+- **Naive Bayes**: simples, rápido e forte baseline para texto.
+- **Regressão Logística**: baseline robusto para binário e também multiclasse (`multinomial`).
+- **SVM**: bom desempenho em margens bem definidas, pode exigir tuning cuidadoso.
+- **Redes neurais**: alta capacidade, especialmente em dados complexos (imagem, texto, áudio).
 
-- K-Nearest Neighbors (KNN) → Baseado em proximidade no espaço das features.
-- Árvores de Decisão e Random Forests → Divisão hierárquica de dados com regras.
-- Naive Bayes → Baseado em probabilidade condicional.
-- Regressão Logística → Modelo estatístico para classificação binária.
-- Support Vector Machines (SVM) → Cria hiperplanos separadores.
-- Redes Neurais → Aprendem representações complexas.
-
-
-### Exemplo em Python
+### Exemplo em Python (pipeline + avaliação básica)
 
 ```python
 from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
-from sklearn.tree import DecisionTreeClassifier
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import StandardScaler
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import classification_report, confusion_matrix, accuracy_score
 
-# Carregar dataset
+# 1) Carrega dados
 data = load_iris()
+X, y = data.data, data.target
+
+# 2) Split estratificado
 X_train, X_test, y_train, y_test = train_test_split(
-    data.data, data.target, test_size=0.3, random_state=42
+    X, y, test_size=0.3, random_state=42, stratify=y
 )
 
-# Treinar modelo
-model = DecisionTreeClassifier()
-model.fit(X_train, y_train)
+# 3) Pipeline (escala + modelo)
+model = Pipeline([
+    ("scaler", StandardScaler()),
+    ("clf", LogisticRegression(max_iter=1000, multi_class="auto")),
+])
 
-# Fazer previsões
+# 4) Treina e prevê
+model.fit(X_train, y_train)
 y_pred = model.predict(X_test)
 
-# Avaliar resultados
-print(f"A classe predita é: {y_pred}")
+# 5) Avalia
+print(f"Acurácia: {accuracy_score(y_test, y_pred):.3f}")
+print("\nMatriz de confusão:")
+print(confusion_matrix(y_test, y_pred))
+print("\nRelatório de classificação:")
+print(classification_report(y_test, y_pred, digits=3))
 ```
 
-## Métricas de avaliação 
+## Métricas de Avaliação
 
-Para saber se o nosso modelo é bom, precisamos avaliar o seu desempenho. A forma mais comum de fazer isso é usando métricas de avaliação, que nos ajudam a entender não apenas quantos acertos o modelo teve, mas também os tipos de erros que ele cometeu.
+Não existe "métrica universal". A métrica correta depende do custo do erro no contexto do problema.
 
 ### Matriz de Confusão
 
-A matriz de confusão é uma ferramenta fundamental para visualizar o desempenho de um classificador. Ela resume os resultados do modelo em uma tabela, comparando as previsões com os valores reais. Para problemas binários, a matriz tem a seguinte estrutura:
+A matriz de confusão mostra, para cada classe, quantos exemplos foram classificados corretamente e onde o modelo erra.
 
-|                | **Predição: Positivo** | **Predição: Negativo** |
-|----------------|------------------------|------------------------|
-| **Real: Positivo** | Verdadeiro Positivo (VP) | Falso Negativo (FN)    |
-| **Real: Negativo** | Falso Positivo (FP)      | Verdadeiro Negativo (VN) |
+Para classificação binária:
 
-onde: 
+|                | **Predito Positivo** | **Predito Negativo** |
+|----------------|----------------------|----------------------|
+| **Real Positivo** | Verdadeiro Positivo (VP) | Falso Negativo (FN) |
+| **Real Negativo** | Falso Positivo (FP) | Verdadeiro Negativo (VN) |
 
-- **Verdadeiro Positivo (VP)**: O modelo previu a classe positiva e a classe real era positiva. *(Acerto)*
-- **Verdadeiro Negativo (VN)**: O modelo previu a classe negativa e a classe real era negativa. *(Acerto)*
-- **Falso Positivo (FP)**: O modelo previu a classe positiva, mas a classe real era negativa. *(Erro tipo I)*
-- **Falso Negativo (FN)**: O modelo previu a classe negativa, mas a classe real era positiva. *(Erro tipo II)*
+### Métricas principais (binário)
 
-
-A partir da matriz de confusão, podemos calcular as métricas mais comuns:
-
-### 1. **Acurácia (Accuracy)**
-
-Mede a proporção total de previsões corretas. É a métrica mais simples, mas pode ser enganosa em *datasets* desbalanceados.
+1. **Acurácia**
 
 \[
 \text{Acurácia} = \frac{VP + VN}{VP + VN + FP + FN}
 \]
 
+Boa em classes balanceadas. Pode ser enganosa em dados desbalanceados.
 
-### 2. **Precisão (Precision)**
-
-Mede a proporção de previsões positivas que foram realmente corretas. É importante quando o custo de um falso positivo é alto.
+2. **Precisão (Precision)**
 
 \[
 \text{Precisão} = \frac{VP}{VP + FP}
 \]
 
+Importante quando falso positivo é caro (ex.: bloqueio indevido).
 
-### 3. **Revocação (Recall) / Sensibilidade (Sensitivity)**
-
-Mede a proporção de casos positivos reais que o modelo conseguiu identificar corretamente. É importante quando o custo de um falso negativo é alto.
+3. **Revocação (Recall/Sensibilidade)**
 
 \[
 \text{Revocação} = \frac{VP}{VP + FN}
 \]
 
+Importante quando falso negativo é caro (ex.: doença não detectada).
 
-
-### 4. **F1-Score**
-
-É a média harmônica entre precisão e revocação. É útil quando queremos um equilíbrio entre as duas métricas, especialmente em *datasets* desbalanceados.
+4. **F1-score**
 
 \[
-\text{F1-Score} = 2 \times \frac{\text{Precisão} \times \text{Revocação}}{\text{Precisão} + \text{Revocação}}
+\text{F1} = 2 \times \frac{\text{Precisão} \times \text{Revocação}}{\text{Precisão} + \text{Revocação}}
 \]
 
+Útil quando há desequilíbrio de classes e queremos equilíbrio entre precisão e revocação.
 
-### Exemplo em Python
+### Outras métricas úteis
+
+- **Balanced Accuracy**: média do recall por classe; útil com desbalanceamento.
+- **ROC-AUC**: qualidade da ordenação de scores em diferentes limiares.
+- **PR-AUC**: geralmente mais informativa que ROC-AUC em classes muito raras.
+
+### Exemplo em Python (métricas)
 
 ```python
-from sklearn.metrics import classification_report, confusion_matrix, accuracy_score
+from sklearn.metrics import (
+    accuracy_score,
+    balanced_accuracy_score,
+    confusion_matrix,
+    classification_report,
+)
 
-# --------------------------------------------
-# Supondo que o modelo já foi treinado
-# e que temos:
-# y_test -> classes reais (valores corretos)
-# y_pred -> classes previstas pelo modelo
-# --------------------------------------------
+print(f"Acurácia: {accuracy_score(y_test, y_pred):.3f}")
+print(f"Balanced accuracy: {balanced_accuracy_score(y_test, y_pred):.3f}")
 
-# 1. Calcular a Matriz de Confusão
-# Mostra a contagem de acertos e erros para cada classe
-conf_matrix = confusion_matrix(y_test, y_pred)
+print("\nMatriz de confusão:")
+print(confusion_matrix(y_test, y_pred))
 
-# 2. Gerar o Relatório de Classificação
-# Inclui métricas por classe: Precisão, Revocação e F1-Score
-report = classification_report(y_test, y_pred)
-
-# 3. Calcular a Acurácia Global
-# Mede a proporção de previsões corretas em relação ao total
-acuracia = accuracy_score(y_test, y_pred)
-
-# 4. Exibir os resultados
-print("=== Matriz de Confusão ===")
-print(conf_matrix)
-print("\n=== Relatório de Classificação ===")
-print(report)
-print(f"Acurácia média de classificação: {acuracia:.2f}")
-
+print("\nRelatório de classificação:")
+print(classification_report(y_test, y_pred, digits=3))
 ```
+
+> Em problemas multiclasse, observe os agregados **macro avg** (peso igual por classe) e **weighted avg** (ponderado pelo suporte de cada classe).
 
 ---
 
-knn
+## Simuladores interativos
+
+### KNN
 
 ---
 
@@ -188,11 +190,11 @@ knn
   <div style="display:flex;gap:1rem;flex-wrap:wrap;align-items:flex-end">
     <label style="flex:1 1 260px">
       <div><code>k</code>: <strong><span id="kVal">5</span></strong> (ímpares recomendados)</div>
-      <input id="k" type="range" min="1" max="31" step="1" value="1" style="width:100%">
+      <input id="k" type="range" min="1" max="31" step="1" value="5" style="width:100%">
     </label>
 
     <label style="flex:1 1 260px">
-      <div>ruído (dispersão): <strong><span id="noiseVal">1.00</span></strong></div>
+      <div>ruído (dispersão): <strong><span id="noiseVal">1.40</span></strong></div>
       <input id="noise" type="range" min="0.5" max="2.0" step="0.05" value="1.40" style="width:100%">
     </label>
 
@@ -207,7 +209,7 @@ knn
     </div>
 
     <div style="flex:1 1 220px;display:flex;gap:.5rem;justify-content:flex-end">
-      <button id="btnRegen" class="md-button md-button--primary" style="white-space:nowrap">Regerar dataset</button>
+      <button id="btnRegen" class="md-button md-button--primary" style="white-space:nowrap">Regenerar dataset</button>
       <button id="btnReset" class="md-button" style="white-space:nowrap">Reset</button>
     </div>
   </div>
@@ -228,7 +230,7 @@ knn
 
 ---
 
-Regressão logística
+### Regressão logística
 
 --- 
 
@@ -238,15 +240,15 @@ Regressão logística
 
   <div style="display:flex;gap:1rem;flex-wrap:wrap;align-items:flex-end">
     <label style="flex:1 1 220px">
-      <div>w₁: <strong><span id="w1Val">-1.00</span></strong></div>
+      <div>w₁: <strong><span id="w1Val">0.00</span></strong></div>
       <input id="w1" type="range" min="-10" max="10" step="0.01" value="0.00" style="width:100%">
     </label>
     <label style="flex:1 1 220px">
-      <div>w₂: <strong><span id="w2Val">1.00</span></strong></div>
+      <div>w₂: <strong><span id="w2Val">-10.00</span></strong></div>
       <input id="w2" type="range" min="-10" max="10" step="0.01" value="-10.00" style="width:100%">
     </label>
     <label style="flex:1 1 220px">
-      <div>b: <strong><span id="bVal">0.00</span></strong></div>
+      <div>b: <strong><span id="bVal">20.00</span></strong></div>
       <input id="b" type="range" min="-20" max="20" step="0.01" value="20.00" style="width:100%">
     </label>
 

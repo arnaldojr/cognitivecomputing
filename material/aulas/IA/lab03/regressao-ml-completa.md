@@ -1,7 +1,7 @@
 
 # Regressão em Machine Learning
 
-Nesta aula, vamos explorar os fundamentos de problemas de regressão, entender como modelar relações entre variáveis e aplicar esses conceitos em atividades práticas. Nosso objetivo é compreender o problema a ser resolvido e treinar modelos de forma precisa e eficiente.
+Nesta aula, vamos estudar regressão com foco em prática profissional: formulação correta do problema, escolha de modelos, interpretação de métricas e cuidado com generalização.
 
 ### Atividades Práticas
 As seguintes atividades foram preparadas para reforçar os conceitos abordados:
@@ -21,7 +21,7 @@ Os laboratórios utilizam os seguintes conjuntos de dados:
 
 ## O que é regressão?
 
-A regressão é uma técnica de aprendizado supervisionado usada para prever valores numéricos contínuos a partir de variáveis de entrada (features). Em vez de atribuir classes, buscamos estimar quantidades — por exemplo, o preço de um imóvel ou a temperatura amanhã.
+Regressão é uma tarefa de aprendizado supervisionado em que o alvo é um valor numérico contínuo. Em vez de prever classes, estimamos quantidades, como preço de imóvel, consumo de energia ou temperatura.
 
 
 ### Classificação vs Regressão
@@ -54,6 +54,14 @@ y = f(X) + ε
 
 ε representa o ruído — sempre haverá alguma incerteza.
 
+Em regressão linear, uma forma comum é:
+
+```
+y = β₀ + β₁x₁ + ... + βₚxₚ + ε
+```
+
+Onde β são parâmetros estimados a partir dos dados.
+
 <quiz>
 O que representa ε na equação y = f(X) + ε ?
 - [ ] Um parâmetro do modelo
@@ -80,10 +88,16 @@ O que representa ε na equação y = f(X) + ε ?
     - Lasso (L1): pode zerar coeficientes — ajuda a selecionar features.
     - Elastic Net: combinação L1 + L2.
 
-5. SVR (Support Vector Regression) 
+5. SVR (Support Vector Regression)
     - Ideal para datasets pequenos/médios com relações não lineares, usando kernels (como RBF) para capturar padrões complexos sem necessidade de features polinomiais.
 6. Árvores, Florestas e Boosting
     - Modelos como Random Forest e XGBoost são poderosos para capturar não linearidades e interações entre features. São menos sensíveis a outliers e requerem menos pré-processamento, mas podem ser mais difíceis de interpretar.
+
+### Quando usar cada família (regra prática)
+
+- Comece por **Regressão Linear/Ridge/Lasso** quando interpretabilidade for importante.
+- Use **árvores/boosting** para relações não lineares e interação forte entre variáveis.
+- Teste **SVR** em bases menores com boa engenharia de atributos e escala adequada.
 
 
 <quiz>
@@ -100,12 +114,12 @@ Lasso (L1) pode reduzir coeficientes a zero, realizando seleção de features; R
 
 A regressão linear procura a reta (ou hiperplano) que melhor explica a relação entre X e y, minimizando discrepâncias entre valores reais e previstos.
 
-### Método dos Mínimos Quadrados
+### Método dos Mínimos Quadrados (OLS)
 
-Minimizamos a soma dos quadrados dos resíduos:
+No OLS, minimizamos a soma dos quadrados dos resíduos:
 
 ```
-SSR = Σ(yᵢ - ŷᵢ)²
+SSE = Σ(yᵢ - ŷᵢ)²
 ```
 
 Para regressão linear simples, os coeficientes têm fórmulas fechadas úteis para entendimento:
@@ -122,6 +136,8 @@ Para regressão linear simples, os coeficientes têm fórmulas fechadas úteis p
 - **Normalidade dos resíduos**: Os erros devem seguir uma distribuição normal (isso é mais importante para testes estatísticos).
 - **Baixa multicolinearidade**: As features não devem ser muito correlacionadas entre si (e.g., se "área da casa" e "número de quartos" são quase idênticas, isso pode confundir o modelo).
 
+> Observação importante: esses pressupostos são especialmente relevantes para inferência estatística e interpretação de coeficientes. Para previsão pura, modelos mais flexíveis podem performar melhor mesmo com violações.
+
 
 <quiz>
 Qual pressuposto implica que os resíduos tenham variância constante?
@@ -133,12 +149,14 @@ Qual pressuposto implica que os resíduos tenham variância constante?
 Homocedasticidade significa que a variância dos resíduos é aproximadamente constante ao longo das predições; quando isso falha, temos heterocedasticidade.
 </quiz>
 
-### Exemplo em Python
+### Exemplo em Python (com baseline técnico)
 
 ```python
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import mean_squared_error, r2_score
+from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 import numpy as np
 
 # Dados sintéticos
@@ -147,23 +165,29 @@ X = np.random.randn(100, 1)
 y = 2 + 3 * X.ravel() + np.random.randn(100)
 
 # Treino / teste
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=42
+)
 
 # Treina
-model = LinearRegression()
+model = Pipeline([
+    ("scaler", StandardScaler()),
+    ("reg", LinearRegression()),
+])
 model.fit(X_train, y_train)
 
 # Prediz
 y_pred = model.predict(X_test)
 
 # Avalia
+mae = mean_absolute_error(y_test, y_pred)
 mse = mean_squared_error(y_test, y_pred)
+rmse = np.sqrt(mse)
 r2 = r2_score(y_test, y_pred)
 
-print(f"Coeficiente: {model.coef_[0]:.2f}")
-print(f"Intercepto: {model.intercept_:.2f}")
-print(f"MSE: {mse:.2f}")
-print(f"R²: {r2:.2f}")
+print(f"MAE: {mae:.3f}")
+print(f"RMSE: {rmse:.3f}")
+print(f"R²: {r2:.3f}")
 ```
 
 Para visualizar o resultado:
@@ -185,7 +209,7 @@ plt.show()
 
 ## Métricas de avaliação 
 
-As métricas ajudam a comparar modelos e interpretar a magnitude dos erros.
+As métricas ajudam a comparar modelos e interpretar a magnitude dos erros. Em regressão, é recomendável olhar mais de uma métrica ao mesmo tempo.
 
 ### MSE (Erro Quadrático Médio)
 
@@ -223,6 +247,11 @@ Onde:
 
 R² indica a proporção da variância explicada pelo modelo. Valores mais altos são melhores, mas atenção: R² pode ser negativo se o modelo for pior que prever a média.
 
+### Métricas complementares úteis
+
+- **MedAE (mediana do erro absoluto)**: robusta a outliers severos.
+- **MAPE**: útil em negócios, mas problemático quando `y` pode ser zero ou muito próximo de zero.
+
 
 
 ### Exemplo em Python
@@ -242,6 +271,13 @@ print(f"RMSE: {rmse:.4f}")
 print(f"MAE: {mae:.4f}")
 print(f"R²: {r2:.4f}")
 ```
+
+## Erros comuns em regressão (e como evitar)
+
+- **Vazamento de dados**: ajustar scaler/encoder com base em treino + teste.
+- **Avaliar só no treino**: sempre medir desempenho em dados não vistos.
+- **Escolher modelo só por R²**: combine com MAE/RMSE e análise de resíduos.
+- **Ignorar baseline**: compare com preditor simples (média/mediana) antes de celebrar desempenho.
 
 <quiz>
 Qual métrica é menos sensível a outliers?
