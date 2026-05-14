@@ -5,6 +5,8 @@ Nesta aula, vamos estudar classificação de forma prática e tecnicamente corre
 ### Atividades Práticas
 As seguintes atividades foram preparadas para reforçar os conceitos abordados:
 
+[Notebooks-Classificação (Download)](notebooks-classificacao.zip){ .md-button .md-button-primary }
+
 - **[Lab 1: Flores Iris](ml-classificador-iris.ipynb)**  
   Introdução aos conceitos básicos de classificação usando o dataset Iris.
 - **[Lab 2: Classificação de dígitos](ml-classificador-digito.ipynb)**  

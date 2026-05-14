@@ -5,6 +5,8 @@ Nesta aula, vamos estudar regressão com foco em prática profissional: formula�
 ### Atividades Práticas
 As seguintes atividades foram preparadas para reforçar os conceitos abordados:
 
+[Notebooks-Regressão (Download)](notebooks-regressao.zip){ .md-button .md-button-primary }
+
 - **[Lab 1: Regressão Simples](regressao.ipynb)**  
   Introdução aos conceitos básicos de regressão, com aplicação prática na predição de preços de casas na Califórnia.
 - **[Lab 2: Técnicas Avançadas](regressao2.ipynb)**  
