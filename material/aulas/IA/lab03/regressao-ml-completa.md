@@ -1,4 +1,3 @@
-
 # Regressão em Machine Learning
 
 Nesta aula, vamos estudar regressão com foco em prática profissional: formulação correta do problema, escolha de modelos, interpretação de métricas e cuidado com generalização.
@@ -131,7 +130,7 @@ Para regressão linear simples, os coeficientes têm fórmulas fechadas úteis p
 
 ### Intuição de Pressupostos Importantes
 - **Linearidade**: A relação entre X e y deve parecer uma reta (ou um plano em múltiplas dimensões). Se os dados formam uma curva, regressão linear pode não funcionar bem.
-- **Independência**: Cada observação (e.g., preço de uma casa) não deve ser influenciada por outra.
+- **Independência**: Cada observação (por exemplo, preço de uma casa) não deve ser influenciada por outra.
 - **Homocedasticidade**: Os erros do modelo (diferença entre valores reais e previstos) devem ter variação constante. Imagine que os pontos estão igualmente espalhados ao redor da reta de regressão.
 - **Normalidade dos resíduos**: Os erros devem seguir uma distribuição normal (isso é mais importante para testes estatísticos).
 - **Baixa multicolinearidade**: As features não devem ser muito correlacionadas entre si (e.g., se "área da casa" e "número de quartos" são quase idênticas, isso pode confundir o modelo).
@@ -197,7 +196,10 @@ import matplotlib.pyplot as plt
 
 # Plot dos dados e da reta de regressão
 plt.scatter(X_test, y_test, color='blue', label='Dados reais')
-plt.plot(X_test, y_pred, color='red', label='Reta de regressão')
+
+# Ordena no eixo x para desenhar a reta corretamente
+idx = np.argsort(X_test[:, 0])
+plt.plot(X_test[idx], y_pred[idx], color='red', label='Reta de regressão')
 plt.xlabel('X')
 plt.ylabel('y')
 plt.title('Regressão Linear Simples')
@@ -297,12 +299,12 @@ MAE (Erro Absoluto Médio) penaliza menos discrepâncias grandes que o MSE/RMSE,
 
   <div style="display:flex;gap:1rem;flex-wrap:wrap;align-items:flex-end">
     <label style="flex:1 1 260px">
-      <div>peso <code>w</code>: <strong><span id="wVal">0.50</span></strong></div>
+      <div>peso <code>w</code>: <strong><span id="wVal">-6.50</span></strong></div>
       <input id="w" type="range" min="-8" max="2" step="0.01" value="-6.5" style="width:100%">
     </label>
 
     <label style="flex:1 1 260px">
-      <div>viés <code>b</code>: <strong><span id="bVal">0.00</span></strong></div>
+      <div>viés <code>b</code>: <strong><span id="bVal">46.00</span></strong></div>
       <input id="b" type="range" min="-10" max="60" step="0.01" value="46.0" style="width:100%">
     </label>
 

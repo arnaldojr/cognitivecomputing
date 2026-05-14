@@ -84,7 +84,7 @@ X_train, X_test, y_train, y_test = train_test_split(
 # 3) Pipeline (escala + modelo)
 model = Pipeline([
     ("scaler", StandardScaler()),
-    ("clf", LogisticRegression(max_iter=1000, multi_class="auto")),
+    ("clf", LogisticRegression(max_iter=1000)),
 ])
 
 # 4) Treina e prevê
@@ -150,7 +150,7 @@ Importante quando falso negativo é caro (ex.: doença não detectada).
 
 ### Outras métricas úteis
 
-- **Balanced Accuracy**: média do recall por classe; útil com desbalanceamento.
+- **Acurácia balanceada**: média do recall por classe; útil com desbalanceamento.
 - **ROC-AUC**: qualidade da ordenação de scores em diferentes limiares.
 - **PR-AUC**: geralmente mais informativa que ROC-AUC em classes muito raras.
 
