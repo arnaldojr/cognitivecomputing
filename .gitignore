@@ -26,3 +26,5 @@ __pycache__/
 # Python virtual environments
 .venv/
 .env    
+AGENTS.md
+docs/

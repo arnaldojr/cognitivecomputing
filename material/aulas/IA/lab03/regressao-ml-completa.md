@@ -1,7 +1,7 @@
 
 # Regressão em Machine Learning
 
-Nesta aula, vamos explorar os fundamentos de problemas de regressão, entender como modelar relações entre variáveis e aplicar esses conceitos em atividades práticas. Nosso objetivo é aprender a entender o problema a ser resolvido e treinar modelos de forma precisa e eficiente.
+Nesta aula, vamos explorar os fundamentos de problemas de regressão, entender como modelar relações entre variáveis e aplicar esses conceitos em atividades práticas. Nosso objetivo é compreender o problema a ser resolvido e treinar modelos de forma precisa e eficiente.
 
 ### Atividades Práticas
 As seguintes atividades foram preparadas para reforçar os conceitos abordados:
@@ -181,7 +181,7 @@ plt.legend()
 plt.show()
 ```
 
-![alt text](image.png)
+![Exemplo de regressão linear](image.png)
 
 ## Métricas de avaliação 
 

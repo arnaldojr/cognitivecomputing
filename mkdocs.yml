@@ -210,7 +210,7 @@ nav:
       - Introdução: aulas/IA/lab02/classificacao-ml-completa.md
       - lab1: aulas/IA/lab02/ml-classificador-iris.ipynb
       - lab2: aulas/IA/lab02/ml-classificador-digito.ipynb
-      - lab3: aulas/IA/lab-04/aula8.ipynb
+      - lab3: aulas/IA/lab02/ml-classificador-renda.ipynb
     - Aprendizado Supervisionado - Regressão:
       - Introdução: aulas/IA/lab03/regressao-ml-completa.md
       - lab1: aulas/IA/lab03/regressao.ipynb

@@ -7,9 +7,9 @@ As seguintes atividades foram preparadas para reforçar os conceitos abordados:
 
 - **[Lab 1: Flores Iris](ml-classificador-iris.ipynb)**  
   Uma introdução aos conceitos básicos de classificação, utilizando o famoso dataset Iris para prever a espécie de uma flor.
-- **[Lab 2: Classificação digitos](ml-classificador-digito.ipynb)**  
+- **[Lab 2: Classificação de dígitos](ml-classificador-digito.ipynb)**  
   Uma exploração mais aprofundada, com foco em problemas multiclasses. O objetivo é criar um modelo para identificar dígitos manuscritos (de 0 a 9) a partir de imagens.
-- **[Lab 3: classificação de renda](ml-classificador-renda.ipynb)**  
+- **[Lab 3: Classificação de renda](ml-classificador-renda.ipynb)**  
   Um desafio de classificação binária, onde treinamos um modelo para prever se a renda de uma pessoa é superior ou inferior a 50 mil dólares por ano, com base em suas características demográficas.
 
 ### Datasets
@@ -44,12 +44,12 @@ No aprendizado supervisionado de um modelo de classificação, trabalhamos com d
 
 - **Conjunto de Treinamento**: É o conjunto de dados rotulados (com as respostas corretas) que usamos para ensinar o modelo a reconhecer padrões. O modelo "aprende" a mapear as características de entrada para suas respectivas classes de saída.
 
---**Conjunto de Teste**: É um conjunto de dados completamente novo, não utilizado durante o treinamento. Ele serve para avaliar se o modelo aprendeu bem e consegue generalizar para dados que ele nunca viu antes, simulando o uso no mundo re
+- **Conjunto de Teste**: É um conjunto de dados completamente novo, não utilizado durante o treinamento. Ele serve para avaliar se o modelo aprendeu bem e consegue generalizar para dados que ele nunca viu antes, simulando o uso no mundo real.
 
 
-## Principais algoritimos de classificação
+## Principais algoritmos de classificação
 
-Existem diferentes tipos de algoritimos para classificação, entre os mais usados, temos:
+Existem diferentes tipos de algoritmos para classificação. Entre os mais usados, temos:
 
 - K-Nearest Neighbors (KNN) → Baseado em proximidade no espaço das features.
 - Árvores de Decisão e Random Forests → Divisão hierárquica de dados com regras.
@@ -228,7 +228,7 @@ knn
 
 ---
 
-Regressão logistica
+Regressão logística
 
 --- 
 
@@ -270,4 +270,3 @@ Regressão logistica
     </div>
   </div>
 </div>
-
