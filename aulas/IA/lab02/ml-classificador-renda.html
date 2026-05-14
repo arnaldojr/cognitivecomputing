@@ -1584,7 +1584,7 @@
   <a href="#compare-o-resultado-de-acuracia-com-pelo-menos-1-outro-metodo-de-machine-learning" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Compare o resultado de acuracia com pelo menos 1 outro método de machine learning.
+        Compare o resultado de acurácia com pelo menos 1 outro método de machine learning.
       
     </span>
   </a>
@@ -2111,7 +2111,7 @@
   <a href="#compare-o-resultado-de-acuracia-com-pelo-menos-1-outro-metodo-de-machine-learning" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Compare o resultado de acuracia com pelo menos 1 outro método de machine learning.
+        Compare o resultado de acurácia com pelo menos 1 outro método de machine learning.
       
     </span>
   </a>
@@ -3977,13 +3977,13 @@ dtype: int64</pre>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-10">
@@ -3998,261 +3998,13 @@ dtype: int64</pre>
 </div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1">## Seu código aqui...</span>
 
-<span class="n">df</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 </pre></div>
 <div class="clipboard-copy-txt" id="cell-10">## Seu código aqui...
 
-df.fillna(0)
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[8]:</div>
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-<thead>
-<tr style="text-align: right;">
-<th></th>
-<th>age</th>
-<th>workclass</th>
-<th>fnlwgt</th>
-<th>education</th>
-<th>education_num</th>
-<th>marital_status</th>
-<th>occupation</th>
-<th>relationship</th>
-<th>race</th>
-<th>sex</th>
-<th>capital_gain</th>
-<th>capital_loss</th>
-<th>hours_per_week</th>
-<th>native_country</th>
-<th>income</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>0</th>
-<td>39</td>
-<td>State-gov</td>
-<td>77516</td>
-<td>Bachelors</td>
-<td>13</td>
-<td>Never-married</td>
-<td>Adm-clerical</td>
-<td>Not-in-family</td>
-<td>White</td>
-<td>Male</td>
-<td>2174</td>
-<td>0</td>
-<td>40</td>
-<td>United-States</td>
-<td>&lt;=50K</td>
-</tr>
-<tr>
-<th>1</th>
-<td>50</td>
-<td>Self-emp-not-inc</td>
-<td>83311</td>
-<td>Bachelors</td>
-<td>13</td>
-<td>Married-civ-spouse</td>
-<td>Exec-managerial</td>
-<td>Husband</td>
-<td>White</td>
-<td>Male</td>
-<td>0</td>
-<td>0</td>
-<td>13</td>
-<td>United-States</td>
-<td>&lt;=50K</td>
-</tr>
-<tr>
-<th>2</th>
-<td>38</td>
-<td>Private</td>
-<td>215646</td>
-<td>HS-grad</td>
-<td>9</td>
-<td>Divorced</td>
-<td>Handlers-cleaners</td>
-<td>Not-in-family</td>
-<td>White</td>
-<td>Male</td>
-<td>0</td>
-<td>0</td>
-<td>40</td>
-<td>United-States</td>
-<td>&lt;=50K</td>
-</tr>
-<tr>
-<th>3</th>
-<td>53</td>
-<td>Private</td>
-<td>234721</td>
-<td>11th</td>
-<td>7</td>
-<td>Married-civ-spouse</td>
-<td>Handlers-cleaners</td>
-<td>Husband</td>
-<td>Black</td>
-<td>Male</td>
-<td>0</td>
-<td>0</td>
-<td>40</td>
-<td>United-States</td>
-<td>&lt;=50K</td>
-</tr>
-<tr>
-<th>4</th>
-<td>28</td>
-<td>Private</td>
-<td>338409</td>
-<td>Bachelors</td>
-<td>13</td>
-<td>Married-civ-spouse</td>
-<td>Prof-specialty</td>
-<td>Wife</td>
-<td>Black</td>
-<td>Female</td>
-<td>0</td>
-<td>0</td>
-<td>40</td>
-<td>Cuba</td>
-<td>&lt;=50K</td>
-</tr>
-<tr>
-<th>...</th>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-</tr>
-<tr>
-<th>32556</th>
-<td>27</td>
-<td>Private</td>
-<td>257302</td>
-<td>Assoc-acdm</td>
-<td>12</td>
-<td>Married-civ-spouse</td>
-<td>Tech-support</td>
-<td>Wife</td>
-<td>White</td>
-<td>Female</td>
-<td>0</td>
-<td>0</td>
-<td>38</td>
-<td>United-States</td>
-<td>&lt;=50K</td>
-</tr>
-<tr>
-<th>32557</th>
-<td>40</td>
-<td>Private</td>
-<td>154374</td>
-<td>HS-grad</td>
-<td>9</td>
-<td>Married-civ-spouse</td>
-<td>Machine-op-inspct</td>
-<td>Husband</td>
-<td>White</td>
-<td>Male</td>
-<td>0</td>
-<td>0</td>
-<td>40</td>
-<td>United-States</td>
-<td>&gt;50K</td>
-</tr>
-<tr>
-<th>32558</th>
-<td>58</td>
-<td>Private</td>
-<td>151910</td>
-<td>HS-grad</td>
-<td>9</td>
-<td>Widowed</td>
-<td>Adm-clerical</td>
-<td>Unmarried</td>
-<td>White</td>
-<td>Female</td>
-<td>0</td>
-<td>0</td>
-<td>40</td>
-<td>United-States</td>
-<td>&lt;=50K</td>
-</tr>
-<tr>
-<th>32559</th>
-<td>22</td>
-<td>Private</td>
-<td>201490</td>
-<td>HS-grad</td>
-<td>9</td>
-<td>Never-married</td>
-<td>Adm-clerical</td>
-<td>Own-child</td>
-<td>White</td>
-<td>Male</td>
-<td>0</td>
-<td>0</td>
-<td>20</td>
-<td>United-States</td>
-<td>&lt;=50K</td>
-</tr>
-<tr>
-<th>32560</th>
-<td>52</td>
-<td>Self-emp-inc</td>
-<td>287927</td>
-<td>HS-grad</td>
-<td>9</td>
-<td>Married-civ-spouse</td>
-<td>Exec-managerial</td>
-<td>Wife</td>
-<td>White</td>
-<td>Female</td>
-<td>15024</td>
-<td>0</td>
-<td>40</td>
-<td>United-States</td>
-<td>&gt;50K</td>
-</tr>
-</tbody>
-</table>
-<p>32561 rows × 15 columns</p>
-</div>
+df = df.fillna(0)
+df.isnull().sum()</div>
 </div>
 </div>
 </div>
@@ -4325,13 +4077,13 @@ Name: count, dtype: int64</pre>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-12">
@@ -4344,44 +4096,35 @@ Name: count, dtype: int64</pre>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1">## Se necessário, pip install category_encoders</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">OneHotEncoder</span>
 
-<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">OneHotEncoder</span>
+<span class="n">colunas_categoricas</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"workclass"</span><span class="p">,</span> <span class="s2">"education"</span><span class="p">,</span> <span class="s2">"marital_status"</span><span class="p">,</span> <span class="s2">"occupation"</span><span class="p">,</span> <span class="s2">"relationship"</span><span class="p">,</span> <span class="s2">"race"</span><span class="p">,</span> <span class="s2">"sex"</span><span class="p">,</span> <span class="s2">"native_country"</span><span class="p">]</span>
+<span class="n">onehot_encoder</span> <span class="o">=</span> <span class="n">OneHotEncoder</span><span class="p">(</span><span class="n">sparse_output</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">handle_unknown</span><span class="o">=</span><span class="s2">"ignore"</span><span class="p">)</span>
 
-<span class="n">onehot_encoder</span> <span class="o">=</span> <span class="n">OneHotEncoder</span><span class="p">(</span><span class="n">sparse_output</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">cols</span><span class="o">=</span><span class="p">[</span><span class="s2">"----Coloque aqui as colunas categoricas para realizar a transformação----"</span><span class="p">])</span>
+<span class="n">encoded</span> <span class="o">=</span> <span class="n">onehot_encoder</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">colunas_categoricas</span><span class="p">])</span>
+<span class="n">encoded_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+    <span class="n">encoded</span><span class="p">,</span>
+    <span class="n">columns</span><span class="o">=</span><span class="n">onehot_encoder</span><span class="o">.</span><span class="n">get_feature_names_out</span><span class="p">(</span><span class="n">colunas_categoricas</span><span class="p">),</span>
+    <span class="n">index</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">,</span>
+<span class="p">)</span>
 
-<span class="n">df</span> <span class="o">=</span> <span class="n">onehot_encoder</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">colunas_categoricas</span><span class="p">),</span> <span class="n">encoded_df</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-12">## Se necessário, pip install category_encoders
+<div class="clipboard-copy-txt" id="cell-12">from sklearn.preprocessing import OneHotEncoder
 
-from sklearn.preprocessing import OneHotEncoder
+colunas_categoricas = ["workclass", "education", "marital_status", "occupation", "relationship", "race", "sex", "native_country"]
+onehot_encoder = OneHotEncoder(sparse_output=False, handle_unknown="ignore")
 
-onehot_encoder = OneHotEncoder(sparse_output=False, cols=["----Coloque aqui as colunas categoricas para realizar a transformação----"])
+encoded = onehot_encoder.fit_transform(df[colunas_categoricas])
+encoded_df = pd.DataFrame(
+    encoded,
+    columns=onehot_encoder.get_feature_names_out(colunas_categoricas),
+    index=df.index,
+)
 
-df = onehot_encoder.fit_transform(df)
-
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
-<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[11]</span><span class="ansi-green-fg">, line 5</span>
-<span class="ansi-green-fg">      1</span> <span style="color: rgb(95,135,135)">## Se necessário, pip install category_encoders</span>
-<span class="ansi-green-fg">      3</span> <span class="ansi-bold" style="color: rgb(0,135,0)">from</span><span style="color: rgb(188,188,188)"> </span><span class="ansi-blue-intense-fg ansi-bold">sklearn</span><span class="ansi-blue-intense-fg ansi-bold">.</span><span class="ansi-blue-intense-fg ansi-bold">preprocessing</span><span style="color: rgb(188,188,188)"> </span><span class="ansi-bold" style="color: rgb(0,135,0)">import</span> OneHotEncoder
-<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">5</span> onehot_encoder = <span class="ansi-yellow-bg">OneHotEncoder</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">sparse_output</span><span class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg ansi-bold" style="color: rgb(0,135,0)">False</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">cols</span><span class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg">[</span><span class="ansi-yellow-fg ansi-yellow-bg">"</span><span class="ansi-yellow-fg ansi-yellow-bg">----Coloque aqui as colunas categoricas para realizar a transformação----</span><span class="ansi-yellow-fg ansi-yellow-bg">"</span><span class="ansi-yellow-bg">]</span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-fg">      7</span> df = onehot_encoder.fit_transform(df)
-
-<span class="ansi-red-fg">TypeError</span>: OneHotEncoder.__init__() got an unexpected keyword argument 'cols'</pre>
+df = pd.concat([df.drop(columns=colunas_categoricas), encoded_df], axis=1)
+df.head()</div>
 </div>
 </div>
 </div>
@@ -4599,11 +4342,21 @@ Variavel dependente: --&gt; y</p>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1">#Vamos fazer um drop da coluna de interesse de estudo `income`. (y)</span>
-</pre></div>
-<div class="clipboard-copy-txt" id="cell-14">#Vamos fazer um drop da coluna de interesse de estudo `income`. (y)
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Variável dependente (target)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">"income"</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="o">==</span> <span class="s2">"&gt;50K"</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
 
-</div>
+<span class="c1"># Variáveis independentes</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">"income"</span><span class="p">])</span>
+
+<span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-14"># Variável dependente (target)
+y = (df["income"].str.strip() == "&gt;50K").astype(int)
+
+# Variáveis independentes
+X = df.drop(columns=["income"])
+
+X.shape, y.shape</div>
 </div>
 </div>
 </div>
@@ -4615,7 +4368,7 @@ Variavel dependente: --&gt; y</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-15">
@@ -4628,33 +4381,19 @@ Variavel dependente: --&gt; y</p>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1">## Faça a normalização dos dados</span>
-<span class="c1">## escolha um dos métodos....</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">MinMaxScaler</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">minmax_scale</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">MaxAbsScaler</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">StandardScaler</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">RobustScaler</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Normalizer</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">QuantileTransformer</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">PowerTransformer</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">StandardScaler</span>
 
-<span class="c1">## seu código aqui...</span>
+<span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
+<span class="n">X_scaled</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+<span class="n">X_scaled</span><span class="o">.</span><span class="n">shape</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-15">## Faça a normalização dos dados
-## escolha um dos métodos....
-from sklearn.preprocessing import MinMaxScaler
-from sklearn.preprocessing import minmax_scale
-from sklearn.preprocessing import MaxAbsScaler
-from sklearn.preprocessing import StandardScaler
-from sklearn.preprocessing import RobustScaler
-from sklearn.preprocessing import Normalizer
-from sklearn.preprocessing import QuantileTransformer
-from sklearn.preprocessing import PowerTransformer
+<div class="clipboard-copy-txt" id="cell-15">from sklearn.preprocessing import StandardScaler
 
-## seu código aqui...
+scaler = StandardScaler()
+X_scaled = scaler.fit_transform(X)
 
-</div>
+X_scaled.shape</div>
 </div>
 </div>
 </div>
@@ -4667,10 +4406,11 @@ from sklearn.preprocessing import PowerTransformer
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Agora sim! temos uma base limpa e organizada para rodar diversos modelos de ML. onde:</p>
-<p>X - &gt; possui as variaveis independentes.
-y - &gt; é a nossa variavel de interesse.</p>
-<p>Separe os dados em treino e teste, qual a propoção será utiizada para cada subset??</p>
+<p>Agora sim! Temos uma base limpa e organizada para rodar diversos modelos de ML.</p>
+<ul>
+<li><code>X_scaled</code> contém as variáveis independentes normalizadas.</li>
+<li><code>y</code> contém a variável dependente (classe alvo).</li>
+</ul>
 </div>
 </div>
 </div>
@@ -4680,7 +4420,7 @@ y - &gt; é a nossa variavel de interesse.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-16">
@@ -4693,13 +4433,23 @@ y - &gt; é a nossa variavel de interesse.</p>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1">#Separar os dados em treino e teste</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Separar os dados em treino e teste</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">train_test_split</span>
+
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>
+    <span class="n">X_scaled</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">stratify</span><span class="o">=</span><span class="n">y</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Treino: </span><span class="si">{</span><span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2"> | Teste: </span><span class="si">{</span><span class="n">X_test</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-16">#Separar os dados em treino e teste
+<div class="clipboard-copy-txt" id="cell-16"># Separar os dados em treino e teste
 from sklearn.model_selection import train_test_split
 
-</div>
+X_train, X_test, y_train, y_test = train_test_split(
+    X_scaled, y, test_size=0.2, random_state=42, stratify=y
+)
+
+print(f"Treino: {X_train.shape} | Teste: {X_test.shape}")</div>
 </div>
 </div>
 </div>
@@ -4728,13 +4478,13 @@ from sklearn.model_selection import train_test_split
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-17">
@@ -4750,52 +4500,30 @@ from sklearn.model_selection import train_test_split
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.naive_bayes</span><span class="w"> </span><span class="kn">import</span> <span class="n">GaussianNB</span>
 
 <span class="n">gnb</span> <span class="o">=</span> <span class="n">GaussianNB</span><span class="p">()</span>
-
 <span class="n">gnb</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
 <span class="n">y_pred</span> <span class="o">=</span> <span class="n">gnb</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
 <span class="n">y_pred</span>
 </pre></div>
 <div class="clipboard-copy-txt" id="cell-17">from sklearn.naive_bayes import GaussianNB
 
 gnb = GaussianNB()
-
 gnb.fit(X_train, y_train)
+
 y_pred = gnb.predict(X_test)
 y_pred</div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[15]</span><span class="ansi-green-fg">, line 5</span>
-<span class="ansi-green-fg">      1</span> <span class="ansi-bold" style="color: rgb(0,135,0)">from</span><span style="color: rgb(188,188,188)"> </span><span class="ansi-blue-intense-fg ansi-bold">sklearn</span><span class="ansi-blue-intense-fg ansi-bold">.</span><span class="ansi-blue-intense-fg ansi-bold">naive_bayes</span><span style="color: rgb(188,188,188)"> </span><span class="ansi-bold" style="color: rgb(0,135,0)">import</span> GaussianNB
-<span class="ansi-green-fg">      3</span> gnb = GaussianNB()
-<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">5</span> gnb.fit(<span class="ansi-yellow-bg">X_train</span>, y_train)
-<span class="ansi-green-fg">      6</span> y_pred = gnb.predict(X_test)
-<span class="ansi-green-fg">      7</span> y_pred
-
-<span class="ansi-red-fg">NameError</span>: name 'X_train' is not defined</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-18">
@@ -4808,44 +4536,33 @@ y_pred</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">accuracy_score</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">accuracy_score</span><span class="p">,</span> <span class="n">classification_report</span><span class="p">,</span> <span class="n">confusion_matrix</span>
 
-<span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Acurácia (teste): </span><span class="si">{</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span><span class="w"> </span><span class="n">y_pred</span><span class="p">)</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Matriz de confusão:"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Relatório de classificação:"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">classification_report</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">digits</span><span class="o">=</span><span class="mi">3</span><span class="p">))</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-18">from sklearn.metrics import accuracy_score
+<div class="clipboard-copy-txt" id="cell-18">from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 
-accuracy_score(y_test, y_pred)</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[16]</span><span class="ansi-green-fg">, line 3</span>
-<span class="ansi-green-fg">      1</span> <span class="ansi-bold" style="color: rgb(0,135,0)">from</span><span style="color: rgb(188,188,188)"> </span><span class="ansi-blue-intense-fg ansi-bold">sklearn</span><span class="ansi-blue-intense-fg ansi-bold">.</span><span class="ansi-blue-intense-fg ansi-bold">metrics</span><span style="color: rgb(188,188,188)"> </span><span class="ansi-bold" style="color: rgb(0,135,0)">import</span> accuracy_score
-<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">3</span> accuracy_score(<span class="ansi-yellow-bg">y_test</span>, y_pred)
-
-<span class="ansi-red-fg">NameError</span>: name 'y_test' is not defined</pre>
+print(f"Acurácia (teste): {accuracy_score(y_test, y_pred):.4f}")
+print("\nMatriz de confusão:")
+print(confusion_matrix(y_test, y_pred))
+print("\nRelatório de classificação:")
+print(classification_report(y_test, y_pred, digits=3))</div>
 </div>
 </div>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [17]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-19">
@@ -4859,41 +4576,22 @@ accuracy_score(y_test, y_pred)</div>
 </clipboard-copy>
 </div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">y_pred_train</span> <span class="o">=</span> <span class="n">gnb</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
-<span class="n">y_pred_train</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Acurácia (treino): </span><span class="si">{</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span><span class="w"> </span><span class="n">y_pred_train</span><span class="p">)</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 <div class="clipboard-copy-txt" id="cell-19">y_pred_train = gnb.predict(X_train)
-y_pred_train</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[17]</span><span class="ansi-green-fg">, line 1</span>
-<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">1</span> y_pred_train = gnb.predict(<span class="ansi-yellow-bg">X_train</span>)
-<span class="ansi-green-fg">      2</span> y_pred_train
-
-<span class="ansi-red-fg">NameError</span>: name 'X_train' is not defined</pre>
+print(f"Acurácia (treino): {accuracy_score(y_train, y_pred_train):.4f}")</div>
 </div>
 </div>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-20">
@@ -4906,27 +4604,9 @@ y_pred_train</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">y_pred_train</span><span class="p">)</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Acurácia (teste): </span><span class="si">{</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span><span class="w"> </span><span class="n">y_pred</span><span class="p">)</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-20">accuracy_score(y_train, y_pred_train)</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[18]</span><span class="ansi-green-fg">, line 1</span>
-<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">1</span> accuracy_score(<span class="ansi-yellow-bg">y_train</span>, y_pred_train)
-
-<span class="ansi-red-fg">NameError</span>: name 'y_train' is not defined</pre>
+<div class="clipboard-copy-txt" id="cell-20">print(f"Acurácia (teste): {accuracy_score(y_test, y_pred):.4f}")</div>
 </div>
 </div>
 </div>
@@ -4939,7 +4619,7 @@ y_pred_train</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="compare-o-resultado-de-acuracia-com-pelo-menos-1-outro-metodo-de-machine-learning">Compare o resultado de acuracia com pelo menos 1 outro método de machine learning.<a class="anchor-link" href="#compare-o-resultado-de-acuracia-com-pelo-menos-1-outro-metodo-de-machine-learning">¶</a></h3>
+<h3 id="compare-o-resultado-de-acuracia-com-pelo-menos-1-outro-metodo-de-machine-learning">Compare o resultado de acurácia com pelo menos 1 outro método de machine learning.<a class="anchor-link" href="#compare-o-resultado-de-acuracia-com-pelo-menos-1-outro-metodo-de-machine-learning">¶</a></h3>
 </div>
 </div>
 </div>
@@ -4962,39 +4642,23 @@ y_pred_train</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1">### sua resposta aqui....</span>
-</pre></div>
-<div class="clipboard-copy-txt" id="cell-21">### sua resposta aqui....
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Exemplo: comparar com Regressão Logística</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.linear_model</span><span class="w"> </span><span class="kn">import</span> <span class="n">LogisticRegression</span>
 
+<span class="n">logreg</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">max_iter</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">logreg</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="n">y_pred_logreg</span> <span class="o">=</span> <span class="n">logreg</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
 
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="CodeMirror cm-s-jupyter">
-<div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-22">
-<div>
-<span class="notice" hidden="">Copied!</span>
-<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
-<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
-<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
-</svg>
-</div>
-</clipboard-copy>
-</div>
-<div class="highlight-ipynb hl-python"><pre><span></span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Acurácia (LogReg - teste): </span><span class="si">{</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span><span class="w"> </span><span class="n">y_pred_logreg</span><span class="p">)</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-22"></div>
+<div class="clipboard-copy-txt" id="cell-21"># Exemplo: comparar com Regressão Logística
+from sklearn.linear_model import LogisticRegression
+
+logreg = LogisticRegression(max_iter=1000)
+logreg.fit(X_train, y_train)
+y_pred_logreg = logreg.predict(X_test)
+
+print(f"Acurácia (LogReg - teste): {accuracy_score(y_test, y_pred_logreg):.4f}")</div>
 </div>
 </div>
 </div>
@@ -6727,7 +6391,7 @@ window.mkdocsQuizConfig = {
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 12, 2025 19:01:54 UTC">August 12, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 14, 2026 19:22:29 UTC">May 14, 2026</span>
   </span>
 
     
