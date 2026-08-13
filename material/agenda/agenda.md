@@ -25,23 +25,21 @@
 ### 1º Semestre - 2026
 
 | 4SIR<br>(Quinta-feira) | CONTEÚDO                                                                                        |
-| --------------- | ----------------------------------------------------------------------------------------------- |
-| 12/02/2026      | Aula Magna<br>Apresentação do curso, dinâmica das aulas, datas importantes (CP), lançamento CP1   |
-| 19/02/2026      | Processamento de imagem digital. Segmentação por pixel, histograma e equalização de histograma      |
-| 26/02/2026      | filtos de convolução, espaço de cores e contorno                                                |
-| 05/03/2026      | AVALIAÇÃO EM AULA CP1<br>CP1 - Sistema de segmentação de objetos                                |
-| 12/03/2026      | traking de objetos                                                       |
-| 19/03/2026      | template matching, features ORB, SIFT                                                 |
-| 26/03/2026      | features ORB, SIFT                                                 |
-| 02/04/2026      | feriado (quinta e sexta) paixão de cristo                                                       |
-| 09/04/2026      | Haar Cascade                                                          |
-| 16/04/2026      | aplicações media pipe                                                                     |
-| 23/04/2026      | AVALIAÇÃO EM AULA CP2<br>CP2 - Sistema de deteção de objetos                    |
-| 30/04/2026      | Introdução a ciência de dados                                                             |
-| 07/05/2026      | Introdução ao aprendizado de máquina                                  |
-| 14/05/2026      | aula estudio para o cp3                                                                |
-| 21/05/2026      | AVALIAÇÃO EM AULA CP3<br>CP3                    |
-| 28/05/2026      | 25/05 - Inicio Global Solutions                                                                 |
+| ---------------------- | ----------------------------------------------------------------------------------------------- |
+| 06/08/2026             | Aula Magna<br>Apresentação do curso, dinâmica das aulas, datas importantes (CP), lançamento CP1 |
+| 13/08/2026             | Processamento de imagem digital. Segmentação por pixel, histograma e equalização de histograma  |
+| 20/08/2026             | filtos de convolução, espaço de cores e contorno                                                |
+| 27/08/2026             | AVALIAÇÃO EM AULA CP1<br>CP1 - Sistema de segmentação de objetos                                |
+| 03/09/2026             | traking de objetos                                                                              |
+| 10/09/2026             | template matching, features ORB, SIFT                                                           |
+| 17/09/2026             | features ORB, SIFT                                                                              |
+| 24/09/2026             | Haar Cascade                                                                                    |
+| 01/10/2026             | aplicações media pipe                                                                           |
+| 08/10/2026             | AVALIAÇÃO EM AULA CP2<br>CP2 - Sistema de deteção de objetos                                    |
+| 15/10/2026             | CD                                                                                              |
+| 22/10/2026             | ML                                                                                              |
+| 29/10/2026             | cp3                                                                                             |
+| 05/11/2026             | Inicio Global Solutions                                                                         |
 
 
 
