@@ -24,7 +24,7 @@
 
 ### 1º Semestre - 2026
 
-| 4SIR<br>(Quinta-feira) | CONTEÚDO                                                                                        |
+| 4SIZ<br>(Quinta-feira) | CONTEÚDO                                                                                        |
 | ---------------------- | ----------------------------------------------------------------------------------------------- |
 | 06/08/2026             | Aula Magna<br>Apresentação do curso, dinâmica das aulas, datas importantes (CP), lançamento CP1 |
 | 13/08/2026             | Processamento de imagem digital. Segmentação por pixel, histograma e equalização de histograma  |
@@ -33,9 +33,9 @@
 | 03/09/2026             | traking de objetos                                                                              |
 | 10/09/2026             | template matching, features ORB, SIFT                                                           |
 | 17/09/2026             | features ORB, SIFT                                                                              |
-| 24/09/2026             | Haar Cascade                                                                                    |
-| 01/10/2026             | aplicações media pipe                                                                           |
-| 08/10/2026             | AVALIAÇÃO EM AULA CP2<br>CP2 - Sistema de deteção de objetos                                    |
+| 24/09/2026             | AVALIAÇÃO EM AULA CP2<br>CP2 - Sistema de deteção de objetos                                    |
+| 01/10/2026             | Haar Cascade                                                                                    |
+| 08/10/2026             | aplicações media pipe                                                                          |
 | 15/10/2026             | CD                                                                                              |
 | 22/10/2026             | ML                                                                                              |
 | 29/10/2026             | cp3                                                                                             |
