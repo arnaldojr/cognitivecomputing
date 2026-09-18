@@ -2243,16 +2243,16 @@ float temperatura = dht.readTemperature();
 
 // Verifica se alguma leitura falhou
 if (isnan(umidade) || isnan(temperatura)) {
-    Serial.println(&quot;Falha na leitura do sensor DHT!&quot;);
+    Serial.println("Falha na leitura do sensor DHT!");
     return;
 }
 
-Serial.print(&quot;Umidade: &quot;);
+Serial.print("Umidade: ");
 Serial.print(umidade);
-Serial.print(&quot; %\t&quot;);
-Serial.print(&quot;Temperatura: &quot;);
+Serial.print(" %\t");
+Serial.print("Temperatura: ");
 Serial.print(temperatura);
-Serial.println(&quot; *C&quot;);
+Serial.println(" *C");
 </code></pre></div>
 <p>}
 ˜˜˜</p>
@@ -2356,22 +2356,22 @@ const int ENA = 10;</p>
         Serial.println("Falha na leitura do sensor DHT!");
         return;
     }</p>
-<div class="highlight"><pre><span></span><code>Serial.print(&quot;Temperatura: &quot;);
+<div class="highlight"><pre><span></span><code>Serial.print("Temperatura: ");
 Serial.print(temperatura);
-Serial.println(&quot; *C&quot;);
+Serial.println(" *C");
 
 if (temperatura &gt; 25.0) {
     // Liga o ventilador
     digitalWrite(IN1, HIGH);
     digitalWrite(IN2, LOW);
     analogWrite(ENA, 200);
-    Serial.println(&quot;Ventilador Ligado.&quot;);
+    Serial.println("Ventilador Ligado.");
 } else {
     // Desliga o ventilador
     digitalWrite(IN1, LOW);
     digitalWrite(IN2, LOW);
     analogWrite(ENA, 0);
-    Serial.println(&quot;Ventilador Desligado.&quot;);
+    Serial.println("Ventilador Desligado.");
 }
 </code></pre></div>
 <p>}
@@ -2400,7 +2400,7 @@ const int limiarGás = 300; // Valor de exemplo</p>
 <div class="highlight"><pre><span></span><code>if (valorGás &gt; limiarGás) {
     digitalWrite(pinoLED, HIGH);
     digitalWrite(pinoBuzzer, HIGH);
-    Serial.println(&quot;Alerta! Nível de gás perigoso!&quot;);
+    Serial.println("Alerta! Nível de gás perigoso!");
 } else {
     digitalWrite(pinoLED, LOW);
     digitalWrite(pinoBuzzer, LOW);
@@ -2447,13 +2447,13 @@ float distancia = duracao * 0.034 / 2;
 // Exibe a distância no LCD
 lcd.clear();
 lcd.setCursor(0, 0);
-lcd.print(&quot;Distancia: &quot;);
+lcd.print("Distancia: ");
 lcd.print(distancia);
-lcd.print(&quot; cm&quot;);
+lcd.print(" cm");
 
-Serial.print(&quot;Distancia: &quot;);
+Serial.print("Distancia: ");
 Serial.print(distancia);
-Serial.println(&quot; cm&quot;);
+Serial.println(" cm");
 
 delay(1000);
 </code></pre></div>
@@ -2507,9 +2507,9 @@ bool ventiladorLigado = false;</p>
         Serial.println("Falha na leitura do sensor DHT!");
         return;
     }</p>
-<div class="highlight"><pre><span></span><code>Serial.print(&quot;Temperatura: &quot;);
+<div class="highlight"><pre><span></span><code>Serial.print("Temperatura: ");
 Serial.print(temperatura);
-Serial.println(&quot; *C&quot;);
+Serial.println(" *C");
 
 if (!ventiladorLigado &amp;&amp; temperatura &gt; limiarLigar) {
     // Liga o ventilador
@@ -2517,14 +2517,14 @@ if (!ventiladorLigado &amp;&amp; temperatura &gt; limiarLigar) {
     digitalWrite(IN2, LOW);
     analogWrite(ENA, 200);
     ventiladorLigado = true;
-    Serial.println(&quot;Ventilador Ligado.&quot;);
+    Serial.println("Ventilador Ligado.");
 } else if (ventiladorLigado &amp;&amp; temperatura &lt; limiarDesligar) {
     // Desliga o ventilador
     digitalWrite(IN1, LOW);
     digitalWrite(IN2, LOW);
     analogWrite(ENA, 0);
     ventiladorLigado = false;
-    Serial.println(&quot;Ventilador Desligado.&quot;);
+    Serial.println("Ventilador Desligado.");
 }
 </code></pre></div>
 <p>}
@@ -2560,10 +2560,10 @@ const int limiarUmidade = 400; // Valor de exemplo</p>
     Serial.println(valorUmidade);</p>
 <div class="highlight"><pre><span></span><code>if (valorUmidade &lt; limiarUmidade) {
     digitalWrite(pinoRelé, HIGH); // Liga a bomba
-    Serial.println(&quot;Bomba Ligada.&quot;);
+    Serial.println("Bomba Ligada.");
 } else {
     digitalWrite(pinoRelé, LOW); // Desliga a bomba
-    Serial.println(&quot;Bomba Desligada.&quot;);
+    Serial.println("Bomba Desligada.");
 }
 delay(1000);
 </code></pre></div>
@@ -2609,7 +2609,7 @@ const int echoPin = 10;</p>
     dht.begin();</p>
 <div class="highlight"><pre><span></span><code>// Inicializa o display OLED
 if(!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) {
-    Serial.println(F(&quot;Falha ao inicializar o display OLED!&quot;));
+    Serial.println(F("Falha ao inicializar o display OLED!"));
     for(;;);
 }
 delay(1000);
@@ -2633,34 +2633,34 @@ float distancia = duracao * 0.034 / 2;
 
 // Verifica se as leituras são válidas
 if (isnan(temperatura) || isnan(umidade)) {
-    Serial.println(&quot;Falha na leitura do sensor DHT!&quot;);
+    Serial.println("Falha na leitura do sensor DHT!");
     return;
 }
 
 // Exibe os dados no display OLED
 display.clearDisplay();
 display.setCursor(0,0);
-display.print(&quot;Temp: &quot;);
+display.print("Temp: ");
 display.print(temperatura);
-display.println(&quot; C&quot;);
+display.println(" C");
 
-display.print(&quot;Umid: &quot;);
+display.print("Umid: ");
 display.print(umidade);
-display.println(&quot; %&quot;);
+display.println(" %");
 
-display.print(&quot;Dist: &quot;);
+display.print("Dist: ");
 display.print(distancia);
-display.println(&quot; cm&quot;);
+display.println(" cm");
 
 display.display();
 
-Serial.print(&quot;Temperatura: &quot;);
+Serial.print("Temperatura: ");
 Serial.print(temperatura);
-Serial.print(&quot; *C\tUmidade: &quot;);
+Serial.print(" *C\tUmidade: ");
 Serial.print(umidade);
-Serial.print(&quot; %\tDistancia: &quot;);
+Serial.print(" %\tDistancia: ");
 Serial.print(distancia);
-Serial.println(&quot; cm&quot;);
+Serial.println(" cm");
 
 delay(2000);
 </code></pre></div>
@@ -2759,7 +2759,7 @@ const int echoPin = 10;</p>
     dht.begin();</p>
 <div class="highlight"><pre><span></span><code>// Inicializa o display OLED
 if(!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) {
-    Serial.println(F(&quot;Falha ao inicializar o display OLED!&quot;));
+    Serial.println(F("Falha ao inicializar o display OLED!"));
     for(;;);
 }
 delay(1000);
@@ -2783,34 +2783,34 @@ float distancia = duracao * 0.034 / 2;
 
 // Verifica se as leituras são válidas
 if (isnan(temperatura) || isnan(umidade)) {
-    Serial.println(&quot;Falha na leitura do sensor DHT!&quot;);
+    Serial.println("Falha na leitura do sensor DHT!");
     return;
 }
 
 // Exibe os dados no display OLED
 display.clearDisplay();
 display.setCursor(0,0);
-display.print(&quot;Temp: &quot;);
+display.print("Temp: ");
 display.print(temperatura);
-display.println(&quot; C&quot;);
+display.println(" C");
 
-display.print(&quot;Umid: &quot;);
+display.print("Umid: ");
 display.print(umidade);
-display.println(&quot; %&quot;);
+display.println(" %");
 
-display.print(&quot;Dist: &quot;);
+display.print("Dist: ");
 display.print(distancia);
-display.println(&quot; cm&quot;);
+display.println(" cm");
 
 display.display();
 
-Serial.print(&quot;Temperatura: &quot;);
+Serial.print("Temperatura: ");
 Serial.print(temperatura);
-Serial.print(&quot; *C\tUmidade: &quot;);
+Serial.print(" *C\tUmidade: ");
 Serial.print(umidade);
-Serial.print(&quot; %\tDistancia: &quot;);
+Serial.print(" %\tDistancia: ");
 Serial.print(distancia);
-Serial.println(&quot; cm&quot;);
+Serial.println(" cm");
 
 delay(2000);
 </code></pre></div>
@@ -2840,7 +2840,7 @@ const int limiarGas = 300; // Valor de exemplo</p>
 <div class="highlight"><pre><span></span><code>if (valorGas &gt; limiarGas) {
     digitalWrite(pinoLED, HIGH);
     digitalWrite(pinoSirene, HIGH);
-    Serial.println(&quot;Alerta! Incêndio detectado!&quot;);
+    Serial.println("Alerta! Incêndio detectado!");
 } else {
     digitalWrite(pinoLED, LOW);
     digitalWrite(pinoSirene, LOW);
@@ -2872,9 +2872,9 @@ const int pinoDistancia = A2;</p>
     float distancia = analogRead(pinoDistancia) * (5.0 / 1023.0) * 200; // Exemplo de conversão</p>
 <div class="highlight"><pre><span></span><code>// Cria um documento JSON
 StaticJsonDocument&lt;200&gt; doc;
-doc[&quot;temperatura&quot;] = temperatura;
-doc[&quot;umidade&quot;] = umidade;
-doc[&quot;distancia&quot;] = distancia;
+doc["temperatura"] = temperatura;
+doc["umidade"] = umidade;
+doc["distancia"] = distancia;
 
 // Serializa o JSON
 String output;
@@ -3281,9 +3281,10 @@ input[type="radio"].wrong {
   z-index: 3; /* Below Material header (z-index: 4) but above page content */
 }
 
-/* Show mobile tracker only on small screens (mobile/tablet) */
-/* Material breakpoint: up to 76.1875em (1219px) */
-@media screen and (max-width: 76.1875em) {
+/* Show the mobile tracker only when the secondary sidebar (and its progress
+   widget) is hidden. Material reveals .md-sidebar--secondary at min-width: 60em,
+   so the mobile tracker must stop at 60em - 1px to avoid showing both at once. */
+@media screen and (max-width: 59.9375em) {
   .quiz-progress-mobile {
     display: block;
   }
@@ -3522,7 +3523,7 @@ window.mkdocsQuizConfig = {
   progressSidebarPosition: "top"
 };
 </script><script type="text/javascript" defer>// Wrap everything in an IIFE to avoid variable redeclaration issues
-// when Material for MkDocs instant navigation reloads the page
+// when Material theme instant navigation reloads the page
 (function () {
   // Constants
   const STORAGE_KEY_PREFIX = "quiz_progress_";
@@ -4201,7 +4202,7 @@ window.mkdocsQuizConfig = {
       if (headerLink) {
         const handler = (e) => {
           // Let the browser handle the anchor navigation normally
-          // This prevents Material for MkDocs from intercepting it as a page navigation
+          // This prevents Material themes from intercepting it as a page navigation
           e.stopPropagation();
         };
         addTrackedEventListener(headerLink, "click", handler);
@@ -4493,7 +4494,7 @@ window.mkdocsQuizConfig = {
 
       const submitHandler = (event) => {
         event.preventDefault();
-        event.stopPropagation(); // Prevent Material theme from intercepting form submission
+        event.stopPropagation(); // Prevent Material themes from intercepting form submission
         let is_correct = false;
         let selectedValues = [];
         let section = quiz.querySelector("section");
@@ -4665,7 +4666,7 @@ window.mkdocsQuizConfig = {
     initializePage();
   }
 
-  // Material for MkDocs instant navigation support
+  // Material theme instant navigation support
   // Cleanup and reinitialize when navigating between pages
   if (typeof document$ !== "undefined") {
     // Unsubscribe from any previous subscription to prevent duplicate handlers
@@ -4675,7 +4676,7 @@ window.mkdocsQuizConfig = {
       window._mkdocsQuizSubscription.unsubscribe();
     }
 
-    // Material theme with instant navigation is active
+    // A Material theme with instant navigation is active
     window._mkdocsQuizSubscription = document$.subscribe(() => {
       cleanup(); // Remove old event listeners to prevent memory leaks
       // Reinitialize everything for the new page

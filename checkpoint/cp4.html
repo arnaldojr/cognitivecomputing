@@ -2007,7 +2007,7 @@
 <p>Neste checkpoint, vocês irão desenvolver o protótipo deste sistema de identificação IoT, que em linhas gerais possuirá as seguintes interfaces:</p>
 <p><img alt="" src="diagramablocos.png" /></p>
 <h2 id="rubrica">Rubrica<a class="headerlink" href="#rubrica" title="Permanent link">&para;</a></h2>
-<p><strong><em>(R1 - NOTA 6)</em></strong> Os requisitos funcionais mínimos do sistema devem seguir a arquitetura abaixo:</p>
+<p><em><strong>(R1 - NOTA 6)</strong></em> Os requisitos funcionais mínimos do sistema devem seguir a arquitetura abaixo:</p>
 <p><img alt="" src="r1.png" /></p>
 <p>Para atender a esta rubrica, o sistema está dividido em 2 fluxos: </p>
 <p>Fluxo 1: Deve ser capaz de coletar a identificação da TAG RFID com o Arduino (ARDUINO1) e enviar, utilizando formato JSON, para um fluxo Node-Red que realiza duas funções:</p>
@@ -2020,22 +2020,22 @@
 <li>Desenvolver um dashboard intuitivo e com boa usabilidade;</li>
 <li>Exibir em tempo real todas as tentativas de acesso, sejam elas bem-sucedidas ou não.</li>
 </ul>
-<p><strong><em>(R2 - NOTA 7)</em></strong> Os requisitos funcionais mínimos do sistema devem seguir a imagem abaixo:</p>
+<p><em><strong>(R2 - NOTA 7)</strong></em> Os requisitos funcionais mínimos do sistema devem seguir a imagem abaixo:</p>
 <p><img alt="" src="r2.png" /></p>
 <p>Para atender a esta rubrica, implemente a rubrica R1, e faça a atualização necessária onde o sistema deve se comunicar com o segundo Arduino (ARDUINO2) no formato JSON para realizar o controle de posição do servo motor.</p>
 <ul>
 <li>A posição do servo motor é controlada pelo DASHBOARD, ou seja, um administrador controla manualmente o atuador.</li>
 </ul>
-<p><strong><em>(R3 - NOTA 8)</em></strong> Os requisitos funcionais mínimos do sistema devem seguir a imagem abaixo:</p>
+<p><em><strong>(R3 - NOTA 8)</strong></em> Os requisitos funcionais mínimos do sistema devem seguir a imagem abaixo:</p>
 <p><img alt="" src="r3.png" /></p>
 <ul>
 <li>Para atender a esta rubrica, implemente a rubrica R2, e o sistema do servidor Node-Red deve estar embarcado na Raspberry PI, sendo capaz de coletar dados do sensor DTH11 (Temperatura e Umidade) a cada 30s. </li>
 <li>As informações do sensor são sempre atualizadas pelo Dashboard e enviadas para o usuário apenas se a umidade estiver abaixo de 50% ou a temperatura estiver acima de 30°C. Os setpoints de temperatura e umidade são configurados pelo administrador, ou seja, não são <code>hardcode</code>.</li>
 </ul>
-<p><strong><em>(R4 - NOTA 10)</em></strong> Os requisitos funcionais mínimos do sistema devem seguir a imagem abaixo:</p>
+<p><em><strong>(R4 - NOTA 10)</strong></em> Os requisitos funcionais mínimos do sistema devem seguir a imagem abaixo:</p>
 <p><img alt="" src="diagramablocos.png" /></p>
 <p>Para atender a esta rubrica, implemente a rubrica R3, e adicione a integração com algum banco de dados e implementação mobile (o grupo define a linguagem de programação).</p>
-<p><strong><em>(BONUS - 2 pontos )</em></strong> MVP do projeto:</p>
+<p><em><strong>(BONUS - 2 pontos )</strong></em> MVP do projeto:</p>
 <p>Desenvolva uma caixa para acomodar os hardware do projeto, que pode ser desenvolvida pelo MakerLab utilizando a impressora 3D ou MDF cortado no laser.</p>
 <p><img alt="" src="case.jpeg" /></p>
 <ul>
@@ -2349,9 +2349,10 @@ input[type="radio"].wrong {
   z-index: 3; /* Below Material header (z-index: 4) but above page content */
 }
 
-/* Show mobile tracker only on small screens (mobile/tablet) */
-/* Material breakpoint: up to 76.1875em (1219px) */
-@media screen and (max-width: 76.1875em) {
+/* Show the mobile tracker only when the secondary sidebar (and its progress
+   widget) is hidden. Material reveals .md-sidebar--secondary at min-width: 60em,
+   so the mobile tracker must stop at 60em - 1px to avoid showing both at once. */
+@media screen and (max-width: 59.9375em) {
   .quiz-progress-mobile {
     display: block;
   }
@@ -2590,7 +2591,7 @@ window.mkdocsQuizConfig = {
   progressSidebarPosition: "top"
 };
 </script><script type="text/javascript" defer>// Wrap everything in an IIFE to avoid variable redeclaration issues
-// when Material for MkDocs instant navigation reloads the page
+// when Material theme instant navigation reloads the page
 (function () {
   // Constants
   const STORAGE_KEY_PREFIX = "quiz_progress_";
@@ -3269,7 +3270,7 @@ window.mkdocsQuizConfig = {
       if (headerLink) {
         const handler = (e) => {
           // Let the browser handle the anchor navigation normally
-          // This prevents Material for MkDocs from intercepting it as a page navigation
+          // This prevents Material themes from intercepting it as a page navigation
           e.stopPropagation();
         };
         addTrackedEventListener(headerLink, "click", handler);
@@ -3561,7 +3562,7 @@ window.mkdocsQuizConfig = {
 
       const submitHandler = (event) => {
         event.preventDefault();
-        event.stopPropagation(); // Prevent Material theme from intercepting form submission
+        event.stopPropagation(); // Prevent Material themes from intercepting form submission
         let is_correct = false;
         let selectedValues = [];
         let section = quiz.querySelector("section");
@@ -3733,7 +3734,7 @@ window.mkdocsQuizConfig = {
     initializePage();
   }
 
-  // Material for MkDocs instant navigation support
+  // Material theme instant navigation support
   // Cleanup and reinitialize when navigating between pages
   if (typeof document$ !== "undefined") {
     // Unsubscribe from any previous subscription to prevent duplicate handlers
@@ -3743,7 +3744,7 @@ window.mkdocsQuizConfig = {
       window._mkdocsQuizSubscription.unsubscribe();
     }
 
-    // Material theme with instant navigation is active
+    // A Material theme with instant navigation is active
     window._mkdocsQuizSubscription = document$.subscribe(() => {
       cleanup(); // Remove old event listeners to prevent memory leaks
       // Reinitialize everything for the new page
